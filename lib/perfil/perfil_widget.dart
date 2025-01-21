@@ -266,7 +266,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                     widget.usuariorow?.spd,
                                                 ingresorow:
                                                     containeringresosIngresosRow,
-                                                idingreso: widget.idingreso!,
+                                                idingreso: widget.idingreso,
                                                 expediente:
                                                     widget.rowexp?.expediente,
                                                 fechaExp: widget.rowexp?.fecha,
@@ -719,7 +719,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                 child: TarjetaencabezadoWidget(
                                                   exprow: widget.rowexp!,
                                                   ingresorow:
-                                                      containeringresosIngresosRow!,
+                                                      containeringresosIngresosRow,
                                                   usuariorow:
                                                       widget.usuariorow!,
                                                   editarcaratula: true,
@@ -728,7 +728,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                 ),
                                               ),
                                               if (containeringresosIngresosRow
-                                                      .form9 ??
+                                                      ?.form9 ??
                                                   true)
                                                 Align(
                                                   alignment:
@@ -802,7 +802,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                             decoration:
                                                                                 BoxDecoration(
                                                                               color: () {
-                                                                                if (containeringresosIngresosRow.form9! && !containeringresosIngresosRow.form9completo!) {
+                                                                                if (containeringresosIngresosRow!.form9! && !containeringresosIngresosRow.form9completo!) {
                                                                                   return FlutterFlowTheme.of(context).alternate;
                                                                                 } else if (containeringresosIngresosRow.form9! && containeringresosIngresosRow.form9completo!) {
                                                                                   return FlutterFlowTheme.of(context).accent2;
@@ -849,7 +849,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                       crossAxisAlignment: CrossAxisAlignment.start,
                                                                                       children: [
                                                                                         Text(
-                                                                                          'Causa: ${containeringresosIngresosRow.motivocierre}',
+                                                                                          'Causa: ${containeringresosIngresosRow?.motivocierre}',
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                 fontFamily: 'Noto Sans JP',
                                                                                                 letterSpacing: 0.0,
@@ -858,7 +858,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                         Text(
                                                                                           'Fecha: ${dateTimeFormat(
                                                                                             "d/M/y",
-                                                                                            containeringresosIngresosRow.fechacierre,
+                                                                                            containeringresosIngresosRow?.fechacierre,
                                                                                             locale: FFLocalizations.of(context).languageCode,
                                                                                           )}',
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -867,7 +867,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                               ),
                                                                                         ),
                                                                                         Text(
-                                                                                          'Observacion: ${containeringresosIngresosRow.observacioncierre}'.maybeHandleOverflow(
+                                                                                          'Observacion: ${containeringresosIngresosRow?.observacioncierre}'.maybeHandleOverflow(
                                                                                             maxChars: 40,
                                                                                           ),
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -981,7 +981,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                             Column(
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
-                                                                                if (!containeringresosIngresosRow.form9completo!)
+                                                                                if (!containeringresosIngresosRow!.form9completo!)
                                                                                   Align(
                                                                                     alignment: const AlignmentDirectional(0.0, 1.0),
                                                                                     child: FFButtonWidget(
@@ -1087,7 +1087,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                   ),
                                                 ),
                                               if (containeringresosIngresosRow
-                                                      .form6 ??
+                                                      ?.form6 ??
                                                   true)
                                                 Align(
                                                   alignment:
@@ -1158,7 +1158,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                               BoxDecoration(
                                                                             color:
                                                                                 () {
-                                                                              if (containeringresosIngresosRow.form6! && !containeringresosIngresosRow.form6completo!) {
+                                                                              if (containeringresosIngresosRow!.form6! && !containeringresosIngresosRow.form6completo!) {
                                                                                 return FlutterFlowTheme.of(context).alternate;
                                                                               } else if (containeringresosIngresosRow.form6! && containeringresosIngresosRow.form6completo!) {
                                                                                 return FlutterFlowTheme.of(context).accent2;
@@ -1270,7 +1270,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                   height: 30.0,
                                                                                   padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                                                                                   iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  color: !containeringresosIngresosRow.form6completo! ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).secondary,
+                                                                                  color: !containeringresosIngresosRow!.form6completo! ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).secondary,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: 'Noto Sans JP',
                                                                                         color: Colors.white,
@@ -1300,7 +1300,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                     ),
                                                   ),
                                                 ),
-                                              if (containeringresosIngresosRow.form2completo! ||
+                                              if (containeringresosIngresosRow!.form2completo! ||
                                                   containeringresosIngresosRow
                                                       .form3completo! ||
                                                   containeringresosIngresosRow

@@ -252,7 +252,7 @@ class _PerfilCopyWidgetState extends State<PerfilCopyWidget> {
                                                     widget.usuariorow?.spd,
                                                 ingresorow:
                                                     containeringresosIngresosRow,
-                                                idingreso: widget.idingreso!,
+                                                idingreso: widget.idingreso,
                                                 expediente:
                                                     widget.rowexp?.expediente,
                                                 fechaExp: widget.rowexp?.fecha,

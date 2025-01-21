@@ -11,7 +11,7 @@ class TarjetaencabezadoWidget extends StatefulWidget {
   const TarjetaencabezadoWidget({
     super.key,
     required this.exprow,
-    required this.ingresorow,
+    this.ingresorow,
     required this.usuariorow,
     bool? editarcaratula,
     bool? contactosref,

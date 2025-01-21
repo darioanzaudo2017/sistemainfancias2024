@@ -16,7 +16,7 @@ class BarradeNavegacionWidget extends StatefulWidget {
     this.parameter4,
     this.parameter5,
     this.ingresorow,
-    required this.idingreso,
+    this.idingreso,
     this.expediente,
     this.fechaExp,
     this.parameter10,

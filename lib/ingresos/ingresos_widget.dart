@@ -144,12 +144,13 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                               idexp: widget.idexp,
                               parameter10: false,
                               adjuntar: false,
-                              imprimir: false,
-                              carpeta: false,
+                              imprimir: true,
+                              carpeta: true,
                               ingreso: false,
                               perfil: false,
                               exprow: widget.idexpediente!,
                               usuariorow: widget.usuariorow!,
+                              fechaExp: widget.idexpediente?.fecha,
                             ),
                           ),
                           Expanded(
@@ -247,7 +248,17 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                 safeSetState(
                                                                     () {}),
                                                             child:
-                                                                const TarjetaencabezadoWidget(),
+                                                                TarjetaencabezadoWidget(
+                                                              editarcaratula:
+                                                                  true,
+                                                              contactosref:
+                                                                  false,
+                                                              cambia: true,
+                                                              exprow: widget
+                                                                  .idexpediente!,
+                                                              usuariorow: widget
+                                                                  .usuariorow!,
+                                                            ),
                                                           ),
                                                           Row(
                                                             mainAxisSize:
