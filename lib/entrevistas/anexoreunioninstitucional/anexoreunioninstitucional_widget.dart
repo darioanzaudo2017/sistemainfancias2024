@@ -1,9 +1,9 @@
-import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'anexoreunioninstitucional_model.dart';
 export 'anexoreunioninstitucional_model.dart';
@@ -14,13 +14,15 @@ class AnexoreunioninstitucionalWidget extends StatefulWidget {
     required this.rowingreso,
     required this.rowexp,
     this.editar,
-    this.idanexosalud,
-  });
+    int? idanexoreunion,
+    required this.formulario,
+  }) : idanexoreunion = idanexoreunion ?? 0;
 
   final IngresosRow? rowingreso;
   final VistaExpedientesUltimoEstadoRow? rowexp;
   final bool? editar;
-  final int? idanexosalud;
+  final int idanexoreunion;
+  final String? formulario;
 
   @override
   State<AnexoreunioninstitucionalWidget> createState() =>
@@ -46,7 +48,6 @@ class _AnexoreunioninstitucionalWidgetState
 
     _model.textFieldmotivoFocusNode2 ??= FocusNode();
 
-    _model.textFieldmotivoTextController3 ??= TextEditingController();
     _model.textFieldmotivoFocusNode3 ??= FocusNode();
 
     _model.textFieldmotivoFocusNode4 ??= FocusNode();
@@ -68,12 +69,15 @@ class _AnexoreunioninstitucionalWidgetState
     return Align(
       alignment: const AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<Anexo4RequerimientoaccionesRow>>(
-        future: Anexo4RequerimientoaccionesTable().querySingleRow(
-          queryFn: (q) => q.eqOrNull(
-            'idingreso',
-            widget.rowingreso?.id,
-          ),
-        ),
+        future: (_model.requestCompleter ??=
+                Completer<List<Anexo4RequerimientoaccionesRow>>()
+                  ..complete(Anexo4RequerimientoaccionesTable().querySingleRow(
+                    queryFn: (q) => q.eqOrNull(
+                      'id',
+                      widget.idanexoreunion,
+                    ),
+                  )))
+            .future,
         builder: (context, snapshot) {
           // Customize what your widget looks like when it's loading.
           if (!snapshot.hasData) {
@@ -104,10 +108,7 @@ class _AnexoreunioninstitucionalWidgetState
               borderRadius: BorderRadius.circular(20.0),
             ),
             child: Container(
-              width: MediaQuery.sizeOf(context).width * 4.5,
-              constraints: const BoxConstraints(
-                maxWidth: 600.0,
-              ),
+              width: MediaQuery.sizeOf(context).width * 0.8,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 borderRadius: BorderRadius.circular(20.0),
@@ -126,7 +127,7 @@ class _AnexoreunioninstitucionalWidgetState
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Align(
                             alignment: const AlignmentDirectional(1.0, -1.0),
@@ -161,7 +162,7 @@ class _AnexoreunioninstitucionalWidgetState
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
                                             letterSpacing: 0.0,
@@ -173,184 +174,59 @@ class _AnexoreunioninstitucionalWidgetState
                               ),
                             ],
                           ),
-                          Flexible(
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 0.0, 16.0, 1.0),
-                              child: Material(
-                                color: Colors.transparent,
-                                elevation: 2.0,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12.0),
+                          Material(
+                            color: Colors.transparent,
+                            elevation: 2.0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            child: Container(
+                              width: 500.0,
+                              height: 100.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                borderRadius: BorderRadius.circular(10.0),
+                                border: Border.all(
+                                  color: FlutterFlowTheme.of(context).alternate,
                                 ),
-                                child: Container(
-                                  width: double.infinity,
-                                  height: 100.0,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        blurRadius: 0.0,
-                                        color: Color(0xFFF5FBFB),
-                                        offset: Offset(
-                                          0.0,
-                                          1.0,
-                                        ),
-                                      )
-                                    ],
-                                    borderRadius: BorderRadius.circular(12.0),
-                                    border: Border.all(
-                                      color: FlutterFlowTheme.of(context)
-                                          .alternate,
-                                    ),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 16.0, 0.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Expanded(
-                                          flex: 4,
-                                          child: Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 12.0, 12.0, 12.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Expanded(
-                                                  child: Padding(
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(12.0, 0.0,
-                                                                0.0, 0.0),
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .start,
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                      children: [
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
-                                                          children: [
-                                                            Padding(
-                                                              padding:
-                                                                  const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          4.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child: Text(
-                                                                '${widget.rowexp?.nombres}, ${widget.rowexp?.apellidos}',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyLarge
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Inter',
-                                                                      color: const Color(
-                                                                          0xFF101518),
-                                                                      fontSize:
-                                                                          16.0,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                    ),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      4.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          child: Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              widget
-                                                                  .rowexp?.dni
-                                                                  ?.toString(),
-                                                              '0',
-                                                            ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodySmall
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Inter',
-                                                                  color: const Color(
-                                                                      0xFF06D5CD),
-                                                                  fontSize:
-                                                                      12.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .normal,
-                                                                ),
-                                                          ),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      4.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          child: Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              widget
-                                                                  .rowexp?.spd,
-                                                              '0',
-                                                            ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelSmall
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Inter',
-                                                                  color: const Color(
-                                                                      0xFF57636C),
-                                                                  fontSize:
-                                                                      12.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .normal,
-                                                                ),
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      '${valueOrDefault<String>(
+                                        widget.rowexp?.nombres,
+                                        '0',
+                                      )}, ${valueOrDefault<String>(
+                                        widget.rowexp?.apellidos,
+                                        '0',
+                                      )}',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondary,
+                                            letterSpacing: 0.0,
                                           ),
-                                        ),
-                                      ],
                                     ),
-                                  ),
+                                    Text(
+                                      valueOrDefault<String>(
+                                        widget.rowexp?.spd,
+                                        '0',
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
@@ -372,7 +248,7 @@ class _AnexoreunioninstitucionalWidgetState
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -396,7 +272,7 @@ class _AnexoreunioninstitucionalWidgetState
                                             FlutterFlowTheme.of(context)
                                                 .headlineLarge
                                                 .override(
-                                                  fontFamily: 'Raleway',
+                                                  fontFamily: 'Noto Sans JP',
                                                   fontSize: 32.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
@@ -445,7 +321,7 @@ class _AnexoreunioninstitucionalWidgetState
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         color: Colors.white,
                                         letterSpacing: 0.0,
                                       ),
@@ -473,7 +349,7 @@ class _AnexoreunioninstitucionalWidgetState
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 alignLabelWithHint: true,
@@ -481,7 +357,7 @@ class _AnexoreunioninstitucionalWidgetState
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
@@ -517,7 +393,7 @@ class _AnexoreunioninstitucionalWidgetState
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               maxLines: 2,
@@ -544,7 +420,7 @@ class _AnexoreunioninstitucionalWidgetState
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 alignLabelWithHint: true,
@@ -552,7 +428,7 @@ class _AnexoreunioninstitucionalWidgetState
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
@@ -588,7 +464,7 @@ class _AnexoreunioninstitucionalWidgetState
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               maxLines: 5,
@@ -601,7 +477,12 @@ class _AnexoreunioninstitucionalWidgetState
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
-                              controller: _model.textFieldmotivoTextController3,
+                              controller:
+                                  _model.textFieldmotivoTextController3 ??=
+                                      TextEditingController(
+                                text: containerAnexo4RequerimientoaccionesRow
+                                    ?.profesionalespresentes,
+                              ),
                               focusNode: _model.textFieldmotivoFocusNode3,
                               autofocus: true,
                               obscureText: false,
@@ -610,7 +491,7 @@ class _AnexoreunioninstitucionalWidgetState
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 alignLabelWithHint: true,
@@ -618,7 +499,7 @@ class _AnexoreunioninstitucionalWidgetState
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
@@ -654,7 +535,7 @@ class _AnexoreunioninstitucionalWidgetState
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               maxLines: 5,
@@ -681,7 +562,7 @@ class _AnexoreunioninstitucionalWidgetState
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 alignLabelWithHint: true,
@@ -689,7 +570,7 @@ class _AnexoreunioninstitucionalWidgetState
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
@@ -725,7 +606,7 @@ class _AnexoreunioninstitucionalWidgetState
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               maxLines: 20,
@@ -752,7 +633,7 @@ class _AnexoreunioninstitucionalWidgetState
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 alignLabelWithHint: true,
@@ -760,7 +641,7 @@ class _AnexoreunioninstitucionalWidgetState
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
@@ -796,7 +677,7 @@ class _AnexoreunioninstitucionalWidgetState
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               maxLines: 15,
@@ -816,179 +697,55 @@ class _AnexoreunioninstitucionalWidgetState
                                           .validate()) {
                                     return;
                                   }
-                                  if (_model.datePicked == null) {
-                                    await showDialog(
-                                      context: context,
-                                      builder: (alertDialogContext) {
-                                        return AlertDialog(
-                                          title: const Text('Campo obligatorio'),
-                                          content:
-                                              const Text('La fecha obligatoria!'),
-                                          actions: [
-                                            TextButton(
-                                              onPressed: () => Navigator.pop(
-                                                  alertDialogContext),
-                                              child: const Text('Ok'),
-                                            ),
-                                          ],
-                                        );
-                                      },
-                                    );
-                                    return;
-                                  }
-                                  if (containerAnexo4RequerimientoaccionesRow
-                                          ?.id ==
-                                      null) {
-                                    await Anexo4RequerimientoaccionesTable()
-                                        .insert({
-                                      'spd': widget.rowexp?.spd,
-                                      'fecha': _model.datePicked?.toString(),
-                                      'idingreso': widget.rowingreso?.id,
-                                      'expediente': widget.rowexp?.expediente,
-                                      'updated_at': supaSerialize<DateTime>(
-                                          getCurrentTimestamp),
-                                      'institucion': _model
-                                          .textFieldmotivoTextController1.text,
-                                      'objetivos': _model
-                                          .textFieldmotivoTextController2.text,
-                                      'reunion': _model
-                                          .textFieldmotivoTextController4.text,
-                                      'puntosacuerdos': _model
-                                          .textFieldmotivoTextController5.text,
-                                    });
-                                    _model.apiResults9dedujcacio =
-                                        await AnexoReuninInterinstitucionalCall
-                                            .call(
-                                      fecha: dateTimeFormat(
-                                        "d/M/y",
-                                        _model.datePicked,
-                                        locale: FFLocalizations.of(context)
-                                            .languageCode,
-                                      ),
-                                      objetivos: _model
-                                          .textFieldmotivoTextController2.text,
-                                      institucion: _model
-                                          .textFieldmotivoTextController1.text,
-                                      expediente: widget.rowexp?.expediente,
-                                      reunion: _model
-                                          .textFieldmotivoTextController4.text,
-                                      puntosacuerdos: _model
-                                          .textFieldmotivoTextController5.text,
-                                      idingreso: widget.rowingreso?.id,
-                                      carpeta: widget.rowingreso?.idcarpeta,
-                                    );
-
-                                    if ((_model
-                                            .apiResults9dedujcacio?.succeeded ??
-                                        true)) {
-                                      await Future.delayed(
-                                          const Duration(milliseconds: 1000));
-                                      await showDialog(
-                                        context: context,
-                                        builder: (alertDialogContext) {
-                                          return AlertDialog(
-                                            title: const Text(
-                                                'Se cargo correctamente la informacion'),
-                                            content: const Text(
-                                                'Se guardo la informacion y se creo un documento en google docs!'),
-                                            actions: [
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext),
-                                                child: const Text('Ok'),
-                                              ),
-                                            ],
-                                          );
-                                        },
+                                  await Anexo4RequerimientoaccionesTable()
+                                      .insert({
+                                    'spd': widget.rowexp?.spd,
+                                    'fecha': dateTimeFormat(
+                                      "d/M/y",
+                                      _model.datePicked,
+                                      locale: FFLocalizations.of(context)
+                                          .languageCode,
+                                    ),
+                                    'idingreso': widget.rowingreso?.id,
+                                    'expediente': widget.rowexp?.expediente,
+                                    'updated_at': supaSerialize<DateTime>(
+                                        getCurrentTimestamp),
+                                    'institucion': _model
+                                        .textFieldmotivoTextController1.text,
+                                    'objetivos': _model
+                                        .textFieldmotivoTextController2.text,
+                                    'reunion': _model
+                                        .textFieldmotivoTextController4.text,
+                                    'puntosacuerdos': _model
+                                        .textFieldmotivoTextController5.text,
+                                    'profesionalespresentes': _model
+                                        .textFieldmotivoTextController3.text,
+                                    'formulario': widget.formulario,
+                                  });
+                                  await showDialog(
+                                    context: context,
+                                    builder: (alertDialogContext) {
+                                      return AlertDialog(
+                                        title: const Text(
+                                            'Se cargo correctamente la informacion'),
+                                        content: const Text(
+                                            'Se guardo la informacion y se creo un documento en google docs!'),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: const Text('Ok'),
+                                          ),
+                                        ],
                                       );
-                                      Navigator.pop(context);
-                                    }
-                                  } else {
-                                    await Anexo4RequerimientoaccionesTable()
-                                        .update(
-                                      data: {
-                                        'spd': widget.rowexp?.spd,
-                                        'fecha': _model.datePicked != null
-                                            ? dateTimeFormat(
-                                                "d/M/y",
-                                                _model.datePicked,
-                                                locale:
-                                                    FFLocalizations.of(context)
-                                                        .languageCode,
-                                              )
-                                            : containerAnexo4RequerimientoaccionesRow
-                                                ?.fecha,
-                                        'idingreso': widget.rowingreso?.id,
-                                        'expediente':
-                                            widget.rowexp?.expediente,
-                                        'updated_at': supaSerialize<DateTime>(
-                                            getCurrentTimestamp),
-                                        'institucion': _model
-                                            .textFieldmotivoTextController1
-                                            .text,
-                                        'objetivos': _model
-                                            .textFieldmotivoTextController2
-                                            .text,
-                                        'reunion': _model
-                                            .textFieldmotivoTextController4
-                                            .text,
-                                        'puntosacuerdos': _model
-                                            .textFieldmotivoTextController5
-                                            .text,
-                                      },
-                                      matchingRows: (rows) => rows,
-                                    );
-                                    _model.apiResults9dedit =
-                                        await AnexoReuninInterinstitucionalCall
-                                            .call(
-                                      fecha: dateTimeFormat(
-                                        "d/M/y",
-                                        _model.datePicked,
-                                        locale: FFLocalizations.of(context)
-                                            .languageCode,
-                                      ),
-                                      objetivos: _model
-                                          .textFieldmotivoTextController2.text,
-                                      institucion: _model
-                                          .textFieldmotivoTextController1.text,
-                                      expediente: widget.rowexp?.expediente,
-                                      reunion: _model
-                                          .textFieldmotivoTextController4.text,
-                                      puntosacuerdos: _model
-                                          .textFieldmotivoTextController5.text,
-                                      idingreso: widget.rowingreso?.id,
-                                      carpeta: widget.rowingreso?.idcarpeta,
-                                    );
-
-                                    if ((_model.apiResults9dedit?.succeeded ??
-                                        true)) {
-                                      await Future.delayed(
-                                          const Duration(milliseconds: 1000));
-                                      await showDialog(
-                                        context: context,
-                                        builder: (alertDialogContext) {
-                                          return AlertDialog(
-                                            title: const Text(
-                                                'Se cargo correctamente la informacion'),
-                                            content: const Text(
-                                                'Se guardo la informacion y se creo un documento en google docs!'),
-                                            actions: [
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext),
-                                                child: const Text('Ok'),
-                                              ),
-                                            ],
-                                          );
-                                        },
-                                      );
-                                      Navigator.pop(context);
-                                    }
-                                  }
-
-                                  safeSetState(() {});
+                                    },
+                                  );
+                                  Navigator.pop(context, true);
+                                  safeSetState(
+                                      () => _model.requestCompleter = null);
+                                  await _model.waitForRequestCompleted();
                                 },
-                                text: 'Guardar y generar Docs',
+                                text: 'Guardar',
                                 icon: const Icon(
                                   Icons.save,
                                   size: 15.0,
@@ -1004,7 +761,7 @@ class _AnexoreunioninstitucionalWidgetState
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         color: Colors.white,
                                         letterSpacing: 0.0,
                                       ),
@@ -1020,8 +777,8 @@ class _AnexoreunioninstitucionalWidgetState
                             ],
                           ),
                         ]
-                            .divide(const SizedBox(height: 8.0))
-                            .around(const SizedBox(height: 8.0)),
+                            .divide(const SizedBox(height: 10.0))
+                            .around(const SizedBox(height: 10.0)),
                       ),
                     ),
                   ),

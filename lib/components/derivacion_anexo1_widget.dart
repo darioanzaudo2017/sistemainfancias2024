@@ -138,7 +138,7 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       color:
                                           FlutterFlowTheme.of(context).primary,
                                       letterSpacing: 0.0,
@@ -189,14 +189,14 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: ' Expediente Nº: ',
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   enabledBorder: OutlineInputBorder(
@@ -233,7 +233,7 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 validator: _model.textController1Validator
@@ -256,7 +256,7 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -282,7 +282,8 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                                                 FlutterFlowTheme.of(context)
                                                     .headlineLarge
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       fontSize: 32.0,
                                                       letterSpacing: 0.0,
                                                       fontWeight:
@@ -339,7 +340,7 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             color: Colors.white,
                                             letterSpacing: 0.0,
                                           ),
@@ -372,14 +373,14 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: 'Organismo y Profesional remitente',
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   enabledBorder: OutlineInputBorder(
@@ -416,7 +417,7 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 validator: _model.textController2Validator
@@ -440,7 +441,7 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   hintText:
@@ -448,7 +449,7 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   enabledBorder: OutlineInputBorder(
@@ -485,7 +486,7 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 validator: _model.textController3Validator
@@ -509,14 +510,14 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: 'Tipo de Intervención solicitada',
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   enabledBorder: OutlineInputBorder(
@@ -553,7 +554,7 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 validator: _model.textController4Validator
@@ -576,14 +577,14 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: 'Telefono',
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   enabledBorder: OutlineInputBorder(
@@ -620,7 +621,7 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 validator: _model.textController5Validator
@@ -643,14 +644,14 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: 'Correo',
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   enabledBorder: OutlineInputBorder(
@@ -687,7 +688,7 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 validator: _model.textController6Validator
@@ -869,7 +870,7 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           color: Colors.white,
                                           letterSpacing: 0.0,
                                         ),
@@ -915,7 +916,7 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     color: Colors.white,
                                     letterSpacing: 0.0,
                                   ),

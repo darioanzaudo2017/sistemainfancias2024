@@ -11,10 +11,6 @@ class ImprimirModel extends FlutterFlowModel<ImprimirWidget> {
   // Stores action output result for [Backend Call - API (crearlistadocumentosadjuntos)] action in Button widget.
   ApiCallResponse? apiResultgyy;
   Completer<List<DocumentosadjuntosRow>>? requestCompleter;
-  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
-  List<DocumentosadjuntosRow>? enviarmail;
-  // Stores action output result for [Backend Call - API (email resend)] action in Button widget.
-  ApiCallResponse? apiResult1fi;
   // Stores action output result for [Backend Call - API (Crear Caratula)] action in Button widget.
   ApiCallResponse? apiResultznw;
   // Stores action output result for [Backend Call - API (Crear Caratula)] action in Button widget.

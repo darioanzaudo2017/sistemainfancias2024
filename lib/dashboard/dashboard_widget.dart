@@ -1,5 +1,6 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_data_table.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -52,17 +53,31 @@ class _DashboardWidgetState extends State<DashboardWidget> {
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
+          leading: FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30.0,
+            borderWidth: 1.0,
+            buttonSize: 60.0,
+            icon: const Icon(
+              Icons.arrow_back_rounded,
+              color: Colors.white,
+              size: 30.0,
+            ),
+            onPressed: () async {
+              context.pop();
+            },
+          ),
           title: Text(
             'Page Title',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  fontFamily: 'Raleway',
+                  fontFamily: 'Noto Sans JP',
                   color: Colors.white,
                   fontSize: 22.0,
                   letterSpacing: 0.0,
                 ),
           ),
           actions: const [],
-          centerTitle: false,
+          centerTitle: true,
           elevation: 2.0,
         ),
         body: SafeArea(
@@ -127,7 +142,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
 
                               return Container(
                                 width: MediaQuery.sizeOf(context).width * 1.001,
-                                height: 800.0,
+                                height: 799.0,
                                 constraints: const BoxConstraints(
                                   maxWidth: 1000.0,
                                 ),
@@ -152,16 +167,16 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                             softWrap: true,
                                             child: Text(
                                               'SPD',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .labelLarge
+                                                  .override(
+                                                    fontFamily: 'Noto Sans JP',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
+                                                    letterSpacing: 0.0,
+                                                  ),
                                             ),
                                           ),
                                         ),
@@ -170,16 +185,16 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                             softWrap: true,
                                             child: Text(
                                               'Nombre',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .labelLarge
+                                                  .override(
+                                                    fontFamily: 'Noto Sans JP',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
+                                                    letterSpacing: 0.0,
+                                                  ),
                                             ),
                                           ),
                                         ),
@@ -188,16 +203,16 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                             softWrap: true,
                                             child: Text(
                                               'Apellido',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .labelLarge
+                                                  .override(
+                                                    fontFamily: 'Noto Sans JP',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
+                                                    letterSpacing: 0.0,
+                                                  ),
                                             ),
                                           ),
                                         ),
@@ -206,16 +221,16 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                             softWrap: true,
                                             child: Text(
                                               'DNI',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .labelLarge
+                                                  .override(
+                                                    fontFamily: 'Noto Sans JP',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
+                                                    letterSpacing: 0.0,
+                                                  ),
                                             ),
                                           ),
                                         ),
@@ -224,16 +239,16 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                             softWrap: true,
                                             child: Text(
                                               'Fec solicitud',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .labelLarge
+                                                  .override(
+                                                    fontFamily: 'Noto Sans JP',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
+                                                    letterSpacing: 0.0,
+                                                  ),
                                             ),
                                           ),
                                         ),
@@ -242,16 +257,16 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                             softWrap: true,
                                             child: Text(
                                               'fec reiteracion',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .labelLarge
+                                                  .override(
+                                                    fontFamily: 'Noto Sans JP',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
+                                                    letterSpacing: 0.0,
+                                                  ),
                                             ),
                                           ),
                                         ),
@@ -260,16 +275,16 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                             softWrap: true,
                                             child: Text(
                                               'fec adoptada',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .labelLarge
+                                                  .override(
+                                                    fontFamily: 'Noto Sans JP',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
+                                                    letterSpacing: 0.0,
+                                                  ),
                                             ),
                                           ),
                                         ),
@@ -278,16 +293,16 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                             softWrap: true,
                                             child: Text(
                                               'Fec rechazada',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .labelLarge
+                                                  .override(
+                                                    fontFamily: 'Noto Sans JP',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
+                                                    letterSpacing: 0.0,
+                                                  ),
                                             ),
                                           ),
                                         ),
@@ -296,16 +311,16 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                             softWrap: true,
                                             child: Text(
                                               'Motivo de rechazo',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .labelLarge
+                                                  .override(
+                                                    fontFamily: 'Noto Sans JP',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
+                                                    letterSpacing: 0.0,
+                                                  ),
                                             ),
                                           ),
                                         ),
@@ -314,16 +329,16 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                             softWrap: true,
                                             child: Text(
                                               'Dias dif',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .labelLarge
+                                                  .override(
+                                                    fontFamily: 'Noto Sans JP',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
+                                                    letterSpacing: 0.0,
+                                                  ),
                                             ),
                                           ),
                                         ),
@@ -336,7 +351,8 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .labelLarge
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
@@ -346,14 +362,17 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                           label: DefaultTextStyle.merge(
                                             softWrap: true,
                                             child: Text(
-                                              'Edit Header 12',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              'Acciones',
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .labelLarge
+                                                  .override(
+                                                    fontFamily: 'Noto Sans JP',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
+                                                    letterSpacing: 0.0,
+                                                  ),
                                             ),
                                           ),
                                         ),
@@ -379,7 +398,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Raleway',
+                                                  fontFamily: 'Noto Sans JP',
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -391,7 +410,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Raleway',
+                                                  fontFamily: 'Noto Sans JP',
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -403,7 +422,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Raleway',
+                                                  fontFamily: 'Noto Sans JP',
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -415,60 +434,81 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Raleway',
+                                                  fontFamily: 'Noto Sans JP',
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
                                           Text(
                                             valueOrDefault<String>(
-                                              vistaSenafItem.fechasolicitud
-                                                  ?.toString(),
+                                              dateTimeFormat(
+                                                "d/M/y",
+                                                vistaSenafItem.fechasolicitud,
+                                                locale:
+                                                    FFLocalizations.of(context)
+                                                        .languageCode,
+                                              ),
                                               '0',
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Raleway',
+                                                  fontFamily: 'Noto Sans JP',
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
                                           Text(
                                             valueOrDefault<String>(
-                                              vistaSenafItem.reiteracionFecha
-                                                  ?.toString(),
+                                              dateTimeFormat(
+                                                "d/M/y",
+                                                vistaSenafItem.reiteracionFecha,
+                                                locale:
+                                                    FFLocalizations.of(context)
+                                                        .languageCode,
+                                              ),
                                               '0',
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Raleway',
+                                                  fontFamily: 'Noto Sans JP',
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
                                           Text(
                                             valueOrDefault<String>(
-                                              vistaSenafItem.fecMedidaAdoptada
-                                                  ?.toString(),
+                                              dateTimeFormat(
+                                                "d/M/y",
+                                                vistaSenafItem
+                                                    .fecMedidaAdoptada,
+                                                locale:
+                                                    FFLocalizations.of(context)
+                                                        .languageCode,
+                                              ),
                                               '0',
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Raleway',
+                                                  fontFamily: 'Noto Sans JP',
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
                                           Text(
                                             valueOrDefault<String>(
-                                              vistaSenafItem
-                                                  .fechaMedidaRechazada
-                                                  ?.toString(),
+                                              dateTimeFormat(
+                                                "d/M/y",
+                                                vistaSenafItem
+                                                    .fechaMedidaRechazada,
+                                                locale:
+                                                    FFLocalizations.of(context)
+                                                        .languageCode,
+                                              ),
                                               '0',
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Raleway',
+                                                  fontFamily: 'Noto Sans JP',
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -480,7 +520,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Raleway',
+                                                  fontFamily: 'Noto Sans JP',
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -493,7 +533,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Raleway',
+                                                  fontFamily: 'Noto Sans JP',
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -582,7 +622,8 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         color: Colors.white,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -596,31 +637,28 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                       paginated: true,
                                       selectable: false,
                                       hidePaginator: false,
-                                      showFirstLastButtons: false,
+                                      showFirstLastButtons: true,
                                       headingRowHeight: 70.0,
                                       dataRowHeight: 80.0,
                                       columnSpacing: 20.0,
                                       headingRowColor:
                                           FlutterFlowTheme.of(context).primary,
-                                      borderRadius: BorderRadius.circular(8.0),
+                                      borderRadius: BorderRadius.circular(10.0),
                                       addHorizontalDivider: true,
-                                      addTopAndBottomDivider: false,
+                                      addTopAndBottomDivider: true,
                                       hideDefaultHorizontalDivider: true,
                                       horizontalDividerColor:
-                                          FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
+                                          FlutterFlowTheme.of(context).primary,
                                       horizontalDividerThickness: 1.0,
-                                      addVerticalDivider: false,
+                                      addVerticalDivider: true,
+                                      verticalDividerColor:
+                                          FlutterFlowTheme.of(context).primary,
+                                      verticalDividerThickness: 1.0,
                                     );
                                   },
                                 ),
                               );
                             },
-                          ),
-                          const Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [],
                           ),
                         ],
                       ),

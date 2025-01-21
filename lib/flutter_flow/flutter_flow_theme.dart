@@ -181,107 +181,107 @@ class ThemeTypography extends Typography {
 
   final FlutterFlowTheme theme;
 
-  String get displayLargeFamily => 'Raleway';
+  String get displayLargeFamily => 'Noto Sans JP';
   TextStyle get displayLarge => GoogleFonts.getFont(
-        'Raleway',
+        'Noto Sans JP',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 64.0,
       );
-  String get displayMediumFamily => 'Raleway';
+  String get displayMediumFamily => 'Noto Sans JP';
   TextStyle get displayMedium => GoogleFonts.getFont(
-        'Raleway',
+        'Noto Sans JP',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 44.0,
       );
-  String get displaySmallFamily => 'Raleway';
+  String get displaySmallFamily => 'Noto Sans JP';
   TextStyle get displaySmall => GoogleFonts.getFont(
-        'Raleway',
+        'Noto Sans JP',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 36.0,
       );
-  String get headlineLargeFamily => 'Raleway';
+  String get headlineLargeFamily => 'Noto Sans JP';
   TextStyle get headlineLarge => GoogleFonts.getFont(
-        'Raleway',
+        'Noto Sans JP',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 32.0,
       );
-  String get headlineMediumFamily => 'Raleway';
+  String get headlineMediumFamily => 'Noto Sans JP';
   TextStyle get headlineMedium => GoogleFonts.getFont(
-        'Raleway',
+        'Noto Sans JP',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 24.0,
       );
-  String get headlineSmallFamily => 'Raleway';
+  String get headlineSmallFamily => 'Noto Sans JP';
   TextStyle get headlineSmall => GoogleFonts.getFont(
-        'Raleway',
+        'Noto Sans JP',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 24.0,
       );
-  String get titleLargeFamily => 'Raleway';
+  String get titleLargeFamily => 'Noto Sans JP';
   TextStyle get titleLarge => GoogleFonts.getFont(
-        'Raleway',
+        'Noto Sans JP',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 22.0,
       );
-  String get titleMediumFamily => 'Raleway';
+  String get titleMediumFamily => 'Noto Sans JP';
   TextStyle get titleMedium => GoogleFonts.getFont(
-        'Raleway',
+        'Noto Sans JP',
         color: theme.primary,
         fontWeight: FontWeight.normal,
-        fontSize: 18.0,
+        fontSize: 20.0,
       );
-  String get titleSmallFamily => 'Raleway';
+  String get titleSmallFamily => 'Noto Sans JP';
   TextStyle get titleSmall => GoogleFonts.getFont(
-        'Raleway',
+        'Noto Sans JP',
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
-  String get labelLargeFamily => 'Raleway';
+  String get labelLargeFamily => 'Noto Sans JP';
   TextStyle get labelLarge => GoogleFonts.getFont(
-        'Raleway',
+        'Noto Sans JP',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get labelMediumFamily => 'Raleway';
+  String get labelMediumFamily => 'Noto Sans JP';
   TextStyle get labelMedium => GoogleFonts.getFont(
-        'Raleway',
+        'Noto Sans JP',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 15.0,
+        fontSize: 17.0,
       );
-  String get labelSmallFamily => 'Raleway';
+  String get labelSmallFamily => 'Noto Sans JP';
   TextStyle get labelSmall => GoogleFonts.getFont(
-        'Raleway',
+        'Noto Sans JP',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 12.0,
+        fontSize: 14.0,
       );
-  String get bodyLargeFamily => 'Raleway';
+  String get bodyLargeFamily => 'Noto Sans JP';
   TextStyle get bodyLarge => GoogleFonts.getFont(
-        'Raleway',
+        'Noto Sans JP',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get bodyMediumFamily => 'Raleway';
+  String get bodyMediumFamily => 'Noto Sans JP';
   TextStyle get bodyMedium => GoogleFonts.getFont(
-        'Raleway',
+        'Noto Sans JP',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get bodySmallFamily => 'Raleway';
+  String get bodySmallFamily => 'Noto Sans JP';
   TextStyle get bodySmall => GoogleFonts.getFont(
-        'Raleway',
+        'Noto Sans JP',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,

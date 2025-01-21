@@ -238,6 +238,8 @@ dynamic deserializeParam<T>(
             return FormularioSenafRow(data);
           case UserRolRow:
             return UserRolRow(data);
+          case HistorialingresoRow:
+            return HistorialingresoRow(data);
           case VistaIngresosDiasRow:
             return VistaIngresosDiasRow(data);
           case PaginaFormulario2y3Row:
@@ -248,8 +250,12 @@ dynamic deserializeParam<T>(
             return SpdRow(data);
           case AnexosForm1Row:
             return AnexosForm1Row(data);
+          case Formulario5HistorialRow:
+            return Formulario5HistorialRow(data);
           case VistaExpedientesSenafRow:
             return VistaExpedientesSenafRow(data);
+          case PruebarlsRow:
+            return PruebarlsRow(data);
           case VistaNnyaexpgruRow:
             return VistaNnyaexpgruRow(data);
           case UsuariosRow:
@@ -282,6 +288,8 @@ dynamic deserializeParam<T>(
             return NNyAExpGruRow(data);
           case Seccion1Row:
             return Seccion1Row(data);
+          case VistaConteoEntrevistasRow:
+            return VistaConteoEntrevistasRow(data);
           case ExpedienteRow:
             return ExpedienteRow(data);
           case Seccion2Row:
@@ -298,6 +306,8 @@ dynamic deserializeParam<T>(
             return Formulario2Row(data);
           case VistaExpedientesUltimoEstadoRow:
             return VistaExpedientesUltimoEstadoRow(data);
+          case BarriosRow:
+            return BarriosRow(data);
           case Seccion4Row:
             return Seccion4Row(data);
           case Formulario5Row:
@@ -306,6 +316,8 @@ dynamic deserializeParam<T>(
             return RolesRow(data);
           case IngresosRow:
             return IngresosRow(data);
+          case AccionesAccesoriasRow:
+            return AccionesAccesoriasRow(data);
           case Seccion5Row:
             return Seccion5Row(data);
           case Formulario4Row:

@@ -93,10 +93,8 @@ class _Seccion9WidgetState extends State<Seccion9Widget> {
               borderRadius: BorderRadius.circular(20.0),
             ),
             child: Container(
-              width: MediaQuery.sizeOf(context).width * 4.5,
-              constraints: const BoxConstraints(
-                maxWidth: 600.0,
-              ),
+              width: MediaQuery.sizeOf(context).width * 0.5,
+              height: 278.0,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 borderRadius: BorderRadius.circular(20.0),
@@ -120,22 +118,24 @@ class _Seccion9WidgetState extends State<Seccion9Widget> {
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Align(
-                              alignment: const AlignmentDirectional(0.0, -1.0),
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    8.0, 0.0, 0.0, 0.0),
-                                child: Text(
-                                  '9. Cierre de intervención/apertura de expediente',
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .override(
-                                        fontFamily: 'Raleway',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w600,
-                                      ),
+                            Flexible(
+                              child: Align(
+                                alignment: const AlignmentDirectional(-1.0, -1.0),
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      8.0, 0.0, 0.0, 0.0),
+                                  child: Text(
+                                    '9. Cierre de intervención/apertura de expediente',
+                                    style: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .override(
+                                          fontFamily: 'Noto Sans JP',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                  ),
                                 ),
                               ),
                             ),
@@ -177,7 +177,7 @@ class _Seccion9WidgetState extends State<Seccion9Widget> {
                             textStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
                             hintText: 'Seleccionar',
@@ -373,7 +373,7 @@ class _Seccion9WidgetState extends State<Seccion9Widget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           color: Colors.white,
                                           letterSpacing: 0.0,
                                         ),
@@ -448,7 +448,7 @@ class _Seccion9WidgetState extends State<Seccion9Widget> {
                                               FlutterFlowTheme.of(context)
                                                   .titleSmall
                                                   .override(
-                                                    fontFamily: 'Raleway',
+                                                    fontFamily: 'Noto Sans JP',
                                                     color: Colors.white,
                                                     letterSpacing: 0.0,
                                                   ),

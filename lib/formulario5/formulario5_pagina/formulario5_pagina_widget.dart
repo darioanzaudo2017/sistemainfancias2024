@@ -1,7 +1,10 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/anexosbotonera_widget.dart';
 import '/components/desplegablederechosprincipal_widget.dart';
 import '/components/formcaratula_widget.dart';
+import '/entrevistas/formulario2/formulario2_widget.dart';
+import '/entrevistas/formulario3/formulario3_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -11,6 +14,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/formulario1/formulario1/formulario1_widget.dart';
+import '/formulario5/formulario5/formulario5_widget.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -24,12 +28,14 @@ class Formulario5PaginaWidget extends StatefulWidget {
     this.rowexpediente,
     this.rowingreso,
     this.edit,
+    required this.usuariorow,
   });
 
   final int? idingreso;
   final VistaExpedientesUltimoEstadoRow? rowexpediente;
   final IngresosRow? rowingreso;
   final bool? edit;
+  final UsuariosRow? usuariorow;
 
   @override
   State<Formulario5PaginaWidget> createState() =>
@@ -164,14 +170,17 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                   context.pop();
                 },
               ),
-              title: Text(
-                'Informe síntesis',
-                style: FlutterFlowTheme.of(context).headlineMedium.override(
-                      fontFamily: 'Raleway',
-                      color: Colors.white,
-                      fontSize: 22.0,
-                      letterSpacing: 0.0,
-                    ),
+              title: Align(
+                alignment: const AlignmentDirectional(0.0, 0.0),
+                child: Text(
+                  ' Informe síntesis de Valoracion Integral y propuestas de MPI',
+                  style: FlutterFlowTheme.of(context).headlineMedium.override(
+                        fontFamily: 'Noto Sans JP',
+                        color: Colors.white,
+                        fontSize: 22.0,
+                        letterSpacing: 0.0,
+                      ),
+                ),
               ),
               actions: const [],
               centerTitle: false,
@@ -184,756 +193,698 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Align(
-                    alignment: const AlignmentDirectional(1.0, -1.0),
-                    child: FutureBuilder<List<Seccion1Row>>(
-                      future: Seccion1Table().querySingleRow(
-                        queryFn: (q) => q.eqOrNull(
-                          'idIngreso',
-                          widget.rowingreso?.id,
-                        ),
+                    alignment: const AlignmentDirectional(-1.0, -1.0),
+                    child: Container(
+                      width: MediaQuery.sizeOf(context).width * 0.2,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
                       ),
-                      builder: (context, snapshot) {
-                        // Customize what your widget looks like when it's loading.
-                        if (!snapshot.hasData) {
-                          return Center(
-                            child: SizedBox(
-                              width: 50.0,
-                              height: 50.0,
-                              child: CircularProgressIndicator(
-                                valueColor: AlwaysStoppedAnimation<Color>(
-                                  FlutterFlowTheme.of(context).primary,
-                                ),
-                              ),
-                            ),
-                          );
-                        }
-                        List<Seccion1Row> containerSeccion1RowList =
-                            snapshot.data!;
-
-                        final containerSeccion1Row =
-                            containerSeccion1RowList.isNotEmpty
-                                ? containerSeccion1RowList.first
-                                : null;
-
-                        return Container(
-                          width: 350.0,
-                          height: 1000.0,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                          ),
-                          child: Column(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Padding(
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 0.0, 16.0, 0.0),
+                                child: Container(
+                                  width: double.infinity,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    boxShadow: const [
+                                      BoxShadow(
+                                        blurRadius: 7.0,
+                                        color: Color(0x2F1D2429),
+                                        offset: Offset(
+                                          0.0,
+                                          3.0,
+                                        ),
+                                      )
+                                    ],
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  child: Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 16.0, 0.0),
-                                    child: Container(
-                                      width: double.infinity,
-                                      decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        boxShadow: const [
-                                          BoxShadow(
-                                            blurRadius: 7.0,
-                                            color: Color(0x2F1D2429),
-                                            offset: Offset(
-                                              0.0,
-                                              3.0,
-                                            ),
-                                          )
-                                        ],
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                      child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 12.0, 16.0, 12.0),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              'Entrevista al NNyA',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily:
-                                                        'Plus Jakarta Sans',
-                                                    color: const Color(0xFF39D2C0),
-                                                    fontSize: 14.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                            ),
-                                            const Divider(
-                                              height: 16.0,
-                                              thickness: 2.0,
-                                              color: Color(0xFFF1F4F8),
-                                            ),
-                                            Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  'Redes',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyLarge
-                                                      .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
-                                                        color:
-                                                            const Color(0xFF14181B),
-                                                        fontSize: 16.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      ),
-                                                ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 4.0, 0.0, 0.0),
-                                                  child: Text(
-                                                    valueOrDefault<String>(
-                                                      formulario5PaginaPaginaFormulario2y3Row
-                                                          ?.redesFormulario2,
-                                                      'Redes',
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Plus Jakarta Sans',
-                                                          color:
-                                                              const Color(0xFF57636C),
-                                                          fontSize: 14.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  'Redes Drop',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyLarge
-                                                      .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
-                                                        color:
-                                                            const Color(0xFF14181B),
-                                                        fontSize: 16.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      ),
-                                                ),
-                                                Builder(
-                                                  builder: (context) {
-                                                    final drop =
-                                                        formulario5PaginaPaginaFormulario2y3Row
-                                                                ?.redesdropFormulario2
-                                                                .toList() ??
-                                                            [];
-
-                                                    return Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: List.generate(
-                                                          drop.length,
-                                                          (dropIndex) {
-                                                        final dropItem =
-                                                            drop[dropIndex];
-                                                        return Padding(
-                                                          padding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      4.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          child: Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              dropItem,
-                                                              'Drop',
-                                                            ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Plus Jakarta Sans',
-                                                                  color: const Color(
-                                                                      0xFF57636C),
-                                                                  fontSize:
-                                                                      14.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
-                                                                ),
-                                                          ),
-                                                        );
-                                                      }),
-                                                    );
-                                                  },
-                                                ),
-                                              ],
-                                            ),
-                                            Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  'Estrategias',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyLarge
-                                                      .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
-                                                        color:
-                                                            const Color(0xFF14181B),
-                                                        fontSize: 16.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      ),
-                                                ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 4.0, 0.0, 0.0),
-                                                  child: Text(
-                                                    valueOrDefault<String>(
-                                                      formulario5PaginaPaginaFormulario2y3Row
-                                                          ?.estrategiasFormulario2,
-                                                      'Estrateias',
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Plus Jakarta Sans',
-                                                          color:
-                                                              const Color(0xFF57636C),
-                                                          fontSize: 14.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  'Descripción',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyLarge
-                                                      .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
-                                                        color:
-                                                            const Color(0xFF14181B),
-                                                        fontSize: 16.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      ),
-                                                ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 4.0, 0.0, 0.0),
-                                                  child: Text(
-                                                    valueOrDefault<String>(
-                                                      formulario5PaginaPaginaFormulario2y3Row
-                                                          ?.descripcionFormulario2,
-                                                      'Descripcion',
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Plus Jakarta Sans',
-                                                          color:
-                                                              const Color(0xFF57636C),
-                                                          fontSize: 14.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  'Profesionales',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyLarge
-                                                      .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
-                                                        color:
-                                                            const Color(0xFF14181B),
-                                                        fontSize: 16.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      ),
-                                                ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 4.0, 0.0, 0.0),
-                                                  child: Text(
-                                                    valueOrDefault<String>(
-                                                      formulario5PaginaPaginaFormulario2y3Row
-                                                          ?.profesionalesFormulario2,
-                                                      'Profesionales',
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Plus Jakarta Sans',
-                                                          color:
-                                                              const Color(0xFF57636C),
-                                                          fontSize: 14.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            FFButtonWidget(
-                                              onPressed: () {
-                                                print('Button pressed ...');
-                                              },
-                                              text: 'ir a entrevista',
-                                              options: FFButtonOptions(
-                                                height: 40.0,
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        16.0, 0.0, 16.0, 0.0),
-                                                iconPadding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily: 'Raleway',
-                                                          color: Colors.white,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                elevation: 0.0,
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
+                                        16.0, 12.0, 16.0, 12.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Entrevista al NNyA',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Plus Jakarta Sans',
+                                                color: const Color(0xFF39D2C0),
+                                                fontSize: 14.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                        ),
+                                        const Divider(
+                                          height: 16.0,
+                                          thickness: 2.0,
+                                          color: Color(0xFFF1F4F8),
+                                        ),
+                                        Container(
+                                          width: 287.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                          ),
+                                          child: FutureBuilder<
+                                              List<Formulario3Row>>(
+                                            future:
+                                                Formulario3Table().queryRows(
+                                              queryFn: (q) => q.eqOrNull(
+                                                'idIngreso',
+                                                widget.idingreso,
                                               ),
                                             ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 16.0, 0.0),
-                                    child: Container(
-                                      width: double.infinity,
-                                      decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        boxShadow: const [
-                                          BoxShadow(
-                                            blurRadius: 7.0,
-                                            color: Color(0x2F1D2429),
-                                            offset: Offset(
-                                              0.0,
-                                              3.0,
-                                            ),
-                                          )
-                                        ],
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                      child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 12.0, 16.0, 12.0),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              'Entrevista a la familia',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily:
-                                                        'Plus Jakarta Sans',
-                                                    color: const Color(0xFF39D2C0),
-                                                    fontSize: 14.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                            ),
-                                            const Divider(
-                                              height: 16.0,
-                                              thickness: 2.0,
-                                              color: Color(0xFFF1F4F8),
-                                            ),
-                                            Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  'Redes',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyLarge
-                                                      .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
-                                                        color:
-                                                            const Color(0xFF14181B),
-                                                        fontSize: 16.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
+                                            builder: (context, snapshot) {
+                                              // Customize what your widget looks like when it's loading.
+                                              if (!snapshot.hasData) {
+                                                return Center(
+                                                  child: SizedBox(
+                                                    width: 50.0,
+                                                    height: 50.0,
+                                                    child:
+                                                        CircularProgressIndicator(
+                                                      valueColor:
+                                                          AlwaysStoppedAnimation<
+                                                              Color>(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primary,
                                                       ),
-                                                ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 4.0, 0.0, 0.0),
-                                                  child: Text(
-                                                    valueOrDefault<String>(
-                                                      formulario5PaginaPaginaFormulario2y3Row
-                                                          ?.redesFormulario3,
-                                                      'Redes',
                                                     ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Plus Jakarta Sans',
-                                                          color:
-                                                              const Color(0xFF57636C),
-                                                          fontSize: 14.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
                                                   ),
-                                                ),
-                                              ],
-                                            ),
-                                            Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  'Redes Drop',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyLarge
-                                                      .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
-                                                        color:
-                                                            const Color(0xFF14181B),
-                                                        fontSize: 16.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      ),
-                                                ),
-                                                Builder(
-                                                  builder: (context) {
-                                                    final drop2 =
-                                                        formulario5PaginaPaginaFormulario2y3Row
-                                                                ?.redesdropFormulario3
-                                                                .toList() ??
-                                                            [];
+                                                );
+                                              }
+                                              List<Formulario3Row>
+                                                  listViewFormulario3RowList =
+                                                  snapshot.data!;
 
-                                                    return Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: List.generate(
-                                                          drop2.length,
-                                                          (drop2Index) {
-                                                        final drop2Item =
-                                                            drop2[drop2Index];
-                                                        return Padding(
-                                                          padding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      4.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          child: Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              drop2Item,
-                                                              'Redes Drop',
+                                              return ListView.builder(
+                                                padding: EdgeInsets.zero,
+                                                shrinkWrap: true,
+                                                scrollDirection: Axis.vertical,
+                                                itemCount:
+                                                    listViewFormulario3RowList
+                                                        .length,
+                                                itemBuilder:
+                                                    (context, listViewIndex) {
+                                                  final listViewFormulario3Row =
+                                                      listViewFormulario3RowList[
+                                                          listViewIndex];
+                                                  return Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(5.0, 0.0,
+                                                                5.0, 0.0),
+                                                    child: Container(
+                                                      width: double.infinity,
+                                                      decoration: BoxDecoration(
+                                                        color: Colors.white,
+                                                        boxShadow: const [
+                                                          BoxShadow(
+                                                            blurRadius: 7.0,
+                                                            color: Color(
+                                                                0x2F1D2429),
+                                                            offset: Offset(
+                                                              0.0,
+                                                              3.0,
                                                             ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Plus Jakarta Sans',
-                                                                  color: const Color(
-                                                                      0xFF57636C),
-                                                                  fontSize:
-                                                                      14.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
+                                                          )
+                                                        ],
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                      ),
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    16.0,
+                                                                    12.0,
+                                                                    16.0,
+                                                                    12.0),
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                dateTimeFormat(
+                                                                  "d/M/y",
+                                                                  listViewFormulario3Row
+                                                                      .fecha,
+                                                                  locale: FFLocalizations.of(
+                                                                          context)
+                                                                      .languageCode,
                                                                 ),
-                                                          ),
-                                                        );
-                                                      }),
-                                                    );
-                                                  },
-                                                ),
-                                              ],
-                                            ),
-                                            Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  'Descripción',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyLarge
-                                                      .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
-                                                        color:
-                                                            const Color(0xFF14181B),
-                                                        fontSize: 16.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
+                                                                '0',
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Plus Jakarta Sans',
+                                                                    color: const Color(
+                                                                        0xFF39D2C0),
+                                                                    fontSize:
+                                                                        14.0,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                  ),
+                                                            ),
+                                                            const Divider(
+                                                              height: 16.0,
+                                                              thickness: 2.0,
+                                                              color: Color(
+                                                                  0xFFF1F4F8),
+                                                            ),
+                                                            Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                listViewFormulario3Row
+                                                                    .objetivosdeentrevista,
+                                                                'objetivos',
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyLarge
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Plus Jakarta Sans',
+                                                                    color: const Color(
+                                                                        0xFF14181B),
+                                                                    fontSize:
+                                                                        16.0,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                  ),
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          4.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              child: Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  listViewFormulario3Row
+                                                                      .valoracionSugerencias,
+                                                                  'Valoraciones y sugerencias',
+                                                                ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Plus Jakarta Sans',
+                                                                      color: const Color(
+                                                                          0xFF57636C),
+                                                                      fontSize:
+                                                                          14.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w500,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                            Align(
+                                                              alignment:
+                                                                  const AlignmentDirectional(
+                                                                      1.0, 1.0),
+                                                              child:
+                                                                  FFButtonWidget(
+                                                                onPressed:
+                                                                    () async {
+                                                                  await showModalBottomSheet(
+                                                                    isScrollControlled:
+                                                                        true,
+                                                                    backgroundColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    enableDrag:
+                                                                        false,
+                                                                    context:
+                                                                        context,
+                                                                    builder:
+                                                                        (context) {
+                                                                      return GestureDetector(
+                                                                        onTap:
+                                                                            () {
+                                                                          FocusScope.of(context)
+                                                                              .unfocus();
+                                                                          FocusManager
+                                                                              .instance
+                                                                              .primaryFocus
+                                                                              ?.unfocus();
+                                                                        },
+                                                                        child:
+                                                                            Padding(
+                                                                          padding:
+                                                                              MediaQuery.viewInsetsOf(context),
+                                                                          child:
+                                                                              Formulario3Widget(
+                                                                            idingreso:
+                                                                                widget.rowingreso,
+                                                                            rowexp:
+                                                                                widget.rowexpediente,
+                                                                            identrevista:
+                                                                                listViewFormulario3Row.idForm3,
+                                                                            editar:
+                                                                                true,
+                                                                            usuariosrow:
+                                                                                widget.usuariorow!,
+                                                                          ),
+                                                                        ),
+                                                                      );
+                                                                    },
+                                                                  ).then((value) =>
+                                                                      safeSetState(
+                                                                          () {}));
+                                                                },
+                                                                text:
+                                                                    'Ver entrevista',
+                                                                options:
+                                                                    FFButtonOptions(
+                                                                  height: 30.0,
+                                                                  padding: const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          16.0,
+                                                                          0.0,
+                                                                          16.0,
+                                                                          0.0),
+                                                                  iconPadding: const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                  textStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Noto Sans JP',
+                                                                        color: Colors
+                                                                            .white,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
+                                                                  elevation:
+                                                                      0.0,
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              8.0),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ].divide(const SizedBox(
+                                                              height: 5.0)),
+                                                        ),
                                                       ),
-                                                ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 4.0, 0.0, 0.0),
-                                                  child: Text(
-                                                    valueOrDefault<String>(
-                                                      formulario5PaginaPaginaFormulario2y3Row
-                                                          ?.descripcionFormulario3,
-                                                      'Descripcion',
                                                     ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Plus Jakarta Sans',
-                                                          color:
-                                                              const Color(0xFF57636C),
-                                                          fontSize: 14.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  'Otras Actividades',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyLarge
-                                                      .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
-                                                        color:
-                                                            const Color(0xFF14181B),
-                                                        fontSize: 16.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      ),
-                                                ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 4.0, 0.0, 0.0),
-                                                  child: Text(
-                                                    valueOrDefault<String>(
-                                                      formulario5PaginaPaginaFormulario2y3Row
-                                                          ?.otrasactFormulario3,
-                                                      'otras Act',
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Plus Jakarta Sans',
-                                                          color:
-                                                              const Color(0xFF57636C),
-                                                          fontSize: 14.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  'Profecionales',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyLarge
-                                                      .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
-                                                        color:
-                                                            const Color(0xFF14181B),
-                                                        fontSize: 16.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      ),
-                                                ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 4.0, 0.0, 0.0),
-                                                  child: Text(
-                                                    valueOrDefault<String>(
-                                                      formulario5PaginaPaginaFormulario2y3Row
-                                                          ?.profesionalesFormulario3,
-                                                      'Profesionales',
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Plus Jakarta Sans',
-                                                          color:
-                                                              const Color(0xFF57636C),
-                                                          fontSize: 14.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            FFButtonWidget(
-                                              onPressed: () {
-                                                print('Button pressed ...');
-                                              },
-                                              text: 'ir a entrevista',
-                                              options: FFButtonOptions(
-                                                height: 40.0,
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        16.0, 0.0, 16.0, 0.0),
-                                                iconPadding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily: 'Raleway',
-                                                          color: Colors.white,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                elevation: 0.0,
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                            ),
-                                          ],
+                                                  );
+                                                },
+                                              );
+                                            },
+                                          ),
                                         ),
-                                      ),
+                                      ],
                                     ),
                                   ),
-                                ]
-                                    .divide(const SizedBox(height: 10.0))
-                                    .around(const SizedBox(height: 10.0)),
+                                ),
                               ),
-                            ],
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 0.0, 16.0, 0.0),
+                                child: Container(
+                                  width: double.infinity,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    boxShadow: const [
+                                      BoxShadow(
+                                        blurRadius: 7.0,
+                                        color: Color(0x2F1D2429),
+                                        offset: Offset(
+                                          0.0,
+                                          3.0,
+                                        ),
+                                      )
+                                    ],
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 12.0, 16.0, 12.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Entrevista a la familia',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Plus Jakarta Sans',
+                                                color: const Color(0xFF39D2C0),
+                                                fontSize: 14.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                        ),
+                                        const Divider(
+                                          height: 16.0,
+                                          thickness: 2.0,
+                                          color: Color(0xFFF1F4F8),
+                                        ),
+                                        Container(
+                                          width: 287.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                          ),
+                                          child: FutureBuilder<
+                                              List<Formulario2Row>>(
+                                            future:
+                                                Formulario2Table().queryRows(
+                                              queryFn: (q) => q.eqOrNull(
+                                                'idIngreso',
+                                                widget.idingreso,
+                                              ),
+                                            ),
+                                            builder: (context, snapshot) {
+                                              // Customize what your widget looks like when it's loading.
+                                              if (!snapshot.hasData) {
+                                                return Center(
+                                                  child: SizedBox(
+                                                    width: 50.0,
+                                                    height: 50.0,
+                                                    child:
+                                                        CircularProgressIndicator(
+                                                      valueColor:
+                                                          AlwaysStoppedAnimation<
+                                                              Color>(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primary,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                );
+                                              }
+                                              List<Formulario2Row>
+                                                  listViewFormulario2RowList =
+                                                  snapshot.data!;
+
+                                              return ListView.builder(
+                                                padding: EdgeInsets.zero,
+                                                shrinkWrap: true,
+                                                scrollDirection: Axis.vertical,
+                                                itemCount:
+                                                    listViewFormulario2RowList
+                                                        .length,
+                                                itemBuilder:
+                                                    (context, listViewIndex) {
+                                                  final listViewFormulario2Row =
+                                                      listViewFormulario2RowList[
+                                                          listViewIndex];
+                                                  return Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(5.0, 0.0,
+                                                                5.0, 0.0),
+                                                    child: Container(
+                                                      width: double.infinity,
+                                                      decoration: BoxDecoration(
+                                                        color: Colors.white,
+                                                        boxShadow: const [
+                                                          BoxShadow(
+                                                            blurRadius: 7.0,
+                                                            color: Color(
+                                                                0x2F1D2429),
+                                                            offset: Offset(
+                                                              0.0,
+                                                              3.0,
+                                                            ),
+                                                          )
+                                                        ],
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                      ),
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    16.0,
+                                                                    12.0,
+                                                                    16.0,
+                                                                    12.0),
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                dateTimeFormat(
+                                                                  "d/M/y",
+                                                                  listViewFormulario2Row
+                                                                      .fecha,
+                                                                  locale: FFLocalizations.of(
+                                                                          context)
+                                                                      .languageCode,
+                                                                ),
+                                                                'No tiene fecha',
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Plus Jakarta Sans',
+                                                                    color: const Color(
+                                                                        0xFF39D2C0),
+                                                                    fontSize:
+                                                                        14.0,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                  ),
+                                                            ),
+                                                            const Divider(
+                                                              height: 16.0,
+                                                              thickness: 2.0,
+                                                              color: Color(
+                                                                  0xFFF1F4F8),
+                                                            ),
+                                                            Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                listViewFormulario2Row
+                                                                    .objetivoEnt,
+                                                                'Objetivos',
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyLarge
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Plus Jakarta Sans',
+                                                                    color: const Color(
+                                                                        0xFF14181B),
+                                                                    fontSize:
+                                                                        16.0,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                  ),
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          4.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              child: Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  listViewFormulario2Row
+                                                                      .observaciones,
+                                                                  'No tiene',
+                                                                ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Plus Jakarta Sans',
+                                                                      color: const Color(
+                                                                          0xFF57636C),
+                                                                      fontSize:
+                                                                          14.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w500,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                            Align(
+                                                              alignment:
+                                                                  const AlignmentDirectional(
+                                                                      1.0, 1.0),
+                                                              child:
+                                                                  FFButtonWidget(
+                                                                onPressed:
+                                                                    () async {
+                                                                  await showModalBottomSheet(
+                                                                    isScrollControlled:
+                                                                        true,
+                                                                    backgroundColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    enableDrag:
+                                                                        false,
+                                                                    context:
+                                                                        context,
+                                                                    builder:
+                                                                        (context) {
+                                                                      return GestureDetector(
+                                                                        onTap:
+                                                                            () {
+                                                                          FocusScope.of(context)
+                                                                              .unfocus();
+                                                                          FocusManager
+                                                                              .instance
+                                                                              .primaryFocus
+                                                                              ?.unfocus();
+                                                                        },
+                                                                        child:
+                                                                            Padding(
+                                                                          padding:
+                                                                              MediaQuery.viewInsetsOf(context),
+                                                                          child:
+                                                                              Formulario2Widget(
+                                                                            idingreso:
+                                                                                widget.rowingreso!,
+                                                                            rowexp:
+                                                                                widget.rowexpediente!,
+                                                                            identrevista:
+                                                                                listViewFormulario2Row.idForm2,
+                                                                            editar:
+                                                                                true,
+                                                                            usuariorow:
+                                                                                widget.usuariorow!,
+                                                                          ),
+                                                                        ),
+                                                                      );
+                                                                    },
+                                                                  ).then((value) =>
+                                                                      safeSetState(
+                                                                          () {}));
+                                                                },
+                                                                text:
+                                                                    'Ver entrevista',
+                                                                options:
+                                                                    FFButtonOptions(
+                                                                  height: 30.0,
+                                                                  padding: const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          16.0,
+                                                                          0.0,
+                                                                          16.0,
+                                                                          0.0),
+                                                                  iconPadding: const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                  textStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Noto Sans JP',
+                                                                        color: Colors
+                                                                            .white,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
+                                                                  elevation:
+                                                                      0.0,
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              8.0),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ].divide(const SizedBox(
+                                                              height: 5.0)),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  );
+                                                },
+                                              );
+                                            },
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ]
+                                .divide(const SizedBox(height: 10.0))
+                                .around(const SizedBox(height: 10.0)),
                           ),
-                        );
-                      },
+                        ],
+                      ),
                     ),
                   ),
                   Align(
@@ -975,9 +926,9 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                             borderRadius: BorderRadius.circular(20.0),
                           ),
                           child: Container(
-                            width: MediaQuery.sizeOf(context).width * 1.0,
+                            width: MediaQuery.sizeOf(context).width * 0.7,
                             constraints: const BoxConstraints(
-                              maxWidth: 600.0,
+                              maxWidth: 700.0,
                             ),
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
@@ -1228,7 +1179,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                               .labelLarge
                                                               .override(
                                                                 fontFamily:
-                                                                    'Raleway',
+                                                                    'Noto Sans JP',
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -1281,6 +1232,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                                               true,
                                                                           dniok:
                                                                               false,
+                                                                          usuariorow:
+                                                                              widget.usuariorow!,
                                                                         ),
                                                                       ),
                                                                     );
@@ -1315,7 +1268,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                                     .titleSmall
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Raleway',
+                                                                          'Noto Sans JP',
                                                                       color: Colors
                                                                           .white,
                                                                       letterSpacing:
@@ -1365,6 +1318,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                                             widget.rowingreso!,
                                                                         rowexp:
                                                                             widget.rowexpediente!,
+                                                                        usuariorow:
+                                                                            widget.usuariorow!,
                                                                       ),
                                                                     ),
                                                                   );
@@ -1401,7 +1356,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                                       .titleSmall
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Raleway',
+                                                                            'Noto Sans JP',
                                                                         color: Colors
                                                                             .white,
                                                                         letterSpacing:
@@ -1639,7 +1594,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                                           .titleSmall
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Raleway',
+                                                                                'Noto Sans JP',
                                                                             color:
                                                                                 Colors.white,
                                                                             letterSpacing:
@@ -1769,7 +1724,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                                           .titleSmall
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Raleway',
+                                                                                'Noto Sans JP',
                                                                             color:
                                                                                 Colors.white,
                                                                             letterSpacing:
@@ -1832,7 +1787,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                           context)
                                                       .headlineSmall
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1867,7 +1823,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Raleway',
+                                                                      'Noto Sans JP',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -1903,7 +1859,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                                       .headlineLarge
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Raleway',
+                                                                            'Noto Sans JP',
                                                                         fontSize:
                                                                             32.0,
                                                                         letterSpacing:
@@ -1990,7 +1946,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                                 .titleSmall
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Raleway',
+                                                                      'Noto Sans JP',
                                                                   color: Colors
                                                                       .white,
                                                                   letterSpacing:
@@ -2033,14 +1989,16 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     hintStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     enabledBorder:
@@ -2100,7 +2058,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                                   maxLines: 3,
@@ -2115,7 +2074,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .titleMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),
@@ -2220,7 +2180,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                                             .rowingreso
                                                                             ?.id,
                                                                         form:
-                                                                            'Form5',
+                                                                            'Informe sintesis',
                                                                       ),
                                                                     ),
                                                                   );
@@ -2273,7 +2233,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                                       .titleSmall
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Raleway',
+                                                                            'Noto Sans JP',
                                                                         color: Colors
                                                                             .white,
                                                                         letterSpacing:
@@ -2315,15 +2275,21 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                                       softWrap:
                                                                           true,
                                                                       child:
-                                                                          Text(
-                                                                        'Derecho',
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .labelLarge
-                                                                            .override(
-                                                                              fontFamily: 'Raleway',
-                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              letterSpacing: 0.0,
-                                                                            ),
+                                                                          Align(
+                                                                        alignment: const AlignmentDirectional(
+                                                                            0.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Text(
+                                                                          'Derecho',
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .override(
+                                                                                fontFamily: 'Noto Sans JP',
+                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                        ),
                                                                       ),
                                                                     ),
                                                                   ),
@@ -2333,15 +2299,21 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                                       softWrap:
                                                                           true,
                                                                       child:
-                                                                          Text(
-                                                                        'Sub categoria',
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .labelLarge
-                                                                            .override(
-                                                                              fontFamily: 'Raleway',
-                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              letterSpacing: 0.0,
-                                                                            ),
+                                                                          Align(
+                                                                        alignment: const AlignmentDirectional(
+                                                                            0.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Text(
+                                                                          'Sub categoria',
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .override(
+                                                                                fontFamily: 'Noto Sans JP',
+                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                        ),
                                                                       ),
                                                                     ),
                                                                   ),
@@ -2361,7 +2333,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .labelLarge
                                                                               .override(
-                                                                                fontFamily: 'Raleway',
+                                                                                fontFamily: 'Noto Sans JP',
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                 letterSpacing: 0.0,
                                                                               ),
@@ -2375,15 +2347,71 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                                       softWrap:
                                                                           true,
                                                                       child:
-                                                                          Text(
-                                                                        'Formulario',
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .labelLarge
-                                                                            .override(
-                                                                              fontFamily: 'Raleway',
-                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              letterSpacing: 0.0,
-                                                                            ),
+                                                                          Align(
+                                                                        alignment: const AlignmentDirectional(
+                                                                            0.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Text(
+                                                                          'Formulario',
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .override(
+                                                                                fontFamily: 'Noto Sans JP',
+                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  DataColumn2(
+                                                                    label: DefaultTextStyle
+                                                                        .merge(
+                                                                      softWrap:
+                                                                          true,
+                                                                      child:
+                                                                          Align(
+                                                                        alignment: const AlignmentDirectional(
+                                                                            0.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Text(
+                                                                          'Eliminar',
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .override(
+                                                                                fontFamily: 'Noto Sans JP',
+                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                    fixedWidth:
+                                                                        50.0,
+                                                                  ),
+                                                                  DataColumn2(
+                                                                    label: DefaultTextStyle
+                                                                        .merge(
+                                                                      softWrap:
+                                                                          true,
+                                                                      child:
+                                                                          Align(
+                                                                        alignment: const AlignmentDirectional(
+                                                                            0.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Text(
+                                                                          'Validadar',
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .override(
+                                                                                fontFamily: 'Noto Sans JP',
+                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                        ),
                                                                       ),
                                                                     ),
                                                                   ),
@@ -2417,7 +2445,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Raleway',
+                                                                                'Noto Sans JP',
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
@@ -2434,7 +2462,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Raleway',
+                                                                                'Noto Sans JP',
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
@@ -2472,7 +2500,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                                                 '0',
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Raleway',
+                                                                                    fontFamily: 'Noto Sans JP',
                                                                                     letterSpacing: 0.0,
                                                                                   ),
                                                                             ),
@@ -2480,22 +2508,136 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                    Text(
-                                                                      valueOrDefault<
-                                                                          String>(
-                                                                        listadederchosItem
-                                                                            .formulario,
-                                                                        '0',
+                                                                    Align(
+                                                                      alignment:
+                                                                          const AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
+                                                                      child:
+                                                                          Text(
+                                                                        valueOrDefault<
+                                                                            String>(
+                                                                          listadederchosItem
+                                                                              .formulario,
+                                                                          '0',
+                                                                        ),
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: 'Noto Sans JP',
+                                                                              letterSpacing: 0.0,
+                                                                            ),
                                                                       ),
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Raleway',
-                                                                            letterSpacing:
-                                                                                0.0,
+                                                                    ),
+                                                                    Align(
+                                                                      alignment:
+                                                                          const AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
+                                                                      child:
+                                                                          FlutterFlowIconButton(
+                                                                        borderRadius:
+                                                                            8.0,
+                                                                        buttonSize:
+                                                                            40.0,
+                                                                        icon:
+                                                                            Icon(
+                                                                          Icons
+                                                                              .delete_rounded,
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).error,
+                                                                          size:
+                                                                              24.0,
+                                                                        ),
+                                                                        onPressed:
+                                                                            () async {
+                                                                          var confirmDialogResponse = await showDialog<bool>(
+                                                                                context: context,
+                                                                                builder: (alertDialogContext) {
+                                                                                  return AlertDialog(
+                                                                                    title: const Text('Borrar Derecho Vulnerado'),
+                                                                                    content: const Text('Estas por eliminar un derecho vulnerado. Estas seguro de hacerlo?'),
+                                                                                    actions: [
+                                                                                      TextButton(
+                                                                                        onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                        child: const Text('Cancelar'),
+                                                                                      ),
+                                                                                      TextButton(
+                                                                                        onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                        child: const Text('Confirmar'),
+                                                                                      ),
+                                                                                    ],
+                                                                                  );
+                                                                                },
+                                                                              ) ??
+                                                                              false;
+                                                                          if (confirmDialogResponse) {
+                                                                            await ListaDerechosVulneradosexpedienteTable().delete(
+                                                                              matchingRows: (rows) => rows.eqOrNull(
+                                                                                'id',
+                                                                                listadederchosItem.id,
+                                                                              ),
+                                                                            );
+                                                                          }
+                                                                        },
+                                                                      ),
+                                                                    ),
+                                                                    Align(
+                                                                      alignment:
+                                                                          const AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
+                                                                      child:
+                                                                          Theme(
+                                                                        data:
+                                                                            ThemeData(
+                                                                          checkboxTheme:
+                                                                              CheckboxThemeData(
+                                                                            visualDensity:
+                                                                                VisualDensity.compact,
+                                                                            materialTapTargetSize:
+                                                                                MaterialTapTargetSize.shrinkWrap,
+                                                                            shape:
+                                                                                RoundedRectangleBorder(
+                                                                              borderRadius: BorderRadius.circular(4.0),
+                                                                            ),
                                                                           ),
+                                                                          unselectedWidgetColor:
+                                                                              FlutterFlowTheme.of(context).alternate,
+                                                                        ),
+                                                                        child:
+                                                                            Checkbox(
+                                                                          value: _model.checkboxValueMap[listadederchosItem] ??=
+                                                                              listadederchosItem.validoinforme!,
+                                                                          onChanged:
+                                                                              (newValue) async {
+                                                                            safeSetState(() =>
+                                                                                _model.checkboxValueMap[listadederchosItem] = newValue!);
+                                                                            if (newValue!) {
+                                                                              await ListaDerechosVulneradosexpedienteTable().update(
+                                                                                data: {
+                                                                                  'validoinforme': _model.checkboxValueMap[listadederchosItem],
+                                                                                },
+                                                                                matchingRows: (rows) => rows.eqOrNull(
+                                                                                  'id',
+                                                                                  listadederchosItem.id,
+                                                                                ),
+                                                                              );
+                                                                            }
+                                                                          },
+                                                                          side:
+                                                                              BorderSide(
+                                                                            width:
+                                                                                2,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).alternate,
+                                                                          ),
+                                                                          activeColor:
+                                                                              FlutterFlowTheme.of(context).primary,
+                                                                          checkColor:
+                                                                              FlutterFlowTheme.of(context).info,
+                                                                        ),
+                                                                      ),
                                                                     ),
                                                                   ]
                                                                       .map((c) =>
@@ -2571,7 +2713,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     alignLabelWithHint: true,
@@ -2579,7 +2722,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     enabledBorder:
@@ -2639,7 +2783,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                                   maxLines: 10,
@@ -2672,7 +2817,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     alignLabelWithHint: true,
@@ -2682,7 +2828,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     enabledBorder:
@@ -2742,7 +2889,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                                   maxLines: 10,
@@ -2762,7 +2910,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -2789,22 +2938,24 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                   obscureText: false,
                                                   decoration: InputDecoration(
                                                     labelText:
-                                                        'Sintesis de las mismas  vinculadas al caso',
+                                                        'Sintesis de las mismas',
                                                     labelStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     alignLabelWithHint: true,
                                                     hintText:
-                                                        'Sintesis de las mismas  vinculadasal caso',
+                                                        'Sintesis de las mismas',
                                                     hintStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     enabledBorder:
@@ -2864,7 +3015,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                                   maxLines: 10,
@@ -2880,7 +3032,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .titleMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),
@@ -2907,7 +3060,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     alignLabelWithHint: true,
@@ -2915,7 +3069,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     enabledBorder:
@@ -2975,7 +3130,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                                   maxLines: 10,
@@ -2986,12 +3142,13 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                 ),
                                               ),
                                               Text(
-                                                '3. Actores referentes para articulación comunitaria',
+                                                '3. Informacion para articulacion  comunitaria',
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .titleMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),
@@ -3037,13 +3194,15 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                   ],
                                                   width: 580.0,
                                                   height: 56.0,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Noto Sans JP',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   hintText:
                                                       'Actores referentes',
                                                   icon: Icon(
@@ -3095,13 +3254,13 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                   autofocus: true,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
-                                                    labelText:
-                                                        'Información obtenida de las entrevistas',
+                                                    labelText: 'Observaciones',
                                                     labelStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     alignLabelWithHint: true,
@@ -3109,7 +3268,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     enabledBorder:
@@ -3169,7 +3329,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                                   maxLines: 10,
@@ -3185,165 +3346,10 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .titleMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
-                                              ),
-                                              FutureBuilder<List<Seccion7Row>>(
-                                                future: Seccion7Table()
-                                                    .querySingleRow(
-                                                  queryFn: (q) => q.eqOrNull(
-                                                    'idIngreso',
-                                                    widget.idingreso,
-                                                  ),
-                                                ),
-                                                builder: (context, snapshot) {
-                                                  // Customize what your widget looks like when it's loading.
-                                                  if (!snapshot.hasData) {
-                                                    return Center(
-                                                      child: SizedBox(
-                                                        width: 50.0,
-                                                        height: 50.0,
-                                                        child:
-                                                            CircularProgressIndicator(
-                                                          valueColor:
-                                                              AlwaysStoppedAnimation<
-                                                                  Color>(
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    );
-                                                  }
-                                                  List<Seccion7Row>
-                                                      containerSeccion7RowList =
-                                                      snapshot.data!;
-
-                                                  final containerSeccion7Row =
-                                                      containerSeccion7RowList
-                                                              .isNotEmpty
-                                                          ? containerSeccion7RowList
-                                                              .first
-                                                          : null;
-
-                                                  return Container(
-                                                    decoration: const BoxDecoration(),
-                                                    child: Builder(
-                                                      builder: (context) {
-                                                        final listacriterios =
-                                                            containerSeccion7Row
-                                                                    ?.criterios
-                                                                    .toList() ??
-                                                                [];
-
-                                                        return ListView.builder(
-                                                          padding:
-                                                              EdgeInsets.zero,
-                                                          shrinkWrap: true,
-                                                          scrollDirection:
-                                                              Axis.vertical,
-                                                          itemCount:
-                                                              listacriterios
-                                                                  .length,
-                                                          itemBuilder: (context,
-                                                              listacriteriosIndex) {
-                                                            final listacriteriosItem =
-                                                                listacriterios[
-                                                                    listacriteriosIndex];
-                                                            return Padding(
-                                                              padding:
-                                                                  const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          20.0,
-                                                                          12.0,
-                                                                          20.0,
-                                                                          0.0),
-                                                              child: Container(
-                                                                width: double
-                                                                    .infinity,
-                                                                height: 40.0,
-                                                                decoration:
-                                                                    BoxDecoration(
-                                                                  color: Colors
-                                                                      .white,
-                                                                  boxShadow: const [
-                                                                    BoxShadow(
-                                                                      blurRadius:
-                                                                          5.0,
-                                                                      color: Color(
-                                                                          0x3416202A),
-                                                                      offset:
-                                                                          Offset(
-                                                                        0.0,
-                                                                        2.0,
-                                                                      ),
-                                                                    )
-                                                                  ],
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              12.0),
-                                                                  shape: BoxShape
-                                                                      .rectangle,
-                                                                  border: Border
-                                                                      .all(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .error,
-                                                                  ),
-                                                                ),
-                                                                child: Padding(
-                                                                  padding:
-                                                                      const EdgeInsets
-                                                                          .all(
-                                                                              8.0),
-                                                                  child: Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    children: [
-                                                                      Icon(
-                                                                        Icons
-                                                                            .info_outlined,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .error,
-                                                                        size:
-                                                                            24.0,
-                                                                      ),
-                                                                      Expanded(
-                                                                        child:
-                                                                            Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                              12.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Text(
-                                                                            listacriteriosItem,
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Plus Jakarta Sans',
-                                                                                  color: const Color(0xFF14181B),
-                                                                                  fontSize: 14.0,
-                                                                                  letterSpacing: 0.0,
-                                                                                  fontWeight: FontWeight.w500,
-                                                                                ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            );
-                                                          },
-                                                        );
-                                                      },
-                                                    ),
-                                                  );
-                                                },
                                               ),
                                               Padding(
                                                 padding: const EdgeInsetsDirectional
@@ -3362,26 +3368,48 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                         [],
                                                   )),
                                                   options: const [
-                                                    'Recién nacidos y Niños de 0 a 3 años.',
+                                                    'No tiene criterios de priorizacion',
                                                     'Riesgo de vida.',
                                                     'Sospecha de violencia sexual contra NNYA.',
                                                     'Evidencia física relacionada a la vulneración de la integridad  personal.',
                                                     'Cronicidad del maltrato y lesiones graves en el NNyA.',
                                                     'Agresor/a del NNY A conviviente.',
                                                     'Presencia de consumo problemático de sustancias o problemas  severos de salud mental de adultos responsables del NnyA.',
-                                                    'Inexistencia de figuras adultas capaces de proteger al NNYA o con  limitaciones físicas o intelectuales que impiden al cuidador/a de  hacerse cargo del mismo/a.'
+                                                    'Inexistencia de figuras adultas capaces de proteger al NNYA o con  limitaciones físicas o intelectuales que impiden al cuidador/a de  hacerse cargo del mismo/a.',
+                                                    'Recién nacidos y Niños de 0 a 3 años.'
                                                   ],
                                                   width: 580.0,
                                                   height: 56.0,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  searchHintTextStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Noto Sans JP',
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                  searchTextStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Noto Sans JP',
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Noto Sans JP',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   hintText:
                                                       'Criterios de priorización',
+                                                  searchHintText: 'Buscar',
                                                   icon: Icon(
                                                     Icons
                                                         .keyboard_arrow_down_rounded,
@@ -3406,7 +3434,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                           16.0, 4.0, 16.0, 4.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
-                                                  isSearchable: false,
+                                                  isSearchable: true,
                                                   isMultiSelect: true,
                                                   onMultiSelectChanged: (val) =>
                                                       safeSetState(() => _model
@@ -3532,7 +3560,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),
@@ -3558,7 +3587,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     alignLabelWithHint: true,
@@ -3568,7 +3598,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     enabledBorder:
@@ -3628,7 +3659,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                                   maxLines: 10,
@@ -3644,7 +3676,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .titleMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),
@@ -3671,7 +3704,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     alignLabelWithHint: true,
@@ -3681,7 +3715,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     enabledBorder:
@@ -3741,7 +3776,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                                   maxLines: 10,
@@ -3783,173 +3819,288 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                             }
                                                             if (!widget
                                                                 .edit!) {
-                                                              await Formulario5Table()
-                                                                  .insert({
-                                                                'fecha': supaSerialize<
-                                                                    DateTime>(_model
-                                                                        .datePicked ?? getCurrentTimestamp),
-                                                                'profesionales':
-                                                                    _model
-                                                                        .textFieldprofesionalesTextController
+                                                              await Future
+                                                                  .wait([
+                                                                Future(
+                                                                    () async {
+                                                                  await Formulario5Table()
+                                                                      .insert({
+                                                                    'fecha': supaSerialize<
+                                                                        DateTime>(_model
+                                                                            .datePicked ?? getCurrentTimestamp),
+                                                                    'profesionales':
+                                                                        _model
+                                                                            .textFieldprofesionalesTextController
+                                                                            .text,
+                                                                    'antecedentes':
+                                                                        _model
+                                                                            .textFieldantecedentesTextController
+                                                                            .text,
+                                                                    'indicadores':
+                                                                        _model
+                                                                            .textFieldinddevulneracionTextController
+                                                                            .text,
+                                                                    'info1': _model
+                                                                        .textController5
                                                                         .text,
-                                                                'antecedentes':
-                                                                    _model
-                                                                        .textFieldantecedentesTextController
+                                                                    'info2': _model
+                                                                        .textController6
                                                                         .text,
-                                                                'indicadores':
-                                                                    _model
-                                                                        .textFieldinddevulneracionTextController
-                                                                        .text,
-                                                                'info1': _model
-                                                                    .textController5
-                                                                    .text,
-                                                                'info2': _model
-                                                                    .textController6
-                                                                    .text,
-                                                                'idIngreso':
-                                                                    widget
-                                                                        .rowingreso
-                                                                        ?.id,
-                                                                'idExpediente':
-                                                                    widget
-                                                                        .rowexpediente
-                                                                        ?.id,
-                                                                'responsables':
-                                                                    _model
-                                                                        .textFieldresponsablesTextController
-                                                                        .text,
-                                                                'criteriopriorizaciondrop':
-                                                                    _model
-                                                                        .dropDownpriorizacionValue,
-                                                                'actoresdrop':
-                                                                    _model
-                                                                        .dropDownactoresValue,
-                                                                'Valoracion Integral':
-                                                                    _model
-                                                                        .textFieldvaloracionIntegralTextController
-                                                                        .text,
-                                                                'PropuestaMedida':
-                                                                    _model
-                                                                        .textFieldPropuestasparamedidasdeProteccionIntegralTextController
-                                                                        .text,
-                                                                'iduser':
-                                                                    currentUserUid,
-                                                              });
-                                                              await IngresosTable()
-                                                                  .update(
-                                                                data: {
-                                                                  'form6': true,
-                                                                  'form5completo':
-                                                                      true,
-                                                                },
-                                                                matchingRows:
-                                                                    (rows) =>
-                                                                        rows,
-                                                              );
-                                                              await showDialog(
-                                                                context:
-                                                                    context,
-                                                                builder:
-                                                                    (alertDialogContext) {
-                                                                  return AlertDialog(
-                                                                    title: const Text(
-                                                                        'Carga correcta'),
-                                                                    content: const Text(
-                                                                        'La informacion se guardo correctamente!!'),
-                                                                    actions: [
-                                                                      TextButton(
-                                                                        onPressed:
-                                                                            () =>
-                                                                                Navigator.pop(alertDialogContext),
-                                                                        child: const Text(
-                                                                            'Ok'),
-                                                                      ),
-                                                                    ],
+                                                                    'idIngreso':
+                                                                        widget
+                                                                            .rowingreso
+                                                                            ?.id,
+                                                                    'idExpediente':
+                                                                        widget
+                                                                            .rowexpediente
+                                                                            ?.id,
+                                                                    'responsables':
+                                                                        _model
+                                                                            .textFieldresponsablesTextController
+                                                                            .text,
+                                                                    'criteriopriorizaciondrop':
+                                                                        _model
+                                                                            .dropDownpriorizacionValue,
+                                                                    'actoresdrop':
+                                                                        _model
+                                                                            .dropDownactoresValue,
+                                                                    'Valoracion Integral':
+                                                                        _model
+                                                                            .textFieldvaloracionIntegralTextController
+                                                                            .text,
+                                                                    'PropuestaMedida':
+                                                                        _model
+                                                                            .textFieldPropuestasparamedidasdeProteccionIntegralTextController
+                                                                            .text,
+                                                                    'iduser':
+                                                                        currentUserUid,
+                                                                  });
+                                                                  await IngresosTable()
+                                                                      .update(
+                                                                    data: {
+                                                                      'form6':
+                                                                          true,
+                                                                      'form5completo':
+                                                                          true,
+                                                                    },
+                                                                    matchingRows:
+                                                                        (rows) =>
+                                                                            rows,
                                                                   );
-                                                                },
-                                                              );
-                                                              Navigator.pop(
-                                                                  context);
+                                                                  await showDialog(
+                                                                    context:
+                                                                        context,
+                                                                    builder:
+                                                                        (alertDialogContext) {
+                                                                      return AlertDialog(
+                                                                        title: const Text(
+                                                                            'Carga correcta'),
+                                                                        content:
+                                                                            const Text('La informacion se guardo correctamente!!'),
+                                                                        actions: [
+                                                                          TextButton(
+                                                                            onPressed: () =>
+                                                                                Navigator.pop(alertDialogContext),
+                                                                            child:
+                                                                                const Text('Ok'),
+                                                                          ),
+                                                                        ],
+                                                                      );
+                                                                    },
+                                                                  );
+                                                                  Navigator.pop(
+                                                                      context);
+                                                                }),
+                                                                Future(
+                                                                    () async {
+                                                                  await Formulario5HistorialTable()
+                                                                      .insert({
+                                                                    'fecha': supaSerialize<
+                                                                        DateTime>(_model
+                                                                            .datePicked ?? getCurrentTimestamp),
+                                                                    'profesionales':
+                                                                        _model
+                                                                            .textFieldprofesionalesTextController
+                                                                            .text,
+                                                                    'antecedentes':
+                                                                        _model
+                                                                            .textFieldantecedentesTextController
+                                                                            .text,
+                                                                    'indicadores':
+                                                                        _model
+                                                                            .textFieldinddevulneracionTextController
+                                                                            .text,
+                                                                    'info1': _model
+                                                                        .textController5
+                                                                        .text,
+                                                                    'info2': _model
+                                                                        .textController6
+                                                                        .text,
+                                                                    'idIngreso':
+                                                                        widget
+                                                                            .rowingreso
+                                                                            ?.id,
+                                                                    'idExpediente':
+                                                                        widget
+                                                                            .rowexpediente
+                                                                            ?.id,
+                                                                    'responsables':
+                                                                        _model
+                                                                            .textFieldresponsablesTextController
+                                                                            .text,
+                                                                    'criteriopriorizaciondrop':
+                                                                        _model
+                                                                            .dropDownpriorizacionValue,
+                                                                    'actoresdrop':
+                                                                        _model
+                                                                            .dropDownactoresValue,
+                                                                    'Valoracion Integral':
+                                                                        _model
+                                                                            .textFieldvaloracionIntegralTextController
+                                                                            .text,
+                                                                    'PropuestaMedida':
+                                                                        _model
+                                                                            .textFieldPropuestasparamedidasdeProteccionIntegralTextController
+                                                                            .text,
+                                                                    'iduser':
+                                                                        currentUserUid,
+                                                                  });
+                                                                }),
+                                                              ]);
                                                             } else {
-                                                              await Formulario5Table()
-                                                                  .update(
-                                                                data: {
-                                                                  'fecha': supaSerialize<
-                                                                      DateTime>(_model
-                                                                          .datePicked ?? containerFormulario5Row
-                                                                          ?.fecha),
-                                                                  'profesionales':
-                                                                      _model
+                                                              await Future
+                                                                  .wait([
+                                                                Future(
+                                                                    () async {
+                                                                  await Formulario5Table()
+                                                                      .update(
+                                                                    data: {
+                                                                      'fecha': supaSerialize<
+                                                                          DateTime>(_model
+                                                                              .datePicked ?? containerFormulario5Row
+                                                                              ?.fecha),
+                                                                      'profesionales': _model
                                                                           .textFieldprofesionalesTextController
                                                                           .text,
-                                                                  'antecedentes':
-                                                                      _model
+                                                                      'antecedentes': _model
                                                                           .textFieldantecedentesTextController
                                                                           .text,
-                                                                  'indicadores':
-                                                                      _model
+                                                                      'indicadores': _model
                                                                           .textFieldinddevulneracionTextController
                                                                           .text,
-                                                                  'info1': _model
-                                                                      .textController5
-                                                                      .text,
-                                                                  'info2': _model
-                                                                      .textController6
-                                                                      .text,
-                                                                  'responsables':
-                                                                      _model
+                                                                      'info1': _model
+                                                                          .textController5
+                                                                          .text,
+                                                                      'info2': _model
+                                                                          .textController6
+                                                                          .text,
+                                                                      'responsables': _model
                                                                           .textFieldresponsablesTextController
                                                                           .text,
-                                                                  'criteriopriorizaciondrop':
-                                                                      _model
-                                                                          .dropDownpriorizacionValue,
-                                                                  'actoresdrop':
-                                                                      _model
-                                                                          .dropDownactoresValue,
-                                                                  'Valoracion Integral':
-                                                                      _model
+                                                                      'criteriopriorizaciondrop':
+                                                                          _model
+                                                                              .dropDownpriorizacionValue,
+                                                                      'actoresdrop':
+                                                                          _model
+                                                                              .dropDownactoresValue,
+                                                                      'Valoracion Integral': _model
                                                                           .textFieldvaloracionIntegralTextController
                                                                           .text,
-                                                                  'PropuestaMedida':
-                                                                      _model
+                                                                      'PropuestaMedida': _model
                                                                           .textFieldantecedentesTextController
                                                                           .text,
-                                                                  'iduser':
-                                                                      currentUserUid,
-                                                                },
-                                                                matchingRows:
-                                                                    (rows) => rows
-                                                                        .eqOrNull(
-                                                                  'idIngreso',
-                                                                  widget
-                                                                      .rowingreso
-                                                                      ?.id,
-                                                                ),
-                                                              );
-                                                              await showDialog(
-                                                                context:
-                                                                    context,
-                                                                builder:
-                                                                    (alertDialogContext) {
-                                                                  return AlertDialog(
-                                                                    title: const Text(
-                                                                        'Carga correcta'),
-                                                                    content: const Text(
-                                                                        'La informacion se guardo correctamente!!'),
-                                                                    actions: [
-                                                                      TextButton(
-                                                                        onPressed:
-                                                                            () =>
-                                                                                Navigator.pop(alertDialogContext),
-                                                                        child: const Text(
-                                                                            'Ok'),
-                                                                      ),
-                                                                    ],
+                                                                      'iduser':
+                                                                          currentUserUid,
+                                                                    },
+                                                                    matchingRows:
+                                                                        (rows) =>
+                                                                            rows.eqOrNull(
+                                                                      'idIngreso',
+                                                                      widget
+                                                                          .rowingreso
+                                                                          ?.id,
+                                                                    ),
                                                                   );
-                                                                },
-                                                              );
-                                                              Navigator.pop(
-                                                                  context);
+                                                                  await showDialog(
+                                                                    context:
+                                                                        context,
+                                                                    builder:
+                                                                        (alertDialogContext) {
+                                                                      return AlertDialog(
+                                                                        title: const Text(
+                                                                            'Carga correcta'),
+                                                                        content:
+                                                                            const Text('La informacion se guardo correctamente!!'),
+                                                                        actions: [
+                                                                          TextButton(
+                                                                            onPressed: () =>
+                                                                                Navigator.pop(alertDialogContext),
+                                                                            child:
+                                                                                const Text('Ok'),
+                                                                          ),
+                                                                        ],
+                                                                      );
+                                                                    },
+                                                                  );
+                                                                  Navigator.pop(
+                                                                      context);
+                                                                }),
+                                                                Future(
+                                                                    () async {
+                                                                  await Formulario5HistorialTable()
+                                                                      .insert({
+                                                                    'fecha': supaSerialize<
+                                                                        DateTime>(_model
+                                                                            .datePicked ?? getCurrentTimestamp),
+                                                                    'profesionales':
+                                                                        _model
+                                                                            .textFieldprofesionalesTextController
+                                                                            .text,
+                                                                    'antecedentes':
+                                                                        _model
+                                                                            .textFieldantecedentesTextController
+                                                                            .text,
+                                                                    'indicadores':
+                                                                        _model
+                                                                            .textFieldinddevulneracionTextController
+                                                                            .text,
+                                                                    'info1': _model
+                                                                        .textController5
+                                                                        .text,
+                                                                    'info2': _model
+                                                                        .textController6
+                                                                        .text,
+                                                                    'idIngreso':
+                                                                        widget
+                                                                            .rowingreso
+                                                                            ?.id,
+                                                                    'idExpediente':
+                                                                        widget
+                                                                            .rowexpediente
+                                                                            ?.id,
+                                                                    'responsables':
+                                                                        _model
+                                                                            .textFieldresponsablesTextController
+                                                                            .text,
+                                                                    'criteriopriorizaciondrop':
+                                                                        _model
+                                                                            .dropDownpriorizacionValue,
+                                                                    'actoresdrop':
+                                                                        _model
+                                                                            .dropDownactoresValue,
+                                                                    'Valoracion Integral':
+                                                                        _model
+                                                                            .textFieldvaloracionIntegralTextController
+                                                                            .text,
+                                                                    'PropuestaMedida':
+                                                                        _model
+                                                                            .textFieldPropuestasparamedidasdeProteccionIntegralTextController
+                                                                            .text,
+                                                                    'iduser':
+                                                                        currentUserUid,
+                                                                  });
+                                                                }),
+                                                              ]);
                                                             }
 
                                                             context.pushNamed(
@@ -3966,6 +4117,13 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                                     serializeParam(
                                                                   widget
                                                                       .rowexpediente,
+                                                                  ParamType
+                                                                      .SupabaseRow,
+                                                                ),
+                                                                'usuariorow':
+                                                                    serializeParam(
+                                                                  widget
+                                                                      .usuariorow,
                                                                   ParamType
                                                                       .SupabaseRow,
                                                                 ),
@@ -4004,7 +4162,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                                                     .titleSmall
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Raleway',
+                                                                          'Noto Sans JP',
                                                                       color: Colors
                                                                           .white,
                                                                       letterSpacing:
@@ -4080,449 +4238,673 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget>
                                 : null;
 
                         return Container(
-                          width: 350.0,
+                          width: MediaQuery.sizeOf(context).width * 0.25,
                           height: 1000.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
                           ),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 16.0, 0.0),
-                                child: Container(
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        blurRadius: 7.0,
-                                        color: Color(0x2F1D2429),
-                                        offset: Offset(
-                                          0.0,
-                                          3.0,
-                                        ),
-                                      )
-                                    ],
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 12.0, 16.0, 12.0),
-                                    child: SingleChildScrollView(
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            'Recepcion de la demanda',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily:
-                                                      'Plus Jakarta Sans',
-                                                  color: const Color(0xFF39D2C0),
-                                                  fontSize: 14.0,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
+                          child: SingleChildScrollView(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 0.0, 16.0, 0.0),
+                                  child: Container(
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      boxShadow: const [
+                                        BoxShadow(
+                                          blurRadius: 7.0,
+                                          color: Color(0x2F1D2429),
+                                          offset: Offset(
+                                            0.0,
+                                            3.0,
                                           ),
-                                          const Divider(
-                                            height: 16.0,
-                                            thickness: 2.0,
-                                            color: Color(0xFFF1F4F8),
-                                          ),
-                                          Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                'Seccion 1',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge
-                                                        .override(
-                                                          fontFamily:
-                                                              'Plus Jakarta Sans',
-                                                          color:
-                                                              const Color(0xFF14181B),
-                                                          fontSize: 16.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                              ),
-                                              Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 4.0, 0.0, 0.0),
-                                                child: Text(
-                                                  valueOrDefault<String>(
-                                                    containerVistaRecepciondelademandaRow
-                                                        ?.nivelAlcanzado,
-                                                    '0',
+                                        )
+                                      ],
+                                      borderRadius: BorderRadius.circular(8.0),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 12.0, 16.0, 12.0),
+                                      child: SingleChildScrollView(
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'Recepcion de la demanda',
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily:
+                                                        'Plus Jakarta Sans',
+                                                    color: const Color(0xFF39D2C0),
+                                                    fontSize: 14.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w500,
                                                   ),
+                                            ),
+                                            const Divider(
+                                              height: 16.0,
+                                              thickness: 2.0,
+                                              color: Color(0xFFF1F4F8),
+                                            ),
+                                            Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'Seccion 1',
                                                   style: FlutterFlowTheme.of(
                                                           context)
-                                                      .labelMedium
+                                                      .bodyLarge
                                                       .override(
                                                         fontFamily:
                                                             'Plus Jakarta Sans',
                                                         color:
-                                                            const Color(0xFF57636C),
-                                                        fontSize: 14.0,
+                                                            const Color(0xFF14181B),
+                                                        fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w500,
                                                       ),
                                                 ),
-                                              ),
-                                              Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 4.0, 0.0, 0.0),
-                                                child: Text(
-                                                  'Trabaja: ${containerVistaRecepciondelademandaRow?.trabaja}',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
-                                                        color:
-                                                            const Color(0xFF57636C),
-                                                        fontSize: 14.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                          Divider(
-                                            thickness: 2.0,
-                                            color: FlutterFlowTheme.of(context)
-                                                .alternate,
-                                          ),
-                                          Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                'Seccion 2',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge
-                                                        .override(
-                                                          fontFamily:
-                                                              'Plus Jakarta Sans',
-                                                          color:
-                                                              const Color(0xFF14181B),
-                                                          fontSize: 16.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                              ),
-                                              Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 4.0, 0.0, 0.0),
-                                                child: Text(
-                                                  'Nombre y apellido: ${valueOrDefault<String>(
-                                                    containerVistaRecepciondelademandaRow
-                                                        ?.solicitanteSeccion2,
-                                                    '0',
-                                                  )}',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
-                                                        color:
-                                                            const Color(0xFF57636C),
-                                                        fontSize: 14.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      ),
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 4.0, 0.0, 0.0),
-                                                child: Text(
-                                                  'Direccion: ${valueOrDefault<String>(
-                                                    containerVistaRecepciondelademandaRow
-                                                        ?.direccionSeccion2,
-                                                    '0',
-                                                  )}',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
-                                                        color:
-                                                            const Color(0xFF57636C),
-                                                        fontSize: 14.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      ),
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 4.0, 0.0, 0.0),
-                                                child: Text(
-                                                  'Vinculo: ${valueOrDefault<String>(
-                                                    containerVistaRecepciondelademandaRow
-                                                        ?.vinculoSeccion2,
-                                                    '0',
-                                                  )}',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
-                                                        color:
-                                                            const Color(0xFF57636C),
-                                                        fontSize: 14.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                          Divider(
-                                            thickness: 2.0,
-                                            color: FlutterFlowTheme.of(context)
-                                                .alternate,
-                                          ),
-                                          Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                'Seccion 5',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge
-                                                        .override(
-                                                          fontFamily:
-                                                              'Plus Jakarta Sans',
-                                                          color:
-                                                              const Color(0xFF14181B),
-                                                          fontSize: 16.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                              ),
-                                              Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 4.0, 0.0, 0.0),
-                                                child: Text(
-                                                  'Motivo: ${valueOrDefault<String>(
-                                                    containerVistaRecepciondelademandaRow
-                                                        ?.motivo,
-                                                    '0',
-                                                  )}',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
-                                                        color:
-                                                            const Color(0xFF57636C),
-                                                        fontSize: 14.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      ),
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 4.0, 0.0, 0.0),
-                                                child: Text(
-                                                  'Reseña: ${valueOrDefault<String>(
-                                                    containerVistaRecepciondelademandaRow
-                                                        ?.resena,
-                                                    '0',
-                                                  )}',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
-                                                        color:
-                                                            const Color(0xFF57636C),
-                                                        fontSize: 14.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                          Divider(
-                                            thickness: 2.0,
-                                            color: FlutterFlowTheme.of(context)
-                                                .alternate,
-                                          ),
-                                          Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                'Seccion 7',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge
-                                                        .override(
-                                                          fontFamily:
-                                                              'Plus Jakarta Sans',
-                                                          color:
-                                                              const Color(0xFF14181B),
-                                                          fontSize: 16.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                              ),
-                                              Builder(
-                                                builder: (context) {
-                                                  final listacriterios =
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 4.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    valueOrDefault<String>(
                                                       containerVistaRecepciondelademandaRow
-                                                              ?.criteriosSeccion7
-                                                              .toList() ??
-                                                          [];
-
-                                                  return Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: List.generate(
-                                                        listacriterios.length,
-                                                        (listacriteriosIndex) {
-                                                      final listacriteriosItem =
-                                                          listacriterios[
-                                                              listacriteriosIndex];
-                                                      return Padding(
-                                                        padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    4.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        child: Text(
-                                                          listacriteriosItem,
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Plus Jakarta Sans',
-                                                                color: const Color(
-                                                                    0xFF57636C),
-                                                                fontSize: 14.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                              ),
-                                                        ),
-                                                      );
-                                                    }),
-                                                  );
-                                                },
-                                              ),
-                                            ],
-                                          ),
-                                          Divider(
-                                            thickness: 2.0,
-                                            color: FlutterFlowTheme.of(context)
-                                                .alternate,
-                                          ),
-                                          Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                'Seccion 9',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge
+                                                          ?.nivelAlcanzado,
+                                                      '0',
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelMedium
                                                         .override(
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              const Color(0xFF14181B),
-                                                          fontSize: 16.0,
+                                                              const Color(0xFF57636C),
+                                                          fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
-                                              ),
-                                              Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 4.0, 0.0, 0.0),
-                                                child: Text(
-                                                  'Desiocion: ${valueOrDefault<String>(
-                                                    containerVistaRecepciondelademandaRow
-                                                        ?.desicionSeccion9,
-                                                    '0',
-                                                  )}',
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 4.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    'Trabaja: ${containerVistaRecepciondelademandaRow?.trabaja}',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          color:
+                                                              const Color(0xFF57636C),
+                                                          fontSize: 14.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                            Divider(
+                                              thickness: 2.0,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
+                                            ),
+                                            Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'Seccion 2',
                                                   style: FlutterFlowTheme.of(
                                                           context)
-                                                      .labelMedium
+                                                      .bodyLarge
                                                       .override(
                                                         fontFamily:
                                                             'Plus Jakarta Sans',
                                                         color:
-                                                            const Color(0xFF57636C),
-                                                        fontSize: 14.0,
+                                                            const Color(0xFF14181B),
+                                                        fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w500,
                                                       ),
                                                 ),
-                                              ),
-                                            ],
-                                          ),
-                                        ],
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 4.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    'Nombre y apellido: ${valueOrDefault<String>(
+                                                      containerVistaRecepciondelademandaRow
+                                                          ?.solicitanteSeccion2,
+                                                      '0',
+                                                    )}',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          color:
+                                                              const Color(0xFF57636C),
+                                                          fontSize: 14.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 4.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    'Direccion: ${valueOrDefault<String>(
+                                                      containerVistaRecepciondelademandaRow
+                                                          ?.direccionSeccion2,
+                                                      '0',
+                                                    )}',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          color:
+                                                              const Color(0xFF57636C),
+                                                          fontSize: 14.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 4.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    'Vinculo: ${valueOrDefault<String>(
+                                                      containerVistaRecepciondelademandaRow
+                                                          ?.vinculoSeccion2,
+                                                      '0',
+                                                    )}',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          color:
+                                                              const Color(0xFF57636C),
+                                                          fontSize: 14.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                            Divider(
+                                              thickness: 2.0,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
+                                            ),
+                                            Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'Seccion 5',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyLarge
+                                                      .override(
+                                                        fontFamily:
+                                                            'Plus Jakarta Sans',
+                                                        color:
+                                                            const Color(0xFF14181B),
+                                                        fontSize: 16.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 4.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    'Motivo: ${valueOrDefault<String>(
+                                                      containerVistaRecepciondelademandaRow
+                                                          ?.motivo,
+                                                      '0',
+                                                    )}',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          color:
+                                                              const Color(0xFF57636C),
+                                                          fontSize: 14.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 4.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    'Reseña: ${valueOrDefault<String>(
+                                                      containerVistaRecepciondelademandaRow
+                                                          ?.resena,
+                                                      '0',
+                                                    )}',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          color:
+                                                              const Color(0xFF57636C),
+                                                          fontSize: 14.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                            Divider(
+                                              thickness: 2.0,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
+                                            ),
+                                            Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'Seccion 7',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyLarge
+                                                      .override(
+                                                        fontFamily:
+                                                            'Plus Jakarta Sans',
+                                                        color:
+                                                            const Color(0xFF14181B),
+                                                        fontSize: 16.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                                ),
+                                                Builder(
+                                                  builder: (context) {
+                                                    final listacriterios =
+                                                        containerVistaRecepciondelademandaRow
+                                                                ?.criteriosSeccion7
+                                                                .toList() ??
+                                                            [];
+
+                                                    return Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: List.generate(
+                                                          listacriterios.length,
+                                                          (listacriteriosIndex) {
+                                                        final listacriteriosItem =
+                                                            listacriterios[
+                                                                listacriteriosIndex];
+                                                        return Padding(
+                                                          padding:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      4.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child: Text(
+                                                            listacriteriosItem,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .labelMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Plus Jakarta Sans',
+                                                                  color: const Color(
+                                                                      0xFF57636C),
+                                                                  fontSize:
+                                                                      14.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                          ),
+                                                        );
+                                                      }),
+                                                    );
+                                                  },
+                                                ),
+                                              ],
+                                            ),
+                                            Divider(
+                                              thickness: 2.0,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
+                                            ),
+                                            Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'Seccion 9',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyLarge
+                                                      .override(
+                                                        fontFamily:
+                                                            'Plus Jakarta Sans',
+                                                        color:
+                                                            const Color(0xFF14181B),
+                                                        fontSize: 16.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 4.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    'Desiocion: ${valueOrDefault<String>(
+                                                      containerVistaRecepciondelademandaRow
+                                                          ?.desicionSeccion9,
+                                                      '0',
+                                                    )}',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          color:
+                                                              const Color(0xFF57636C),
+                                                          fontSize: 14.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ]
-                                .divide(const SizedBox(height: 10.0))
-                                .around(const SizedBox(height: 10.0)),
+                                wrapWithModel(
+                                  model: _model.anexosbotoneraModel,
+                                  updateCallback: () => safeSetState(() {}),
+                                  child: AnexosbotoneraWidget(
+                                    idingreso: widget.idingreso!,
+                                    reqacciones: true,
+                                    anexoeducacion: true,
+                                    reunioninter: true,
+                                    anexosalud: true,
+                                    entrevistannya: true,
+                                    entrevistaflia: true,
+                                    ampliacion: true,
+                                    ingresorow: widget.rowingreso,
+                                    exorow: widget.rowexpediente!,
+                                    usuariosrow: widget.usuariorow!,
+                                  ),
+                                ),
+                                Text(
+                                  'Historial de Informes',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Noto Sans JP',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                                Container(
+                                  width: 333.0,
+                                  height: 333.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                  ),
+                                  child: FutureBuilder<
+                                      List<Formulario5HistorialRow>>(
+                                    future:
+                                        Formulario5HistorialTable().queryRows(
+                                      queryFn: (q) => q.eqOrNull(
+                                        'idIngreso',
+                                        widget.idingreso,
+                                      ),
+                                    ),
+                                    builder: (context, snapshot) {
+                                      // Customize what your widget looks like when it's loading.
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: SizedBox(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            child: CircularProgressIndicator(
+                                              valueColor:
+                                                  AlwaysStoppedAnimation<Color>(
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                              ),
+                                            ),
+                                          ),
+                                        );
+                                      }
+                                      List<Formulario5HistorialRow>
+                                          listViewFormulario5HistorialRowList =
+                                          snapshot.data!;
+
+                                      return ListView.builder(
+                                        padding: EdgeInsets.zero,
+                                        shrinkWrap: true,
+                                        scrollDirection: Axis.vertical,
+                                        itemCount:
+                                            listViewFormulario5HistorialRowList
+                                                .length,
+                                        itemBuilder: (context, listViewIndex) {
+                                          final listViewFormulario5HistorialRow =
+                                              listViewFormulario5HistorialRowList[
+                                                  listViewIndex];
+                                          return Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    16.0, 0.0, 16.0, 16.0),
+                                            child: Container(
+                                              width: double.infinity,
+                                              decoration: BoxDecoration(
+                                                color: Colors.white,
+                                                boxShadow: const [
+                                                  BoxShadow(
+                                                    blurRadius: 7.0,
+                                                    color: Color(0x2F1D2429),
+                                                    offset: Offset(
+                                                      0.0,
+                                                      3.0,
+                                                    ),
+                                                  )
+                                                ],
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              child: Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        12.0, 8.0, 12.0, 8.0),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Expanded(
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    12.0,
+                                                                    0.0,
+                                                                    8.0,
+                                                                    0.0),
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                              dateTimeFormat(
+                                                                "d/M/y",
+                                                                listViewFormulario5HistorialRow
+                                                                    .fecha!,
+                                                                locale: FFLocalizations.of(
+                                                                        context)
+                                                                    .languageCode,
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyLarge
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Plus Jakarta Sans',
+                                                                    color: const Color(
+                                                                        0xFF14181B),
+                                                                    fontSize:
+                                                                        16.0,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                  ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    FlutterFlowIconButton(
+                                                      borderColor:
+                                                          const Color(0xFFE0E3E7),
+                                                      borderRadius: 8.0,
+                                                      borderWidth: 2.0,
+                                                      buttonSize: 40.0,
+                                                      icon: const Icon(
+                                                        Icons.more_vert,
+                                                        color:
+                                                            Color(0xFF57636C),
+                                                        size: 20.0,
+                                                      ),
+                                                      onPressed: () async {
+                                                        await showModalBottomSheet(
+                                                          isScrollControlled:
+                                                              true,
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          enableDrag: false,
+                                                          context: context,
+                                                          builder: (context) {
+                                                            return GestureDetector(
+                                                              onTap: () {
+                                                                FocusScope.of(
+                                                                        context)
+                                                                    .unfocus();
+                                                                FocusManager
+                                                                    .instance
+                                                                    .primaryFocus
+                                                                    ?.unfocus();
+                                                              },
+                                                              child: Padding(
+                                                                padding: MediaQuery
+                                                                    .viewInsetsOf(
+                                                                        context),
+                                                                child:
+                                                                    Formulario5Widget(
+                                                                  idingreso: widget
+                                                                      .rowingreso,
+                                                                  rowexp: widget
+                                                                      .rowexpediente,
+                                                                  idform5historial:
+                                                                      listViewFormulario5HistorialRow
+                                                                          .idForm5,
+                                                                ),
+                                                              ),
+                                                            );
+                                                          },
+                                                        ).then((value) =>
+                                                            safeSetState(
+                                                                () {}));
+                                                      },
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          );
+                                        },
+                                      );
+                                    },
+                                  ),
+                                ),
+                              ]
+                                  .divide(const SizedBox(height: 10.0))
+                                  .around(const SizedBox(height: 10.0)),
+                            ),
                           ),
                         );
                       },

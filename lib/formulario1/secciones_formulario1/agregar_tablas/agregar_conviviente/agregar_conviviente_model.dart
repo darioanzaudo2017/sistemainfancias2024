@@ -18,6 +18,8 @@ class AgregarConvivienteModel
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();
+  // State field(s) for RadioButtoncud widget.
+  FormFieldController<String>? radioButtoncudValueController;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
   TextEditingController? textController1;
@@ -42,48 +44,33 @@ class AgregarConvivienteModel
     return null;
   }
 
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
   // State field(s) for TextFieldDni widget.
   FocusNode? textFieldDniFocusNode;
   TextEditingController? textFieldDniTextController;
   final textFieldDniMask = MaskTextInputFormatter(mask: '########');
   String? Function(BuildContext, String?)? textFieldDniTextControllerValidator;
-  String? _textFieldDniTextControllerValidator(
-      BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'Field is required';
-    }
-
-    return null;
-  }
-
   DateTime? datePicked;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode4;
-  TextEditingController? textController5;
-  final textFieldMask4 = MaskTextInputFormatter(mask: '###');
-  String? Function(BuildContext, String?)? textController5Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode5;
-  TextEditingController? textController6;
-  final textFieldMask5 = MaskTextInputFormatter(mask: '##########');
-  String? Function(BuildContext, String?)? textController6Validator;
+  FocusNode? textFieldFocusNode3;
+  TextEditingController? textController4;
+  final textFieldMask3 = MaskTextInputFormatter(mask: '###');
+  String? Function(BuildContext, String?)? textController4Validator;
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode4;
+  TextEditingController? textController5;
+  final textFieldMask4 = MaskTextInputFormatter(mask: '##########');
+  String? Function(BuildContext, String?)? textController5Validator;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode5;
+  TextEditingController? textController6;
+  String? Function(BuildContext, String?)? textController6Validator;
+  // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode6;
   TextEditingController? textController7;
   String? Function(BuildContext, String?)? textController7Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode7;
-  TextEditingController? textController8;
-  String? Function(BuildContext, String?)? textController8Validator;
-  // State field(s) for RadioButtoncud widget.
-  FormFieldController<String>? radioButtoncudValueController;
   // Stores action output result for [Custom Action - checkDNI] action in Button widget.
   bool? agregarpersonaexitosa;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
@@ -103,7 +90,6 @@ class AgregarConvivienteModel
   void initState(BuildContext context) {
     textController1Validator = _textController1Validator;
     textController2Validator = _textController2Validator;
-    textFieldDniTextControllerValidator = _textFieldDniTextControllerValidator;
   }
 
   @override
@@ -114,11 +100,11 @@ class AgregarConvivienteModel
     textFieldFocusNode2?.dispose();
     textController2?.dispose();
 
-    textFieldFocusNode3?.dispose();
-    textController3?.dispose();
-
     textFieldDniFocusNode?.dispose();
     textFieldDniTextController?.dispose();
+
+    textFieldFocusNode3?.dispose();
+    textController4?.dispose();
 
     textFieldFocusNode4?.dispose();
     textController5?.dispose();
@@ -128,9 +114,6 @@ class AgregarConvivienteModel
 
     textFieldFocusNode6?.dispose();
     textController7?.dispose();
-
-    textFieldFocusNode7?.dispose();
-    textController8?.dispose();
   }
 
   /// Additional helper methods.

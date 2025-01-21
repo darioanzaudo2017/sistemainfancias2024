@@ -1,9 +1,6 @@
 import '/backend/supabase/supabase.dart';
 import '/components/formcaratula_widget.dart';
-import '/entrevistas/anexo5requerimientoacciones/anexo5requerimientoacciones_widget.dart';
-import '/entrevistas/anexoeducacionsolicitud/anexoeducacionsolicitud_widget.dart';
-import '/entrevistas/anexoinstitucionsalud/anexoinstitucionsalud_widget.dart';
-import '/entrevistas/anexoreunioninstitucional/anexoreunioninstitucional_widget.dart';
+import '/components/otrasactividades_widget.dart';
 import '/entrevistas/aviso_visita/aviso_visita_widget.dart';
 import '/entrevistas/aviso_visitaadulto/aviso_visitaadulto_widget.dart';
 import '/entrevistas/avisoconcurrenciaadulto/avisoconcurrenciaadulto_widget.dart';
@@ -28,10 +25,12 @@ class EntrevistasWidget extends StatefulWidget {
     super.key,
     required this.ingresorow,
     required this.rowexp,
+    required this.usuariorow,
   });
 
   final int? ingresorow;
   final VistaExpedientesUltimoEstadoRow? rowexp;
+  final UsuariosRow? usuariorow;
 
   @override
   State<EntrevistasWidget> createState() => _EntrevistasWidgetState();
@@ -112,13 +111,29 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
               size: 30.0,
             ),
             onPressed: () async {
-              context.pop();
+              context.pushNamed(
+                'perfil',
+                queryParameters: {
+                  'idingreso': serializeParam(
+                    widget.ingresorow,
+                    ParamType.int,
+                  ),
+                  'rowexp': serializeParam(
+                    widget.rowexp,
+                    ParamType.SupabaseRow,
+                  ),
+                  'usuariorow': serializeParam(
+                    widget.usuariorow,
+                    ParamType.SupabaseRow,
+                  ),
+                }.withoutNulls,
+              );
             },
           ),
           title: Text(
-            'Entrevistas',
+            'Verificacion y ampliacion de informacion. Entrevistas ',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  fontFamily: 'Raleway',
+                  fontFamily: 'Noto Sans JP',
                   color: Colors.white,
                   fontSize: 22.0,
                   letterSpacing: 0.0,
@@ -423,7 +438,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                   .labelLarge
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Raleway',
+                                                                        'Noto Sans JP',
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
@@ -470,6 +485,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                               idexp: widget.rowexp?.id,
                                                                               editar: true,
                                                                               dniok: false,
+                                                                              usuariorow: widget.usuariorow!,
                                                                             ),
                                                                           ),
                                                                         );
@@ -504,7 +520,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                         .titleSmall
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Raleway',
+                                                                              'Noto Sans JP',
                                                                           color:
                                                                               Colors.white,
                                                                           letterSpacing:
@@ -553,6 +569,8 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                 containerIngresosRow!,
                                                                             rowexp:
                                                                                 widget.rowexp!,
+                                                                            usuariorow:
+                                                                                widget.usuariorow!,
                                                                           ),
                                                                         ),
                                                                       );
@@ -586,7 +604,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                       .titleSmall
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Raleway',
+                                                                            'Noto Sans JP',
                                                                         color: Colors
                                                                             .white,
                                                                         letterSpacing:
@@ -611,637 +629,6 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                           ),
                                                         ].divide(const SizedBox(
                                                             height: 5.0)),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Container(
-                                                    width: 300.0,
-                                                    decoration: BoxDecoration(
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              10.0),
-                                                    ),
-                                                    child: Align(
-                                                      alignment:
-                                                          const AlignmentDirectional(
-                                                              0.0, 0.0),
-                                                      child: Padding(
-                                                        padding:
-                                                            const EdgeInsets.all(8.0),
-                                                        child: Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.min,
-                                                          children: [
-                                                            Text(
-                                                              'Anexos',
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .titleMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Raleway',
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                  ),
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      -1.0,
-                                                                      0.0),
-                                                              child: FutureBuilder<
-                                                                  List<
-                                                                      Anexo5requerimientoaccionesRow>>(
-                                                                future: Anexo5requerimientoaccionesTable()
-                                                                    .querySingleRow(
-                                                                  queryFn: (q) =>
-                                                                      q.eqOrNull(
-                                                                    'idingreso',
-                                                                    widget
-                                                                        .ingresorow,
-                                                                  ),
-                                                                ),
-                                                                builder: (context,
-                                                                    snapshot) {
-                                                                  // Customize what your widget looks like when it's loading.
-                                                                  if (!snapshot
-                                                                      .hasData) {
-                                                                    return Center(
-                                                                      child:
-                                                                          SizedBox(
-                                                                        width:
-                                                                            50.0,
-                                                                        height:
-                                                                            50.0,
-                                                                        child:
-                                                                            CircularProgressIndicator(
-                                                                          valueColor:
-                                                                              AlwaysStoppedAnimation<Color>(
-                                                                            FlutterFlowTheme.of(context).primary,
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    );
-                                                                  }
-                                                                  List<Anexo5requerimientoaccionesRow>
-                                                                      containerAnexo5requerimientoaccionesRowList =
-                                                                      snapshot
-                                                                          .data!;
-
-                                                                  final containerAnexo5requerimientoaccionesRow = containerAnexo5requerimientoaccionesRowList
-                                                                          .isNotEmpty
-                                                                      ? containerAnexo5requerimientoaccionesRowList
-                                                                          .first
-                                                                      : null;
-
-                                                                  return Container(
-                                                                    decoration:
-                                                                        const BoxDecoration(),
-                                                                    child: Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      mainAxisAlignment:
-                                                                          MainAxisAlignment
-                                                                              .spaceBetween,
-                                                                      children: [
-                                                                        // no va aca poner si osi en el form 6
-                                                                        FFButtonWidget(
-                                                                          onPressed:
-                                                                              () async {
-                                                                            await showModalBottomSheet(
-                                                                              isScrollControlled: true,
-                                                                              backgroundColor: Colors.transparent,
-                                                                              enableDrag: false,
-                                                                              context: context,
-                                                                              builder: (context) {
-                                                                                return GestureDetector(
-                                                                                  onTap: () {
-                                                                                    FocusScope.of(context).unfocus();
-                                                                                    FocusManager.instance.primaryFocus?.unfocus();
-                                                                                  },
-                                                                                  child: Padding(
-                                                                                    padding: MediaQuery.viewInsetsOf(context),
-                                                                                    child: Anexo5requerimientoaccionesWidget(
-                                                                                      rowingreso: containerIngresosRow!,
-                                                                                      rowexp: widget.rowexp!,
-                                                                                    ),
-                                                                                  ),
-                                                                                );
-                                                                              },
-                                                                            ).then((value) =>
-                                                                                safeSetState(() {}));
-                                                                          },
-                                                                          text:
-                                                                              'Anexo 5',
-                                                                          options:
-                                                                              FFButtonOptions(
-                                                                            width:
-                                                                                200.0,
-                                                                            height:
-                                                                                40.0,
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                16.0,
-                                                                                0.0,
-                                                                                16.0,
-                                                                                0.0),
-                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            color:
-                                                                                const Color(0xFFC5BFF8),
-                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: 'Raleway',
-                                                                                  color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                  letterSpacing: 0.0,
-                                                                                ),
-                                                                            elevation:
-                                                                                0.0,
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(8.0),
-                                                                          ),
-                                                                        ),
-                                                                        if (containerAnexo5requerimientoaccionesRow?.linkdoc !=
-                                                                                null &&
-                                                                            containerAnexo5requerimientoaccionesRow?.linkdoc !=
-                                                                                '')
-                                                                          FlutterFlowIconButton(
-                                                                            borderRadius:
-                                                                                8.0,
-                                                                            buttonSize:
-                                                                                40.0,
-                                                                            fillColor:
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                            icon:
-                                                                                FaIcon(
-                                                                              FontAwesomeIcons.googleDrive,
-                                                                              color: FlutterFlowTheme.of(context).info,
-                                                                              size: 24.0,
-                                                                            ),
-                                                                            onPressed:
-                                                                                () async {
-                                                                              await launchURL(containerAnexo5requerimientoaccionesRow!.linkdoc!);
-                                                                            },
-                                                                          ),
-                                                                      ],
-                                                                    ),
-                                                                  );
-                                                                },
-                                                              ),
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      -1.0,
-                                                                      0.0),
-                                                              child: FutureBuilder<
-                                                                  List<
-                                                                      AnexoinstitucioneeducacionRow>>(
-                                                                future: AnexoinstitucioneeducacionTable()
-                                                                    .querySingleRow(
-                                                                  queryFn: (q) =>
-                                                                      q.eqOrNull(
-                                                                    'idingreso',
-                                                                    widget
-                                                                        .ingresorow,
-                                                                  ),
-                                                                ),
-                                                                builder: (context,
-                                                                    snapshot) {
-                                                                  // Customize what your widget looks like when it's loading.
-                                                                  if (!snapshot
-                                                                      .hasData) {
-                                                                    return Center(
-                                                                      child:
-                                                                          SizedBox(
-                                                                        width:
-                                                                            50.0,
-                                                                        height:
-                                                                            50.0,
-                                                                        child:
-                                                                            CircularProgressIndicator(
-                                                                          valueColor:
-                                                                              AlwaysStoppedAnimation<Color>(
-                                                                            FlutterFlowTheme.of(context).primary,
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    );
-                                                                  }
-                                                                  List<AnexoinstitucioneeducacionRow>
-                                                                      containerAnexoinstitucioneeducacionRowList =
-                                                                      snapshot
-                                                                          .data!;
-
-                                                                  final containerAnexoinstitucioneeducacionRow = containerAnexoinstitucioneeducacionRowList
-                                                                          .isNotEmpty
-                                                                      ? containerAnexoinstitucioneeducacionRowList
-                                                                          .first
-                                                                      : null;
-
-                                                                  return Container(
-                                                                    decoration:
-                                                                        const BoxDecoration(),
-                                                                    child: Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      mainAxisAlignment:
-                                                                          MainAxisAlignment
-                                                                              .spaceBetween,
-                                                                      children: [
-                                                                        FFButtonWidget(
-                                                                          onPressed:
-                                                                              () async {
-                                                                            await showModalBottomSheet(
-                                                                              isScrollControlled: true,
-                                                                              backgroundColor: Colors.transparent,
-                                                                              enableDrag: false,
-                                                                              context: context,
-                                                                              builder: (context) {
-                                                                                return GestureDetector(
-                                                                                  onTap: () {
-                                                                                    FocusScope.of(context).unfocus();
-                                                                                    FocusManager.instance.primaryFocus?.unfocus();
-                                                                                  },
-                                                                                  child: Padding(
-                                                                                    padding: MediaQuery.viewInsetsOf(context),
-                                                                                    child: AnexoeducacionsolicitudWidget(
-                                                                                      rowingreso: containerIngresosRow!,
-                                                                                      rowexp: widget.rowexp!,
-                                                                                    ),
-                                                                                  ),
-                                                                                );
-                                                                              },
-                                                                            ).then((value) =>
-                                                                                safeSetState(() {}));
-                                                                          },
-                                                                          text:
-                                                                              'Anexo educacion',
-                                                                          options:
-                                                                              FFButtonOptions(
-                                                                            width:
-                                                                                200.0,
-                                                                            height:
-                                                                                40.0,
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                16.0,
-                                                                                0.0,
-                                                                                16.0,
-                                                                                0.0),
-                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            color:
-                                                                                const Color(0xFFC5BFF8),
-                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: 'Raleway',
-                                                                                  color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                  letterSpacing: 0.0,
-                                                                                ),
-                                                                            elevation:
-                                                                                0.0,
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(8.0),
-                                                                          ),
-                                                                        ),
-                                                                        if (containerAnexoinstitucioneeducacionRow?.linkdoc !=
-                                                                                null &&
-                                                                            containerAnexoinstitucioneeducacionRow?.linkdoc !=
-                                                                                '')
-                                                                          FlutterFlowIconButton(
-                                                                            borderColor:
-                                                                                Colors.transparent,
-                                                                            borderRadius:
-                                                                                8.0,
-                                                                            buttonSize:
-                                                                                40.0,
-                                                                            fillColor:
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                            icon:
-                                                                                FaIcon(
-                                                                              FontAwesomeIcons.googleDrive,
-                                                                              color: FlutterFlowTheme.of(context).info,
-                                                                              size: 24.0,
-                                                                            ),
-                                                                            onPressed:
-                                                                                () async {
-                                                                              await launchURL(containerAnexoinstitucioneeducacionRow!.linkdoc!);
-                                                                            },
-                                                                          ),
-                                                                      ],
-                                                                    ),
-                                                                  );
-                                                                },
-                                                              ),
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      -1.0,
-                                                                      0.0),
-                                                              child: FutureBuilder<
-                                                                  List<
-                                                                      Anexo4RequerimientoaccionesRow>>(
-                                                                future: Anexo4RequerimientoaccionesTable()
-                                                                    .querySingleRow(
-                                                                  queryFn: (q) =>
-                                                                      q.eqOrNull(
-                                                                    'idingreso',
-                                                                    widget
-                                                                        .ingresorow,
-                                                                  ),
-                                                                ),
-                                                                builder: (context,
-                                                                    snapshot) {
-                                                                  // Customize what your widget looks like when it's loading.
-                                                                  if (!snapshot
-                                                                      .hasData) {
-                                                                    return Center(
-                                                                      child:
-                                                                          SizedBox(
-                                                                        width:
-                                                                            50.0,
-                                                                        height:
-                                                                            50.0,
-                                                                        child:
-                                                                            CircularProgressIndicator(
-                                                                          valueColor:
-                                                                              AlwaysStoppedAnimation<Color>(
-                                                                            FlutterFlowTheme.of(context).primary,
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    );
-                                                                  }
-                                                                  List<Anexo4RequerimientoaccionesRow>
-                                                                      containerAnexo4RequerimientoaccionesRowList =
-                                                                      snapshot
-                                                                          .data!;
-
-                                                                  final containerAnexo4RequerimientoaccionesRow = containerAnexo4RequerimientoaccionesRowList
-                                                                          .isNotEmpty
-                                                                      ? containerAnexo4RequerimientoaccionesRowList
-                                                                          .first
-                                                                      : null;
-
-                                                                  return Container(
-                                                                    decoration:
-                                                                        const BoxDecoration(),
-                                                                    child: Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      mainAxisAlignment:
-                                                                          MainAxisAlignment
-                                                                              .spaceBetween,
-                                                                      children: [
-                                                                        FFButtonWidget(
-                                                                          onPressed:
-                                                                              () async {
-                                                                            await showModalBottomSheet(
-                                                                              isScrollControlled: true,
-                                                                              backgroundColor: Colors.transparent,
-                                                                              enableDrag: false,
-                                                                              context: context,
-                                                                              builder: (context) {
-                                                                                return GestureDetector(
-                                                                                  onTap: () {
-                                                                                    FocusScope.of(context).unfocus();
-                                                                                    FocusManager.instance.primaryFocus?.unfocus();
-                                                                                  },
-                                                                                  child: Padding(
-                                                                                    padding: MediaQuery.viewInsetsOf(context),
-                                                                                    child: AnexoreunioninstitucionalWidget(
-                                                                                      rowingreso: containerIngresosRow!,
-                                                                                      rowexp: widget.rowexp!,
-                                                                                    ),
-                                                                                  ),
-                                                                                );
-                                                                              },
-                                                                            ).then((value) =>
-                                                                                safeSetState(() {}));
-                                                                          },
-                                                                          text:
-                                                                              'Anexo reunion insterinstitucional',
-                                                                          options:
-                                                                              FFButtonOptions(
-                                                                            width:
-                                                                                200.0,
-                                                                            height:
-                                                                                40.0,
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                16.0,
-                                                                                0.0,
-                                                                                16.0,
-                                                                                0.0),
-                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            color:
-                                                                                const Color(0xFFC5BFF8),
-                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: 'Raleway',
-                                                                                  color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                  fontSize: 12.0,
-                                                                                  letterSpacing: 0.0,
-                                                                                ),
-                                                                            elevation:
-                                                                                0.0,
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(8.0),
-                                                                          ),
-                                                                        ),
-                                                                        if (containerAnexo4RequerimientoaccionesRow?.linkdoc !=
-                                                                                null &&
-                                                                            containerAnexo4RequerimientoaccionesRow?.linkdoc !=
-                                                                                '')
-                                                                          FlutterFlowIconButton(
-                                                                            borderColor:
-                                                                                Colors.transparent,
-                                                                            borderRadius:
-                                                                                8.0,
-                                                                            buttonSize:
-                                                                                40.0,
-                                                                            fillColor:
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                            icon:
-                                                                                FaIcon(
-                                                                              FontAwesomeIcons.googleDrive,
-                                                                              color: FlutterFlowTheme.of(context).info,
-                                                                              size: 24.0,
-                                                                            ),
-                                                                            onPressed:
-                                                                                () async {
-                                                                              await launchURL(containerAnexo4RequerimientoaccionesRow!.linkdoc!);
-                                                                            },
-                                                                          ),
-                                                                      ],
-                                                                    ),
-                                                                  );
-                                                                },
-                                                              ),
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      -1.0,
-                                                                      0.0),
-                                                              child: FutureBuilder<
-                                                                  List<
-                                                                      AnexoinstitucionesaludRow>>(
-                                                                future: AnexoinstitucionesaludTable()
-                                                                    .querySingleRow(
-                                                                  queryFn: (q) =>
-                                                                      q.eqOrNull(
-                                                                    'idingreso',
-                                                                    widget
-                                                                        .ingresorow,
-                                                                  ),
-                                                                ),
-                                                                builder: (context,
-                                                                    snapshot) {
-                                                                  // Customize what your widget looks like when it's loading.
-                                                                  if (!snapshot
-                                                                      .hasData) {
-                                                                    return Center(
-                                                                      child:
-                                                                          SizedBox(
-                                                                        width:
-                                                                            50.0,
-                                                                        height:
-                                                                            50.0,
-                                                                        child:
-                                                                            CircularProgressIndicator(
-                                                                          valueColor:
-                                                                              AlwaysStoppedAnimation<Color>(
-                                                                            FlutterFlowTheme.of(context).primary,
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    );
-                                                                  }
-                                                                  List<AnexoinstitucionesaludRow>
-                                                                      containerAnexoinstitucionesaludRowList =
-                                                                      snapshot
-                                                                          .data!;
-
-                                                                  final containerAnexoinstitucionesaludRow = containerAnexoinstitucionesaludRowList
-                                                                          .isNotEmpty
-                                                                      ? containerAnexoinstitucionesaludRowList
-                                                                          .first
-                                                                      : null;
-
-                                                                  return Container(
-                                                                    decoration:
-                                                                        const BoxDecoration(),
-                                                                    child: Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      mainAxisAlignment:
-                                                                          MainAxisAlignment
-                                                                              .spaceBetween,
-                                                                      children: [
-                                                                        FFButtonWidget(
-                                                                          onPressed:
-                                                                              () async {
-                                                                            await showModalBottomSheet(
-                                                                              isScrollControlled: true,
-                                                                              backgroundColor: Colors.transparent,
-                                                                              enableDrag: false,
-                                                                              context: context,
-                                                                              builder: (context) {
-                                                                                return GestureDetector(
-                                                                                  onTap: () {
-                                                                                    FocusScope.of(context).unfocus();
-                                                                                    FocusManager.instance.primaryFocus?.unfocus();
-                                                                                  },
-                                                                                  child: Padding(
-                                                                                    padding: MediaQuery.viewInsetsOf(context),
-                                                                                    child: AnexoinstitucionsaludWidget(
-                                                                                      rowingreso: containerIngresosRow!,
-                                                                                      rowexp: widget.rowexp!,
-                                                                                    ),
-                                                                                  ),
-                                                                                );
-                                                                              },
-                                                                            ).then((value) =>
-                                                                                safeSetState(() {}));
-                                                                          },
-                                                                          text:
-                                                                              'Anexo Salud',
-                                                                          options:
-                                                                              FFButtonOptions(
-                                                                            width:
-                                                                                200.0,
-                                                                            height:
-                                                                                40.0,
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                16.0,
-                                                                                0.0,
-                                                                                16.0,
-                                                                                0.0),
-                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            color:
-                                                                                const Color(0xFFC5BFF8),
-                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: 'Raleway',
-                                                                                  color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                  letterSpacing: 0.0,
-                                                                                ),
-                                                                            elevation:
-                                                                                0.0,
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(8.0),
-                                                                          ),
-                                                                        ),
-                                                                        if (containerAnexoinstitucionesaludRow?.linkdoc !=
-                                                                                null &&
-                                                                            containerAnexoinstitucionesaludRow?.linkdoc !=
-                                                                                '')
-                                                                          FlutterFlowIconButton(
-                                                                            borderColor:
-                                                                                Colors.transparent,
-                                                                            borderRadius:
-                                                                                8.0,
-                                                                            buttonSize:
-                                                                                40.0,
-                                                                            fillColor:
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                            icon:
-                                                                                FaIcon(
-                                                                              FontAwesomeIcons.googleDrive,
-                                                                              color: FlutterFlowTheme.of(context).info,
-                                                                              size: 24.0,
-                                                                            ),
-                                                                            onPressed:
-                                                                                () async {
-                                                                              await launchURL(containerAnexoinstitucionesaludRow!.linkdoc!);
-                                                                            },
-                                                                          ),
-                                                                      ],
-                                                                    ),
-                                                                  );
-                                                                },
-                                                              ),
-                                                            ),
-                                                          ].divide(const SizedBox(
-                                                              height: 5.0)),
-                                                        ),
                                                       ),
                                                     ),
                                                   ),
@@ -1387,7 +774,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleLarge
                                                                             .override(
-                                                                              fontFamily: 'Raleway',
+                                                                              fontFamily: 'Noto Sans JP',
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                       ),
@@ -1436,7 +823,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                   iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                   color: const Color(0xFFC5BFF8),
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        fontFamily: 'Raleway',
+                                                                                        fontFamily: 'Noto Sans JP',
                                                                                         color: FlutterFlowTheme.of(context).secondaryText,
                                                                                         letterSpacing: 0.0,
                                                                                       ),
@@ -1471,6 +858,8 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                           idingreso: containerIngresosRow,
                                                                                           rowexp: widget.rowexp,
                                                                                           editar: false,
+                                                                                          usuariosrow: widget.usuariorow!,
+                                                                                          formulario: _model.nombrepagina,
                                                                                         ),
                                                                                       ),
                                                                                     );
@@ -1484,7 +873,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                 iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                 color: FlutterFlowTheme.of(context).primary,
                                                                                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                      fontFamily: 'Raleway',
+                                                                                      fontFamily: 'Noto Sans JP',
                                                                                       color: Colors.white,
                                                                                       letterSpacing: 0.0,
                                                                                     ),
@@ -1549,37 +938,73 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                 child: Text(
                                                                                   'Convocatoria entrevista',
                                                                                   style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                        fontFamily: 'Raleway',
+                                                                                        fontFamily: 'Noto Sans JP',
                                                                                         letterSpacing: 0.0,
                                                                                       ),
                                                                                 ),
                                                                               ),
-                                                                              Align(
-                                                                                alignment: const AlignmentDirectional(-1.0, 0.0),
-                                                                                child: Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                                                                                  child: FlutterFlowIconButton(
-                                                                                    borderRadius: 8.0,
-                                                                                    buttonSize: 40.0,
-                                                                                    fillColor: FlutterFlowTheme.of(context).primary,
-                                                                                    icon: FaIcon(
-                                                                                      FontAwesomeIcons.googleDrive,
-                                                                                      color: FlutterFlowTheme.of(context).info,
-                                                                                      size: 24.0,
-                                                                                    ),
-                                                                                    onPressed: () async {
-                                                                                      _model.link = await AvisovisitaNNyATable().queryRows(
-                                                                                        queryFn: (q) => q.eqOrNull(
-                                                                                          'idIngreso',
-                                                                                          widget.ingresorow,
-                                                                                        ),
-                                                                                      );
-                                                                                      await launchURL(_model.link!.firstOrNull!.linkdoc!);
-
-                                                                                      safeSetState(() {});
-                                                                                    },
+                                                                              FutureBuilder<List<AvisovisitaNNyARow>>(
+                                                                                future: AvisovisitaNNyATable().querySingleRow(
+                                                                                  queryFn: (q) => q.eqOrNull(
+                                                                                    'idIngreso',
+                                                                                    widget.ingresorow,
                                                                                   ),
                                                                                 ),
+                                                                                builder: (context, snapshot) {
+                                                                                  // Customize what your widget looks like when it's loading.
+                                                                                  if (!snapshot.hasData) {
+                                                                                    return Center(
+                                                                                      child: SizedBox(
+                                                                                        width: 50.0,
+                                                                                        height: 50.0,
+                                                                                        child: CircularProgressIndicator(
+                                                                                          valueColor: AlwaysStoppedAnimation<Color>(
+                                                                                            FlutterFlowTheme.of(context).primary,
+                                                                                          ),
+                                                                                        ),
+                                                                                      ),
+                                                                                    );
+                                                                                  }
+                                                                                  List<AvisovisitaNNyARow> containerdriveAvisovisitaNNyARowList = snapshot.data!;
+
+                                                                                  final containerdriveAvisovisitaNNyARow = containerdriveAvisovisitaNNyARowList.isNotEmpty ? containerdriveAvisovisitaNNyARowList.first : null;
+
+                                                                                  return Container(
+                                                                                    decoration: BoxDecoration(
+                                                                                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                    ),
+                                                                                    child: Visibility(
+                                                                                      visible: containerdriveAvisovisitaNNyARow?.id != null,
+                                                                                      child: Align(
+                                                                                        alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                        child: Padding(
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                          child: FlutterFlowIconButton(
+                                                                                            borderRadius: 8.0,
+                                                                                            buttonSize: 40.0,
+                                                                                            fillColor: FlutterFlowTheme.of(context).primary,
+                                                                                            icon: FaIcon(
+                                                                                              FontAwesomeIcons.googleDrive,
+                                                                                              color: FlutterFlowTheme.of(context).info,
+                                                                                              size: 24.0,
+                                                                                            ),
+                                                                                            onPressed: () async {
+                                                                                              _model.link = await AvisovisitaNNyATable().queryRows(
+                                                                                                queryFn: (q) => q.eqOrNull(
+                                                                                                  'idIngreso',
+                                                                                                  widget.ingresorow,
+                                                                                                ),
+                                                                                              );
+                                                                                              await launchURL(_model.link!.firstOrNull!.linkdoc!);
+
+                                                                                              safeSetState(() {});
+                                                                                            },
+                                                                                          ),
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  );
+                                                                                },
                                                                               ),
                                                                             ],
                                                                           ),
@@ -1603,7 +1028,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                         child: Text(
                                                                                           'Fecha',
                                                                                           style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                                fontFamily: 'Raleway',
+                                                                                                fontFamily: 'Noto Sans JP',
                                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                                 letterSpacing: 0.0,
                                                                                               ),
@@ -1616,7 +1041,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                         child: Text(
                                                                                           'Objetivos',
                                                                                           style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                                fontFamily: 'Raleway',
+                                                                                                fontFamily: 'Noto Sans JP',
                                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                                 letterSpacing: 0.0,
                                                                                               ),
@@ -1629,7 +1054,20 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                         child: Text(
                                                                                           'Profesional',
                                                                                           style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                                fontFamily: 'Raleway',
+                                                                                                fontFamily: 'Noto Sans JP',
+                                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                letterSpacing: 0.0,
+                                                                                              ),
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                    DataColumn2(
+                                                                                      label: DefaultTextStyle.merge(
+                                                                                        softWrap: true,
+                                                                                        child: Text(
+                                                                                          'Etapa',
+                                                                                          style: FlutterFlowTheme.of(context).labelLarge.override(
+                                                                                                fontFamily: 'Noto Sans JP',
                                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                                 letterSpacing: 0.0,
                                                                                               ),
@@ -1642,8 +1080,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                         child: Text(
                                                                                           'Acciones',
                                                                                           style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                                fontFamily: 'Raleway',
-                                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                fontFamily: 'Noto Sans JP',
                                                                                                 letterSpacing: 0.0,
                                                                                               ),
                                                                                         ),
@@ -1665,7 +1102,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                           '0',
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'Raleway',
+                                                                                              fontFamily: 'Noto Sans JP',
                                                                                               letterSpacing: 0.0,
                                                                                             ),
                                                                                       ),
@@ -1675,7 +1112,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                           '0',
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'Raleway',
+                                                                                              fontFamily: 'Noto Sans JP',
                                                                                               letterSpacing: 0.0,
                                                                                             ),
                                                                                       ),
@@ -1685,7 +1122,17 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                           '0',
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'Raleway',
+                                                                                              fontFamily: 'Noto Sans JP',
+                                                                                              letterSpacing: 0.0,
+                                                                                            ),
+                                                                                      ),
+                                                                                      Text(
+                                                                                        valueOrDefault<String>(
+                                                                                          listaentrevistasalNNyaItem.formulario,
+                                                                                          '0',
+                                                                                        ),
+                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                              fontFamily: 'Noto Sans JP',
                                                                                               letterSpacing: 0.0,
                                                                                             ),
                                                                                       ),
@@ -1714,6 +1161,8 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                                         rowexp: widget.rowexp,
                                                                                                         editar: true,
                                                                                                         identrevista: listaentrevistasalNNyaItem.idForm3,
+                                                                                                        usuariosrow: widget.usuariorow!,
+                                                                                                        formulario: 'Entrevistas y Ampliacion de informacion',
                                                                                                       ),
                                                                                                     ),
                                                                                                   );
@@ -1731,7 +1180,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                               iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                               color: const Color(0x4C4B39EF),
                                                                                               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    fontFamily: 'Raleway',
+                                                                                                    fontFamily: 'Noto Sans JP',
                                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                                     letterSpacing: 0.0,
                                                                                                     fontWeight: FontWeight.normal,
@@ -1751,7 +1200,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                               iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                               color: const Color(0x4C4B39EF),
                                                                                               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    fontFamily: 'Raleway',
+                                                                                                    fontFamily: 'Noto Sans JP',
                                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                                     letterSpacing: 0.0,
                                                                                                     fontWeight: FontWeight.normal,
@@ -1759,6 +1208,43 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                               elevation: 0.0,
                                                                                               borderRadius: BorderRadius.circular(8.0),
                                                                                             ),
+                                                                                          ),
+                                                                                          FlutterFlowIconButton(
+                                                                                            borderRadius: 8.0,
+                                                                                            buttonSize: 40.0,
+                                                                                            icon: Icon(
+                                                                                              Icons.delete_rounded,
+                                                                                              color: FlutterFlowTheme.of(context).error,
+                                                                                              size: 24.0,
+                                                                                            ),
+                                                                                            onPressed: () async {
+                                                                                              await Formulario3Table().delete(
+                                                                                                matchingRows: (rows) => rows.eqOrNull(
+                                                                                                  'idForm3',
+                                                                                                  listaentrevistasalNNyaItem.idForm3,
+                                                                                                ),
+                                                                                              );
+                                                                                              var confirmDialogResponse = await showDialog<bool>(
+                                                                                                    context: context,
+                                                                                                    builder: (alertDialogContext) {
+                                                                                                      return AlertDialog(
+                                                                                                        title: const Text('Borrar entrevista'),
+                                                                                                        content: const Text('Estas por borrar la entrevista. Estas seguro?'),
+                                                                                                        actions: [
+                                                                                                          TextButton(
+                                                                                                            onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                                            child: const Text('Cancelar'),
+                                                                                                          ),
+                                                                                                          TextButton(
+                                                                                                            onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                                            child: const Text('Confirmar'),
+                                                                                                          ),
+                                                                                                        ],
+                                                                                                      );
+                                                                                                    },
+                                                                                                  ) ??
+                                                                                                  false;
+                                                                                            },
                                                                                           ),
                                                                                         ].divide(const SizedBox(height: 3.0)),
                                                                                       ),
@@ -1769,7 +1255,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                   hidePaginator: false,
                                                                                   showFirstLastButtons: false,
                                                                                   headingRowHeight: 56.0,
-                                                                                  dataRowHeight: 65.0,
+                                                                                  dataRowHeight: 110.0,
                                                                                   columnSpacing: 20.0,
                                                                                   headingRowColor: FlutterFlowTheme.of(context).primary,
                                                                                   borderRadius: BorderRadius.circular(8.0),
@@ -1847,7 +1333,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleLarge
                                                                             .override(
-                                                                              fontFamily: 'Raleway',
+                                                                              fontFamily: 'Noto Sans JP',
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                       ),
@@ -1932,6 +1418,8 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                             rowexp: widget.rowexp!,
                                                                                             editar: false,
                                                                                             identrevista: 0,
+                                                                                            usuariorow: widget.usuariorow!,
+                                                                                            formulario: 'Entrevistas y Ampliacion de informacion',
                                                                                           ),
                                                                                         ),
                                                                                       );
@@ -1945,7 +1433,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                   iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                   color: FlutterFlowTheme.of(context).primary,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        fontFamily: 'Raleway',
+                                                                                        fontFamily: 'Noto Sans JP',
                                                                                         color: Colors.white,
                                                                                         letterSpacing: 0.0,
                                                                                       ),
@@ -1984,7 +1472,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                           child: Text(
                                                                                             'Anexos',
                                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                  fontFamily: 'Raleway',
+                                                                                                  fontFamily: 'Noto Sans JP',
                                                                                                   letterSpacing: 0.0,
                                                                                                 ),
                                                                                           ),
@@ -2023,14 +1511,14 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                                           },
                                                                                                         ).then((value) => safeSetState(() {}));
                                                                                                       },
-                                                                                                      text: 'Anexo B',
+                                                                                                      text: 'Aviso de visita',
                                                                                                       options: FFButtonOptions(
                                                                                                         height: 30.0,
                                                                                                         padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                                                                                                         iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                                         color: const Color(0xFFC5BFF8),
                                                                                                         textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                              fontFamily: 'Raleway',
+                                                                                                              fontFamily: 'Noto Sans JP',
                                                                                                               color: FlutterFlowTheme.of(context).secondaryText,
                                                                                                               fontSize: 12.0,
                                                                                                               letterSpacing: 0.0,
@@ -2089,14 +1577,14 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                                         },
                                                                                                       ).then((value) => safeSetState(() {}));
                                                                                                     },
-                                                                                                    text: 'Anexo A',
+                                                                                                    text: 'Aviso de concurrencia',
                                                                                                     options: FFButtonOptions(
                                                                                                       height: 30.0,
                                                                                                       padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                                                                                                       iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                                       color: const Color(0xFFC5BFF8),
                                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                            fontFamily: 'Raleway',
+                                                                                                            fontFamily: 'Noto Sans JP',
                                                                                                             color: FlutterFlowTheme.of(context).secondaryText,
                                                                                                             fontSize: 12.0,
                                                                                                             letterSpacing: 0.0,
@@ -2191,7 +1679,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                     child: Text(
                                                                                       'Nombres',
                                                                                       style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                            fontFamily: 'Raleway',
+                                                                                            fontFamily: 'Noto Sans JP',
                                                                                             color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                             letterSpacing: 0.0,
                                                                                           ),
@@ -2204,7 +1692,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                     child: Text(
                                                                                       'Apellidos',
                                                                                       style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                            fontFamily: 'Raleway',
+                                                                                            fontFamily: 'Noto Sans JP',
                                                                                             color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                             letterSpacing: 0.0,
                                                                                           ),
@@ -2217,7 +1705,20 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                     child: Text(
                                                                                       'Tel',
                                                                                       style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                            fontFamily: 'Raleway',
+                                                                                            fontFamily: 'Noto Sans JP',
+                                                                                            color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                            letterSpacing: 0.0,
+                                                                                          ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                                DataColumn2(
+                                                                                  label: DefaultTextStyle.merge(
+                                                                                    softWrap: true,
+                                                                                    child: Text(
+                                                                                      'Etapa',
+                                                                                      style: FlutterFlowTheme.of(context).labelLarge.override(
+                                                                                            fontFamily: 'Noto Sans JP',
                                                                                             color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                             letterSpacing: 0.0,
                                                                                           ),
@@ -2230,7 +1731,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                     child: Text(
                                                                                       'Acciones',
                                                                                       style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                            fontFamily: 'Raleway',
+                                                                                            fontFamily: 'Noto Sans JP',
                                                                                             color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                             letterSpacing: 0.0,
                                                                                           ),
@@ -2249,7 +1750,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                       '0',
                                                                                     ),
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Raleway',
+                                                                                          fontFamily: 'Noto Sans JP',
                                                                                           letterSpacing: 0.0,
                                                                                         ),
                                                                                   ),
@@ -2259,7 +1760,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                       '0',
                                                                                     ),
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Raleway',
+                                                                                          fontFamily: 'Noto Sans JP',
                                                                                           letterSpacing: 0.0,
                                                                                         ),
                                                                                   ),
@@ -2269,9 +1770,26 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                       '0',
                                                                                     ),
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Raleway',
+                                                                                          fontFamily: 'Noto Sans JP',
                                                                                           letterSpacing: 0.0,
                                                                                         ),
+                                                                                  ),
+                                                                                  Column(
+                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                    mainAxisAlignment: MainAxisAlignment.center,
+                                                                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                                                                    children: [
+                                                                                      Text(
+                                                                                        valueOrDefault<String>(
+                                                                                          listaentrevistasalafliaItem.formulario,
+                                                                                          '0',
+                                                                                        ),
+                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                              fontFamily: 'Noto Sans JP',
+                                                                                              letterSpacing: 0.0,
+                                                                                            ),
+                                                                                      ),
+                                                                                    ].divide(const SizedBox(height: 3.0)),
                                                                                   ),
                                                                                   Column(
                                                                                     mainAxisSize: MainAxisSize.max,
@@ -2300,6 +1818,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                                       rowexp: widget.rowexp!,
                                                                                                       identrevista: listaentrevistasalafliaItem.idForm2,
                                                                                                       editar: true,
+                                                                                                      usuariorow: widget.usuariorow!,
                                                                                                     ),
                                                                                                   ),
                                                                                                 );
@@ -2333,6 +1852,43 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                           ),
                                                                                         ),
                                                                                       ),
+                                                                                      FlutterFlowIconButton(
+                                                                                        borderRadius: 8.0,
+                                                                                        buttonSize: 40.0,
+                                                                                        icon: Icon(
+                                                                                          Icons.delete_rounded,
+                                                                                          color: FlutterFlowTheme.of(context).error,
+                                                                                          size: 24.0,
+                                                                                        ),
+                                                                                        onPressed: () async {
+                                                                                          await Formulario2Table().delete(
+                                                                                            matchingRows: (rows) => rows.eqOrNull(
+                                                                                              'idForm2',
+                                                                                              listaentrevistasalafliaItem.idForm2,
+                                                                                            ),
+                                                                                          );
+                                                                                          var confirmDialogResponse = await showDialog<bool>(
+                                                                                                context: context,
+                                                                                                builder: (alertDialogContext) {
+                                                                                                  return AlertDialog(
+                                                                                                    title: const Text('Borrar entrevista'),
+                                                                                                    content: const Text('Estas por borrar la entrevista. Estas seguro?'),
+                                                                                                    actions: [
+                                                                                                      TextButton(
+                                                                                                        onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                                        child: const Text('Cancelar'),
+                                                                                                      ),
+                                                                                                      TextButton(
+                                                                                                        onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                                        child: const Text('Confirmar'),
+                                                                                                      ),
+                                                                                                    ],
+                                                                                                  );
+                                                                                                },
+                                                                                              ) ??
+                                                                                              false;
+                                                                                        },
+                                                                                      ),
                                                                                     ].divide(const SizedBox(height: 3.0)),
                                                                                   ),
                                                                                 ].map((c) => DataCell(c)).toList(),
@@ -2342,7 +1898,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                               hidePaginator: false,
                                                                               showFirstLastButtons: false,
                                                                               headingRowHeight: 56.0,
-                                                                              dataRowHeight: 65.0,
+                                                                              dataRowHeight: 100.0,
                                                                               columnSpacing: 20.0,
                                                                               headingRowColor: FlutterFlowTheme.of(context).primary,
                                                                               borderRadius: BorderRadius.circular(8.0),
@@ -2456,7 +2012,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                           Text(
                                                                             'Ampliacion de Informacion',
                                                                             style: FlutterFlowTheme.of(context).titleLarge.override(
-                                                                                  fontFamily: 'Raleway',
+                                                                                  fontFamily: 'Noto Sans JP',
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                           ),
@@ -2484,7 +2040,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                           rowexp: widget.rowexp,
                                                                                           editar: false,
                                                                                           identrevista: 0,
-                                                                                          identrevistaFamilia: 0,
+                                                                                          formulario: 'Entrevistas y Ampliacion de informacion',
                                                                                         ),
                                                                                       ),
                                                                                     );
@@ -2498,7 +2054,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                 iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                 color: FlutterFlowTheme.of(context).primary,
                                                                                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                      fontFamily: 'Raleway',
+                                                                                      fontFamily: 'Noto Sans JP',
                                                                                       color: Colors.white,
                                                                                       letterSpacing: 0.0,
                                                                                     ),
@@ -2531,7 +2087,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                     child: Text(
                                                                                       'Nombres',
                                                                                       style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                            fontFamily: 'Raleway',
+                                                                                            fontFamily: 'Noto Sans JP',
                                                                                             color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                             letterSpacing: 0.0,
                                                                                           ),
@@ -2544,7 +2100,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                     child: Text(
                                                                                       'Apellidos',
                                                                                       style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                            fontFamily: 'Raleway',
+                                                                                            fontFamily: 'Noto Sans JP',
                                                                                             color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                             letterSpacing: 0.0,
                                                                                           ),
@@ -2557,7 +2113,20 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                     child: Text(
                                                                                       'Tel',
                                                                                       style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                            fontFamily: 'Raleway',
+                                                                                            fontFamily: 'Noto Sans JP',
+                                                                                            color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                            letterSpacing: 0.0,
+                                                                                          ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                                DataColumn2(
+                                                                                  label: DefaultTextStyle.merge(
+                                                                                    softWrap: true,
+                                                                                    child: Text(
+                                                                                      'Etapa',
+                                                                                      style: FlutterFlowTheme.of(context).labelLarge.override(
+                                                                                            fontFamily: 'Noto Sans JP',
                                                                                             color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                             letterSpacing: 0.0,
                                                                                           ),
@@ -2570,7 +2139,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                     child: Text(
                                                                                       'Acciones',
                                                                                       style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                            fontFamily: 'Raleway',
+                                                                                            fontFamily: 'Noto Sans JP',
                                                                                             color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                             letterSpacing: 0.0,
                                                                                           ),
@@ -2589,7 +2158,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                       '0',
                                                                                     ),
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Raleway',
+                                                                                          fontFamily: 'Noto Sans JP',
                                                                                           letterSpacing: 0.0,
                                                                                         ),
                                                                                   ),
@@ -2599,7 +2168,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                       '0',
                                                                                     ),
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Raleway',
+                                                                                          fontFamily: 'Noto Sans JP',
                                                                                           letterSpacing: 0.0,
                                                                                         ),
                                                                                   ),
@@ -2609,7 +2178,17 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                       '0',
                                                                                     ),
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Raleway',
+                                                                                          fontFamily: 'Noto Sans JP',
+                                                                                          letterSpacing: 0.0,
+                                                                                        ),
+                                                                                  ),
+                                                                                  Text(
+                                                                                    valueOrDefault<String>(
+                                                                                      listform4Item.formulario,
+                                                                                      '0',
+                                                                                    ),
+                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                          fontFamily: 'Noto Sans JP',
                                                                                           letterSpacing: 0.0,
                                                                                         ),
                                                                                   ),
@@ -2635,6 +2214,322 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget>
                                                                                                   rowexp: widget.rowexp,
                                                                                                   editar: true,
                                                                                                   identrevista: listform4Item.idForm4,
+                                                                                                  formulario: 'Entrevistas y Ampliacion de informacion',
+                                                                                                ),
+                                                                                              ),
+                                                                                            );
+                                                                                          },
+                                                                                        ).then((value) => safeSetState(() {}));
+                                                                                      },
+                                                                                      text: 'Ver y editar',
+                                                                                      icon: const Icon(
+                                                                                        Icons.remove_red_eye_outlined,
+                                                                                        size: 15.0,
+                                                                                      ),
+                                                                                      options: FFButtonOptions(
+                                                                                        width: 130.0,
+                                                                                        height: 36.0,
+                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                        color: const Color(0x4C4B39EF),
+                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                                              color: const Color(0xFF14181B),
+                                                                                              fontSize: 14.0,
+                                                                                              letterSpacing: 0.0,
+                                                                                              fontWeight: FontWeight.w500,
+                                                                                            ),
+                                                                                        elevation: 0.0,
+                                                                                        borderSide: const BorderSide(
+                                                                                          color: Color(0xFF4B39EF),
+                                                                                          width: 2.0,
+                                                                                        ),
+                                                                                        borderRadius: BorderRadius.circular(12.0),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ].map((c) => DataCell(c)).toList(),
+                                                                              ),
+                                                                              paginated: true,
+                                                                              selectable: false,
+                                                                              hidePaginator: false,
+                                                                              showFirstLastButtons: false,
+                                                                              headingRowHeight: 56.0,
+                                                                              dataRowHeight: 48.0,
+                                                                              columnSpacing: 20.0,
+                                                                              headingRowColor: FlutterFlowTheme.of(context).primary,
+                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              addHorizontalDivider: true,
+                                                                              addTopAndBottomDivider: false,
+                                                                              hideDefaultHorizontalDivider: true,
+                                                                              horizontalDividerColor: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                              horizontalDividerThickness: 1.0,
+                                                                              addVerticalDivider: false,
+                                                                            );
+                                                                          },
+                                                                        ),
+                                                                      ),
+                                                                    ].divide(const SizedBox(
+                                                                        height:
+                                                                            5.0)),
+                                                                  ),
+                                                                ),
+                                                              );
+                                                            },
+                                                          ),
+                                                        ),
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsets.all(
+                                                                  10.0),
+                                                          child: FutureBuilder<
+                                                              List<
+                                                                  AccionesAccesoriasRow>>(
+                                                            future:
+                                                                AccionesAccesoriasTable()
+                                                                    .queryRows(
+                                                              queryFn: (q) =>
+                                                                  q.eqOrNull(
+                                                                'idingreso',
+                                                                widget
+                                                                    .ingresorow,
+                                                              ),
+                                                            ),
+                                                            builder: (context,
+                                                                snapshot) {
+                                                              // Customize what your widget looks like when it's loading.
+                                                              if (!snapshot
+                                                                  .hasData) {
+                                                                return Center(
+                                                                  child:
+                                                                      SizedBox(
+                                                                    width: 50.0,
+                                                                    height:
+                                                                        50.0,
+                                                                    child:
+                                                                        CircularProgressIndicator(
+                                                                      valueColor:
+                                                                          AlwaysStoppedAnimation<
+                                                                              Color>(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primary,
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                );
+                                                              }
+                                                              List<AccionesAccesoriasRow>
+                                                                  containerAccionesAccesoriasRowList =
+                                                                  snapshot
+                                                                      .data!;
+
+                                                              return Container(
+                                                                width: MediaQuery.sizeOf(
+                                                                            context)
+                                                                        .width *
+                                                                    1.0,
+                                                                height: 500.0,
+                                                                constraints:
+                                                                    const BoxConstraints(
+                                                                  maxWidth:
+                                                                      800.0,
+                                                                ),
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryBackground,
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              10.0),
+                                                                  border: Border
+                                                                      .all(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .alternate,
+                                                                  ),
+                                                                ),
+                                                                child: Padding(
+                                                                  padding:
+                                                                      const EdgeInsets
+                                                                          .all(
+                                                                              10.0),
+                                                                  child: Column(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    children: [
+                                                                      Row(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        mainAxisAlignment:
+                                                                            MainAxisAlignment.spaceBetween,
+                                                                        children: [
+                                                                          Text(
+                                                                            'Acciones accesorias de intervencion',
+                                                                            style: FlutterFlowTheme.of(context).titleLarge.override(
+                                                                                  fontFamily: 'Noto Sans JP',
+                                                                                  letterSpacing: 0.0,
+                                                                                ),
+                                                                          ),
+                                                                          Align(
+                                                                            alignment:
+                                                                                const AlignmentDirectional(1.0, -1.0),
+                                                                            child:
+                                                                                FFButtonWidget(
+                                                                              onPressed: () async {
+                                                                                await showModalBottomSheet(
+                                                                                  isScrollControlled: true,
+                                                                                  backgroundColor: Colors.transparent,
+                                                                                  enableDrag: false,
+                                                                                  context: context,
+                                                                                  builder: (context) {
+                                                                                    return GestureDetector(
+                                                                                      onTap: () {
+                                                                                        FocusScope.of(context).unfocus();
+                                                                                        FocusManager.instance.primaryFocus?.unfocus();
+                                                                                      },
+                                                                                      child: Padding(
+                                                                                        padding: MediaQuery.viewInsetsOf(context),
+                                                                                        child: OtrasactividadesWidget(
+                                                                                          expe: widget.rowexp,
+                                                                                          ingreso: containerIngresosRow,
+                                                                                        ),
+                                                                                      ),
+                                                                                    );
+                                                                                  },
+                                                                                ).then((value) => safeSetState(() {}));
+                                                                              },
+                                                                              text: 'Agregar acciones accesorias',
+                                                                              options: FFButtonOptions(
+                                                                                height: 40.0,
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                      fontFamily: 'Noto Sans JP',
+                                                                                      color: Colors.white,
+                                                                                      letterSpacing: 0.0,
+                                                                                    ),
+                                                                                elevation: 3.0,
+                                                                                borderSide: const BorderSide(
+                                                                                  color: Colors.transparent,
+                                                                                  width: 1.0,
+                                                                                ),
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                        ],
+                                                                      ),
+                                                                      Expanded(
+                                                                        child:
+                                                                            Builder(
+                                                                          builder:
+                                                                              (context) {
+                                                                            final listaccionesaccesorias =
+                                                                                containerAccionesAccesoriasRowList.toList();
+
+                                                                            return FlutterFlowDataTable<AccionesAccesoriasRow>(
+                                                                              controller: _model.paginatedDataTableController4,
+                                                                              data: listaccionesaccesorias,
+                                                                              columnsBuilder: (onSortChanged) => [
+                                                                                DataColumn2(
+                                                                                  label: DefaultTextStyle.merge(
+                                                                                    softWrap: true,
+                                                                                    child: Text(
+                                                                                      'Fecha',
+                                                                                      style: FlutterFlowTheme.of(context).labelLarge.override(
+                                                                                            fontFamily: 'Noto Sans JP',
+                                                                                            color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                            letterSpacing: 0.0,
+                                                                                          ),
+                                                                                    ),
+                                                                                  ),
+                                                                                  fixedWidth: 110.0,
+                                                                                ),
+                                                                                DataColumn2(
+                                                                                  label: DefaultTextStyle.merge(
+                                                                                    softWrap: true,
+                                                                                    child: Align(
+                                                                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                      child: Text(
+                                                                                        'Descripcion',
+                                                                                        style: FlutterFlowTheme.of(context).labelLarge.override(
+                                                                                              fontFamily: 'Noto Sans JP',
+                                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                              letterSpacing: 0.0,
+                                                                                            ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                                DataColumn2(
+                                                                                  label: DefaultTextStyle.merge(
+                                                                                    softWrap: true,
+                                                                                    child: Text(
+                                                                                      'Tel',
+                                                                                      style: FlutterFlowTheme.of(context).labelLarge.override(
+                                                                                            fontFamily: 'Noto Sans JP',
+                                                                                            color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                            letterSpacing: 0.0,
+                                                                                          ),
+                                                                                    ),
+                                                                                  ),
+                                                                                  fixedWidth: 100.0,
+                                                                                ),
+                                                                              ],
+                                                                              dataRowBuilder: (listaccionesaccesoriasItem, listaccionesaccesoriasIndex, selected, onSelectChanged) => DataRow(
+                                                                                color: WidgetStateProperty.all(
+                                                                                  listaccionesaccesoriasIndex % 2 == 0 ? FlutterFlowTheme.of(context).secondaryBackground : FlutterFlowTheme.of(context).primaryBackground,
+                                                                                ),
+                                                                                cells: [
+                                                                                  Text(
+                                                                                    valueOrDefault<String>(
+                                                                                      dateTimeFormat(
+                                                                                        "d/M/y",
+                                                                                        listaccionesaccesoriasItem.fecha,
+                                                                                        locale: FFLocalizations.of(context).languageCode,
+                                                                                      ),
+                                                                                      '0',
+                                                                                    ),
+                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                          fontFamily: 'Noto Sans JP',
+                                                                                          letterSpacing: 0.0,
+                                                                                        ),
+                                                                                  ),
+                                                                                  Text(
+                                                                                    valueOrDefault<String>(
+                                                                                      listaccionesaccesoriasItem.descripcion,
+                                                                                      '0',
+                                                                                    ),
+                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                          fontFamily: 'Noto Sans JP',
+                                                                                          letterSpacing: 0.0,
+                                                                                        ),
+                                                                                  ),
+                                                                                  Align(
+                                                                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                    child: FFButtonWidget(
+                                                                                      onPressed: () async {
+                                                                                        await showModalBottomSheet(
+                                                                                          isScrollControlled: true,
+                                                                                          backgroundColor: Colors.transparent,
+                                                                                          enableDrag: false,
+                                                                                          context: context,
+                                                                                          builder: (context) {
+                                                                                            return GestureDetector(
+                                                                                              onTap: () {
+                                                                                                FocusScope.of(context).unfocus();
+                                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                                              },
+                                                                                              child: Padding(
+                                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                                child: OtrasactividadesWidget(
+                                                                                                  expe: widget.rowexp,
+                                                                                                  ingreso: containerIngresosRow,
+                                                                                                  idacciones: listaccionesaccesoriasItem.id,
                                                                                                 ),
                                                                                               ),
                                                                                             );

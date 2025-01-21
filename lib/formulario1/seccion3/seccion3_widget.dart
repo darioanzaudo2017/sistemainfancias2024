@@ -89,8 +89,8 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
             child: Container(
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 800.0,
-              constraints: const BoxConstraints(
-                maxWidth: 600.0,
+              constraints: BoxConstraints(
+                maxWidth: MediaQuery.sizeOf(context).width * 0.8,
               ),
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -132,7 +132,7 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
                                             letterSpacing: 0.0,
@@ -155,7 +155,7 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                     size: 24.0,
                                   ),
                                   onPressed: () async {
-                                    Navigator.pop(context);
+                                    Navigator.pop(context, true);
                                   },
                                 ),
                               ),
@@ -198,7 +198,7 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       color: Colors.white,
                                       letterSpacing: 0.0,
                                     ),
@@ -218,13 +218,13 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                               style: FlutterFlowTheme.of(context)
                                   .titleMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                             ),
                           ),
                           Container(
-                            width: 600.0,
+                            width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 300.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
@@ -246,11 +246,11 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                       label: DefaultTextStyle.merge(
                                         softWrap: true,
                                         child: Text(
-                                          'Nombre',
+                                          'Nombre y apellido',
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
@@ -263,11 +263,11 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                       label: DefaultTextStyle.merge(
                                         softWrap: true,
                                         child: Text(
-                                          'Apellido',
+                                          'Vinculo',
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
@@ -280,11 +280,11 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                       label: DefaultTextStyle.merge(
                                         softWrap: true,
                                         child: Text(
-                                          'DNI',
+                                          'Edad',
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
@@ -297,11 +297,11 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                       label: DefaultTextStyle.merge(
                                         softWrap: true,
                                         child: Text(
-                                          'Coviviente',
+                                          'Domicilio',
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
@@ -318,7 +318,10 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
@@ -337,41 +340,47 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                     ),
                                     cells: [
                                       Text(
-                                        listItem.nombre!,
+                                        '${listItem.nombre}, ${listItem.apellido}',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Raleway',
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                      Text(
-                                        listItem.apellido!,
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Raleway',
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                      Text(
-                                        listItem.dni!.toString(),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                       ),
                                       Text(
                                         valueOrDefault<String>(
-                                          listItem.conviviente,
-                                          '0',
+                                          listItem.vinculo,
+                                          'Sin dato',
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                      Text(
+                                        valueOrDefault<String>(
+                                          listItem.edad?.toString(),
+                                          'Sin dato',
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                      Text(
+                                        valueOrDefault<String>(
+                                          listItem.direccion,
+                                          'Sin dato',
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                       ),
@@ -416,7 +425,7 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                               FlutterFlowTheme.of(context)
                                                   .titleSmall
                                                   .override(
-                                                    fontFamily: 'Raleway',
+                                                    fontFamily: 'Noto Sans JP',
                                                     color: Colors.white,
                                                     letterSpacing: 0.0,
                                                   ),
@@ -460,13 +469,13 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                               style: FlutterFlowTheme.of(context)
                                   .titleMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                             ),
                           ),
                           Container(
-                            width: 600.0,
+                            width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 300.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
@@ -488,11 +497,11 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                       label: DefaultTextStyle.merge(
                                         softWrap: true,
                                         child: Text(
-                                          'Nombre',
+                                          'Nombre y apellido',
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
@@ -505,11 +514,11 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                       label: DefaultTextStyle.merge(
                                         softWrap: true,
                                         child: Text(
-                                          'Apellido',
+                                          'Vinculo',
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
@@ -522,11 +531,11 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                       label: DefaultTextStyle.merge(
                                         softWrap: true,
                                         child: Text(
-                                          'DNI',
+                                          'Edad',
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
@@ -539,11 +548,11 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                       label: DefaultTextStyle.merge(
                                         softWrap: true,
                                         child: Text(
-                                          'Coviviente',
+                                          'Domicilio',
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
@@ -560,7 +569,10 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
@@ -579,41 +591,47 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                     ),
                                     cells: [
                                       Text(
-                                        listItem.nombre!,
+                                        '${listItem.nombre}, ${listItem.apellido}',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Raleway',
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                      Text(
-                                        listItem.apellido!,
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Raleway',
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                      Text(
-                                        listItem.dni!.toString(),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                       ),
                                       Text(
                                         valueOrDefault<String>(
-                                          listItem.conviviente,
-                                          '0',
+                                          listItem.vinculo,
+                                          'Sin dato',
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                      Text(
+                                        valueOrDefault<String>(
+                                          listItem.edad?.toString(),
+                                          'Sin dato',
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                      Text(
+                                        valueOrDefault<String>(
+                                          listItem.direccion,
+                                          'Sin dato',
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                       ),
@@ -658,7 +676,7 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                               FlutterFlowTheme.of(context)
                                                   .titleSmall
                                                   .override(
-                                                    fontFamily: 'Raleway',
+                                                    fontFamily: 'Noto Sans JP',
                                                     color: Colors.white,
                                                     letterSpacing: 0.0,
                                                   ),
@@ -731,7 +749,7 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             color: Colors.white,
                                             letterSpacing: 0.0,
                                           ),

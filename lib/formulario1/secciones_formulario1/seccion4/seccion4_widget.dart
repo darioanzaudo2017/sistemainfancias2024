@@ -111,10 +111,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
               borderRadius: BorderRadius.circular(20.0),
             ),
             child: Container(
-              width: MediaQuery.sizeOf(context).width * 1.0,
-              constraints: const BoxConstraints(
-                maxWidth: 600.0,
-              ),
+              width: MediaQuery.sizeOf(context).width * 0.8,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 borderRadius: BorderRadius.circular(20.0),
@@ -149,7 +146,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
                                           letterSpacing: 0.0,
@@ -186,55 +183,135 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                               children: [
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 0.0, 0.0),
-                                  child: Text(
-                                    'AUH / Asignación familiar:',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Raleway',
-                                          letterSpacing: 0.0,
+                                      8.0, 0.0, 8.0, 0.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 0.0, 0.0, 0.0),
+                                        child: Text(
+                                          'Paicor:',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Noto Sans JP',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 10.0, 0.0),
+                                        child: FlutterFlowRadioButton(
+                                          options: ['Si', 'No', 'Desconoce']
+                                              .toList(),
+                                          onChanged: (val) =>
+                                              safeSetState(() {}),
+                                          controller: _model
+                                                  .radioButtonPaicorValueController ??=
+                                              FormFieldController<String>(
+                                                  valueOrDefault<String>(
+                                            containerSeccion4Row?.paicor,
+                                            'No',
+                                          )),
+                                          optionHeight: 40.0,
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .override(
+                                                    fontFamily: 'Noto Sans JP',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          selectedTextStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Noto Sans JP',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          buttonPosition:
+                                              RadioButtonPosition.right,
+                                          direction: Axis.horizontal,
+                                          radioButtonColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                          inactiveRadioButtonColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryText,
+                                          toggleable: false,
+                                          horizontalAlignment:
+                                              WrapAlignment.start,
+                                          verticalAlignment:
+                                              WrapCrossAlignment.start,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 10.0, 0.0),
-                                  child: FlutterFlowRadioButton(
-                                    options: ['Si', 'No', 'Desconoce'].toList(),
-                                    onChanged: (val) => safeSetState(() {}),
-                                    controller:
-                                        _model.radioButtonAUHValueController ??=
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          10.0, 0.0, 0.0, 0.0),
+                                      child: Text(
+                                        'AUH / Asignación familiar:',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 10.0, 0.0),
+                                      child: FlutterFlowRadioButton(
+                                        options:
+                                            ['Si', 'No', 'Desconoce'].toList(),
+                                        onChanged: (val) => safeSetState(() {}),
+                                        controller: _model
+                                                .radioButtonAUHValueController ??=
                                             FormFieldController<String>(
                                                 valueOrDefault<String>(
-                                      containerSeccion4Row?.auh,
-                                      'No',
-                                    )),
-                                    optionHeight: 40.0,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Raleway',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    selectedTextStyle:
-                                        FlutterFlowTheme.of(context)
-                                            .bodyMedium
+                                          containerSeccion4Row?.auh,
+                                          'No',
+                                        )),
+                                        optionHeight: 40.0,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
-                                    buttonPosition: RadioButtonPosition.right,
-                                    direction: Axis.horizontal,
-                                    radioButtonColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    inactiveRadioButtonColor:
-                                        FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                    toggleable: false,
-                                    horizontalAlignment: WrapAlignment.start,
-                                    verticalAlignment: WrapCrossAlignment.start,
-                                  ),
+                                        selectedTextStyle:
+                                            FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Noto Sans JP',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                        buttonPosition:
+                                            RadioButtonPosition.right,
+                                        direction: Axis.horizontal,
+                                        radioButtonColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                        inactiveRadioButtonColor:
+                                            FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                        toggleable: false,
+                                        horizontalAlignment:
+                                            WrapAlignment.start,
+                                        verticalAlignment:
+                                            WrapCrossAlignment.start,
+                                      ),
+                                    ),
+                                  ].divide(const SizedBox(width: 10.0)),
                                 ),
                               ],
                             ),
@@ -248,179 +325,134 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                               children: [
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 0.0, 0.0),
-                                  child: Text(
-                                    'Paicor:',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Raleway',
-                                          letterSpacing: 0.0,
+                                      8.0, 0.0, 8.0, 0.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 0.0, 0.0, 0.0),
+                                        child: Text(
+                                          'Pensión:',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Noto Sans JP',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 116.0, 0.0),
+                                        child: FlutterFlowRadioButton(
+                                          options: ['Si', 'No'].toList(),
+                                          onChanged: (val) =>
+                                              safeSetState(() {}),
+                                          controller: _model
+                                                  .radioButtonPensionValueController ??=
+                                              FormFieldController<String>(
+                                                  valueOrDefault<String>(
+                                            containerSeccion4Row?.pension,
+                                            'No',
+                                          )),
+                                          optionHeight: 40.0,
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .override(
+                                                    fontFamily: 'Noto Sans JP',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          selectedTextStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Noto Sans JP',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          buttonPosition:
+                                              RadioButtonPosition.right,
+                                          direction: Axis.horizontal,
+                                          radioButtonColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                          inactiveRadioButtonColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryText,
+                                          toggleable: false,
+                                          horizontalAlignment:
+                                              WrapAlignment.start,
+                                          verticalAlignment:
+                                              WrapCrossAlignment.start,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 10.0, 0.0),
-                                  child: FlutterFlowRadioButton(
-                                    options: ['Si', 'No', 'Desconoce'].toList(),
-                                    onChanged: (val) => safeSetState(() {}),
-                                    controller: _model
-                                            .radioButtonPaicorValueController ??=
-                                        FormFieldController<String>(
-                                            valueOrDefault<String>(
-                                      containerSeccion4Row?.paicor,
-                                      'No',
-                                    )),
-                                    optionHeight: 40.0,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Raleway',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    selectedTextStyle:
-                                        FlutterFlowTheme.of(context)
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          10.0, 0.0, 0.0, 0.0),
+                                      child: Text(
+                                        'Tarjeta alimentar:',
+                                        style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
-                                    buttonPosition: RadioButtonPosition.right,
-                                    direction: Axis.horizontal,
-                                    radioButtonColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    inactiveRadioButtonColor:
-                                        FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                    toggleable: false,
-                                    horizontalAlignment: WrapAlignment.start,
-                                    verticalAlignment: WrapCrossAlignment.start,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                8.0, 0.0, 8.0, 0.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 0.0, 0.0),
-                                  child: Text(
-                                    'Tarjeta alimentar:',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Raleway',
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 10.0, 0.0),
-                                  child: FlutterFlowRadioButton(
-                                    options: ['Si', 'No', 'Desconoce'].toList(),
-                                    onChanged: (val) => safeSetState(() {}),
-                                    controller: _model
-                                            .radioButtonTarjetaValueController ??=
-                                        FormFieldController<String>(
-                                            valueOrDefault<String>(
-                                      containerSeccion4Row?.tarjeta,
-                                      'No',
-                                    )),
-                                    optionHeight: 40.0,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Raleway',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    selectedTextStyle:
-                                        FlutterFlowTheme.of(context)
-                                            .bodyMedium
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 10.0, 0.0),
+                                      child: FlutterFlowRadioButton(
+                                        options:
+                                            ['Si', 'No', 'Desconoce'].toList(),
+                                        onChanged: (val) => safeSetState(() {}),
+                                        controller: _model
+                                                .radioButtonTarjetaValueController ??=
+                                            FormFieldController<String>(
+                                                valueOrDefault<String>(
+                                          containerSeccion4Row?.tarjeta,
+                                          'No',
+                                        )),
+                                        optionHeight: 40.0,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
-                                    buttonPosition: RadioButtonPosition.right,
-                                    direction: Axis.horizontal,
-                                    radioButtonColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    inactiveRadioButtonColor:
-                                        FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                    toggleable: false,
-                                    horizontalAlignment: WrapAlignment.start,
-                                    verticalAlignment: WrapCrossAlignment.start,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                8.0, 0.0, 8.0, 0.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 0.0, 0.0),
-                                  child: Text(
-                                    'Pensión:',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Raleway',
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 116.0, 0.0),
-                                  child: FlutterFlowRadioButton(
-                                    options: ['Si', 'No'].toList(),
-                                    onChanged: (val) => safeSetState(() {}),
-                                    controller: _model
-                                            .radioButtonPensionValueController ??=
-                                        FormFieldController<String>(
-                                            valueOrDefault<String>(
-                                      containerSeccion4Row?.pension,
-                                      'No',
-                                    )),
-                                    optionHeight: 40.0,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Raleway',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    selectedTextStyle:
-                                        FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Raleway',
-                                              letterSpacing: 0.0,
-                                            ),
-                                    buttonPosition: RadioButtonPosition.right,
-                                    direction: Axis.horizontal,
-                                    radioButtonColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    inactiveRadioButtonColor:
-                                        FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                    toggleable: false,
-                                    horizontalAlignment: WrapAlignment.start,
-                                    verticalAlignment: WrapCrossAlignment.start,
-                                  ),
+                                        selectedTextStyle:
+                                            FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Noto Sans JP',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                        buttonPosition:
+                                            RadioButtonPosition.right,
+                                        direction: Axis.horizontal,
+                                        radioButtonColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                        inactiveRadioButtonColor:
+                                            FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                        toggleable: false,
+                                        horizontalAlignment:
+                                            WrapAlignment.start,
+                                        verticalAlignment:
+                                            WrapCrossAlignment.start,
+                                      ),
+                                    ),
+                                  ].divide(const SizedBox(width: 10.0)),
                                 ),
                               ],
                             ),
@@ -441,13 +473,13 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
@@ -483,7 +515,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               validator: _model.textController1Validator
@@ -506,13 +538,13 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
@@ -548,7 +580,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               validator: _model.textController2Validator
@@ -572,13 +604,13 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
@@ -614,7 +646,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               validator: _model.textController3Validator
@@ -636,7 +668,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -659,7 +691,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           fontSize: 16.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.normal,
@@ -685,7 +717,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           fontSize: 16.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.normal,
@@ -713,7 +745,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -776,13 +808,13 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                         enabledBorder: OutlineInputBorder(
@@ -825,7 +857,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                       validator: _model.textController4Validator
@@ -855,7 +887,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -918,13 +950,13 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                         enabledBorder: OutlineInputBorder(
@@ -967,7 +999,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                       validator: _model.textController5Validator
@@ -996,7 +1028,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -1059,13 +1091,13 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                         enabledBorder: OutlineInputBorder(
@@ -1108,7 +1140,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                       validator: _model.textController6Validator
@@ -1137,7 +1169,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -1202,13 +1234,13 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                         enabledBorder: OutlineInputBorder(
@@ -1251,7 +1283,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                       validator: _model.textController7Validator
@@ -1280,7 +1312,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -1343,13 +1375,13 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                         enabledBorder: OutlineInputBorder(
@@ -1392,7 +1424,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                       validator: _model.textController8Validator
@@ -1418,7 +1450,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           fontSize: 16.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.normal,
@@ -1446,7 +1478,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -1509,13 +1541,13 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                         enabledBorder: OutlineInputBorder(
@@ -1558,7 +1590,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                       validator: _model.textController9Validator
@@ -1587,7 +1619,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -1650,13 +1682,13 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                         enabledBorder: OutlineInputBorder(
@@ -1699,7 +1731,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                       validator: _model
@@ -1729,7 +1761,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -1792,13 +1824,13 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                         enabledBorder: OutlineInputBorder(
@@ -1841,7 +1873,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                       validator: _model
@@ -2029,7 +2061,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             color: Colors.white,
                                             letterSpacing: 0.0,
                                           ),
@@ -2191,7 +2223,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           color: Colors.white,
                                           letterSpacing: 0.0,
                                         ),

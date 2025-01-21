@@ -1,13 +1,11 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
-import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'imprimir_model.dart';
 export 'imprimir_model.dart';
@@ -32,41 +30,15 @@ class ImprimirWidget extends StatefulWidget {
   State<ImprimirWidget> createState() => _ImprimirWidgetState();
 }
 
-class _ImprimirWidgetState extends State<ImprimirWidget>
-    with TickerProviderStateMixin {
+class _ImprimirWidgetState extends State<ImprimirWidget> {
   late ImprimirModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-
-  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void initState() {
     super.initState();
     _model = createModel(context, () => ImprimirModel());
-
-    animationsMap.addAll({
-      'buttonOnActionTriggerAnimation': AnimationInfo(
-        trigger: AnimationTrigger.onActionTrigger,
-        applyInitialState: true,
-        effectsBuilder: () => [
-          ShakeEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 1000.0.ms,
-            hz: 10,
-            offset: const Offset(0.0, 0.0),
-            rotation: 0.087,
-          ),
-        ],
-      ),
-    });
-    setupAnimations(
-      animationsMap.values.where((anim) =>
-          anim.trigger == AnimationTrigger.onActionTrigger ||
-          !anim.applyInitialState),
-      this,
-    );
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -108,7 +80,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget>
           title: Text(
             'Impresiones',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  fontFamily: 'Raleway',
+                  fontFamily: 'Noto Sans JP',
                   color: Colors.white,
                   fontSize: 22.0,
                   letterSpacing: 0.0,
@@ -235,7 +207,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget>
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -314,7 +286,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget>
                                                                 .titleMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Raleway',
+                                                                      'Noto Sans JP',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -352,7 +324,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget>
                                                                   .titleSmall
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Raleway',
+                                                                        'Noto Sans JP',
                                                                     color: Colors
                                                                         .white,
                                                                     letterSpacing:
@@ -388,7 +360,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget>
                                                                 .titleMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Raleway',
+                                                                      'Noto Sans JP',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -459,7 +431,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget>
                                                                     .titleSmall
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Raleway',
+                                                                          'Noto Sans JP',
                                                                       color: Colors
                                                                           .white,
                                                                       letterSpacing:
@@ -502,7 +474,8 @@ class _ImprimirWidgetState extends State<ImprimirWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
@@ -534,7 +507,8 @@ class _ImprimirWidgetState extends State<ImprimirWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           color: Colors.white,
                                                           letterSpacing: 0.0,
                                                         ),
@@ -773,88 +747,21 @@ class _ImprimirWidgetState extends State<ImprimirWidget>
                                                                             },
                                                                           ),
                                                                         ),
-                                                                      if ((containerVarItem.tipodocumento ==
-                                                                              'Formulario Solicitud de medida excepcional') &&
-                                                                          (containerVarItem.documentopdf != null &&
-                                                                              containerVarItem.documentopdf != ''))
-                                                                        FFButtonWidget(
-                                                                          onPressed:
-                                                                              () async {
-                                                                            _model.enviarmail =
-                                                                                await DocumentosadjuntosTable().queryRows(
-                                                                              queryFn: (q) => q.eqOrNull(
-                                                                                'id',
-                                                                                containerVarItem.id,
-                                                                              ),
-                                                                            );
-                                                                            _model.apiResult1fi =
-                                                                                await EmailResendCall.call(
-                                                                              mail: 'darioanzaudo@gmail.com',
-                                                                              titulo: 'Nueva solicitud de medida / ${widget.exprow?.nombres}, ${widget.exprow?.apellidos} / ${getCurrentTimestamp.toString()}',
-                                                                              mensaje: 'Nueva medida de solicitud de medida: ',
-                                                                              nOmbreyapellido: '${widget.exprow?.nombres}, ${widget.exprow?.apellidos}',
-                                                                              dni: widget.exprow?.dni?.toString(),
-                                                                              spd: widget.exprow?.spd,
-                                                                              motivo: containerIngresosRow?.motivocierre,
-                                                                              link: _model.enviarmail?.firstOrNull?.documentopdf,
-                                                                            );
-
-                                                                            if ((_model.apiResult1fi?.succeeded ??
-                                                                                true)) {
-                                                                              await showDialog(
-                                                                                context: context,
-                                                                                builder: (alertDialogContext) {
-                                                                                  return AlertDialog(
-                                                                                    title: const Text('a'),
-                                                                                    content: const Text('a'),
-                                                                                    actions: [
-                                                                                      TextButton(
-                                                                                        onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                        child: const Text('Ok'),
-                                                                                      ),
-                                                                                    ],
-                                                                                  );
-                                                                                },
-                                                                              );
-                                                                            }
-
-                                                                            safeSetState(() {});
-                                                                          },
-                                                                          text:
-                                                                              'enviar mail',
-                                                                          options:
-                                                                              FFButtonOptions(
-                                                                            height:
-                                                                                40.0,
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                16.0,
-                                                                                0.0,
-                                                                                16.0,
-                                                                                0.0),
-                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: 'Raleway',
-                                                                                  color: Colors.white,
-                                                                                  letterSpacing: 0.0,
-                                                                                ),
-                                                                            elevation:
-                                                                                0.0,
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(8.0),
-                                                                          ),
-                                                                        ).animateOnActionTrigger(
-                                                                          animationsMap[
-                                                                              'buttonOnActionTriggerAnimation']!,
-                                                                        ),
                                                                     ].divide(const SizedBox(
                                                                         width:
                                                                             10.0)),
+                                                                  ),
+                                                                  Text(
+                                                                    'Hello World',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Noto Sans JP',
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
                                                                   ),
                                                                 ].divide(const SizedBox(
                                                                     height:
@@ -1065,8 +972,8 @@ class _ImprimirWidgetState extends State<ImprimirWidget>
                                                                                     context: context,
                                                                                     builder: (alertDialogContext) {
                                                                                       return AlertDialog(
-                                                                                        title: const Text('Recorda de enviar el mail a la cordinacion!'),
-                                                                                        content: const Text('Apreta el boton  que tiembla!!'),
+                                                                                        title: const Text('Se enviara un mail a la cordinacion!'),
+                                                                                        content: const Text('Se envio el mail!!'),
                                                                                         actions: [
                                                                                           TextButton(
                                                                                             onPressed: () => Navigator.pop(alertDialogContext),
@@ -1076,9 +983,6 @@ class _ImprimirWidgetState extends State<ImprimirWidget>
                                                                                       );
                                                                                     },
                                                                                   );
-                                                                                  if (animationsMap['buttonOnActionTriggerAnimation'] != null) {
-                                                                                    animationsMap['buttonOnActionTriggerAnimation']!.controller.forward(from: 0.0);
-                                                                                  }
                                                                                 }
                                                                               }
                                                                             }
@@ -1113,7 +1017,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget>
                                                                           .titleSmall
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Raleway',
+                                                                                'Noto Sans JP',
                                                                             color:
                                                                                 Colors.white,
                                                                             letterSpacing:
@@ -1330,7 +1234,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget>
                                                                                     builder: (alertDialogContext) {
                                                                                       return AlertDialog(
                                                                                         title: const Text('Se enviara una mail a la coordinacion'),
-                                                                                        content: const Text('asd'),
+                                                                                        content: const Text('Se envio un mail!!!'),
                                                                                         actions: [
                                                                                           TextButton(
                                                                                             onPressed: () => Navigator.pop(alertDialogContext),
@@ -1374,7 +1278,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget>
                                                                           .titleSmall
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Raleway',
+                                                                                'Noto Sans JP',
                                                                             color:
                                                                                 Colors.white,
                                                                             letterSpacing:

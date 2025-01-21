@@ -9,7 +9,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/custom_functions.dart' as functions;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'dart:async';
 import 'package:easy_debounce/easy_debounce.dart';
@@ -21,9 +21,11 @@ class Caratula2Widget extends StatefulWidget {
   const Caratula2Widget({
     super.key,
     required this.usuario,
+    required this.spd,
   });
 
   final UsuariosRow? usuario;
+  final SpdRow? spd;
 
   @override
   State<Caratula2Widget> createState() => _Caratula2WidgetState();
@@ -83,17 +85,31 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
+          leading: FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30.0,
+            borderWidth: 1.0,
+            buttonSize: 60.0,
+            icon: const Icon(
+              Icons.arrow_back_rounded,
+              color: Colors.white,
+              size: 30.0,
+            ),
+            onPressed: () async {
+              context.pop();
+            },
+          ),
           title: Text(
-            'Page Title',
+            'Caratula',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  fontFamily: 'Raleway',
+                  fontFamily: 'Noto Sans JP',
                   color: Colors.white,
                   fontSize: 22.0,
                   letterSpacing: 0.0,
                 ),
           ),
           actions: const [],
-          centerTitle: false,
+          centerTitle: true,
           elevation: 2.0,
         ),
         body: SafeArea(
@@ -148,7 +164,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                           style: FlutterFlowTheme.of(context)
                                               .headlineSmall
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
@@ -192,17 +208,16 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                           children: [
                                             Text(
                                               'Apellido y nombres del NNyA',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleLarge
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .titleLarge
+                                                  .override(
+                                                    fontFamily: 'Noto Sans JP',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
+                                                    letterSpacing: 0.0,
+                                                  ),
                                             ),
                                             Padding(
                                               padding: const EdgeInsetsDirectional
@@ -216,20 +231,24 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                 obscureText: false,
                                                 decoration: InputDecoration(
                                                   labelText: 'Apellidos',
-                                                  labelStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                  hintStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  labelStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Noto Sans JP',
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                  hintStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Noto Sans JP',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   enabledBorder:
                                                       OutlineInputBorder(
                                                     borderSide: BorderSide(
@@ -287,7 +306,8 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                 keyboardType:
@@ -309,20 +329,24 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                 obscureText: false,
                                                 decoration: InputDecoration(
                                                   labelText: 'Nombres',
-                                                  labelStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                  hintStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  labelStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Noto Sans JP',
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                  hintStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Noto Sans JP',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   enabledBorder:
                                                       OutlineInputBorder(
                                                     borderSide: BorderSide(
@@ -380,7 +404,8 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                 keyboardType:
@@ -408,20 +433,24 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                 obscureText: false,
                                                 decoration: InputDecoration(
                                                   labelText: 'DNI',
-                                                  labelStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                  hintStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  labelStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Noto Sans JP',
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                  hintStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Noto Sans JP',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   enabledBorder:
                                                       OutlineInputBorder(
                                                     borderSide: BorderSide(
@@ -479,7 +508,8 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                 maxLength: 8,
@@ -511,23 +541,27 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                 obscureText: false,
                                                 decoration: InputDecoration(
                                                   labelText:
-                                                      'Edad de insgreso al sistema',
-                                                  labelStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                      'Edad de ingreso al sistema',
+                                                  labelStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Noto Sans JP',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   hintText:
                                                       'Edad de insgreso al sistema',
-                                                  hintStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  hintStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Noto Sans JP',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   enabledBorder:
                                                       OutlineInputBorder(
                                                     borderSide: BorderSide(
@@ -585,7 +619,8 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                 maxLength: 8,
@@ -624,7 +659,8 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
@@ -658,7 +694,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                                     .headlineLarge
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Raleway',
+                                                                          'Noto Sans JP',
                                                                       fontSize:
                                                                           32.0,
                                                                       letterSpacing:
@@ -734,7 +770,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                               .titleSmall
                                                               .override(
                                                                 fontFamily:
-                                                                    'Raleway',
+                                                                    'Noto Sans JP',
                                                                 color: Colors
                                                                     .white,
                                                                 letterSpacing:
@@ -759,153 +795,34 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                   1.0, 0.0),
                                               child: FFButtonWidget(
                                                 onPressed: () async {
-                                                  _model.accionexitosa =
-                                                      await actions.checkDNI(
-                                                    () async {
-                                                      if (_model.formKey2
-                                                                  .currentState ==
-                                                              null ||
-                                                          !_model.formKey2
-                                                              .currentState!
-                                                              .validate()) {
-                                                        return;
-                                                      }
-                                                      _model.crearexpnnya1 =
-                                                          await ExpedienteTable()
-                                                              .insert({
-                                                        'nombres': _model
-                                                            .textFieldnombresTextController
-                                                            .text,
-                                                        'apellidos': _model
-                                                            .textFieldapellidoTextController
-                                                            .text,
-                                                        'dni': _model.textFieldDNITextController
+                                                  if (_model.formKey2
+                                                              .currentState ==
+                                                          null ||
+                                                      !_model.formKey2
+                                                          .currentState!
+                                                          .validate()) {
+                                                    return;
+                                                  }
+                                                  _model.checkdnifuncion =
+                                                      await ExisteDNICall.call(
+                                                    dni: (_model.textFieldDNITextController
                                                                         .text ==
                                                                     ''
                                                             ? random_data
                                                                 .randomInteger(
-                                                                    999999999,
+                                                                    9000000,
                                                                     1000000000)
                                                             : int.tryParse(_model
                                                                 .textFieldDNITextController
-                                                                .text),
-                                                        'expediente':
-                                                            '${widget.usuario?.spd}/${random_data.randomInteger(0, 10000).toString()}/${dateTimeFormat(
-                                                          "y",
-                                                          _model.datePicked1,
-                                                          locale:
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .languageCode,
-                                                        )}',
-                                                        'fechaNac': supaSerialize<
-                                                                DateTime>(
-                                                            _model.datePicked1),
-                                                        'edad': int.tryParse(_model
-                                                            .textFieldedadTextController
-                                                            .text),
-                                                        'iduser':
-                                                            currentUserUid,
-                                                      });
-                                                      _model.crearexpgrupo =
-                                                          await NNyAExpGruTable()
-                                                              .insert({
-                                                        'idExp': _model
-                                                            .crearexpnnya1?.id,
-                                                        'detalle': 'expediente',
-                                                      });
-                                                      _model.crearNNyA =
-                                                          await NNyATable()
-                                                              .insert({
-                                                        'Nombre': _model
-                                                            .textFieldnombresTextController
-                                                            .text,
-                                                        'Apellido': _model
-                                                            .textFieldapellidoTextController
-                                                            .text,
-                                                        'DNI': _model
-                                                            .crearexpnnya1?.dni,
-                                                        'edad': int.tryParse(_model
-                                                            .textFieldedadTextController
-                                                            .text),
-                                                        'iduser':
-                                                            currentUserUid,
-                                                      });
-                                                      _model.grupofmiliar =
-                                                          await GrupofamiliarTable()
-                                                              .insert({
-                                                        'nombregrupo':
-                                                            '${_model.crearexpnnya1?.expediente}/${_model.crearexpnnya1?.dni?.toString()}',
-                                                      });
-                                                      await GrupofamiliarexpedientesTable()
-                                                          .insert({
-                                                        'idgrupofamliar': _model
-                                                            .grupofmiliar?.id,
-                                                        'idexpediente': _model
-                                                            .crearexpnnya1?.id,
-                                                        'expedienteprincipal':
-                                                            _model.crearexpnnya1
-                                                                ?.id,
-                                                      });
-                                                      await NNyAExpGruTable()
-                                                          .update(
-                                                        data: {
-                                                          'idNNyA': _model
-                                                              .crearNNyA?.id,
-                                                        },
-                                                        matchingRows: (rows) =>
-                                                            rows.eqOrNull(
-                                                          'id',
-                                                          _model.crearexpgrupo
-                                                              ?.id,
-                                                        ),
-                                                      );
-                                                      await ExpedienteTable()
-                                                          .update(
-                                                        data: {
-                                                          'idgrupofamiliar':
-                                                              _model
-                                                                  .grupofmiliar
-                                                                  ?.id,
-                                                          'expediente':
-                                                              '${widget.usuario?.spd}/${_model.crearexpnnya1?.id.toString()}/${dateTimeFormat(
-                                                            "y",
-                                                            getCurrentTimestamp,
-                                                            locale: FFLocalizations
-                                                                    .of(context)
-                                                                .languageCode,
-                                                          )}',
-                                                        },
-                                                        matchingRows: (rows) =>
-                                                            rows.eqOrNull(
-                                                          'id',
-                                                          _model.crearexpnnya1
-                                                              ?.id,
-                                                        ),
-                                                      );
-                                                      _model.apiResult42y =
-                                                          await CarpetaDelExpedienteCall
-                                                              .call(
-                                                        expediente: _model
-                                                            .crearexpnnya1
-                                                            ?.expediente,
-                                                        id: _model
-                                                            .crearexpnnya1?.id,
-                                                        fecha: dateTimeFormat(
-                                                          "d/M/y",
-                                                          _model.crearexpnnya1
-                                                              ?.fecha,
-                                                          locale:
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .languageCode,
-                                                        ),
-                                                        nombresDNI:
-                                                            '${_model.crearexpnnya1?.nombres}, ${_model.crearexpnnya1?.apellidos}, DNI ${_model.crearexpnnya1?.dni?.toString()}',
-                                                      );
-                                                    },
+                                                                .text))
+                                                        ?.toString(),
                                                   );
-                                                  if (_model.accionexitosa!) {
+
+                                                  if (ExisteDNICall.check(
+                                                    (_model.checkdnifuncion
+                                                            ?.jsonBody ??
+                                                        ''),
+                                                  )!) {
                                                     await showDialog(
                                                       context: context,
                                                       builder:
@@ -934,6 +851,159 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                   } else {
                                                     _model.dniok = true;
                                                     safeSetState(() {});
+                                                    if (_model.formKey2
+                                                                .currentState ==
+                                                            null ||
+                                                        !_model.formKey2
+                                                            .currentState!
+                                                            .validate()) {
+                                                      return;
+                                                    }
+                                                    _model.crearexpnnya2 =
+                                                        await ExpedienteTable()
+                                                            .insert({
+                                                      'nombres': functions
+                                                          .mayusculas(_model
+                                                              .textFieldnombresTextController
+                                                              .text),
+                                                      'apellidos': functions
+                                                          .mayusculas(_model
+                                                              .textFieldapellidoTextController
+                                                              .text),
+                                                      'dni': _model
+                                                                      .textFieldDNITextController
+                                                                      .text ==
+                                                                  ''
+                                                          ? random_data
+                                                              .randomInteger(
+                                                                  9000000,
+                                                                  1000000000)
+                                                          : int.tryParse(_model
+                                                              .textFieldDNITextController
+                                                              .text),
+                                                      'expediente':
+                                                          '${widget.usuario?.spd}/${random_data.randomInteger(0, 10000).toString()}/${dateTimeFormat(
+                                                        "y",
+                                                        _model.datePicked1,
+                                                        locale:
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .languageCode,
+                                                      )}',
+                                                      'fechaNac': supaSerialize<
+                                                              DateTime>(
+                                                          _model.datePicked1),
+                                                      'edad': int.tryParse(_model
+                                                          .textFieldedadTextController
+                                                          .text),
+                                                      'iduser': currentUserUid,
+                                                      'spd':
+                                                          widget.usuario?.spd,
+                                                      'estado': true,
+                                                    });
+                                                    _model.crearNNyA2 =
+                                                        await NNyATable()
+                                                            .insert({
+                                                      'Nombre': functions
+                                                          .mayusculas(_model
+                                                              .textFieldnombresTextController
+                                                              .text),
+                                                      'Apellido': functions
+                                                          .mayusculas(_model
+                                                              .textFieldapellidoTextController
+                                                              .text),
+                                                      'DNI': _model
+                                                          .crearexpnnya2?.dni,
+                                                      'edad': int.tryParse(_model
+                                                          .textFieldedadTextController
+                                                          .text),
+                                                      'iduser': currentUserUid,
+                                                    });
+                                                    safeSetState(() => _model
+                                                            .requestCompleter =
+                                                        null);
+                                                    await _model
+                                                        .waitForRequestCompleted();
+                                                    _model.crearexpgrupo2 =
+                                                        await NNyAExpGruTable()
+                                                            .insert({
+                                                      'idExp': _model
+                                                          .crearexpnnya2?.id,
+                                                      'detalle': 'expediente',
+                                                      'idNNyA':
+                                                          _model.crearNNyA2?.id,
+                                                    });
+                                                    _model.grupofmiliar2 =
+                                                        await GrupofamiliarTable()
+                                                            .insert({
+                                                      'nombregrupo':
+                                                          '${_model.crearexpnnya2?.expediente}/${_model.crearexpnnya2?.dni?.toString()}',
+                                                    });
+                                                    await GrupofamiliarexpedientesTable()
+                                                        .insert({
+                                                      'idgrupofamliar': _model
+                                                          .grupofmiliar2?.id,
+                                                      'idexpediente': _model
+                                                          .crearexpnnya2?.id,
+                                                      'expedienteprincipal':
+                                                          _model.crearexpnnya2
+                                                              ?.id,
+                                                    });
+                                                    await NNyAExpGruTable()
+                                                        .update(
+                                                      data: {
+                                                        'idNNyA': _model
+                                                            .crearNNyA2?.id,
+                                                      },
+                                                      matchingRows: (rows) =>
+                                                          rows.eqOrNull(
+                                                        'id',
+                                                        _model
+                                                            .crearexpgrupo2?.id,
+                                                      ),
+                                                    );
+                                                    _model.apiResult42y2 =
+                                                        await CarpetaDelExpedienteCall
+                                                            .call(
+                                                      expediente: _model
+                                                          .crearexpnnya2
+                                                          ?.expediente,
+                                                      id: _model
+                                                          .crearexpnnya2?.id,
+                                                      fecha: _model
+                                                          .crearexpnnya2?.fecha
+                                                          ?.toString(),
+                                                      nombresDNI:
+                                                          '${_model.crearexpnnya2?.nombres}, ${_model.crearexpnnya2?.apellidos}, DNI ${_model.crearexpnnya2?.dni?.toString()}',
+                                                      idcarpetaspd: widget
+                                                          .spd?.idcarpetaspd,
+                                                    );
+
+                                                    await ExpedienteTable()
+                                                        .update(
+                                                      data: {
+                                                        'idgrupofamiliar':
+                                                            _model.grupofmiliar2
+                                                                ?.id,
+                                                        'expediente':
+                                                            '${widget.usuario?.spd}/${_model.crearexpnnya2?.id.toString()}/${dateTimeFormat(
+                                                          "y",
+                                                          getCurrentTimestamp,
+                                                          locale:
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .languageCode,
+                                                        )}',
+                                                        'idNNyA': _model
+                                                            .crearNNyA2?.id,
+                                                      },
+                                                      matchingRows: (rows) =>
+                                                          rows.eqOrNull(
+                                                        'id',
+                                                        _model
+                                                            .crearexpnnya2?.id,
+                                                      ),
+                                                    );
                                                     await showDialog(
                                                       context: context,
                                                       builder:
@@ -954,6 +1024,10 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                         );
                                                       },
                                                     );
+                                                    _model.expedientecreado =
+                                                        _model
+                                                            .crearexpnnya2?.id;
+                                                    safeSetState(() {});
                                                   }
 
                                                   safeSetState(() {});
@@ -970,15 +1044,17 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                               0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .primary,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                      .secondary,
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                'Noto Sans JP',
+                                                            color: Colors.white,
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   elevation: 3.0,
                                                   borderSide: const BorderSide(
                                                     color: Colors.transparent,
@@ -1002,8 +1078,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                     decoration: const BoxDecoration(),
                                     child: Form(
                                       key: _model.formKey1,
-                                      autovalidateMode:
-                                          AutovalidateMode.disabled,
+                                      autovalidateMode: AutovalidateMode.always,
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         crossAxisAlignment:
@@ -1045,7 +1120,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                               child:
                                                                   DesplegablederechosprincipalWidget(
                                                                 idexp: _model
-                                                                    .crearexpnnya1
+                                                                    .crearexpnnya2
                                                                     ?.id,
                                                                 idingreso: 0,
                                                                 form:
@@ -1100,7 +1175,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                               .titleSmall
                                                               .override(
                                                                 fontFamily:
-                                                                    'Raleway',
+                                                                    'Noto Sans JP',
                                                                 color: Colors
                                                                     .white,
                                                                 letterSpacing:
@@ -1133,7 +1208,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                                   q.eqOrNull(
                                                                 'idexp',
                                                                 _model
-                                                                    .crearexpnnya1
+                                                                    .crearexpnnya2
                                                                     ?.id,
                                                               ),
                                                             )))
@@ -1205,7 +1280,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .labelLarge
                                                                               .override(
-                                                                                fontFamily: 'Raleway',
+                                                                                fontFamily: 'Noto Sans JP',
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                 letterSpacing: 0.0,
                                                                               ),
@@ -1223,7 +1298,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .labelLarge
                                                                               .override(
-                                                                                fontFamily: 'Raleway',
+                                                                                fontFamily: 'Noto Sans JP',
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                 letterSpacing: 0.0,
                                                                               ),
@@ -1244,7 +1319,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                                               Text(
                                                                             'Principal',
                                                                             style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                  fontFamily: 'Raleway',
+                                                                                  fontFamily: 'Noto Sans JP',
                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                   letterSpacing: 0.0,
                                                                                 ),
@@ -1280,7 +1355,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Raleway',
+                                                                              fontFamily: 'Noto Sans JP',
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                       ),
@@ -1294,7 +1369,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Raleway',
+                                                                              fontFamily: 'Noto Sans JP',
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                       ),
@@ -1327,7 +1402,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                                                   '0',
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Raleway',
+                                                                                      fontFamily: 'Noto Sans JP',
                                                                                       letterSpacing: 0.0,
                                                                                     ),
                                                                               ),
@@ -1394,17 +1469,16 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                 const AlignmentDirectional(0.0, 0.0),
                                             child: Text(
                                               'Información de expediente',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleLarge
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .titleLarge
+                                                  .override(
+                                                    fontFamily: 'Noto Sans JP',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
+                                                    letterSpacing: 0.0,
+                                                  ),
                                             ),
                                           ),
                                           FutureBuilder<List<SpdRow>>(
@@ -1454,21 +1528,24 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                     FlutterFlowTheme.of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                 searchTextStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                 hintText: 'SPD',
@@ -1494,6 +1571,8 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                     .fromSTEB(
                                                         12.0, 0.0, 12.0, 0.0),
                                                 hidesUnderline: true,
+                                                disabled: currentUserEmail !=
+                                                    'darioanzaudo@gmail.com',
                                                 isOverButton: false,
                                                 isSearchable: true,
                                                 isMultiSelect: false,
@@ -1526,7 +1605,8 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
@@ -1559,7 +1639,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                                   .headlineLarge
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Raleway',
+                                                                        'Noto Sans JP',
                                                                     fontSize:
                                                                         32.0,
                                                                     letterSpacing:
@@ -1624,7 +1704,8 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                             .of(context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           color: Colors.white,
                                                           letterSpacing: 0.0,
                                                         ),
@@ -1665,7 +1746,8 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                               hintText: ' CANAL DE INGRESO',
@@ -1698,7 +1780,8 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
@@ -1724,7 +1807,8 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     hintText:
@@ -1733,7 +1817,8 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     enabledBorder:
@@ -1793,7 +1878,8 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                                   validator: _model
@@ -1819,14 +1905,16 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     hintStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     enabledBorder:
@@ -1886,7 +1974,8 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                                   validator: _model
@@ -1912,14 +2001,16 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     hintStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     enabledBorder:
@@ -1979,7 +2070,8 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                                   validator: _model
@@ -1998,20 +2090,132 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                             children: [
                                               FFButtonWidget(
                                                 onPressed: () async {
+                                                  if (_model.formKey1
+                                                              .currentState ==
+                                                          null ||
+                                                      !_model.formKey1
+                                                          .currentState!
+                                                          .validate()) {
+                                                    return;
+                                                  }
+                                                  if (_model.datePicked2 ==
+                                                      null) {
+                                                    final datePicked2Date =
+                                                        await showDatePicker(
+                                                      context: context,
+                                                      initialDate:
+                                                          getCurrentTimestamp,
+                                                      firstDate:
+                                                          getCurrentTimestamp,
+                                                      lastDate: DateTime(2050),
+                                                      builder:
+                                                          (context, child) {
+                                                        return wrapInMaterialDatePickerTheme(
+                                                          context,
+                                                          child!,
+                                                          headerBackgroundColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primary,
+                                                          headerForegroundColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .info,
+                                                          headerTextStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineLarge
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Noto Sans JP',
+                                                                    fontSize:
+                                                                        32.0,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w600,
+                                                                  ),
+                                                          pickerBackgroundColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .secondaryBackground,
+                                                          pickerForegroundColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primaryText,
+                                                          selectedDateTimeBackgroundColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primary,
+                                                          selectedDateTimeForegroundColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .info,
+                                                          actionButtonForegroundColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primaryText,
+                                                          iconSize: 24.0,
+                                                        );
+                                                      },
+                                                    );
+
+                                                    if (datePicked2Date !=
+                                                        null) {
+                                                      safeSetState(() {
+                                                        _model.datePicked2 =
+                                                            DateTime(
+                                                          datePicked2Date.year,
+                                                          datePicked2Date
+                                                              .month,
+                                                          datePicked2Date.day,
+                                                        );
+                                                      });
+                                                    }
+                                                    return;
+                                                  }
+                                                  if (_model
+                                                          .dropDowncanaldeingresoValue ==
+                                                      null) {
+                                                    await showDialog(
+                                                      context: context,
+                                                      builder:
+                                                          (alertDialogContext) {
+                                                        return AlertDialog(
+                                                          title: const Text(
+                                                              'Campo obligatorio'),
+                                                          content: const Text(
+                                                              'El Canal de Ingreso de la demanda es obligatorio!!'),
+                                                          actions: [
+                                                            TextButton(
+                                                              onPressed: () =>
+                                                                  Navigator.pop(
+                                                                      alertDialogContext),
+                                                              child: const Text('Ok'),
+                                                            ),
+                                                          ],
+                                                        );
+                                                      },
+                                                    );
+                                                    return;
+                                                  }
                                                   await ExpedienteTable()
                                                       .update(
                                                     data: {
                                                       'fecha': supaSerialize<
                                                               DateTime>(
                                                           _model.datePicked2),
-                                                      'nombres': _model
-                                                          .textFieldnombresTextController
-                                                          .text,
-                                                      'apellidos': _model
-                                                          .textFieldapellidoTextController
-                                                          .text,
+                                                      'nombres': functions
+                                                          .mayusculas(_model
+                                                              .textFieldnombresTextController
+                                                              .text),
+                                                      'apellidos': functions
+                                                          .mayusculas(_model
+                                                              .textFieldapellidoTextController
+                                                              .text),
                                                       'expediente':
-                                                          '${widget.usuario?.spd}/${_model.crearexpnnya1?.id.toString()}/${dateTimeFormat(
+                                                          '${widget.usuario?.spd}/${_model.crearexpnnya2?.id.toString()}/${dateTimeFormat(
                                                         "y",
                                                         getCurrentTimestamp,
                                                         locale:
@@ -2044,7 +2248,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                     matchingRows: (rows) =>
                                                         rows.eqOrNull(
                                                       'id',
-                                                      _model.crearexpnnya1?.id,
+                                                      _model.crearexpnnya2?.id,
                                                     ),
                                                   );
                                                   await showDialog(
@@ -2067,13 +2271,20 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                       );
                                                     },
                                                   );
-                                                  Navigator.pop(context);
                                                   _model.vistaExpediente =
                                                       await VistaExpedientesUltimoEstadoTable()
                                                           .queryRows(
                                                     queryFn: (q) => q.eqOrNull(
                                                       'id',
-                                                      _model.crearexpnnya1?.id,
+                                                      _model.crearexpnnya2?.id,
+                                                    ),
+                                                  );
+                                                  _model.idcarptea =
+                                                      await ImpresionesExpedientesTable()
+                                                          .queryRows(
+                                                    queryFn: (q) => q.eqOrNull(
+                                                      'id',
+                                                      _model.crearexpnnya2?.id,
                                                     ),
                                                   );
 
@@ -2082,7 +2293,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                     queryParameters: {
                                                       'idexp': serializeParam(
                                                         _model
-                                                            .crearexpnnya1?.id,
+                                                            .crearexpnnya2?.id,
                                                         ParamType.int,
                                                       ),
                                                       'idexpediente':
@@ -2095,6 +2306,14 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                           serializeParam(
                                                         widget.usuario,
                                                         ParamType.SupabaseRow,
+                                                      ),
+                                                      'idcarpeta':
+                                                          serializeParam(
+                                                        _model
+                                                            .idcarptea
+                                                            ?.firstOrNull
+                                                            ?.idcarpeta,
+                                                        ParamType.String,
                                                       ),
                                                     }.withoutNulls,
                                                   );
@@ -2119,14 +2338,16 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .success,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                'Noto Sans JP',
+                                                            color: Colors.white,
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   elevation: 2.0,
                                                   borderSide: const BorderSide(
                                                     color: Colors.transparent,

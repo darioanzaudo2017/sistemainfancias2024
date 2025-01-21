@@ -11,7 +11,7 @@ const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
 class BuscarPersonaCall {
   static Future<ApiCallResponse> call({
-    String? buscar = 'dario',
+    String? buscar = 'KIUJY',
   }) async {
     final ffApiRequestBody = '''
 {
@@ -70,8 +70,8 @@ class BuscarPersonaCall {
 
 class BusquedaExpedienteCall {
   static Future<ApiCallResponse> call({
-    String? busquedaExp = 'dario',
-    String? iduser = '8be0e54f-b5c1-4d62-ac7f-a5ee6228affc',
+    String? busquedaExp = 'KIUJY',
+    String? iduser = '90cc0cdf-9afb-4484-9c6a-e50e7e53a402',
   }) async {
     final ffApiRequestBody = '''
 {
@@ -452,12 +452,14 @@ class CarpetaDelExpedienteCall {
     int? id = 2,
     String? fecha = 'asd',
     String? nombresDNI = 'asdasd',
+    String? idcarpetaspd = 'sdfsdfsdf',
   }) async {
     final ffApiRequestBody = '''
 {
   "expediente": "$expediente",
   "fecha": "$fecha",
   "id": $id,
+"idcarpetaspd":"$idcarpetaspd",
   "nombres": "$nombresDNI"
 }''';
     return ApiManager.instance.makeApiCall(
@@ -873,6 +875,8 @@ class AnexoReuninInterinstitucionalCall {
     String? expediente = 'sad',
     int? idingreso = 3,
     String? carpeta = 'dfg',
+    String? profesionales = 'dario',
+    int? idreunion = 5,
   }) async {
     final ffApiRequestBody = '''
 {
@@ -885,7 +889,9 @@ class AnexoReuninInterinstitucionalCall {
   "puntosacuerdos": "${escapeStringForJson(puntosacuerdos)}",
   "expediente": "${escapeStringForJson(expediente)}",
   "idingreso": $idingreso,
-  "carpeta": "${escapeStringForJson(carpeta)}"
+  "profesionales": "${escapeStringForJson(profesionales)}",
+  "carpeta": "${escapeStringForJson(carpeta)}",
+  "idreunion": $idreunion
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'ANEXO  REUNIN INTERINSTITUCIONAL',
@@ -970,6 +976,9 @@ class ANEXOREQUERIMIENTODEEJECUCIoNDEACCIONESCall {
     String? institucionderiva = 'sdfgsdf',
     String? acciones = 'sdfgsdfg',
     String? spd = 'sdfgsd',
+    int? idmedida = 54,
+    int? idreqacciones = 34,
+    String? datosspd = 'ffff',
   }) async {
     final ffApiRequestBody = '''
 {
@@ -983,7 +992,10 @@ class ANEXOREQUERIMIENTODEEJECUCIoNDEACCIONESCall {
   "acciones": "${escapeStringForJson(acciones)}",
   "institucionderiva": "${escapeStringForJson(institucionderiva)}",
   "spd": "${escapeStringForJson(spd)}",
-  "carpeta": "${escapeStringForJson(carpeta)}"
+  "carpeta": "${escapeStringForJson(carpeta)}",
+  "idmedida": $idmedida,
+  "idreqacciones": $idreqacciones,
+  "datosspd": "${escapeStringForJson(datosspd)}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'ANEXO  REQUERIMIENTO DE EJECUCIoN DE ACCIONES',
@@ -1005,7 +1017,7 @@ class ANEXOREQUERIMIENTODEEJECUCIoNDEACCIONESCall {
 
 class EmailResendCall {
   static Future<ApiCallResponse> call({
-    String? mail = 'anzaudo@gmail.com',
+    String? mail = 'darioanzaudo@gmail.com',
     String? titulo = 'titulo prueba',
     String? mensaje = 'hola que tal',
     String? nOmbreyapellido = 'dario anzaudo',
@@ -1016,7 +1028,7 @@ class EmailResendCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "from": "Subsecretaria de infancias <onboarding@resend.dev>",
+  "from": "Subsecretaria de infancias <direcciongeneral@sistemasdeinfancias.com.ar>",
   "to": [
     "${escapeStringForJson(mail)}"
   ],
@@ -1042,6 +1054,43 @@ class EmailResendCall {
       alwaysAllowBody: false,
     );
   }
+}
+
+class ExisteDNICall {
+  static Future<ApiCallResponse> call({
+    String? dni = '12312312',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "dni_param": "${escapeStringForJson(dni)}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'ExisteDNI',
+      apiUrl: 'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/rpc/dni_existe',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
+        'Authorization':
+            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static bool? check(dynamic response) => castToType<bool>(getJsonField(
+        response,
+        r'''$''',
+      ));
 }
 
 class ApiPagingParams {

@@ -13,6 +13,8 @@ class Caratula2Model extends FlutterFlowModel<Caratula2Widget> {
 
   bool dniok = false;
 
+  int? expedientecreado;
+
   ///  State fields for stateful widgets in this page.
 
   final formKey2 = GlobalKey<FormState>();
@@ -50,43 +52,27 @@ class Caratula2Model extends FlutterFlowModel<Caratula2Widget> {
   TextEditingController? textFieldDNITextController;
   final textFieldDNIMask = MaskTextInputFormatter(mask: '########');
   String? Function(BuildContext, String?)? textFieldDNITextControllerValidator;
-  String? _textFieldDNITextControllerValidator(
-      BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'Field is required';
-    }
-
-    if (val.length < 8) {
-      return 'Requires at least 8 characters.';
-    }
-    if (val.length > 8) {
-      return 'Maximum 8 characters allowed, currently ${val.length}.';
-    }
-
-    return null;
-  }
-
   // State field(s) for TextFieldedad widget.
   FocusNode? textFieldedadFocusNode;
   TextEditingController? textFieldedadTextController;
   final textFieldedadMask = MaskTextInputFormatter(mask: '##');
   String? Function(BuildContext, String?)? textFieldedadTextControllerValidator;
   DateTime? datePicked1;
-  // Stores action output result for [Custom Action - checkDNI] action in Button widget.
-  bool? accionexitosa;
+  // Stores action output result for [Backend Call - API (ExisteDNI)] action in Button widget.
+  ApiCallResponse? checkdnifuncion;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  ExpedienteRow? crearexpnnya1;
+  ExpedienteRow? crearexpnnya2;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  NNyAExpGruRow? crearexpgrupo;
+  NNyARow? crearNNyA2;
+  Completer<List<ListaDerechosVulneradosexpedienteRow>>? requestCompleter;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  NNyARow? crearNNyA;
+  NNyAExpGruRow? crearexpgrupo2;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  GrupofamiliarRow? grupofmiliar;
+  GrupofamiliarRow? grupofmiliar2;
   // Stores action output result for [Backend Call - API (carpeta del expediente)] action in Button widget.
-  ApiCallResponse? apiResult42y;
+  ApiCallResponse? apiResult42y2;
   // Stores action output result for [Bottom Sheet - desplegablederechosprincipal] action in Button widget.
   bool? agregarderecho;
-  Completer<List<ListaDerechosVulneradosexpedienteRow>>? requestCompleter;
   // State field(s) for PaginatedDataTable widget.
   final paginatedDataTableController =
       FlutterFlowDataTableController<ListaDerechosVulneradosexpedienteRow>();
@@ -116,6 +102,8 @@ class Caratula2Model extends FlutterFlowModel<Caratula2Widget> {
   List<ExpedienteRow>? creaexpprimeravez;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
   List<VistaExpedientesUltimoEstadoRow>? vistaExpediente;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<ImpresionesExpedientesRow>? idcarptea;
 
   @override
   void initState(BuildContext context) {
@@ -123,7 +111,6 @@ class Caratula2Model extends FlutterFlowModel<Caratula2Widget> {
         _textFieldapellidoTextControllerValidator;
     textFieldnombresTextControllerValidator =
         _textFieldnombresTextControllerValidator;
-    textFieldDNITextControllerValidator = _textFieldDNITextControllerValidator;
   }
 
   @override

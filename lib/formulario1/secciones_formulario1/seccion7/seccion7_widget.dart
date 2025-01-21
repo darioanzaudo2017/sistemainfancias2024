@@ -92,10 +92,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
               borderRadius: BorderRadius.circular(20.0),
             ),
             child: Container(
-              width: MediaQuery.sizeOf(context).width * 1.0,
-              constraints: const BoxConstraints(
-                maxWidth: 600.0,
-              ),
+              width: MediaQuery.sizeOf(context).width * 0.8,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 borderRadius: BorderRadius.circular(20.0),
@@ -106,7 +103,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
               alignment: const AlignmentDirectional(0.0, 0.0),
               child: Form(
                 key: _model.formKey,
-                autovalidateMode: AutovalidateMode.disabled,
+                autovalidateMode: AutovalidateMode.always,
                 child: Align(
                   alignment: const AlignmentDirectional(0.0, -1.0),
                   child: Padding(
@@ -130,7 +127,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
                                           letterSpacing: 0.0,
@@ -173,7 +170,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           fontSize: 16.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
@@ -198,7 +195,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           fontSize: 16.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.normal,
@@ -223,7 +220,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -246,7 +243,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                       child: DesplegablederechosprincipalWidget(
                                         idexp: widget.rowexp?.id,
                                         idingreso: widget.rowingreso?.id,
-                                        form: 'Seccion7',
+                                        form: 'Recepcion de la demanda',
                                       ),
                                     );
                                   },
@@ -274,7 +271,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       color: Colors.white,
                                       letterSpacing: 0.0,
                                     ),
@@ -357,7 +354,8 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                                             context)
                                                         .labelLarge
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryBackground,
@@ -375,7 +373,8 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                                             context)
                                                         .labelLarge
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryBackground,
@@ -399,7 +398,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                                               .labelLarge
                                                               .override(
                                                                 fontFamily:
-                                                                    'Raleway',
+                                                                    'Noto Sans JP',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryBackground,
@@ -419,7 +418,8 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                                             context)
                                                         .labelLarge
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryBackground,
@@ -453,7 +453,8 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -467,7 +468,8 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -507,7 +509,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Raleway',
+                                                                    'Noto Sans JP',
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -526,7 +528,8 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -579,7 +582,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.normal,
@@ -602,7 +605,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                 containerSeccion7Row?.criterios ?? [],
                               )),
                               options: const [
-                                'Recién nacidos y Niños de 0 a 3 años.',
+                                'No tiene criterios de priorizacion',
                                 'Riesgo de vida.',
                                 'Sospecha de violencia sexual contra NNYA.',
                                 'Evidencia física relacionada a la vulneración de la integridad  personal.',
@@ -612,17 +615,31 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                 'Inexistencia de figuras adultas capaces de proteger al NNYA o con  limitaciones físicas o intelectuales que impiden al cuidador/a de  hacerse cargo del mismo/a.',
                                 'Presencia de enfermedad crónica o discapacidad en NNYA.',
                                 'Cuidador/a adolescente sin apoyos positivos en su entorno.',
-                                'Negativa total de los adultos responsables del NNYA a cooperar con los Servicios de Protección de Derechos.'
+                                'Negativa total de los adultos responsables del NNYA a cooperar con los Servicios de Protección de Derechos.',
+                                'Recién nacidos y Niños de 0 a 3 años.'
                               ],
                               width: 580.0,
                               height: 56.0,
+                              searchHintTextStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Noto Sans JP',
+                                    letterSpacing: 0.0,
+                                  ),
+                              searchTextStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Noto Sans JP',
+                                    letterSpacing: 0.0,
+                                  ),
                               textStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               hintText: 'Criterios de priorización',
+                              searchHintText: 'Buscar',
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
                                 color:
@@ -640,7 +657,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                   16.0, 4.0, 16.0, 4.0),
                               hidesUnderline: true,
                               isOverButton: true,
-                              isSearchable: false,
+                              isSearchable: true,
                               isMultiSelect: true,
                               onMultiSelectChanged: (val) => safeSetState(
                                   () => _model.dropDownpriorizacionValue = val),
@@ -745,10 +762,40 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                               .validate()) {
                                         return;
                                       }
+                                      if (_model.dropDownpriorizacionValue ==
+                                          null) {
+                                        await showDialog(
+                                          context: context,
+                                          builder: (alertDialogContext) {
+                                            return AlertDialog(
+                                              title: const Text('Campo obligatorio'),
+                                              content: const Text(
+                                                  'Si no tiene criterio de priorizacion seleccionar que no tiene!!'),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () =>
+                                                      Navigator.pop(
+                                                          alertDialogContext),
+                                                  child: const Text('Ok'),
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        );
+                                        return;
+                                      }
                                       if (!widget.editar!) {
                                         await Seccion7Table().insert({
                                           'Criterios':
-                                              _model.dropDownpriorizacionValue,
+                                              _model.dropDownpriorizacionValue !=
+                                                          null &&
+                                                      (_model.dropDownpriorizacionValue)!
+                                                          .isNotEmpty
+                                                  ? _model
+                                                      .dropDownpriorizacionValue
+                                                  : [
+                                                      'No tiene criterios de priorizacion'
+                                                    ],
                                           'idIngreso': widget.rowingreso?.id,
                                           'idExpediente': widget.rowexp?.id,
                                           'iduser': currentUserUid,
@@ -848,7 +895,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             color: Colors.white,
                                             letterSpacing: 0.0,
                                           ),

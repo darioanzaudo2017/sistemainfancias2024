@@ -136,7 +136,7 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         letterSpacing: 0.0,
@@ -188,14 +188,14 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: ' Expediente Nº: ',
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   enabledBorder: OutlineInputBorder(
@@ -232,7 +232,7 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 validator: _model.textController1Validator
@@ -255,7 +255,7 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -281,7 +281,8 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                                 FlutterFlowTheme.of(context)
                                                     .headlineLarge
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       fontSize: 32.0,
                                                       letterSpacing: 0.0,
                                                       fontWeight:
@@ -338,7 +339,7 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             color: Colors.white,
                                             letterSpacing: 0.0,
                                           ),
@@ -369,7 +370,7 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -395,7 +396,8 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                                 FlutterFlowTheme.of(context)
                                                     .headlineLarge
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       fontSize: 32.0,
                                                       letterSpacing: 0.0,
                                                       fontWeight:
@@ -453,7 +455,7 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             color: Colors.white,
                                             letterSpacing: 0.0,
                                           ),
@@ -486,14 +488,14 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: 'Organismo y Profesional remitente',
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   enabledBorder: OutlineInputBorder(
@@ -530,7 +532,7 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 validator: _model.textController2Validator
@@ -554,7 +556,7 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   hintText:
@@ -562,7 +564,7 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   enabledBorder: OutlineInputBorder(
@@ -599,7 +601,7 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 validator: _model.textController3Validator
@@ -623,14 +625,14 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: 'Tipo de Intervención solicitada',
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   enabledBorder: OutlineInputBorder(
@@ -667,7 +669,7 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 validator: _model.textController4Validator
@@ -937,7 +939,7 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           color: Colors.white,
                                           letterSpacing: 0.0,
                                         ),

@@ -61,4 +61,12 @@ class Anexo4RequerimientoaccionesRow extends SupabaseDataRow {
 
   int? get idmedidaform6 => getField<int>('idmedidaform6');
   set idmedidaform6(int? value) => setField<int>('idmedidaform6', value);
+
+  String? get profesionalespresentes =>
+      getField<String>('profesionalespresentes');
+  set profesionalespresentes(String? value) =>
+      setField<String>('profesionalespresentes', value);
+
+  String? get formulario => getField<String>('formulario');
+  set formulario(String? value) => setField<String>('formulario', value);
 }

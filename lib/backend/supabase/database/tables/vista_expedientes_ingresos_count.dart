@@ -35,4 +35,9 @@ class VistaExpedientesIngresosCountRow extends SupabaseDataRow {
       getField<int>('cantidad_ingresos_cerrados');
   set cantidadIngresosCerrados(int? value) =>
       setField<int>('cantidad_ingresos_cerrados', value);
+
+  int? get cantidadIngresosUltimos30Dias =>
+      getField<int>('cantidad_ingresos_ultimos_30_dias');
+  set cantidadIngresosUltimos30Dias(int? value) =>
+      setField<int>('cantidad_ingresos_ultimos_30_dias', value);
 }

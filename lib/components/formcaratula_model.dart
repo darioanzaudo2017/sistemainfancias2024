@@ -52,22 +52,6 @@ class FormcaratulaModel extends FlutterFlowModel<FormcaratulaWidget> {
   TextEditingController? textFieldDNITextController;
   final textFieldDNIMask = MaskTextInputFormatter(mask: '########');
   String? Function(BuildContext, String?)? textFieldDNITextControllerValidator;
-  String? _textFieldDNITextControllerValidator(
-      BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'Field is required';
-    }
-
-    if (val.length < 8) {
-      return 'Requires at least 8 characters.';
-    }
-    if (val.length > 8) {
-      return 'Maximum 8 characters allowed, currently ${val.length}.';
-    }
-
-    return null;
-  }
-
   // State field(s) for TextFieldedad widget.
   FocusNode? textFieldedadFocusNode;
   TextEditingController? textFieldedadTextController;
@@ -127,7 +111,6 @@ class FormcaratulaModel extends FlutterFlowModel<FormcaratulaWidget> {
         _textFieldapellidoTextControllerValidator;
     textFieldnombresTextControllerValidator =
         _textFieldnombresTextControllerValidator;
-    textFieldDNITextControllerValidator = _textFieldDNITextControllerValidator;
   }
 
   @override

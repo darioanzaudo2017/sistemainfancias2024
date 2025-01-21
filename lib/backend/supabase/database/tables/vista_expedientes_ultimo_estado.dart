@@ -76,6 +76,9 @@ class VistaExpedientesUltimoEstadoRow extends SupabaseDataRow {
   int? get idgrupofamiliar => getField<int>('idgrupofamiliar');
   set idgrupofamiliar(int? value) => setField<int>('idgrupofamiliar', value);
 
+  int? get idNNyA => getField<int>('idNNyA');
+  set idNNyA(int? value) => setField<int>('idNNyA', value);
+
   String? get ultimoEstado => getField<String>('ultimo_estado');
   set ultimoEstado(String? value) => setField<String>('ultimo_estado', value);
 
@@ -94,4 +97,13 @@ class VistaExpedientesUltimoEstadoRow extends SupabaseDataRow {
 
   int? get idexpediente => getField<int>('idexpediente');
   set idexpediente(int? value) => setField<int>('idexpediente', value);
+
+  String? get nombre => getField<String>('Nombre');
+  set nombre(String? value) => setField<String>('Nombre', value);
+
+  String? get apellido => getField<String>('Apellido');
+  set apellido(String? value) => setField<String>('Apellido', value);
+
+  int? get DNI => getField<int>('DNI');
+  set DNI(int? value) => setField<int>('DNI', value);
 }

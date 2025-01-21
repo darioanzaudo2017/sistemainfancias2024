@@ -7,6 +7,8 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/custom_functions.dart' as functions;
+import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'agregar_conviviente_model.dart';
 export 'agregar_conviviente_model.dart';
@@ -16,14 +18,14 @@ class AgregarConvivienteWidget extends StatefulWidget {
     super.key,
     required this.rowingreso,
     required this.idexp,
-    this.idgrupoconviviente,
+    int? idgrupoconviviente,
     this.editar,
     this.idnnya,
-  });
+  }) : idgrupoconviviente = idgrupoconviviente ?? 0;
 
   final IngresosRow? rowingreso;
   final VistaExpedientesUltimoEstadoRow? idexp;
-  final int? idgrupoconviviente;
+  final int idgrupoconviviente;
   final bool? editar;
   final int? idnnya;
 
@@ -50,17 +52,15 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
 
     _model.textFieldFocusNode2 ??= FocusNode();
 
-    _model.textFieldFocusNode3 ??= FocusNode();
-
     _model.textFieldDniFocusNode ??= FocusNode();
+
+    _model.textFieldFocusNode3 ??= FocusNode();
 
     _model.textFieldFocusNode4 ??= FocusNode();
 
     _model.textFieldFocusNode5 ??= FocusNode();
 
     _model.textFieldFocusNode6 ??= FocusNode();
-
-    _model.textFieldFocusNode7 ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -113,10 +113,8 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
               borderRadius: BorderRadius.circular(20.0),
             ),
             child: Container(
-              width: MediaQuery.sizeOf(context).width * 1.0,
-              constraints: const BoxConstraints(
-                maxWidth: 600.0,
-              ),
+              width: MediaQuery.sizeOf(context).width * 0.85,
+              height: 550.0,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 borderRadius: BorderRadius.circular(20.0),
@@ -134,6 +132,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                     padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         Row(
@@ -150,7 +149,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         letterSpacing: 0.0,
@@ -178,129 +177,64 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
-                          child: TextFormField(
-                            controller: _model.textController1 ??=
-                                TextEditingController(
-                              text: containerGrupoConvivienteRow?.nombre,
-                            ),
-                            focusNode: _model.textFieldFocusNode1,
-                            autofocus: true,
-                            obscureText: false,
-                            decoration: InputDecoration(
-                              labelText: 'Nombre',
-                              labelStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    fontFamily: 'Raleway',
-                                    letterSpacing: 0.0,
-                                  ),
-                              hintStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    fontFamily: 'Raleway',
-                                    letterSpacing: 0.0,
-                                  ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).alternate,
-                                  width: 2.0,
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 0.0, 0.0),
+                                child: Text(
+                                  'Es grupo conviente?',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Noto Sans JP',
+                                        letterSpacing: 0.0,
+                                      ),
                                 ),
-                                borderRadius: BorderRadius.circular(10.0),
                               ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  width: 2.0,
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 10.0, 0.0),
+                                child: FlutterFlowRadioButton(
+                                  options: ['Si', 'No'].toList(),
+                                  onChanged: (val) => safeSetState(() {}),
+                                  controller:
+                                      _model.radioButtoncudValueController ??=
+                                          FormFieldController<String>(
+                                              valueOrDefault<String>(
+                                    containerGrupoConvivienteRow?.conviviente,
+                                    'No',
+                                  )),
+                                  optionHeight: 40.0,
+                                  optionWidth: 70.0,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Noto Sans JP',
+                                        letterSpacing: 0.0,
+                                      ),
+                                  selectedTextStyle:
+                                      FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                  buttonPosition: RadioButtonPosition.right,
+                                  direction: Axis.horizontal,
+                                  radioButtonColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                  inactiveRadioButtonColor:
+                                      FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                  toggleable: false,
+                                  horizontalAlignment: WrapAlignment.start,
+                                  verticalAlignment: WrapCrossAlignment.start,
                                 ),
-                                borderRadius: BorderRadius.circular(10.0),
                               ),
-                              errorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).error,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              focusedErrorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).error,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                            ),
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Raleway',
-                                  letterSpacing: 0.0,
-                                ),
-                            validator: _model.textController1Validator
-                                .asValidator(context),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              8.0, 0.0, 8.0, 0.0),
-                          child: TextFormField(
-                            controller: _model.textController2 ??=
-                                TextEditingController(
-                              text: containerGrupoConvivienteRow?.apellido,
-                            ),
-                            focusNode: _model.textFieldFocusNode2,
-                            autofocus: true,
-                            obscureText: false,
-                            decoration: InputDecoration(
-                              labelText: 'Apellido',
-                              labelStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    fontFamily: 'Raleway',
-                                    letterSpacing: 0.0,
-                                  ),
-                              hintStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    fontFamily: 'Raleway',
-                                    letterSpacing: 0.0,
-                                  ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).alternate,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              errorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).error,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              focusedErrorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).error,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                            ),
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Raleway',
-                                  letterSpacing: 0.0,
-                                ),
-                            validator: _model.textController2Validator
-                                .asValidator(context),
+                            ].divide(const SizedBox(width: 10.0)),
                           ),
                         ),
                         Row(
@@ -311,25 +245,25 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     8.0, 0.0, 8.0, 0.0),
                                 child: TextFormField(
-                                  controller: _model.textController3 ??=
+                                  controller: _model.textController1 ??=
                                       TextEditingController(
-                                    text: containerGrupoConvivienteRow?.vinculo,
+                                    text: containerGrupoConvivienteRow?.nombre,
                                   ),
-                                  focusNode: _model.textFieldFocusNode3,
+                                  focusNode: _model.textFieldFocusNode1,
                                   autofocus: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'Vínculo',
+                                    labelText: 'Nombre',
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -368,10 +302,81 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
-                                  validator: _model.textController3Validator
+                                  validator: _model.textController1Validator
+                                      .asValidator(context),
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    8.0, 0.0, 8.0, 0.0),
+                                child: TextFormField(
+                                  controller: _model.textController2 ??=
+                                      TextEditingController(
+                                    text:
+                                        containerGrupoConvivienteRow?.apellido,
+                                  ),
+                                  focusNode: _model.textFieldFocusNode2,
+                                  autofocus: true,
+                                  obscureText: false,
+                                  decoration: InputDecoration(
+                                    labelText: 'Apellido',
+                                    labelStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          fontFamily: 'Noto Sans JP',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    hintStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          fontFamily: 'Noto Sans JP',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: FlutterFlowTheme.of(context)
+                                            .alternate,
+                                        width: 2.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        width: 2.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                    errorBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        width: 2.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                    focusedErrorBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        width: 2.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Noto Sans JP',
+                                        letterSpacing: 0.0,
+                                      ),
+                                  validator: _model.textController2Validator
                                       .asValidator(context),
                                 ),
                               ),
@@ -385,7 +390,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                       _model.textFieldDniTextController ??=
                                           TextEditingController(
                                     text: containerGrupoConvivienteRow?.dni
-                                        ?.toString(),
+                                        .toString(),
                                   ),
                                   focusNode: _model.textFieldDniFocusNode,
                                   autofocus: true,
@@ -395,13 +400,13 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -440,7 +445,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   validator: _model
@@ -457,7 +462,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                               8.0, 0.0, 8.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Flexible(
                                 child: Padding(
@@ -468,7 +473,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -477,13 +482,18 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                               Flexible(
                                 child: Text(
                                   valueOrDefault<String>(
-                                    _model.datePicked?.toString(),
+                                    dateTimeFormat(
+                                      "d/M/y",
+                                      _model.datePicked,
+                                      locale: FFLocalizations.of(context)
+                                          .languageCode,
+                                    ),
                                     'No tiene fecha seleccionada',
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                         lineHeight: 0.0,
                                       ),
@@ -513,7 +523,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .headlineLarge
                                                   .override(
-                                                    fontFamily: 'Raleway',
+                                                    fontFamily: 'Noto Sans JP',
                                                     fontSize: 32.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w600,
@@ -567,7 +577,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           color: Colors.white,
                                           letterSpacing: 0.0,
                                         ),
@@ -580,205 +590,224 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                   ),
                                 ),
                               ),
-                            ],
-                          ),
-                        ),
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Expanded(
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    8.0, 0.0, 8.0, 0.0),
-                                child: TextFormField(
-                                  controller: _model.textController5 ??=
-                                      TextEditingController(
-                                    text: containerGrupoConvivienteRow?.edad
-                                        ?.toString(),
-                                  ),
-                                  focusNode: _model.textFieldFocusNode4,
-                                  autofocus: true,
-                                  obscureText: false,
-                                  decoration: InputDecoration(
-                                    labelText: 'Edad',
-                                    labelStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Raleway',
-                                          letterSpacing: 0.0,
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      8.0, 0.0, 8.0, 0.0),
+                                  child: SizedBox(
+                                    width: 100.0,
+                                    child: TextFormField(
+                                      controller: _model.textController4 ??=
+                                          TextEditingController(
+                                        text: containerGrupoConvivienteRow?.edad
+                                            ?.toString(),
+                                      ),
+                                      focusNode: _model.textFieldFocusNode3,
+                                      autofocus: true,
+                                      obscureText: false,
+                                      decoration: InputDecoration(
+                                        labelText: 'Edad',
+                                        labelStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
+                                              letterSpacing: 0.0,
+                                            ),
+                                        hintStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
+                                              letterSpacing: 0.0,
+                                            ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .alternate,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
                                         ),
-                                    hintStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Raleway',
-                                          letterSpacing: 0.0,
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
                                         ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .alternate,
-                                        width: 2.0,
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        focusedErrorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
                                       ),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    errorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color:
-                                            FlutterFlowTheme.of(context).error,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    focusedErrorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color:
-                                            FlutterFlowTheme.of(context).error,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(10.0),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      validator: _model.textController4Validator
+                                          .asValidator(context),
+                                      inputFormatters: [_model.textFieldMask3],
                                     ),
                                   ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Raleway',
-                                        letterSpacing: 0.0,
-                                      ),
-                                  validator: _model.textController5Validator
-                                      .asValidator(context),
-                                  inputFormatters: [_model.textFieldMask4],
                                 ),
                               ),
-                            ),
-                            Expanded(
-                              child: Padding(
+                              Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    8.0, 0.0, 8.0, 0.0),
-                                child: TextFormField(
-                                  controller: _model.textController6 ??=
-                                      TextEditingController(
-                                    text:
-                                        containerGrupoConvivienteRow?.telefono,
+                                    10.0, 0.0, 10.0, 0.0),
+                                child: FlutterFlowDropDown<String>(
+                                  controller: _model.dropDownValueController ??=
+                                      FormFieldController<String>(
+                                    _model.dropDownValue ??=
+                                        containerGrupoConvivienteRow?.vinculo,
                                   ),
-                                  focusNode: _model.textFieldFocusNode5,
-                                  autofocus: true,
-                                  obscureText: false,
-                                  decoration: InputDecoration(
-                                    labelText: 'Teléfono',
-                                    labelStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Raleway',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    hintStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Raleway',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .alternate,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    errorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color:
-                                            FlutterFlowTheme.of(context).error,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    focusedErrorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color:
-                                            FlutterFlowTheme.of(context).error,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
+                                  options: const [
+                                    'Madre',
+                                    'Padre',
+                                    'Hemana/os',
+                                    'Abuela/o paterno',
+                                    'Otros',
+                                    'Abuela/o materno',
+                                    'tia/o materno',
+                                    'tia/o paterno'
+                                  ],
+                                  onChanged: (val) => safeSetState(
+                                      () => _model.dropDownValue = val),
+                                  width: 200.0,
+                                  height: 60.0,
+                                  textStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
-                                  validator: _model.textController6Validator
-                                      .asValidator(context),
-                                  inputFormatters: [_model.textFieldMask5],
+                                  hintText: 'Vinculo',
+                                  icon: Icon(
+                                    Icons.keyboard_arrow_down_rounded,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    size: 24.0,
+                                  ),
+                                  fillColor: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  elevation: 2.0,
+                                  borderColor:
+                                      FlutterFlowTheme.of(context).accent1,
+                                  borderWidth: 0.0,
+                                  borderRadius: 8.0,
+                                  margin: const EdgeInsetsDirectional.fromSTEB(
+                                      12.0, 0.0, 12.0, 0.0),
+                                  hidesUnderline: true,
+                                  isOverButton: false,
+                                  isSearchable: false,
+                                  isMultiSelect: false,
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                        FlutterFlowDropDown<String>(
-                          controller: _model.dropDownValueController ??=
-                              FormFieldController<String>(null),
-                          options: const [
-                            'Madre',
-                            'Padre',
-                            'Hemana/os',
-                            'Abuela/o',
-                            'Otros'
-                          ],
-                          onChanged: (val) =>
-                              safeSetState(() => _model.dropDownValue = val),
-                          width: 200.0,
-                          height: 40.0,
-                          textStyle:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Raleway',
-                                    letterSpacing: 0.0,
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      8.0, 0.0, 8.0, 0.0),
+                                  child: TextFormField(
+                                    controller: _model.textController5 ??=
+                                        TextEditingController(
+                                      text: containerGrupoConvivienteRow
+                                          ?.telefono,
+                                    ),
+                                    focusNode: _model.textFieldFocusNode4,
+                                    autofocus: true,
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      labelText: 'Teléfono',
+                                      labelStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .alternate,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedErrorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Noto Sans JP',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    validator: _model.textController5Validator
+                                        .asValidator(context),
+                                    inputFormatters: [_model.textFieldMask4],
                                   ),
-                          hintText: 'Select...',
-                          icon: Icon(
-                            Icons.keyboard_arrow_down_rounded,
-                            color: FlutterFlowTheme.of(context).secondaryText,
-                            size: 24.0,
+                                ),
+                              ),
+                            ].divide(const SizedBox(width: 10.0)),
                           ),
-                          fillColor:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          elevation: 2.0,
-                          borderColor: Colors.transparent,
-                          borderWidth: 0.0,
-                          borderRadius: 8.0,
-                          margin: const EdgeInsetsDirectional.fromSTEB(
-                              12.0, 0.0, 12.0, 0.0),
-                          hidesUnderline: true,
-                          isOverButton: false,
-                          isSearchable: false,
-                          isMultiSelect: false,
                         ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: TextFormField(
-                            controller: _model.textController7 ??=
+                            controller: _model.textController6 ??=
                                 TextEditingController(
                               text: containerGrupoConvivienteRow?.direccion,
                             ),
-                            focusNode: _model.textFieldFocusNode6,
+                            focusNode: _model.textFieldFocusNode5,
                             autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -786,13 +815,13 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
@@ -827,10 +856,10 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
-                            validator: _model.textController7Validator
+                            validator: _model.textController6Validator
                                 .asValidator(context),
                           ),
                         ),
@@ -838,11 +867,11 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: TextFormField(
-                            controller: _model.textController8 ??=
+                            controller: _model.textController7 ??=
                                 TextEditingController(
                               text: containerGrupoConvivienteRow?.observaciones,
                             ),
-                            focusNode: _model.textFieldFocusNode7,
+                            focusNode: _model.textFieldFocusNode6,
                             autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -850,13 +879,14 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
+                              hintText: 'Observaciones',
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
@@ -891,76 +921,12 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
-                            maxLines: 10,
-                            minLines: 1,
-                            validator: _model.textController8Validator
+                            maxLines: 5,
+                            validator: _model.textController7Validator
                                 .asValidator(context),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              8.0, 0.0, 8.0, 0.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 0.0, 0.0, 0.0),
-                                child: Text(
-                                  'Es grupo conviente?',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Raleway',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 10.0, 0.0),
-                                child: FlutterFlowRadioButton(
-                                  options: ['Si', 'No'].toList(),
-                                  onChanged: (val) => safeSetState(() {}),
-                                  controller:
-                                      _model.radioButtoncudValueController ??=
-                                          FormFieldController<String>(
-                                              valueOrDefault<String>(
-                                    containerGrupoConvivienteRow?.conviviente,
-                                    'No',
-                                  )),
-                                  optionHeight: 40.0,
-                                  optionWidth: 70.0,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Raleway',
-                                        letterSpacing: 0.0,
-                                      ),
-                                  selectedTextStyle:
-                                      FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Raleway',
-                                            letterSpacing: 0.0,
-                                          ),
-                                  buttonPosition: RadioButtonPosition.right,
-                                  direction: Axis.horizontal,
-                                  radioButtonColor:
-                                      FlutterFlowTheme.of(context).primary,
-                                  inactiveRadioButtonColor:
-                                      FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                  toggleable: false,
-                                  horizontalAlignment: WrapAlignment.start,
-                                  verticalAlignment: WrapCrossAlignment.start,
-                                ),
-                              ),
-                            ],
                           ),
                         ),
                         ListView(
@@ -980,15 +946,21 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                         () async {
                                           _model.crearNNyACopy =
                                               await NNyATable().insert({
-                                            'Nombre':
-                                                _model.textController1.text,
-                                            'Apellido':
-                                                _model.textController2.text,
-                                            'DNI': int.tryParse(_model
-                                                .textFieldDniTextController
-                                                .text),
+                                            'Nombre': functions.mayusculas(
+                                                _model.textController1.text),
+                                            'Apellido': functions.mayusculas(
+                                                _model.textController2.text),
+                                            'DNI': _model
+                                                            .textFieldDniTextController
+                                                            .text ==
+                                                        ''
+                                                ? random_data.randomInteger(
+                                                    900000000, 1000000000)
+                                                : int.tryParse(_model
+                                                    .textFieldDniTextController
+                                                    .text),
                                             'edad': int.tryParse(
-                                                _model.textController5.text),
+                                                _model.textController4.text),
                                             'iduser': currentUserUid,
                                           });
                                         },
@@ -1075,22 +1047,23 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                           _model.aaa =
                                               await GrupoConvivienteTable()
                                                   .insert({
-                                            'nombre': _model.nombre,
-                                            'apellido': _model.apellido,
-                                            'vinculo':
-                                                _model.textController3.text,
+                                            'nombre': functions.mayusculas(
+                                                _model.textController1.text),
+                                            'apellido': functions.mayusculas(
+                                                _model.textController2.text),
+                                            'vinculo': _model.dropDownValue,
                                             'dni': _model.dni,
                                             'fecha_nacimiento':
                                                 supaSerialize<DateTime>(
                                                     _model.datePicked),
                                             'edad': int.tryParse(
-                                                _model.textController5.text),
+                                                _model.textController4.text),
                                             'telefono':
-                                                _model.textController6.text,
+                                                _model.textController5.text,
                                             'direccion':
-                                                _model.textController7.text,
+                                                _model.textController6.text,
                                             'observaciones':
-                                                _model.textController8.text,
+                                                _model.textController7.text,
                                             'idingreso': widget.rowingreso?.id,
                                             'idexpe': widget.idexp?.id,
                                             'conviviente':
@@ -1110,7 +1083,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                               _model.aaa?.id,
                                             ),
                                           );
-                                          Navigator.pop(context);
+                                          Navigator.pop(context, true);
                                         } else {
                                           safeSetState(() {
                                             _model.textFieldDniTextController
@@ -1131,24 +1104,23 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                         _model.creargrupo =
                                             await GrupoConvivienteTable()
                                                 .insert({
-                                          'nombre': _model.textController1.text,
-                                          'apellido':
-                                              _model.textController2.text,
-                                          'vinculo':
-                                              _model.textController3.text,
-                                          'dni': int.tryParse(_model
-                                              .textFieldDniTextController.text),
+                                          'nombre': functions.mayusculas(
+                                              _model.textController1.text),
+                                          'apellido': functions.mayusculas(
+                                              _model.textController2.text),
+                                          'vinculo': _model.dropDownValue,
+                                          'dni': _model.crearNNyACopy?.dni,
                                           'fecha_nacimiento':
                                               supaSerialize<DateTime>(
                                                   _model.datePicked),
                                           'edad': int.tryParse(
-                                              _model.textController5.text),
+                                              _model.textController4.text),
                                           'telefono':
-                                              _model.textController6.text,
+                                              _model.textController5.text,
                                           'direccion':
-                                              _model.textController7.text,
+                                              _model.textController6.text,
                                           'observaciones':
-                                              _model.textController8.text,
+                                              _model.textController7.text,
                                           'idingreso': widget.rowingreso?.id,
                                           'idexpe': widget.idexp?.id,
                                           'conviviente':
@@ -1198,7 +1170,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                             );
                                           },
                                         );
-                                        Navigator.pop(context);
+                                        Navigator.pop(context, true);
                                       }
                                     } else {
                                       if (_model.formKey.currentState == null ||
@@ -1214,21 +1186,20 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                           'nombre': _model.textController1.text,
                                           'apellido':
                                               _model.textController2.text,
-                                          'vinculo':
-                                              _model.textController3.text,
+                                          'vinculo': _model.dropDownValue,
                                           'dni': int.tryParse(_model
                                               .textFieldDniTextController.text),
                                           'fecha_nacimiento':
                                               supaSerialize<DateTime>(_model.datePicked ?? containerGrupoConvivienteRow
                                                       ?.fechaNacimiento),
                                           'edad': int.tryParse(
-                                              _model.textController5.text),
+                                              _model.textController4.text),
                                           'telefono':
-                                              _model.textController6.text,
+                                              _model.textController5.text,
                                           'direccion':
-                                              _model.textController7.text,
+                                              _model.textController6.text,
                                           'observaciones':
-                                              _model.textController8.text,
+                                              _model.textController7.text,
                                           'idingreso': widget.rowingreso?.id,
                                           'idexpe': widget.idexp?.id,
                                           'conviviente':
@@ -1247,14 +1218,14 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                           'DNI': int.tryParse(_model
                                               .textFieldDniTextController.text),
                                           'edad': int.tryParse(
-                                              _model.textController5.text),
+                                              _model.textController4.text),
                                         },
                                         matchingRows: (rows) => rows.eqOrNull(
                                           'id',
                                           widget.idnnya,
                                         ),
                                       );
-                                      Navigator.pop(context);
+                                      Navigator.pop(context, true);
                                     }
 
                                     safeSetState(() {});
@@ -1275,7 +1246,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           color: Colors.white,
                                           letterSpacing: 0.0,
                                         ),

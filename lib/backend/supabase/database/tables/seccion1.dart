@@ -102,4 +102,7 @@ class Seccion1Row extends SupabaseDataRow {
 
   String? get tipoFamilia => getField<String>('TipoFamilia');
   set tipoFamilia(String? value) => setField<String>('TipoFamilia', value);
+
+  String? get barrio => getField<String>('barrio');
+  set barrio(String? value) => setField<String>('barrio', value);
 }

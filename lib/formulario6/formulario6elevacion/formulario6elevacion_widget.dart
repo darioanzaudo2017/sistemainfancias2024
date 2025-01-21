@@ -1,8 +1,8 @@
 import '/backend/supabase/supabase.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'formulario6elevacion_model.dart';
 export 'formulario6elevacion_model.dart';
@@ -62,12 +62,15 @@ class _Formulario6elevacionWidgetState
     return Align(
       alignment: const AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<ResuestasForm6Row>>(
-        future: ResuestasForm6Table().querySingleRow(
-          queryFn: (q) => q.eqOrNull(
-            'inform6',
-            widget.idform6,
-          ),
-        ),
+        future:
+            (_model.requestCompleter ??= Completer<List<ResuestasForm6Row>>()
+                  ..complete(ResuestasForm6Table().querySingleRow(
+                    queryFn: (q) => q.eqOrNull(
+                      'inform6',
+                      widget.idform6,
+                    ),
+                  )))
+                .future,
         builder: (context, snapshot) {
           // Customize what your widget looks like when it's loading.
           if (!snapshot.hasData) {
@@ -98,11 +101,8 @@ class _Formulario6elevacionWidgetState
               borderRadius: BorderRadius.circular(20.0),
             ),
             child: Container(
-              width: MediaQuery.sizeOf(context).width * 1.0,
-              height: 774.0,
-              constraints: const BoxConstraints(
-                maxWidth: 600.0,
-              ),
+              width: MediaQuery.sizeOf(context).width * 0.8,
+              height: 608.0,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 borderRadius: BorderRadius.circular(20.0),
@@ -125,38 +125,6 @@ class _Formulario6elevacionWidgetState
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          Align(
-                            alignment: const AlignmentDirectional(1.0, -1.0),
-                            child: FlutterFlowIconButton(
-                              borderColor: Colors.transparent,
-                              borderRadius: 20.0,
-                              borderWidth: 1.0,
-                              buttonSize: 40.0,
-                              icon: Icon(
-                                Icons.cancel_outlined,
-                                color: FlutterFlowTheme.of(context).error,
-                                size: 24.0,
-                              ),
-                              onPressed: () async {
-                                Navigator.pop(context);
-                              },
-                            ),
-                          ),
-                          Align(
-                            alignment: const AlignmentDirectional(0.0, -1.0),
-                            child: Text(
-                              'Formulario 6 - Definición de medidas de protección integral de derechos en acuerdo con familia y niño (Art. 42, 45, 46 y 47 ley 9944)',
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .headlineSmall
-                                  .override(
-                                    fontFamily: 'Raleway',
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                            ),
-                          ),
                           Material(
                             color: Colors.transparent,
                             elevation: 2.0,
@@ -170,8 +138,15 @@ class _Formulario6elevacionWidgetState
                                 maxWidth: 600.0,
                               ),
                               decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
+                                color: valueOrDefault<Color>(
+                                  containerResuestasForm6Row?.fechaelevacion ==
+                                          null
+                                      ? FlutterFlowTheme.of(context)
+                                          .secondaryBackground
+                                      : FlutterFlowTheme.of(context).accent2,
+                                  FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                ),
                                 borderRadius: BorderRadius.circular(20.0),
                                 border: Border.all(
                                   color: FlutterFlowTheme.of(context).primary,
@@ -192,10 +167,7 @@ class _Formulario6elevacionWidgetState
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
                                         height: 80.0,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                        ),
+                                        decoration: const BoxDecoration(),
                                         child: Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
@@ -205,7 +177,8 @@ class _Formulario6elevacionWidgetState
                                             style: FlutterFlowTheme.of(context)
                                                 .titleMedium
                                                 .override(
-                                                  fontFamily: 'Raleway',
+                                                  fontFamily: 'Noto Sans JP',
+                                                  fontSize: 18.0,
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -232,7 +205,8 @@ class _Formulario6elevacionWidgetState
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -254,7 +228,8 @@ class _Formulario6elevacionWidgetState
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -291,7 +266,7 @@ class _Formulario6elevacionWidgetState
                                                                 .headlineLarge
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Raleway',
+                                                                      'Noto Sans JP',
                                                                   fontSize:
                                                                       32.0,
                                                                   letterSpacing:
@@ -360,14 +335,16 @@ class _Formulario6elevacionWidgetState
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                'Noto Sans JP',
+                                                            color: Colors.white,
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   elevation: 3.0,
                                                   borderSide: const BorderSide(
                                                     color: Colors.transparent,
@@ -401,14 +378,16 @@ class _Formulario6elevacionWidgetState
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       letterSpacing: 0.0,
                                                     ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       letterSpacing: 0.0,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
@@ -456,7 +435,7 @@ class _Formulario6elevacionWidgetState
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
                                                 letterSpacing: 0.0,
                                               ),
                                           validator: _model
@@ -480,12 +459,13 @@ class _Formulario6elevacionWidgetState
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: Text(
-                                                  'Fecha de requerimiento de accion',
+                                                  'Fecha de requerimiento de accion por la direccion general',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -507,7 +487,8 @@ class _Formulario6elevacionWidgetState
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -544,7 +525,7 @@ class _Formulario6elevacionWidgetState
                                                                 .headlineLarge
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Raleway',
+                                                                      'Noto Sans JP',
                                                                   fontSize:
                                                                       32.0,
                                                                   letterSpacing:
@@ -613,14 +594,16 @@ class _Formulario6elevacionWidgetState
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                'Noto Sans JP',
+                                                            color: Colors.white,
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   elevation: 3.0,
                                                   borderSide: const BorderSide(
                                                     color: Colors.transparent,
@@ -654,14 +637,16 @@ class _Formulario6elevacionWidgetState
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       letterSpacing: 0.0,
                                                     ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       letterSpacing: 0.0,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
@@ -709,7 +694,7 @@ class _Formulario6elevacionWidgetState
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
                                                 letterSpacing: 0.0,
                                               ),
                                           validator: _model
@@ -733,12 +718,13 @@ class _Formulario6elevacionWidgetState
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: Text(
-                                                  'Fecha de intervencion',
+                                                  'Fecha de respuesta',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -760,7 +746,8 @@ class _Formulario6elevacionWidgetState
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -797,7 +784,7 @@ class _Formulario6elevacionWidgetState
                                                                 .headlineLarge
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Raleway',
+                                                                      'Noto Sans JP',
                                                                   fontSize:
                                                                       32.0,
                                                                   letterSpacing:
@@ -866,14 +853,16 @@ class _Formulario6elevacionWidgetState
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                'Noto Sans JP',
+                                                            color: Colors.white,
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   elevation: 3.0,
                                                   borderSide: const BorderSide(
                                                     color: Colors.transparent,
@@ -907,14 +896,16 @@ class _Formulario6elevacionWidgetState
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       letterSpacing: 0.0,
                                                     ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       letterSpacing: 0.0,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
@@ -962,7 +953,7 @@ class _Formulario6elevacionWidgetState
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
                                                 letterSpacing: 0.0,
                                               ),
                                           validator: _model
@@ -993,26 +984,33 @@ class _Formulario6elevacionWidgetState
                                         await ResuestasForm6Table().update(
                                           data: {
                                             'fechaelevacion':
-                                                supaSerialize<DateTime>(
-                                                    _model.datePicked1),
+                                                supaSerialize<DateTime>(_model.datePicked1 ?? containerResuestasForm6Row
+                                                        ?.fechaelevacion),
                                             'accionreq':
                                                 _model.textController1.text,
                                             'fechaaccionreq':
-                                                supaSerialize<DateTime>(
-                                                    _model.datePicked2),
+                                                supaSerialize<DateTime>(_model
+                                                            .datePicked2 !=
+                                                        null
+                                                    ? _model.datePicked1
+                                                    : containerResuestasForm6Row
+                                                        ?.fechaaccionreq),
                                             'intervencionelev':
                                                 _model.textController2.text,
                                             'resultadointerv':
                                                 _model.textController2.text,
                                             'fechaintervencion':
-                                                supaSerialize<DateTime>(
-                                                    _model.datePicked3),
+                                                supaSerialize<DateTime>(_model.datePicked3 ?? containerResuestasForm6Row
+                                                        ?.fechaintervencion),
                                           },
                                           matchingRows: (rows) => rows.eqOrNull(
                                             'inform6',
                                             widget.idform6,
                                           ),
                                         );
+                                        safeSetState(() =>
+                                            _model.requestCompleter = null);
+                                        await _model.waitForRequestCompleted();
                                       },
                                       text: 'Guardar',
                                       icon: const Icon(
@@ -1032,7 +1030,7 @@ class _Formulario6elevacionWidgetState
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               color: Colors.white,
                                               letterSpacing: 0.0,
                                             ),

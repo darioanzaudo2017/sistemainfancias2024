@@ -48,7 +48,7 @@ class _AdminWidgetState extends State<AdminWidget> {
           title: Text(
             'Page Title',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  fontFamily: 'Raleway',
+                  fontFamily: 'Noto Sans JP',
                   color: Colors.white,
                   fontSize: 22.0,
                   letterSpacing: 0.0,
@@ -116,7 +116,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                       ),
@@ -145,7 +145,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .titleSmall
                                                   .override(
-                                                    fontFamily: 'Raleway',
+                                                    fontFamily: 'Noto Sans JP',
                                                     color: Colors.white,
                                                     letterSpacing: 0.0,
                                                   ),

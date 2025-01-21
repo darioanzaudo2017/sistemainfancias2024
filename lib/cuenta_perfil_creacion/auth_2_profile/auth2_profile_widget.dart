@@ -226,7 +226,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                         ),
                         style:
                             FlutterFlowTheme.of(context).displaySmall.override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
                       ),
@@ -237,7 +237,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                       child: Text(
                         currentUserEmail,
                         style: FlutterFlowTheme.of(context).labelLarge.override(
-                              fontFamily: 'Raleway',
+                              fontFamily: 'Noto Sans JP',
                               color: FlutterFlowTheme.of(context).primary,
                               letterSpacing: 0.0,
                             ),
@@ -250,7 +250,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                         'Tu Cuenta',
                         style:
                             FlutterFlowTheme.of(context).labelMedium.override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
                       ),
@@ -308,7 +308,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -337,7 +337,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                         'Configacion del Sistema',
                         style:
                             FlutterFlowTheme.of(context).labelMedium.override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
                       ),
@@ -387,7 +387,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .labelLarge
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                 ),
@@ -434,7 +434,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                 FlutterFlowTheme.of(context).primaryBackground,
                             textStyle:
                                 FlutterFlowTheme.of(context).bodyLarge.override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                             elevation: 0.0,

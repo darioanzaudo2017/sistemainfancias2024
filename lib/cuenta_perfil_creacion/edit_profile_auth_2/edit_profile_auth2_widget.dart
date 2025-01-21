@@ -94,7 +94,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                 child: Text(
                   widget.title,
                   style: FlutterFlowTheme.of(context).displaySmall.override(
-                        fontFamily: 'Raleway',
+                        fontFamily: 'Noto Sans JP',
                         letterSpacing: 0.0,
                       ),
                 ),
@@ -104,7 +104,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                 child: Text(
                   'Edita tu Perfil para que podamos brindarte una Mejor Experiencia',
                   style: FlutterFlowTheme.of(context).labelLarge.override(
-                        fontFamily: 'Raleway',
+                        fontFamily: 'Noto Sans JP',
                         letterSpacing: 0.0,
                       ),
                 ),
@@ -183,7 +183,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                       color: FlutterFlowTheme.of(context).primaryBackground,
                       textStyle:
                           FlutterFlowTheme.of(context).bodyMedium.override(
-                                fontFamily: 'Raleway',
+                                fontFamily: 'Noto Sans JP',
                                 letterSpacing: 0.0,
                               ),
                       elevation: 1.0,
@@ -214,18 +214,18 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                     labelText: 'Nombre Completo',
                     labelStyle:
                         FlutterFlowTheme.of(context).labelMedium.override(
-                              fontFamily: 'Raleway',
+                              fontFamily: 'Noto Sans JP',
                               letterSpacing: 0.0,
                             ),
                     hintText: 'Nombre Completo',
                     hintStyle:
                         FlutterFlowTheme.of(context).labelMedium.override(
-                              fontFamily: 'Raleway',
+                              fontFamily: 'Noto Sans JP',
                               letterSpacing: 0.0,
                             ),
                     errorStyle:
                         FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Raleway',
+                              fontFamily: 'Noto Sans JP',
                               color: FlutterFlowTheme.of(context).error,
                               letterSpacing: 0.0,
                             ),
@@ -263,7 +263,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                         const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 12.0),
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Raleway',
+                        fontFamily: 'Noto Sans JP',
                         letterSpacing: 0.0,
                       ),
                   cursorColor: FlutterFlowTheme.of(context).primary,
@@ -284,7 +284,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                   width: double.infinity,
                   height: 44.0,
                   textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Raleway',
+                        fontFamily: 'Noto Sans JP',
                         letterSpacing: 0.0,
                       ),
                   hintText: 'Tu Rol',
@@ -342,7 +342,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                       height: 44.0,
                       textStyle:
                           FlutterFlowTheme.of(context).bodyMedium.override(
-                                fontFamily: 'Raleway',
+                                fontFamily: 'Noto Sans JP',
                                 letterSpacing: 0.0,
                               ),
                       hintText: 'Tu Rol',
@@ -395,7 +395,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   color: FlutterFlowTheme.of(context).info,
                                   letterSpacing: 0.0,
                                 ),
@@ -417,7 +417,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily: 'Raleway',
+                                fontFamily: 'Noto Sans JP',
                                 letterSpacing: 0.0,
                               ),
                       elevation: 3.0,

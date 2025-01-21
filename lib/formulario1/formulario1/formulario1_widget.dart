@@ -25,10 +25,12 @@ class Formulario1Widget extends StatefulWidget {
     super.key,
     required this.idingreso,
     required this.rowexp,
+    required this.usuariorow,
   });
 
   final IngresosRow? idingreso;
   final VistaExpedientesUltimoEstadoRow? rowexp;
+  final UsuariosRow? usuariorow;
 
   @override
   State<Formulario1Widget> createState() => _Formulario1WidgetState();
@@ -139,7 +141,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
                                           letterSpacing: 0.0,
@@ -174,7 +176,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                               style: FlutterFlowTheme.of(context)
                                   .titleLarge
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     color: FlutterFlowTheme.of(context).primary,
                                     letterSpacing: 0.0,
                                   ),
@@ -193,7 +195,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           fontSize: 16.0,
                                           letterSpacing: 0.0,
                                         ),
@@ -230,6 +232,8 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                         widget.idingreso,
                                                     rowexp: widget.rowexp,
                                                     editar: false,
+                                                    usuariorow:
+                                                        widget.usuariorow!,
                                                   ),
                                                 );
                                               },
@@ -265,7 +269,8 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       color: Colors.white,
                                                       letterSpacing: 0.0,
                                                     ),
@@ -302,6 +307,8 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                         widget.idingreso,
                                                     rowexp: widget.rowexp,
                                                     editar: true,
+                                                    usuariorow:
+                                                        widget.usuariorow!,
                                                   ),
                                                 );
                                               },
@@ -328,7 +335,8 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       color: Colors.white,
                                                       letterSpacing: 0.0,
                                                     ),
@@ -367,7 +375,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -434,7 +442,8 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       color: Colors.white,
                                                       letterSpacing: 0.0,
                                                     ),
@@ -497,7 +506,8 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       color: Colors.white,
                                                       letterSpacing: 0.0,
                                                     ),
@@ -536,7 +546,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -595,7 +605,8 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       color: Colors.white,
                                                       letterSpacing: 0.0,
                                                     ),
@@ -666,7 +677,8 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       color: Colors.white,
                                                       letterSpacing: 0.0,
                                                     ),
@@ -705,7 +717,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -764,7 +776,8 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       color: Colors.white,
                                                       letterSpacing: 0.0,
                                                     ),
@@ -835,7 +848,8 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       color: Colors.white,
                                                       letterSpacing: 0.0,
                                                     ),
@@ -878,7 +892,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -937,7 +951,8 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       color: Colors.white,
                                                       letterSpacing: 0.0,
                                                     ),
@@ -1008,7 +1023,8 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       color: Colors.white,
                                                       letterSpacing: 0.0,
                                                     ),
@@ -1047,7 +1063,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -1116,7 +1132,8 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       color: Colors.white,
                                                       letterSpacing: 0.0,
                                                     ),
@@ -1181,7 +1198,8 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       color: Colors.white,
                                                       letterSpacing: 0.0,
                                                     ),
@@ -1220,7 +1238,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -1279,7 +1297,8 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       color: Colors.white,
                                                       letterSpacing: 0.0,
                                                     ),
@@ -1350,7 +1369,8 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       color: Colors.white,
                                                       letterSpacing: 0.0,
                                                     ),
@@ -1389,7 +1409,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -1431,7 +1451,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             color: Colors.white,
                                             letterSpacing: 0.0,
                                           ),
@@ -1467,7 +1487,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -1526,7 +1546,8 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       color: Colors.white,
                                                       letterSpacing: 0.0,
                                                     ),
@@ -1597,7 +1618,8 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       color: Colors.white,
                                                       letterSpacing: 0.0,
                                                     ),
@@ -1652,7 +1674,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Raleway',
+                                                  fontFamily: 'Noto Sans JP',
                                                   fontSize: 18.0,
                                                   letterSpacing: 0.0,
                                                 ),
@@ -1687,14 +1709,16 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       letterSpacing: 0.0,
                                                     ),
                                             selectedTextStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       letterSpacing: 0.0,
                                                     ),
                                             buttonPosition:
@@ -1797,7 +1821,8 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       color: Colors.white,
                                                       letterSpacing: 0.0,
                                                     ),
@@ -1881,7 +1906,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               FlutterFlowTheme.of(context)
                                                   .titleSmall
                                                   .override(
-                                                    fontFamily: 'Raleway',
+                                                    fontFamily: 'Noto Sans JP',
                                                     color: Colors.white,
                                                     letterSpacing: 0.0,
                                                   ),

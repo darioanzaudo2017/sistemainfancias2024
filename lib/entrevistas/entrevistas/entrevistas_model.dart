@@ -5,6 +5,11 @@ import 'entrevistas_widget.dart' show EntrevistasWidget;
 import 'package:flutter/material.dart';
 
 class EntrevistasModel extends FlutterFlowModel<EntrevistasWidget> {
+  ///  Local state fields for this page.
+
+  String nombrepagina =
+      'Verificacion y ampliacion de informacion. Entrevistas ';
+
   ///  State fields for stateful widgets in this page.
 
   // Stores action output result for [Backend Call - Query Rows] action in IconButton widget.
@@ -18,6 +23,9 @@ class EntrevistasModel extends FlutterFlowModel<EntrevistasWidget> {
   // State field(s) for PaginatedDataTable widget.
   final paginatedDataTableController3 =
       FlutterFlowDataTableController<Formulario4Row>();
+  // State field(s) for PaginatedDataTable widget.
+  final paginatedDataTableController4 =
+      FlutterFlowDataTableController<AccionesAccesoriasRow>();
 
   @override
   void initState(BuildContext context) {}
@@ -27,5 +35,6 @@ class EntrevistasModel extends FlutterFlowModel<EntrevistasWidget> {
     paginatedDataTableController1.dispose();
     paginatedDataTableController2.dispose();
     paginatedDataTableController3.dispose();
+    paginatedDataTableController4.dispose();
   }
 }

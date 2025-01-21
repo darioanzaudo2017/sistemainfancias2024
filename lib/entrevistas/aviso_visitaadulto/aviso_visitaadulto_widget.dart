@@ -131,11 +131,11 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     80.0, 0.0, 0.0, 0.0),
                                 child: Text(
-                                  'Aviso de  concurrencia al domicilio',
+                                  'Aviso de  visita al domicilio',
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         letterSpacing: 0.0,
@@ -195,7 +195,7 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           color: FlutterFlowTheme.of(context)
                                               .secondary,
                                           letterSpacing: 0.0,
@@ -215,7 +215,7 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -230,7 +230,7 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -268,7 +268,7 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             color: Colors.white,
                                             letterSpacing: 0.0,
                                           ),
@@ -294,7 +294,7 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               alignLabelWithHint: true,
@@ -302,7 +302,7 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
@@ -337,7 +337,7 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
                             maxLines: 2,
@@ -363,7 +363,7 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -386,7 +386,7 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                                           FlutterFlowTheme.of(context)
                                               .headlineLarge
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
                                                 fontSize: 32.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
@@ -430,7 +430,7 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       color: Colors.white,
                                       letterSpacing: 0.0,
                                     ),
@@ -531,7 +531,7 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       color: Colors.white,
                                       letterSpacing: 0.0,
                                     ),

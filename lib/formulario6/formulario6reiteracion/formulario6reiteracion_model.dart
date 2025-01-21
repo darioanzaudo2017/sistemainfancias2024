@@ -1,5 +1,7 @@
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
+import 'dart:async';
 import 'formulario6reiteracion_widget.dart' show Formulario6reiteracionWidget;
 import 'package:flutter/material.dart';
 
@@ -17,6 +19,7 @@ class Formulario6reiteracionModel
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
   DateTime? datePicked2;
+  Completer<List<ResuestasForm6Row>>? requestCompleter;
 
   @override
   void initState(BuildContext context) {}
@@ -25,5 +28,21 @@ class Formulario6reiteracionModel
   void dispose() {
     textFieldFocusNode?.dispose();
     textController?.dispose();
+  }
+
+  /// Additional helper methods.
+  Future waitForRequestCompleted({
+    double minWait = 0,
+    double maxWait = double.infinity,
+  }) async {
+    final stopwatch = Stopwatch()..start();
+    while (true) {
+      await Future.delayed(const Duration(milliseconds: 50));
+      final timeElapsed = stopwatch.elapsedMilliseconds;
+      final requestComplete = requestCompleter?.isCompleted ?? false;
+      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
+        break;
+      }
+    }
   }
 }

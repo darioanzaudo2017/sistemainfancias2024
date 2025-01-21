@@ -87,7 +87,7 @@ class _CambiarexpeWidgetState extends State<CambiarexpeWidget> {
               Text(
                 'Cambiar expediente de SPD',
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Raleway',
+                      fontFamily: 'Noto Sans JP',
                       color: FlutterFlowTheme.of(context).primary,
                       fontSize: 20.0,
                       letterSpacing: 0.0,
@@ -128,7 +128,7 @@ class _CambiarexpeWidgetState extends State<CambiarexpeWidget> {
                     width: 300.0,
                     height: 40.0,
                     textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Raleway',
+                          fontFamily: 'Noto Sans JP',
                           letterSpacing: 0.0,
                         ),
                     hintText: 'SPD',
@@ -221,7 +221,7 @@ class _CambiarexpeWidgetState extends State<CambiarexpeWidget> {
                       const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Raleway',
+                        fontFamily: 'Noto Sans JP',
                         color: Colors.white,
                         letterSpacing: 0.0,
                       ),

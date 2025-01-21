@@ -43,12 +43,15 @@ class Seccion2Model extends FlutterFlowModel<Seccion2Widget> {
   TextEditingController? textController6;
   final textFieldMask5 = MaskTextInputFormatter(mask: '##########');
   String? Function(BuildContext, String?)? textController6Validator;
+  // State field(s) for DropDown widget.
+  String? dropDownValue;
+  FormFieldController<String>? dropDownValueController;
+  // State field(s) for RadioButtonresiden widget.
+  FormFieldController<String>? radioButtonresidenValueController;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode6;
   TextEditingController? textController7;
   String? Function(BuildContext, String?)? textController7Validator;
-  // State field(s) for RadioButtonresiden widget.
-  FormFieldController<String>? radioButtonresidenValueController;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode7;
   TextEditingController? textController8;
@@ -56,16 +59,12 @@ class Seccion2Model extends FlutterFlowModel<Seccion2Widget> {
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode8;
   TextEditingController? textController9;
+  final textFieldMask8 = MaskTextInputFormatter(mask: '##########');
   String? Function(BuildContext, String?)? textController9Validator;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode9;
   TextEditingController? textController10;
-  final textFieldMask9 = MaskTextInputFormatter(mask: '##########');
   String? Function(BuildContext, String?)? textController10Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode10;
-  TextEditingController? textController11;
-  String? Function(BuildContext, String?)? textController11Validator;
 
   @override
   void initState(BuildContext context) {
@@ -104,9 +103,6 @@ class Seccion2Model extends FlutterFlowModel<Seccion2Widget> {
 
     textFieldFocusNode9?.dispose();
     textController10?.dispose();
-
-    textFieldFocusNode10?.dispose();
-    textController11?.dispose();
   }
 
   /// Additional helper methods.

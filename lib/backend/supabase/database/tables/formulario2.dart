@@ -128,4 +128,10 @@ class Formulario2Row extends SupabaseDataRow {
 
   int? get idgrupofamiliar => getField<int>('idgrupofamiliar');
   set idgrupofamiliar(int? value) => setField<int>('idgrupofamiliar', value);
+
+  String? get formulario => getField<String>('Formulario');
+  set formulario(String? value) => setField<String>('Formulario', value);
+
+  String? get derechosvul => getField<String>('derechosvul');
+  set derechosvul(String? value) => setField<String>('derechosvul', value);
 }

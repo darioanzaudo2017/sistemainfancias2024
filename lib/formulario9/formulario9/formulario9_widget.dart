@@ -20,11 +20,13 @@ class Formulario9Widget extends StatefulWidget {
     this.idingreso,
     this.rowexp,
     this.editar,
+    required this.usuariorow,
   });
 
   final IngresosRow? idingreso;
   final VistaExpedientesUltimoEstadoRow? rowexp;
   final bool? editar;
+  final UsuariosRow? usuariorow;
 
   @override
   State<Formulario9Widget> createState() => _Formulario9WidgetState();
@@ -288,7 +290,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                           .headlineSmall
                                                           .override(
                                                             fontFamily:
-                                                                'Raleway',
+                                                                'Noto Sans JP',
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
@@ -312,7 +314,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                 .bodySmall
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Raleway',
+                                                                      'Noto Sans JP',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -339,7 +341,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                 .bodySmall
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Raleway',
+                                                                      'Noto Sans JP',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -365,7 +367,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                 .bodySmall
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Raleway',
+                                                                      'Noto Sans JP',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -412,6 +414,9 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                           true,
                                                                       dniok:
                                                                           false,
+                                                                      usuariorow:
+                                                                          widget
+                                                                              .usuariorow!,
                                                                     ),
                                                                   );
                                                                 },
@@ -448,7 +453,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                       .titleSmall
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Raleway',
+                                                                            'Noto Sans JP',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .secondaryBackground,
                                                                         letterSpacing:
@@ -498,7 +503,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                           style: FlutterFlowTheme.of(context)
                                               .headlineSmall
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
@@ -534,7 +539,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                   context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
@@ -585,18 +590,14 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                             decoration: InputDecoration(
                                               labelText:
                                                   'Acciones adoptadas por el SPD en caso \"Incumplimiento reiterado\"',
-                                              labelStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              hintText:
+                                                  'Acciones adoptadas por el SPD en caso \"Incumplimiento reiterado\"',
                                               hintStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                               enabledBorder: OutlineInputBorder(
@@ -644,7 +645,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Raleway',
+                                                  fontFamily: 'Noto Sans JP',
                                                   letterSpacing: 0.0,
                                                 ),
                                             validator: _model
@@ -673,14 +674,16 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       letterSpacing: 0.0,
                                                     ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       letterSpacing: 0.0,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
@@ -728,7 +731,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
                                                 letterSpacing: 0.0,
                                               ),
                                           maxLines: 3,
@@ -758,7 +761,8 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -786,7 +790,8 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -823,7 +828,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                 .headlineLarge
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Raleway',
+                                                                      'Noto Sans JP',
                                                                   fontSize:
                                                                       32.0,
                                                                   letterSpacing:
@@ -892,14 +897,16 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                'Noto Sans JP',
+                                                            color: Colors.white,
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   elevation: 3.0,
                                                   borderSide: const BorderSide(
                                                     color: Colors.transparent,
@@ -960,7 +967,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                 .titleLarge
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Raleway',
+                                                                      'Noto Sans JP',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -987,7 +994,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                   .titleMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Raleway',
+                                                                        'Noto Sans JP',
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
@@ -1012,7 +1019,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                       .bodyMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Raleway',
+                                                                            'Noto Sans JP',
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
@@ -1042,7 +1049,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                     .labelMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Raleway',
+                                                                          'Noto Sans JP',
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
@@ -1052,7 +1059,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Raleway',
+                                                                              'Noto Sans JP',
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -1105,7 +1112,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                       .bodyMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Raleway',
+                                                                            'Noto Sans JP',
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
@@ -1135,7 +1142,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                     .labelMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Raleway',
+                                                                          'Noto Sans JP',
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
@@ -1145,7 +1152,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Raleway',
+                                                                              'Noto Sans JP',
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -1212,7 +1219,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                     .labelMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Raleway',
+                                                                          'Noto Sans JP',
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
@@ -1224,7 +1231,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                     .labelMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Raleway',
+                                                                          'Noto Sans JP',
                                                                       letterSpacing:
                                                                           0.0,
                                                                       lineHeight:
@@ -1295,7 +1302,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Raleway',
+                                                                    'Noto Sans JP',
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -1350,7 +1357,8 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                 hintText:
@@ -1389,7 +1397,8 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                     FlutterFlowTheme.of(context)
                                                         .titleMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),
@@ -1556,7 +1565,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Raleway',
+                                                                              'Noto Sans JP',
                                                                           fontSize:
                                                                               18.0,
                                                                           letterSpacing:
@@ -1610,7 +1619,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Raleway',
+                                                                              fontFamily: 'Noto Sans JP',
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                       ),
@@ -1641,7 +1650,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Raleway',
+                                                                              fontFamily: 'Noto Sans JP',
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                       ),
@@ -1676,7 +1685,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                               headerBackgroundColor: FlutterFlowTheme.of(context).primary,
                                                                               headerForegroundColor: FlutterFlowTheme.of(context).info,
                                                                               headerTextStyle: FlutterFlowTheme.of(context).headlineLarge.override(
-                                                                                    fontFamily: 'Raleway',
+                                                                                    fontFamily: 'Noto Sans JP',
                                                                                     fontSize: 32.0,
                                                                                     letterSpacing: 0.0,
                                                                                     fontWeight: FontWeight.w600,
@@ -1734,7 +1743,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                         textStyle: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              fontFamily: 'Raleway',
+                                                                              fontFamily: 'Noto Sans JP',
                                                                               color: Colors.white,
                                                                               letterSpacing: 0.0,
                                                                             ),
@@ -1790,7 +1799,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                               Text(
                                                                             'Fecha de solicitud a SENAF',
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Raleway',
+                                                                                  fontFamily: 'Noto Sans JP',
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                           ),
@@ -1817,7 +1826,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                             textAlign:
                                                                                 TextAlign.start,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Raleway',
+                                                                                  fontFamily: 'Noto Sans JP',
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                           ),
@@ -1846,7 +1855,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                                   headerBackgroundColor: FlutterFlowTheme.of(context).primary,
                                                                                   headerForegroundColor: FlutterFlowTheme.of(context).info,
                                                                                   headerTextStyle: FlutterFlowTheme.of(context).headlineLarge.override(
-                                                                                        fontFamily: 'Raleway',
+                                                                                        fontFamily: 'Noto Sans JP',
                                                                                         fontSize: 32.0,
                                                                                         letterSpacing: 0.0,
                                                                                         fontWeight: FontWeight.w600,
@@ -1898,7 +1907,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primary,
                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: 'Raleway',
+                                                                                  fontFamily: 'Noto Sans JP',
                                                                                   color: Colors.white,
                                                                                   letterSpacing: 0.0,
                                                                                 ),
@@ -1947,7 +1956,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                               Text(
                                                                             'Fecha reiteracion solicitud',
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Raleway',
+                                                                                  fontFamily: 'Noto Sans JP',
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                           ),
@@ -1974,7 +1983,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                             textAlign:
                                                                                 TextAlign.start,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Raleway',
+                                                                                  fontFamily: 'Noto Sans JP',
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                           ),
@@ -2003,7 +2012,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                                   headerBackgroundColor: FlutterFlowTheme.of(context).primary,
                                                                                   headerForegroundColor: FlutterFlowTheme.of(context).info,
                                                                                   headerTextStyle: FlutterFlowTheme.of(context).headlineLarge.override(
-                                                                                        fontFamily: 'Raleway',
+                                                                                        fontFamily: 'Noto Sans JP',
                                                                                         fontSize: 32.0,
                                                                                         letterSpacing: 0.0,
                                                                                         fontWeight: FontWeight.w600,
@@ -2055,7 +2064,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primary,
                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: 'Raleway',
+                                                                                  fontFamily: 'Noto Sans JP',
                                                                                   color: Colors.white,
                                                                                   letterSpacing: 0.0,
                                                                                 ),
@@ -2108,7 +2117,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                       .labelMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Raleway',
+                                                                            'Noto Sans JP',
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
@@ -2117,7 +2126,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                       .labelMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Raleway',
+                                                                            'Noto Sans JP',
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
@@ -2183,7 +2192,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Raleway',
+                                                                          'Noto Sans JP',
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
@@ -2344,7 +2353,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Raleway',
+                                                                              'Noto Sans JP',
                                                                           fontSize:
                                                                               18.0,
                                                                           letterSpacing:
@@ -2507,7 +2516,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Raleway',
+                                                                              'Noto Sans JP',
                                                                           fontSize:
                                                                               18.0,
                                                                           letterSpacing:
@@ -2561,7 +2570,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Raleway',
+                                                                              fontFamily: 'Noto Sans JP',
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                       ),
@@ -2592,7 +2601,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Raleway',
+                                                                              fontFamily: 'Noto Sans JP',
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                       ),
@@ -2627,7 +2636,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                               headerBackgroundColor: FlutterFlowTheme.of(context).primary,
                                                                               headerForegroundColor: FlutterFlowTheme.of(context).info,
                                                                               headerTextStyle: FlutterFlowTheme.of(context).headlineLarge.override(
-                                                                                    fontFamily: 'Raleway',
+                                                                                    fontFamily: 'Noto Sans JP',
                                                                                     fontSize: 32.0,
                                                                                     letterSpacing: 0.0,
                                                                                     fontWeight: FontWeight.w600,
@@ -2685,7 +2694,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                         textStyle: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              fontFamily: 'Raleway',
+                                                                              fontFamily: 'Noto Sans JP',
                                                                               color: Colors.white,
                                                                               letterSpacing: 0.0,
                                                                             ),
@@ -2857,7 +2866,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Raleway',
+                                                                              'Noto Sans JP',
                                                                           fontSize:
                                                                               18.0,
                                                                           letterSpacing:
@@ -2911,7 +2920,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Raleway',
+                                                                              fontFamily: 'Noto Sans JP',
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                       ),
@@ -2942,7 +2951,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Raleway',
+                                                                              fontFamily: 'Noto Sans JP',
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                       ),
@@ -2977,7 +2986,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                               headerBackgroundColor: FlutterFlowTheme.of(context).primary,
                                                                               headerForegroundColor: FlutterFlowTheme.of(context).info,
                                                                               headerTextStyle: FlutterFlowTheme.of(context).headlineLarge.override(
-                                                                                    fontFamily: 'Raleway',
+                                                                                    fontFamily: 'Noto Sans JP',
                                                                                     fontSize: 32.0,
                                                                                     letterSpacing: 0.0,
                                                                                     fontWeight: FontWeight.w600,
@@ -3035,7 +3044,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                         textStyle: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              fontFamily: 'Raleway',
+                                                                              fontFamily: 'Noto Sans JP',
                                                                               color: Colors.white,
                                                                               letterSpacing: 0.0,
                                                                             ),
@@ -3086,7 +3095,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                       .labelMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Raleway',
+                                                                            'Noto Sans JP',
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
@@ -3095,7 +3104,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                       .labelMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Raleway',
+                                                                            'Noto Sans JP',
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
@@ -3161,7 +3170,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Raleway',
+                                                                          'Noto Sans JP',
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
@@ -3616,7 +3625,8 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                             .of(context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           color: Colors.white,
                                                           letterSpacing: 0.0,
                                                         ),

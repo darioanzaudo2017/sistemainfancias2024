@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/formulario1/formulario1/formulario1_widget.dart';
+import '/formulario1/secciones_formulario1/seccion8/seccion8_widget.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'formulario2_model.dart';
@@ -20,12 +21,16 @@ class Formulario2Widget extends StatefulWidget {
     required this.rowexp,
     this.identrevista,
     this.editar,
+    required this.usuariorow,
+    this.formulario,
   });
 
   final IngresosRow? idingreso;
   final VistaExpedientesUltimoEstadoRow? rowexp;
   final int? identrevista;
   final bool? editar;
+  final UsuariosRow? usuariorow;
+  final String? formulario;
 
   @override
   State<Formulario2Widget> createState() => _Formulario2WidgetState();
@@ -45,6 +50,8 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
     super.initState();
     _model = createModel(context, () => Formulario2Model());
 
+    _model.textFieldprofesionalFocusNode ??= FocusNode();
+
     _model.textFieldapellidoFocusNode ??= FocusNode();
 
     _model.textFieldnombreFocusNode ??= FocusNode();
@@ -52,8 +59,6 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
     _model.textFieldDNIFocusNode1 ??= FocusNode();
 
     _model.textFieldDNIFocusNode2 ??= FocusNode();
-
-    _model.textFieldprofesionalFocusNode ??= FocusNode();
 
     _model.textFieldFocusNode1 ??= FocusNode();
 
@@ -67,8 +72,10 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
 
     _model.textFieldobjetivoFocusNode1 ??= FocusNode();
 
-    _model.textFieldobjetivoTextController2 ??= TextEditingController();
     _model.textFieldobjetivoFocusNode2 ??= FocusNode();
+
+    _model.textFieldobjetivoTextController3 ??= TextEditingController();
+    _model.textFieldobjetivoFocusNode3 ??= FocusNode();
 
     _model.textFielddescripcionFocusNode ??= FocusNode();
 
@@ -76,22 +83,18 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
 
     _model.textFieldFocusNode7 ??= FocusNode();
 
+    _model.textController17 ??= TextEditingController();
     _model.textFieldFocusNode8 ??= FocusNode();
 
-    _model.textController17 ??= TextEditingController();
+    _model.textController18 ??= TextEditingController();
     _model.textFieldFocusNode9 ??= FocusNode();
 
     _model.textFieldFocusNode10 ??= FocusNode();
 
     _model.textFieldFocusNode11 ??= FocusNode();
 
-    _model.textFieldFocusNode12 ??= FocusNode();
-
     _model.textController21 ??= TextEditingController();
-    _model.textFieldFocusNode13 ??= FocusNode();
-
-    _model.textController22 ??= TextEditingController();
-    _model.textFieldFocusNode14 ??= FocusNode();
+    _model.textFieldFocusNode12 ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -197,7 +200,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                       16.0, 0.0, 16.0, 0.0),
                                   child: Container(
                                     width: double.infinity,
-                                    height: 238.0,
+                                    height: 300.0,
                                     constraints: const BoxConstraints(
                                       maxWidth: 530.0,
                                     ),
@@ -237,7 +240,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineSmall
                                                 .override(
-                                                  fontFamily: 'Raleway',
+                                                  fontFamily: 'Noto Sans JP',
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -254,7 +257,8 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmall
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
@@ -273,7 +277,8 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmall
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
@@ -291,7 +296,8 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmall
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
@@ -330,6 +336,8 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                                     .rowexp?.id,
                                                                 editar: true,
                                                                 dniok: false,
+                                                                usuariorow: widget
+                                                                    .usuariorow!,
                                                               ),
                                                             );
                                                           },
@@ -365,7 +373,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                                 .titleSmall
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Raleway',
+                                                                      'Noto Sans JP',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryBackground,
@@ -427,6 +435,8 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                                     .idingreso!,
                                                                 rowexp: widget
                                                                     .rowexp!,
+                                                                usuariorow: widget
+                                                                    .usuariorow!,
                                                               ),
                                                             );
                                                           },
@@ -435,7 +445,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                                 () {}));
                                                       },
                                                       text:
-                                                          'editar Formulario 1',
+                                                          'Editar Formulario 1',
                                                       options: FFButtonOptions(
                                                         width: 200.0,
                                                         height: 35.0,
@@ -463,7 +473,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                                 .titleSmall
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Raleway',
+                                                                      'Noto Sans JP',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryBackground,
@@ -497,6 +507,29 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                 ),
                                               ],
                                             ),
+                                          ),
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Flexible(
+                                                child: Padding(
+                                                  padding: const EdgeInsets.all(10.0),
+                                                  child: Text(
+                                                    'Datos personales del NNyA y Grupo familiar ampliado (Completar en boton \"Editar formulario 1\")',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Noto Sans JP',
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                           Padding(
                                             padding:
@@ -548,230 +581,47 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                   decoration: const BoxDecoration(),
                                                   child: FFButtonWidget(
                                                     onPressed: () async {
-                                                      _model.expedienteprincipal =
-                                                          await VistaExpedientesUltimoEstadoTable()
-                                                              .queryRows(
-                                                        queryFn: (q) =>
-                                                            q.eqOrNull(
-                                                          'idexpediente',
-                                                          containerGrupofamiliarexpedientesRow
-                                                              ?.expedienteprincipal,
-                                                        ),
-                                                      );
-                                                      await showDialog(
-                                                        context: context,
-                                                        builder:
-                                                            (alertDialogContext) {
-                                                          return AlertDialog(
-                                                            title: const Text('1'),
-                                                            actions: [
-                                                              TextButton(
-                                                                onPressed: () =>
-                                                                    Navigator.pop(
-                                                                        alertDialogContext),
-                                                                child:
-                                                                    const Text('Ok'),
-                                                              ),
-                                                            ],
-                                                          );
-                                                        },
-                                                      );
-                                                      _model.form2principal =
-                                                          await Formulario2Table()
-                                                              .queryRows(
-                                                        queryFn: (q) =>
-                                                            q.eqOrNull(
-                                                          'idIngreso',
-                                                          _model
-                                                              .expedienteprincipal
-                                                              ?.firstOrNull
-                                                              ?.idIngreso,
-                                                        ),
-                                                      );
-                                                      _model.contador = 0;
-                                                      safeSetState(() {});
-                                                      while (_model.contador! <=
-                                                          _model.form2principal!
-                                                              .length) {
-                                                        await Formulario2Table()
-                                                            .insert({
-                                                          'fecha': supaSerialize<
-                                                                  DateTime>(
-                                                              _model
-                                                                  .form2principal
-                                                                  ?.elementAtOrNull(
-                                                                      _model
-                                                                          .contador!)
-                                                                  ?.fecha),
-                                                          'profesionales': _model
-                                                              .form2principal
-                                                              ?.elementAtOrNull(
-                                                                  _model
-                                                                      .contador!)
-                                                              ?.profesionales,
-                                                          'ocuEnt': _model
-                                                              .form2principal
-                                                              ?.elementAtOrNull(
-                                                                  _model
-                                                                      .contador!)
-                                                              ?.ocuEnt,
-                                                          'dirEnt': _model
-                                                              .form2principal
-                                                              ?.elementAtOrNull(
-                                                                  _model
-                                                                      .contador!)
-                                                              ?.dirEnt,
-                                                          'refEnt': _model
-                                                              .form2principal
-                                                              ?.elementAtOrNull(
-                                                                  _model
-                                                                      .contador!)
-                                                              ?.refEnt,
-                                                          'telEnt': _model
-                                                              .form2principal
-                                                              ?.elementAtOrNull(
-                                                                  _model
-                                                                      .contador!)
-                                                              ?.telEnt,
-                                                          'vinEnt': _model
-                                                              .form2principal
-                                                              ?.elementAtOrNull(
-                                                                  _model
-                                                                      .contador!)
-                                                              ?.vinEnt,
-                                                          'objetivoEnt': _model
-                                                              .form2principal
-                                                              ?.elementAtOrNull(
-                                                                  _model
-                                                                      .contador!)
-                                                              ?.objetivoEnt,
-                                                          'descripcion': _model
-                                                              .form2principal
-                                                              ?.elementAtOrNull(
-                                                                  _model
-                                                                      .contador!)
-                                                              ?.descripcion,
-                                                          'personasDatos': _model
-                                                              .form2principal
-                                                              ?.elementAtOrNull(
-                                                                  _model
-                                                                      .contador!)
-                                                              ?.personasDatos,
-                                                          'antecedentes': _model
-                                                              .form2principal
-                                                              ?.elementAtOrNull(
-                                                                  _model
-                                                                      .contador!)
-                                                              ?.antecedentes,
-                                                          'estrategias': _model
-                                                              .form2principal
-                                                              ?.elementAtOrNull(
-                                                                  _model
-                                                                      .contador!)
-                                                              ?.estrategias,
-                                                          'redes': _model
-                                                              .form2principal
-                                                              ?.elementAtOrNull(
-                                                                  _model
-                                                                      .contador!)
-                                                              ?.redes,
-                                                          'espacios': _model
-                                                              .form2principal
-                                                              ?.elementAtOrNull(
-                                                                  _model
-                                                                      .contador!)
-                                                              ?.espacios,
-                                                          'personasServicios': _model
-                                                              .form2principal
-                                                              ?.elementAtOrNull(
-                                                                  _model
-                                                                      .contador!)
-                                                              ?.personasServicios,
-                                                          'otros': _model
-                                                              .form2principal
-                                                              ?.elementAtOrNull(
-                                                                  _model
-                                                                      .contador!)
-                                                              ?.otros,
-                                                          'observaciones': _model
-                                                              .form2principal
-                                                              ?.elementAtOrNull(
-                                                                  _model
-                                                                      .contador!)
-                                                              ?.observaciones,
-                                                          'idIngreso': widget
-                                                              .idingreso?.id,
-                                                          'idExpediente':
-                                                              widget
-                                                                  .rowexp?.id,
-                                                          'estrategiasSobrevivencia': _model
-                                                              .form2principal
-                                                              ?.elementAtOrNull(
-                                                                  _model
-                                                                      .contador!)
-                                                              ?.estrategiasSobrevivencia,
-                                                          'redes2drop': _model
-                                                              .form2principal
-                                                              ?.elementAtOrNull(
-                                                                  _model
-                                                                      .contador!)
-                                                              ?.redes2drop,
-                                                          'espacios2': _model
-                                                              .form2principal
-                                                              ?.elementAtOrNull(
-                                                                  _model
-                                                                      .contador!)
-                                                              ?.espacios2,
-                                                          'fecDeNacEnt': supaSerialize<
-                                                                  DateTime>(
-                                                              _model
-                                                                  .form2principal
-                                                                  ?.elementAtOrNull(
-                                                                      _model
-                                                                          .contador!)
-                                                                  ?.fecDeNacEnt),
-                                                          'nomEnt': _model
-                                                              .form2principal
-                                                              ?.elementAtOrNull(
-                                                                  _model
-                                                                      .contador!)
-                                                              ?.nomEnt,
-                                                          'apeEnt': _model
-                                                              .form2principal
-                                                              ?.elementAtOrNull(
-                                                                  _model
-                                                                      .contador!)
-                                                              ?.apeEnt,
-                                                          'dniEnt': _model
-                                                              .form2principal
-                                                              ?.elementAtOrNull(
-                                                                  _model
-                                                                      .contador!)
-                                                              ?.dniEnt,
-                                                          'edadEnt': _model
-                                                              .form2principal
-                                                              ?.elementAtOrNull(
-                                                                  _model
-                                                                      .contador!)
-                                                              ?.edadEnt,
-                                                        });
-                                                        await IngresosTable()
-                                                            .update(
-                                                          data: {
-                                                            'form2completo':
-                                                                true,
-                                                            'form5': true,
-                                                            'updated_at':
-                                                                supaSerialize<
-                                                                        DateTime>(
-                                                                    getCurrentTimestamp),
-                                                          },
-                                                          matchingRows:
-                                                              (rows) =>
-                                                                  rows.eqOrNull(
-                                                            'id',
-                                                            widget
-                                                                .idingreso?.id,
+                                                      var confirmDialogResponse =
+                                                          await showDialog<
+                                                                  bool>(
+                                                                context:
+                                                                    context,
+                                                                builder:
+                                                                    (alertDialogContext) {
+                                                                  return AlertDialog(
+                                                                    title: const Text(
+                                                                        'Copia de entrevistas de familia'),
+                                                                    content: const Text(
+                                                                        'Estas a punto de copiar todas las entrevistas a la familia del NNyA principal!!'),
+                                                                    actions: [
+                                                                      TextButton(
+                                                                        onPressed: () => Navigator.pop(
+                                                                            alertDialogContext,
+                                                                            false),
+                                                                        child: const Text(
+                                                                            'Cancelar'),
+                                                                      ),
+                                                                      TextButton(
+                                                                        onPressed: () => Navigator.pop(
+                                                                            alertDialogContext,
+                                                                            true),
+                                                                        child: const Text(
+                                                                            'Confirmar'),
+                                                                      ),
+                                                                    ],
+                                                                  );
+                                                                },
+                                                              ) ??
+                                                              false;
+                                                      if (confirmDialogResponse) {
+                                                        _model.expedienteprincipal =
+                                                            await VistaExpedientesUltimoEstadoTable()
+                                                                .queryRows(
+                                                          queryFn: (q) =>
+                                                              q.eqOrNull(
+                                                            'idexpediente',
+                                                            containerGrupofamiliarexpedientesRow
+                                                                ?.expedienteprincipal,
                                                           ),
                                                         );
                                                         await showDialog(
@@ -779,10 +629,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                           builder:
                                                               (alertDialogContext) {
                                                             return AlertDialog(
-                                                              title: const Text(
-                                                                  'Carga correcta'),
-                                                              content: const Text(
-                                                                  'La informacion se guardo correctamente!!'),
+                                                              title: const Text('1'),
                                                               actions: [
                                                                 TextButton(
                                                                   onPressed: () =>
@@ -795,11 +642,234 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                             );
                                                           },
                                                         );
-                                                        Navigator.pop(context);
-                                                        _model.contador =
-                                                            _model.contador! +
-                                                                1;
+                                                        _model.form2principal =
+                                                            await Formulario2Table()
+                                                                .queryRows(
+                                                          queryFn: (q) =>
+                                                              q.eqOrNull(
+                                                            'idIngreso',
+                                                            _model
+                                                                .expedienteprincipal
+                                                                ?.firstOrNull
+                                                                ?.idIngreso,
+                                                          ),
+                                                        );
+                                                        _model.contador = 0;
                                                         safeSetState(() {});
+                                                        while (_model
+                                                                .contador! <=
+                                                            _model
+                                                                .form2principal!
+                                                                .length) {
+                                                          await Formulario2Table()
+                                                              .insert({
+                                                            'fecha': supaSerialize<
+                                                                    DateTime>(
+                                                                _model
+                                                                    .form2principal
+                                                                    ?.elementAtOrNull(
+                                                                        _model
+                                                                            .contador!)
+                                                                    ?.fecha),
+                                                            'profesionales': _model
+                                                                .form2principal
+                                                                ?.elementAtOrNull(
+                                                                    _model
+                                                                        .contador!)
+                                                                ?.profesionales,
+                                                            'ocuEnt': _model
+                                                                .form2principal
+                                                                ?.elementAtOrNull(
+                                                                    _model
+                                                                        .contador!)
+                                                                ?.ocuEnt,
+                                                            'dirEnt': _model
+                                                                .form2principal
+                                                                ?.elementAtOrNull(
+                                                                    _model
+                                                                        .contador!)
+                                                                ?.dirEnt,
+                                                            'refEnt': _model
+                                                                .form2principal
+                                                                ?.elementAtOrNull(
+                                                                    _model
+                                                                        .contador!)
+                                                                ?.refEnt,
+                                                            'telEnt': _model
+                                                                .form2principal
+                                                                ?.elementAtOrNull(
+                                                                    _model
+                                                                        .contador!)
+                                                                ?.telEnt,
+                                                            'vinEnt': _model
+                                                                .form2principal
+                                                                ?.elementAtOrNull(
+                                                                    _model
+                                                                        .contador!)
+                                                                ?.vinEnt,
+                                                            'objetivoEnt': _model
+                                                                .form2principal
+                                                                ?.elementAtOrNull(
+                                                                    _model
+                                                                        .contador!)
+                                                                ?.objetivoEnt,
+                                                            'descripcion': _model
+                                                                .form2principal
+                                                                ?.elementAtOrNull(
+                                                                    _model
+                                                                        .contador!)
+                                                                ?.descripcion,
+                                                            'personasDatos': _model
+                                                                .form2principal
+                                                                ?.elementAtOrNull(
+                                                                    _model
+                                                                        .contador!)
+                                                                ?.personasDatos,
+                                                            'antecedentes': _model
+                                                                .form2principal
+                                                                ?.elementAtOrNull(
+                                                                    _model
+                                                                        .contador!)
+                                                                ?.antecedentes,
+                                                            'estrategias': _model
+                                                                .form2principal
+                                                                ?.elementAtOrNull(
+                                                                    _model
+                                                                        .contador!)
+                                                                ?.estrategias,
+                                                            'redes': _model
+                                                                .form2principal
+                                                                ?.elementAtOrNull(
+                                                                    _model
+                                                                        .contador!)
+                                                                ?.redes,
+                                                            'espacios': _model
+                                                                .form2principal
+                                                                ?.elementAtOrNull(
+                                                                    _model
+                                                                        .contador!)
+                                                                ?.espacios,
+                                                            'personasServicios': _model
+                                                                .form2principal
+                                                                ?.elementAtOrNull(
+                                                                    _model
+                                                                        .contador!)
+                                                                ?.personasServicios,
+                                                            'otros': _model
+                                                                .form2principal
+                                                                ?.elementAtOrNull(
+                                                                    _model
+                                                                        .contador!)
+                                                                ?.otros,
+                                                            'observaciones': _model
+                                                                .form2principal
+                                                                ?.elementAtOrNull(
+                                                                    _model
+                                                                        .contador!)
+                                                                ?.observaciones,
+                                                            'idIngreso': widget
+                                                                .idingreso?.id,
+                                                            'idExpediente':
+                                                                widget
+                                                                    .rowexp?.id,
+                                                            'estrategiasSobrevivencia': _model
+                                                                .form2principal
+                                                                ?.elementAtOrNull(
+                                                                    _model
+                                                                        .contador!)
+                                                                ?.estrategiasSobrevivencia,
+                                                            'redes2drop': _model
+                                                                .form2principal
+                                                                ?.elementAtOrNull(
+                                                                    _model
+                                                                        .contador!)
+                                                                ?.redes2drop,
+                                                            'espacios2': _model
+                                                                .form2principal
+                                                                ?.elementAtOrNull(
+                                                                    _model
+                                                                        .contador!)
+                                                                ?.espacios2,
+                                                            'fecDeNacEnt': supaSerialize<
+                                                                    DateTime>(
+                                                                _model
+                                                                    .form2principal
+                                                                    ?.elementAtOrNull(
+                                                                        _model
+                                                                            .contador!)
+                                                                    ?.fecDeNacEnt),
+                                                            'nomEnt': _model
+                                                                .form2principal
+                                                                ?.elementAtOrNull(
+                                                                    _model
+                                                                        .contador!)
+                                                                ?.nomEnt,
+                                                            'apeEnt': _model
+                                                                .form2principal
+                                                                ?.elementAtOrNull(
+                                                                    _model
+                                                                        .contador!)
+                                                                ?.apeEnt,
+                                                            'dniEnt': _model
+                                                                .form2principal
+                                                                ?.elementAtOrNull(
+                                                                    _model
+                                                                        .contador!)
+                                                                ?.dniEnt,
+                                                            'edadEnt': _model
+                                                                .form2principal
+                                                                ?.elementAtOrNull(
+                                                                    _model
+                                                                        .contador!)
+                                                                ?.edadEnt,
+                                                          });
+                                                          await IngresosTable()
+                                                              .update(
+                                                            data: {
+                                                              'form2completo':
+                                                                  true,
+                                                              'form5': true,
+                                                              'updated_at':
+                                                                  supaSerialize<
+                                                                          DateTime>(
+                                                                      getCurrentTimestamp),
+                                                            },
+                                                            matchingRows:
+                                                                (rows) => rows
+                                                                    .eqOrNull(
+                                                              'id',
+                                                              widget.idingreso
+                                                                  ?.id,
+                                                            ),
+                                                          );
+                                                          await showDialog(
+                                                            context: context,
+                                                            builder:
+                                                                (alertDialogContext) {
+                                                              return AlertDialog(
+                                                                title: const Text(
+                                                                    'Carga correcta'),
+                                                                content: const Text(
+                                                                    'La informacion se guardo correctamente!!'),
+                                                                actions: [
+                                                                  TextButton(
+                                                                    onPressed: () =>
+                                                                        Navigator.pop(
+                                                                            alertDialogContext),
+                                                                    child: const Text(
+                                                                        'Ok'),
+                                                                  ),
+                                                                ],
+                                                              );
+                                                            },
+                                                          );
+                                                          Navigator.pop(
+                                                              context);
+                                                          _model.contador =
+                                                              _model.contador! +
+                                                                  1;
+                                                          safeSetState(() {});
+                                                        }
                                                       }
 
                                                       safeSetState(() {});
@@ -832,7 +902,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                               .titleSmall
                                                               .override(
                                                                 fontFamily:
-                                                                    'Raleway',
+                                                                    'Noto Sans JP',
                                                                 color: Colors
                                                                     .white,
                                                                 letterSpacing:
@@ -854,6 +924,98 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                   ),
                                 ),
                               ),
+                              Align(
+                                alignment: const AlignmentDirectional(0.0, -1.0),
+                                child: Text(
+                                  'Entrevistas a la familia y/o adultos responsables',
+                                  textAlign: TextAlign.center,
+                                  style: FlutterFlowTheme.of(context)
+                                      .headlineSmall
+                                      .override(
+                                        fontFamily: 'Noto Sans JP',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    8.0, 0.0, 8.0, 0.0),
+                                child: TextFormField(
+                                  controller: _model
+                                          .textFieldprofesionalTextController ??=
+                                      TextEditingController(
+                                    text:
+                                        containerFormulario2Row?.profesionales,
+                                  ),
+                                  focusNode:
+                                      _model.textFieldprofesionalFocusNode,
+                                  autofocus: true,
+                                  obscureText: false,
+                                  decoration: InputDecoration(
+                                    labelText: 'Profesionales intervinientes',
+                                    labelStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          fontFamily: 'Noto Sans JP',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    hintStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          fontFamily: 'Noto Sans JP',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: FlutterFlowTheme.of(context)
+                                            .alternate,
+                                        width: 2.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        width: 2.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                    errorBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        width: 2.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                    focusedErrorBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        width: 2.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Noto Sans JP',
+                                        letterSpacing: 0.0,
+                                      ),
+                                  validator: _model
+                                      .textFieldprofesionalTextControllerValidator
+                                      .asValidator(context),
+                                ),
+                              ),
+                              Divider(
+                                thickness: 2.0,
+                                color: FlutterFlowTheme.of(context).alternate,
+                              ),
                               Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -871,7 +1033,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                           style: FlutterFlowTheme.of(context)
                                               .titleLarge
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
@@ -904,14 +1066,16 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     hintStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     enabledBorder:
@@ -971,7 +1135,8 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                                   validator: _model
@@ -1003,14 +1168,16 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     hintStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     enabledBorder:
@@ -1070,7 +1237,8 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                                   validator: _model
@@ -1114,14 +1282,16 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     hintStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     enabledBorder:
@@ -1181,7 +1351,8 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                                   maxLength: 8,
@@ -1228,14 +1399,16 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     hintStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     enabledBorder:
@@ -1295,7 +1468,8 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         letterSpacing: 0.0,
                                                       ),
                                                   maxLength: 3,
@@ -1329,7 +1503,8 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily:
+                                                              'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),
@@ -1360,7 +1535,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                                 .headlineLarge
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Raleway',
+                                                                      'Noto Sans JP',
                                                                   fontSize:
                                                                       32.0,
                                                                   letterSpacing:
@@ -1424,14 +1599,16 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                'Noto Sans JP',
+                                                            color: Colors.white,
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   elevation: 3.0,
                                                   borderSide: const BorderSide(
                                                     color: Colors.transparent,
@@ -1450,21 +1627,9 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                   ),
                                 ],
                               ),
-                              Align(
-                                alignment: const AlignmentDirectional(0.0, -1.0),
-                                child: Text(
-                                  'Formulario 2 - Entrevistas a la familia y/o adultos responsables',
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .override(
-                                        fontFamily: 'Raleway',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                ),
+                              Divider(
+                                thickness: 2.0,
+                                color: FlutterFlowTheme.of(context).alternate,
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
@@ -1483,7 +1648,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                       ),
@@ -1510,7 +1675,8 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                   FlutterFlowTheme.of(context)
                                                       .headlineLarge
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         fontSize: 32.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -1567,7 +1733,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               color: Colors.white,
                                               letterSpacing: 0.0,
                                             ),
@@ -1587,78 +1753,6 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     8.0, 0.0, 8.0, 0.0),
                                 child: TextFormField(
-                                  controller: _model
-                                          .textFieldprofesionalTextController ??=
-                                      TextEditingController(
-                                    text:
-                                        containerFormulario2Row?.profesionales,
-                                  ),
-                                  focusNode:
-                                      _model.textFieldprofesionalFocusNode,
-                                  autofocus: true,
-                                  obscureText: false,
-                                  decoration: InputDecoration(
-                                    labelText: 'Profesionales intervinientes',
-                                    labelStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Raleway',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    hintStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Raleway',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .alternate,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    errorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color:
-                                            FlutterFlowTheme.of(context).error,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    focusedErrorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color:
-                                            FlutterFlowTheme.of(context).error,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Raleway',
-                                        letterSpacing: 0.0,
-                                      ),
-                                  validator: _model
-                                      .textFieldprofesionalTextControllerValidator
-                                      .asValidator(context),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    8.0, 0.0, 8.0, 0.0),
-                                child: TextFormField(
                                   controller: _model.textController6 ??=
                                       TextEditingController(
                                     text: containerFormulario2Row?.ocuEnt,
@@ -1671,13 +1765,13 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -1716,7 +1810,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   validator: _model.textController6Validator
@@ -1739,13 +1833,13 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -1784,7 +1878,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   validator: _model.textController7Validator
@@ -1803,17 +1897,18 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                   autofocus: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'Referencia',
+                                    labelText: 'Referencia de domicilio',
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
+                                    hintText: 'Referencia de domicilio',
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -1852,7 +1947,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   validator: _model.textController8Validator
@@ -1875,13 +1970,13 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -1920,7 +2015,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   validator: _model.textController9Validator
@@ -1944,13 +2039,13 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -1989,32 +2084,12 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   validator: _model.textController10Validator
                                       .asValidator(context),
                                 ),
-                              ),
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Flexible(
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: Text(
-                                        'Datos personales del NNyA y Grupo familiar ampliado (Completar en boton \"Editar formulario 1\")',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Raleway',
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
@@ -2029,19 +2104,18 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                   autofocus: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText:
-                                        'Objetivos de la entrevista (Derechos que la familia identifica como vulnerados y \ncomo repercuten en el NNA)',
+                                    labelText: 'Objetivos de la entrevista',
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     alignLabelWithHint: true,
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -2080,7 +2154,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   maxLines: 10,
@@ -2094,27 +2168,28 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     8.0, 0.0, 8.0, 0.0),
                                 child: TextFormField(
-                                  controller:
-                                      _model.textFieldobjetivoTextController2,
+                                  controller: _model
+                                          .textFieldobjetivoTextController2 ??=
+                                      TextEditingController(
+                                    text: containerFormulario2Row?.derechosvul,
+                                  ),
                                   focusNode: _model.textFieldobjetivoFocusNode2,
                                   autofocus: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     labelText:
-                                        'Percepcion de la familiara o adulto responsable sobre la situacion planteada',
+                                        'Derechos que la familia identifica como vulnerados y como repercuten en el NNA',
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     alignLabelWithHint: true,
-                                    hintText:
-                                        'Percepcion de la familiara o adulto responsable sobre la situacion planteada',
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -2153,7 +2228,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   maxLines: 10,
@@ -2163,18 +2238,107 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                       .asValidator(context),
                                 ),
                               ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    8.0, 0.0, 8.0, 0.0),
+                                child: TextFormField(
+                                  controller:
+                                      _model.textFieldobjetivoTextController3,
+                                  focusNode: _model.textFieldobjetivoFocusNode3,
+                                  autofocus: true,
+                                  obscureText: false,
+                                  decoration: InputDecoration(
+                                    labelText:
+                                        'Percepcion de la familiara o adulto responsable sobre la situacion planteada',
+                                    labelStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          fontFamily: 'Noto Sans JP',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    alignLabelWithHint: true,
+                                    hintText:
+                                        'Percepcion de la familiara o adulto responsable sobre la situacion planteada',
+                                    hintStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          fontFamily: 'Noto Sans JP',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: FlutterFlowTheme.of(context)
+                                            .alternate,
+                                        width: 2.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        width: 2.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                    errorBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        width: 2.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                    focusedErrorBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        width: 2.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Noto Sans JP',
+                                        letterSpacing: 0.0,
+                                      ),
+                                  maxLines: 10,
+                                  minLines: 2,
+                                  validator: _model
+                                      .textFieldobjetivoTextController3Validator
+                                      .asValidator(context),
+                                ),
+                              ),
                               Align(
                                 alignment: const AlignmentDirectional(-1.0, 0.0),
                                 child: Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 0.0, 0.0),
                                   child: Text(
-                                    'Registro de la entrevista',
+                                    'A) REGRISTRO DE LA ENTREVISTA',
                                     style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
+                                        .titleMedium
                                         .override(
-                                          fontFamily: 'Raleway',
-                                          fontSize: 14.0,
+                                          fontFamily: 'Noto Sans JP',
+                                          letterSpacing: 0.0,
+                                          lineHeight: 1.8,
+                                        ),
+                                  ),
+                                ),
+                              ),
+                              Align(
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      8.0, 0.0, 0.0, 0.0),
+                                  child: Text(
+                                    '1.  Descricpcion de la situacion',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                           lineHeight: 1.8,
                                         ),
@@ -2195,18 +2359,17 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                   autofocus: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: '1. Descripción de la situación',
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     alignLabelWithHint: true,
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -2245,7 +2408,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   maxLines: 20,
@@ -2256,75 +2419,75 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    8.0, 0.0, 8.0, 0.0),
-                                child: TextFormField(
-                                  controller: _model.textController14 ??=
-                                      TextEditingController(
-                                    text:
-                                        containerFormulario2Row?.personasDatos,
-                                  ),
-                                  focusNode: _model.textFieldFocusNode6,
-                                  autofocus: true,
-                                  obscureText: false,
-                                  decoration: InputDecoration(
-                                    labelText:
-                                        '2. Personas /datos que la familia propone para ampliar información',
-                                    labelStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Raleway',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    alignLabelWithHint: true,
-                                    hintStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Raleway',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .alternate,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    errorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color:
-                                            FlutterFlowTheme.of(context).error,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    focusedErrorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color:
-                                            FlutterFlowTheme.of(context).error,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                  ),
+                                    18.0, 0.0, 0.0, 0.0),
+                                child: Text(
+                                  '2. Personas /datos que la familia propone para ampliar información',
                                   style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
+                                      .titleMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
-                                  maxLines: 10,
-                                  minLines: 2,
-                                  validator: _model.textController14Validator
-                                      .asValidator(context),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 8.0, 0.0),
+                                child: FFButtonWidget(
+                                  onPressed: () async {
+                                    await showModalBottomSheet(
+                                      isScrollControlled: true,
+                                      backgroundColor: Colors.transparent,
+                                      enableDrag: false,
+                                      context: context,
+                                      builder: (context) {
+                                        return Padding(
+                                          padding:
+                                              MediaQuery.viewInsetsOf(context),
+                                          child: Seccion8Widget(
+                                            idingreso: widget.idingreso!,
+                                            idexp: widget.rowexp!,
+                                          ),
+                                        );
+                                      },
+                                    ).then((value) => safeSetState(() {}));
+                                  },
+                                  text:
+                                      'Datos de personas para ampliar informacion',
+                                  options: FFButtonOptions(
+                                    height: 30.0,
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        24.0, 0.0, 24.0, 0.0),
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Noto Sans JP',
+                                          color: Colors.white,
+                                          letterSpacing: 0.0,
+                                        ),
+                                    elevation: 3.0,
+                                    borderSide: const BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    18.0, 0.0, 0.0, 0.0),
+                                child: Text(
+                                  '3. Antecedentes en relación a la situación planteada',
+                                  style: FlutterFlowTheme.of(context)
+                                      .titleMedium
+                                      .override(
+                                        fontFamily: 'Noto Sans JP',
+                                        letterSpacing: 0.0,
+                                      ),
                                 ),
                               ),
                               Padding(
@@ -2335,23 +2498,21 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                       TextEditingController(
                                     text: containerFormulario2Row?.antecedentes,
                                   ),
-                                  focusNode: _model.textFieldFocusNode7,
+                                  focusNode: _model.textFieldFocusNode6,
                                   autofocus: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText:
-                                        '3. Antecedentes en relación a la situación planteada',
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     alignLabelWithHint: true,
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -2390,11 +2551,10 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   maxLines: 10,
-                                  minLines: 2,
                                   validator: _model.textController15Validator
                                       .asValidator(context),
                                 ),
@@ -2409,7 +2569,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                           lineHeight: 1.8,
                                         ),
@@ -2424,7 +2584,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                       TextEditingController(
                                     text: containerFormulario2Row?.estrategias,
                                   ),
-                                  focusNode: _model.textFieldFocusNode8,
+                                  focusNode: _model.textFieldFocusNode7,
                                   autofocus: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
@@ -2433,7 +2593,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     alignLabelWithHint: true,
@@ -2442,7 +2602,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -2481,7 +2641,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   maxLines: null,
@@ -2494,7 +2654,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     8.0, 0.0, 8.0, 0.0),
                                 child: TextFormField(
                                   controller: _model.textController17,
-                                  focusNode: _model.textFieldFocusNode9,
+                                  focusNode: _model.textFieldFocusNode8,
                                   autofocus: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
@@ -2503,7 +2663,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     alignLabelWithHint: true,
@@ -2512,7 +2672,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -2551,7 +2711,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   maxLines: null,
@@ -2595,10 +2755,11 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                   textStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
-                                  hintText: 'Redes opciones',
+                                  hintText:
+                                      'c. Redes o actores comunitarios con los que se vincula',
                                   icon: Icon(
                                     Icons.keyboard_arrow_down_rounded,
                                     color: FlutterFlowTheme.of(context)
@@ -2626,29 +2787,23 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     8.0, 0.0, 8.0, 0.0),
                                 child: TextFormField(
-                                  controller: _model.textController18 ??=
-                                      TextEditingController(
-                                    text: containerFormulario2Row?.redes,
-                                  ),
-                                  focusNode: _model.textFieldFocusNode10,
+                                  controller: _model.textController18,
+                                  focusNode: _model.textFieldFocusNode9,
                                   autofocus: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText:
-                                        'c. Redes o actores comunitarios con los que se vincula',
+                                    labelText: ' Otros',
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     alignLabelWithHint: true,
-                                    hintText:
-                                        'c. Redes o actores comunitarios con los que se vincula',
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -2687,7 +2842,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   maxLines: null,
@@ -2707,11 +2862,11 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Text(
-                                        'd. Espacios sociales en los que participa activamente',
+                                        'Participa activamente de  Espacios sociales?',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                       ),
@@ -2734,14 +2889,14 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                         selectedTextStyle:
                                             FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Raleway',
+                                                  fontFamily: 'Noto Sans JP',
                                                   letterSpacing: 0.0,
                                                 ),
                                         buttonPosition:
@@ -2771,23 +2926,23 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                       TextEditingController(
                                     text: containerFormulario2Row?.espacios,
                                   ),
-                                  focusNode: _model.textFieldFocusNode11,
+                                  focusNode: _model.textFieldFocusNode10,
                                   autofocus: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     labelText:
-                                        'd. Espacios sociales en los que participa',
+                                        'd. Describa el/los Espacios sociales en los que participa',
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     alignLabelWithHint: true,
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -2826,7 +2981,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   maxLines: null,
@@ -2842,7 +2997,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                       TextEditingController(
                                     text: containerFormulario2Row?.otros,
                                   ),
-                                  focusNode: _model.textFieldFocusNode12,
+                                  focusNode: _model.textFieldFocusNode11,
                                   autofocus: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
@@ -2851,14 +3006,14 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     alignLabelWithHint: true,
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -2897,78 +3052,11 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   maxLines: null,
                                   validator: _model.textController20Validator
-                                      .asValidator(context),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    8.0, 0.0, 8.0, 0.0),
-                                child: TextFormField(
-                                  controller: _model.textController21,
-                                  focusNode: _model.textFieldFocusNode13,
-                                  autofocus: true,
-                                  obscureText: false,
-                                  decoration: InputDecoration(
-                                    labelText: 'f. Otros',
-                                    labelStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Raleway',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    alignLabelWithHint: true,
-                                    hintStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Raleway',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .alternate,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    errorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color:
-                                            FlutterFlowTheme.of(context).error,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    focusedErrorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color:
-                                            FlutterFlowTheme.of(context).error,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Raleway',
-                                        letterSpacing: 0.0,
-                                      ),
-                                  maxLines: null,
-                                  validator: _model.textController21Validator
                                       .asValidator(context),
                                 ),
                               ),
@@ -2984,14 +3072,11 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Text(
-                                        'Valoracion / Sugerencias del/a entrevistador/a',
+                                        'VALORACION / SUGERENCIAS DEL/A ENTREVISTADOR/A',
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
+                                            .titleMedium
                                             .override(
-                                              fontFamily: 'Raleway',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                       ),
@@ -3003,24 +3088,22 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     8.0, 0.0, 8.0, 0.0),
                                 child: TextFormField(
-                                  controller: _model.textController22,
-                                  focusNode: _model.textFieldFocusNode14,
+                                  controller: _model.textController21,
+                                  focusNode: _model.textFieldFocusNode12,
                                   autofocus: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'Valoracion - Sugerencias',
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     alignLabelWithHint: true,
-                                    hintText: 'Valoracion - Sugerencias',
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -3059,12 +3142,12 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   maxLines: 10,
                                   minLines: 2,
-                                  validator: _model.textController22Validator
+                                  validator: _model.textController21Validator
                                       .asValidator(context),
                                 ),
                               ),
@@ -3108,27 +3191,23 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                 'vinEnt': _model
                                                     .textController10.text,
                                                 'objetivoEnt': _model
-                                                    .textFieldobjetivoTextController1
+                                                    .textFieldobjetivoTextController2
                                                     .text,
                                                 'descripcion': _model
                                                     .textFielddescripcionTextController
                                                     .text,
-                                                'personasDatos': _model
-                                                    .textController14.text,
                                                 'antecedentes': _model
                                                     .textController15.text,
                                                 'estrategias': _model
                                                     .textController16.text,
-                                                'redes': _model
-                                                    .textController18.text,
                                                 'espacios': _model
                                                     .textController19.text,
                                                 'personasServicios': _model
                                                     .textController20.text,
                                                 'otros': _model
-                                                    .textController21.text,
+                                                    .textController18.text,
                                                 'observaciones': _model
-                                                    .textController22.text,
+                                                    .textController21.text,
                                                 'idIngreso':
                                                     widget.idingreso?.id,
                                                 'idExpediente':
@@ -3155,6 +3234,11 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                 'edadEnt': int.tryParse(_model
                                                     .textFieldDNITextController2
                                                     .text),
+                                                'Formulario':
+                                                    widget.formulario,
+                                                'derechosvul': _model
+                                                    .textFieldobjetivoTextController2
+                                                    .text,
                                               });
                                               await IngresosTable().update(
                                                 data: {
@@ -3211,7 +3295,8 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         color: Colors.white,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -3258,27 +3343,23 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                   'vinEnt': _model
                                                       .textController10.text,
                                                   'objetivoEnt': _model
-                                                      .textFieldobjetivoTextController1
+                                                      .textFieldobjetivoTextController2
                                                       .text,
                                                   'descripcion': _model
                                                       .textFielddescripcionTextController
                                                       .text,
-                                                  'personasDatos': _model
-                                                      .textController14.text,
                                                   'antecedentes': _model
                                                       .textController15.text,
                                                   'estrategias': _model
                                                       .textController16.text,
-                                                  'redes': _model
-                                                      .textController18.text,
                                                   'espacios': _model
                                                       .textController19.text,
                                                   'personasServicios': _model
                                                       .textController20.text,
                                                   'otros': _model
-                                                      .textController21.text,
+                                                      .textController18.text,
                                                   'observaciones': _model
-                                                      .textController22.text,
+                                                      .textController21.text,
                                                   'idIngreso':
                                                       widget.idingreso?.id,
                                                   'idExpediente':
@@ -3305,6 +3386,9 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                   'edadEnt': int.tryParse(_model
                                                       .textFieldDNITextController2
                                                       .text),
+                                                  'derechosvul': _model
+                                                      .textFieldobjetivoTextController2
+                                                      .text,
                                                 },
                                                 matchingRows: (rows) =>
                                                     rows.eqOrNull(
@@ -3365,7 +3449,8 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         color: Colors.white,
                                                         letterSpacing: 0.0,
                                                       ),

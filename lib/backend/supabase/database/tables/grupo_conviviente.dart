@@ -27,8 +27,8 @@ class GrupoConvivienteRow extends SupabaseDataRow {
   String? get vinculo => getField<String>('vinculo');
   set vinculo(String? value) => setField<String>('vinculo', value);
 
-  int? get dni => getField<int>('dni');
-  set dni(int? value) => setField<int>('dni', value);
+  int get dni => getField<int>('dni')!;
+  set dni(int value) => setField<int>('dni', value);
 
   DateTime? get fechaNacimiento => getField<DateTime>('fecha_nacimiento');
   set fechaNacimiento(DateTime? value) =>

@@ -18,6 +18,8 @@ export 'serialization_util.dart';
 
 const kTransitionInfoKey = '__transition_info__';
 
+GlobalKey<NavigatorState> appNavigatorKey = GlobalKey<NavigatorState>();
+
 class AppStateNotifier extends ChangeNotifier {
   AppStateNotifier._();
 
@@ -75,6 +77,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
+      navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
           appStateNotifier.loggedIn ? const HomePageWidget() : const Auth2LoginWidget(),
       routes: [
@@ -87,6 +90,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'HomePage',
           path: '/homePage',
+          requireAuth: true,
           builder: (context, params) => const HomePageWidget(),
         ),
         FFRoute(
@@ -105,11 +109,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'usuariorow',
               ParamType.SupabaseRow,
             ),
+            spd: params.getParam<SpdRow>(
+              'spd',
+              ParamType.SupabaseRow,
+            ),
           ),
         ),
         FFRoute(
           name: 'Ingresos',
           path: '/ingresos',
+          requireAuth: true,
           builder: (context, params) => IngresosWidget(
             idexpediente: params.getParam<VistaExpedientesUltimoEstadoRow>(
               'idexpediente',
@@ -122,6 +131,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             usuariorow: params.getParam<UsuariosRow>(
               'usuariorow',
               ParamType.SupabaseRow,
+            ),
+            spd: params.getParam<SpdRow>(
+              'spd',
+              ParamType.SupabaseRow,
+            ),
+            idcarpeta: params.getParam(
+              'idcarpeta',
+              ParamType.String,
             ),
           ),
         ),
@@ -137,6 +154,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'rowexp',
               ParamType.SupabaseRow,
             ),
+            usuariorow: params.getParam<UsuariosRow>(
+              'usuariorow',
+              ParamType.SupabaseRow,
+            ),
           ),
         ),
         FFRoute(
@@ -149,6 +170,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             ),
             rowexp: params.getParam<VistaExpedientesUltimoEstadoRow>(
               'rowexp',
+              ParamType.SupabaseRow,
+            ),
+            usuariorow: params.getParam<UsuariosRow>(
+              'usuariorow',
               ParamType.SupabaseRow,
             ),
           ),
@@ -203,6 +228,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'edit',
               ParamType.bool,
             ),
+            usuariorow: params.getParam<UsuariosRow>(
+              'usuariorow',
+              ParamType.SupabaseRow,
+            ),
           ),
         ),
         FFRoute(
@@ -215,6 +244,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             ),
             expediente: params.getParam<VistaExpedientesUltimoEstadoRow>(
               'expediente',
+              ParamType.SupabaseRow,
+            ),
+            usuariorow: params.getParam<UsuariosRow>(
+              'usuariorow',
               ParamType.SupabaseRow,
             ),
           ),
@@ -266,6 +299,55 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => Caratula2Widget(
             usuario: params.getParam<UsuariosRow>(
               'usuario',
+              ParamType.SupabaseRow,
+            ),
+            spd: params.getParam<SpdRow>(
+              'spd',
+              ParamType.SupabaseRow,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'Respuestaform6page',
+          path: '/respuestaform6page',
+          builder: (context, params) => Respuestaform6pageWidget(
+            idingreso: params.getParam<IngresosRow>(
+              'idingreso',
+              ParamType.SupabaseRow,
+            ),
+            expedienterow: params.getParam<VistaExpedientesUltimoEstadoRow>(
+              'expedienterow',
+              ParamType.SupabaseRow,
+            ),
+            idform6: params.getParam(
+              'idform6',
+              ParamType.int,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'pruebarls',
+          path: '/pruebarls',
+          builder: (context, params) => const PruebarlsWidget(),
+        ),
+        FFRoute(
+          name: 'perfilCopy',
+          path: '/perfilCopy',
+          builder: (context, params) => PerfilCopyWidget(
+            idingreso: params.getParam(
+              'idingreso',
+              ParamType.int,
+            ),
+            rowexp: params.getParam<VistaExpedientesUltimoEstadoRow>(
+              'rowexp',
+              ParamType.SupabaseRow,
+            ),
+            usuariorow: params.getParam<UsuariosRow>(
+              'usuariorow',
+              ParamType.SupabaseRow,
+            ),
+            spd: params.getParam<SpdRow>(
+              'spd',
               ParamType.SupabaseRow,
             ),
           ),

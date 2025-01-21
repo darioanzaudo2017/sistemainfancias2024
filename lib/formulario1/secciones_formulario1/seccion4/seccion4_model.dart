@@ -8,14 +8,14 @@ class Seccion4Model extends FlutterFlowModel<Seccion4Widget> {
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();
-  // State field(s) for RadioButtonAUH widget.
-  FormFieldController<String>? radioButtonAUHValueController;
   // State field(s) for RadioButtonPaicor widget.
   FormFieldController<String>? radioButtonPaicorValueController;
-  // State field(s) for RadioButtonTarjeta widget.
-  FormFieldController<String>? radioButtonTarjetaValueController;
+  // State field(s) for RadioButtonAUH widget.
+  FormFieldController<String>? radioButtonAUHValueController;
   // State field(s) for RadioButtonPension widget.
   FormFieldController<String>? radioButtonPensionValueController;
+  // State field(s) for RadioButtonTarjeta widget.
+  FormFieldController<String>? radioButtonTarjetaValueController;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
   TextEditingController? textController1;
@@ -121,10 +121,10 @@ class Seccion4Model extends FlutterFlowModel<Seccion4Widget> {
   }
 
   /// Additional helper methods.
-  String? get radioButtonAUHValue => radioButtonAUHValueController?.value;
   String? get radioButtonPaicorValue => radioButtonPaicorValueController?.value;
-  String? get radioButtonTarjetaValue =>
-      radioButtonTarjetaValueController?.value;
+  String? get radioButtonAUHValue => radioButtonAUHValueController?.value;
   String? get radioButtonPensionValue =>
       radioButtonPensionValueController?.value;
+  String? get radioButtonTarjetaValue =>
+      radioButtonTarjetaValueController?.value;
 }

@@ -46,12 +46,12 @@ class AvisoconcurrenciaadultoModel
   String? Function(BuildContext, String?)?
       textFieldmotivoTextController5Validator;
   // State field(s) for TextFieldresena widget.
-  FocusNode? textFieldresenaFocusNode1;
-  TextEditingController? textFieldresenaTextController1;
-  final textFieldresenaMask1 = MaskTextInputFormatter(mask: '##:## hs');
+  FocusNode? textFieldresenaFocusNode;
+  TextEditingController? textFieldresenaTextController;
+  final textFieldresenaMask = MaskTextInputFormatter(mask: '##:## hs');
   String? Function(BuildContext, String?)?
-      textFieldresenaTextController1Validator;
-  String? _textFieldresenaTextController1Validator(
+      textFieldresenaTextControllerValidator;
+  String? _textFieldresenaTextControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Field is required';
@@ -60,12 +60,12 @@ class AvisoconcurrenciaadultoModel
     return null;
   }
 
-  // State field(s) for TextFieldresena widget.
-  FocusNode? textFieldresenaFocusNode2;
-  TextEditingController? textFieldresenaTextController2;
-  final textFieldresenaMask2 = MaskTextInputFormatter(mask: '##########');
+  // State field(s) for TextFieldtelacontactar widget.
+  FocusNode? textFieldtelacontactarFocusNode;
+  TextEditingController? textFieldtelacontactarTextController;
+  final textFieldtelacontactarMask = MaskTextInputFormatter(mask: '##########');
   String? Function(BuildContext, String?)?
-      textFieldresenaTextController2Validator;
+      textFieldtelacontactarTextControllerValidator;
   DateTime? datePicked1;
   DateTime? datePicked2;
   // Stores action output result for [Backend Call - API (Concurrencia visita adulto)] action in Button widget.
@@ -78,8 +78,8 @@ class AvisoconcurrenciaadultoModel
   void initState(BuildContext context) {
     textFieldmotivoTextController1Validator =
         _textFieldmotivoTextController1Validator;
-    textFieldresenaTextController1Validator =
-        _textFieldresenaTextController1Validator;
+    textFieldresenaTextControllerValidator =
+        _textFieldresenaTextControllerValidator;
   }
 
   @override
@@ -99,11 +99,11 @@ class AvisoconcurrenciaadultoModel
     textFieldmotivoFocusNode5?.dispose();
     textFieldmotivoTextController5?.dispose();
 
-    textFieldresenaFocusNode1?.dispose();
-    textFieldresenaTextController1?.dispose();
+    textFieldresenaFocusNode?.dispose();
+    textFieldresenaTextController?.dispose();
 
-    textFieldresenaFocusNode2?.dispose();
-    textFieldresenaTextController2?.dispose();
+    textFieldtelacontactarFocusNode?.dispose();
+    textFieldtelacontactarTextController?.dispose();
   }
 
   /// Additional helper methods.

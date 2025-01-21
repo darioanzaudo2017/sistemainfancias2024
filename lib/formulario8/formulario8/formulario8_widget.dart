@@ -138,7 +138,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineSmall
                               .override(
-                                fontFamily: 'Raleway',
+                                fontFamily: 'Noto Sans JP',
                                 color: FlutterFlowTheme.of(context).primary,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w600,
@@ -154,7 +154,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleMedium
                                 .override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
                           ),
@@ -173,14 +173,14 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                             labelStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
                             alignLabelWithHint: false,
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
                             enabledBorder: OutlineInputBorder(
@@ -214,7 +214,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                           maxLines: null,
@@ -231,7 +231,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleMedium
                                 .override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
                           ),
@@ -250,14 +250,14 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                             labelStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
                             alignLabelWithHint: false,
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
                             enabledBorder: OutlineInputBorder(
@@ -291,7 +291,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                           maxLines: null,
@@ -308,7 +308,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleMedium
                                 .override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
                           ),
@@ -333,7 +333,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -356,7 +356,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -375,7 +375,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -406,7 +406,8 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                                 FlutterFlowTheme.of(context)
                                                     .headlineLarge
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       fontSize: 32.0,
                                                       letterSpacing: 0.0,
                                                       fontWeight:
@@ -455,7 +456,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             color: Colors.white,
                                             letterSpacing: 0.0,
                                           ),
@@ -484,14 +485,14 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 alignLabelWithHint: false,
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
@@ -527,7 +528,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               maxLines: 10,
@@ -549,14 +550,14 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 alignLabelWithHint: false,
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
@@ -592,7 +593,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               maxLines: null,
@@ -621,7 +622,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -644,7 +645,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -663,7 +664,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -694,7 +695,8 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                                 FlutterFlowTheme.of(context)
                                                     .headlineLarge
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       fontSize: 32.0,
                                                       letterSpacing: 0.0,
                                                       fontWeight:
@@ -743,7 +745,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             color: Colors.white,
                                             letterSpacing: 0.0,
                                           ),
@@ -776,7 +778,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               hintText: '¿Otorgado?',
@@ -822,7 +824,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -845,7 +847,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -864,7 +866,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -895,7 +897,8 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                                 FlutterFlowTheme.of(context)
                                                     .headlineLarge
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       fontSize: 32.0,
                                                       letterSpacing: 0.0,
                                                       fontWeight:
@@ -944,7 +947,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             color: Colors.white,
                                             letterSpacing: 0.0,
                                           ),
@@ -978,7 +981,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               hintText: '¿Otorgado?',
@@ -1017,14 +1020,14 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 alignLabelWithHint: false,
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
@@ -1060,7 +1063,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               maxLines: null,
@@ -1082,14 +1085,14 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 alignLabelWithHint: false,
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
@@ -1125,7 +1128,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               maxLines: null,
@@ -1154,7 +1157,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -1177,7 +1180,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -1196,7 +1199,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -1227,7 +1230,8 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                                 FlutterFlowTheme.of(context)
                                                     .headlineLarge
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       fontSize: 32.0,
                                                       letterSpacing: 0.0,
                                                       fontWeight:
@@ -1276,7 +1280,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             color: Colors.white,
                                             letterSpacing: 0.0,
                                           ),
@@ -1306,13 +1310,13 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
@@ -1348,7 +1352,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               validator: _model.textController7Validator
@@ -1372,7 +1376,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -1391,7 +1395,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -1422,7 +1426,8 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                                 FlutterFlowTheme.of(context)
                                                     .headlineLarge
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       fontSize: 32.0,
                                                       letterSpacing: 0.0,
                                                       fontWeight:
@@ -1471,7 +1476,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             color: Colors.white,
                                             letterSpacing: 0.0,
                                           ),
@@ -1501,13 +1506,13 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
@@ -1543,7 +1548,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               validator: _model.textController8Validator
@@ -1567,7 +1572,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -1586,7 +1591,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -1617,7 +1622,8 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                                 FlutterFlowTheme.of(context)
                                                     .headlineLarge
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       fontSize: 32.0,
                                                       letterSpacing: 0.0,
                                                       fontWeight:
@@ -1666,7 +1672,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             color: Colors.white,
                                             letterSpacing: 0.0,
                                           ),
@@ -1696,13 +1702,13 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
@@ -1738,7 +1744,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               validator: _model.textController9Validator
@@ -1777,7 +1783,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           color: Colors.white,
                                           letterSpacing: 0.0,
                                         ),

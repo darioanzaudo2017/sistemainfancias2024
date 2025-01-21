@@ -55,9 +55,9 @@ class _AvisoconcurrenciaadultoWidgetState
         TextEditingController(text: widget.rowexp?.spd);
     _model.textFieldmotivoFocusNode5 ??= FocusNode();
 
-    _model.textFieldresenaFocusNode1 ??= FocusNode();
+    _model.textFieldresenaFocusNode ??= FocusNode();
 
-    _model.textFieldresenaFocusNode2 ??= FocusNode();
+    _model.textFieldtelacontactarFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -114,7 +114,6 @@ class _AvisoconcurrenciaadultoWidgetState
             ),
             child: Container(
               width: MediaQuery.sizeOf(context).width * 4.5,
-              height: 621.0,
               constraints: const BoxConstraints(
                 maxWidth: 600.0,
               ),
@@ -151,7 +150,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         letterSpacing: 0.0,
@@ -197,7 +196,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 alignLabelWithHint: true,
@@ -205,7 +204,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
@@ -241,7 +240,7 @@ class _AvisoconcurrenciaadultoWidgetState
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               validator: _model
@@ -268,7 +267,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 alignLabelWithHint: true,
@@ -276,7 +275,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
@@ -312,7 +311,7 @@ class _AvisoconcurrenciaadultoWidgetState
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               validator: _model
@@ -340,7 +339,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 alignLabelWithHint: true,
@@ -348,7 +347,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
@@ -384,7 +383,7 @@ class _AvisoconcurrenciaadultoWidgetState
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               validator: _model
@@ -411,7 +410,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 alignLabelWithHint: true,
@@ -419,7 +418,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
@@ -455,7 +454,7 @@ class _AvisoconcurrenciaadultoWidgetState
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               validator: _model
@@ -477,7 +476,7 @@ class _AvisoconcurrenciaadultoWidgetState
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               alignLabelWithHint: true,
@@ -485,7 +484,7 @@ class _AvisoconcurrenciaadultoWidgetState
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
@@ -520,7 +519,7 @@ class _AvisoconcurrenciaadultoWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
                             validator: _model
@@ -532,12 +531,11 @@ class _AvisoconcurrenciaadultoWidgetState
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: TextFormField(
-                            controller:
-                                _model.textFieldresenaTextController1 ??=
-                                    TextEditingController(
+                            controller: _model.textFieldresenaTextController ??=
+                                TextEditingController(
                               text: containerAvisovisitaadultosRow?.hora,
                             ),
-                            focusNode: _model.textFieldresenaFocusNode1,
+                            focusNode: _model.textFieldresenaFocusNode,
                             autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -545,7 +543,7 @@ class _AvisoconcurrenciaadultoWidgetState
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               alignLabelWithHint: true,
@@ -553,7 +551,7 @@ class _AvisoconcurrenciaadultoWidgetState
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
@@ -588,14 +586,14 @@ class _AvisoconcurrenciaadultoWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
                             maxLength: 10,
                             validator: _model
-                                .textFieldresenaTextController1Validator
+                                .textFieldresenaTextControllerValidator
                                 .asValidator(context),
-                            inputFormatters: [_model.textFieldresenaMask1],
+                            inputFormatters: [_model.textFieldresenaMask],
                           ),
                         ),
 
@@ -605,13 +603,13 @@ class _AvisoconcurrenciaadultoWidgetState
                               8.0, 0.0, 8.0, 0.0),
                           child: TextFormField(
                             controller:
-                                _model.textFieldresenaTextController2 ??=
+                                _model.textFieldtelacontactarTextController ??=
                                     TextEditingController(
                               text: containerAvisovisitaadultosRow
                                   ?.telcontactospd
                                   ?.toString(),
                             ),
-                            focusNode: _model.textFieldresenaFocusNode2,
+                            focusNode: _model.textFieldtelacontactarFocusNode,
                             autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -619,7 +617,7 @@ class _AvisoconcurrenciaadultoWidgetState
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               alignLabelWithHint: true,
@@ -627,7 +625,7 @@ class _AvisoconcurrenciaadultoWidgetState
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
@@ -662,14 +660,16 @@ class _AvisoconcurrenciaadultoWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
                             maxLength: 10,
                             validator: _model
-                                .textFieldresenaTextController2Validator
+                                .textFieldtelacontactarTextControllerValidator
                                 .asValidator(context),
-                            inputFormatters: [_model.textFieldresenaMask2],
+                            inputFormatters: [
+                              _model.textFieldtelacontactarMask
+                            ],
                           ),
                         ),
                         Row(
@@ -689,7 +689,7 @@ class _AvisoconcurrenciaadultoWidgetState
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -712,7 +712,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                           FlutterFlowTheme.of(context)
                                               .headlineLarge
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
                                                 fontSize: 32.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
@@ -764,7 +764,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       color: Colors.white,
                                       letterSpacing: 0.0,
                                     ),
@@ -791,7 +791,7 @@ class _AvisoconcurrenciaadultoWidgetState
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -814,7 +814,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                           FlutterFlowTheme.of(context)
                                               .headlineLarge
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
                                                 fontSize: 32.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
@@ -866,7 +866,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       color: Colors.white,
                                       letterSpacing: 0.0,
                                     ),
@@ -935,7 +935,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                     'fecha': supaSerialize<DateTime>(
                                         _model.datePicked2),
                                     'hora': _model
-                                        .textFieldresenaTextController1.text,
+                                        .textFieldresenaTextController.text,
                                     'CPC': widget.rowexp?.spd,
                                     'nombres': _model
                                         .textFieldmotivoTextController1.text,
@@ -944,7 +944,8 @@ class _AvisoconcurrenciaadultoWidgetState
                                     'dni': int.tryParse(_model
                                         .textFieldmotivoTextController3.text),
                                     'telcontactospd': int.tryParse(_model
-                                        .textFieldresenaTextController2.text),
+                                        .textFieldtelacontactarTextController
+                                        .text),
                                   });
                                   _model.apiResultm56 =
                                       await ConcurrenciaVisitaAdultoCall.call(
@@ -972,7 +973,8 @@ class _AvisoconcurrenciaadultoWidgetState
                                     idingreso: widget.rowingreso?.id,
                                     carpeta: widget.rowingreso?.idcarpeta,
                                     telefono: _model
-                                        .textFieldresenaTextController2.text,
+                                        .textFieldtelacontactarTextController
+                                        .text,
                                   );
 
                                   if ((_model.apiResultm56?.succeeded ??
@@ -1011,7 +1013,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                       'fecha': supaSerialize<DateTime>(
                                           _model.datePicked2),
                                       'hora': _model
-                                          .textFieldresenaTextController1.text,
+                                          .textFieldresenaTextController.text,
                                       'CPC': widget.rowexp?.spd,
                                       'nombres': _model
                                           .textFieldmotivoTextController1.text,
@@ -1020,7 +1022,8 @@ class _AvisoconcurrenciaadultoWidgetState
                                       'dni': int.tryParse(_model
                                           .textFieldmotivoTextController3.text),
                                       'telcontactospd': int.tryParse(_model
-                                          .textFieldresenaTextController2.text),
+                                          .textFieldtelacontactarTextController
+                                          .text),
                                     },
                                     matchingRows: (rows) => rows.eqOrNull(
                                       'idIngreso',
@@ -1053,7 +1056,8 @@ class _AvisoconcurrenciaadultoWidgetState
                                     idingreso: widget.rowingreso?.id,
                                     carpeta: widget.rowingreso?.idcarpeta,
                                     telefono: _model
-                                        .textFieldresenaTextController2.text,
+                                        .textFieldtelacontactarTextController
+                                        .text,
                                   );
 
                                   if ((_model.apiResultm56edit?.succeeded ??
@@ -1101,7 +1105,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       color: Colors.white,
                                       letterSpacing: 0.0,
                                     ),
@@ -1117,8 +1121,8 @@ class _AvisoconcurrenciaadultoWidgetState
                           ],
                         ),
                       ]
-                          .divide(const SizedBox(height: 8.0))
-                          .around(const SizedBox(height: 8.0)),
+                          .divide(const SizedBox(height: 12.0))
+                          .around(const SizedBox(height: 12.0)),
                     ),
                   ),
                 ),

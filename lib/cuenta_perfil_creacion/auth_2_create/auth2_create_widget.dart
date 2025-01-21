@@ -148,7 +148,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                             style: FlutterFlowTheme.of(context)
                                 .displaySmall
                                 .override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   color: FlutterFlowTheme.of(context).info,
                                   fontSize: 20.0,
                                   letterSpacing: 0.0,
@@ -216,7 +216,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .displaySmall
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                 ),
@@ -229,7 +229,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -250,13 +250,13 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                         enabledBorder: OutlineInputBorder(
@@ -302,7 +302,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                       validator: _model
@@ -328,13 +328,13 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                         enabledBorder: OutlineInputBorder(
@@ -380,7 +380,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                       keyboardType: TextInputType.emailAddress,
@@ -409,7 +409,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     hintText: 'Seleccionar SPD',
@@ -450,7 +450,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                         enabledBorder: OutlineInputBorder(
@@ -512,7 +512,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                       cursorColor:
@@ -542,7 +542,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                         enabledBorder: OutlineInputBorder(
@@ -606,7 +606,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                       cursorColor:
@@ -672,7 +672,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             color: Colors.white,
                                             letterSpacing: 0.0,
                                           ),
@@ -726,7 +726,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                                       context)
                                                   .bodyMedium
                                                   .override(
-                                                    fontFamily: 'Raleway',
+                                                    fontFamily: 'Noto Sans JP',
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primary,
@@ -738,7 +738,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
                                                 letterSpacing: 0.0,
                                               ),
                                         ),

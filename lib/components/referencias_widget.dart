@@ -71,7 +71,7 @@ class _ReferenciasWidgetState extends State<ReferenciasWidget> {
                     Text(
                       'Expediente abierto sin ingresos',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Raleway',
+                            fontFamily: 'Noto Sans JP',
                             letterSpacing: 0.0,
                           ),
                     ),
@@ -91,7 +91,7 @@ class _ReferenciasWidgetState extends State<ReferenciasWidget> {
                     Text(
                       'Expediente con ingreso abierto',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Raleway',
+                            fontFamily: 'Noto Sans JP',
                             letterSpacing: 0.0,
                           ),
                     ),
@@ -111,7 +111,7 @@ class _ReferenciasWidgetState extends State<ReferenciasWidget> {
                     Text(
                       'Expediente con ingreso cerrado',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Raleway',
+                            fontFamily: 'Noto Sans JP',
                             letterSpacing: 0.0,
                           ),
                     ),

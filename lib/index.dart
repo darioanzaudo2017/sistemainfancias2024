@@ -25,3 +25,7 @@ export '/dashboard/dashboard_widget.dart' show DashboardWidget;
 export '/imprimir/imprimir_widget.dart' show ImprimirWidget;
 export '/admin/admin_widget.dart' show AdminWidget;
 export '/caratula2/caratula2_widget.dart' show Caratula2Widget;
+export '/respuestaform6page/respuestaform6page_widget.dart'
+    show Respuestaform6pageWidget;
+export '/pruebarls/pruebarls_widget.dart' show PruebarlsWidget;
+export '/perfil_copy/perfil_copy_widget.dart' show PerfilCopyWidget;

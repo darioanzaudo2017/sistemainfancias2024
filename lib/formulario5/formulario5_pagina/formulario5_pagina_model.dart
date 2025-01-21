@@ -1,4 +1,5 @@
 import '/backend/supabase/supabase.dart';
+import '/components/anexosbotonera_widget.dart';
 import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
@@ -10,6 +11,9 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
   ///  Local state fields for this page.
 
   int? contador;
+
+  String nombrepagina =
+      ' Informe síntesis de Valoracion Integral y propuestas de MPI';
 
   ///  State fields for stateful widgets in this page.
 
@@ -43,6 +47,11 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
   // State field(s) for PaginatedDataTable widget.
   final paginatedDataTableController =
       FlutterFlowDataTableController<ListaDerechosVulneradosexpedienteRow>();
+  // State field(s) for Checkbox widget.
+  Map<ListaDerechosVulneradosexpedienteRow, bool> checkboxValueMap = {};
+  List<ListaDerechosVulneradosexpedienteRow> get checkboxCheckedItems =>
+      checkboxValueMap.entries.where((e) => e.value).map((e) => e.key).toList();
+
   // State field(s) for TextFieldinddevulneracion widget.
   FocusNode? textFieldinddevulneracionFocusNode;
   TextEditingController? textFieldinddevulneracionTextController;
@@ -117,6 +126,8 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
       textFieldPropuestasparamedidasdeProteccionIntegralTextController;
   String? Function(BuildContext, String?)?
       textFieldPropuestasparamedidasdeProteccionIntegralTextControllerValidator;
+  // Model for anexosbotonera component.
+  late AnexosbotoneraModel anexosbotoneraModel;
 
   @override
   void initState(BuildContext context) {
@@ -128,6 +139,7 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
         _textFieldresponsablesTextControllerValidator;
     textController5Validator = _textController5Validator;
     textController6Validator = _textController6Validator;
+    anexosbotoneraModel = createModel(context, () => AnexosbotoneraModel());
   }
 
   @override
@@ -156,6 +168,8 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
 
     textFieldPropuestasparamedidasdeProteccionIntegralFocusNode?.dispose();
     textFieldPropuestasparamedidasdeProteccionIntegralTextController?.dispose();
+
+    anexosbotoneraModel.dispose();
   }
 
   /// Additional helper methods.

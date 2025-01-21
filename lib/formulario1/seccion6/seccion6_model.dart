@@ -9,10 +9,6 @@ class Seccion6Model extends FlutterFlowModel<Seccion6Widget> {
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();
-  // State field(s) for PaginatedDataTable widget.
-  final paginatedDataTableController =
-      FlutterFlowDataTableController<Seccion6Row>();
-  Completer<List<Seccion6Row>>? requestCompleter;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
   TextEditingController? textController1;
@@ -21,18 +17,23 @@ class Seccion6Model extends FlutterFlowModel<Seccion6Widget> {
   FocusNode? textFieldFocusNode2;
   TextEditingController? textController2;
   String? Function(BuildContext, String?)? textController2Validator;
+  Completer<List<Seccion6Row>>? requestCompleter;
+  // State field(s) for PaginatedDataTable widget.
+  final paginatedDataTableController =
+      FlutterFlowDataTableController<Seccion6Row>();
 
   @override
   void initState(BuildContext context) {}
 
   @override
   void dispose() {
-    paginatedDataTableController.dispose();
     textFieldFocusNode1?.dispose();
     textController1?.dispose();
 
     textFieldFocusNode2?.dispose();
     textController2?.dispose();
+
+    paginatedDataTableController.dispose();
   }
 
   /// Additional helper methods.

@@ -1,7 +1,9 @@
 import '/backend/api_requests/api_calls.dart';
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'anexo5requerimientoacciones_widget.dart'
     show Anexo5requerimientoaccionesWidget;
+import 'dart:async';
 import 'package:flutter/material.dart';
 
 class Anexo5requerimientoaccionesModel
@@ -25,10 +27,13 @@ class Anexo5requerimientoaccionesModel
   String? Function(BuildContext, String?)?
       textFieldmotivoTextController3Validator;
   DateTime? datePicked;
+  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
+  Anexo5requerimientoaccionesRow? creoreqacciones;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<SpdRow>? spd;
   // Stores action output result for [Backend Call - API (ANEXO  REQUERIMIENTO DE EJECUCIoN DE ACCIONES)] action in Button widget.
   ApiCallResponse? apiResults9d;
-  // Stores action output result for [Backend Call - API (ANEXO  REQUERIMIENTO DE EJECUCIoN DE ACCIONES)] action in Button widget.
-  ApiCallResponse? apiResults9dedit;
+  Completer<List<Anexo5requerimientoaccionesRow>>? requestCompleter;
 
   @override
   void initState(BuildContext context) {}
@@ -43,5 +48,21 @@ class Anexo5requerimientoaccionesModel
 
     textFieldmotivoFocusNode3?.dispose();
     textFieldmotivoTextController3?.dispose();
+  }
+
+  /// Additional helper methods.
+  Future waitForRequestCompleted({
+    double minWait = 0,
+    double maxWait = double.infinity,
+  }) async {
+    final stopwatch = Stopwatch()..start();
+    while (true) {
+      await Future.delayed(const Duration(milliseconds: 50));
+      final timeElapsed = stopwatch.elapsedMilliseconds;
+      final requestComplete = requestCompleter?.isCompleted ?? false;
+      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
+        break;
+      }
+    }
   }
 }

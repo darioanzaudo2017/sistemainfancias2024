@@ -101,7 +101,7 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                 child: Text(
                   'Adjuntar documento',
                   style: FlutterFlowTheme.of(context).titleLarge.override(
-                        fontFamily: 'Raleway',
+                        fontFamily: 'Noto Sans JP',
                         color: FlutterFlowTheme.of(context).primary,
                         letterSpacing: 0.0,
                       ),
@@ -115,12 +115,12 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                 decoration: InputDecoration(
                   isDense: true,
                   labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Raleway',
+                        fontFamily: 'Noto Sans JP',
                         letterSpacing: 0.0,
                       ),
                   hintText: 'Observaciones',
                   hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Raleway',
+                        fontFamily: 'Noto Sans JP',
                         letterSpacing: 0.0,
                       ),
                   enabledBorder: OutlineInputBorder(
@@ -155,7 +155,7 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                   fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Raleway',
+                      fontFamily: 'Noto Sans JP',
                       letterSpacing: 0.0,
                     ),
                 maxLines: null,
@@ -171,13 +171,16 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                   'Salud',
                   'Educacion',
                   'Sala Cuna',
-                  'Otro'
+                  'Otro',
+                  'Adjunto Amplaicion de Informacion',
+                  'Adjunto Informe Sintesis',
+                  'Adjunto Recepcion de la demanda'
                 ],
                 onChanged: (val) =>
                     safeSetState(() => _model.dropDownValue = val),
                 height: 40.0,
                 textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Raleway',
+                      fontFamily: 'Noto Sans JP',
                       letterSpacing: 0.0,
                     ),
                 hintText: 'tipo de documento',
@@ -269,7 +272,7 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily: 'Raleway',
+                                fontFamily: 'Noto Sans JP',
                                 color: Colors.white,
                                 letterSpacing: 0.0,
                               ),

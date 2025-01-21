@@ -17,6 +17,20 @@ class Formulario2Model extends FlutterFlowModel<Formulario2Widget> {
   List<VistaExpedientesUltimoEstadoRow>? expedienteprincipal;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
   List<Formulario2Row>? form2principal;
+  // State field(s) for TextFieldprofesional widget.
+  FocusNode? textFieldprofesionalFocusNode;
+  TextEditingController? textFieldprofesionalTextController;
+  String? Function(BuildContext, String?)?
+      textFieldprofesionalTextControllerValidator;
+  String? _textFieldprofesionalTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Campo obligatorio';
+    }
+
+    return null;
+  }
+
   // State field(s) for TextFieldapellido widget.
   FocusNode? textFieldapellidoFocusNode;
   TextEditingController? textFieldapellidoTextController;
@@ -57,20 +71,6 @@ class Formulario2Model extends FlutterFlowModel<Formulario2Widget> {
   String? Function(BuildContext, String?)? textFieldDNITextController2Validator;
   DateTime? datePicked1;
   DateTime? datePicked2;
-  // State field(s) for TextFieldprofesional widget.
-  FocusNode? textFieldprofesionalFocusNode;
-  TextEditingController? textFieldprofesionalTextController;
-  String? Function(BuildContext, String?)?
-      textFieldprofesionalTextControllerValidator;
-  String? _textFieldprofesionalTextControllerValidator(
-      BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'Campo obligatorio';
-    }
-
-    return null;
-  }
-
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
   TextEditingController? textController6;
@@ -96,7 +96,12 @@ class Formulario2Model extends FlutterFlowModel<Formulario2Widget> {
   TextEditingController? textFieldobjetivoTextController1;
   String? Function(BuildContext, String?)?
       textFieldobjetivoTextController1Validator;
-  String? _textFieldobjetivoTextController1Validator(
+  // State field(s) for TextFieldobjetivo widget.
+  FocusNode? textFieldobjetivoFocusNode2;
+  TextEditingController? textFieldobjetivoTextController2;
+  String? Function(BuildContext, String?)?
+      textFieldobjetivoTextController2Validator;
+  String? _textFieldobjetivoTextController2Validator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Campo obligatorio';
@@ -106,10 +111,10 @@ class Formulario2Model extends FlutterFlowModel<Formulario2Widget> {
   }
 
   // State field(s) for TextFieldobjetivo widget.
-  FocusNode? textFieldobjetivoFocusNode2;
-  TextEditingController? textFieldobjetivoTextController2;
+  FocusNode? textFieldobjetivoFocusNode3;
+  TextEditingController? textFieldobjetivoTextController3;
   String? Function(BuildContext, String?)?
-      textFieldobjetivoTextController2Validator;
+      textFieldobjetivoTextController3Validator;
   // State field(s) for TextFielddescripcion widget.
   FocusNode? textFielddescripcionFocusNode;
   TextEditingController? textFielddescripcionTextController;
@@ -126,62 +131,57 @@ class Formulario2Model extends FlutterFlowModel<Formulario2Widget> {
 
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode6;
-  TextEditingController? textController14;
-  String? Function(BuildContext, String?)? textController14Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode7;
   TextEditingController? textController15;
   String? Function(BuildContext, String?)? textController15Validator;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode8;
+  FocusNode? textFieldFocusNode7;
   TextEditingController? textController16;
   String? Function(BuildContext, String?)? textController16Validator;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode9;
+  FocusNode? textFieldFocusNode8;
   TextEditingController? textController17;
   String? Function(BuildContext, String?)? textController17Validator;
   // State field(s) for DropDownredes widget.
   List<String>? dropDownredesValue;
   FormFieldController<List<String>>? dropDownredesValueController;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode10;
+  FocusNode? textFieldFocusNode9;
   TextEditingController? textController18;
   String? Function(BuildContext, String?)? textController18Validator;
   // State field(s) for RadioButtonespacios widget.
   FormFieldController<String>? radioButtonespaciosValueController;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode11;
+  FocusNode? textFieldFocusNode10;
   TextEditingController? textController19;
   String? Function(BuildContext, String?)? textController19Validator;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode12;
+  FocusNode? textFieldFocusNode11;
   TextEditingController? textController20;
   String? Function(BuildContext, String?)? textController20Validator;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode13;
+  FocusNode? textFieldFocusNode12;
   TextEditingController? textController21;
   String? Function(BuildContext, String?)? textController21Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode14;
-  TextEditingController? textController22;
-  String? Function(BuildContext, String?)? textController22Validator;
 
   @override
   void initState(BuildContext context) {
+    textFieldprofesionalTextControllerValidator =
+        _textFieldprofesionalTextControllerValidator;
     textFieldapellidoTextControllerValidator =
         _textFieldapellidoTextControllerValidator;
     textFieldnombreTextControllerValidator =
         _textFieldnombreTextControllerValidator;
-    textFieldprofesionalTextControllerValidator =
-        _textFieldprofesionalTextControllerValidator;
-    textFieldobjetivoTextController1Validator =
-        _textFieldobjetivoTextController1Validator;
+    textFieldobjetivoTextController2Validator =
+        _textFieldobjetivoTextController2Validator;
     textFielddescripcionTextControllerValidator =
         _textFielddescripcionTextControllerValidator;
   }
 
   @override
   void dispose() {
+    textFieldprofesionalFocusNode?.dispose();
+    textFieldprofesionalTextController?.dispose();
+
     textFieldapellidoFocusNode?.dispose();
     textFieldapellidoTextController?.dispose();
 
@@ -193,9 +193,6 @@ class Formulario2Model extends FlutterFlowModel<Formulario2Widget> {
 
     textFieldDNIFocusNode2?.dispose();
     textFieldDNITextController2?.dispose();
-
-    textFieldprofesionalFocusNode?.dispose();
-    textFieldprofesionalTextController?.dispose();
 
     textFieldFocusNode1?.dispose();
     textController6?.dispose();
@@ -218,35 +215,32 @@ class Formulario2Model extends FlutterFlowModel<Formulario2Widget> {
     textFieldobjetivoFocusNode2?.dispose();
     textFieldobjetivoTextController2?.dispose();
 
+    textFieldobjetivoFocusNode3?.dispose();
+    textFieldobjetivoTextController3?.dispose();
+
     textFielddescripcionFocusNode?.dispose();
     textFielddescripcionTextController?.dispose();
 
     textFieldFocusNode6?.dispose();
-    textController14?.dispose();
-
-    textFieldFocusNode7?.dispose();
     textController15?.dispose();
 
-    textFieldFocusNode8?.dispose();
+    textFieldFocusNode7?.dispose();
     textController16?.dispose();
 
-    textFieldFocusNode9?.dispose();
+    textFieldFocusNode8?.dispose();
     textController17?.dispose();
 
-    textFieldFocusNode10?.dispose();
+    textFieldFocusNode9?.dispose();
     textController18?.dispose();
 
-    textFieldFocusNode11?.dispose();
+    textFieldFocusNode10?.dispose();
     textController19?.dispose();
 
-    textFieldFocusNode12?.dispose();
+    textFieldFocusNode11?.dispose();
     textController20?.dispose();
 
-    textFieldFocusNode13?.dispose();
+    textFieldFocusNode12?.dispose();
     textController21?.dispose();
-
-    textFieldFocusNode14?.dispose();
-    textController22?.dispose();
   }
 
   /// Additional helper methods.

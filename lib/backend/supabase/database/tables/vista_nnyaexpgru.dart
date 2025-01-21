@@ -34,6 +34,9 @@ class VistaNnyaexpgruRow extends SupabaseDataRow {
   int? get dNINNyA => getField<int>('DNI_NNyA');
   set dNINNyA(int? value) => setField<int>('DNI_NNyA', value);
 
+  int? get edadNNyA => getField<int>('edad_NNyA');
+  set edadNNyA(int? value) => setField<int>('edad_NNyA', value);
+
   int? get idExpediente => getField<int>('id_Expediente');
   set idExpediente(int? value) => setField<int>('id_Expediente', value);
 

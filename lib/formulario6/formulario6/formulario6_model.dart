@@ -11,6 +11,15 @@ class Formulario6Model extends FlutterFlowModel<Formulario6Widget> {
 
   int? idform6;
 
+  List<int> idderechos = [];
+  void addToIdderechos(int item) => idderechos.add(item);
+  void removeFromIdderechos(int item) => idderechos.remove(item);
+  void removeAtIndexFromIdderechos(int index) => idderechos.removeAt(index);
+  void insertAtIndexInIdderechos(int index, int item) =>
+      idderechos.insert(index, item);
+  void updateIdderechosAtIndex(int index, Function(int) updateFn) =>
+      idderechos[index] = updateFn(idderechos[index]);
+
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();
@@ -41,12 +50,8 @@ class Formulario6Model extends FlutterFlowModel<Formulario6Widget> {
   FocusNode? textFieldFocusNode2;
   TextEditingController? textController3;
   String? Function(BuildContext, String?)? textController3Validator;
-  // State field(s) for DropDownderecho widget.
-  String? dropDownderechoValue;
-  FormFieldController<String>? dropDownderechoValueController;
-  // State field(s) for DropDownsubderecho widget.
-  String? dropDownsubderechoValue;
-  FormFieldController<String>? dropDownsubderechoValueController;
+  // State field(s) for RadioButtonderechos widget.
+  FormFieldController<String>? radioButtonderechosValueController;
   // State field(s) for RadioButton widget.
   FormFieldController<String>? radioButtonValueController;
   // State field(s) for DropDown widget.
@@ -83,5 +88,7 @@ class Formulario6Model extends FlutterFlowModel<Formulario6Widget> {
   }
 
   /// Additional helper methods.
+  String? get radioButtonderechosValue =>
+      radioButtonderechosValueController?.value;
   String? get radioButtonValue => radioButtonValueController?.value;
 }

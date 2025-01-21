@@ -66,7 +66,7 @@ class _ActaacuerdoWidgetState extends State<ActaacuerdoWidget> {
           title: Text(
             'Page Title',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  fontFamily: 'Raleway',
+                  fontFamily: 'Noto Sans JP',
                   color: Colors.white,
                   fontSize: 22.0,
                   letterSpacing: 0.0,
@@ -93,12 +93,12 @@ class _ActaacuerdoWidgetState extends State<ActaacuerdoWidget> {
                       labelText: 'Label here...',
                       labelStyle:
                           FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Raleway',
+                                fontFamily: 'Noto Sans JP',
                                 letterSpacing: 0.0,
                               ),
                       hintStyle:
                           FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Raleway',
+                                fontFamily: 'Noto Sans JP',
                                 letterSpacing: 0.0,
                               ),
                       enabledBorder: UnderlineInputBorder(
@@ -131,7 +131,7 @@ class _ActaacuerdoWidgetState extends State<ActaacuerdoWidget> {
                       ),
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Raleway',
+                          fontFamily: 'Noto Sans JP',
                           letterSpacing: 0.0,
                         ),
                     validator:
@@ -151,7 +151,7 @@ class _ActaacuerdoWidgetState extends State<ActaacuerdoWidget> {
                         const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Raleway',
+                          fontFamily: 'Noto Sans JP',
                           color: Colors.white,
                           letterSpacing: 0.0,
                         ),

@@ -40,12 +40,12 @@ class Formulario3Model extends FlutterFlowModel<Formulario3Widget> {
   FocusNode? textFieldFocusNode1;
   TextEditingController? textController3;
   String? Function(BuildContext, String?)? textController3Validator;
-  // State field(s) for TextFieldpersonas widget.
-  FocusNode? textFieldpersonasFocusNode;
-  TextEditingController? textFieldpersonasTextController;
+  // State field(s) for TextFielddescripcion widget.
+  FocusNode? textFielddescripcionFocusNode1;
+  TextEditingController? textFielddescripcionTextController1;
   String? Function(BuildContext, String?)?
-      textFieldpersonasTextControllerValidator;
-  String? _textFieldpersonasTextControllerValidator(
+      textFielddescripcionTextController1Validator;
+  String? _textFielddescripcionTextController1Validator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Campo obligatorio';
@@ -61,51 +61,28 @@ class Formulario3Model extends FlutterFlowModel<Formulario3Widget> {
   // State field(s) for DropDown widget.
   List<String>? dropDownValue;
   FormFieldController<List<String>>? dropDownValueController;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController6;
-  String? Function(BuildContext, String?)? textController6Validator;
   // State field(s) for DropDownactividaes widget.
   List<String>? dropDownactividaesValue;
   FormFieldController<List<String>>? dropDownactividaesValueController;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode4;
-  TextEditingController? textController7;
-  String? Function(BuildContext, String?)? textController7Validator;
   // State field(s) for DropDownintereses widget.
   List<String>? dropDowninteresesValue;
   FormFieldController<List<String>>? dropDowninteresesValueController;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode5;
-  TextEditingController? textController8;
-  String? Function(BuildContext, String?)? textController8Validator;
   // State field(s) for TextFielddescripcion widget.
-  FocusNode? textFielddescripcionFocusNode;
-  TextEditingController? textFielddescripcionTextController;
+  FocusNode? textFielddescripcionFocusNode2;
+  TextEditingController? textFielddescripcionTextController2;
   String? Function(BuildContext, String?)?
-      textFielddescripcionTextControllerValidator;
-  String? _textFielddescripcionTextControllerValidator(
-      BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'Campo obligatorio';
-    }
-
-    return null;
-  }
-
+      textFielddescripcionTextController2Validator;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode6;
-  TextEditingController? textController10;
-  String? Function(BuildContext, String?)? textController10Validator;
+  FocusNode? textFieldFocusNode3;
+  TextEditingController? textController7;
+  String? Function(BuildContext, String?)? textController7Validator;
 
   @override
   void initState(BuildContext context) {
     textFieldprofesionalesTextController1Validator =
         _textFieldprofesionalesTextController1Validator;
-    textFieldpersonasTextControllerValidator =
-        _textFieldpersonasTextControllerValidator;
-    textFielddescripcionTextControllerValidator =
-        _textFielddescripcionTextControllerValidator;
+    textFielddescripcionTextController1Validator =
+        _textFielddescripcionTextController1Validator;
   }
 
   @override
@@ -119,25 +96,16 @@ class Formulario3Model extends FlutterFlowModel<Formulario3Widget> {
     textFieldFocusNode1?.dispose();
     textController3?.dispose();
 
-    textFieldpersonasFocusNode?.dispose();
-    textFieldpersonasTextController?.dispose();
+    textFielddescripcionFocusNode1?.dispose();
+    textFielddescripcionTextController1?.dispose();
 
     textFieldFocusNode2?.dispose();
     textController5?.dispose();
 
+    textFielddescripcionFocusNode2?.dispose();
+    textFielddescripcionTextController2?.dispose();
+
     textFieldFocusNode3?.dispose();
-    textController6?.dispose();
-
-    textFieldFocusNode4?.dispose();
     textController7?.dispose();
-
-    textFieldFocusNode5?.dispose();
-    textController8?.dispose();
-
-    textFielddescripcionFocusNode?.dispose();
-    textFielddescripcionTextController?.dispose();
-
-    textFieldFocusNode6?.dispose();
-    textController10?.dispose();
   }
 }

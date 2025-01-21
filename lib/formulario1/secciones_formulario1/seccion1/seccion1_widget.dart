@@ -1,6 +1,5 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
-import '/components/formcaratula_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_radio_button.dart';
@@ -18,11 +17,13 @@ class Seccion1Widget extends StatefulWidget {
     this.idingreso,
     this.rowexp,
     this.editar,
+    required this.usuariorow,
   });
 
   final IngresosRow? idingreso;
   final VistaExpedientesUltimoEstadoRow? rowexp;
   final bool? editar;
+  final UsuariosRow? usuariorow;
 
   @override
   State<Seccion1Widget> createState() => _Seccion1WidgetState();
@@ -58,13 +59,15 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
 
     _model.textFieldFocusNode5 ??= FocusNode();
 
+    _model.textFieldFocusNode6 ??= FocusNode();
+
     _model.textFielddomicilioescuelaFocusNode ??= FocusNode();
 
     _model.textFieldtelescuelaFocusNode ??= FocusNode();
 
-    _model.textFieldFocusNode6 ??= FocusNode();
-
     _model.textFieldFocusNode7 ??= FocusNode();
+
+    _model.textFieldFocusNode8 ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -115,10 +118,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
               borderRadius: BorderRadius.circular(20.0),
             ),
             child: Container(
-              width: MediaQuery.sizeOf(context).width * 1.0,
-              constraints: const BoxConstraints(
-                maxWidth: 600.0,
-              ),
+              width: MediaQuery.sizeOf(context).width * 0.9,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 borderRadius: BorderRadius.circular(20.0),
@@ -129,14 +129,14 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
               alignment: const AlignmentDirectional(0.0, 0.0),
               child: Form(
                 key: _model.formKey,
-                autovalidateMode: AutovalidateMode.disabled,
+                autovalidateMode: AutovalidateMode.always,
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, -1.0),
                   child: Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                     child: SingleChildScrollView(
                       child: Column(
-                        mainAxisSize: MainAxisSize.max,
+                        mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Row(
@@ -159,185 +159,6 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                               ),
                             ],
                           ),
-                          Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 0.0, 16.0, 0.0),
-                              child: Container(
-                                width: double.infinity,
-                                height: 219.0,
-                                constraints: const BoxConstraints(
-                                  maxWidth: 530.0,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                  boxShadow: const [
-                                    BoxShadow(
-                                      blurRadius: 4.0,
-                                      color: Color(0x19000000),
-                                      offset: Offset(
-                                        0.0,
-                                        2.0,
-                                      ),
-                                    )
-                                  ],
-                                  borderRadius: const BorderRadius.only(
-                                    bottomLeft: Radius.circular(12.0),
-                                    bottomRight: Radius.circular(12.0),
-                                    topLeft: Radius.circular(12.0),
-                                    topRight: Radius.circular(12.0),
-                                  ),
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 16.0, 16.0, 16.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        '${widget.rowexp?.nombres}, ${widget.rowexp?.apellidos}',
-                                        style: FlutterFlowTheme.of(context)
-                                            .headlineSmall
-                                            .override(
-                                              fontFamily: 'Raleway',
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 8.0, 0.0, 0.0),
-                                        child: Text(
-                                          valueOrDefault<String>(
-                                            widget.rowexp?.dni?.toString(),
-                                            'No tiene dni cargado',
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodySmall
-                                              .override(
-                                                fontFamily: 'Raleway',
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 8.0, 0.0, 0.0),
-                                        child: Text(
-                                          valueOrDefault<String>(
-                                            widget.rowexp?.fechaNac
-                                                ?.toString(),
-                                            'No tiene fecha de nacimiento cargado',
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodySmall
-                                              .override(
-                                                fontFamily: 'Raleway',
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 8.0, 0.0, 0.0),
-                                        child: Text(
-                                          valueOrDefault<String>(
-                                            widget.rowexp?.expediente,
-                                            'exp',
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodySmall
-                                              .override(
-                                                fontFamily: 'Raleway',
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
-                                      ),
-                                      Expanded(
-                                        child: Align(
-                                          alignment:
-                                              const AlignmentDirectional(1.0, 1.0),
-                                          child: Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 16.0, 8.0, 0.0),
-                                            child: FFButtonWidget(
-                                              onPressed: () async {
-                                                await showModalBottomSheet(
-                                                  isScrollControlled: true,
-                                                  backgroundColor:
-                                                      Colors.transparent,
-                                                  enableDrag: false,
-                                                  context: context,
-                                                  builder: (context) {
-                                                    return Padding(
-                                                      padding: MediaQuery
-                                                          .viewInsetsOf(
-                                                              context),
-                                                      child: FormcaratulaWidget(
-                                                        idexp:
-                                                            widget.rowexp?.id,
-                                                        editar: true,
-                                                        dniok: false,
-                                                      ),
-                                                    );
-                                                  },
-                                                ).then((value) =>
-                                                    safeSetState(() {}));
-                                              },
-                                              text: 'editar expediente',
-                                              options: FFButtonOptions(
-                                                width: 200.0,
-                                                height: 35.0,
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 0.0, 0.0),
-                                                iconPadding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily: 'Raleway',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryBackground,
-                                                  width: 2.0,
-                                                ),
-                                                borderRadius: const BorderRadius.only(
-                                                  bottomLeft:
-                                                      Radius.circular(8.0),
-                                                  bottomRight:
-                                                      Radius.circular(8.0),
-                                                  topLeft: Radius.circular(8.0),
-                                                  topRight:
-                                                      Radius.circular(8.0),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
                           Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -352,7 +173,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
                                           letterSpacing: 0.0,
@@ -363,209 +184,244 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                               ),
                             ],
                           ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                8.0, 0.0, 8.0, 0.0),
-                            child: TextFormField(
-                              controller:
-                                  _model.textFieldlunacimientoTextController ??=
-                                      TextEditingController(
-                                text: containerSeccion1Row?.lugarNac,
-                              ),
-                              focusNode: _model.textFieldlunacimientoFocusNode,
-                              autofocus: true,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                labelText: 'Lugar de nacimiento',
-                                labelStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Raleway',
-                                      letterSpacing: 0.0,
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      8.0, 0.0, 8.0, 0.0),
+                                  child: TextFormField(
+                                    controller: _model
+                                            .textFieldlunacimientoTextController ??=
+                                        TextEditingController(
+                                      text: containerSeccion1Row?.lugarNac,
                                     ),
-                                hintStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Raleway',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                      letterSpacing: 0.0,
+                                    focusNode:
+                                        _model.textFieldlunacimientoFocusNode,
+                                    autofocus: true,
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      labelText: 'Lugar de nacimiento',
+                                      labelStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            letterSpacing: 0.0,
+                                          ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .alternate,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedErrorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
                                     ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    width: 2.0,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Noto Sans JP',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    validator: _model
+                                        .textFieldlunacimientoTextControllerValidator
+                                        .asValidator(context),
                                   ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Raleway',
-                                    letterSpacing: 0.0,
-                                  ),
-                              validator: _model
-                                  .textFieldlunacimientoTextControllerValidator
-                                  .asValidator(context),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                8.0, 0.0, 8.0, 0.0),
-                            child: TextFormField(
-                              controller:
-                                  _model.textFielddomicilioTextController ??=
-                                      TextEditingController(
-                                text: containerSeccion1Row?.domicilio,
-                              ),
-                              focusNode: _model.textFielddomicilioFocusNode,
-                              autofocus: true,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                labelText: 'Domicilio',
-                                labelStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Raleway',
-                                      letterSpacing: 0.0,
-                                    ),
-                                hintStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Raleway',
-                                      letterSpacing: 0.0,
-                                    ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
                                 ),
                               ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Raleway',
-                                    letterSpacing: 0.0,
-                                  ),
-                              validator: _model
-                                  .textFielddomicilioTextControllerValidator
-                                  .asValidator(context),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                8.0, 0.0, 8.0, 0.0),
-                            child: TextFormField(
-                              controller:
-                                  _model.textFieldtelefonoTextController ??=
-                                      TextEditingController(
-                                text:
-                                    containerSeccion1Row?.telefono?.toString(),
-                              ),
-                              focusNode: _model.textFieldtelefonoFocusNode,
-                              autofocus: true,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                labelText: 'Teléfono',
-                                labelStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Raleway',
-                                      letterSpacing: 0.0,
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      8.0, 0.0, 8.0, 0.0),
+                                  child: TextFormField(
+                                    controller: _model
+                                            .textFielddomicilioTextController ??=
+                                        TextEditingController(
+                                      text: containerSeccion1Row?.domicilio,
                                     ),
-                                hintStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Raleway',
-                                      letterSpacing: 0.0,
+                                    focusNode:
+                                        _model.textFielddomicilioFocusNode,
+                                    autofocus: true,
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      labelText: 'Domicilio',
+                                      labelStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .alternate,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedErrorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
                                     ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    width: 2.0,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Noto Sans JP',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    validator: _model
+                                        .textFielddomicilioTextControllerValidator
+                                        .asValidator(context),
                                   ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
                                 ),
                               ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Raleway',
-                                    letterSpacing: 0.0,
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      8.0, 0.0, 8.0, 0.0),
+                                  child: TextFormField(
+                                    controller: _model
+                                            .textFieldtelefonoTextController ??=
+                                        TextEditingController(
+                                      text: containerSeccion1Row?.telefono
+                                          ?.toString(),
+                                    ),
+                                    focusNode:
+                                        _model.textFieldtelefonoFocusNode,
+                                    autofocus: true,
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      labelText: 'Teléfono',
+                                      labelStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .alternate,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedErrorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Noto Sans JP',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    validator: _model
+                                        .textFieldtelefonoTextControllerValidator
+                                        .asValidator(context),
                                   ),
-                              validator: _model
-                                  .textFieldtelefonoTextControllerValidator
-                                  .asValidator(context),
-                            ),
+                                ),
+                              ),
+                            ],
                           ),
                           Row(
                             mainAxisSize: MainAxisSize.max,
@@ -589,7 +445,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     hintText: 'Genero',
@@ -639,7 +495,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     hintText: 'Tipo Familia',
@@ -666,9 +522,84 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                     labelTextStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      8.0, 0.0, 8.0, 0.0),
+                                  child: TextFormField(
+                                    controller: _model.textController4 ??=
+                                        TextEditingController(
+                                      text: containerSeccion1Row?.adultoRes,
+                                    ),
+                                    focusNode: _model.textFieldFocusNode1,
+                                    autofocus: true,
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      labelText:
+                                          'Apellido y nombre del adulto responsable (Persona que tiene a cargo al NNA)',
+                                      labelStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .alternate,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedErrorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Noto Sans JP',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    validator: _model.textController4Validator
+                                        .asValidator(context),
                                   ),
                                 ),
                               ),
@@ -677,389 +608,467 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
-                            child: TextFormField(
-                              controller: _model.textController4 ??=
-                                  TextEditingController(
-                                text: containerSeccion1Row?.adultoRes,
-                              ),
-                              focusNode: _model.textFieldFocusNode1,
-                              autofocus: true,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                labelText:
-                                    'Apellido y nombre del adulto responsable (Persona que tiene a cargo al NNA)',
-                                labelStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Raleway',
-                                      letterSpacing: 0.0,
-                                    ),
-                                hintStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Raleway',
-                                      letterSpacing: 0.0,
-                                    ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Raleway',
-                                    letterSpacing: 0.0,
-                                  ),
-                              validator: _model.textController4Validator
-                                  .asValidator(context),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                8.0, 0.0, 8.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 0.0, 0.0),
-                                  child: Text(
-                                    '¿Está inscripto/a en el Registro Nacional de las Personas?',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Raleway',
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 10.0, 0.0),
-                                  child: FlutterFlowRadioButton(
-                                    options: ['Si', 'No'].toList(),
-                                    onChanged: (val) => safeSetState(() {}),
-                                    controller:
-                                        _model.radioButtonrnpValueController ??=
-                                            FormFieldController<String>(
-                                                valueOrDefault<String>(
-                                      containerSeccion1Row?.rnp,
-                                      'No',
-                                    )),
-                                    optionHeight: 40.0,
-                                    optionWidth: 70.0,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Raleway',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    selectedTextStyle:
-                                        FlutterFlowTheme.of(context)
+                                Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          10.0, 0.0, 0.0, 0.0),
+                                      child: Text(
+                                        '¿Está inscripto/a en el Registro Nacional de las Personas?',
+                                        style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
-                                    buttonPosition: RadioButtonPosition.right,
-                                    direction: Axis.horizontal,
-                                    radioButtonColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    inactiveRadioButtonColor:
-                                        FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                    toggleable: false,
-                                    horizontalAlignment: WrapAlignment.start,
-                                    verticalAlignment: WrapCrossAlignment.start,
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          10.0, 0.0, 10.0, 0.0),
+                                      child: FlutterFlowRadioButton(
+                                        options: ['Si', 'No'].toList(),
+                                        onChanged: (val) => safeSetState(() {}),
+                                        controller: _model
+                                                .radioButtonrnpValueController ??=
+                                            FormFieldController<String>(
+                                                valueOrDefault<String>(
+                                          containerSeccion1Row?.rnp,
+                                          'No',
+                                        )),
+                                        optionHeight: 40.0,
+                                        optionWidth: 70.0,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
+                                              letterSpacing: 0.0,
+                                            ),
+                                        selectedTextStyle:
+                                            FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Noto Sans JP',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                        buttonPosition:
+                                            RadioButtonPosition.right,
+                                        direction: Axis.horizontal,
+                                        radioButtonColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                        inactiveRadioButtonColor:
+                                            FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                        toggleable: false,
+                                        horizontalAlignment:
+                                            WrapAlignment.start,
+                                        verticalAlignment:
+                                            WrapCrossAlignment.start,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                if (_model.dropDownbarrioValue == 'Otro')
+                                  Expanded(
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          8.0, 0.0, 8.0, 0.0),
+                                      child: TextFormField(
+                                        controller: _model.textController5 ??=
+                                            TextEditingController(
+                                          text: containerSeccion1Row?.barrio,
+                                        ),
+                                        focusNode: _model.textFieldFocusNode2,
+                                        autofocus: true,
+                                        obscureText: false,
+                                        decoration: InputDecoration(
+                                          labelText: 'Barrio',
+                                          labelStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .override(
+                                                    fontFamily: 'Noto Sans JP',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          hintText: 'Barrio',
+                                          hintStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .override(
+                                                    fontFamily: 'Noto Sans JP',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                          ),
+                                          focusedBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                          ),
+                                          errorBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                          ),
+                                          focusedErrorBorder:
+                                              OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                          ),
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
+                                              letterSpacing: 0.0,
+                                            ),
+                                        validator: _model
+                                            .textController5Validator
+                                            .asValidator(context),
+                                      ),
+                                    ),
                                   ),
+                                FutureBuilder<List<BarriosRow>>(
+                                  future: BarriosTable().queryRows(
+                                    queryFn: (q) => q,
+                                  ),
+                                  builder: (context, snapshot) {
+                                    // Customize what your widget looks like when it's loading.
+                                    if (!snapshot.hasData) {
+                                      return Center(
+                                        child: SizedBox(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          child: CircularProgressIndicator(
+                                            valueColor:
+                                                AlwaysStoppedAnimation<Color>(
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    }
+                                    List<BarriosRow>
+                                        dropDownbarrioBarriosRowList =
+                                        snapshot.data!;
+
+                                    return FlutterFlowDropDown<String>(
+                                      controller: _model
+                                              .dropDownbarrioValueController ??=
+                                          FormFieldController<String>(
+                                        _model.dropDownbarrioValue ??=
+                                            containerSeccion1Row?.barrio,
+                                      ),
+                                      options: dropDownbarrioBarriosRowList
+                                          .map((e) => e.barrio)
+                                          .withoutNulls
+                                          .toList(),
+                                      onChanged: (val) => safeSetState(() =>
+                                          _model.dropDownbarrioValue = val),
+                                      width: 200.0,
+                                      height: 40.0,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintText: 'Barrio',
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_down_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        size: 24.0,
+                                      ),
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      elevation: 2.0,
+                                      borderColor: FlutterFlowTheme.of(context)
+                                          .alternate,
+                                      borderWidth: 0.0,
+                                      borderRadius: 8.0,
+                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                          12.0, 0.0, 12.0, 0.0),
+                                      hidesUnderline: true,
+                                      isOverButton: false,
+                                      isSearchable: false,
+                                      isMultiSelect: false,
+                                    );
+                                  },
                                 ),
                               ],
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                8.0, 0.0, 8.0, 0.0),
-                            child: TextFormField(
-                              controller: _model.textController5 ??=
-                                  TextEditingController(
-                                text: containerSeccion1Row?.centro,
-                              ),
-                              focusNode: _model.textFieldFocusNode2,
-                              autofocus: true,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                labelText: 'Centro de salud donde se atiende:',
-                                labelStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Raleway',
-                                      letterSpacing: 0.0,
-                                    ),
-                                hintStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Raleway',
-                                      letterSpacing: 0.0,
-                                    ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Raleway',
-                                    letterSpacing: 0.0,
-                                  ),
-                              validator: _model.textController5Validator
-                                  .asValidator(context),
-                            ),
+                          Divider(
+                            thickness: 2.0,
+                            color: FlutterFlowTheme.of(context).accent1,
                           ),
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                8.0, 0.0, 8.0, 0.0),
-                            child: TextFormField(
-                              controller: _model.textController6 ??=
-                                  TextEditingController(
-                                text: containerSeccion1Row?.historiaCli,
-                              ),
-                              focusNode: _model.textFieldFocusNode3,
-                              autofocus: true,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                labelText: 'Nº de historia clínica:',
-                                labelStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Raleway',
-                                      letterSpacing: 0.0,
-                                    ),
-                                hintStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Raleway',
-                                      letterSpacing: 0.0,
-                                    ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                              ),
+                                10.0, 10.0, 0.0, 0.0),
+                            child: Text(
+                              'Salud',
                               style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
+                                  .titleMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
-                              validator: _model.textController6Validator
-                                  .asValidator(context),
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                8.0, 0.0, 8.0, 0.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Padding(
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Expanded(
+                                child: Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 0.0, 0.0),
-                                  child: Text(
-                                    '¿Posee CUD?',
+                                      8.0, 0.0, 8.0, 0.0),
+                                  child: TextFormField(
+                                    controller: _model.textController6 ??=
+                                        TextEditingController(
+                                      text: containerSeccion1Row?.centro,
+                                    ),
+                                    focusNode: _model.textFieldFocusNode3,
+                                    autofocus: true,
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      labelText:
+                                          'Centro de salud donde se atiende:',
+                                      labelStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .alternate,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedErrorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
+                                    validator: _model.textController6Validator
+                                        .asValidator(context),
                                   ),
                                 ),
-                                Padding(
+                              ),
+                              Expanded(
+                                child: Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 10.0, 0.0),
-                                  child: FlutterFlowRadioButton(
-                                    options: ['Si', 'No'].toList(),
-                                    onChanged: (val) => safeSetState(() {}),
-                                    controller:
-                                        _model.radioButtoncudValueController ??=
-                                            FormFieldController<String>(
-                                                valueOrDefault<String>(
-                                      containerSeccion1Row?.cud,
-                                      'No',
-                                    )),
-                                    optionHeight: 40.0,
-                                    optionWidth: 70.0,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
+                                      8.0, 0.0, 8.0, 0.0),
+                                  child: TextFormField(
+                                    controller: _model.textController7 ??=
+                                        TextEditingController(
+                                      text: containerSeccion1Row?.historiaCli,
+                                    ),
+                                    focusNode: _model.textFieldFocusNode4,
+                                    autofocus: true,
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      labelText: 'Nº de historia clínica:',
+                                      labelStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .alternate,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedErrorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
-                                    selectedTextStyle:
-                                        FlutterFlowTheme.of(context)
+                                    validator: _model.textController7Validator
+                                        .asValidator(context),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    8.0, 0.0, 8.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          10.0, 0.0, 0.0, 0.0),
+                                      child: Text(
+                                        '¿Posee CUD?',
+                                        style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
-                                    buttonPosition: RadioButtonPosition.right,
-                                    direction: Axis.horizontal,
-                                    radioButtonColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    inactiveRadioButtonColor:
-                                        FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                    toggleable: false,
-                                    horizontalAlignment: WrapAlignment.start,
-                                    verticalAlignment: WrapCrossAlignment.start,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                8.0, 0.0, 8.0, 0.0),
-                            child: TextFormField(
-                              controller: _model.textController7 ??=
-                                  TextEditingController(
-                                text: containerSeccion1Row?.obraSoc,
-                              ),
-                              focusNode: _model.textFieldFocusNode4,
-                              autofocus: true,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                labelText: 'Obra social:',
-                                labelStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Raleway',
-                                      letterSpacing: 0.0,
+                                      ),
                                     ),
-                                hintStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Raleway',
-                                      letterSpacing: 0.0,
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 10.0, 0.0),
+                                      child: FlutterFlowRadioButton(
+                                        options: ['Si', 'No'].toList(),
+                                        onChanged: (val) => safeSetState(() {}),
+                                        controller: _model
+                                                .radioButtoncudValueController ??=
+                                            FormFieldController<String>(
+                                                valueOrDefault<String>(
+                                          containerSeccion1Row?.cud,
+                                          'No',
+                                        )),
+                                        optionHeight: 40.0,
+                                        optionWidth: 70.0,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
+                                              letterSpacing: 0.0,
+                                            ),
+                                        selectedTextStyle:
+                                            FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Noto Sans JP',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                        buttonPosition:
+                                            RadioButtonPosition.right,
+                                        direction: Axis.horizontal,
+                                        radioButtonColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                        inactiveRadioButtonColor:
+                                            FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                        toggleable: false,
+                                        horizontalAlignment:
+                                            WrapAlignment.start,
+                                        verticalAlignment:
+                                            WrapCrossAlignment.start,
+                                      ),
                                     ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
+                                  ],
                                 ),
                               ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Raleway',
-                                    letterSpacing: 0.0,
-                                  ),
-                              validator: _model.textController7Validator
-                                  .asValidator(context),
-                            ),
+                            ],
                           ),
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
@@ -1067,24 +1076,23 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                             child: TextFormField(
                               controller: _model.textController8 ??=
                                   TextEditingController(
-                                text: containerSeccion1Row?.escuela,
+                                text: containerSeccion1Row?.obraSoc,
                               ),
                               focusNode: _model.textFieldFocusNode5,
                               autofocus: true,
                               obscureText: false,
                               decoration: InputDecoration(
-                                labelText:
-                                    'Escuela/Colegio al que concurre el/la niño/a:',
+                                labelText: 'Obra social:',
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
@@ -1120,16 +1128,108 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               validator: _model.textController8Validator
                                   .asValidator(context),
                             ),
                           ),
+                          Divider(
+                            thickness: 2.0,
+                            color: FlutterFlowTheme.of(context).accent1,
+                          ),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                10.0, 10.0, 0.0, 0.0),
+                            child: Text(
+                              'Educacion',
+                              style: FlutterFlowTheme.of(context)
+                                  .titleMedium
+                                  .override(
+                                    fontFamily: 'Noto Sans JP',
+                                    letterSpacing: 0.0,
+                                  ),
+                            ),
+                          ),
                           Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      8.0, 0.0, 8.0, 0.0),
+                                  child: TextFormField(
+                                    controller: _model.textController9 ??=
+                                        TextEditingController(
+                                      text: containerSeccion1Row?.escuela,
+                                    ),
+                                    focusNode: _model.textFieldFocusNode6,
+                                    autofocus: true,
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      labelText:
+                                          'Escuela/Colegio al que concurre el/la niño/a:',
+                                      labelStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .alternate,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedErrorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Noto Sans JP',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    validator: _model.textController9Validator
+                                        .asValidator(context),
+                                  ),
+                                ),
+                              ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     8.0, 0.0, 8.0, 0.0),
@@ -1168,7 +1268,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                   textStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: 'Sala/Grado/Año',
@@ -1215,7 +1315,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     hintText: 'Turno',
@@ -1243,143 +1343,168 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                               ),
                             ],
                           ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                8.0, 0.0, 8.0, 0.0),
-                            child: TextFormField(
-                              controller: _model
-                                      .textFielddomicilioescuelaTextController ??=
-                                  TextEditingController(
-                                text: containerSeccion1Row?.domEsc,
-                              ),
-                              focusNode:
-                                  _model.textFielddomicilioescuelaFocusNode,
-                              autofocus: true,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                labelText:
-                                    'Domicilio de la institucion educativa',
-                                labelStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Raleway',
-                                      letterSpacing: 0.0,
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      8.0, 0.0, 8.0, 0.0),
+                                  child: TextFormField(
+                                    controller: _model
+                                            .textFielddomicilioescuelaTextController ??=
+                                        TextEditingController(
+                                      text: containerSeccion1Row?.domEsc,
                                     ),
-                                hintText:
-                                    'Domicilio de la institucion educativa',
-                                hintStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Raleway',
-                                      letterSpacing: 0.0,
+                                    focusNode: _model
+                                        .textFielddomicilioescuelaFocusNode,
+                                    autofocus: true,
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      labelText:
+                                          'Domicilio de la institucion educativa',
+                                      labelStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintText:
+                                          'Domicilio de la institucion educativa',
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .alternate,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedErrorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
                                     ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    width: 2.0,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Noto Sans JP',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    validator: _model
+                                        .textFielddomicilioescuelaTextControllerValidator
+                                        .asValidator(context),
                                   ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Raleway',
-                                    letterSpacing: 0.0,
-                                  ),
-                              validator: _model
-                                  .textFielddomicilioescuelaTextControllerValidator
-                                  .asValidator(context),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                8.0, 0.0, 8.0, 0.0),
-                            child: TextFormField(
-                              controller:
-                                  _model.textFieldtelescuelaTextController ??=
-                                      TextEditingController(
-                                text: containerSeccion1Row?.telEsc?.toString(),
-                              ),
-                              focusNode: _model.textFieldtelescuelaFocusNode,
-                              autofocus: true,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                labelText: 'Teléfono',
-                                labelStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Raleway',
-                                      letterSpacing: 0.0,
-                                    ),
-                                hintStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Raleway',
-                                      letterSpacing: 0.0,
-                                    ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
                                 ),
                               ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Raleway',
-                                    letterSpacing: 0.0,
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      8.0, 0.0, 8.0, 0.0),
+                                  child: TextFormField(
+                                    controller: _model
+                                            .textFieldtelescuelaTextController ??=
+                                        TextEditingController(
+                                      text: containerSeccion1Row?.telEsc
+                                          ?.toString(),
+                                    ),
+                                    focusNode:
+                                        _model.textFieldtelescuelaFocusNode,
+                                    autofocus: true,
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      labelText: 'Teléfono',
+                                      labelStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .alternate,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedErrorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Noto Sans JP',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    validator: _model
+                                        .textFieldtelescuelaTextControllerValidator
+                                        .asValidator(context),
                                   ),
-                              validator: _model
-                                  .textFieldtelescuelaTextControllerValidator
-                                  .asValidator(context),
-                            ),
+                                ),
+                              ),
+                            ],
                           ),
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
@@ -1396,7 +1521,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -1419,14 +1544,14 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     selectedTextStyle:
                                         FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                     buttonPosition: RadioButtonPosition.right,
@@ -1441,186 +1566,224 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                     verticalAlignment: WrapCrossAlignment.start,
                                   ),
                                 ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      8.0, 0.0, 8.0, 0.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 0.0, 0.0, 0.0),
+                                        child: Text(
+                                          'Se matriculo este año',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Noto Sans JP',
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 10.0, 0.0),
+                                        child: FlutterFlowRadioButton(
+                                          options: ['Si', 'No'].toList(),
+                                          onChanged: (val) =>
+                                              safeSetState(() {}),
+                                          controller: _model
+                                                  .radioButtomatriculoValueController ??=
+                                              FormFieldController<String>(
+                                                  valueOrDefault<String>(
+                                            containerSeccion1Row?.matriculo,
+                                            'No',
+                                          )),
+                                          optionHeight: 40.0,
+                                          optionWidth: 70.0,
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .override(
+                                                    fontFamily: 'Noto Sans JP',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          selectedTextStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Noto Sans JP',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          buttonPosition:
+                                              RadioButtonPosition.right,
+                                          direction: Axis.horizontal,
+                                          radioButtonColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                          inactiveRadioButtonColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryText,
+                                          toggleable: false,
+                                          horizontalAlignment:
+                                              WrapAlignment.start,
+                                          verticalAlignment:
+                                              WrapCrossAlignment.start,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
                               ],
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                8.0, 0.0, 8.0, 0.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Padding(
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    8.0, 0.0, 8.0, 0.0),
+                                child: FlutterFlowDropDown<String>(
+                                  controller: _model
+                                          .dropDownNivelAlcanzadoValueController ??=
+                                      FormFieldController<String>(
+                                    _model.dropDownNivelAlcanzadoValue ??=
+                                        valueOrDefault<String>(
+                                      containerSeccion1Row?.nivelAlcanzado,
+                                      'Primaria Incompleta',
+                                    ),
+                                  ),
+                                  options: const [
+                                    'Primaria Incompleta',
+                                    'Primaria Completa',
+                                    'Secundaria Incompleta',
+                                    'Secundaria Completa'
+                                  ],
+                                  onChanged: (val) => safeSetState(() =>
+                                      _model.dropDownNivelAlcanzadoValue = val),
+                                  width: 300.0,
+                                  height: 56.0,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Noto Sans JP',
+                                        letterSpacing: 0.0,
+                                      ),
+                                  hintText: 'Nivel Alcanzado',
+                                  icon: Icon(
+                                    Icons.keyboard_arrow_down_rounded,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    size: 24.0,
+                                  ),
+                                  fillColor: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  elevation: 2.0,
+                                  borderColor:
+                                      FlutterFlowTheme.of(context).alternate,
+                                  borderWidth: 2.0,
+                                  borderRadius: 8.0,
+                                  margin: const EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 4.0, 16.0, 4.0),
+                                  hidesUnderline: true,
+                                  isOverButton: true,
+                                  isSearchable: false,
+                                  isMultiSelect: false,
+                                ),
+                              ),
+                              Expanded(
+                                child: Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 0.0, 0.0),
-                                  child: Text(
-                                    'Se matriculo este año',
+                                      8.0, 0.0, 8.0, 0.0),
+                                  child: TextFormField(
+                                    controller: _model.textController12 ??=
+                                        TextEditingController(
+                                      text: containerSeccion1Row?.referente,
+                                    ),
+                                    focusNode: _model.textFieldFocusNode7,
+                                    autofocus: true,
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      labelText: 'Referente de la escuela:',
+                                      labelStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .alternate,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedErrorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
+                                    validator: _model.textController12Validator
+                                        .asValidator(context),
                                   ),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 10.0, 0.0),
-                                  child: FlutterFlowRadioButton(
-                                    options: ['Si', 'No'].toList(),
-                                    onChanged: (val) => safeSetState(() {}),
-                                    controller: _model
-                                            .radioButtomatriculoValueController ??=
-                                        FormFieldController<String>(
-                                            valueOrDefault<String>(
-                                      containerSeccion1Row?.matriculo,
-                                      'No',
-                                    )),
-                                    optionHeight: 40.0,
-                                    optionWidth: 70.0,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Raleway',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    selectedTextStyle:
-                                        FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Raleway',
-                                              letterSpacing: 0.0,
-                                            ),
-                                    buttonPosition: RadioButtonPosition.right,
-                                    direction: Axis.horizontal,
-                                    radioButtonColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    inactiveRadioButtonColor:
-                                        FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                    toggleable: false,
-                                    horizontalAlignment: WrapAlignment.start,
-                                    verticalAlignment: WrapCrossAlignment.start,
-                                  ),
-                                ),
-                              ],
-                            ),
+                              ),
+                            ],
+                          ),
+                          Divider(
+                            thickness: 2.0,
+                            color: FlutterFlowTheme.of(context).accent1,
                           ),
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                8.0, 0.0, 8.0, 0.0),
-                            child: FlutterFlowDropDown<String>(
-                              controller: _model
-                                      .dropDownNivelAlcanzadoValueController ??=
-                                  FormFieldController<String>(
-                                _model.dropDownNivelAlcanzadoValue ??=
-                                    valueOrDefault<String>(
-                                  containerSeccion1Row?.nivelAlcanzado,
-                                  'Primaria Incompleta',
-                                ),
-                              ),
-                              options: const [
-                                'Primaria Incompleta',
-                                'Primaria Completa',
-                                'Secundaria Incompleta',
-                                'Secundaria Completa'
-                              ],
-                              onChanged: (val) => safeSetState(() =>
-                                  _model.dropDownNivelAlcanzadoValue = val),
-                              width: 300.0,
-                              height: 56.0,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Raleway',
-                                    letterSpacing: 0.0,
-                                  ),
-                              hintText: 'Nivel Alcanzado',
-                              icon: Icon(
-                                Icons.keyboard_arrow_down_rounded,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 24.0,
-                              ),
-                              fillColor: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              elevation: 2.0,
-                              borderColor:
-                                  FlutterFlowTheme.of(context).alternate,
-                              borderWidth: 2.0,
-                              borderRadius: 8.0,
-                              margin: const EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 4.0, 16.0, 4.0),
-                              hidesUnderline: true,
-                              isOverButton: true,
-                              isSearchable: false,
-                              isMultiSelect: false,
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                8.0, 0.0, 8.0, 0.0),
-                            child: TextFormField(
-                              controller: _model.textController11 ??=
-                                  TextEditingController(
-                                text: containerSeccion1Row?.referente,
-                              ),
-                              focusNode: _model.textFieldFocusNode6,
-                              autofocus: true,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                labelText: 'Referente de la escuela:',
-                                labelStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Raleway',
-                                      letterSpacing: 0.0,
-                                    ),
-                                hintStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Raleway',
-                                      letterSpacing: 0.0,
-                                    ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                              ),
+                                10.0, 10.0, 0.0, 0.0),
+                            child: Text(
+                              'Laboral',
                               style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
+                                  .titleMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
-                              validator: _model.textController11Validator
-                                  .asValidator(context),
                             ),
                           ),
                           Padding(
@@ -1638,7 +1801,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -1661,14 +1824,14 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     selectedTextStyle:
                                         FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                     buttonPosition: RadioButtonPosition.right,
@@ -1683,72 +1846,82 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                     verticalAlignment: WrapCrossAlignment.start,
                                   ),
                                 ),
+                                Expanded(
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        8.0, 0.0, 8.0, 0.0),
+                                    child: TextFormField(
+                                      controller: _model.textController13 ??=
+                                          TextEditingController(
+                                        text: containerSeccion1Row?.trabajoObs,
+                                      ),
+                                      focusNode: _model.textFieldFocusNode8,
+                                      autofocus: true,
+                                      obscureText: false,
+                                      decoration: InputDecoration(
+                                        labelStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
+                                              letterSpacing: 0.0,
+                                            ),
+                                        hintText: 'Tipo de trabajo',
+                                        hintStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
+                                              letterSpacing: 0.0,
+                                            ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .alternate,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        focusedErrorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      validator: _model
+                                          .textController13Validator
+                                          .asValidator(context),
+                                    ),
+                                  ),
+                                ),
                               ],
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                8.0, 0.0, 8.0, 0.0),
-                            child: TextFormField(
-                              controller: _model.textController12 ??=
-                                  TextEditingController(
-                                text: containerSeccion1Row?.trabajoObs,
-                              ),
-                              focusNode: _model.textFieldFocusNode7,
-                              autofocus: true,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                labelStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Raleway',
-                                      letterSpacing: 0.0,
-                                    ),
-                                hintText: 'Tipo de trabajo',
-                                hintStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Raleway',
-                                      letterSpacing: 0.0,
-                                    ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Raleway',
-                                    letterSpacing: 0.0,
-                                  ),
-                              validator: _model.textController12Validator
-                                  .asValidator(context),
                             ),
                           ),
                           ListView(
@@ -1782,18 +1955,18 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                           'adultoRes':
                                               _model.textController4.text,
                                           'rnp': _model.radioButtonrnpValue,
-                                          'centro': _model.textController5.text,
+                                          'centro': _model.textController6.text,
                                           'historiaCli':
-                                              _model.textController6.text,
+                                              _model.textController7.text,
                                           'cud': _model.radioButtoncudValue,
                                           'obraSoc':
-                                              _model.textController7.text,
-                                          'escuela':
                                               _model.textController8.text,
+                                          'escuela':
+                                              _model.textController9.text,
                                           'cursoEsc':
                                               _model.dropDownSalaGradoValue,
                                           'domEsc': _model
-                                              .textFielddomicilioTextController
+                                              .textFielddomicilioescuelaTextController
                                               .text,
                                           'telEsc': double.tryParse(_model
                                               .textFieldtelescuelaTextController
@@ -1803,19 +1976,24 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                           'nivelAlcanzado': _model
                                               .dropDownNivelAlcanzadoValue,
                                           'referente':
-                                              _model.textController11.text,
+                                              _model.textController12.text,
                                           'trabaja':
                                               _model.radioButtontrabjaninoValue,
                                           'idIngreso': widget.idingreso?.id,
                                           'idExpediente': widget.rowexp?.id,
                                           'turno': _model.dropDownTurnoValue,
                                           'trabajoObs':
-                                              _model.textController12.text,
+                                              _model.textController13.text,
                                           'Matriculo':
                                               _model.radioButtomatriculoValue,
                                           'iduser': currentUserUid,
                                           'TipoFamilia':
                                               _model.droptipofliaValue,
+                                          'barrio':
+                                              _model.dropDownbarrioValue ==
+                                                      'Otro'
+                                                  ? _model.textController5.text
+                                                  : _model.dropDownbarrioValue,
                                         });
                                         await IngresosTable().update(
                                           data: {
@@ -1849,6 +2027,12 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                           },
                                         );
                                         Navigator.pop(context, true);
+                                        await HistorialingresoTable().insert({
+                                          'Etapa':
+                                              'Recepcion de la demanda seccion 1',
+                                          'idingreso': widget.idingreso?.id,
+                                          'idexpediente': widget.rowexp?.id,
+                                        });
                                       } else {
                                         await Seccion1Table().update(
                                           data: {
@@ -1866,18 +2050,18 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                 _model.textController4.text,
                                             'rnp': _model.radioButtonrnpValue,
                                             'centro':
-                                                _model.textController5.text,
-                                            'historiaCli':
                                                 _model.textController6.text,
+                                            'historiaCli':
+                                                _model.textController7.text,
                                             'cud': _model.radioButtoncudValue,
                                             'obraSoc':
-                                                _model.textController7.text,
-                                            'escuela':
                                                 _model.textController8.text,
+                                            'escuela':
+                                                _model.textController9.text,
                                             'cursoEsc':
                                                 _model.dropDownSalaGradoValue,
                                             'domEsc': _model
-                                                .textFielddomicilioTextController
+                                                .textFielddomicilioescuelaTextController
                                                 .text,
                                             'telEsc': double.tryParse(_model
                                                 .textFieldtelescuelaTextController
@@ -1887,19 +2071,24 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                             'nivelAlcanzado': _model
                                                 .dropDownNivelAlcanzadoValue,
                                             'referente':
-                                                _model.textController11.text,
+                                                _model.textController12.text,
                                             'trabaja': _model
                                                 .radioButtontrabjaninoValue,
                                             'idIngreso': widget.idingreso?.id,
                                             'idExpediente': widget.rowexp?.id,
                                             'turno': _model.dropDownTurnoValue,
                                             'trabajoObs':
-                                                _model.textController12.text,
+                                                _model.textController13.text,
                                             'Matriculo':
                                                 _model.radioButtomatriculoValue,
                                             'iduser': currentUserUid,
                                             'TipoFamilia':
                                                 _model.droptipofliaValue,
+                                            'barrio': _model
+                                                        .dropDownbarrioValue ==
+                                                    'Otro'
+                                                ? _model.textController5.text
+                                                : _model.dropDownbarrioValue,
                                           },
                                           matchingRows: (rows) => rows.eqOrNull(
                                             'idSec1',
@@ -1937,6 +2126,12 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                           },
                                         );
                                         Navigator.pop(context);
+                                        await HistorialingresoTable().insert({
+                                          'Etapa':
+                                              'Recepcion de la demanda seccion 1',
+                                          'idingreso': widget.idingreso?.id,
+                                          'idexpediente': widget.rowexp?.id,
+                                        });
                                       }
                                     },
                                     text: 'Guardar',
@@ -1957,7 +2152,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             color: Colors.white,
                                             letterSpacing: 0.0,
                                           ),

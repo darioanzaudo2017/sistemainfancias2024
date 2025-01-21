@@ -142,7 +142,7 @@ class _AnexoinstitucionsaludWidgetState
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         letterSpacing: 0.0,
@@ -187,7 +187,7 @@ class _AnexoinstitucionsaludWidgetState
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -210,7 +210,7 @@ class _AnexoinstitucionsaludWidgetState
                                           FlutterFlowTheme.of(context)
                                               .headlineLarge
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
                                                 fontSize: 32.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
@@ -257,7 +257,7 @@ class _AnexoinstitucionsaludWidgetState
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       color: Colors.white,
                                       letterSpacing: 0.0,
                                     ),
@@ -274,14 +274,13 @@ class _AnexoinstitucionsaludWidgetState
                             controller: _model.textFieldmotivoTextController1,
                             focusNode: _model.textFieldmotivoFocusNode1,
                             autofocus: true,
-                            readOnly: true,
                             obscureText: false,
                             decoration: InputDecoration(
                               labelText: 'Institucion de salud numero/nombre',
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               alignLabelWithHint: true,
@@ -289,7 +288,7 @@ class _AnexoinstitucionsaludWidgetState
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
@@ -324,7 +323,7 @@ class _AnexoinstitucionsaludWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
                             maxLines: 2,
@@ -340,14 +339,13 @@ class _AnexoinstitucionsaludWidgetState
                             controller: _model.textFieldmotivoTextController2,
                             focusNode: _model.textFieldmotivoFocusNode2,
                             autofocus: true,
-                            readOnly: true,
                             obscureText: false,
                             decoration: InputDecoration(
                               labelText: 'CPC',
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               alignLabelWithHint: true,
@@ -355,7 +353,7 @@ class _AnexoinstitucionsaludWidgetState
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
@@ -390,7 +388,7 @@ class _AnexoinstitucionsaludWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
                             maxLines: 2,
@@ -419,7 +417,7 @@ class _AnexoinstitucionsaludWidgetState
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   alignLabelWithHint: true,
@@ -427,7 +425,7 @@ class _AnexoinstitucionsaludWidgetState
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   enabledBorder: OutlineInputBorder(
@@ -464,7 +462,7 @@ class _AnexoinstitucionsaludWidgetState
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 maxLength: 4,
@@ -503,7 +501,7 @@ class _AnexoinstitucionsaludWidgetState
                             textStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
                             hintText: 'Seleccionar mes',
@@ -735,7 +733,7 @@ class _AnexoinstitucionsaludWidgetState
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       color: Colors.white,
                                       letterSpacing: 0.0,
                                     ),

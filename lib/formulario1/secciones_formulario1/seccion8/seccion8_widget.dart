@@ -58,11 +58,8 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
           borderRadius: BorderRadius.circular(20.0),
         ),
         child: Container(
-          width: MediaQuery.sizeOf(context).width * 1.0,
+          width: MediaQuery.sizeOf(context).width * 0.8,
           height: 593.0,
-          constraints: const BoxConstraints(
-            maxWidth: 600.0,
-          ),
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
             borderRadius: BorderRadius.circular(20.0),
@@ -97,7 +94,7 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       color:
                                           FlutterFlowTheme.of(context).primary,
                                       letterSpacing: 0.0,
@@ -151,7 +148,7 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
                               snapshot.data!;
 
                           return Container(
-                            width: 600.0,
+                            width: MediaQuery.sizeOf(context).width * 0.7,
                             height: 300.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
@@ -174,7 +171,7 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
@@ -191,7 +188,7 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
@@ -208,7 +205,7 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
@@ -225,7 +222,24 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
+                                    DataColumn2(
+                                      label: DefaultTextStyle.merge(
+                                        softWrap: true,
+                                        child: Text(
+                                          'Direccion',
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelLarge
+                                              .override(
+                                                fontFamily: 'Noto Sans JP',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
@@ -247,44 +261,62 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
                                     ),
                                     cells: [
                                       Text(
-                                        listItem.nombre!,
+                                        valueOrDefault<String>(
+                                          listItem.nombre,
+                                          'Sin dato',
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Raleway',
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                      Text(
-                                        listItem.apellido!,
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                       ),
                                       Text(
                                         valueOrDefault<String>(
-                                          listItem.vinculo,
-                                          '0',
+                                          listItem.apellido,
+                                          'Sin dato',
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                      Text(
+                                        valueOrDefault<String>(
+                                          listItem.Vinculo,
+                                          'Sin dato',
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                       ),
                                       Text(
                                         valueOrDefault<String>(
                                           listItem.telefono?.toString(),
-                                          '0',
+                                          'Sin dato',
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                      Text(
+                                        valueOrDefault<String>(
+                                          listItem.direccion,
+                                          'Sin dato',
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                       ),
@@ -347,7 +379,7 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     color: Colors.white,
                                     letterSpacing: 0.0,
                                   ),
@@ -421,7 +453,7 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         color: Colors.white,
                                         letterSpacing: 0.0,
                                       ),

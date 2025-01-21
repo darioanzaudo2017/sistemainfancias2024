@@ -136,7 +136,7 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
                           style: FlutterFlowTheme.of(context)
                               .displaySmall
                               .override(
-                                fontFamily: 'Raleway',
+                                fontFamily: 'Noto Sans JP',
                                 color: FlutterFlowTheme.of(context).info,
                                 letterSpacing: 0.0,
                               ),
@@ -207,7 +207,7 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .displaySmall
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       fontSize: 30.0,
                                       letterSpacing: 0.0,
                                     ),
@@ -222,7 +222,7 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -243,7 +243,7 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelLarge
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -285,7 +285,7 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .bodyLarge
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   keyboardType: TextInputType.emailAddress,
@@ -331,7 +331,7 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         color: Colors.white,
                                         letterSpacing: 0.0,
                                       ),

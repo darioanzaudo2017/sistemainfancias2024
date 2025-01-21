@@ -82,4 +82,15 @@ class Formulario6Row extends SupabaseDataRow {
 
   String? get restituido => getField<String>('restituido');
   set restituido(String? value) => setField<String>('restituido', value);
+
+  String? get linkreqacciones => getField<String>('linkreqacciones');
+  set linkreqacciones(String? value) =>
+      setField<String>('linkreqacciones', value);
+
+  int? get idlistaderechos => getField<int>('idlistaderechos');
+  set idlistaderechos(int? value) => setField<int>('idlistaderechos', value);
+
+  List<int> get idslistaderechos => getListField<int>('idslistaderechos');
+  set idslistaderechos(List<int>? value) =>
+      setListField<int>('idslistaderechos', value);
 }

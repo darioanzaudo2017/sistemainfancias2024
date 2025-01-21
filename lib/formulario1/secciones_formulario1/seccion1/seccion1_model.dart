@@ -47,20 +47,27 @@ class Seccion1Model extends FlutterFlowModel<Seccion1Widget> {
   FocusNode? textFieldFocusNode2;
   TextEditingController? textController5;
   String? Function(BuildContext, String?)? textController5Validator;
+  // State field(s) for DropDownbarrio widget.
+  String? dropDownbarrioValue;
+  FormFieldController<String>? dropDownbarrioValueController;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode3;
   TextEditingController? textController6;
   String? Function(BuildContext, String?)? textController6Validator;
-  // State field(s) for RadioButtoncud widget.
-  FormFieldController<String>? radioButtoncudValueController;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode4;
   TextEditingController? textController7;
   String? Function(BuildContext, String?)? textController7Validator;
+  // State field(s) for RadioButtoncud widget.
+  FormFieldController<String>? radioButtoncudValueController;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode5;
   TextEditingController? textController8;
   String? Function(BuildContext, String?)? textController8Validator;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode6;
+  TextEditingController? textController9;
+  String? Function(BuildContext, String?)? textController9Validator;
   // State field(s) for DropDownSalaGrado widget.
   String? dropDownSalaGradoValue;
   FormFieldController<String>? dropDownSalaGradoValueController;
@@ -85,15 +92,15 @@ class Seccion1Model extends FlutterFlowModel<Seccion1Widget> {
   String? dropDownNivelAlcanzadoValue;
   FormFieldController<String>? dropDownNivelAlcanzadoValueController;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode6;
-  TextEditingController? textController11;
-  String? Function(BuildContext, String?)? textController11Validator;
-  // State field(s) for RadioButtontrabjanino widget.
-  FormFieldController<String>? radioButtontrabjaninoValueController;
-  // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode7;
   TextEditingController? textController12;
   String? Function(BuildContext, String?)? textController12Validator;
+  // State field(s) for RadioButtontrabjanino widget.
+  FormFieldController<String>? radioButtontrabjaninoValueController;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode8;
+  TextEditingController? textController13;
+  String? Function(BuildContext, String?)? textController13Validator;
 
   @override
   void initState(BuildContext context) {
@@ -127,17 +134,20 @@ class Seccion1Model extends FlutterFlowModel<Seccion1Widget> {
     textFieldFocusNode5?.dispose();
     textController8?.dispose();
 
+    textFieldFocusNode6?.dispose();
+    textController9?.dispose();
+
     textFielddomicilioescuelaFocusNode?.dispose();
     textFielddomicilioescuelaTextController?.dispose();
 
     textFieldtelescuelaFocusNode?.dispose();
     textFieldtelescuelaTextController?.dispose();
 
-    textFieldFocusNode6?.dispose();
-    textController11?.dispose();
-
     textFieldFocusNode7?.dispose();
     textController12?.dispose();
+
+    textFieldFocusNode8?.dispose();
+    textController13?.dispose();
   }
 
   /// Additional helper methods.

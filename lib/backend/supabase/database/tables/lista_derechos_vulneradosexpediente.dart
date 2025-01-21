@@ -54,4 +54,7 @@ class ListaDerechosVulneradosexpedienteRow extends SupabaseDataRow {
 
   int? get idgrupofamiliar => getField<int>('idgrupofamiliar');
   set idgrupofamiliar(int? value) => setField<int>('idgrupofamiliar', value);
+
+  bool? get validoinforme => getField<bool>('validoinforme');
+  set validoinforme(bool? value) => setField<bool>('validoinforme', value);
 }

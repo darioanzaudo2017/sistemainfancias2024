@@ -1,9 +1,11 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'agregar_persona_relacionada_model.dart';
 export 'agregar_persona_relacionada_model.dart';
@@ -122,7 +124,7 @@ class _AgregarPersonaRelacionadaWidgetState
                           style: FlutterFlowTheme.of(context)
                               .headlineSmall
                               .override(
-                                fontFamily: 'Raleway',
+                                fontFamily: 'Noto Sans JP',
                                 color: FlutterFlowTheme.of(context).primary,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w600,
@@ -142,13 +144,13 @@ class _AgregarPersonaRelacionadaWidgetState
                             labelStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
                             enabledBorder: OutlineInputBorder(
@@ -182,7 +184,7 @@ class _AgregarPersonaRelacionadaWidgetState
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                           validator: _model.textController1Validator
@@ -202,13 +204,13 @@ class _AgregarPersonaRelacionadaWidgetState
                             labelStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
                             enabledBorder: OutlineInputBorder(
@@ -242,7 +244,7 @@ class _AgregarPersonaRelacionadaWidgetState
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                           validator: _model.textController2Validator
@@ -266,13 +268,13 @@ class _AgregarPersonaRelacionadaWidgetState
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         letterSpacing: 0.0,
                                       ),
                                   enabledBorder: OutlineInputBorder(
@@ -309,7 +311,7 @@ class _AgregarPersonaRelacionadaWidgetState
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 validator: _model.textController3Validator
@@ -332,13 +334,13 @@ class _AgregarPersonaRelacionadaWidgetState
                             labelStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
                             enabledBorder: OutlineInputBorder(
@@ -372,7 +374,7 @@ class _AgregarPersonaRelacionadaWidgetState
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
                           validator: _model.textController4Validator
@@ -380,67 +382,114 @@ class _AgregarPersonaRelacionadaWidgetState
                         ),
                       ),
                       Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-                        child: TextFormField(
-                          controller: _model.textController5,
-                          focusNode: _model.textFieldFocusNode5,
-                          autofocus: true,
-                          obscureText: false,
-                          decoration: InputDecoration(
-                            labelText: 'Relación con los NNyA',
-                            labelStyle: FlutterFlowTheme.of(context)
-                                .labelMedium
-                                .override(
-                                  fontFamily: 'Raleway',
-                                  letterSpacing: 0.0,
-                                ),
-                            hintStyle: FlutterFlowTheme.of(context)
-                                .labelMedium
-                                .override(
-                                  fontFamily: 'Raleway',
-                                  letterSpacing: 0.0,
-                                ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context).alternate,
-                                width: 2.0,
-                              ),
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context).primary,
-                                width: 2.0,
-                              ),
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            errorBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context).error,
-                                width: 2.0,
-                              ),
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            focusedErrorBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context).error,
-                                width: 2.0,
-                              ),
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                          ),
-                          style:
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            10.0, 0.0, 10.0, 0.0),
+                        child: FlutterFlowDropDown<String>(
+                          controller: _model.dropDownValueController ??=
+                              FormFieldController<String>(null),
+                          options: const [
+                            'Madre',
+                            'Padre',
+                            'Hemana/os',
+                            'Abuela/o paterno',
+                            'Otros',
+                            'Abuela/o materno',
+                            'tia/o materno',
+                            'tia/o paterno'
+                          ],
+                          onChanged: (val) =>
+                              safeSetState(() => _model.dropDownValue = val),
+                          width: 200.0,
+                          height: 60.0,
+                          textStyle:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
-                          maxLines: 10,
-                          minLines: 1,
-                          validator: _model.textController5Validator
-                              .asValidator(context),
+                          hintText: 'Vinculo',
+                          icon: Icon(
+                            Icons.keyboard_arrow_down_rounded,
+                            color: FlutterFlowTheme.of(context).secondaryText,
+                            size: 24.0,
+                          ),
+                          fillColor:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                          elevation: 2.0,
+                          borderColor: FlutterFlowTheme.of(context).accent1,
+                          borderWidth: 0.0,
+                          borderRadius: 8.0,
+                          margin: const EdgeInsetsDirectional.fromSTEB(
+                              12.0, 0.0, 12.0, 0.0),
+                          hidesUnderline: true,
+                          isOverButton: false,
+                          isSearchable: false,
+                          isMultiSelect: false,
                         ),
                       ),
+                      if (_model.dropDownValue == 'Otros')
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              8.0, 0.0, 8.0, 0.0),
+                          child: TextFormField(
+                            controller: _model.textController5,
+                            focusNode: _model.textFieldFocusNode5,
+                            autofocus: true,
+                            obscureText: false,
+                            decoration: InputDecoration(
+                              labelText: 'Relación con los NNyA',
+                              labelStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Noto Sans JP',
+                                    letterSpacing: 0.0,
+                                  ),
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Noto Sans JP',
+                                    letterSpacing: 0.0,
+                                  ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).alternate,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              errorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).error,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              focusedErrorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).error,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Noto Sans JP',
+                                  letterSpacing: 0.0,
+                                ),
+                            maxLines: 10,
+                            minLines: 1,
+                            validator: _model.textController5Validator
+                                .asValidator(context),
+                          ),
+                        ),
                       ListView(
                         padding: EdgeInsets.zero,
                         shrinkWrap: true,
@@ -455,7 +504,7 @@ class _AgregarPersonaRelacionadaWidgetState
                                   await Seccion8Table().insert({
                                     'nombre': _model.textController1.text,
                                     'apellido': _model.textController2.text,
-                                    'vinculo': '',
+                                    'vinculo': _model.textController5.text,
                                     'telefono': double.tryParse(
                                         _model.textController3.text),
                                     'direccion': _model.textController4.text,
@@ -464,7 +513,30 @@ class _AgregarPersonaRelacionadaWidgetState
                                     'updated_at': supaSerialize<DateTime>(
                                         getCurrentTimestamp),
                                     'iduser': currentUserUid,
+                                    'Vinculo': _model.dropDownValue,
                                   });
+                                  await Formulario4Table().insert({
+                                    'idIngreso': widget.rowingreso?.id,
+                                    'idExpediente': widget.idexp?.id,
+                                    'fecha': supaSerialize<DateTime>(
+                                        getCurrentTimestamp),
+                                    'nomEnt': _model.textController1.text,
+                                    'apeEnt': _model.textController2.text,
+                                    'relacion': _model.dropDownValue,
+                                    'dirEnt': _model.textController4.text,
+                                    'telEnt': _model.textController3.text,
+                                  });
+                                  await IngresosTable().update(
+                                    data: {
+                                      'form1seccion8': true,
+                                      'updated_at': supaSerialize<DateTime>(
+                                          getCurrentTimestamp),
+                                    },
+                                    matchingRows: (rows) => rows.eqOrNull(
+                                      'id',
+                                      widget.rowingreso?.id,
+                                    ),
+                                  );
                                   Navigator.pop(context);
                                 },
                                 text: 'Guardar',
@@ -483,7 +555,7 @@ class _AgregarPersonaRelacionadaWidgetState
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         color: Colors.white,
                                         letterSpacing: 0.0,
                                       ),

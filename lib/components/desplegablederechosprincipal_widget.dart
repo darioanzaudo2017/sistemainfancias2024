@@ -129,19 +129,19 @@ class _DesplegablederechosprincipalWidgetState
                             searchHintTextStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
                             searchTextStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
                             textStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
                             hintText: 'Derecho Vulnerado',
@@ -186,7 +186,7 @@ class _DesplegablederechosprincipalWidgetState
                             textStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Raleway',
+                                  fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
                             hintText: 'Subcategoria Derecho Vulnerado',
@@ -221,7 +221,7 @@ class _DesplegablederechosprincipalWidgetState
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -235,13 +235,13 @@ class _DesplegablederechosprincipalWidgetState
                                 textStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 selectedTextStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                      fontFamily: 'Noto Sans JP',
                                       letterSpacing: 0.0,
                                     ),
                                 buttonPosition: RadioButtonPosition.left,
@@ -286,6 +286,7 @@ class _DesplegablederechosprincipalWidgetState
                                 'idingreso': widget.idingreso,
                                 'formulario': widget.form,
                                 'iduser': currentUserUid,
+                                'validoinforme': false,
                               });
                               Navigator.pop(context, true);
                             },
@@ -301,7 +302,7 @@ class _DesplegablederechosprincipalWidgetState
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Noto Sans JP',
                                     color: Colors.white,
                                     letterSpacing: 0.0,
                                   ),

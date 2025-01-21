@@ -24,7 +24,7 @@ class FormcaratulaWidget extends StatefulWidget {
     this.idexp,
     this.editar,
     this.dniok,
-    this.usuariorow,
+    required this.usuariorow,
   });
 
   final int? idexp;
@@ -158,7 +158,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Noto Sans JP',
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         letterSpacing: 0.0,
@@ -191,7 +191,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               child: Form(
                                 key: _model.formKey2,
-                                autovalidateMode: AutovalidateMode.always,
+                                autovalidateMode: AutovalidateMode.disabled,
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -200,7 +200,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .titleLarge
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
                                             letterSpacing: 0.0,
@@ -226,14 +226,14 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .labelMedium
                                                   .override(
-                                                    fontFamily: 'Raleway',
+                                                    fontFamily: 'Noto Sans JP',
                                                     letterSpacing: 0.0,
                                                   ),
                                           hintStyle:
                                               FlutterFlowTheme.of(context)
                                                   .labelMedium
                                                   .override(
-                                                    fontFamily: 'Raleway',
+                                                    fontFamily: 'Noto Sans JP',
                                                     letterSpacing: 0.0,
                                                   ),
                                           enabledBorder: OutlineInputBorder(
@@ -281,7 +281,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                         validator: _model
@@ -308,14 +308,14 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .labelMedium
                                                   .override(
-                                                    fontFamily: 'Raleway',
+                                                    fontFamily: 'Noto Sans JP',
                                                     letterSpacing: 0.0,
                                                   ),
                                           hintStyle:
                                               FlutterFlowTheme.of(context)
                                                   .labelMedium
                                                   .override(
-                                                    fontFamily: 'Raleway',
+                                                    fontFamily: 'Noto Sans JP',
                                                     letterSpacing: 0.0,
                                                   ),
                                           enabledBorder: OutlineInputBorder(
@@ -363,7 +363,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                         validator: _model
@@ -378,8 +378,14 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                         controller: _model
                                                 .textFieldDNITextController ??=
                                             TextEditingController(
-                                          text: containerExpedienteRow?.dni
-                                              ?.toString(),
+                                          text: valueOrDefault<String>(
+                                            containerExpedienteRow!.dni! >=
+                                                    90000000
+                                                ? 'Sin dato'
+                                                : containerExpedienteRow.dni
+                                                    ?.toString(),
+                                            'DNI',
+                                          ),
                                         ),
                                         focusNode: _model.textFieldDNIFocusNode,
                                         onChanged: (_) => EasyDebounce.debounce(
@@ -395,14 +401,15 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .labelMedium
                                                   .override(
-                                                    fontFamily: 'Raleway',
+                                                    fontFamily: 'Noto Sans JP',
                                                     letterSpacing: 0.0,
                                                   ),
+                                          hintText: 'DNI',
                                           hintStyle:
                                               FlutterFlowTheme.of(context)
                                                   .labelMedium
                                                   .override(
-                                                    fontFamily: 'Raleway',
+                                                    fontFamily: 'Noto Sans JP',
                                                     letterSpacing: 0.0,
                                                   ),
                                           enabledBorder: OutlineInputBorder(
@@ -450,7 +457,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                         maxLength: 8,
@@ -488,7 +495,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .labelMedium
                                                   .override(
-                                                    fontFamily: 'Raleway',
+                                                    fontFamily: 'Noto Sans JP',
                                                     letterSpacing: 0.0,
                                                   ),
                                           hintText:
@@ -497,7 +504,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .labelMedium
                                                   .override(
-                                                    fontFamily: 'Raleway',
+                                                    fontFamily: 'Noto Sans JP',
                                                     letterSpacing: 0.0,
                                                   ),
                                           enabledBorder: OutlineInputBorder(
@@ -545,7 +552,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Raleway',
+                                              fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
                                         maxLength: 8,
@@ -579,7 +586,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Raleway',
+                                                  fontFamily: 'Noto Sans JP',
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -610,7 +617,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                                             .headlineLarge
                                                             .override(
                                                               fontFamily:
-                                                                  'Raleway',
+                                                                  'Noto Sans JP',
                                                               fontSize: 32.0,
                                                               letterSpacing:
                                                                   0.0,
@@ -654,8 +661,14 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                               }
                                             },
                                             text: valueOrDefault<String>(
-                                              containerExpedienteRow?.fechaNac
-                                                  ?.toString(),
+                                              dateTimeFormat(
+                                                "d/M/y",
+                                                containerExpedienteRow
+                                                    ?.fechaNac,
+                                                locale:
+                                                    FFLocalizations.of(context)
+                                                        .languageCode,
+                                              ),
                                               'Fec de Nac',
                                             ),
                                             options: FFButtonOptions(
@@ -672,7 +685,8 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         color: Colors.white,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -688,207 +702,216 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                         ],
                                       ),
                                     ),
-                                    Align(
-                                      alignment: const AlignmentDirectional(1.0, 0.0),
-                                      child: FFButtonWidget(
-                                        onPressed: () async {
-                                          _model.accionexitosa =
-                                              await actions.checkDNI(
-                                            () async {
-                                              if (_model.formKey2
-                                                          .currentState ==
-                                                      null ||
-                                                  !_model.formKey2.currentState!
-                                                      .validate()) {
-                                                return;
-                                              }
-                                              _model.crearexpnnya1 =
-                                                  await ExpedienteTable()
-                                                      .insert({
-                                                'nombres': _model
-                                                    .textFieldnombresTextController
-                                                    .text,
-                                                'apellidos': _model
-                                                    .textFieldapellidoTextController
-                                                    .text,
-                                                'dni': _model.textFieldDNITextController
-                                                                .text ==
-                                                            ''
-                                                    ? random_data.randomInteger(
-                                                        999999999, 1000000000)
-                                                    : int.tryParse(_model
-                                                        .textFieldDNITextController
-                                                        .text),
-                                                'expediente':
-                                                    '${widget.usuariorow?.spd}/${random_data.randomInteger(0, 10000).toString()}/${dateTimeFormat(
-                                                  "y",
-                                                  _model.datePicked1,
-                                                  locale: FFLocalizations.of(
-                                                          context)
-                                                      .languageCode,
-                                                )}',
-                                                'fechaNac':
-                                                    supaSerialize<DateTime>(
-                                                        _model.datePicked1),
-                                                'edad': int.tryParse(_model
-                                                    .textFieldedadTextController
-                                                    .text),
-                                                'iduser': currentUserUid,
-                                              });
-                                              _model.crearexpgrupo =
-                                                  await NNyAExpGruTable()
-                                                      .insert({
-                                                'idExp':
-                                                    _model.crearexpnnya1?.id,
-                                                'detalle': 'expediente',
-                                              });
-                                              _model.crearNNyA =
-                                                  await NNyATable().insert({
-                                                'Nombre': _model
-                                                    .textFieldnombresTextController
-                                                    .text,
-                                                'Apellido': _model
-                                                    .textFieldapellidoTextController
-                                                    .text,
-                                                'DNI':
-                                                    _model.crearexpnnya1?.dni,
-                                                'edad': int.tryParse(_model
-                                                    .textFieldedadTextController
-                                                    .text),
-                                                'iduser': currentUserUid,
-                                              });
-                                              _model.grupofmiliar =
-                                                  await GrupofamiliarTable()
-                                                      .insert({
-                                                'nombregrupo':
-                                                    '${_model.crearexpnnya1?.expediente}/${_model.crearexpnnya1?.dni?.toString()}',
-                                              });
-                                              await GrupofamiliarexpedientesTable()
-                                                  .insert({
-                                                'idgrupofamliar':
-                                                    _model.grupofmiliar?.id,
-                                                'idexpediente':
-                                                    _model.crearexpnnya1?.id,
-                                              });
-                                              await NNyAExpGruTable().update(
-                                                data: {
-                                                  'idNNyA':
-                                                      _model.crearNNyA?.id,
-                                                },
-                                                matchingRows: (rows) =>
-                                                    rows.eqOrNull(
-                                                  'id',
-                                                  _model.crearexpgrupo?.id,
-                                                ),
-                                              );
-                                              await ExpedienteTable().update(
-                                                data: {
-                                                  'idgrupofamiliar':
+                                    if (currentUserEmail == '1')
+                                      Align(
+                                        alignment:
+                                            const AlignmentDirectional(1.0, 0.0),
+                                        child: FFButtonWidget(
+                                          onPressed: () async {
+                                            _model.accionexitosa =
+                                                await actions.checkDNI(
+                                              () async {
+                                                if (_model.formKey2
+                                                            .currentState ==
+                                                        null ||
+                                                    !_model
+                                                        .formKey2.currentState!
+                                                        .validate()) {
+                                                  return;
+                                                }
+                                                _model.crearexpnnya1 =
+                                                    await ExpedienteTable()
+                                                        .insert({
+                                                  'nombres': _model
+                                                      .textFieldnombresTextController
+                                                      .text,
+                                                  'apellidos': _model
+                                                      .textFieldapellidoTextController
+                                                      .text,
+                                                  'dni': _model
+                                                                  .textFieldDNITextController
+                                                                  .text ==
+                                                              ''
+                                                      ? random_data
+                                                          .randomInteger(
+                                                              999999999,
+                                                              1000000000)
+                                                      : int.tryParse(_model
+                                                          .textFieldDNITextController
+                                                          .text),
+                                                  'expediente':
+                                                      '${widget.usuariorow?.spd}/${random_data.randomInteger(0, 10000).toString()}/${dateTimeFormat(
+                                                    "y",
+                                                    _model.datePicked1,
+                                                    locale: FFLocalizations.of(
+                                                            context)
+                                                        .languageCode,
+                                                  )}',
+                                                  'fechaNac':
+                                                      supaSerialize<DateTime>(
+                                                          _model.datePicked1),
+                                                  'edad': int.tryParse(_model
+                                                      .textFieldedadTextController
+                                                      .text),
+                                                  'iduser': currentUserUid,
+                                                });
+                                                _model.crearexpgrupo =
+                                                    await NNyAExpGruTable()
+                                                        .insert({
+                                                  'idExp':
+                                                      _model.crearexpnnya1?.id,
+                                                  'detalle': 'expediente',
+                                                });
+                                                _model.crearNNyA =
+                                                    await NNyATable().insert({
+                                                  'Nombre': _model
+                                                      .textFieldnombresTextController
+                                                      .text,
+                                                  'Apellido': _model
+                                                      .textFieldapellidoTextController
+                                                      .text,
+                                                  'DNI':
+                                                      _model.crearexpnnya1?.dni,
+                                                  'edad': int.tryParse(_model
+                                                      .textFieldedadTextController
+                                                      .text),
+                                                  'iduser': currentUserUid,
+                                                });
+                                                _model.grupofmiliar =
+                                                    await GrupofamiliarTable()
+                                                        .insert({
+                                                  'nombregrupo':
+                                                      '${_model.crearexpnnya1?.expediente}/${_model.crearexpnnya1?.dni?.toString()}',
+                                                });
+                                                await GrupofamiliarexpedientesTable()
+                                                    .insert({
+                                                  'idgrupofamliar':
                                                       _model.grupofmiliar?.id,
-                                                },
-                                                matchingRows: (rows) =>
-                                                    rows.eqOrNull(
-                                                  'id',
-                                                  _model.crearexpnnya1?.id,
-                                                ),
-                                              );
-                                              _model.apiResult42y =
-                                                  await CarpetaDelExpedienteCall
-                                                      .call(
-                                                expediente: _model
-                                                    .crearexpnnya1?.expediente,
-                                                id: _model.crearexpnnya1?.id,
-                                                fecha: dateTimeFormat(
-                                                  "d/M/y",
-                                                  _model.crearexpnnya1?.fecha,
-                                                  locale: FFLocalizations.of(
-                                                          context)
-                                                      .languageCode,
-                                                ),
-                                                nombresDNI:
-                                                    '${_model.crearexpnnya1?.nombres}, ${_model.crearexpnnya1?.apellidos}, DNI ${_model.crearexpnnya1?.dni?.toString()}',
-                                              );
-                                            },
-                                          );
-                                          if (_model.accionexitosa!) {
-                                            await showDialog(
-                                              context: context,
-                                              builder: (alertDialogContext) {
-                                                return AlertDialog(
-                                                  title: const Text(
-                                                      'El dni esta duplicado'),
-                                                  content: const Text(
-                                                      'El dni esta duplicado'),
-                                                  actions: [
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext),
-                                                      child: const Text('Ok'),
-                                                    ),
-                                                  ],
-                                                );
-                                              },
-                                            );
-                                            safeSetState(() {
-                                              _model.textFieldDNITextController
-                                                  ?.clear();
-                                            });
-                                          } else {
-                                            _model.dniok = false;
-                                            safeSetState(() {});
-                                            await showDialog(
-                                              context: context,
-                                              builder: (alertDialogContext) {
-                                                return AlertDialog(
-                                                  title: const Text(
-                                                      'El NNyA no tiene expediente'),
-                                                  content: const Text(
-                                                      'Continuamos con la carga!!'),
-                                                  actions: [
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext),
-                                                      child: const Text('Ok'),
-                                                    ),
-                                                  ],
-                                                );
-                                              },
-                                            );
-                                          }
-
-                                          safeSetState(() {});
-                                        },
-                                        text: 'verificar NNyA ',
-                                        options: FFButtonOptions(
-                                          height: 40.0,
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  24.0, 0.0, 24.0, 0.0),
-                                          iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          textStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmall
-                                                  .override(
-                                                    fontFamily: 'Raleway',
-                                                    color: Colors.white,
-                                                    letterSpacing: 0.0,
+                                                  'idexpediente':
+                                                      _model.crearexpnnya1?.id,
+                                                });
+                                                await NNyAExpGruTable().update(
+                                                  data: {
+                                                    'idNNyA':
+                                                        _model.crearNNyA?.id,
+                                                  },
+                                                  matchingRows: (rows) =>
+                                                      rows.eqOrNull(
+                                                    'id',
+                                                    _model.crearexpgrupo?.id,
                                                   ),
-                                          elevation: 3.0,
-                                          borderSide: const BorderSide(
-                                            color: Colors.transparent,
-                                            width: 1.0,
+                                                );
+                                                await ExpedienteTable().update(
+                                                  data: {
+                                                    'idgrupofamiliar':
+                                                        _model.grupofmiliar?.id,
+                                                  },
+                                                  matchingRows: (rows) =>
+                                                      rows.eqOrNull(
+                                                    'id',
+                                                    _model.crearexpnnya1?.id,
+                                                  ),
+                                                );
+                                                _model.apiResult42y =
+                                                    await CarpetaDelExpedienteCall
+                                                        .call(
+                                                  expediente: _model
+                                                      .crearexpnnya1
+                                                      ?.expediente,
+                                                  id: _model.crearexpnnya1?.id,
+                                                  fecha: dateTimeFormat(
+                                                    "d/M/y",
+                                                    _model.crearexpnnya1?.fecha,
+                                                    locale: FFLocalizations.of(
+                                                            context)
+                                                        .languageCode,
+                                                  ),
+                                                  nombresDNI:
+                                                      '${_model.crearexpnnya1?.nombres}, ${_model.crearexpnnya1?.apellidos}, DNI ${_model.crearexpnnya1?.dni?.toString()}',
+                                                );
+                                              },
+                                            );
+                                            if (_model.accionexitosa!) {
+                                              await showDialog(
+                                                context: context,
+                                                builder: (alertDialogContext) {
+                                                  return AlertDialog(
+                                                    title: const Text(
+                                                        'El dni esta duplicado'),
+                                                    content: const Text(
+                                                        'El dni esta duplicado'),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext),
+                                                        child: const Text('Ok'),
+                                                      ),
+                                                    ],
+                                                  );
+                                                },
+                                              );
+                                              safeSetState(() {
+                                                _model
+                                                    .textFieldDNITextController
+                                                    ?.clear();
+                                              });
+                                            } else {
+                                              _model.dniok = false;
+                                              safeSetState(() {});
+                                              await showDialog(
+                                                context: context,
+                                                builder: (alertDialogContext) {
+                                                  return AlertDialog(
+                                                    title: const Text(
+                                                        'El NNyA no tiene expediente'),
+                                                    content: const Text(
+                                                        'Continuamos con la carga!!'),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext),
+                                                        child: const Text('Ok'),
+                                                      ),
+                                                    ],
+                                                  );
+                                                },
+                                              );
+                                            }
+
+                                            safeSetState(() {});
+                                          },
+                                          text: 'verificar NNyA ',
+                                          options: FFButtonOptions(
+                                            height: 40.0,
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    24.0, 0.0, 24.0, 0.0),
+                                            iconPadding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily:
+                                                          'Noto Sans JP',
+                                                      color: Colors.white,
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            elevation: 3.0,
+                                            borderSide: const BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
                                           ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
                                         ),
                                       ),
-                                    ),
                                   ].divide(const SizedBox(height: 10.0)),
                                 ),
                               ),
@@ -966,7 +989,8 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily:
+                                                            'Noto Sans JP',
                                                         color: Colors.white,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -980,319 +1004,24 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                             ),
                                           ),
                                         ),
-                                        FutureBuilder<
-                                            List<
-                                                ListaDerechosVulneradosexpedienteRow>>(
-                                          future: (_model.requestCompleter ??=
-                                                  Completer<
-                                                      List<
-                                                          ListaDerechosVulneradosexpedienteRow>>()
-                                                    ..complete(
-                                                        ListaDerechosVulneradosexpedienteTable()
-                                                            .queryRows(
-                                                      queryFn: (q) =>
-                                                          q.eqOrNull(
-                                                        'idexp',
-                                                        widget.editar == true
-                                                            ? widget.idexp
-                                                            : _model
-                                                                .crearexpnnya1
-                                                                ?.id,
-                                                      ),
-                                                    )))
-                                              .future,
-                                          builder: (context, snapshot) {
-                                            // Customize what your widget looks like when it's loading.
-                                            if (!snapshot.hasData) {
-                                              return Center(
-                                                child: SizedBox(
-                                                  width: 50.0,
-                                                  height: 50.0,
-                                                  child:
-                                                      CircularProgressIndicator(
-                                                    valueColor:
-                                                        AlwaysStoppedAnimation<
-                                                            Color>(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primary,
-                                                    ),
-                                                  ),
-                                                ),
-                                              );
-                                            }
-                                            List<ListaDerechosVulneradosexpedienteRow>
-                                                containerderechosListaDerechosVulneradosexpedienteRowList =
-                                                snapshot.data!;
-
-                                            return Container(
-                                              width: MediaQuery.sizeOf(context)
-                                                      .width *
-                                                  1.0,
-                                              height: 300.0,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                              ),
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  Expanded(
-                                                    child: Builder(
-                                                      builder: (context) {
-                                                        final listadederchos =
-                                                            containerderechosListaDerechosVulneradosexpedienteRowList
-                                                                .toList();
-
-                                                        return FlutterFlowDataTable<
-                                                            ListaDerechosVulneradosexpedienteRow>(
-                                                          controller: _model
-                                                              .paginatedDataTableController,
-                                                          data: listadederchos,
-                                                          columnsBuilder:
-                                                              (onSortChanged) =>
-                                                                  [
-                                                            DataColumn2(
-                                                              label:
-                                                                  DefaultTextStyle
-                                                                      .merge(
-                                                                softWrap: true,
-                                                                child: Text(
-                                                                  'Derecho',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Raleway',
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            DataColumn2(
-                                                              label:
-                                                                  DefaultTextStyle
-                                                                      .merge(
-                                                                softWrap: true,
-                                                                child: Text(
-                                                                  'Sub categoria',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Raleway',
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            DataColumn2(
-                                                              label:
-                                                                  DefaultTextStyle
-                                                                      .merge(
-                                                                softWrap: true,
-                                                                child: Align(
-                                                                  alignment:
-                                                                      const AlignmentDirectional(
-                                                                          0.0,
-                                                                          0.0),
-                                                                  child: Text(
-                                                                    'Principal',
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Raleway',
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).secondaryBackground,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                        ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                          dataRowBuilder:
-                                                              (listadederchosItem,
-                                                                      listadederchosIndex,
-                                                                      selected,
-                                                                      onSelectChanged) =>
-                                                                  DataRow(
-                                                            color:
-                                                                WidgetStateProperty
-                                                                    .all(
-                                                              listadederchosIndex %
-                                                                          2 ==
-                                                                      0
-                                                                  ? FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground
-                                                                  : FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBackground,
-                                                            ),
-                                                            cells: [
-                                                              Text(
-                                                                valueOrDefault<
-                                                                    String>(
-                                                                  listadederchosItem
-                                                                      .derecho,
-                                                                  '0',
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Raleway',
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                    ),
-                                                              ),
-                                                              Text(
-                                                                valueOrDefault<
-                                                                    String>(
-                                                                  listadederchosItem
-                                                                      .subcategoria,
-                                                                  '0',
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Raleway',
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                    ),
-                                                              ),
-                                                              Visibility(
-                                                                visible:
-                                                                    listadederchosItem
-                                                                            .principal ==
-                                                                        'Si',
-                                                                child: Align(
-                                                                  alignment:
-                                                                      const AlignmentDirectional(
-                                                                          0.0,
-                                                                          0.0),
-                                                                  child:
-                                                                      Container(
-                                                                    width: 65.0,
-                                                                    height:
-                                                                        40.0,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondary,
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              15.0),
-                                                                    ),
-                                                                    child:
-                                                                        Align(
-                                                                      alignment:
-                                                                          const AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0),
-                                                                      child:
-                                                                          Text(
-                                                                        valueOrDefault<
-                                                                            String>(
-                                                                          listadederchosItem
-                                                                              .principal,
-                                                                          '0',
-                                                                        ),
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: 'Raleway',
-                                                                              letterSpacing: 0.0,
-                                                                            ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ]
-                                                                .map((c) =>
-                                                                    DataCell(c))
-                                                                .toList(),
-                                                          ),
-                                                          paginated: true,
-                                                          selectable: false,
-                                                          hidePaginator: false,
-                                                          showFirstLastButtons:
-                                                              false,
-                                                          headingRowHeight:
-                                                              56.0,
-                                                          dataRowHeight: 48.0,
-                                                          columnSpacing: 20.0,
-                                                          headingRowColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .primary,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      8.0),
-                                                          addHorizontalDivider:
-                                                              true,
-                                                          addTopAndBottomDivider:
-                                                              false,
-                                                          hideDefaultHorizontalDivider:
-                                                              true,
-                                                          horizontalDividerColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .secondaryBackground,
-                                                          horizontalDividerThickness:
-                                                              1.0,
-                                                          addVerticalDivider:
-                                                              false,
-                                                        );
-                                                      },
-                                                    ),
-                                                  ),
-                                                ].divide(
-                                                    const SizedBox(height: 10.0)),
-                                              ),
-                                            );
-                                          },
-                                        ),
                                       ].divide(const SizedBox(height: 10.0)),
                                     ),
                                   ),
-                                  Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
-                                    child: Text(
-                                      'Información de expediente',
-                                      style: FlutterFlowTheme.of(context)
-                                          .titleLarge
-                                          .override(
-                                            fontFamily: 'Raleway',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ),
-                                  FutureBuilder<List<SpdRow>>(
-                                    future: SpdTable().queryRows(
-                                      queryFn: (q) => q,
-                                    ),
+                                  FutureBuilder<
+                                      List<
+                                          ListaDerechosVulneradosexpedienteRow>>(
+                                    future: (_model.requestCompleter ??= Completer<
+                                            List<
+                                                ListaDerechosVulneradosexpedienteRow>>()
+                                          ..complete(
+                                              ListaDerechosVulneradosexpedienteTable()
+                                                  .queryRows(
+                                            queryFn: (q) => q.eqOrNull(
+                                              'idexp',
+                                              widget.idexp,
+                                            ),
+                                          )))
+                                        .future,
                                     builder: (context, snapshot) {
                                       // Customize what your widget looks like when it's loading.
                                       if (!snapshot.hasData) {
@@ -1310,68 +1039,304 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                           ),
                                         );
                                       }
-                                      List<SpdRow> dropDownSpdRowList =
+                                      List<ListaDerechosVulneradosexpedienteRow>
+                                          containerdvListaDerechosVulneradosexpedienteRowList =
                                           snapshot.data!;
 
-                                      return FlutterFlowDropDown<String>(
-                                        controller:
-                                            _model.dropDownValueController ??=
-                                                FormFieldController<String>(
-                                          _model.dropDownValue ??=
-                                              widget.usuariorow?.spd,
-                                        ),
-                                        options: dropDownSpdRowList
-                                            .map((e) => e.nombrespd)
-                                            .withoutNulls
-                                            .toList(),
-                                        onChanged: (val) => safeSetState(
-                                            () => _model.dropDownValue = val),
-                                        height: 40.0,
-                                        searchHintTextStyle:
-                                            FlutterFlowTheme.of(context)
-                                                .labelMedium
-                                                .override(
-                                                  fontFamily: 'Raleway',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                        searchTextStyle:
-                                            FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Raleway',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Raleway',
-                                              letterSpacing: 0.0,
-                                            ),
-                                        hintText: 'SPD',
-                                        searchHintText: 'Buscar',
-                                        icon: Icon(
-                                          Icons.keyboard_arrow_down_rounded,
+                                      return Container(
+                                        width: 593.0,
+                                        height: 306.0,
+                                        decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                          size: 24.0,
+                                              .secondaryBackground,
                                         ),
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        elevation: 2.0,
-                                        borderColor:
-                                            FlutterFlowTheme.of(context)
-                                                .secondaryText,
-                                        borderWidth: 0.0,
-                                        borderRadius: 8.0,
-                                        margin: const EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 12.0, 0.0),
-                                        hidesUnderline: true,
-                                        isOverButton: false,
-                                        isSearchable: true,
-                                        isMultiSelect: false,
+                                        child: Builder(
+                                          builder: (context) {
+                                            final listaderechos =
+                                                containerdvListaDerechosVulneradosexpedienteRowList
+                                                    .toList();
+
+                                            return FlutterFlowDataTable<
+                                                ListaDerechosVulneradosexpedienteRow>(
+                                              controller: _model
+                                                  .paginatedDataTableController,
+                                              data: listaderechos,
+                                              columnsBuilder: (onSortChanged) =>
+                                                  [
+                                                DataColumn2(
+                                                  label: DefaultTextStyle.merge(
+                                                    softWrap: true,
+                                                    child: Align(
+                                                      alignment:
+                                                          const AlignmentDirectional(
+                                                              0.0, 0.0),
+                                                      child: Text(
+                                                        'Derecho',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelLarge
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Noto Sans JP',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryBackground,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                DataColumn2(
+                                                  label: DefaultTextStyle.merge(
+                                                    softWrap: true,
+                                                    child: Align(
+                                                      alignment:
+                                                          const AlignmentDirectional(
+                                                              0.0, 0.0),
+                                                      child: Text(
+                                                        'Subcategoria',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelLarge
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Noto Sans JP',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryBackground,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                DataColumn2(
+                                                  label: DefaultTextStyle.merge(
+                                                    softWrap: true,
+                                                    child: Align(
+                                                      alignment:
+                                                          const AlignmentDirectional(
+                                                              0.0, 0.0),
+                                                      child: Text(
+                                                        'Principal',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelLarge
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Noto Sans JP',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryBackground,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                              dataRowBuilder:
+                                                  (listaderechosItem,
+                                                          listaderechosIndex,
+                                                          selected,
+                                                          onSelectChanged) =>
+                                                      DataRow(
+                                                color:
+                                                    WidgetStateProperty.all(
+                                                  listaderechosIndex % 2 == 0
+                                                      ? FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryBackground
+                                                      : FlutterFlowTheme.of(
+                                                              context)
+                                                          .primaryBackground,
+                                                ),
+                                                cells: [
+                                                  Text(
+                                                    valueOrDefault<String>(
+                                                      listaderechosItem.derecho,
+                                                      '0',
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Noto Sans JP',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                  Text(
+                                                    valueOrDefault<String>(
+                                                      listaderechosItem
+                                                          .subcategoria,
+                                                      '0',
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Noto Sans JP',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                  Text(
+                                                    valueOrDefault<String>(
+                                                      listaderechosItem
+                                                          .principal,
+                                                      '0',
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Noto Sans JP',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                ]
+                                                    .map((c) => DataCell(c))
+                                                    .toList(),
+                                              ),
+                                              paginated: true,
+                                              selectable: false,
+                                              hidePaginator: false,
+                                              showFirstLastButtons: false,
+                                              headingRowHeight: 56.0,
+                                              dataRowHeight: 48.0,
+                                              columnSpacing: 20.0,
+                                              headingRowColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
+                                              addHorizontalDivider: true,
+                                              addTopAndBottomDivider: false,
+                                              hideDefaultHorizontalDivider:
+                                                  true,
+                                              horizontalDividerColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              horizontalDividerThickness: 1.0,
+                                              addVerticalDivider: false,
+                                            );
+                                          },
+                                        ),
                                       );
                                     },
                                   ),
+                                  Align(
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    child: Text(
+                                      'Información de expediente',
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ),
+                                  if (currentUserEmail ==
+                                      'darioanzaudo@gmail.com')
+                                    FutureBuilder<List<SpdRow>>(
+                                      future: SpdTable().queryRows(
+                                        queryFn: (q) => q,
+                                      ),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: CircularProgressIndicator(
+                                                valueColor:
+                                                    AlwaysStoppedAnimation<
+                                                        Color>(
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                                ),
+                                              ),
+                                            ),
+                                          );
+                                        }
+                                        List<SpdRow> dropDownSpdRowList =
+                                            snapshot.data!;
+
+                                        return FlutterFlowDropDown<String>(
+                                          controller:
+                                              _model.dropDownValueController ??=
+                                                  FormFieldController<String>(
+                                            _model.dropDownValue ??=
+                                                widget.usuariorow?.spd,
+                                          ),
+                                          options: dropDownSpdRowList
+                                              .map((e) => e.nombrespd)
+                                              .withoutNulls
+                                              .toList(),
+                                          onChanged: (val) => safeSetState(
+                                              () => _model.dropDownValue = val),
+                                          height: 40.0,
+                                          searchHintTextStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .override(
+                                                    fontFamily: 'Noto Sans JP',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          searchTextStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Noto Sans JP',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Noto Sans JP',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          hintText: 'SPD',
+                                          searchHintText: 'Buscar',
+                                          icon: Icon(
+                                            Icons.keyboard_arrow_down_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 24.0,
+                                          ),
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
+                                          elevation: 2.0,
+                                          borderColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryText,
+                                          borderWidth: 0.0,
+                                          borderRadius: 8.0,
+                                          margin:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  12.0, 0.0, 12.0, 0.0),
+                                          hidesUnderline: true,
+                                          isOverButton: false,
+                                          isSearchable: true,
+                                          isMultiSelect: false,
+                                        );
+                                      },
+                                    ),
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
@@ -1395,7 +1360,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Raleway',
+                                                  fontFamily: 'Noto Sans JP',
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -1426,7 +1391,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                                           .headlineLarge
                                                           .override(
                                                             fontFamily:
-                                                                'Raleway',
+                                                                'Noto Sans JP',
                                                             fontSize: 32.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -1468,8 +1433,13 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                             }
                                           },
                                           text: valueOrDefault<String>(
-                                            containerExpedienteRow?.fecha
-                                                ?.toString(),
+                                            dateTimeFormat(
+                                              "d/M/y",
+                                              containerExpedienteRow?.fecha,
+                                              locale:
+                                                  FFLocalizations.of(context)
+                                                      .languageCode,
+                                            ),
                                             'Fecha',
                                           ),
                                           options: FFButtonOptions(
@@ -1486,7 +1456,8 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       color: Colors.white,
                                                       letterSpacing: 0.0,
                                                     ),
@@ -1528,7 +1499,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Noto Sans JP',
                                             letterSpacing: 0.0,
                                           ),
                                       hintText: ' CANAL DE INGRESO',
@@ -1556,7 +1527,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                           FlutterFlowTheme.of(context)
                                               .labelMedium
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
                                                 letterSpacing: 0.0,
                                               ),
                                     ),
@@ -1585,7 +1556,8 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       letterSpacing: 0.0,
                                                     ),
                                             hintText:
@@ -1594,7 +1566,8 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       letterSpacing: 0.0,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
@@ -1642,7 +1615,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
                                                 letterSpacing: 0.0,
                                               ),
                                           validator: _model
@@ -1671,14 +1644,16 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       letterSpacing: 0.0,
                                                     ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       letterSpacing: 0.0,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
@@ -1726,7 +1701,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
                                                 letterSpacing: 0.0,
                                               ),
                                           validator: _model
@@ -1755,14 +1730,16 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       letterSpacing: 0.0,
                                                     ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       letterSpacing: 0.0,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
@@ -1810,7 +1787,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Noto Sans JP',
                                                 letterSpacing: 0.0,
                                               ),
                                           validator: _model
@@ -1876,6 +1853,28 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                                     rows.eqOrNull(
                                                   'id',
                                                   _model.crearexpnnya1?.id,
+                                                ),
+                                              );
+                                              await NNyATable().update(
+                                                data: {
+                                                  'Nombre': _model
+                                                      .textFieldnombresTextController
+                                                      .text,
+                                                  'Apellido': _model
+                                                      .textFieldapellidoTextController
+                                                      .text,
+                                                  'DNI': int.tryParse(_model
+                                                      .textFieldDNITextController
+                                                      .text),
+                                                  'edad': int.tryParse(_model
+                                                      .textFieldedadTextController
+                                                      .text),
+                                                },
+                                                matchingRows: (rows) =>
+                                                    rows.eqOrNull(
+                                                  'id',
+                                                  containerExpedienteRow
+                                                      ?.idNNyA,
                                                 ),
                                               );
                                               await showDialog(
@@ -1958,15 +1957,43 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                                       .textFieldedadTextController
                                                       .text),
                                                   'estado': true,
-                                                  'dni': int.tryParse(_model
-                                                      .textFieldDNITextController
-                                                      .text),
+                                                  'dni': _model
+                                                              .textFieldDNITextController
+                                                              .text ==
+                                                          'Sin dato'
+                                                      ? containerExpedienteRow
+                                                          ?.dni
+                                                      : int.tryParse(_model
+                                                          .textFieldDNITextController
+                                                          .text),
                                                   'iduser': currentUserUid,
                                                 },
                                                 matchingRows: (rows) =>
                                                     rows.eqOrNull(
                                                   'id',
                                                   containerExpedienteRow?.id,
+                                                ),
+                                              );
+                                              await NNyATable().update(
+                                                data: {
+                                                  'Nombre': _model
+                                                      .textFieldnombresTextController
+                                                      .text,
+                                                  'Apellido': _model
+                                                      .textFieldapellidoTextController
+                                                      .text,
+                                                  'DNI': int.tryParse(_model
+                                                      .textFieldDNITextController
+                                                      .text),
+                                                  'edad': int.tryParse(_model
+                                                      .textFieldedadTextController
+                                                      .text),
+                                                },
+                                                matchingRows: (rows) =>
+                                                    rows.eqOrNull(
+                                                  'id',
+                                                  containerExpedienteRow
+                                                      ?.idNNyA,
                                                 ),
                                               );
                                               await showDialog(
@@ -2013,7 +2040,8 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily: 'Raleway',
+                                                      fontFamily:
+                                                          'Noto Sans JP',
                                                       color: Colors.white,
                                                       letterSpacing: 0.0,
                                                     ),

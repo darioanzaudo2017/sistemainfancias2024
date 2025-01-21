@@ -1,6 +1,10 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/anexosbotonera_widget.dart';
+import '/components/barrade_navegacion_widget.dart';
+import '/components/tarjetaencabezado_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/form_field_controller.dart';
 import 'dart:async';
 import 'perfil_widget.dart' show PerfilWidget;
 import 'package:flutter/material.dart';
@@ -8,6 +12,10 @@ import 'package:flutter/material.dart';
 class PerfilModel extends FlutterFlowModel<PerfilWidget> {
   ///  State fields for stateful widgets in this page.
 
+  // Model for barradeNavegacion component.
+  late BarradeNavegacionModel barradeNavegacionModel;
+  // Model for anexosbotonera component.
+  late AnexosbotoneraModel anexosbotoneraModel;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   ExpedienteRow? creaexpgrupoCopy;
   // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
@@ -16,13 +24,53 @@ class PerfilModel extends FlutterFlowModel<PerfilWidget> {
   ApiCallResponse? apiResult42yCopy;
   // Stores action output result for [Backend Call - Query Rows] action in IconButton widget.
   List<VistaExpedientesUltimoEstadoRow>? exp;
-  Completer<List<Formulario7Row>>? requestCompleter;
+  // Model for tarjetaencabezado component.
+  late TarjetaencabezadoModel tarjetaencabezadoModel;
+  // State field(s) for Checkbox widget.
+  bool? checkboxValue1;
+  // State field(s) for Checkbox widget.
+  bool? checkboxValue2;
+  // State field(s) for Checkbox widget.
+  bool? checkboxValue3;
+  // State field(s) for Checkbox widget.
+  bool? checkboxValue4;
+  // Stores action output result for [Bottom Sheet - seccion1] action in Button widget.
+  bool? seccio1true;
+  Completer<List<IngresosRow>>? requestCompleter;
+  // Stores action output result for [Bottom Sheet - seccion2] action in Button widget.
+  bool? seccion2true;
+  // Stores action output result for [Bottom Sheet - seccion3] action in Button widget.
+  bool? seccion3true;
+  // Stores action output result for [Bottom Sheet - seccion4] action in Button widget.
+  bool? seccion4;
+  // Stores action output result for [Bottom Sheet - seccion4] action in Button widget.
+  bool? seccion4true;
+  // Stores action output result for [Bottom Sheet - seccion5] action in Button widget.
+  bool? seccion5true;
+  // Stores action output result for [Bottom Sheet - seccion6] action in Button widget.
+  bool? seccion6true;
+  // Stores action output result for [Bottom Sheet - seccion7] action in Button widget.
+  bool? seccion7true;
+  // Stores action output result for [Bottom Sheet - seccion9] action in Button widget.
+  bool? seccion9true;
+  // State field(s) for RadioButton widget.
+  FormFieldController<String>? radioButtonValueController;
 
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    barradeNavegacionModel =
+        createModel(context, () => BarradeNavegacionModel());
+    anexosbotoneraModel = createModel(context, () => AnexosbotoneraModel());
+    tarjetaencabezadoModel =
+        createModel(context, () => TarjetaencabezadoModel());
+  }
 
   @override
-  void dispose() {}
+  void dispose() {
+    barradeNavegacionModel.dispose();
+    anexosbotoneraModel.dispose();
+    tarjetaencabezadoModel.dispose();
+  }
 
   /// Additional helper methods.
   Future waitForRequestCompleted({
@@ -39,4 +87,6 @@ class PerfilModel extends FlutterFlowModel<PerfilWidget> {
       }
     }
   }
+
+  String? get radioButtonValue => radioButtonValueController?.value;
 }
