@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
@@ -71,14 +72,14 @@ class AgregarConvivienteModel
   FocusNode? textFieldFocusNode6;
   TextEditingController? textController7;
   String? Function(BuildContext, String?)? textController7Validator;
-  // Stores action output result for [Custom Action - checkDNI] action in Button widget.
-  bool? agregarpersonaexitosa;
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  NNyARow? crearNNyACopy;
+  // Stores action output result for [Backend Call - API (ExisteDNI)] action in Button widget.
+  ApiCallResponse? chekdnigrupo;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
   List<NNyARow>? busquedapersonadni;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   GrupoConvivienteRow? aaa;
+  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
+  NNyARow? crearnnyanuevo;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   GrupoConvivienteRow? creargrupo;
   // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.

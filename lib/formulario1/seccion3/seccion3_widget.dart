@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/formulario1/secciones_formulario1/agregar_tablas/agregar_conviviente/agregar_conviviente_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'seccion3_model.dart';
 export 'seccion3_model.dart';
 
@@ -171,12 +172,15 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                   enableDrag: false,
                                   context: context,
                                   builder: (context) {
-                                    return Padding(
-                                      padding: MediaQuery.viewInsetsOf(context),
-                                      child: AgregarConvivienteWidget(
-                                        rowingreso: widget.idingreso!,
-                                        idexp: widget.idexp!,
-                                        editar: false,
+                                    return WebViewAware(
+                                      child: Padding(
+                                        padding:
+                                            MediaQuery.viewInsetsOf(context),
+                                        child: AgregarConvivienteWidget(
+                                          rowingreso: widget.idingreso!,
+                                          idexp: widget.idexp!,
+                                          editar: false,
+                                        ),
                                       ),
                                     );
                                   },
@@ -392,18 +396,22 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                             enableDrag: false,
                                             context: context,
                                             builder: (context) {
-                                              return Padding(
-                                                padding:
-                                                    MediaQuery.viewInsetsOf(
-                                                        context),
-                                                child: AgregarConvivienteWidget(
-                                                  rowingreso:
-                                                      widget.idingreso!,
-                                                  idexp: widget.idexp!,
-                                                  editar: true,
-                                                  idgrupoconviviente:
-                                                      listItem.id,
-                                                  idnnya: listItem.idnnyaGrupo,
+                                              return WebViewAware(
+                                                child: Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child:
+                                                      AgregarConvivienteWidget(
+                                                    rowingreso:
+                                                        widget.idingreso!,
+                                                    idexp: widget.idexp!,
+                                                    editar: true,
+                                                    idgrupoconviviente:
+                                                        listItem.id,
+                                                    idnnya:
+                                                        listItem.idnnyaGrupo,
+                                                  ),
                                                 ),
                                               );
                                             },
@@ -643,18 +651,22 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                             enableDrag: false,
                                             context: context,
                                             builder: (context) {
-                                              return Padding(
-                                                padding:
-                                                    MediaQuery.viewInsetsOf(
-                                                        context),
-                                                child: AgregarConvivienteWidget(
-                                                  rowingreso:
-                                                      widget.idingreso!,
-                                                  idexp: widget.idexp!,
-                                                  editar: true,
-                                                  idgrupoconviviente:
-                                                      listItem.id,
-                                                  idnnya: listItem.idnnyaGrupo,
+                                              return WebViewAware(
+                                                child: Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child:
+                                                      AgregarConvivienteWidget(
+                                                    rowingreso:
+                                                        widget.idingreso!,
+                                                    idexp: widget.idexp!,
+                                                    editar: true,
+                                                    idgrupoconviviente:
+                                                        listItem.id,
+                                                    idnnya:
+                                                        listItem.idnnyaGrupo,
+                                                  ),
                                                 ),
                                               );
                                             },

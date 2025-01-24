@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'aviso_visita_model.dart';
 export 'aviso_visita_model.dart';
 
@@ -40,10 +41,14 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
     super.initState();
     _model = createModel(context, () => AvisoVisitaModel());
 
+    _model.textFieldmotivoTextController1 ??= TextEditingController();
     _model.textFieldmotivoFocusNode1 ??= FocusNode();
 
+    _model.textFieldmotivoTextController2 ??=
+        TextEditingController(text: widget.rowexp?.spd);
     _model.textFieldmotivoFocusNode2 ??= FocusNode();
 
+    _model.textFieldresenaTextController ??= TextEditingController();
     _model.textFieldresenaFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -129,9 +134,9 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                               alignment: const AlignmentDirectional(0.0, -1.0),
                               child: Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    180.0, 0.0, 0.0, 0.0),
+                                    100.0, 0.0, 0.0, 0.0),
                                 child: Text(
-                                  'Aviso de visita NNyA',
+                                  'Convocatoria de entrevista a NNYA',
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
@@ -167,11 +172,7 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: TextFormField(
-                            controller:
-                                _model.textFieldmotivoTextController1 ??=
-                                    TextEditingController(
-                              text: containerAvisovisitaNNyARow?.domicilio,
-                            ),
+                            controller: _model.textFieldmotivoTextController1,
                             focusNode: _model.textFieldmotivoFocusNode1,
                             autofocus: true,
                             obscureText: false,
@@ -236,11 +237,7 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: TextFormField(
-                            controller:
-                                _model.textFieldmotivoTextController2 ??=
-                                    TextEditingController(
-                              text: containerAvisovisitaNNyARow?.cpc,
-                            ),
+                            controller: _model.textFieldmotivoTextController2,
                             focusNode: _model.textFieldmotivoFocusNode2,
                             autofocus: true,
                             obscureText: false,
@@ -305,10 +302,7 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: TextFormField(
-                            controller: _model.textFieldresenaTextController ??=
-                                TextEditingController(
-                              text: containerAvisovisitaNNyARow?.hora,
-                            ),
+                            controller: _model.textFieldresenaTextController,
                             focusNode: _model.textFieldresenaFocusNode,
                             autofocus: true,
                             obscureText: false,
@@ -372,7 +366,7 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                         ),
                         Row(
                           mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
                               valueOrDefault<String>(
@@ -470,11 +464,13 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
                             ),
-                          ],
+                          ]
+                              .divide(const SizedBox(width: 10.0))
+                              .around(const SizedBox(width: 10.0)),
                         ),
                         Row(
                           mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
                               valueOrDefault<String>(
@@ -572,7 +568,9 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
                             ),
-                          ],
+                          ]
+                              .divide(const SizedBox(width: 10.0))
+                              .around(const SizedBox(width: 10.0)),
                         ),
                         Row(
                           mainAxisSize: MainAxisSize.max,
@@ -588,16 +586,19 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {
-                                      return AlertDialog(
-                                        title: const Text('Campo obligatorio'),
-                                        content: const Text('La fecha obligatoria!'),
-                                        actions: [
-                                          TextButton(
-                                            onPressed: () => Navigator.pop(
-                                                alertDialogContext),
-                                            child: const Text('Ok'),
-                                          ),
-                                        ],
+                                      return WebViewAware(
+                                        child: AlertDialog(
+                                          title: const Text('Campo obligatorio'),
+                                          content:
+                                              const Text('La fecha obligatoria!'),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: const Text('Ok'),
+                                            ),
+                                          ],
+                                        ),
                                       );
                                     },
                                   );
@@ -607,16 +608,19 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {
-                                      return AlertDialog(
-                                        title: const Text('Campo obligatorio'),
-                                        content: const Text('La fecha obligatoria!'),
-                                        actions: [
-                                          TextButton(
-                                            onPressed: () => Navigator.pop(
-                                                alertDialogContext),
-                                            child: const Text('Ok'),
-                                          ),
-                                        ],
+                                      return WebViewAware(
+                                        child: AlertDialog(
+                                          title: const Text('Campo obligatorio'),
+                                          content:
+                                              const Text('La fecha obligatoria!'),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: const Text('Ok'),
+                                            ),
+                                          ],
+                                        ),
                                       );
                                     },
                                   );
@@ -640,17 +644,19 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {
-                                      return AlertDialog(
-                                        title: const Text('Carga correcta'),
-                                        content: const Text(
-                                            'La informacion se guardo correctamente!!'),
-                                        actions: [
-                                          TextButton(
-                                            onPressed: () => Navigator.pop(
-                                                alertDialogContext),
-                                            child: const Text('Ok'),
-                                          ),
-                                        ],
+                                      return WebViewAware(
+                                        child: AlertDialog(
+                                          title: const Text('Carga correcta'),
+                                          content: const Text(
+                                              'La informacion se guardo correctamente!!'),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: const Text('Ok'),
+                                            ),
+                                          ],
+                                        ),
                                       );
                                     },
                                   );
@@ -708,17 +714,19 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {
-                                      return AlertDialog(
-                                        title: const Text('Carga correcta'),
-                                        content: const Text(
-                                            'La informacion se guardo correctamente!!'),
-                                        actions: [
-                                          TextButton(
-                                            onPressed: () => Navigator.pop(
-                                                alertDialogContext),
-                                            child: const Text('Ok'),
-                                          ),
-                                        ],
+                                      return WebViewAware(
+                                        child: AlertDialog(
+                                          title: const Text('Carga correcta'),
+                                          content: const Text(
+                                              'La informacion se guardo correctamente!!'),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: const Text('Ok'),
+                                            ),
+                                          ],
+                                        ),
                                       );
                                     },
                                   );

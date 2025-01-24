@@ -11,9 +11,11 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/formulario4/formulario4/formulario4_widget.dart';
+import 'dart:async';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'anexosbotonera_model.dart';
 export 'anexosbotonera_model.dart';
 
@@ -120,6 +122,7 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
             borderRadius: BorderRadius.circular(10.0),
           ),
           child: Container(
+            width: 350.0,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
               borderRadius: BorderRadius.circular(10.0),
@@ -244,38 +247,46 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                 MainAxisAlignment.spaceBetween,
                                             children: [
                                               // no va aca poner si osi en el form 6
-                                              if (widget.reqacciones ?? true)
-                                                FFButtonWidget(
-                                                  onPressed: () async {
-                                                    await showModalBottomSheet(
-                                                      isScrollControlled: true,
-                                                      backgroundColor:
-                                                          Colors.transparent,
-                                                      enableDrag: false,
-                                                      context: context,
-                                                      builder: (context) {
-                                                        return Padding(
-                                                          padding: MediaQuery
-                                                              .viewInsetsOf(
-                                                                  context),
-                                                          child:
-                                                              Anexo5requerimientoaccionesWidget(
-                                                            rowingreso: widget
-                                                                .ingresorow!,
-                                                            rowexp:
-                                                                widget.exorow!,
-                                                            usuario: widget
-                                                                .usuariosrow!,
-                                                          ),
-                                                        );
-                                                      },
-                                                    ).then((value) =>
-                                                        safeSetState(() {}));
-                                                  },
+                                              Flexible(
+                                                child: FFButtonWidget(
+                                                  onPressed: !widget
+                                                          .reqacciones!
+                                                      ? null
+                                                      : () async {
+                                                          await showModalBottomSheet(
+                                                            isScrollControlled:
+                                                                true,
+                                                            backgroundColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            enableDrag: false,
+                                                            context: context,
+                                                            builder: (context) {
+                                                              return WebViewAware(
+                                                                child: Padding(
+                                                                  padding: MediaQuery
+                                                                      .viewInsetsOf(
+                                                                          context),
+                                                                  child:
+                                                                      Anexo5requerimientoaccionesWidget(
+                                                                    rowingreso:
+                                                                        widget
+                                                                            .ingresorow!,
+                                                                    rowexp: widget
+                                                                        .exorow!,
+                                                                    usuario: widget
+                                                                        .usuariosrow!,
+                                                                  ),
+                                                                ),
+                                                              );
+                                                            },
+                                                          ).then((value) =>
+                                                              safeSetState(
+                                                                  () {}));
+                                                        },
                                                   text:
                                                       'Requerimiento de Acciones',
                                                   options: FFButtonOptions(
-                                                    width: 200.0,
                                                     height: 40.0,
                                                     padding:
                                                         const EdgeInsetsDirectional
@@ -301,8 +312,13 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             8.0),
+                                                    disabledColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .alternate,
                                                   ),
                                                 ),
+                                              ),
                                               Material(
                                                 color: Colors.transparent,
                                                 elevation: 2.0,
@@ -359,13 +375,18 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                     alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: FutureBuilder<
                                         List<AnexoinstitucioneeducacionRow>>(
-                                      future: AnexoinstitucioneeducacionTable()
-                                          .querySingleRow(
-                                        queryFn: (q) => q.eqOrNull(
-                                          'idingreso',
-                                          widget.idingreso,
-                                        ),
-                                      ),
+                                      future: (_model.requestCompleter2 ??= Completer<
+                                              List<
+                                                  AnexoinstitucioneeducacionRow>>()
+                                            ..complete(
+                                                AnexoinstitucioneeducacionTable()
+                                                    .querySingleRow(
+                                              queryFn: (q) => q.eqOrNull(
+                                                'idingreso',
+                                                widget.idingreso,
+                                              ),
+                                            )))
+                                          .future,
                                       builder: (context, snapshot) {
                                         // Customize what your widget looks like when it's loading.
                                         if (!snapshot.hasData) {
@@ -385,13 +406,13 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                           );
                                         }
                                         List<AnexoinstitucioneeducacionRow>
-                                            containerAnexoinstitucioneeducacionRowList =
+                                            containereducacionAnexoinstitucioneeducacionRowList =
                                             snapshot.data!;
 
-                                        final containerAnexoinstitucioneeducacionRow =
-                                            containerAnexoinstitucioneeducacionRowList
+                                        final containereducacionAnexoinstitucioneeducacionRow =
+                                            containereducacionAnexoinstitucioneeducacionRowList
                                                     .isNotEmpty
-                                                ? containerAnexoinstitucioneeducacionRowList
+                                                ? containereducacionAnexoinstitucioneeducacionRowList
                                                     .first
                                                 : null;
 
@@ -402,36 +423,60 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
                                             children: [
-                                              if (widget.anexoeducacion ??
-                                                  true)
-                                                FFButtonWidget(
-                                                  onPressed: () async {
-                                                    await showModalBottomSheet(
-                                                      isScrollControlled: true,
-                                                      backgroundColor:
-                                                          Colors.transparent,
-                                                      enableDrag: false,
-                                                      context: context,
-                                                      builder: (context) {
-                                                        return Padding(
-                                                          padding: MediaQuery
-                                                              .viewInsetsOf(
-                                                                  context),
-                                                          child:
-                                                              AnexoeducacionsolicitudWidget(
-                                                            rowingreso: widget
-                                                                .ingresorow!,
-                                                            rowexp:
-                                                                widget.exorow!,
-                                                          ),
-                                                        );
-                                                      },
-                                                    ).then((value) =>
-                                                        safeSetState(() {}));
-                                                  },
-                                                  text: 'Anexo educacion',
+                                              Flexible(
+                                                child: FFButtonWidget(
+                                                  onPressed: !widget
+                                                          .anexoeducacion!
+                                                      ? null
+                                                      : () async {
+                                                          await showModalBottomSheet(
+                                                            isScrollControlled:
+                                                                true,
+                                                            backgroundColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            enableDrag: false,
+                                                            context: context,
+                                                            builder: (context) {
+                                                              return WebViewAware(
+                                                                child: Padding(
+                                                                  padding: MediaQuery
+                                                                      .viewInsetsOf(
+                                                                          context),
+                                                                  child:
+                                                                      AnexoeducacionsolicitudWidget(
+                                                                    rowingreso:
+                                                                        widget
+                                                                            .ingresorow!,
+                                                                    rowexp: widget
+                                                                        .exorow!,
+                                                                  ),
+                                                                ),
+                                                              );
+                                                            },
+                                                          ).then((value) =>
+                                                              safeSetState(() =>
+                                                                  _model.creosolicitudeducacion =
+                                                                      value));
+
+                                                          await Future.delayed(
+                                                              const Duration(
+                                                                  milliseconds:
+                                                                      2000));
+                                                          if (_model
+                                                              .creosolicitudeducacion!) {
+                                                            safeSetState(() =>
+                                                                _model.requestCompleter2 =
+                                                                    null);
+                                                            await _model
+                                                                .waitForRequestCompleted2();
+                                                          }
+
+                                                          safeSetState(() {});
+                                                        },
+                                                  text:
+                                                      'Solicitud informacion a educacion',
                                                   options: FFButtonOptions(
-                                                    width: 200.0,
                                                     height: 40.0,
                                                     padding:
                                                         const EdgeInsetsDirectional
@@ -457,12 +502,17 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             8.0),
+                                                    disabledColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .alternate,
                                                   ),
                                                 ),
-                                              if (containerAnexoinstitucioneeducacionRow
+                                              ),
+                                              if (containereducacionAnexoinstitucioneeducacionRow
                                                           ?.linkdoc !=
                                                       null &&
-                                                  containerAnexoinstitucioneeducacionRow
+                                                  containereducacionAnexoinstitucioneeducacionRow
                                                           ?.linkdoc !=
                                                       '')
                                                 FlutterFlowIconButton(
@@ -484,7 +534,7 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                   ),
                                                   onPressed: () async {
                                                     await launchURL(
-                                                        containerAnexoinstitucioneeducacionRow!
+                                                        containereducacionAnexoinstitucioneeducacionRow!
                                                             .linkdoc!);
                                                   },
                                                 ),
@@ -534,40 +584,51 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
                                             children: [
-                                              if (widget.reunioninter ?? true)
-                                                FFButtonWidget(
-                                                  onPressed: () async {
-                                                    await showModalBottomSheet(
-                                                      isScrollControlled: true,
-                                                      backgroundColor:
-                                                          Colors.transparent,
-                                                      enableDrag: false,
-                                                      context: context,
-                                                      builder: (context) {
-                                                        return Padding(
-                                                          padding: MediaQuery
-                                                              .viewInsetsOf(
-                                                                  context),
-                                                          child:
-                                                              ListareunioninterinstitucionalWidget(
-                                                            idingreso: widget
-                                                                .idingreso,
-                                                            idingres: widget
-                                                                .ingresorow!,
-                                                            idexprow:
-                                                                widget.exorow!,
-                                                            formulario:
-                                                                widget.etapa!,
-                                                          ),
-                                                        );
-                                                      },
-                                                    ).then((value) =>
-                                                        safeSetState(() {}));
-                                                  },
+                                              Flexible(
+                                                child: FFButtonWidget(
+                                                  onPressed:
+                                                      !widget.reunioninter!
+                                                          ? null
+                                                          : () async {
+                                                              await showModalBottomSheet(
+                                                                isScrollControlled:
+                                                                    true,
+                                                                backgroundColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                enableDrag:
+                                                                    false,
+                                                                context:
+                                                                    context,
+                                                                builder:
+                                                                    (context) {
+                                                                  return WebViewAware(
+                                                                    child:
+                                                                        Padding(
+                                                                      padding: MediaQuery
+                                                                          .viewInsetsOf(
+                                                                              context),
+                                                                      child:
+                                                                          ListareunioninterinstitucionalWidget(
+                                                                        idingreso:
+                                                                            widget.idingreso,
+                                                                        idingres:
+                                                                            widget.ingresorow!,
+                                                                        idexprow:
+                                                                            widget.exorow!,
+                                                                        formulario:
+                                                                            widget.etapa!,
+                                                                      ),
+                                                                    ),
+                                                                  );
+                                                                },
+                                                              ).then((value) =>
+                                                                  safeSetState(
+                                                                      () {}));
+                                                            },
                                                   text:
                                                       'Reunion insterinstitucional',
                                                   options: FFButtonOptions(
-                                                    width: 200.0,
                                                     height: 40.0,
                                                     padding:
                                                         const EdgeInsetsDirectional
@@ -594,8 +655,13 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             8.0),
+                                                    disabledColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .alternate,
                                                   ),
                                                 ),
+                                              ),
                                               Material(
                                                 color: Colors.transparent,
                                                 elevation: 2.0,
@@ -652,13 +718,19 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                     alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: FutureBuilder<
                                         List<AnexoinstitucionesaludRow>>(
-                                      future: AnexoinstitucionesaludTable()
-                                          .querySingleRow(
-                                        queryFn: (q) => q.eqOrNull(
-                                          'idingreso',
-                                          widget.idingreso,
-                                        ),
-                                      ),
+                                      future: (_model.requestCompleter1 ??=
+                                              Completer<
+                                                  List<
+                                                      AnexoinstitucionesaludRow>>()
+                                                ..complete(
+                                                    AnexoinstitucionesaludTable()
+                                                        .querySingleRow(
+                                                  queryFn: (q) => q.eqOrNull(
+                                                    'idingreso',
+                                                    widget.idingreso,
+                                                  ),
+                                                )))
+                                          .future,
                                       builder: (context, snapshot) {
                                         // Customize what your widget looks like when it's loading.
                                         if (!snapshot.hasData) {
@@ -678,13 +750,13 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                           );
                                         }
                                         List<AnexoinstitucionesaludRow>
-                                            containerAnexoinstitucionesaludRowList =
+                                            containersaludAnexoinstitucionesaludRowList =
                                             snapshot.data!;
 
-                                        final containerAnexoinstitucionesaludRow =
-                                            containerAnexoinstitucionesaludRowList
+                                        final containersaludAnexoinstitucionesaludRow =
+                                            containersaludAnexoinstitucionesaludRowList
                                                     .isNotEmpty
-                                                ? containerAnexoinstitucionesaludRowList
+                                                ? containersaludAnexoinstitucionesaludRowList
                                                     .first
                                                 : null;
 
@@ -695,35 +767,60 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
                                             children: [
-                                              if (widget.anexosalud ?? true)
-                                                FFButtonWidget(
-                                                  onPressed: () async {
-                                                    await showModalBottomSheet(
-                                                      isScrollControlled: true,
-                                                      backgroundColor:
-                                                          Colors.transparent,
-                                                      enableDrag: false,
-                                                      context: context,
-                                                      builder: (context) {
-                                                        return Padding(
-                                                          padding: MediaQuery
-                                                              .viewInsetsOf(
-                                                                  context),
-                                                          child:
-                                                              AnexoinstitucionsaludWidget(
-                                                            rowingreso: widget
-                                                                .ingresorow!,
-                                                            rowexp:
-                                                                widget.exorow!,
-                                                          ),
-                                                        );
-                                                      },
-                                                    ).then((value) =>
-                                                        safeSetState(() {}));
-                                                  },
-                                                  text: 'Anexo Salud',
+                                              Flexible(
+                                                child: FFButtonWidget(
+                                                  onPressed: !widget
+                                                          .anexosalud!
+                                                      ? null
+                                                      : () async {
+                                                          await showModalBottomSheet(
+                                                            isScrollControlled:
+                                                                true,
+                                                            backgroundColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            enableDrag: false,
+                                                            context: context,
+                                                            builder: (context) {
+                                                              return WebViewAware(
+                                                                child: Padding(
+                                                                  padding: MediaQuery
+                                                                      .viewInsetsOf(
+                                                                          context),
+                                                                  child:
+                                                                      AnexoinstitucionsaludWidget(
+                                                                    rowingreso:
+                                                                        widget
+                                                                            .ingresorow!,
+                                                                    rowexp: widget
+                                                                        .exorow!,
+                                                                  ),
+                                                                ),
+                                                              );
+                                                            },
+                                                          ).then((value) =>
+                                                              safeSetState(() =>
+                                                                  _model.creosolicitudsalud =
+                                                                      value));
+
+                                                          await Future.delayed(
+                                                              const Duration(
+                                                                  milliseconds:
+                                                                      2000));
+                                                          if (_model
+                                                              .creosolicitudsalud!) {
+                                                            safeSetState(() =>
+                                                                _model.requestCompleter1 =
+                                                                    null);
+                                                            await _model
+                                                                .waitForRequestCompleted1();
+                                                          }
+
+                                                          safeSetState(() {});
+                                                        },
+                                                  text:
+                                                      'Solicitud de informacion a Salud',
                                                   options: FFButtonOptions(
-                                                    width: 200.0,
                                                     height: 40.0,
                                                     padding:
                                                         const EdgeInsetsDirectional
@@ -749,12 +846,17 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             8.0),
+                                                    disabledColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .alternate,
                                                   ),
                                                 ),
-                                              if (containerAnexoinstitucionesaludRow
+                                              ),
+                                              if (containersaludAnexoinstitucionesaludRow
                                                           ?.linkdoc !=
                                                       null &&
-                                                  containerAnexoinstitucionesaludRow
+                                                  containersaludAnexoinstitucionesaludRow
                                                           ?.linkdoc !=
                                                       '')
                                                 FlutterFlowIconButton(
@@ -776,7 +878,7 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                   ),
                                                   onPressed: () async {
                                                     await launchURL(
-                                                        containerAnexoinstitucionesaludRow!
+                                                        containersaludAnexoinstitucionesaludRow!
                                                             .linkdoc!);
                                                   },
                                                 ),
@@ -795,39 +897,47 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          if (widget.entrevistannya ?? true)
-                                            FFButtonWidget(
-                                              onPressed: () async {
-                                                await showModalBottomSheet(
-                                                  isScrollControlled: true,
-                                                  backgroundColor:
-                                                      Colors.transparent,
-                                                  enableDrag: false,
-                                                  context: context,
-                                                  builder: (context) {
-                                                    return Padding(
-                                                      padding: MediaQuery
-                                                          .viewInsetsOf(
-                                                              context),
-                                                      child: Formulario3Widget(
-                                                        usuariosrow: widget
-                                                            .usuariosrow!,
-                                                        idingreso:
-                                                            widget.ingresorow,
-                                                        rowexp: widget.exorow,
-                                                        editar: false,
-                                                        identrevista: 0,
-                                                        formulario:
-                                                            widget.etapa,
-                                                      ),
-                                                    );
-                                                  },
-                                                ).then((value) =>
-                                                    safeSetState(() {}));
-                                              },
+                                          Flexible(
+                                            child: FFButtonWidget(
+                                              onPressed: !widget
+                                                      .entrevistannya!
+                                                  ? null
+                                                  : () async {
+                                                      await showModalBottomSheet(
+                                                        isScrollControlled:
+                                                            true,
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        enableDrag: false,
+                                                        context: context,
+                                                        builder: (context) {
+                                                          return WebViewAware(
+                                                            child: Padding(
+                                                              padding: MediaQuery
+                                                                  .viewInsetsOf(
+                                                                      context),
+                                                              child:
+                                                                  Formulario3Widget(
+                                                                usuariosrow: widget
+                                                                    .usuariosrow!,
+                                                                idingreso: widget
+                                                                    .ingresorow,
+                                                                rowexp: widget
+                                                                    .exorow,
+                                                                editar: false,
+                                                                identrevista: 0,
+                                                                formulario:
+                                                                    widget
+                                                                        .etapa,
+                                                              ),
+                                                            ),
+                                                          );
+                                                        },
+                                                      ).then((value) =>
+                                                          safeSetState(() {}));
+                                                    },
                                               text: 'Entrevista al NNyA',
                                               options: FFButtonOptions(
-                                                width: 200.0,
                                                 height: 40.0,
                                                 padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
@@ -851,8 +961,12 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                 elevation: 0.0,
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
+                                                disabledColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .alternate,
                                               ),
                                             ),
+                                          ),
                                           Material(
                                             color: Colors.transparent,
                                             elevation: 2.0,
@@ -911,39 +1025,46 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          if (widget.entrevistaflia ?? true)
-                                            FFButtonWidget(
-                                              onPressed: () async {
-                                                await showModalBottomSheet(
-                                                  isScrollControlled: true,
-                                                  backgroundColor:
-                                                      Colors.transparent,
-                                                  enableDrag: false,
-                                                  context: context,
-                                                  builder: (context) {
-                                                    return Padding(
-                                                      padding: MediaQuery
-                                                          .viewInsetsOf(
-                                                              context),
-                                                      child: Formulario2Widget(
-                                                        idingreso:
-                                                            widget.ingresorow!,
-                                                        rowexp: widget.exorow!,
-                                                        usuariorow: widget
-                                                            .usuariosrow!,
-                                                        formulario:
-                                                            widget.etapa,
-                                                        identrevista: 0,
-                                                        editar: false,
-                                                      ),
-                                                    );
-                                                  },
-                                                ).then((value) =>
-                                                    safeSetState(() {}));
-                                              },
+                                          Flexible(
+                                            child: FFButtonWidget(
+                                              onPressed: !_model.entrevistaflia
+                                                  ? null
+                                                  : () async {
+                                                      await showModalBottomSheet(
+                                                        isScrollControlled:
+                                                            true,
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        enableDrag: false,
+                                                        context: context,
+                                                        builder: (context) {
+                                                          return WebViewAware(
+                                                            child: Padding(
+                                                              padding: MediaQuery
+                                                                  .viewInsetsOf(
+                                                                      context),
+                                                              child:
+                                                                  Formulario2Widget(
+                                                                idingreso: widget
+                                                                    .ingresorow!,
+                                                                rowexp: widget
+                                                                    .exorow!,
+                                                                usuariorow: widget
+                                                                    .usuariosrow!,
+                                                                formulario:
+                                                                    widget
+                                                                        .etapa,
+                                                                identrevista: 0,
+                                                                editar: false,
+                                                              ),
+                                                            ),
+                                                          );
+                                                        },
+                                                      ).then((value) =>
+                                                          safeSetState(() {}));
+                                                    },
                                               text: 'Entrevista a la Flia',
                                               options: FFButtonOptions(
-                                                width: 200.0,
                                                 height: 40.0,
                                                 padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
@@ -967,8 +1088,12 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                 elevation: 0.0,
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
+                                                disabledColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .alternate,
                                               ),
                                             ),
+                                          ),
                                           Material(
                                             color: Colors.transparent,
                                             elevation: 2.0,
@@ -1027,39 +1152,48 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          if (widget.ampliacion ?? true)
-                                            FFButtonWidget(
-                                              onPressed: () async {
-                                                await showModalBottomSheet(
-                                                  isScrollControlled: true,
-                                                  backgroundColor:
-                                                      Colors.transparent,
-                                                  enableDrag: false,
-                                                  context: context,
-                                                  builder: (context) {
-                                                    return Padding(
-                                                      padding: MediaQuery
-                                                          .viewInsetsOf(
-                                                              context),
-                                                      child: Formulario4Widget(
-                                                        idingreso:
-                                                            widget.ingresorow,
-                                                        rowexp: widget.exorow,
-                                                        editar: false,
-                                                        identrevista: 0,
-                                                        identrevistaFamilia: 0,
-                                                        identrevistannya: 0,
-                                                        formulario:
-                                                            widget.etapa!,
-                                                      ),
-                                                    );
-                                                  },
-                                                ).then((value) =>
-                                                    safeSetState(() {}));
-                                              },
+                                          Flexible(
+                                            child: FFButtonWidget(
+                                              onPressed: !widget.ampliacion!
+                                                  ? null
+                                                  : () async {
+                                                      await showModalBottomSheet(
+                                                        isScrollControlled:
+                                                            true,
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        enableDrag: false,
+                                                        context: context,
+                                                        builder: (context) {
+                                                          return WebViewAware(
+                                                            child: Padding(
+                                                              padding: MediaQuery
+                                                                  .viewInsetsOf(
+                                                                      context),
+                                                              child:
+                                                                  Formulario4Widget(
+                                                                idingreso: widget
+                                                                    .ingresorow,
+                                                                rowexp: widget
+                                                                    .exorow,
+                                                                editar: false,
+                                                                identrevista: 0,
+                                                                identrevistaFamilia:
+                                                                    0,
+                                                                identrevistannya:
+                                                                    0,
+                                                                formulario:
+                                                                    widget
+                                                                        .etapa!,
+                                                              ),
+                                                            ),
+                                                          );
+                                                        },
+                                                      ).then((value) =>
+                                                          safeSetState(() {}));
+                                                    },
                                               text: 'Ampliacion de info',
                                               options: FFButtonOptions(
-                                                width: 200.0,
                                                 height: 40.0,
                                                 padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
@@ -1083,8 +1217,12 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                 elevation: 0.0,
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
+                                                disabledColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .alternate,
                                               ),
                                             ),
+                                          ),
                                           Material(
                                             color: Colors.transparent,
                                             elevation: 2.0,

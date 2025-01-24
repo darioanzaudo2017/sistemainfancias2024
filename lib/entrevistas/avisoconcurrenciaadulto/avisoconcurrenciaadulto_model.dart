@@ -1,5 +1,6 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
+import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'avisoconcurrenciaadulto_widget.dart' show AvisoconcurrenciaadultoWidget;
 import 'dart:async';
@@ -8,6 +9,10 @@ import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class AvisoconcurrenciaadultoModel
     extends FlutterFlowModel<AvisoconcurrenciaadultoWidget> {
+  ///  Local state fields for this component.
+
+  int? indexlist;
+
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();
@@ -68,11 +73,14 @@ class AvisoconcurrenciaadultoModel
       textFieldtelacontactarTextControllerValidator;
   DateTime? datePicked1;
   DateTime? datePicked2;
+  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
+  AvisovisitaadultosRow? crearnuevaconcurrenciaadulto;
   // Stores action output result for [Backend Call - API (Concurrencia visita adulto)] action in Button widget.
   ApiCallResponse? apiResultm56;
   Completer<List<AvisovisitaadultosRow>>? requestCompleter;
-  // Stores action output result for [Backend Call - API (Concurrencia visita adulto)] action in Button widget.
-  ApiCallResponse? apiResultm56edit;
+  // State field(s) for PaginatedDataTable widget.
+  final paginatedDataTableController =
+      FlutterFlowDataTableController<AvisovisitaadultosRow>();
 
   @override
   void initState(BuildContext context) {
@@ -104,6 +112,8 @@ class AvisoconcurrenciaadultoModel
 
     textFieldtelacontactarFocusNode?.dispose();
     textFieldtelacontactarTextController?.dispose();
+
+    paginatedDataTableController.dispose();
   }
 
   /// Additional helper methods.

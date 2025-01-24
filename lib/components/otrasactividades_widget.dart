@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'otrasactividades_model.dart';
 export 'otrasactividades_model.dart';
 
@@ -305,11 +306,31 @@ class _OtrasactividadesWidgetState extends State<OtrasactividadesWidget> {
                               'idexpediente': widget.expe?.id,
                               'idingreso': widget.ingreso?.id,
                             });
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return WebViewAware(
+                                  child: AlertDialog(
+                                    title: const Text('Carga con exito'),
+                                    content: const Text(
+                                        'La informacion de cargo con exito'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () =>
+                                            Navigator.pop(alertDialogContext),
+                                        child: const Text('Ok'),
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              },
+                            );
                           } else {
                             await AccionesAccesoriasTable().update(
                               data: {
                                 'fecha': supaSerialize<DateTime>(
-                                    _model.datePicked ?? _model.datePicked),
+                                    _model.datePicked ?? containerAccionesAccesoriasRow
+                                            ?.fecha),
                                 'Descripcion': _model.textController.text,
                                 'idexpediente': widget.expe?.id,
                                 'idingreso': widget.ingreso?.id,
@@ -318,6 +339,25 @@ class _OtrasactividadesWidgetState extends State<OtrasactividadesWidget> {
                                 'id',
                                 widget.idacciones,
                               ),
+                            );
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return WebViewAware(
+                                  child: AlertDialog(
+                                    title: const Text('Carga con exito'),
+                                    content: const Text(
+                                        'La informacion de edito con exito'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () =>
+                                            Navigator.pop(alertDialogContext),
+                                        child: const Text('Ok'),
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              },
                             );
                           }
                         },

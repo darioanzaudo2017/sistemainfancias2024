@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'listareunioninterinstitucional_model.dart';
 export 'listareunioninterinstitucional_model.dart';
 
@@ -169,14 +170,16 @@ class _ListareunioninterinstitucionalWidgetState
                             enableDrag: false,
                             context: context,
                             builder: (context) {
-                              return Padding(
-                                padding: MediaQuery.viewInsetsOf(context),
-                                child: AnexoreunioninstitucionalWidget(
-                                  rowingreso: widget.idingres!,
-                                  rowexp: widget.idexprow!,
-                                  editar: false,
-                                  idanexoreunion: null,
-                                  formulario: widget.formulario!,
+                              return WebViewAware(
+                                child: Padding(
+                                  padding: MediaQuery.viewInsetsOf(context),
+                                  child: AnexoreunioninstitucionalWidget(
+                                    rowingreso: widget.idingres!,
+                                    rowexp: widget.idexprow!,
+                                    editar: false,
+                                    idanexoreunion: null,
+                                    formulario: widget.formulario!,
+                                  ),
                                 ),
                               );
                             },
@@ -381,20 +384,22 @@ class _ListareunioninterinstitucionalWidgetState
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return Padding(
-                                                  padding:
-                                                      MediaQuery.viewInsetsOf(
-                                                          context),
-                                                  child:
-                                                      AnexoreunioninstitucionalWidget(
-                                                    rowingreso:
-                                                        widget.idingres!,
-                                                    rowexp: widget.idexprow!,
-                                                    editar: true,
-                                                    idanexoreunion:
-                                                        optionsVarItem.id,
-                                                    formulario:
-                                                        widget.formulario!,
+                                                return WebViewAware(
+                                                  child: Padding(
+                                                    padding:
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
+                                                    child:
+                                                        AnexoreunioninstitucionalWidget(
+                                                      rowingreso:
+                                                          widget.idingres!,
+                                                      rowexp: widget.idexprow!,
+                                                      editar: true,
+                                                      idanexoreunion:
+                                                          optionsVarItem.id,
+                                                      formulario:
+                                                          widget.formulario!,
+                                                    ),
                                                   ),
                                                 );
                                               },

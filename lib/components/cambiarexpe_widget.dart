@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'cambiarexpe_model.dart';
 export 'cambiarexpe_model.dart';
 
@@ -156,23 +157,25 @@ class _CambiarexpeWidgetState extends State<CambiarexpeWidget> {
                   var confirmDialogResponse = await showDialog<bool>(
                         context: context,
                         builder: (alertDialogContext) {
-                          return AlertDialog(
-                            title: const Text(
-                                'Estas a punto de cambiar de SPD el expediente'),
-                            content: const Text(
-                                'Estas a punto de cambiar de SPD el expediente. Deseas continuar?'),
-                            actions: [
-                              TextButton(
-                                onPressed: () =>
-                                    Navigator.pop(alertDialogContext, false),
-                                child: const Text('Cancelar'),
-                              ),
-                              TextButton(
-                                onPressed: () =>
-                                    Navigator.pop(alertDialogContext, true),
-                                child: const Text('Confirmar'),
-                              ),
-                            ],
+                          return WebViewAware(
+                            child: AlertDialog(
+                              title: const Text(
+                                  'Estas a punto de cambiar de SPD el expediente'),
+                              content: const Text(
+                                  'Estas a punto de cambiar de SPD el expediente. Deseas continuar?'),
+                              actions: [
+                                TextButton(
+                                  onPressed: () =>
+                                      Navigator.pop(alertDialogContext, false),
+                                  child: const Text('Cancelar'),
+                                ),
+                                TextButton(
+                                  onPressed: () =>
+                                      Navigator.pop(alertDialogContext, true),
+                                  child: const Text('Confirmar'),
+                                ),
+                              ],
+                            ),
                           );
                         },
                       ) ??
@@ -196,17 +199,19 @@ class _CambiarexpeWidgetState extends State<CambiarexpeWidget> {
                     await showDialog(
                       context: context,
                       builder: (alertDialogContext) {
-                        return AlertDialog(
-                          title: const Text('Se cambio el expediente'),
-                          content:
-                              const Text('El expediente se cambio correctamente!'),
-                          actions: [
-                            TextButton(
-                              onPressed: () =>
-                                  Navigator.pop(alertDialogContext),
-                              child: const Text('Ok'),
-                            ),
-                          ],
+                        return WebViewAware(
+                          child: AlertDialog(
+                            title: const Text('Se cambio el expediente'),
+                            content:
+                                const Text('El expediente se cambio correctamente!'),
+                            actions: [
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(alertDialogContext),
+                                child: const Text('Ok'),
+                              ),
+                            ],
+                          ),
                         );
                       },
                     );

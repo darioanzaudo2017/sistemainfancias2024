@@ -22,6 +22,12 @@ class FFAppState extends ChangeNotifier {
       _asesorameinto =
           prefs.getStringList('ff_asesorameinto') ?? _asesorameinto;
     });
+    _safeInit(() {
+      _autorizacion = prefs.getString('ff_autorizacion') ?? _autorizacion;
+    });
+    _safeInit(() {
+      _content = prefs.getString('ff_content') ?? _content;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -181,6 +187,20 @@ class FFAppState extends ChangeNotifier {
   String get user => _user;
   set user(String value) {
     _user = value;
+  }
+
+  String _autorizacion = 'Bearer re_dWNcVrxw_HqSnrzCW7FWfZqsPrGKYYzW2';
+  String get autorizacion => _autorizacion;
+  set autorizacion(String value) {
+    _autorizacion = value;
+    prefs.setString('ff_autorizacion', value);
+  }
+
+  String _content = 'application/json';
+  String get content => _content;
+  set content(String value) {
+    _content = value;
+    prefs.setString('ff_content', value);
   }
 }
 

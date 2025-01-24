@@ -10,6 +10,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'seccion7_model.dart';
 export 'seccion7_model.dart';
 
@@ -238,12 +239,16 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                   enableDrag: false,
                                   context: context,
                                   builder: (context) {
-                                    return Padding(
-                                      padding: MediaQuery.viewInsetsOf(context),
-                                      child: DesplegablederechosprincipalWidget(
-                                        idexp: widget.rowexp?.id,
-                                        idingreso: widget.rowingreso?.id,
-                                        form: 'Recepcion de la demanda',
+                                    return WebViewAware(
+                                      child: Padding(
+                                        padding:
+                                            MediaQuery.viewInsetsOf(context),
+                                        child:
+                                            DesplegablederechosprincipalWidget(
+                                          idexp: widget.rowexp?.id,
+                                          idingreso: widget.rowingreso?.id,
+                                          form: 'Recepcion de la demanda',
+                                        ),
                                       ),
                                     );
                                   },
@@ -767,18 +772,21 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                         await showDialog(
                                           context: context,
                                           builder: (alertDialogContext) {
-                                            return AlertDialog(
-                                              title: const Text('Campo obligatorio'),
-                                              content: const Text(
-                                                  'Si no tiene criterio de priorizacion seleccionar que no tiene!!'),
-                                              actions: [
-                                                TextButton(
-                                                  onPressed: () =>
-                                                      Navigator.pop(
-                                                          alertDialogContext),
-                                                  child: const Text('Ok'),
-                                                ),
-                                              ],
+                                            return WebViewAware(
+                                              child: AlertDialog(
+                                                title:
+                                                    const Text('Campo obligatorio'),
+                                                content: const Text(
+                                                    'Si no tiene criterio de priorizacion seleccionar que no tiene!!'),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext),
+                                                    child: const Text('Ok'),
+                                                  ),
+                                                ],
+                                              ),
                                             );
                                           },
                                         );
@@ -816,18 +824,20 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                         await showDialog(
                                           context: context,
                                           builder: (alertDialogContext) {
-                                            return AlertDialog(
-                                              title: const Text('Carga correcta'),
-                                              content: const Text(
-                                                  'La informacion se guardo correctamente!!'),
-                                              actions: [
-                                                TextButton(
-                                                  onPressed: () =>
-                                                      Navigator.pop(
-                                                          alertDialogContext),
-                                                  child: const Text('Ok'),
-                                                ),
-                                              ],
+                                            return WebViewAware(
+                                              child: AlertDialog(
+                                                title: const Text('Carga correcta'),
+                                                content: const Text(
+                                                    'La informacion se guardo correctamente!!'),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext),
+                                                    child: const Text('Ok'),
+                                                  ),
+                                                ],
+                                              ),
                                             );
                                           },
                                         );
@@ -859,18 +869,20 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                         await showDialog(
                                           context: context,
                                           builder: (alertDialogContext) {
-                                            return AlertDialog(
-                                              title: const Text('Carga correcta'),
-                                              content: const Text(
-                                                  'La informacion se guardo correctamente!!'),
-                                              actions: [
-                                                TextButton(
-                                                  onPressed: () =>
-                                                      Navigator.pop(
-                                                          alertDialogContext),
-                                                  child: const Text('Ok'),
-                                                ),
-                                              ],
+                                            return WebViewAware(
+                                              child: AlertDialog(
+                                                title: const Text('Carga correcta'),
+                                                content: const Text(
+                                                    'La informacion se guardo correctamente!!'),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext),
+                                                    child: const Text('Ok'),
+                                                  ),
+                                                ],
+                                              ),
                                             );
                                           },
                                         );

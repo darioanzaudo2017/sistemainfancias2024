@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'anexoreunioninstitucional_model.dart';
 export 'anexoreunioninstitucional_model.dart';
 
@@ -725,18 +726,20 @@ class _AnexoreunioninstitucionalWidgetState
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {
-                                      return AlertDialog(
-                                        title: const Text(
-                                            'Se cargo correctamente la informacion'),
-                                        content: const Text(
-                                            'Se guardo la informacion y se creo un documento en google docs!'),
-                                        actions: [
-                                          TextButton(
-                                            onPressed: () => Navigator.pop(
-                                                alertDialogContext),
-                                            child: const Text('Ok'),
-                                          ),
-                                        ],
+                                      return WebViewAware(
+                                        child: AlertDialog(
+                                          title: const Text(
+                                              'Se cargo correctamente la informacion'),
+                                          content: const Text(
+                                              'Se guardo la informacion y se creo un documento en google docs!'),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: const Text('Ok'),
+                                            ),
+                                          ],
+                                        ),
                                       );
                                     },
                                   );

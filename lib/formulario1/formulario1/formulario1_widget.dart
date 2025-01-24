@@ -17,6 +17,7 @@ import '/formulario1/secciones_formulario1/seccion8/seccion8_widget.dart';
 import '/formulario1/secciones_formulario1/seccion9/seccion9_widget.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'formulario1_model.dart';
 export 'formulario1_model.dart';
 
@@ -223,17 +224,19 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return Padding(
-                                                  padding:
-                                                      MediaQuery.viewInsetsOf(
-                                                          context),
-                                                  child: Seccion1Widget(
-                                                    idingreso:
-                                                        widget.idingreso,
-                                                    rowexp: widget.rowexp,
-                                                    editar: false,
-                                                    usuariorow:
-                                                        widget.usuariorow!,
+                                                return WebViewAware(
+                                                  child: Padding(
+                                                    padding:
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
+                                                    child: Seccion1Widget(
+                                                      idingreso:
+                                                          widget.idingreso,
+                                                      rowexp: widget.rowexp,
+                                                      editar: false,
+                                                      usuariorow:
+                                                          widget.usuariorow!,
+                                                    ),
                                                   ),
                                                 );
                                               },
@@ -298,17 +301,19 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return Padding(
-                                                  padding:
-                                                      MediaQuery.viewInsetsOf(
-                                                          context),
-                                                  child: Seccion1Widget(
-                                                    idingreso:
-                                                        widget.idingreso,
-                                                    rowexp: widget.rowexp,
-                                                    editar: true,
-                                                    usuariorow:
-                                                        widget.usuariorow!,
+                                                return WebViewAware(
+                                                  child: Padding(
+                                                    padding:
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
+                                                    child: Seccion1Widget(
+                                                      idingreso:
+                                                          widget.idingreso,
+                                                      rowexp: widget.rowexp,
+                                                      editar: true,
+                                                      usuariorow:
+                                                          widget.usuariorow!,
+                                                    ),
                                                   ),
                                                 );
                                               },
@@ -398,15 +403,17 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return Padding(
-                                                  padding:
-                                                      MediaQuery.viewInsetsOf(
-                                                          context),
-                                                  child: Seccion2Widget(
-                                                    rowingreso:
-                                                        widget.idingreso!,
-                                                    rowexp: widget.rowexp!,
-                                                    editar: false,
+                                                return WebViewAware(
+                                                  child: Padding(
+                                                    padding:
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
+                                                    child: Seccion2Widget(
+                                                      rowingreso:
+                                                          widget.idingreso!,
+                                                      rowexp: widget.rowexp!,
+                                                      editar: false,
+                                                    ),
                                                   ),
                                                 );
                                               },
@@ -471,15 +478,17 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return Padding(
-                                                  padding:
-                                                      MediaQuery.viewInsetsOf(
-                                                          context),
-                                                  child: Seccion2Widget(
-                                                    rowingreso:
-                                                        widget.idingreso!,
-                                                    rowexp: widget.rowexp!,
-                                                    editar: true,
+                                                return WebViewAware(
+                                                  child: Padding(
+                                                    padding:
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
+                                                    child: Seccion2Widget(
+                                                      rowingreso:
+                                                          widget.idingreso!,
+                                                      rowexp: widget.rowexp!,
+                                                      editar: true,
+                                                    ),
                                                   ),
                                                 );
                                               },
@@ -570,15 +579,17 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return Padding(
-                                                  padding:
-                                                      MediaQuery.viewInsetsOf(
-                                                          context),
-                                                  child: Seccion5Widget(
-                                                    rowingreso:
-                                                        widget.idingreso!,
-                                                    rowexp: widget.rowexp!,
-                                                    editar: true,
+                                                return WebViewAware(
+                                                  child: Padding(
+                                                    padding:
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
+                                                    child: Seccion5Widget(
+                                                      rowingreso:
+                                                          widget.idingreso!,
+                                                      rowexp: widget.rowexp!,
+                                                      editar: true,
+                                                    ),
                                                   ),
                                                 );
                                               },
@@ -633,15 +644,17 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return Padding(
-                                                  padding:
-                                                      MediaQuery.viewInsetsOf(
-                                                          context),
-                                                  child: Seccion5Widget(
-                                                    rowingreso:
-                                                        widget.idingreso!,
-                                                    rowexp: widget.rowexp!,
-                                                    editar: false,
+                                                return WebViewAware(
+                                                  child: Padding(
+                                                    padding:
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
+                                                    child: Seccion5Widget(
+                                                      rowingreso:
+                                                          widget.idingreso!,
+                                                      rowexp: widget.rowexp!,
+                                                      editar: false,
+                                                    ),
                                                   ),
                                                 );
                                               },
@@ -741,15 +754,17 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return Padding(
-                                                  padding:
-                                                      MediaQuery.viewInsetsOf(
-                                                          context),
-                                                  child: Seccion4Widget(
-                                                    rowingreso:
-                                                        widget.idingreso!,
-                                                    rowexp: widget.rowexp!,
-                                                    edit: true,
+                                                return WebViewAware(
+                                                  child: Padding(
+                                                    padding:
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
+                                                    child: Seccion4Widget(
+                                                      rowingreso:
+                                                          widget.idingreso!,
+                                                      rowexp: widget.rowexp!,
+                                                      edit: true,
+                                                    ),
                                                   ),
                                                 );
                                               },
@@ -804,15 +819,17 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return Padding(
-                                                  padding:
-                                                      MediaQuery.viewInsetsOf(
-                                                          context),
-                                                  child: Seccion4Widget(
-                                                    rowingreso:
-                                                        widget.idingreso!,
-                                                    rowexp: widget.rowexp!,
-                                                    edit: false,
+                                                return WebViewAware(
+                                                  child: Padding(
+                                                    padding:
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
+                                                    child: Seccion4Widget(
+                                                      rowingreso:
+                                                          widget.idingreso!,
+                                                      rowexp: widget.rowexp!,
+                                                      edit: false,
+                                                    ),
                                                   ),
                                                 );
                                               },
@@ -916,15 +933,17 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return Padding(
-                                                  padding:
-                                                      MediaQuery.viewInsetsOf(
-                                                          context),
-                                                  child: Seccion6Widget(
-                                                    rowingreso:
-                                                        widget.idingreso,
-                                                    rowexp: widget.rowexp,
-                                                    edit: true,
+                                                return WebViewAware(
+                                                  child: Padding(
+                                                    padding:
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
+                                                    child: Seccion6Widget(
+                                                      rowingreso:
+                                                          widget.idingreso,
+                                                      rowexp: widget.rowexp,
+                                                      edit: true,
+                                                    ),
                                                   ),
                                                 );
                                               },
@@ -979,15 +998,17 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return Padding(
-                                                  padding:
-                                                      MediaQuery.viewInsetsOf(
-                                                          context),
-                                                  child: Seccion6Widget(
-                                                    rowingreso:
-                                                        widget.idingreso,
-                                                    rowexp: widget.rowexp,
-                                                    edit: false,
+                                                return WebViewAware(
+                                                  child: Padding(
+                                                    padding:
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
+                                                    child: Seccion6Widget(
+                                                      rowingreso:
+                                                          widget.idingreso,
+                                                      rowexp: widget.rowexp,
+                                                      edit: false,
+                                                    ),
                                                   ),
                                                 );
                                               },
@@ -1086,17 +1107,19 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return Padding(
-                                                  padding:
-                                                      MediaQuery.viewInsetsOf(
-                                                          context),
-                                                  child: Seccion3Widget(
-                                                    idingreso:
-                                                        widget.idingreso!,
-                                                    idexp: widget.rowexp!,
-                                                    editar: false,
-                                                    titulo:
-                                                        'Grupo conviente y No conviviente',
+                                                return WebViewAware(
+                                                  child: Padding(
+                                                    padding:
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
+                                                    child: Seccion3Widget(
+                                                      idingreso:
+                                                          widget.idingreso!,
+                                                      idexp: widget.rowexp!,
+                                                      editar: false,
+                                                      titulo:
+                                                          'Grupo conviente y No conviviente',
+                                                    ),
                                                   ),
                                                 );
                                               },
@@ -1161,17 +1184,19 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return Padding(
-                                                  padding:
-                                                      MediaQuery.viewInsetsOf(
-                                                          context),
-                                                  child: Seccion3Widget(
-                                                    idingreso:
-                                                        widget.idingreso!,
-                                                    idexp: widget.rowexp!,
-                                                    editar: false,
-                                                    titulo:
-                                                        '3. Grupo conviente',
+                                                return WebViewAware(
+                                                  child: Padding(
+                                                    padding:
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
+                                                    child: Seccion3Widget(
+                                                      idingreso:
+                                                          widget.idingreso!,
+                                                      idexp: widget.rowexp!,
+                                                      editar: false,
+                                                      titulo:
+                                                          '3. Grupo conviente',
+                                                    ),
                                                   ),
                                                 );
                                               },
@@ -1262,15 +1287,17 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return Padding(
-                                                  padding:
-                                                      MediaQuery.viewInsetsOf(
-                                                          context),
-                                                  child: Seccion7Widget(
-                                                    rowingreso:
-                                                        widget.idingreso!,
-                                                    rowexp: widget.rowexp!,
-                                                    editar: true,
+                                                return WebViewAware(
+                                                  child: Padding(
+                                                    padding:
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
+                                                    child: Seccion7Widget(
+                                                      rowingreso:
+                                                          widget.idingreso!,
+                                                      rowexp: widget.rowexp!,
+                                                      editar: true,
+                                                    ),
                                                   ),
                                                 );
                                               },
@@ -1325,15 +1352,17 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return Padding(
-                                                  padding:
-                                                      MediaQuery.viewInsetsOf(
-                                                          context),
-                                                  child: Seccion7Widget(
-                                                    rowingreso:
-                                                        widget.idingreso!,
-                                                    rowexp: widget.rowexp!,
-                                                    editar: false,
+                                                return WebViewAware(
+                                                  child: Padding(
+                                                    padding:
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
+                                                    child: Seccion7Widget(
+                                                      rowingreso:
+                                                          widget.idingreso!,
+                                                      rowexp: widget.rowexp!,
+                                                      editar: false,
+                                                    ),
                                                   ),
                                                 );
                                               },
@@ -1427,12 +1456,15 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                         enableDrag: false,
                                         context: context,
                                         builder: (context) {
-                                          return Padding(
-                                            padding: MediaQuery.viewInsetsOf(
-                                                context),
-                                            child: Seccion8Widget(
-                                              idingreso: containerIngresosRow,
-                                              idexp: widget.rowexp!,
+                                          return WebViewAware(
+                                            child: Padding(
+                                              padding: MediaQuery.viewInsetsOf(
+                                                  context),
+                                              child: Seccion8Widget(
+                                                idingreso:
+                                                    containerIngresosRow,
+                                                idexp: widget.rowexp!,
+                                              ),
                                             ),
                                           );
                                         },
@@ -1511,15 +1543,17 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return Padding(
-                                                  padding:
-                                                      MediaQuery.viewInsetsOf(
-                                                          context),
-                                                  child: Seccion9Widget(
-                                                    rowingreso:
-                                                        widget.idingreso!,
-                                                    rowexp: widget.rowexp!,
-                                                    editar: true,
+                                                return WebViewAware(
+                                                  child: Padding(
+                                                    padding:
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
+                                                    child: Seccion9Widget(
+                                                      rowingreso:
+                                                          widget.idingreso!,
+                                                      rowexp: widget.rowexp!,
+                                                      editar: true,
+                                                    ),
                                                   ),
                                                 );
                                               },
@@ -1574,15 +1608,17 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return Padding(
-                                                  padding:
-                                                      MediaQuery.viewInsetsOf(
-                                                          context),
-                                                  child: Seccion9Widget(
-                                                    rowingreso:
-                                                        widget.idingreso!,
-                                                    rowexp: widget.rowexp!,
-                                                    editar: false,
+                                                return WebViewAware(
+                                                  child: Padding(
+                                                    padding:
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
+                                                    child: Seccion9Widget(
+                                                      rowingreso:
+                                                          widget.idingreso!,
+                                                      rowexp: widget.rowexp!,
+                                                      editar: false,
+                                                    ),
                                                   ),
                                                 );
                                               },
@@ -1783,19 +1819,21 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                             await showDialog(
                                               context: context,
                                               builder: (alertDialogContext) {
-                                                return AlertDialog(
-                                                  title:
-                                                      const Text('Ok para avanzar!!'),
-                                                  content: const Text(
-                                                      'Se completaron los requisitos minimos para avanzar!!'),
-                                                  actions: [
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext),
-                                                      child: const Text('Ok'),
-                                                    ),
-                                                  ],
+                                                return WebViewAware(
+                                                  child: AlertDialog(
+                                                    title: const Text(
+                                                        'Ok para avanzar!!'),
+                                                    content: const Text(
+                                                        'Se completaron los requisitos minimos para avanzar!!'),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext),
+                                                        child: const Text('Ok'),
+                                                      ),
+                                                    ],
+                                                  ),
                                                 );
                                               },
                                             );
@@ -1865,13 +1903,16 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                             enableDrag: false,
                                             context: context,
                                             builder: (context) {
-                                              return Padding(
-                                                padding:
-                                                    MediaQuery.viewInsetsOf(
-                                                        context),
-                                                child: AdjuntardocumentoWidget(
-                                                  exprow: widget.rowexp,
-                                                  ingrow: widget.idingreso,
+                                              return WebViewAware(
+                                                child: Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child:
+                                                      AdjuntardocumentoWidget(
+                                                    exprow: widget.rowexp,
+                                                    ingrow: widget.idingreso,
+                                                  ),
                                                 ),
                                               );
                                             },
