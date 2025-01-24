@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'aviso_visitaadulto_model.dart';
 export 'aviso_visitaadulto_model.dart';
 
@@ -62,8 +63,8 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                 Completer<List<AvisovisitaadultosRow>>()
                   ..complete(AvisovisitaadultosTable().querySingleRow(
                     queryFn: (q) => q.eqOrNull(
-                      'idIngreso',
-                      widget.rowingreso?.id,
+                      'id',
+                      widget.formvisita?.id,
                     ),
                   )))
             .future,
@@ -129,9 +130,9 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                               alignment: const AlignmentDirectional(0.0, -1.0),
                               child: Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    80.0, 0.0, 0.0, 0.0),
+                                    30.0, 0.0, 0.0, 0.0),
                                 child: Text(
-                                  'Aviso de  visita al domicilio',
+                                  'AVISO DE CONCURRENCIA AL DOMICILIO',
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
@@ -243,13 +244,15 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                                         enableDrag: false,
                                         context: context,
                                         builder: (context) {
-                                          return Padding(
-                                            padding: MediaQuery.viewInsetsOf(
-                                                context),
-                                            child: AvisoVisitaadultoWidget(
-                                              rowingreso: widget.rowingreso!,
-                                              rowexp: widget.rowexp!,
-                                              formvisita: widget.formvisita,
+                                          return WebViewAware(
+                                            child: Padding(
+                                              padding: MediaQuery.viewInsetsOf(
+                                                  context),
+                                              child: AvisoVisitaadultoWidget(
+                                                rowingreso: widget.rowingreso!,
+                                                rowexp: widget.rowexp!,
+                                                formvisita: widget.formvisita,
+                                              ),
                                             ),
                                           );
                                         },
@@ -454,16 +457,19 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {
-                                      return AlertDialog(
-                                        title: const Text('Campo obligatorio'),
-                                        content: const Text('La fecha obligatoria!'),
-                                        actions: [
-                                          TextButton(
-                                            onPressed: () => Navigator.pop(
-                                                alertDialogContext),
-                                            child: const Text('Ok'),
-                                          ),
-                                        ],
+                                      return WebViewAware(
+                                        child: AlertDialog(
+                                          title: const Text('Campo obligatorio'),
+                                          content:
+                                              const Text('La fecha obligatoria!'),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: const Text('Ok'),
+                                            ),
+                                          ],
+                                        ),
                                       );
                                     },
                                   );
@@ -486,6 +492,8 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                                       _model.textFieldmotivoTextController.text,
                                   expediente: widget.rowexp?.expediente,
                                   idingreso: widget.rowingreso?.id,
+                                  iddoc: containerAvisovisitaadultosRow?.id
+                                      .toString(),
                                 );
 
                                 if ((_model.apiResultdnx?.succeeded ?? true)) {
@@ -494,17 +502,19 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {
-                                      return AlertDialog(
-                                        title: const Text('Se creo documento!'),
-                                        content: const Text(
-                                            'Se creo el aviso de visita a adulto!'),
-                                        actions: [
-                                          TextButton(
-                                            onPressed: () => Navigator.pop(
-                                                alertDialogContext),
-                                            child: const Text('Ok'),
-                                          ),
-                                        ],
+                                      return WebViewAware(
+                                        child: AlertDialog(
+                                          title: const Text('Se creo documento!'),
+                                          content: const Text(
+                                              'Se creo el aviso de visita a adulto!'),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: const Text('Ok'),
+                                            ),
+                                          ],
+                                        ),
                                       );
                                     },
                                   );

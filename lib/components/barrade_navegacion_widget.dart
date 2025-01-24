@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'barrade_navegacion_model.dart';
 export 'barrade_navegacion_model.dart';
 
@@ -21,16 +22,12 @@ class BarradeNavegacionWidget extends StatefulWidget {
     this.fechaExp,
     this.parameter10,
     this.urlcarpetadrive,
-    bool? adjuntar,
-    bool? imprimir,
-    bool? carpeta,
-    bool? ingreso,
-    bool? perfil,
-  })  : adjuntar = adjuntar ?? true,
-        imprimir = imprimir ?? true,
-        carpeta = carpeta ?? true,
-        ingreso = ingreso ?? true,
-        perfil = perfil ?? true;
+    required this.adjuntar,
+    required this.imprimir,
+    required this.carpeta,
+    required this.ingreso,
+    required this.perfil,
+  });
 
   final VistaExpedientesUltimoEstadoRow? exprow;
   final int? idexp;
@@ -43,11 +40,11 @@ class BarradeNavegacionWidget extends StatefulWidget {
   final DateTime? fechaExp;
   final bool? parameter10;
   final String? urlcarpetadrive;
-  final bool adjuntar;
-  final bool imprimir;
-  final bool carpeta;
-  final bool ingreso;
-  final bool perfil;
+  final bool? adjuntar;
+  final bool? imprimir;
+  final bool? carpeta;
+  final bool? ingreso;
+  final bool? perfil;
 
   @override
   State<BarradeNavegacionWidget> createState() =>
@@ -154,7 +151,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
               ),
             ),
           ),
-          if (widget.ingreso)
+          if (widget.ingreso ?? true)
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
               child: InkWell(
@@ -226,7 +223,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                 ),
               ),
             ),
-          if (widget.perfil)
+          if (widget.perfil ?? true)
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
               child: InkWell(
@@ -298,7 +295,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                 ),
               ),
             ),
-          if (widget.adjuntar)
+          if (widget.adjuntar ?? true)
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
               child: InkWell(
@@ -313,11 +310,13 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                     enableDrag: false,
                     context: context,
                     builder: (context) {
-                      return Padding(
-                        padding: MediaQuery.viewInsetsOf(context),
-                        child: AdjuntardocumentoWidget(
-                          exprow: widget.exprow,
-                          ingrow: widget.ingresorow,
+                      return WebViewAware(
+                        child: Padding(
+                          padding: MediaQuery.viewInsetsOf(context),
+                          child: AdjuntardocumentoWidget(
+                            exprow: widget.exprow,
+                            ingrow: widget.ingresorow,
+                          ),
                         ),
                       );
                     },
@@ -368,7 +367,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                 ),
               ),
             ),
-          if (widget.imprimir)
+          if (widget.imprimir ?? true)
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
               child: InkWell(
@@ -448,60 +447,95 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                 ),
               ),
             ),
-          if (widget.carpeta)
+          if (widget.carpeta ?? true)
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-              child: InkWell(
-                splashColor: Colors.transparent,
-                focusColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                onTap: () async {
-                  await launchURL(widget.urlcarpetadrive!);
-                },
-                child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 200),
-                  curve: Curves.easeInOut,
-                  width: double.infinity,
-                  height: 44.0,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).accent1,
-                    borderRadius: BorderRadius.circular(12.0),
-                    shape: BoxShape.rectangle,
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const FaIcon(
-                          FontAwesomeIcons.googleDrive,
-                          color: Color(0xFF15161E),
-                          size: 24.0,
-                        ),
-                        Expanded(
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                12.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              'Carpeta drive',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Plus Jakarta Sans',
-                                    color: const Color(0xFF15161E),
-                                    fontSize: 14.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+              child: FutureBuilder<List<ImpresionesExpedientesRow>>(
+                future: ImpresionesExpedientesTable().querySingleRow(
+                  queryFn: (q) => q.eqOrNull(
+                    'idexpediente',
+                    widget.exprow?.id,
                   ),
                 ),
+                builder: (context, snapshot) {
+                  // Customize what your widget looks like when it's loading.
+                  if (!snapshot.hasData) {
+                    return Center(
+                      child: SizedBox(
+                        width: 50.0,
+                        height: 50.0,
+                        child: CircularProgressIndicator(
+                          valueColor: AlwaysStoppedAnimation<Color>(
+                            FlutterFlowTheme.of(context).primary,
+                          ),
+                        ),
+                      ),
+                    );
+                  }
+                  List<ImpresionesExpedientesRow>
+                      contentView1ImpresionesExpedientesRowList =
+                      snapshot.data!;
+
+                  final contentView1ImpresionesExpedientesRow =
+                      contentView1ImpresionesExpedientesRowList.isNotEmpty
+                          ? contentView1ImpresionesExpedientesRowList.first
+                          : null;
+
+                  return InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () async {
+                      await launchURL(
+                          contentView1ImpresionesExpedientesRow!.linkcarpeta!);
+                    },
+                    child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 200),
+                      curve: Curves.easeInOut,
+                      width: double.infinity,
+                      height: 44.0,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).accent1,
+                        borderRadius: BorderRadius.circular(12.0),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const FaIcon(
+                              FontAwesomeIcons.googleDrive,
+                              color: Color(0xFF15161E),
+                              size: 24.0,
+                            ),
+                            Expanded(
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    12.0, 0.0, 0.0, 0.0),
+                                child: Text(
+                                  'Carpeta drive',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Plus Jakarta Sans',
+                                        color: const Color(0xFF15161E),
+                                        fontSize: 14.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  );
+                },
               ),
             ),
         ].divide(const SizedBox(height: 10.0)),

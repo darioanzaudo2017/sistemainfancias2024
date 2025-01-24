@@ -3,6 +3,8 @@ import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/anexosbotonera_widget.dart';
 import '/components/barrade_navegacion_widget.dart';
+import '/components/cambiarexpe_widget.dart';
+import '/components/formcaratula_widget.dart';
 import '/components/tarjetaencabezado_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_radio_button.dart';
@@ -23,6 +25,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'perfil_model.dart';
 export 'perfil_model.dart';
 
@@ -160,7 +163,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                             tablet: false,
                           ))
                             Container(
-                              width: 300.0,
+                              width: MediaQuery.sizeOf(context).width * 0.25,
                               height: double.infinity,
                               decoration: BoxDecoration(
                                 color: const Color(0xFFF1F4F8),
@@ -294,28 +297,45 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      wrapWithModel(
-                                                        model: _model
-                                                            .anexosbotoneraModel,
-                                                        updateCallback: () =>
-                                                            safeSetState(() {}),
-                                                        child:
-                                                            AnexosbotoneraWidget(
-                                                          ingresorow:
-                                                              containeringresosIngresosRow,
-                                                          exorow:
-                                                              widget.rowexp!,
-                                                          idingreso: widget
-                                                              .idingreso!,
-                                                          usuariosrow: widget
-                                                              .usuariorow!,
-                                                          reqacciones: true,
-                                                          anexoeducacion: true,
-                                                          reunioninter: true,
-                                                          anexosalud: true,
-                                                          entrevistannya: true,
-                                                          entrevistaflia: true,
-                                                          ampliacion: true,
+                                                      Align(
+                                                        alignment:
+                                                            const AlignmentDirectional(
+                                                                -1.0, 0.0),
+                                                        child: Padding(
+                                                          padding:
+                                                              const EdgeInsets.all(
+                                                                  5.0),
+                                                          child: wrapWithModel(
+                                                            model: _model
+                                                                .anexosbotoneraModel,
+                                                            updateCallback: () =>
+                                                                safeSetState(
+                                                                    () {}),
+                                                            child:
+                                                                AnexosbotoneraWidget(
+                                                              ingresorow:
+                                                                  containeringresosIngresosRow,
+                                                              exorow: widget
+                                                                  .rowexp!,
+                                                              idingreso: widget
+                                                                  .idingreso!,
+                                                              usuariosrow: widget
+                                                                  .usuariorow!,
+                                                              etapa:
+                                                                  'Perfil de ingreso',
+                                                              reqacciones: true,
+                                                              anexoeducacion:
+                                                                  true,
+                                                              reunioninter:
+                                                                  true,
+                                                              anexosalud: true,
+                                                              entrevistannya:
+                                                                  true,
+                                                              entrevistaflia:
+                                                                  true,
+                                                              ampliacion: true,
+                                                            ),
+                                                          ),
                                                         ),
                                                       ),
                                                       Align(
@@ -386,281 +406,276 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                             );
                                                           }
                                                           List<GrupoConvivienteRow>
-                                                              listViewGrupoConvivienteRowList =
+                                                              containerGrupoConvivienteRowList =
                                                               snapshot.data!;
 
-                                                          return ListView
-                                                              .builder(
-                                                            padding:
-                                                                EdgeInsets.zero,
-                                                            shrinkWrap: true,
-                                                            scrollDirection:
-                                                                Axis.vertical,
-                                                            itemCount:
-                                                                listViewGrupoConvivienteRowList
-                                                                    .length,
-                                                            itemBuilder: (context,
-                                                                listViewIndex) {
-                                                              final listViewGrupoConvivienteRow =
-                                                                  listViewGrupoConvivienteRowList[
-                                                                      listViewIndex];
-                                                              return Padding(
-                                                                padding: const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        16.0,
-                                                                        0.0,
-                                                                        16.0,
-                                                                        16.0),
-                                                                child:
-                                                                    Container(
-                                                                  width: double
-                                                                      .infinity,
-                                                                  height: 65.0,
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    color: Colors
-                                                                        .white,
-                                                                    boxShadow: const [
-                                                                      BoxShadow(
-                                                                        blurRadius:
-                                                                            7.0,
-                                                                        color: Color(
-                                                                            0x2F1D2429),
-                                                                        offset:
-                                                                            Offset(
-                                                                          0.0,
-                                                                          3.0,
-                                                                        ),
-                                                                      )
-                                                                    ],
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            8.0),
-                                                                  ),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            12.0,
-                                                                            8.0,
-                                                                            12.0,
-                                                                            8.0),
-                                                                    child: Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      children: [
-                                                                        Expanded(
-                                                                          child:
-                                                                              Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                12.0,
-                                                                                0.0,
-                                                                                8.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Column(
-                                                                              mainAxisSize: MainAxisSize.max,
-                                                                              mainAxisAlignment: MainAxisAlignment.center,
-                                                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                                                              children: [
-                                                                                Flexible(
-                                                                                  child: Text(
-                                                                                    valueOrDefault<String>(
-                                                                                      listViewGrupoConvivienteRow.nombre,
-                                                                                      '0',
-                                                                                    ),
-                                                                                    style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
-                                                                                          color: const Color(0xFF14181B),
-                                                                                          fontSize: 16.0,
-                                                                                          letterSpacing: 0.0,
-                                                                                          fontWeight: FontWeight.w500,
-                                                                                        ),
-                                                                                  ),
-                                                                                ),
-                                                                                Flexible(
-                                                                                  child: Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
-                                                                                    child: Text(
-                                                                                      valueOrDefault<String>(
-                                                                                        listViewGrupoConvivienteRow.edad?.toString(),
-                                                                                        '0',
-                                                                                      ),
-                                                                                      style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                            fontFamily: 'Plus Jakarta Sans',
-                                                                                            color: const Color(0xFF57636C),
-                                                                                            fontSize: 12.0,
-                                                                                            letterSpacing: 0.0,
-                                                                                            fontWeight: FontWeight.w500,
-                                                                                          ),
-                                                                                    ),
-                                                                                  ),
-                                                                                ),
-                                                                              ],
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                        if (listViewGrupoConvivienteRow.idexppropio ==
-                                                                            null)
-                                                                          FFButtonWidget(
-                                                                            onPressed:
-                                                                                () async {
-                                                                              _model.creaexpgrupoCopy = await ExpedienteTable().insert({
-                                                                                'expediente': '',
-                                                                                'fecha': supaSerialize<DateTime>(getCurrentTimestamp),
-                                                                                'nombres': listViewGrupoConvivienteRow.nombre,
-                                                                                'apellidos': listViewGrupoConvivienteRow.apellido,
-                                                                                'dni': listViewGrupoConvivienteRow.dni,
-                                                                                'spd': widget.rowexp?.spd,
-                                                                                'derivacion': widget.rowexp?.derivacion,
-                                                                                'canalIngr': widget.rowexp?.canalIngr,
-                                                                                'epecificar': widget.rowexp?.epecificar,
-                                                                                'actuacion': widget.rowexp?.actuacion,
-                                                                                'profesional': widget.rowexp?.profesional,
-                                                                                'fechaNac': supaSerialize<DateTime>(listViewGrupoConvivienteRow.fechaNacimiento),
-                                                                                'edad': listViewGrupoConvivienteRow.edad,
-                                                                                'estado': false,
-                                                                                'updated_at': supaSerialize<DateTime>(getCurrentTimestamp),
-                                                                                'iduser': currentUserUid,
-                                                                              });
-                                                                              await ExpedienteTable().update(
-                                                                                data: {
-                                                                                  'expediente': '${widget.usuariorow?.spd}/${_model.creaexpgrupoCopy?.id.toString()}/${dateTimeFormat(
-                                                                                    "y",
-                                                                                    getCurrentTimestamp,
-                                                                                    locale: FFLocalizations.of(context).languageCode,
-                                                                                  )}',
-                                                                                },
-                                                                                matchingRows: (rows) => rows.eqOrNull(
-                                                                                  'id',
-                                                                                  _model.creaexpgrupoCopy?.id,
-                                                                                ),
-                                                                              );
-                                                                              await GrupofamiliarexpedientesTable().insert({
-                                                                                'idgrupofamliar': widget.rowexp?.idgrupofamiliarvista,
-                                                                                'idexpediente': _model.creaexpgrupoCopy?.id,
-                                                                                'expedienteprincipal': widget.rowexp?.id,
-                                                                              });
-                                                                              await GrupoConvivienteTable().update(
-                                                                                data: {
-                                                                                  'idexppropio': _model.creaexpgrupoCopy?.id,
-                                                                                },
-                                                                                matchingRows: (rows) => rows.eqOrNull(
-                                                                                  'id',
-                                                                                  listViewGrupoConvivienteRow.id,
-                                                                                ),
-                                                                              );
-                                                                              await NNyATable().update(
-                                                                                data: {
-                                                                                  'idexppropio': _model.creaexpgrupoCopy?.id,
-                                                                                },
-                                                                                matchingRows: (rows) => rows.eqOrNull(
-                                                                                  'id',
-                                                                                  listViewGrupoConvivienteRow.idnnya,
-                                                                                ),
-                                                                              );
-                                                                              _model.apiResult42yCopy = await CarpetaDelExpedienteCall.call(
-                                                                                expediente: _model.expedienteCopy?.firstOrNull?.expediente,
-                                                                                id: _model.creaexpgrupoCopy?.id,
-                                                                                fecha: dateTimeFormat(
-                                                                                  "d/M/y",
-                                                                                  getCurrentTimestamp,
-                                                                                  locale: FFLocalizations.of(context).languageCode,
-                                                                                ),
-                                                                                nombresDNI: '${_model.creaexpgrupoCopy?.nombres}, ${_model.creaexpgrupoCopy?.apellidos}, DNI ${_model.creaexpgrupoCopy?.dni?.toString()}',
-                                                                                idcarpetaspd: widget.spd?.idcarpetaspd,
-                                                                              );
+                                                          return Container(
+                                                            decoration:
+                                                                const BoxDecoration(),
+                                                            child: Builder(
+                                                              builder:
+                                                                  (context) {
+                                                                final containerVar =
+                                                                    containerGrupoConvivienteRowList
+                                                                        .unique((e) =>
+                                                                            e.dni)
+                                                                        .toList();
 
-                                                                              await showDialog(
-                                                                                context: context,
-                                                                                builder: (alertDialogContext) {
-                                                                                  return AlertDialog(
-                                                                                    title: const Text('Se creo un expediente nuevo!'),
-                                                                                    content: Text('Se creo un expediente nuevo relacionado a:${widget.rowexp?.nombres}, ${widget.rowexp?.apellidos}'),
-                                                                                    actions: [
-                                                                                      TextButton(
-                                                                                        onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                        child: const Text('Ok'),
+                                                                return ListView
+                                                                    .builder(
+                                                                  padding:
+                                                                      EdgeInsets
+                                                                          .zero,
+                                                                  shrinkWrap:
+                                                                      true,
+                                                                  scrollDirection:
+                                                                      Axis.vertical,
+                                                                  itemCount:
+                                                                      containerVar
+                                                                          .length,
+                                                                  itemBuilder:
+                                                                      (context,
+                                                                          containerVarIndex) {
+                                                                    final containerVarItem =
+                                                                        containerVar[
+                                                                            containerVarIndex];
+                                                                    return Padding(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          16.0,
+                                                                          0.0,
+                                                                          16.0,
+                                                                          16.0),
+                                                                      child:
+                                                                          Container(
+                                                                        width: double
+                                                                            .infinity,
+                                                                        height:
+                                                                            65.0,
+                                                                        decoration:
+                                                                            BoxDecoration(
+                                                                          color:
+                                                                              Colors.white,
+                                                                          boxShadow: const [
+                                                                            BoxShadow(
+                                                                              blurRadius: 7.0,
+                                                                              color: Color(0x2F1D2429),
+                                                                              offset: Offset(
+                                                                                0.0,
+                                                                                3.0,
+                                                                              ),
+                                                                            )
+                                                                          ],
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(8.0),
+                                                                        ),
+                                                                        child:
+                                                                            Padding(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                              12.0,
+                                                                              8.0,
+                                                                              12.0,
+                                                                              8.0),
+                                                                          child:
+                                                                              Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            children: [
+                                                                              Expanded(
+                                                                                child: Padding(
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 8.0, 0.0),
+                                                                                  child: Column(
+                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                    mainAxisAlignment: MainAxisAlignment.center,
+                                                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                    children: [
+                                                                                      Flexible(
+                                                                                        child: Text(
+                                                                                          '${containerVarItem.nombre}, ${containerVarItem.apellido}',
+                                                                                          style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                                color: const Color(0xFF14181B),
+                                                                                                fontSize: 16.0,
+                                                                                                letterSpacing: 0.0,
+                                                                                                fontWeight: FontWeight.w500,
+                                                                                              ),
+                                                                                        ),
+                                                                                      ),
+                                                                                      Flexible(
+                                                                                        child: Padding(
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                                          child: Text(
+                                                                                            valueOrDefault<String>(
+                                                                                              containerVarItem.edad?.toString(),
+                                                                                              '0',
+                                                                                            ),
+                                                                                            style: FlutterFlowTheme.of(context).labelSmall.override(
+                                                                                                  fontFamily: 'Plus Jakarta Sans',
+                                                                                                  color: const Color(0xFF57636C),
+                                                                                                  fontSize: 12.0,
+                                                                                                  letterSpacing: 0.0,
+                                                                                                  fontWeight: FontWeight.w500,
+                                                                                                ),
+                                                                                          ),
+                                                                                        ),
                                                                                       ),
                                                                                     ],
-                                                                                  );
-                                                                                },
-                                                                              );
-
-                                                                              safeSetState(() {});
-                                                                            },
-                                                                            text:
-                                                                                'crear exp',
-                                                                            options:
-                                                                                FFButtonOptions(
-                                                                              height: 20.0,
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                              textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    fontFamily: 'Noto Sans JP',
-                                                                                    color: Colors.white,
-                                                                                    fontSize: 12.0,
-                                                                                    letterSpacing: 0.0,
                                                                                   ),
-                                                                              elevation: 0.0,
-                                                                              borderRadius: BorderRadius.circular(8.0),
-                                                                            ),
-                                                                          ),
-                                                                        if (listViewGrupoConvivienteRow.idexppropio !=
-                                                                            null)
-                                                                          FlutterFlowIconButton(
-                                                                            borderColor:
-                                                                                const Color(0xFFE0E3E7),
-                                                                            borderRadius:
-                                                                                8.0,
-                                                                            borderWidth:
-                                                                                2.0,
-                                                                            buttonSize:
-                                                                                40.0,
-                                                                            icon:
-                                                                                const Icon(
-                                                                              Icons.remove_red_eye_outlined,
-                                                                              color: Color(0xFF57636C),
-                                                                              size: 20.0,
-                                                                            ),
-                                                                            onPressed:
-                                                                                () async {
-                                                                              _model.exp = await VistaExpedientesUltimoEstadoTable().queryRows(
-                                                                                queryFn: (q) => q.eqOrNull(
-                                                                                  'id',
-                                                                                  listViewGrupoConvivienteRow.idexppropio,
                                                                                 ),
-                                                                              );
+                                                                              ),
+                                                                              if (containerVarItem.idexppropio == null)
+                                                                                FFButtonWidget(
+                                                                                  onPressed: () async {
+                                                                                    _model.creaexpgrupoCopy = await ExpedienteTable().insert({
+                                                                                      'expediente': '',
+                                                                                      'fecha': supaSerialize<DateTime>(getCurrentTimestamp),
+                                                                                      'nombres': containerVarItem.nombre,
+                                                                                      'apellidos': containerVarItem.apellido,
+                                                                                      'dni': containerVarItem.dni,
+                                                                                      'spd': widget.rowexp?.spd,
+                                                                                      'derivacion': widget.rowexp?.derivacion,
+                                                                                      'canalIngr': widget.rowexp?.canalIngr,
+                                                                                      'epecificar': widget.rowexp?.epecificar,
+                                                                                      'actuacion': widget.rowexp?.actuacion,
+                                                                                      'profesional': widget.rowexp?.profesional,
+                                                                                      'fechaNac': supaSerialize<DateTime>(containerVarItem.fechaNacimiento),
+                                                                                      'edad': containerVarItem.edad,
+                                                                                      'estado': false,
+                                                                                      'updated_at': supaSerialize<DateTime>(getCurrentTimestamp),
+                                                                                      'iduser': currentUserUid,
+                                                                                    });
+                                                                                    await ExpedienteTable().update(
+                                                                                      data: {
+                                                                                        'expediente': '${widget.usuariorow?.spd}/${_model.creaexpgrupoCopy?.id.toString()}/${dateTimeFormat(
+                                                                                          "y",
+                                                                                          getCurrentTimestamp,
+                                                                                          locale: FFLocalizations.of(context).languageCode,
+                                                                                        )}',
+                                                                                      },
+                                                                                      matchingRows: (rows) => rows.eqOrNull(
+                                                                                        'id',
+                                                                                        _model.creaexpgrupoCopy?.id,
+                                                                                      ),
+                                                                                    );
+                                                                                    await GrupofamiliarexpedientesTable().insert({
+                                                                                      'idgrupofamliar': widget.rowexp?.idgrupofamiliarvista,
+                                                                                      'idexpediente': _model.creaexpgrupoCopy?.id,
+                                                                                      'expedienteprincipal': widget.rowexp?.id,
+                                                                                    });
+                                                                                    await GrupoConvivienteTable().update(
+                                                                                      data: {
+                                                                                        'idexppropio': _model.creaexpgrupoCopy?.id,
+                                                                                      },
+                                                                                      matchingRows: (rows) => rows.eqOrNull(
+                                                                                        'id',
+                                                                                        containerVarItem.id,
+                                                                                      ),
+                                                                                    );
+                                                                                    await NNyATable().update(
+                                                                                      data: {
+                                                                                        'idexppropio': _model.creaexpgrupoCopy?.id,
+                                                                                      },
+                                                                                      matchingRows: (rows) => rows.eqOrNull(
+                                                                                        'id',
+                                                                                        containerVarItem.idnnya,
+                                                                                      ),
+                                                                                    );
+                                                                                    _model.apiResult42yCopy = await CarpetaDelExpedienteCall.call(
+                                                                                      expediente: _model.expedienteCopy?.firstOrNull?.expediente,
+                                                                                      id: _model.creaexpgrupoCopy?.id,
+                                                                                      fecha: dateTimeFormat(
+                                                                                        "d/M/y",
+                                                                                        getCurrentTimestamp,
+                                                                                        locale: FFLocalizations.of(context).languageCode,
+                                                                                      ),
+                                                                                      nombresDNI: '${_model.creaexpgrupoCopy?.nombres}, ${_model.creaexpgrupoCopy?.apellidos}, DNI ${_model.creaexpgrupoCopy?.dni?.toString()}',
+                                                                                      idcarpetaspd: widget.spd?.idcarpetaspd,
+                                                                                    );
 
-                                                                              context.pushNamed(
-                                                                                'Ingresos',
-                                                                                queryParameters: {
-                                                                                  'idexpediente': serializeParam(
-                                                                                    _model.exp?.firstOrNull,
-                                                                                    ParamType.SupabaseRow,
-                                                                                  ),
-                                                                                  'idexp': serializeParam(
-                                                                                    _model.exp?.firstOrNull?.id,
-                                                                                    ParamType.int,
-                                                                                  ),
-                                                                                  'usuariorow': serializeParam(
-                                                                                    widget.usuariorow,
-                                                                                    ParamType.SupabaseRow,
-                                                                                  ),
-                                                                                }.withoutNulls,
-                                                                              );
+                                                                                    await showDialog(
+                                                                                      context: context,
+                                                                                      builder: (alertDialogContext) {
+                                                                                        return WebViewAware(
+                                                                                          child: AlertDialog(
+                                                                                            title: const Text('Se creo un expediente nuevo!'),
+                                                                                            content: Text('Se creo un expediente nuevo relacionado a:${widget.rowexp?.nombres}, ${widget.rowexp?.apellidos}'),
+                                                                                            actions: [
+                                                                                              TextButton(
+                                                                                                onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                child: const Text('Ok'),
+                                                                                              ),
+                                                                                            ],
+                                                                                          ),
+                                                                                        );
+                                                                                      },
+                                                                                    );
 
-                                                                              safeSetState(() {});
-                                                                            },
+                                                                                    safeSetState(() {});
+                                                                                  },
+                                                                                  text: 'crear exp',
+                                                                                  options: FFButtonOptions(
+                                                                                    height: 20.0,
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    color: FlutterFlowTheme.of(context).primary,
+                                                                                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                          fontFamily: 'Noto Sans JP',
+                                                                                          color: Colors.white,
+                                                                                          fontSize: 12.0,
+                                                                                          letterSpacing: 0.0,
+                                                                                        ),
+                                                                                    elevation: 0.0,
+                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                  ),
+                                                                                ),
+                                                                              if (containerVarItem.idexppropio != null)
+                                                                                FlutterFlowIconButton(
+                                                                                  borderColor: const Color(0xFFE0E3E7),
+                                                                                  borderRadius: 8.0,
+                                                                                  borderWidth: 2.0,
+                                                                                  buttonSize: 40.0,
+                                                                                  icon: const Icon(
+                                                                                    Icons.remove_red_eye_outlined,
+                                                                                    color: Color(0xFF57636C),
+                                                                                    size: 20.0,
+                                                                                  ),
+                                                                                  onPressed: () async {
+                                                                                    _model.exp = await VistaExpedientesUltimoEstadoTable().queryRows(
+                                                                                      queryFn: (q) => q.eqOrNull(
+                                                                                        'id',
+                                                                                        containerVarItem.idexppropio,
+                                                                                      ),
+                                                                                    );
+
+                                                                                    context.pushNamed(
+                                                                                      'Ingresos',
+                                                                                      queryParameters: {
+                                                                                        'idexpediente': serializeParam(
+                                                                                          _model.exp?.firstOrNull,
+                                                                                          ParamType.SupabaseRow,
+                                                                                        ),
+                                                                                        'idexp': serializeParam(
+                                                                                          _model.exp?.firstOrNull?.id,
+                                                                                          ParamType.int,
+                                                                                        ),
+                                                                                        'usuariorow': serializeParam(
+                                                                                          widget.usuariorow,
+                                                                                          ParamType.SupabaseRow,
+                                                                                        ),
+                                                                                      }.withoutNulls,
+                                                                                    );
+
+                                                                                    safeSetState(() {});
+                                                                                  },
+                                                                                ),
+                                                                            ],
                                                                           ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              );
-                                                            },
+                                                                        ),
+                                                                      ),
+                                                                    );
+                                                                  },
+                                                                );
+                                                              },
+                                                            ),
                                                           );
                                                         },
                                                       ),
@@ -727,6 +742,201 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                   cambia: true,
                                                 ),
                                               ),
+                                              Flex(
+                                                direction:
+                                                    (MediaQuery.sizeOf(context)
+                                                                .width >
+                                                            800.0)
+                                                        ? Axis.horizontal
+                                                        : Axis.vertical,
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.end,
+                                                children: [
+                                                  FFButtonWidget(
+                                                    onPressed: () async {
+                                                      await showModalBottomSheet(
+                                                        isScrollControlled:
+                                                            true,
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        enableDrag: false,
+                                                        context: context,
+                                                        builder: (context) {
+                                                          return WebViewAware(
+                                                            child:
+                                                                GestureDetector(
+                                                              onTap: () {
+                                                                FocusScope.of(
+                                                                        context)
+                                                                    .unfocus();
+                                                                FocusManager
+                                                                    .instance
+                                                                    .primaryFocus
+                                                                    ?.unfocus();
+                                                              },
+                                                              child: Padding(
+                                                                padding: MediaQuery
+                                                                    .viewInsetsOf(
+                                                                        context),
+                                                                child:
+                                                                    FormcaratulaWidget(
+                                                                  usuariorow:
+                                                                      widget
+                                                                          .usuariorow!,
+                                                                  idexp: widget
+                                                                      .rowexp
+                                                                      ?.id,
+                                                                  editar: true,
+                                                                  dniok: false,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          );
+                                                        },
+                                                      ).then((value) =>
+                                                          safeSetState(() {}));
+                                                    },
+                                                    text: 'Editar caratula',
+                                                    options: FFButtonOptions(
+                                                      height: 35.0,
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  0.0,
+                                                                  16.0,
+                                                                  0.0),
+                                                      iconPadding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
+                                                      textStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Noto Sans JP',
+                                                                color: const Color(
+                                                                    0xFF39A9EF),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                      elevation: 3.0,
+                                                      borderSide: const BorderSide(
+                                                        color:
+                                                            Color(0xFF39A9EF),
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              25.0),
+                                                    ),
+                                                  ),
+                                                  FFButtonWidget(
+                                                    onPressed: () async {
+                                                      await showModalBottomSheet(
+                                                        isScrollControlled:
+                                                            true,
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        enableDrag: false,
+                                                        context: context,
+                                                        builder: (context) {
+                                                          return WebViewAware(
+                                                            child:
+                                                                GestureDetector(
+                                                              onTap: () {
+                                                                FocusScope.of(
+                                                                        context)
+                                                                    .unfocus();
+                                                                FocusManager
+                                                                    .instance
+                                                                    .primaryFocus
+                                                                    ?.unfocus();
+                                                              },
+                                                              child: Padding(
+                                                                padding: MediaQuery
+                                                                    .viewInsetsOf(
+                                                                        context),
+                                                                child:
+                                                                    CambiarexpeWidget(
+                                                                  expe: widget
+                                                                      .rowexp,
+                                                                  ingreso:
+                                                                      containeringresosIngresosRow,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          );
+                                                        },
+                                                      ).then((value) =>
+                                                          safeSetState(() {}));
+                                                    },
+                                                    text: 'Cambiar exp de SPD',
+                                                    options: FFButtonOptions(
+                                                      height: 35.0,
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  0.0,
+                                                                  16.0,
+                                                                  0.0),
+                                                      iconPadding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
+                                                      textStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Noto Sans JP',
+                                                                color: const Color(
+                                                                    0xFF39A9EF),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                      elevation: 3.0,
+                                                      borderSide: const BorderSide(
+                                                        color:
+                                                            Color(0xFF39A9EF),
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              25.0),
+                                                    ),
+                                                  ),
+                                                ]
+                                                    .divide((MediaQuery.sizeOf(
+                                                                    context)
+                                                                .width >
+                                                            800.0)
+                                                        ? const SizedBox(width: 10.0)
+                                                        : const SizedBox(
+                                                            height: 10.0))
+                                                    .around((MediaQuery.sizeOf(
+                                                                    context)
+                                                                .width >
+                                                            800.0)
+                                                        ? const SizedBox(width: 10.0)
+                                                        : const SizedBox(
+                                                            height: 10.0)),
+                                              ),
                                               if (containeringresosIngresosRow
                                                       ?.form9 ??
                                                   true)
@@ -747,7 +957,6 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                 .circular(20.0),
                                                       ),
                                                       child: Container(
-                                                        height: 200.0,
                                                         decoration:
                                                             BoxDecoration(
                                                           color: FlutterFlowTheme
@@ -798,7 +1007,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                             width:
                                                                                 15.0,
                                                                             height:
-                                                                                200.0,
+                                                                                120.0,
                                                                             decoration:
                                                                                 BoxDecoration(
                                                                               color: () {
@@ -879,81 +1088,6 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                     ),
                                                                                   ),
                                                                                 ),
-                                                                                if (widget.rowexp?.spd == widget.usuariorow?.spd)
-                                                                                  FutureBuilder<List<GrupoConvivienteRow>>(
-                                                                                    future: GrupoConvivienteTable().queryRows(
-                                                                                      queryFn: (q) => q,
-                                                                                    ),
-                                                                                    builder: (context, snapshot) {
-                                                                                      // Customize what your widget looks like when it's loading.
-                                                                                      if (!snapshot.hasData) {
-                                                                                        return Center(
-                                                                                          child: SizedBox(
-                                                                                            width: 50.0,
-                                                                                            height: 50.0,
-                                                                                            child: CircularProgressIndicator(
-                                                                                              valueColor: AlwaysStoppedAnimation<Color>(
-                                                                                                FlutterFlowTheme.of(context).primary,
-                                                                                              ),
-                                                                                            ),
-                                                                                          ),
-                                                                                        );
-                                                                                      }
-                                                                                      List<GrupoConvivienteRow> buttonGrupoConvivienteRowList = snapshot.data!;
-
-                                                                                      return FFButtonWidget(
-                                                                                        onPressed: () async {
-                                                                                          context.pushNamed(
-                                                                                            'Imprimir',
-                                                                                            queryParameters: {
-                                                                                              'idexpediente': serializeParam(
-                                                                                                widget.rowexp?.id,
-                                                                                                ParamType.int,
-                                                                                              ),
-                                                                                              'idigreso': serializeParam(
-                                                                                                widget.idingreso,
-                                                                                                ParamType.int,
-                                                                                              ),
-                                                                                              'exp': serializeParam(
-                                                                                                widget.rowexp?.expediente,
-                                                                                                ParamType.String,
-                                                                                              ),
-                                                                                              'fechaexp': serializeParam(
-                                                                                                widget.rowexp?.fecha,
-                                                                                                ParamType.DateTime,
-                                                                                              ),
-                                                                                              'exprow': serializeParam(
-                                                                                                widget.rowexp,
-                                                                                                ParamType.SupabaseRow,
-                                                                                              ),
-                                                                                            }.withoutNulls,
-                                                                                          );
-                                                                                        },
-                                                                                        text: 'formulario senaf',
-                                                                                        icon: const Icon(
-                                                                                          Icons.edit,
-                                                                                          size: 15.0,
-                                                                                        ),
-                                                                                        options: FFButtonOptions(
-                                                                                          height: 40.0,
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                          iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                          color: FlutterFlowTheme.of(context).primary,
-                                                                                          textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                fontFamily: 'Noto Sans JP',
-                                                                                                color: Colors.white,
-                                                                                                letterSpacing: 0.0,
-                                                                                              ),
-                                                                                          elevation: 3.0,
-                                                                                          borderSide: const BorderSide(
-                                                                                            color: Colors.transparent,
-                                                                                            width: 1.0,
-                                                                                          ),
-                                                                                          borderRadius: BorderRadius.circular(8.0),
-                                                                                        ),
-                                                                                      );
-                                                                                    },
-                                                                                  ),
                                                                               ].divide(const SizedBox(height: 4.0)),
                                                                             ),
                                                                           ),
@@ -1153,7 +1287,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                           width:
                                                                               15.0,
                                                                           height:
-                                                                              150.0,
+                                                                              100.0,
                                                                           decoration:
                                                                               BoxDecoration(
                                                                             color:
@@ -1203,21 +1337,6 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                         fontWeight: FontWeight.w600,
                                                                                       ),
                                                                                 ),
-                                                                              ),
-                                                                              Text(
-                                                                                '¿Quiere ingresar la persona al programa?',
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Noto Sans JP',
-                                                                                      letterSpacing: 0.0,
-                                                                                    ),
-                                                                              ),
-                                                                              Text(
-                                                                                'Agendado para  13/jul/2022 - 10:30AM',
-                                                                                style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                      fontFamily: 'Noto Sans JP',
-                                                                                      color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                      letterSpacing: 0.0,
-                                                                                    ),
                                                                               ),
                                                                             ].divide(const SizedBox(height: 4.0)),
                                                                           ),
@@ -1369,7 +1488,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                           width:
                                                                               15.0,
                                                                           height:
-                                                                              150.0,
+                                                                              120.0,
                                                                           decoration:
                                                                               BoxDecoration(
                                                                             color:
@@ -1419,21 +1538,6 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                         fontWeight: FontWeight.w600,
                                                                                       ),
                                                                                 ),
-                                                                              ),
-                                                                              Text(
-                                                                                '¿Quiere ingresar la persona al programa?',
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Noto Sans JP',
-                                                                                      letterSpacing: 0.0,
-                                                                                    ),
-                                                                              ),
-                                                                              Text(
-                                                                                'Agendado para  13/jul/2022 - 10:30AM',
-                                                                                style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                      fontFamily: 'Noto Sans JP',
-                                                                                      color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                      letterSpacing: 0.0,
-                                                                                    ),
                                                                               ),
                                                                             ].divide(const SizedBox(height: 4.0)),
                                                                           ),
@@ -1493,7 +1597,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                       }.withoutNulls,
                                                                                     );
                                                                                   },
-                                                                                  text: 'Completar 2',
+                                                                                  text: 'Completar',
                                                                                   options: FFButtonOptions(
                                                                                     width: 150.0,
                                                                                     height: 30.0,
@@ -1650,7 +1754,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                           width:
                                                                               15.0,
                                                                           height:
-                                                                              175.0,
+                                                                              200.0,
                                                                           decoration:
                                                                               BoxDecoration(
                                                                             color:
@@ -1802,42 +1906,6 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                   ),
                                                                                   Text(
                                                                                     'Ampliacion de informacion',
-                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Noto Sans JP',
-                                                                                          letterSpacing: 0.0,
-                                                                                        ),
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                              Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
-                                                                                  Theme(
-                                                                                    data: ThemeData(
-                                                                                      checkboxTheme: CheckboxThemeData(
-                                                                                        visualDensity: VisualDensity.compact,
-                                                                                        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                                                                                        shape: RoundedRectangleBorder(
-                                                                                          borderRadius: BorderRadius.circular(4.0),
-                                                                                        ),
-                                                                                      ),
-                                                                                      unselectedWidgetColor: FlutterFlowTheme.of(context).alternate,
-                                                                                    ),
-                                                                                    child: Checkbox(
-                                                                                      value: _model.checkboxValue4 ??= containeringresosIngresosRow.form4completo!,
-                                                                                      onChanged: (newValue) async {
-                                                                                        safeSetState(() => _model.checkboxValue4 = newValue!);
-                                                                                      },
-                                                                                      side: BorderSide(
-                                                                                        width: 2,
-                                                                                        color: FlutterFlowTheme.of(context).alternate,
-                                                                                      ),
-                                                                                      activeColor: FlutterFlowTheme.of(context).secondary,
-                                                                                      checkColor: FlutterFlowTheme.of(context).info,
-                                                                                    ),
-                                                                                  ),
-                                                                                  Text(
-                                                                                    'Acciones accesorias de la intervencio',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Noto Sans JP',
                                                                                           letterSpacing: 0.0,
@@ -2153,18 +2221,20 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                     enableDrag: false,
                                                                                                     context: context,
                                                                                                     builder: (context) {
-                                                                                                      return GestureDetector(
-                                                                                                        onTap: () {
-                                                                                                          FocusScope.of(context).unfocus();
-                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                        },
-                                                                                                        child: Padding(
-                                                                                                          padding: MediaQuery.viewInsetsOf(context),
-                                                                                                          child: Seccion1Widget(
-                                                                                                            idingreso: containeringresosIngresosRow,
-                                                                                                            rowexp: widget.rowexp,
-                                                                                                            editar: false,
-                                                                                                            usuariorow: widget.usuariorow!,
+                                                                                                      return WebViewAware(
+                                                                                                        child: GestureDetector(
+                                                                                                          onTap: () {
+                                                                                                            FocusScope.of(context).unfocus();
+                                                                                                            FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                          },
+                                                                                                          child: Padding(
+                                                                                                            padding: MediaQuery.viewInsetsOf(context),
+                                                                                                            child: Seccion1Widget(
+                                                                                                              idingreso: containeringresosIngresosRow,
+                                                                                                              rowexp: widget.rowexp,
+                                                                                                              editar: false,
+                                                                                                              usuariorow: widget.usuariorow!,
+                                                                                                            ),
                                                                                                           ),
                                                                                                         ),
                                                                                                       );
@@ -2209,18 +2279,20 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                     enableDrag: false,
                                                                                                     context: context,
                                                                                                     builder: (context) {
-                                                                                                      return GestureDetector(
-                                                                                                        onTap: () {
-                                                                                                          FocusScope.of(context).unfocus();
-                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                        },
-                                                                                                        child: Padding(
-                                                                                                          padding: MediaQuery.viewInsetsOf(context),
-                                                                                                          child: Seccion1Widget(
-                                                                                                            idingreso: containeringresosIngresosRow,
-                                                                                                            rowexp: widget.rowexp,
-                                                                                                            editar: true,
-                                                                                                            usuariorow: widget.usuariorow!,
+                                                                                                      return WebViewAware(
+                                                                                                        child: GestureDetector(
+                                                                                                          onTap: () {
+                                                                                                            FocusScope.of(context).unfocus();
+                                                                                                            FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                          },
+                                                                                                          child: Padding(
+                                                                                                            padding: MediaQuery.viewInsetsOf(context),
+                                                                                                            child: Seccion1Widget(
+                                                                                                              idingreso: containeringresosIngresosRow,
+                                                                                                              rowexp: widget.rowexp,
+                                                                                                              editar: true,
+                                                                                                              usuariorow: widget.usuariorow!,
+                                                                                                            ),
                                                                                                           ),
                                                                                                         ),
                                                                                                       );
@@ -2291,17 +2363,19 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                   enableDrag: false,
                                                                                                   context: context,
                                                                                                   builder: (context) {
-                                                                                                    return GestureDetector(
-                                                                                                      onTap: () {
-                                                                                                        FocusScope.of(context).unfocus();
-                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                      },
-                                                                                                      child: Padding(
-                                                                                                        padding: MediaQuery.viewInsetsOf(context),
-                                                                                                        child: Seccion2Widget(
-                                                                                                          rowingreso: containeringresosIngresosRow,
-                                                                                                          rowexp: widget.rowexp!,
-                                                                                                          editar: false,
+                                                                                                    return WebViewAware(
+                                                                                                      child: GestureDetector(
+                                                                                                        onTap: () {
+                                                                                                          FocusScope.of(context).unfocus();
+                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                        },
+                                                                                                        child: Padding(
+                                                                                                          padding: MediaQuery.viewInsetsOf(context),
+                                                                                                          child: Seccion2Widget(
+                                                                                                            rowingreso: containeringresosIngresosRow,
+                                                                                                            rowexp: widget.rowexp!,
+                                                                                                            editar: false,
+                                                                                                          ),
                                                                                                         ),
                                                                                                       ),
                                                                                                     );
@@ -2346,17 +2420,19 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                   enableDrag: false,
                                                                                                   context: context,
                                                                                                   builder: (context) {
-                                                                                                    return GestureDetector(
-                                                                                                      onTap: () {
-                                                                                                        FocusScope.of(context).unfocus();
-                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                      },
-                                                                                                      child: Padding(
-                                                                                                        padding: MediaQuery.viewInsetsOf(context),
-                                                                                                        child: Seccion2Widget(
-                                                                                                          rowingreso: containeringresosIngresosRow,
-                                                                                                          rowexp: widget.rowexp!,
-                                                                                                          editar: true,
+                                                                                                    return WebViewAware(
+                                                                                                      child: GestureDetector(
+                                                                                                        onTap: () {
+                                                                                                          FocusScope.of(context).unfocus();
+                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                        },
+                                                                                                        child: Padding(
+                                                                                                          padding: MediaQuery.viewInsetsOf(context),
+                                                                                                          child: Seccion2Widget(
+                                                                                                            rowingreso: containeringresosIngresosRow,
+                                                                                                            rowexp: widget.rowexp!,
+                                                                                                            editar: true,
+                                                                                                          ),
                                                                                                         ),
                                                                                                       ),
                                                                                                     );
@@ -2427,18 +2503,20 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                   enableDrag: false,
                                                                                                   context: context,
                                                                                                   builder: (context) {
-                                                                                                    return GestureDetector(
-                                                                                                      onTap: () {
-                                                                                                        FocusScope.of(context).unfocus();
-                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                      },
-                                                                                                      child: Padding(
-                                                                                                        padding: MediaQuery.viewInsetsOf(context),
-                                                                                                        child: Seccion3Widget(
-                                                                                                          idingreso: containeringresosIngresosRow,
-                                                                                                          idexp: widget.rowexp!,
-                                                                                                          editar: false,
-                                                                                                          titulo: 'Grupo conviente y No conviviente',
+                                                                                                    return WebViewAware(
+                                                                                                      child: GestureDetector(
+                                                                                                        onTap: () {
+                                                                                                          FocusScope.of(context).unfocus();
+                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                        },
+                                                                                                        child: Padding(
+                                                                                                          padding: MediaQuery.viewInsetsOf(context),
+                                                                                                          child: Seccion3Widget(
+                                                                                                            idingreso: containeringresosIngresosRow,
+                                                                                                            idexp: widget.rowexp!,
+                                                                                                            editar: false,
+                                                                                                            titulo: 'Grupo conviente y No conviviente',
+                                                                                                          ),
                                                                                                         ),
                                                                                                       ),
                                                                                                     );
@@ -2483,18 +2561,20 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                   enableDrag: false,
                                                                                                   context: context,
                                                                                                   builder: (context) {
-                                                                                                    return GestureDetector(
-                                                                                                      onTap: () {
-                                                                                                        FocusScope.of(context).unfocus();
-                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                      },
-                                                                                                      child: Padding(
-                                                                                                        padding: MediaQuery.viewInsetsOf(context),
-                                                                                                        child: Seccion3Widget(
-                                                                                                          idingreso: containeringresosIngresosRow,
-                                                                                                          idexp: widget.rowexp!,
-                                                                                                          editar: false,
-                                                                                                          titulo: '3. Grupo conviente',
+                                                                                                    return WebViewAware(
+                                                                                                      child: GestureDetector(
+                                                                                                        onTap: () {
+                                                                                                          FocusScope.of(context).unfocus();
+                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                        },
+                                                                                                        child: Padding(
+                                                                                                          padding: MediaQuery.viewInsetsOf(context),
+                                                                                                          child: Seccion3Widget(
+                                                                                                            idingreso: containeringresosIngresosRow,
+                                                                                                            idexp: widget.rowexp!,
+                                                                                                            editar: false,
+                                                                                                            titulo: '3. Grupo conviente',
+                                                                                                          ),
                                                                                                         ),
                                                                                                       ),
                                                                                                     );
@@ -2564,17 +2644,19 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                   enableDrag: false,
                                                                                                   context: context,
                                                                                                   builder: (context) {
-                                                                                                    return GestureDetector(
-                                                                                                      onTap: () {
-                                                                                                        FocusScope.of(context).unfocus();
-                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                      },
-                                                                                                      child: Padding(
-                                                                                                        padding: MediaQuery.viewInsetsOf(context),
-                                                                                                        child: Seccion4Widget(
-                                                                                                          rowingreso: containeringresosIngresosRow,
-                                                                                                          rowexp: widget.rowexp!,
-                                                                                                          edit: true,
+                                                                                                    return WebViewAware(
+                                                                                                      child: GestureDetector(
+                                                                                                        onTap: () {
+                                                                                                          FocusScope.of(context).unfocus();
+                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                        },
+                                                                                                        child: Padding(
+                                                                                                          padding: MediaQuery.viewInsetsOf(context),
+                                                                                                          child: Seccion4Widget(
+                                                                                                            rowingreso: containeringresosIngresosRow,
+                                                                                                            rowexp: widget.rowexp!,
+                                                                                                            edit: true,
+                                                                                                          ),
                                                                                                         ),
                                                                                                       ),
                                                                                                     );
@@ -2619,17 +2701,19 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                   enableDrag: false,
                                                                                                   context: context,
                                                                                                   builder: (context) {
-                                                                                                    return GestureDetector(
-                                                                                                      onTap: () {
-                                                                                                        FocusScope.of(context).unfocus();
-                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                      },
-                                                                                                      child: Padding(
-                                                                                                        padding: MediaQuery.viewInsetsOf(context),
-                                                                                                        child: Seccion4Widget(
-                                                                                                          rowingreso: containeringresosIngresosRow,
-                                                                                                          rowexp: widget.rowexp!,
-                                                                                                          edit: false,
+                                                                                                    return WebViewAware(
+                                                                                                      child: GestureDetector(
+                                                                                                        onTap: () {
+                                                                                                          FocusScope.of(context).unfocus();
+                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                        },
+                                                                                                        child: Padding(
+                                                                                                          padding: MediaQuery.viewInsetsOf(context),
+                                                                                                          child: Seccion4Widget(
+                                                                                                            rowingreso: containeringresosIngresosRow,
+                                                                                                            rowexp: widget.rowexp!,
+                                                                                                            edit: false,
+                                                                                                          ),
                                                                                                         ),
                                                                                                       ),
                                                                                                     );
@@ -2706,17 +2790,19 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                   enableDrag: false,
                                                                                                   context: context,
                                                                                                   builder: (context) {
-                                                                                                    return GestureDetector(
-                                                                                                      onTap: () {
-                                                                                                        FocusScope.of(context).unfocus();
-                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                      },
-                                                                                                      child: Padding(
-                                                                                                        padding: MediaQuery.viewInsetsOf(context),
-                                                                                                        child: Seccion5Widget(
-                                                                                                          rowingreso: containeringresosIngresosRow,
-                                                                                                          rowexp: widget.rowexp!,
-                                                                                                          editar: true,
+                                                                                                    return WebViewAware(
+                                                                                                      child: GestureDetector(
+                                                                                                        onTap: () {
+                                                                                                          FocusScope.of(context).unfocus();
+                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                        },
+                                                                                                        child: Padding(
+                                                                                                          padding: MediaQuery.viewInsetsOf(context),
+                                                                                                          child: Seccion5Widget(
+                                                                                                            rowingreso: containeringresosIngresosRow,
+                                                                                                            rowexp: widget.rowexp!,
+                                                                                                            editar: true,
+                                                                                                          ),
                                                                                                         ),
                                                                                                       ),
                                                                                                     );
@@ -2754,17 +2840,19 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                   enableDrag: false,
                                                                                                   context: context,
                                                                                                   builder: (context) {
-                                                                                                    return GestureDetector(
-                                                                                                      onTap: () {
-                                                                                                        FocusScope.of(context).unfocus();
-                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                      },
-                                                                                                      child: Padding(
-                                                                                                        padding: MediaQuery.viewInsetsOf(context),
-                                                                                                        child: Seccion5Widget(
-                                                                                                          rowingreso: containeringresosIngresosRow,
-                                                                                                          rowexp: widget.rowexp!,
-                                                                                                          editar: false,
+                                                                                                    return WebViewAware(
+                                                                                                      child: GestureDetector(
+                                                                                                        onTap: () {
+                                                                                                          FocusScope.of(context).unfocus();
+                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                        },
+                                                                                                        child: Padding(
+                                                                                                          padding: MediaQuery.viewInsetsOf(context),
+                                                                                                          child: Seccion5Widget(
+                                                                                                            rowingreso: containeringresosIngresosRow,
+                                                                                                            rowexp: widget.rowexp!,
+                                                                                                            editar: false,
+                                                                                                          ),
                                                                                                         ),
                                                                                                       ),
                                                                                                     );
@@ -2841,17 +2929,19 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                   enableDrag: false,
                                                                                                   context: context,
                                                                                                   builder: (context) {
-                                                                                                    return GestureDetector(
-                                                                                                      onTap: () {
-                                                                                                        FocusScope.of(context).unfocus();
-                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                      },
-                                                                                                      child: Padding(
-                                                                                                        padding: MediaQuery.viewInsetsOf(context),
-                                                                                                        child: Seccion6Widget(
-                                                                                                          rowingreso: containeringresosIngresosRow,
-                                                                                                          rowexp: widget.rowexp,
-                                                                                                          edit: true,
+                                                                                                    return WebViewAware(
+                                                                                                      child: GestureDetector(
+                                                                                                        onTap: () {
+                                                                                                          FocusScope.of(context).unfocus();
+                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                        },
+                                                                                                        child: Padding(
+                                                                                                          padding: MediaQuery.viewInsetsOf(context),
+                                                                                                          child: Seccion6Widget(
+                                                                                                            rowingreso: containeringresosIngresosRow,
+                                                                                                            rowexp: widget.rowexp,
+                                                                                                            edit: true,
+                                                                                                          ),
                                                                                                         ),
                                                                                                       ),
                                                                                                     );
@@ -2889,17 +2979,19 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                   enableDrag: false,
                                                                                                   context: context,
                                                                                                   builder: (context) {
-                                                                                                    return GestureDetector(
-                                                                                                      onTap: () {
-                                                                                                        FocusScope.of(context).unfocus();
-                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                      },
-                                                                                                      child: Padding(
-                                                                                                        padding: MediaQuery.viewInsetsOf(context),
-                                                                                                        child: Seccion6Widget(
-                                                                                                          rowingreso: containeringresosIngresosRow,
-                                                                                                          rowexp: widget.rowexp,
-                                                                                                          edit: false,
+                                                                                                    return WebViewAware(
+                                                                                                      child: GestureDetector(
+                                                                                                        onTap: () {
+                                                                                                          FocusScope.of(context).unfocus();
+                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                        },
+                                                                                                        child: Padding(
+                                                                                                          padding: MediaQuery.viewInsetsOf(context),
+                                                                                                          child: Seccion6Widget(
+                                                                                                            rowingreso: containeringresosIngresosRow,
+                                                                                                            rowexp: widget.rowexp,
+                                                                                                            edit: false,
+                                                                                                          ),
                                                                                                         ),
                                                                                                       ),
                                                                                                     );
@@ -2976,17 +3068,19 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                   enableDrag: false,
                                                                                                   context: context,
                                                                                                   builder: (context) {
-                                                                                                    return GestureDetector(
-                                                                                                      onTap: () {
-                                                                                                        FocusScope.of(context).unfocus();
-                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                      },
-                                                                                                      child: Padding(
-                                                                                                        padding: MediaQuery.viewInsetsOf(context),
-                                                                                                        child: Seccion7Widget(
-                                                                                                          rowingreso: containeringresosIngresosRow,
-                                                                                                          rowexp: widget.rowexp!,
-                                                                                                          editar: true,
+                                                                                                    return WebViewAware(
+                                                                                                      child: GestureDetector(
+                                                                                                        onTap: () {
+                                                                                                          FocusScope.of(context).unfocus();
+                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                        },
+                                                                                                        child: Padding(
+                                                                                                          padding: MediaQuery.viewInsetsOf(context),
+                                                                                                          child: Seccion7Widget(
+                                                                                                            rowingreso: containeringresosIngresosRow,
+                                                                                                            rowexp: widget.rowexp!,
+                                                                                                            editar: true,
+                                                                                                          ),
                                                                                                         ),
                                                                                                       ),
                                                                                                     );
@@ -3024,17 +3118,19 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                   enableDrag: false,
                                                                                                   context: context,
                                                                                                   builder: (context) {
-                                                                                                    return GestureDetector(
-                                                                                                      onTap: () {
-                                                                                                        FocusScope.of(context).unfocus();
-                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                      },
-                                                                                                      child: Padding(
-                                                                                                        padding: MediaQuery.viewInsetsOf(context),
-                                                                                                        child: Seccion7Widget(
-                                                                                                          rowingreso: containeringresosIngresosRow,
-                                                                                                          rowexp: widget.rowexp!,
-                                                                                                          editar: false,
+                                                                                                    return WebViewAware(
+                                                                                                      child: GestureDetector(
+                                                                                                        onTap: () {
+                                                                                                          FocusScope.of(context).unfocus();
+                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                        },
+                                                                                                        child: Padding(
+                                                                                                          padding: MediaQuery.viewInsetsOf(context),
+                                                                                                          child: Seccion7Widget(
+                                                                                                            rowingreso: containeringresosIngresosRow,
+                                                                                                            rowexp: widget.rowexp!,
+                                                                                                            editar: false,
+                                                                                                          ),
                                                                                                         ),
                                                                                                       ),
                                                                                                     );
@@ -3107,16 +3203,18 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                             enableDrag: false,
                                                                                             context: context,
                                                                                             builder: (context) {
-                                                                                              return GestureDetector(
-                                                                                                onTap: () {
-                                                                                                  FocusScope.of(context).unfocus();
-                                                                                                  FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                },
-                                                                                                child: Padding(
-                                                                                                  padding: MediaQuery.viewInsetsOf(context),
-                                                                                                  child: Seccion8Widget(
-                                                                                                    idingreso: containeringresosIngresosRow,
-                                                                                                    idexp: widget.rowexp!,
+                                                                                              return WebViewAware(
+                                                                                                child: GestureDetector(
+                                                                                                  onTap: () {
+                                                                                                    FocusScope.of(context).unfocus();
+                                                                                                    FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                  },
+                                                                                                  child: Padding(
+                                                                                                    padding: MediaQuery.viewInsetsOf(context),
+                                                                                                    child: Seccion8Widget(
+                                                                                                      idingreso: containeringresosIngresosRow,
+                                                                                                      idexp: widget.rowexp!,
+                                                                                                    ),
                                                                                                   ),
                                                                                                 ),
                                                                                               );
@@ -3184,17 +3282,19 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                   enableDrag: false,
                                                                                                   context: context,
                                                                                                   builder: (context) {
-                                                                                                    return GestureDetector(
-                                                                                                      onTap: () {
-                                                                                                        FocusScope.of(context).unfocus();
-                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                      },
-                                                                                                      child: Padding(
-                                                                                                        padding: MediaQuery.viewInsetsOf(context),
-                                                                                                        child: Seccion9Widget(
-                                                                                                          rowingreso: containeringresosIngresosRow,
-                                                                                                          rowexp: widget.rowexp!,
-                                                                                                          editar: true,
+                                                                                                    return WebViewAware(
+                                                                                                      child: GestureDetector(
+                                                                                                        onTap: () {
+                                                                                                          FocusScope.of(context).unfocus();
+                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                        },
+                                                                                                        child: Padding(
+                                                                                                          padding: MediaQuery.viewInsetsOf(context),
+                                                                                                          child: Seccion9Widget(
+                                                                                                            rowingreso: containeringresosIngresosRow,
+                                                                                                            rowexp: widget.rowexp!,
+                                                                                                            editar: true,
+                                                                                                          ),
                                                                                                         ),
                                                                                                       ),
                                                                                                     );
@@ -3232,17 +3332,19 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                   enableDrag: false,
                                                                                                   context: context,
                                                                                                   builder: (context) {
-                                                                                                    return GestureDetector(
-                                                                                                      onTap: () {
-                                                                                                        FocusScope.of(context).unfocus();
-                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                      },
-                                                                                                      child: Padding(
-                                                                                                        padding: MediaQuery.viewInsetsOf(context),
-                                                                                                        child: Seccion9Widget(
-                                                                                                          rowingreso: containeringresosIngresosRow,
-                                                                                                          rowexp: widget.rowexp!,
-                                                                                                          editar: false,
+                                                                                                    return WebViewAware(
+                                                                                                      child: GestureDetector(
+                                                                                                        onTap: () {
+                                                                                                          FocusScope.of(context).unfocus();
+                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                        },
+                                                                                                        child: Padding(
+                                                                                                          padding: MediaQuery.viewInsetsOf(context),
+                                                                                                          child: Seccion9Widget(
+                                                                                                            rowingreso: containeringresosIngresosRow,
+                                                                                                            rowexp: widget.rowexp!,
+                                                                                                            editar: false,
+                                                                                                          ),
                                                                                                         ),
                                                                                                       ),
                                                                                                     );
@@ -3479,6 +3581,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                   'Form3': true,
                                                                                                   'form1completo': true,
                                                                                                   'form4': true,
+                                                                                                  'form9': false,
                                                                                                 },
                                                                                                 matchingRows: (rows) => rows.eqOrNull(
                                                                                                   'id',
@@ -3490,15 +3593,17 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                             await showDialog(
                                                                                               context: context,
                                                                                               builder: (alertDialogContext) {
-                                                                                                return AlertDialog(
-                                                                                                  title: const Text('Ok para avanzar!!'),
-                                                                                                  content: const Text('Se completaron los requisitos minimos para avanzar!!'),
-                                                                                                  actions: [
-                                                                                                    TextButton(
-                                                                                                      onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                      child: const Text('Ok'),
-                                                                                                    ),
-                                                                                                  ],
+                                                                                                return WebViewAware(
+                                                                                                  child: AlertDialog(
+                                                                                                    title: const Text('Ok para avanzar!!'),
+                                                                                                    content: const Text('Se completaron los requisitos minimos para avanzar!!'),
+                                                                                                    actions: [
+                                                                                                      TextButton(
+                                                                                                        onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                        child: const Text('Ok'),
+                                                                                                      ),
+                                                                                                    ],
+                                                                                                  ),
                                                                                                 );
                                                                                               },
                                                                                             );

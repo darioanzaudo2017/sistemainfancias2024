@@ -11,6 +11,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'formulario9_model.dart';
 export 'formulario9_model.dart';
 
@@ -401,22 +402,24 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                     context,
                                                                 builder:
                                                                     (context) {
-                                                                  return Padding(
-                                                                    padding: MediaQuery
-                                                                        .viewInsetsOf(
-                                                                            context),
+                                                                  return WebViewAware(
                                                                     child:
-                                                                        FormcaratulaWidget(
-                                                                      idexp: widget
-                                                                          .rowexp
-                                                                          ?.id,
-                                                                      editar:
-                                                                          true,
-                                                                      dniok:
-                                                                          false,
-                                                                      usuariorow:
-                                                                          widget
-                                                                              .usuariorow!,
+                                                                        Padding(
+                                                                      padding: MediaQuery
+                                                                          .viewInsetsOf(
+                                                                              context),
+                                                                      child:
+                                                                          FormcaratulaWidget(
+                                                                        idexp: widget
+                                                                            .rowexp
+                                                                            ?.id,
+                                                                        editar:
+                                                                            true,
+                                                                        dniok:
+                                                                            false,
+                                                                        usuariorow:
+                                                                            widget.usuariorow!,
+                                                                      ),
                                                                     ),
                                                                   );
                                                                 },
@@ -3286,20 +3289,22 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                         context: context,
                                                         builder:
                                                             (alertDialogContext) {
-                                                          return AlertDialog(
-                                                            title: const Text(
-                                                                'Carga correcta'),
-                                                            content: const Text(
-                                                                'La informacion se guardo correctamente!!'),
-                                                            actions: [
-                                                              TextButton(
-                                                                onPressed: () =>
-                                                                    Navigator.pop(
-                                                                        alertDialogContext),
-                                                                child:
-                                                                    const Text('Ok'),
-                                                              ),
-                                                            ],
+                                                          return WebViewAware(
+                                                            child: AlertDialog(
+                                                              title: const Text(
+                                                                  'Carga correcta'),
+                                                              content: const Text(
+                                                                  'La informacion se guardo correctamente!!'),
+                                                              actions: [
+                                                                TextButton(
+                                                                  onPressed: () =>
+                                                                      Navigator.pop(
+                                                                          alertDialogContext),
+                                                                  child: const Text(
+                                                                      'Ok'),
+                                                                ),
+                                                              ],
+                                                            ),
                                                           );
                                                         },
                                                       );
@@ -3398,20 +3403,23 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                           context: context,
                                                           builder:
                                                               (alertDialogContext) {
-                                                            return AlertDialog(
-                                                              title: const Text(
-                                                                  'Se envio email de aviso!'),
-                                                              content: const Text(
-                                                                  'Se envio un email de aviso de esta solicitud a la direccion de infancias!!'),
-                                                              actions: [
-                                                                TextButton(
-                                                                  onPressed: () =>
-                                                                      Navigator.pop(
-                                                                          alertDialogContext),
-                                                                  child: const Text(
-                                                                      'Ok'),
-                                                                ),
-                                                              ],
+                                                            return WebViewAware(
+                                                              child:
+                                                                  AlertDialog(
+                                                                title: const Text(
+                                                                    'Se envio email de aviso!'),
+                                                                content: const Text(
+                                                                    'Se envio un email de aviso de esta solicitud a la direccion de infancias!!'),
+                                                                actions: [
+                                                                  TextButton(
+                                                                    onPressed: () =>
+                                                                        Navigator.pop(
+                                                                            alertDialogContext),
+                                                                    child: const Text(
+                                                                        'Ok'),
+                                                                  ),
+                                                                ],
+                                                              ),
                                                             );
                                                           },
                                                         );
@@ -3522,20 +3530,22 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                         context: context,
                                                         builder:
                                                             (alertDialogContext) {
-                                                          return AlertDialog(
-                                                            title: const Text(
-                                                                'Carga correcta'),
-                                                            content: const Text(
-                                                                'La informacion se edito correctamente!!'),
-                                                            actions: [
-                                                              TextButton(
-                                                                onPressed: () =>
-                                                                    Navigator.pop(
-                                                                        alertDialogContext),
-                                                                child:
-                                                                    const Text('Ok'),
-                                                              ),
-                                                            ],
+                                                          return WebViewAware(
+                                                            child: AlertDialog(
+                                                              title: const Text(
+                                                                  'Carga correcta'),
+                                                              content: const Text(
+                                                                  'La informacion se edito correctamente!!'),
+                                                              actions: [
+                                                                TextButton(
+                                                                  onPressed: () =>
+                                                                      Navigator.pop(
+                                                                          alertDialogContext),
+                                                                  child: const Text(
+                                                                      'Ok'),
+                                                                ),
+                                                              ],
+                                                            ),
                                                           );
                                                         },
                                                       );
@@ -3570,20 +3580,23 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                           context: context,
                                                           builder:
                                                               (alertDialogContext) {
-                                                            return AlertDialog(
-                                                              title: const Text(
-                                                                  'Se envio email de aviso!'),
-                                                              content: const Text(
-                                                                  'Se envio un email de aviso de esta solicitud a la direccion de infancias!!'),
-                                                              actions: [
-                                                                TextButton(
-                                                                  onPressed: () =>
-                                                                      Navigator.pop(
-                                                                          alertDialogContext),
-                                                                  child: const Text(
-                                                                      'Ok'),
-                                                                ),
-                                                              ],
+                                                            return WebViewAware(
+                                                              child:
+                                                                  AlertDialog(
+                                                                title: const Text(
+                                                                    'Se envio email de aviso!'),
+                                                                content: const Text(
+                                                                    'Se envio un email de aviso de esta solicitud a la direccion de infancias!!'),
+                                                                actions: [
+                                                                  TextButton(
+                                                                    onPressed: () =>
+                                                                        Navigator.pop(
+                                                                            alertDialogContext),
+                                                                    child: const Text(
+                                                                        'Ok'),
+                                                                  ),
+                                                                ],
+                                                              ),
                                                             );
                                                           },
                                                         );

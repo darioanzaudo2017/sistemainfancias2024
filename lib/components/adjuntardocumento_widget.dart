@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'adjuntardocumento_model.dart';
 export 'adjuntardocumento_model.dart';
 
@@ -298,16 +299,18 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                       await showDialog(
                         context: context,
                         builder: (alertDialogContext) {
-                          return AlertDialog(
-                            title:
-                                const Text('Se cargo correctamente la informacion'),
-                            actions: [
-                              TextButton(
-                                onPressed: () =>
-                                    Navigator.pop(alertDialogContext),
-                                child: const Text('Ok'),
-                              ),
-                            ],
+                          return WebViewAware(
+                            child: AlertDialog(
+                              title:
+                                  const Text('Se cargo correctamente la informacion'),
+                              actions: [
+                                TextButton(
+                                  onPressed: () =>
+                                      Navigator.pop(alertDialogContext),
+                                  child: const Text('Ok'),
+                                ),
+                              ],
+                            ),
                           );
                         },
                       );

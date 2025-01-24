@@ -9,6 +9,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'perfil_copy_model.dart';
 export 'perfil_copy_model.dart';
 
@@ -561,15 +562,17 @@ class _PerfilCopyWidgetState extends State<PerfilCopyWidget> {
                                                                               await showDialog(
                                                                                 context: context,
                                                                                 builder: (alertDialogContext) {
-                                                                                  return AlertDialog(
-                                                                                    title: const Text('Se creo un expediente nuevo!'),
-                                                                                    content: Text('Se creo un expediente nuevo relacionado a:${widget.rowexp?.nombres}, ${widget.rowexp?.apellidos}'),
-                                                                                    actions: [
-                                                                                      TextButton(
-                                                                                        onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                        child: const Text('Ok'),
-                                                                                      ),
-                                                                                    ],
+                                                                                  return WebViewAware(
+                                                                                    child: AlertDialog(
+                                                                                      title: const Text('Se creo un expediente nuevo!'),
+                                                                                      content: Text('Se creo un expediente nuevo relacionado a:${widget.rowexp?.nombres}, ${widget.rowexp?.apellidos}'),
+                                                                                      actions: [
+                                                                                        TextButton(
+                                                                                          onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                          child: const Text('Ok'),
+                                                                                        ),
+                                                                                      ],
+                                                                                    ),
                                                                                   );
                                                                                 },
                                                                               );

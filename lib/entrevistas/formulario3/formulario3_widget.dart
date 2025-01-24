@@ -10,6 +10,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/formulario1/formulario1/formulario1_widget.dart';
 import '/formulario1/secciones_formulario1/seccion8/seccion8_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'formulario3_model.dart';
 export 'formulario3_model.dart';
 
@@ -274,18 +275,20 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                                       enableDrag: false,
                                                       context: context,
                                                       builder: (context) {
-                                                        return Padding(
-                                                          padding: MediaQuery
-                                                              .viewInsetsOf(
-                                                                  context),
-                                                          child:
-                                                              FormcaratulaWidget(
-                                                            idexp: widget
-                                                                .rowexp?.id,
-                                                            editar: true,
-                                                            dniok: false,
-                                                            usuariorow: widget
-                                                                .usuariosrow!,
+                                                        return WebViewAware(
+                                                          child: Padding(
+                                                            padding: MediaQuery
+                                                                .viewInsetsOf(
+                                                                    context),
+                                                            child:
+                                                                FormcaratulaWidget(
+                                                              idexp: widget
+                                                                  .rowexp?.id,
+                                                              editar: true,
+                                                              dniok: false,
+                                                              usuariorow: widget
+                                                                  .usuariosrow!,
+                                                            ),
                                                           ),
                                                         );
                                                       },
@@ -355,18 +358,20 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                                       enableDrag: false,
                                                       context: context,
                                                       builder: (context) {
-                                                        return Padding(
-                                                          padding: MediaQuery
-                                                              .viewInsetsOf(
-                                                                  context),
-                                                          child:
-                                                              Formulario1Widget(
-                                                            idingreso: widget
-                                                                .idingreso!,
-                                                            rowexp:
-                                                                widget.rowexp!,
-                                                            usuariorow: widget
-                                                                .usuariosrow!,
+                                                        return WebViewAware(
+                                                          child: Padding(
+                                                            padding: MediaQuery
+                                                                .viewInsetsOf(
+                                                                    context),
+                                                            child:
+                                                                Formulario1Widget(
+                                                              idingreso: widget
+                                                                  .idingreso!,
+                                                              rowexp: widget
+                                                                  .rowexp!,
+                                                              usuariorow: widget
+                                                                  .usuariosrow!,
+                                                            ),
                                                           ),
                                                         );
                                                       },
@@ -476,29 +481,30 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                                             context: context,
                                                             builder:
                                                                 (alertDialogContext) {
-                                                              return AlertDialog(
-                                                                title: const Text(
-                                                                    'Copiar Entrevistas del NNyA principal'),
-                                                                content: const Text(
-                                                                    'Estas a punto de copiar todas las entrevistas del NNyA a este expediente!'),
-                                                                actions: [
-                                                                  TextButton(
-                                                                    onPressed: () =>
-                                                                        Navigator.pop(
-                                                                            alertDialogContext,
-                                                                            false),
-                                                                    child: const Text(
-                                                                        'Cancelar'),
-                                                                  ),
-                                                                  TextButton(
-                                                                    onPressed: () =>
-                                                                        Navigator.pop(
-                                                                            alertDialogContext,
-                                                                            true),
-                                                                    child: const Text(
-                                                                        'Confirmar'),
-                                                                  ),
-                                                                ],
+                                                              return WebViewAware(
+                                                                child:
+                                                                    AlertDialog(
+                                                                  title: const Text(
+                                                                      'Copiar Entrevistas del NNyA principal'),
+                                                                  content: const Text(
+                                                                      'Estas a punto de copiar todas las entrevistas del NNyA a este expediente!'),
+                                                                  actions: [
+                                                                    TextButton(
+                                                                      onPressed: () => Navigator.pop(
+                                                                          alertDialogContext,
+                                                                          false),
+                                                                      child: const Text(
+                                                                          'Cancelar'),
+                                                                    ),
+                                                                    TextButton(
+                                                                      onPressed: () => Navigator.pop(
+                                                                          alertDialogContext,
+                                                                          true),
+                                                                      child: const Text(
+                                                                          'Confirmar'),
+                                                                    ),
+                                                                  ],
+                                                                ),
                                                               );
                                                             },
                                                           ) ??
@@ -518,16 +524,19 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                                       context: context,
                                                       builder:
                                                           (alertDialogContext) {
-                                                        return AlertDialog(
-                                                          title: const Text('1'),
-                                                          actions: [
-                                                            TextButton(
-                                                              onPressed: () =>
-                                                                  Navigator.pop(
-                                                                      alertDialogContext),
-                                                              child: const Text('Ok'),
-                                                            ),
-                                                          ],
+                                                        return WebViewAware(
+                                                          child: AlertDialog(
+                                                            title: const Text('1'),
+                                                            actions: [
+                                                              TextButton(
+                                                                onPressed: () =>
+                                                                    Navigator.pop(
+                                                                        alertDialogContext),
+                                                                child:
+                                                                    const Text('Ok'),
+                                                              ),
+                                                            ],
+                                                          ),
                                                         );
                                                       },
                                                     );
@@ -552,17 +561,19 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                                         context: context,
                                                         builder:
                                                             (alertDialogContext) {
-                                                          return AlertDialog(
-                                                            title: const Text('2'),
-                                                            actions: [
-                                                              TextButton(
-                                                                onPressed: () =>
-                                                                    Navigator.pop(
-                                                                        alertDialogContext),
-                                                                child:
-                                                                    const Text('Ok'),
-                                                              ),
-                                                            ],
+                                                          return WebViewAware(
+                                                            child: AlertDialog(
+                                                              title: const Text('2'),
+                                                              actions: [
+                                                                TextButton(
+                                                                  onPressed: () =>
+                                                                      Navigator.pop(
+                                                                          alertDialogContext),
+                                                                  child: const Text(
+                                                                      'Ok'),
+                                                                ),
+                                                              ],
+                                                            ),
                                                           );
                                                         },
                                                       );
@@ -690,20 +701,22 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                                         context: context,
                                                         builder:
                                                             (alertDialogContext) {
-                                                          return AlertDialog(
-                                                            title: const Text(
-                                                                'Carga correcta'),
-                                                            content: const Text(
-                                                                'La informacion se guardo correctamente!!'),
-                                                            actions: [
-                                                              TextButton(
-                                                                onPressed: () =>
-                                                                    Navigator.pop(
-                                                                        alertDialogContext),
-                                                                child:
-                                                                    const Text('Ok'),
-                                                              ),
-                                                            ],
+                                                          return WebViewAware(
+                                                            child: AlertDialog(
+                                                              title: const Text(
+                                                                  'Carga correcta'),
+                                                              content: const Text(
+                                                                  'La informacion se guardo correctamente!!'),
+                                                              actions: [
+                                                                TextButton(
+                                                                  onPressed: () =>
+                                                                      Navigator.pop(
+                                                                          alertDialogContext),
+                                                                  child: const Text(
+                                                                      'Ok'),
+                                                                ),
+                                                              ],
+                                                            ),
                                                           );
                                                         },
                                                       );
@@ -1112,11 +1125,14 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                   enableDrag: false,
                                   context: context,
                                   builder: (context) {
-                                    return Padding(
-                                      padding: MediaQuery.viewInsetsOf(context),
-                                      child: Seccion8Widget(
-                                        idingreso: widget.idingreso!,
-                                        idexp: widget.rowexp!,
+                                    return WebViewAware(
+                                      child: Padding(
+                                        padding:
+                                            MediaQuery.viewInsetsOf(context),
+                                        child: Seccion8Widget(
+                                          idingreso: widget.idingreso!,
+                                          idexp: widget.rowexp!,
+                                        ),
                                       ),
                                     );
                                   },
@@ -1181,12 +1197,14 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                       enableDrag: false,
                                       context: context,
                                       builder: (context) {
-                                        return Padding(
-                                          padding:
-                                              MediaQuery.viewInsetsOf(context),
-                                          child: AdjuntardocumentoWidget(
-                                            exprow: widget.rowexp,
-                                            ingrow: widget.idingreso,
+                                        return WebViewAware(
+                                          child: Padding(
+                                            padding: MediaQuery.viewInsetsOf(
+                                                context),
+                                            child: AdjuntardocumentoWidget(
+                                              exprow: widget.rowexp,
+                                              ingrow: widget.idingreso,
+                                            ),
                                           ),
                                         );
                                       },
@@ -1241,10 +1259,9 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                             child: Text(
                               '1. Descripcion de la situacion',
                               style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
+                                  .titleMedium
                                   .override(
                                     fontFamily: 'Noto Sans JP',
-                                    color: FlutterFlowTheme.of(context).primary,
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -1422,6 +1439,19 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                           ),
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
+                                10.0, 0.0, 0.0, 0.0),
+                            child: Text(
+                              'a. Redes o actores comunitarios con los que se vincula',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Noto Sans JP',
+                                    letterSpacing: 0.0,
+                                  ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: FlutterFlowDropDown<String>(
                               multiSelectController:
@@ -1454,8 +1484,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                     fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
-                              hintText:
-                                  'a. Redes o actores comunitarios con los que se vincula',
+                              hintText: 'Seleccionar',
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
                                 color:
@@ -1477,6 +1506,19 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                               isMultiSelect: true,
                               onMultiSelectChanged: (val) => safeSetState(
                                   () => _model.dropDownValue = val),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                10.0, 0.0, 0.0, 0.0),
+                            child: Text(
+                              'b. Otras actividades en las que participa',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Noto Sans JP',
+                                    letterSpacing: 0.0,
+                                  ),
                             ),
                           ),
                           Padding(
@@ -1511,8 +1553,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                     fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
-                              hintText:
-                                  'b. Otras actividades en las que participa',
+                              hintText: 'Seleccionar',
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
                                 color:
@@ -1534,6 +1575,19 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                               isMultiSelect: true,
                               onMultiSelectChanged: (val) => safeSetState(
                                   () => _model.dropDownactividaesValue = val),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                10.0, 0.0, 0.0, 0.0),
+                            child: Text(
+                              'c. Otros intereses o actividades que les gustaría hacer',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Noto Sans JP',
+                                    letterSpacing: 0.0,
+                                  ),
                             ),
                           ),
                           Padding(
@@ -1563,8 +1617,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                     fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
-                              hintText:
-                                  'c. Otros intereses o actividades que les gustaría hacer',
+                              hintText: 'Seleccionar',
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
                                 color:
@@ -1862,17 +1915,20 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                       await showDialog(
                                         context: context,
                                         builder: (alertDialogContext) {
-                                          return AlertDialog(
-                                            title: const Text('Carga correcta'),
-                                            content: const Text(
-                                                'La informacion se guardo correctamente!!'),
-                                            actions: [
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext),
-                                                child: const Text('Ok'),
-                                              ),
-                                            ],
+                                          return WebViewAware(
+                                            child: AlertDialog(
+                                              title: const Text('Carga correcta'),
+                                              content: const Text(
+                                                  'La informacion se guardo correctamente!!'),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () =>
+                                                      Navigator.pop(
+                                                          alertDialogContext),
+                                                  child: const Text('Ok'),
+                                                ),
+                                              ],
+                                            ),
                                           );
                                         },
                                       );
@@ -1968,17 +2024,20 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                       await showDialog(
                                         context: context,
                                         builder: (alertDialogContext) {
-                                          return AlertDialog(
-                                            title: const Text('Carga correcta'),
-                                            content: const Text(
-                                                'La informacion se guardo correctamente!!'),
-                                            actions: [
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext),
-                                                child: const Text('Ok'),
-                                              ),
-                                            ],
+                                          return WebViewAware(
+                                            child: AlertDialog(
+                                              title: const Text('Carga correcta'),
+                                              content: const Text(
+                                                  'La informacion se guardo correctamente!!'),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () =>
+                                                      Navigator.pop(
+                                                          alertDialogContext),
+                                                  child: const Text('Ok'),
+                                                ),
+                                              ],
+                                            ),
                                           );
                                         },
                                       );

@@ -10,11 +10,13 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/custom_functions.dart' as functions;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'dart:async';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'formcaratula_model.dart';
 export 'formcaratula_model.dart';
 
@@ -835,19 +837,21 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                               await showDialog(
                                                 context: context,
                                                 builder: (alertDialogContext) {
-                                                  return AlertDialog(
-                                                    title: const Text(
-                                                        'El dni esta duplicado'),
-                                                    content: const Text(
-                                                        'El dni esta duplicado'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: const Text('Ok'),
-                                                      ),
-                                                    ],
+                                                  return WebViewAware(
+                                                    child: AlertDialog(
+                                                      title: const Text(
+                                                          'El dni esta duplicado'),
+                                                      content: const Text(
+                                                          'El dni esta duplicado'),
+                                                      actions: [
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext),
+                                                          child: const Text('Ok'),
+                                                        ),
+                                                      ],
+                                                    ),
                                                   );
                                                 },
                                               );
@@ -862,19 +866,21 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                               await showDialog(
                                                 context: context,
                                                 builder: (alertDialogContext) {
-                                                  return AlertDialog(
-                                                    title: const Text(
-                                                        'El NNyA no tiene expediente'),
-                                                    content: const Text(
-                                                        'Continuamos con la carga!!'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: const Text('Ok'),
-                                                      ),
-                                                    ],
+                                                  return WebViewAware(
+                                                    child: AlertDialog(
+                                                      title: const Text(
+                                                          'El NNyA no tiene expediente'),
+                                                      content: const Text(
+                                                          'Continuamos con la carga!!'),
+                                                      actions: [
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext),
+                                                          child: const Text('Ok'),
+                                                        ),
+                                                      ],
+                                                    ),
                                                   );
                                                 },
                                               );
@@ -946,16 +952,18 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                                 enableDrag: false,
                                                 context: context,
                                                 builder: (context) {
-                                                  return Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child:
-                                                        DesplegablederechosprincipalWidget(
-                                                      idexp: _model
-                                                          .crearexpnnya1?.id,
-                                                      idingreso: 0,
-                                                      form: 'Caratula',
+                                                  return WebViewAware(
+                                                    child: Padding(
+                                                      padding: MediaQuery
+                                                          .viewInsetsOf(
+                                                              context),
+                                                      child:
+                                                          DesplegablederechosprincipalWidget(
+                                                        idexp: _model
+                                                            .crearexpnnya1?.id,
+                                                        idingreso: 0,
+                                                        form: 'Caratula',
+                                                      ),
                                                     ),
                                                   );
                                                 },
@@ -1813,12 +1821,14 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                                   'fecha':
                                                       supaSerialize<DateTime>(
                                                           _model.datePicked2),
-                                                  'nombres': _model
-                                                      .textFieldnombresTextController
-                                                      .text,
-                                                  'apellidos': _model
-                                                      .textFieldapellidoTextController
-                                                      .text,
+                                                  'nombres': functions
+                                                      .mayusculas(_model
+                                                          .textFieldnombresTextController
+                                                          .text),
+                                                  'apellidos': functions
+                                                      .mayusculas(_model
+                                                          .textFieldapellidoTextController
+                                                          .text),
                                                   'expediente':
                                                       '${widget.usuariorow?.spd}/${_model.crearexpnnya1?.id.toString()}/${dateTimeFormat(
                                                     "y",
@@ -1857,12 +1867,14 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                               );
                                               await NNyATable().update(
                                                 data: {
-                                                  'Nombre': _model
-                                                      .textFieldnombresTextController
-                                                      .text,
-                                                  'Apellido': _model
-                                                      .textFieldapellidoTextController
-                                                      .text,
+                                                  'Nombre': functions
+                                                      .mayusculas(_model
+                                                          .textFieldnombresTextController
+                                                          .text),
+                                                  'Apellido': functions
+                                                      .mayusculas(_model
+                                                          .textFieldapellidoTextController
+                                                          .text),
                                                   'DNI': int.tryParse(_model
                                                       .textFieldDNITextController
                                                       .text),
@@ -1880,19 +1892,21 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                               await showDialog(
                                                 context: context,
                                                 builder: (alertDialogContext) {
-                                                  return AlertDialog(
-                                                    title: const Text(
-                                                        'Expediente Creado'),
-                                                    content: const Text(
-                                                        'Se creo correctamente el expediente!'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: const Text('Ok'),
-                                                      ),
-                                                    ],
+                                                  return WebViewAware(
+                                                    child: AlertDialog(
+                                                      title: const Text(
+                                                          'Expediente Creado'),
+                                                      content: const Text(
+                                                          'Se creo correctamente el expediente!'),
+                                                      actions: [
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext),
+                                                          child: const Text('Ok'),
+                                                        ),
+                                                      ],
+                                                    ),
                                                   );
                                                 },
                                               );
@@ -1931,12 +1945,14 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                                   'fecha': supaSerialize<
                                                       DateTime>(_model.datePicked2 ?? containerExpedienteRow
                                                           ?.fecha),
-                                                  'nombres': _model
-                                                      .textFieldnombresTextController
-                                                      .text,
-                                                  'apellidos': _model
-                                                      .textFieldapellidoTextController
-                                                      .text,
+                                                  'nombres': functions
+                                                      .mayusculas(_model
+                                                          .textFieldnombresTextController
+                                                          .text),
+                                                  'apellidos': functions
+                                                      .mayusculas(_model
+                                                          .textFieldapellidoTextController
+                                                          .text),
                                                   'spd':
                                                       widget.usuariorow?.spd,
                                                   'canalIngr': _model
@@ -1976,12 +1992,14 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                               );
                                               await NNyATable().update(
                                                 data: {
-                                                  'Nombre': _model
-                                                      .textFieldnombresTextController
-                                                      .text,
-                                                  'Apellido': _model
-                                                      .textFieldapellidoTextController
-                                                      .text,
+                                                  'Nombre': functions
+                                                      .mayusculas(_model
+                                                          .textFieldnombresTextController
+                                                          .text),
+                                                  'Apellido': functions
+                                                      .mayusculas(_model
+                                                          .textFieldapellidoTextController
+                                                          .text),
                                                   'DNI': int.tryParse(_model
                                                       .textFieldDNITextController
                                                       .text),
@@ -1999,19 +2017,21 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                               await showDialog(
                                                 context: context,
                                                 builder: (alertDialogContext) {
-                                                  return AlertDialog(
-                                                    title: const Text(
-                                                        'Expediente Editado'),
-                                                    content: const Text(
-                                                        'Se edito correctamente el expediente!'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: const Text('Ok'),
-                                                      ),
-                                                    ],
+                                                  return WebViewAware(
+                                                    child: AlertDialog(
+                                                      title: const Text(
+                                                          'Expediente Editado'),
+                                                      content: const Text(
+                                                          'Se edito correctamente el expediente!'),
+                                                      actions: [
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext),
+                                                          child: const Text('Ok'),
+                                                        ),
+                                                      ],
+                                                    ),
                                                   );
                                                 },
                                               );

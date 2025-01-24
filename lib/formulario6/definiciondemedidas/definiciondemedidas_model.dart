@@ -1,5 +1,7 @@
 import '/backend/supabase/supabase.dart';
 import '/components/anexosbotonera_widget.dart';
+import '/components/barrade_navegacion_widget.dart';
+import '/components/tarjetaencabezado_widget.dart';
 import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:async';
@@ -14,8 +16,12 @@ class DefiniciondemedidasModel
 
   ///  State fields for stateful widgets in this page.
 
+  // Model for barradeNavegacion component.
+  late BarradeNavegacionModel barradeNavegacionModel;
   // Model for anexosbotonera component.
   late AnexosbotoneraModel anexosbotoneraModel;
+  // Model for tarjetaencabezado component.
+  late TarjetaencabezadoModel tarjetaencabezadoModel;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
   List<VistaExpedientesUltimoEstadoRow>? expedienteprincipal;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
@@ -36,12 +42,18 @@ class DefiniciondemedidasModel
 
   @override
   void initState(BuildContext context) {
+    barradeNavegacionModel =
+        createModel(context, () => BarradeNavegacionModel());
     anexosbotoneraModel = createModel(context, () => AnexosbotoneraModel());
+    tarjetaencabezadoModel =
+        createModel(context, () => TarjetaencabezadoModel());
   }
 
   @override
   void dispose() {
+    barradeNavegacionModel.dispose();
     anexosbotoneraModel.dispose();
+    tarjetaencabezadoModel.dispose();
     paginatedDataTableController.dispose();
   }
 

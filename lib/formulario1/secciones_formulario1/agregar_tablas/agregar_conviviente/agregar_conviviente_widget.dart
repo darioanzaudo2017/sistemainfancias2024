@@ -1,4 +1,5 @@
 import '/auth/supabase_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_radio_button.dart';
@@ -6,10 +7,9 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
-import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'agregar_conviviente_model.dart';
 export 'agregar_conviviente_model.dart';
 
@@ -941,31 +941,15 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                 FFButtonWidget(
                                   onPressed: () async {
                                     if (!widget.editar!) {
-                                      _model.agregarpersonaexitosa =
-                                          await actions.checkDNI(
-                                        () async {
-                                          _model.crearNNyACopy =
-                                              await NNyATable().insert({
-                                            'Nombre': functions.mayusculas(
-                                                _model.textController1.text),
-                                            'Apellido': functions.mayusculas(
-                                                _model.textController2.text),
-                                            'DNI': _model
-                                                            .textFieldDniTextController
-                                                            .text ==
-                                                        ''
-                                                ? random_data.randomInteger(
-                                                    900000000, 1000000000)
-                                                : int.tryParse(_model
-                                                    .textFieldDniTextController
-                                                    .text),
-                                            'edad': int.tryParse(
-                                                _model.textController4.text),
-                                            'iduser': currentUserUid,
-                                          });
-                                        },
+                                      _model.chekdnigrupo =
+                                          await ExisteDNICall.call(
+                                        dni: _model
+                                            .textFieldDniTextController.text,
                                       );
-                                      if (_model.agregarpersonaexitosa!) {
+
+                                      if (ExisteDNICall.check(
+                                        (_model.chekdnigrupo?.jsonBody ?? ''),
+                                      )!) {
                                         _model.busquedapersonadni =
                                             await NNyATable().queryRows(
                                           queryFn: (q) => q.eqOrNull(
@@ -991,28 +975,31 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                                   context: context,
                                                   builder:
                                                       (alertDialogContext) {
-                                                    return AlertDialog(
-                                                      title: const Text(
-                                                          'El DNI esta duplicado'),
-                                                      content: Text(
-                                                          'Desea guardar como grupo conviviente a:${_model.nombre}, ${_model.apellido}, DNI: ${_model.dni?.toString()}'),
-                                                      actions: [
-                                                        TextButton(
-                                                          onPressed: () =>
-                                                              Navigator.pop(
-                                                                  alertDialogContext,
-                                                                  false),
-                                                          child: const Text('Cancel'),
-                                                        ),
-                                                        TextButton(
-                                                          onPressed: () =>
-                                                              Navigator.pop(
-                                                                  alertDialogContext,
-                                                                  true),
-                                                          child:
-                                                              const Text('Confirm'),
-                                                        ),
-                                                      ],
+                                                    return WebViewAware(
+                                                      child: AlertDialog(
+                                                        title: const Text(
+                                                            'El DNI esta duplicado'),
+                                                        content: Text(
+                                                            'Desea guardar como grupo conviviente a:${_model.nombre}, ${_model.apellido}, DNI: ${_model.dni?.toString()}'),
+                                                        actions: [
+                                                          TextButton(
+                                                            onPressed: () =>
+                                                                Navigator.pop(
+                                                                    alertDialogContext,
+                                                                    false),
+                                                            child:
+                                                                const Text('Cancel'),
+                                                          ),
+                                                          TextButton(
+                                                            onPressed: () =>
+                                                                Navigator.pop(
+                                                                    alertDialogContext,
+                                                                    true),
+                                                            child:
+                                                                const Text('Confirm'),
+                                                          ),
+                                                        ],
+                                                      ),
                                                     );
                                                   },
                                                 ) ??
@@ -1047,17 +1034,20 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                           _model.aaa =
                                               await GrupoConvivienteTable()
                                                   .insert({
-                                            'nombre': functions.mayusculas(
-                                                _model.textController1.text),
-                                            'apellido': functions.mayusculas(
-                                                _model.textController2.text),
+                                            'nombre': _model.busquedapersonadni
+                                                ?.firstOrNull?.nombre,
+                                            'apellido': _model
+                                                .busquedapersonadni
+                                                ?.firstOrNull
+                                                ?.apellido,
                                             'vinculo': _model.dropDownValue,
-                                            'dni': _model.dni,
+                                            'dni': _model.busquedapersonadni
+                                                ?.firstOrNull?.dni,
                                             'fecha_nacimiento':
                                                 supaSerialize<DateTime>(
                                                     _model.datePicked),
-                                            'edad': int.tryParse(
-                                                _model.textController4.text),
+                                            'edad': _model.busquedapersonadni
+                                                ?.firstOrNull?.edad,
                                             'telefono':
                                                 _model.textController5.text,
                                             'direccion':
@@ -1068,7 +1058,8 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                             'idexpe': widget.idexp?.id,
                                             'conviviente':
                                                 _model.radioButtoncudValue,
-                                            'idnnya': _model.crearNNyACopy?.id,
+                                            'idnnya': _model.busquedapersonadni
+                                                ?.firstOrNull?.id,
                                           });
                                           await GrupoConvivienteTable().update(
                                             data: {
@@ -1101,6 +1092,20 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                             null) {
                                           return;
                                         }
+                                        _model.crearnnyanuevo =
+                                            await NNyATable().insert({
+                                          'Nombre': functions.mayusculas(
+                                              _model.textController1.text),
+                                          'Apellido': functions.mayusculas(
+                                              _model.textController2.text),
+                                          'DNI': int.tryParse(_model
+                                              .textFieldDniTextController.text),
+                                          'edad': int.tryParse(
+                                              _model.textController4.text),
+                                          'updated_at': supaSerialize<DateTime>(
+                                              getCurrentTimestamp),
+                                          'iduser': currentUserUid,
+                                        });
                                         _model.creargrupo =
                                             await GrupoConvivienteTable()
                                                 .insert({
@@ -1109,7 +1114,8 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                           'apellido': functions.mayusculas(
                                               _model.textController2.text),
                                           'vinculo': _model.dropDownValue,
-                                          'dni': _model.crearNNyACopy?.dni,
+                                          'dni': int.tryParse(_model
+                                              .textFieldDniTextController.text),
                                           'fecha_nacimiento':
                                               supaSerialize<DateTime>(
                                                   _model.datePicked),
@@ -1125,17 +1131,17 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                           'idexpe': widget.idexp?.id,
                                           'conviviente':
                                               _model.radioButtoncudValue,
-                                          'idnnya': _model.crearNNyACopy?.id,
+                                          'idnnya': _model.crearnnyanuevo?.id,
                                         });
                                         await NNyAExpGruTable().insert({
-                                          'idNNyA': _model.crearNNyACopy?.id,
+                                          'idNNyA': _model.crearnnyanuevo?.id,
                                           'idExp': widget.idexp?.id,
                                           'detalle': 'Grupo Conviviente',
                                         });
                                         await GrupoConvivienteTable().update(
                                           data: {
                                             'idnnyaGrupo':
-                                                _model.crearNNyACopy?.id,
+                                                _model.crearnnyanuevo?.id,
                                           },
                                           matchingRows: (rows) => rows.eqOrNull(
                                             'id',
@@ -1154,19 +1160,21 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                         await showDialog(
                                           context: context,
                                           builder: (alertDialogContext) {
-                                            return AlertDialog(
-                                              title: const Text(
-                                                  'Se guardo correctamente'),
-                                              content: const Text(
-                                                  'Se gardo correctamente la informacion'),
-                                              actions: [
-                                                TextButton(
-                                                  onPressed: () =>
-                                                      Navigator.pop(
-                                                          alertDialogContext),
-                                                  child: const Text('Ok'),
-                                                ),
-                                              ],
+                                            return WebViewAware(
+                                              child: AlertDialog(
+                                                title: const Text(
+                                                    'Se guardo correctamente'),
+                                                content: const Text(
+                                                    'Se gardo correctamente la informacion'),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext),
+                                                    child: const Text('Ok'),
+                                                  ),
+                                                ],
+                                              ),
                                             );
                                           },
                                         );

@@ -13,6 +13,7 @@ import '/flutter_flow/form_field_controller.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'senaf_model.dart';
 export 'senaf_model.dart';
 
@@ -148,7 +149,7 @@ class _SenafWidgetState extends State<SenafWidget> {
             body: SafeArea(
               top: true,
               child: FutureBuilder<List<Formulario9Row>>(
-                future: (_model.requestCompleter3 ??=
+                future: (_model.requestCompleter2 ??=
                         Completer<List<Formulario9Row>>()
                           ..complete(Formulario9Table().querySingleRow(
                             queryFn: (q) => q.eqOrNull(
@@ -183,7 +184,7 @@ class _SenafWidgetState extends State<SenafWidget> {
                   return Container(
                     decoration: const BoxDecoration(),
                     child: FutureBuilder<List<IngresosRow>>(
-                      future: (_model.requestCompleter2 ??=
+                      future: (_model.requestCompleter1 ??=
                               Completer<List<IngresosRow>>()
                                 ..complete(IngresosTable().querySingleRow(
                                   queryFn: (q) => q.eqOrNull(
@@ -1192,18 +1193,20 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                             enableDrag: false,
                                                                                             context: context,
                                                                                             builder: (context) {
-                                                                                              return GestureDetector(
-                                                                                                onTap: () {
-                                                                                                  FocusScope.of(context).unfocus();
-                                                                                                  FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                },
-                                                                                                child: Padding(
-                                                                                                  padding: MediaQuery.viewInsetsOf(context),
-                                                                                                  child: FormcaratulaWidget(
-                                                                                                    idexp: widget.expediente?.id,
-                                                                                                    editar: true,
-                                                                                                    dniok: false,
-                                                                                                    usuariorow: widget.usuariorow!,
+                                                                                              return WebViewAware(
+                                                                                                child: GestureDetector(
+                                                                                                  onTap: () {
+                                                                                                    FocusScope.of(context).unfocus();
+                                                                                                    FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                  },
+                                                                                                  child: Padding(
+                                                                                                    padding: MediaQuery.viewInsetsOf(context),
+                                                                                                    child: FormcaratulaWidget(
+                                                                                                      idexp: widget.expediente?.id,
+                                                                                                      editar: true,
+                                                                                                      dniok: false,
+                                                                                                      usuariorow: widget.usuariorow!,
+                                                                                                    ),
                                                                                                   ),
                                                                                                 ),
                                                                                               );
@@ -2430,28 +2433,6 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                                       validator: _model.textFieldmotivosolicitudTextControllerValidator.asValidator(context),
                                                                                                     ),
                                                                                                   ),
-                                                                                                  Align(
-                                                                                                    alignment: const AlignmentDirectional(1.0, 0.0),
-                                                                                                    child: FFButtonWidget(
-                                                                                                      onPressed: () {
-                                                                                                        print('Button pressed ...');
-                                                                                                      },
-                                                                                                      text: 'enviar mail a senar',
-                                                                                                      options: FFButtonOptions(
-                                                                                                        height: 40.0,
-                                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                        color: FlutterFlowTheme.of(context).primary,
-                                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                              fontFamily: 'Noto Sans JP',
-                                                                                                              color: Colors.white,
-                                                                                                              letterSpacing: 0.0,
-                                                                                                            ),
-                                                                                                        elevation: 0.0,
-                                                                                                        borderRadius: BorderRadius.circular(8.0),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                  ),
                                                                                                 ].divide(const SizedBox(height: 10.0)).around(const SizedBox(height: 10.0)),
                                                                                               ),
                                                                                             ),
@@ -3075,317 +3056,312 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                         mainAxisSize:
                                                                             MainAxisSize.max,
                                                                         mainAxisAlignment:
-                                                                            MainAxisAlignment.center,
+                                                                            MainAxisAlignment.spaceAround,
                                                                         children: [
-                                                                          Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                8.0,
-                                                                                0.0,
-                                                                                0.0),
+                                                                          Align(
+                                                                            alignment:
+                                                                                const AlignmentDirectional(0.0, 0.0),
                                                                             child:
-                                                                                FutureBuilder<List<DocumentosadjuntosRow>>(
-                                                                              future: DocumentosadjuntosTable().querySingleRow(
-                                                                                queryFn: (q) => q
-                                                                                    .eqOrNull(
-                                                                                      'idingresodoc',
-                                                                                      widget.ingrow?.id,
-                                                                                    )
-                                                                                    .eqOrNull(
-                                                                                      'tipodocumento',
-                                                                                      'Formulario Solicitud de medida excepcional',
-                                                                                    ),
-                                                                              ),
-                                                                              builder: (context, snapshot) {
-                                                                                // Customize what your widget looks like when it's loading.
-                                                                                if (!snapshot.hasData) {
-                                                                                  return Center(
-                                                                                    child: SizedBox(
-                                                                                      width: 50.0,
-                                                                                      height: 50.0,
-                                                                                      child: CircularProgressIndicator(
-                                                                                        valueColor: AlwaysStoppedAnimation<Color>(
-                                                                                          FlutterFlowTheme.of(context).primary,
+                                                                                Padding(
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                                                                              child: FutureBuilder<List<DocumentosadjuntosRow>>(
+                                                                                future: DocumentosadjuntosTable().querySingleRow(
+                                                                                  queryFn: (q) => q
+                                                                                      .eqOrNull(
+                                                                                        'idingresodoc',
+                                                                                        widget.ingrow?.id,
+                                                                                      )
+                                                                                      .eqOrNull(
+                                                                                        'tipodocumento',
+                                                                                        'Formulario Solicitud de medida excepcional',
+                                                                                      ),
+                                                                                ),
+                                                                                builder: (context, snapshot) {
+                                                                                  // Customize what your widget looks like when it's loading.
+                                                                                  if (!snapshot.hasData) {
+                                                                                    return Center(
+                                                                                      child: SizedBox(
+                                                                                        width: 50.0,
+                                                                                        height: 50.0,
+                                                                                        child: CircularProgressIndicator(
+                                                                                          valueColor: AlwaysStoppedAnimation<Color>(
+                                                                                            FlutterFlowTheme.of(context).primary,
+                                                                                          ),
                                                                                         ),
                                                                                       ),
-                                                                                    ),
-                                                                                  );
-                                                                                }
-                                                                                List<DocumentosadjuntosRow> buttonDocumentosadjuntosRowList = snapshot.data!;
+                                                                                    );
+                                                                                  }
+                                                                                  List<DocumentosadjuntosRow> buttonDocumentosadjuntosRowList = snapshot.data!;
 
-                                                                                final buttonDocumentosadjuntosRow = buttonDocumentosadjuntosRowList.isNotEmpty ? buttonDocumentosadjuntosRowList.first : null;
+                                                                                  final buttonDocumentosadjuntosRow = buttonDocumentosadjuntosRowList.isNotEmpty ? buttonDocumentosadjuntosRowList.first : null;
 
-                                                                                return FFButtonWidget(
-                                                                                  onPressed: () async {
-                                                                                    if (_model.formKey.currentState == null || !_model.formKey.currentState!.validate()) {
-                                                                                      return;
-                                                                                    }
-                                                                                    if (containerform9Formulario9Row?.idForm9 == null) {
-                                                                                      _model.form9 = await Formulario9Table().insert({
-                                                                                        'idIngreso': widget.ingrow?.id,
-                                                                                        'idExpediente': widget.expediente?.id,
-                                                                                        'fecha': supaSerialize<DateTime>(_model.datePicked1),
-                                                                                        'causa': _model.dropDowncausaValue,
-                                                                                        'observacioncese': _model.textFieldObsTextController.text,
-                                                                                        'solicitudMedida': true,
-                                                                                        'fechasolicitud': supaSerialize<DateTime>(_model.datePicked2),
-                                                                                        'evaluacionMedida': false,
-                                                                                        'MedidaAdoptada': false,
-                                                                                        'MedidaRechazada': false,
-                                                                                        'FechaMedidaRechazada': supaSerialize<DateTime>(_model.datePicked6),
-                                                                                        'MotivoRechazo': _model.textFieldmotivorechazoTextController1.text,
-                                                                                        'acciones': _model.textController1.text,
-                                                                                        'reiteracionFecha': supaSerialize<DateTime>(_model.datePicked4),
-                                                                                        'updated_at': supaSerialize<DateTime>(getCurrentTimestamp),
-                                                                                        'iduser': currentUserUid,
-                                                                                        'fechasolicitudsenaf': supaSerialize<DateTime>(_model.datePicked3),
-                                                                                        'agotadomedida': _model.radioButtoninscriptoagotadoValue,
-                                                                                        'riesgovida': _model.radioButtoninscriptopermanenciafamiliaValue,
-                                                                                        'fundamentacionsolicitud': _model.textController4.text,
-                                                                                        'FecMedidaAdoptada': supaSerialize<DateTime>(_model.datePicked5),
-                                                                                        'estado': 'Cerrado',
-                                                                                        'reseñadelasitu': _model.textController3.text,
-                                                                                      });
-                                                                                      await showDialog(
-                                                                                        context: context,
-                                                                                        builder: (alertDialogContext) {
-                                                                                          return AlertDialog(
-                                                                                            title: const Text('Se guardo correctamente la informacion'),
-                                                                                            actions: [
-                                                                                              TextButton(
-                                                                                                onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                child: const Text('Ok'),
-                                                                                              ),
-                                                                                            ],
-                                                                                          );
-                                                                                        },
-                                                                                      );
-                                                                                      await IngresosTable().update(
-                                                                                        data: {
-                                                                                          'form9': true,
-                                                                                          'form9completo': true,
-                                                                                          'fechacierre': supaSerialize<DateTime>(_model.datePicked1),
-                                                                                          'Motivocierre': _model.dropDowncausaValue,
-                                                                                          'observacioncierre': _model.textFieldObsTextController.text,
-                                                                                          'Estado': 'Cerrado',
+                                                                                  return FFButtonWidget(
+                                                                                    onPressed: () async {
+                                                                                      if (_model.formKey.currentState == null || !_model.formKey.currentState!.validate()) {
+                                                                                        return;
+                                                                                      }
+                                                                                      if (containerform9Formulario9Row?.idForm9 == null) {
+                                                                                        _model.form9 = await Formulario9Table().insert({
+                                                                                          'idIngreso': widget.ingrow?.id,
+                                                                                          'idExpediente': widget.expediente?.id,
+                                                                                          'fecha': supaSerialize<DateTime>(_model.datePicked1),
+                                                                                          'causa': _model.dropDowncausaValue,
+                                                                                          'observacioncese': _model.textFieldObsTextController.text,
+                                                                                          'solicitudMedida': true,
+                                                                                          'fechasolicitud': supaSerialize<DateTime>(_model.datePicked2),
+                                                                                          'evaluacionMedida': false,
+                                                                                          'MedidaAdoptada': false,
+                                                                                          'MedidaRechazada': false,
+                                                                                          'FechaMedidaRechazada': supaSerialize<DateTime>(_model.datePicked6),
+                                                                                          'MotivoRechazo': _model.textFieldmotivorechazoTextController1.text,
+                                                                                          'acciones': _model.textController1.text,
+                                                                                          'reiteracionFecha': supaSerialize<DateTime>(_model.datePicked4),
                                                                                           'updated_at': supaSerialize<DateTime>(getCurrentTimestamp),
-                                                                                        },
-                                                                                        matchingRows: (rows) => rows.eqOrNull(
-                                                                                          'id',
-                                                                                          widget.ingrow?.id,
-                                                                                        ),
-                                                                                      );
-                                                                                      await showDialog(
-                                                                                        context: context,
-                                                                                        builder: (alertDialogContext) {
-                                                                                          return AlertDialog(
-                                                                                            title: const Text('Carga correcta'),
-                                                                                            content: const Text('La informacion se guardo correctamente!!'),
-                                                                                            actions: [
-                                                                                              TextButton(
-                                                                                                onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                child: const Text('Ok'),
+                                                                                          'iduser': currentUserUid,
+                                                                                          'fechasolicitudsenaf': supaSerialize<DateTime>(_model.datePicked3),
+                                                                                          'agotadomedida': _model.radioButtoninscriptoagotadoValue,
+                                                                                          'riesgovida': _model.radioButtoninscriptopermanenciafamiliaValue,
+                                                                                          'fundamentacionsolicitud': _model.textController4.text,
+                                                                                          'FecMedidaAdoptada': supaSerialize<DateTime>(_model.datePicked5),
+                                                                                          'estado': 'Cerrado',
+                                                                                          'reseñadelasitu': _model.textController3.text,
+                                                                                        });
+                                                                                        await IngresosTable().update(
+                                                                                          data: {
+                                                                                            'form9': true,
+                                                                                            'form9completo': true,
+                                                                                            'fechacierre': supaSerialize<DateTime>(_model.datePicked1),
+                                                                                            'Motivocierre': _model.dropDowncausaValue,
+                                                                                            'observacioncierre': _model.textFieldObsTextController.text,
+                                                                                            'Estado': 'Cerrado',
+                                                                                            'updated_at': supaSerialize<DateTime>(getCurrentTimestamp),
+                                                                                          },
+                                                                                          matchingRows: (rows) => rows.eqOrNull(
+                                                                                            'id',
+                                                                                            widget.ingrow?.id,
+                                                                                          ),
+                                                                                        );
+                                                                                        await showDialog(
+                                                                                          context: context,
+                                                                                          builder: (alertDialogContext) {
+                                                                                            return WebViewAware(
+                                                                                              child: AlertDialog(
+                                                                                                title: const Text('Carga correcta'),
+                                                                                                content: const Text('La informacion se guardo correctamente!!'),
+                                                                                                actions: [
+                                                                                                  TextButton(
+                                                                                                    onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                    child: const Text('Ok'),
+                                                                                                  ),
+                                                                                                ],
                                                                                               ),
-                                                                                            ],
+                                                                                            );
+                                                                                          },
+                                                                                        );
+                                                                                        safeSetState(() => _model.requestCompleter1 = null);
+                                                                                        await _model.waitForRequestCompleted1();
+                                                                                        safeSetState(() => _model.requestCompleter2 = null);
+                                                                                        await _model.waitForRequestCompleted2();
+                                                                                        if (_model.form9?.causa == 'Solicitud de medida excepcional al organismo provincial de protección de derechos (SENAF)') {
+                                                                                          _model.apiResultznwinfsenaf1 = await CrearCaratulaCall.call(
+                                                                                            idexp: widget.expediente?.id,
+                                                                                            tipo: buttonDocumentosadjuntosRow?.tipodocumento,
+                                                                                            editar: 0,
+                                                                                            idigreso: widget.ingrow?.id,
+                                                                                            carpeta: containeringresoIngresosRow?.idcarpeta,
+                                                                                            iddocumentoadjunto: buttonDocumentosadjuntosRow?.id.toString(),
                                                                                           );
-                                                                                        },
-                                                                                      );
-                                                                                      safeSetState(() => _model.requestCompleter2 = null);
-                                                                                      await _model.waitForRequestCompleted2();
-                                                                                      safeSetState(() => _model.requestCompleter3 = null);
-                                                                                      await _model.waitForRequestCompleted3();
-                                                                                      if (_model.form9?.causa == 'Solicitud de medida excepcional al organismo provincial de protección de derechos (SENAF)') {
-                                                                                        _model.apiResultznwinfsenaf1 = await CrearCaratulaCall.call(
+
+                                                                                          if ((_model.apiResultznwinfsenaf1?.succeeded ?? true)) {
+                                                                                            await Future.delayed(const Duration(milliseconds: 5000));
+                                                                                            await showDialog(
+                                                                                              context: context,
+                                                                                              builder: (alertDialogContext) {
+                                                                                                return WebViewAware(
+                                                                                                  child: AlertDialog(
+                                                                                                    title: const Text('Se ejecuto correctamente!'),
+                                                                                                    content: const Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                                    actions: [
+                                                                                                      TextButton(
+                                                                                                        onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                        child: const Text('Ok'),
+                                                                                                      ),
+                                                                                                    ],
+                                                                                                  ),
+                                                                                                );
+                                                                                              },
+                                                                                            );
+                                                                                          }
+                                                                                        } else {
+                                                                                          Navigator.pop(context);
+                                                                                        }
+                                                                                      } else {
+                                                                                        await Formulario9Table().update(
+                                                                                          data: {
+                                                                                            'idIngreso': widget.ingrow?.id,
+                                                                                            'idExpediente': widget.expediente?.id,
+                                                                                            'fecha': supaSerialize<DateTime>(_model.datePicked1 ?? containerform9Formulario9Row?.fecha),
+                                                                                            'causa': _model.dropDowncausaValue,
+                                                                                            'observacioncese': _model.textFieldObsTextController.text,
+                                                                                            'solicitudMedida': _model.checkboxsolicitudValue,
+                                                                                            'fechasolicitud': supaSerialize<DateTime>(_model.datePicked2 ?? containerform9Formulario9Row?.fechasolicitud),
+                                                                                            'evaluacionMedida': _model.checkboxevaluacionValue,
+                                                                                            'MedidaAdoptada': _model.checkboxadoptadaValue,
+                                                                                            'MedidaRechazada': _model.checkboxrechazadaValue,
+                                                                                            'FechaMedidaRechazada': supaSerialize<DateTime>(_model.datePicked6 ?? containerform9Formulario9Row?.fechaMedidaRechazada),
+                                                                                            'MotivoRechazo': _model.textFieldmotivorechazoTextController1.text,
+                                                                                            'acciones': _model.textController1.text,
+                                                                                            'reiteracionFecha': supaSerialize<DateTime>(_model.datePicked4 ?? containerform9Formulario9Row?.reiteracionFecha),
+                                                                                            'updated_at': supaSerialize<DateTime>(getCurrentTimestamp),
+                                                                                            'iduser': currentUserUid,
+                                                                                            'fechasolicitudsenaf': supaSerialize<DateTime>(_model.datePicked3 ?? containerform9Formulario9Row?.fechasolicitudsenaf),
+                                                                                            'agotadomedida': _model.radioButtoninscriptoagotadoValue,
+                                                                                            'riesgovida': _model.radioButtoninscriptopermanenciafamiliaValue,
+                                                                                            'fundamentacionsolicitud': _model.textController4.text,
+                                                                                            'FecMedidaAdoptada': supaSerialize<DateTime>(_model.datePicked5 ?? containerform9Formulario9Row?.fecMedidaAdoptada),
+                                                                                            'reseñadelasitu': _model.textController3.text,
+                                                                                          },
+                                                                                          matchingRows: (rows) => rows.eqOrNull(
+                                                                                            'idIngreso',
+                                                                                            widget.ingrow?.id,
+                                                                                          ),
+                                                                                        );
+                                                                                        safeSetState(() => _model.requestCompleter1 = null);
+                                                                                        await _model.waitForRequestCompleted1();
+                                                                                        safeSetState(() => _model.requestCompleter2 = null);
+                                                                                        await _model.waitForRequestCompleted2();
+                                                                                        await showDialog(
+                                                                                          context: context,
+                                                                                          builder: (alertDialogContext) {
+                                                                                            return WebViewAware(
+                                                                                              child: AlertDialog(
+                                                                                                title: const Text('Se guardo correctamente la informacion'),
+                                                                                                actions: [
+                                                                                                  TextButton(
+                                                                                                    onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                    child: const Text('Ok'),
+                                                                                                  ),
+                                                                                                ],
+                                                                                              ),
+                                                                                            );
+                                                                                          },
+                                                                                        );
+                                                                                        _model.apiResultznwinfsenaf2 = await CrearCaratulaCall.call(
                                                                                           idexp: widget.expediente?.id,
                                                                                           tipo: buttonDocumentosadjuntosRow?.tipodocumento,
-                                                                                          editar: 0,
+                                                                                          editar: 1,
                                                                                           idigreso: widget.ingrow?.id,
                                                                                           carpeta: containeringresoIngresosRow?.idcarpeta,
                                                                                           iddocumentoadjunto: buttonDocumentosadjuntosRow?.id.toString(),
+                                                                                          idDocedit: buttonDocumentosadjuntosRow?.iddocdrive,
                                                                                         );
 
-                                                                                        if ((_model.apiResultznwinfsenaf1?.succeeded ?? true)) {
+                                                                                        if ((_model.apiResultznwinfsenaf2?.succeeded ?? true)) {
                                                                                           await Future.delayed(const Duration(milliseconds: 5000));
                                                                                           await showDialog(
                                                                                             context: context,
                                                                                             builder: (alertDialogContext) {
-                                                                                              return AlertDialog(
-                                                                                                title: const Text('Se ejecuto correctamente!'),
-                                                                                                content: const Text('La informacion se solicito y se generara un archivo en google drive!!'),
-                                                                                                actions: [
-                                                                                                  TextButton(
-                                                                                                    onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                    child: const Text('Ok'),
-                                                                                                  ),
-                                                                                                ],
+                                                                                              return WebViewAware(
+                                                                                                child: AlertDialog(
+                                                                                                  title: const Text('Se ejecuto correctamente!'),
+                                                                                                  content: const Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                                  actions: [
+                                                                                                    TextButton(
+                                                                                                      onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                      child: const Text('Ok'),
+                                                                                                    ),
+                                                                                                  ],
+                                                                                                ),
                                                                                               );
                                                                                             },
                                                                                           );
-                                                                                          await showDialog(
-                                                                                            context: context,
-                                                                                            builder: (alertDialogContext) {
-                                                                                              return AlertDialog(
-                                                                                                title: const Text('Se enviara un mail a la cordinacion!'),
-                                                                                                content: const Text('Se envio el mail!!'),
-                                                                                                actions: [
-                                                                                                  TextButton(
-                                                                                                    onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                    child: const Text('Ok'),
-                                                                                                  ),
-                                                                                                ],
-                                                                                              );
-                                                                                            },
-                                                                                          );
+                                                                                          safeSetState(() => _model.requestCompleter2 = null);
+                                                                                          await _model.waitForRequestCompleted2();
                                                                                         }
-                                                                                      } else {
-                                                                                        Navigator.pop(context);
                                                                                       }
-                                                                                    } else {
-                                                                                      await Formulario9Table().update(
-                                                                                        data: {
-                                                                                          'idIngreso': widget.ingrow?.id,
-                                                                                          'idExpediente': widget.expediente?.id,
-                                                                                          'fecha': supaSerialize<DateTime>(_model.datePicked1 ?? containerform9Formulario9Row?.fecha),
-                                                                                          'causa': _model.dropDowncausaValue,
-                                                                                          'observacioncese': _model.textFieldObsTextController.text,
-                                                                                          'solicitudMedida': _model.checkboxsolicitudValue,
-                                                                                          'fechasolicitud': supaSerialize<DateTime>(_model.datePicked2 ?? containerform9Formulario9Row?.fechasolicitud),
-                                                                                          'evaluacionMedida': _model.checkboxevaluacionValue,
-                                                                                          'MedidaAdoptada': _model.checkboxadoptadaValue,
-                                                                                          'MedidaRechazada': _model.checkboxrechazadaValue,
-                                                                                          'FechaMedidaRechazada': supaSerialize<DateTime>(_model.datePicked6 ?? containerform9Formulario9Row?.fechaMedidaRechazada),
-                                                                                          'MotivoRechazo': _model.textFieldmotivorechazoTextController1.text,
-                                                                                          'acciones': _model.textController1.text,
-                                                                                          'reiteracionFecha': supaSerialize<DateTime>(_model.datePicked4 ?? containerform9Formulario9Row?.reiteracionFecha),
-                                                                                          'updated_at': supaSerialize<DateTime>(getCurrentTimestamp),
-                                                                                          'iduser': currentUserUid,
-                                                                                          'fechasolicitudsenaf': supaSerialize<DateTime>(_model.datePicked3 ?? containerform9Formulario9Row?.fechasolicitudsenaf),
-                                                                                          'agotadomedida': _model.radioButtoninscriptoagotadoValue,
-                                                                                          'riesgovida': _model.radioButtoninscriptopermanenciafamiliaValue,
-                                                                                          'fundamentacionsolicitud': _model.textController4.text,
-                                                                                          'FecMedidaAdoptada': supaSerialize<DateTime>(_model.datePicked5 ?? containerform9Formulario9Row?.fecMedidaAdoptada),
-                                                                                          'reseñadelasitu': _model.textController3.text,
-                                                                                        },
-                                                                                        matchingRows: (rows) => rows.eqOrNull(
-                                                                                          'idIngreso',
-                                                                                          widget.ingrow?.id,
-                                                                                        ),
-                                                                                      );
-                                                                                      safeSetState(() => _model.requestCompleter2 = null);
-                                                                                      await _model.waitForRequestCompleted2();
-                                                                                      safeSetState(() => _model.requestCompleter3 = null);
-                                                                                      await _model.waitForRequestCompleted3();
-                                                                                      await showDialog(
-                                                                                        context: context,
-                                                                                        builder: (alertDialogContext) {
-                                                                                          return AlertDialog(
-                                                                                            title: const Text('Se guardo correctamente la informacion'),
-                                                                                            actions: [
-                                                                                              TextButton(
-                                                                                                onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                child: const Text('Ok'),
-                                                                                              ),
-                                                                                            ],
-                                                                                          );
-                                                                                        },
-                                                                                      );
-                                                                                      _model.apiResultznwinfsenaf2 = await CrearCaratulaCall.call(
-                                                                                        idexp: widget.expediente?.id,
-                                                                                        tipo: buttonDocumentosadjuntosRow?.tipodocumento,
-                                                                                        editar: 1,
-                                                                                        idigreso: widget.ingrow?.id,
-                                                                                        carpeta: containeringresoIngresosRow?.idcarpeta,
-                                                                                        iddocumentoadjunto: buttonDocumentosadjuntosRow?.id.toString(),
-                                                                                        idDocedit: buttonDocumentosadjuntosRow?.iddocdrive,
-                                                                                      );
 
-                                                                                      if ((_model.apiResultznwinfsenaf2?.succeeded ?? true)) {
-                                                                                        await Future.delayed(const Duration(milliseconds: 5000));
-                                                                                        await showDialog(
-                                                                                          context: context,
-                                                                                          builder: (alertDialogContext) {
-                                                                                            return AlertDialog(
-                                                                                              title: const Text('Se ejecuto correctamente!'),
-                                                                                              content: const Text('La informacion se solicito y se generara un archivo en google drive!!'),
-                                                                                              actions: [
-                                                                                                TextButton(
-                                                                                                  onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                  child: const Text('Ok'),
-                                                                                                ),
-                                                                                              ],
-                                                                                            );
-                                                                                          },
-                                                                                        );
-                                                                                        await showDialog(
-                                                                                          context: context,
-                                                                                          builder: (alertDialogContext) {
-                                                                                            return AlertDialog(
-                                                                                              title: const Text('Se enviara un mail a la cordinacion!'),
-                                                                                              content: const Text('Se envio el mail!!'),
-                                                                                              actions: [
-                                                                                                TextButton(
-                                                                                                  onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                  child: const Text('Ok'),
-                                                                                                ),
-                                                                                              ],
-                                                                                            );
-                                                                                          },
-                                                                                        );
-                                                                                      }
-                                                                                    }
-
-                                                                                    safeSetState(() {});
-                                                                                  },
-                                                                                  text: 'Guardar',
-                                                                                  icon: const Icon(
-                                                                                    Icons.save,
-                                                                                    size: 15.0,
-                                                                                  ),
-                                                                                  options: FFButtonOptions(
-                                                                                    width: 250.0,
-                                                                                    height: 40.0,
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    color: FlutterFlowTheme.of(context).success,
-                                                                                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                          fontFamily: 'Noto Sans JP',
-                                                                                          color: Colors.white,
-                                                                                          letterSpacing: 0.0,
-                                                                                        ),
-                                                                                    elevation: 2.0,
-                                                                                    borderSide: const BorderSide(
-                                                                                      color: Colors.transparent,
-                                                                                      width: 1.0,
+                                                                                      safeSetState(() {});
+                                                                                    },
+                                                                                    text: 'Guardar',
+                                                                                    icon: const Icon(
+                                                                                      Icons.save,
+                                                                                      size: 15.0,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(20.0),
-                                                                                    hoverElevation: 4.0,
-                                                                                  ),
-                                                                                );
-                                                                              },
+                                                                                    options: FFButtonOptions(
+                                                                                      width: 250.0,
+                                                                                      height: 40.0,
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      color: FlutterFlowTheme.of(context).success,
+                                                                                      textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                            fontFamily: 'Noto Sans JP',
+                                                                                            color: Colors.white,
+                                                                                            letterSpacing: 0.0,
+                                                                                          ),
+                                                                                      elevation: 2.0,
+                                                                                      borderSide: const BorderSide(
+                                                                                        color: Colors.transparent,
+                                                                                        width: 1.0,
+                                                                                      ),
+                                                                                      borderRadius: BorderRadius.circular(20.0),
+                                                                                      hoverElevation: 4.0,
+                                                                                    ),
+                                                                                  );
+                                                                                },
+                                                                              ),
                                                                             ),
                                                                           ),
-                                                                          FFButtonWidget(
-                                                                            onPressed:
-                                                                                () {
-                                                                              print('Button pressed ...');
-                                                                            },
-                                                                            text:
-                                                                                'Enviar Solicitud de medida a la direccion gral',
-                                                                            options:
-                                                                                FFButtonOptions(
-                                                                              height: 40.0,
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                              textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    fontFamily: 'Noto Sans JP',
-                                                                                    color: Colors.white,
-                                                                                    letterSpacing: 0.0,
+                                                                          if (containerform9Formulario9Row?.linksolicitud != null &&
+                                                                              containerform9Formulario9Row?.linksolicitud != '')
+                                                                            Padding(
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                                                                              child: FFButtonWidget(
+                                                                                onPressed: () async {
+                                                                                  context.pushNamed(
+                                                                                    'informesenaf',
+                                                                                    queryParameters: {
+                                                                                      'link': serializeParam(
+                                                                                        containerform9Formulario9Row?.linksolicitud,
+                                                                                        ParamType.String,
+                                                                                      ),
+                                                                                      'form9row': serializeParam(
+                                                                                        containerform9Formulario9Row,
+                                                                                        ParamType.SupabaseRow,
+                                                                                      ),
+                                                                                      'exprow': serializeParam(
+                                                                                        widget.expediente,
+                                                                                        ParamType.SupabaseRow,
+                                                                                      ),
+                                                                                      'ingreso': serializeParam(
+                                                                                        widget.ingrow,
+                                                                                        ParamType.SupabaseRow,
+                                                                                      ),
+                                                                                      'usuariorow': serializeParam(
+                                                                                        widget.usuariorow,
+                                                                                        ParamType.SupabaseRow,
+                                                                                      ),
+                                                                                    }.withoutNulls,
+                                                                                  );
+                                                                                },
+                                                                                text: 'Ver informe',
+                                                                                options: FFButtonOptions(
+                                                                                  height: 40.0,
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                        fontFamily: 'Noto Sans JP',
+                                                                                        color: FlutterFlowTheme.of(context).primary,
+                                                                                        letterSpacing: 0.0,
+                                                                                      ),
+                                                                                  elevation: 0.0,
+                                                                                  borderSide: BorderSide(
+                                                                                    color: FlutterFlowTheme.of(context).primary,
                                                                                   ),
-                                                                              elevation: 0.0,
-                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                                  borderRadius: BorderRadius.circular(25.0),
+                                                                                ),
+                                                                              ),
                                                                             ),
-                                                                          ),
                                                                         ],
                                                                       ),
                                                                     ],

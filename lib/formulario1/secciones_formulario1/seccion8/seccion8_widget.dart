@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/formulario1/secciones_formulario1/agregar_tablas/agregar_persona_relacionada/agregar_persona_relacionada_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'seccion8_model.dart';
 export 'seccion8_model.dart';
 
@@ -354,11 +355,13 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
                             enableDrag: false,
                             context: context,
                             builder: (context) {
-                              return Padding(
-                                padding: MediaQuery.viewInsetsOf(context),
-                                child: AgregarPersonaRelacionadaWidget(
-                                  rowingreso: widget.idingreso!,
-                                  idexp: widget.idexp!,
+                              return WebViewAware(
+                                child: Padding(
+                                  padding: MediaQuery.viewInsetsOf(context),
+                                  child: AgregarPersonaRelacionadaWidget(
+                                    rowingreso: widget.idingreso!,
+                                    idexp: widget.idexp!,
+                                  ),
                                 ),
                               );
                             },
@@ -421,17 +424,19 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {
-                                      return AlertDialog(
-                                        title: const Text('Carga correcta'),
-                                        content: const Text(
-                                            'La informacion se guardo correctamente!!'),
-                                        actions: [
-                                          TextButton(
-                                            onPressed: () => Navigator.pop(
-                                                alertDialogContext),
-                                            child: const Text('Ok'),
-                                          ),
-                                        ],
+                                      return WebViewAware(
+                                        child: AlertDialog(
+                                          title: const Text('Carga correcta'),
+                                          content: const Text(
+                                              'La informacion se guardo correctamente!!'),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: const Text('Ok'),
+                                            ),
+                                          ],
+                                        ),
                                       );
                                     },
                                   );

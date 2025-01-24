@@ -99,9 +99,14 @@ class _Formulario6reiteracionWidgetState
               borderRadius: BorderRadius.circular(20.0),
             ),
             child: Container(
-              width: MediaQuery.sizeOf(context).width * 0.8,
+              width: MediaQuery.sizeOf(context).width * 0.6,
               decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).secondaryBackground,
+                color: valueOrDefault<Color>(
+                  containerResuestasForm6Row?.fechareiteracion == null
+                      ? FlutterFlowTheme.of(context).secondaryBackground
+                      : const Color(0xFF6CD239),
+                  FlutterFlowTheme.of(context).secondaryBackground,
+                ),
                 borderRadius: BorderRadius.circular(20.0),
                 shape: BoxShape.rectangle,
                 border: Border.all(
@@ -113,43 +118,26 @@ class _Formulario6reiteracionWidgetState
                 key: _model.formKey,
                 autovalidateMode: AutovalidateMode.disabled,
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, -1.0),
                   child: Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                     child: SingleChildScrollView(
                       child: Column(
-                        mainAxisSize: MainAxisSize.max,
+                        mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          Material(
-                            color: Colors.transparent,
-                            elevation: 2.0,
-                            shape: RoundedRectangleBorder(
+                          Container(
+                            width: MediaQuery.sizeOf(context).width * 1.0,
+                            constraints: const BoxConstraints(
+                              maxWidth: 600.0,
+                            ),
+                            decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20.0),
                             ),
-                            child: Container(
-                              width: MediaQuery.sizeOf(context).width * 1.0,
-                              constraints: const BoxConstraints(
-                                maxWidth: 600.0,
-                              ),
-                              decoration: BoxDecoration(
-                                color: valueOrDefault<Color>(
-                                  containerResuestasForm6Row
-                                              ?.fechareiteracion ==
-                                          null
-                                      ? FlutterFlowTheme.of(context)
-                                          .secondaryBackground
-                                      : FlutterFlowTheme.of(context).accent2,
-                                  FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                ),
-                                borderRadius: BorderRadius.circular(20.0),
-                                border: Border.all(
-                                  color: FlutterFlowTheme.of(context).primary,
-                                ),
-                              ),
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            child: Align(
+                              alignment: const AlignmentDirectional(0.0, -1.0),
                               child: Padding(
                                 padding: const EdgeInsets.all(5.0),
                                 child: Column(
@@ -211,8 +199,13 @@ class _Formulario6reiteracionWidgetState
                                                       17.0, 0.0, 0.0, 0.0),
                                               child: Text(
                                                 valueOrDefault<String>(
-                                                  _model.datePicked1
-                                                      ?.toString(),
+                                                  dateTimeFormat(
+                                                    "d/M/y",
+                                                    _model.datePicked1,
+                                                    locale: FFLocalizations.of(
+                                                            context)
+                                                        .languageCode,
+                                                  ),
                                                   'No tiene fecha seleccionada',
                                                 ),
                                                 textAlign: TextAlign.start,
@@ -303,9 +296,14 @@ class _Formulario6reiteracionWidgetState
                                                 }
                                               },
                                               text: valueOrDefault<String>(
-                                                containerResuestasForm6Row
-                                                    ?.fechareiteracion
-                                                    ?.toString(),
+                                                dateTimeFormat(
+                                                  "d/M/y",
+                                                  containerResuestasForm6Row
+                                                      ?.fechareiteracion,
+                                                  locale: FFLocalizations.of(
+                                                          context)
+                                                      .languageCode,
+                                                ),
                                                 'Fecha',
                                               ),
                                               options: FFButtonOptions(
@@ -511,8 +509,13 @@ class _Formulario6reiteracionWidgetState
                                                       17.0, 0.0, 0.0, 0.0),
                                               child: Text(
                                                 valueOrDefault<String>(
-                                                  _model.datePicked2
-                                                      ?.toString(),
+                                                  dateTimeFormat(
+                                                    "d/M/y",
+                                                    _model.datePicked2,
+                                                    locale: FFLocalizations.of(
+                                                            context)
+                                                        .languageCode,
+                                                  ),
                                                   'No tiene fecha seleccionada',
                                                 ),
                                                 textAlign: TextAlign.start,
@@ -603,9 +606,14 @@ class _Formulario6reiteracionWidgetState
                                                 }
                                               },
                                               text: valueOrDefault<String>(
-                                                containerResuestasForm6Row
-                                                    ?.fechaplazoreiteracion
-                                                    ?.toString(),
+                                                dateTimeFormat(
+                                                  "d/M/y",
+                                                  containerResuestasForm6Row
+                                                      ?.fechaplazoreiteracion,
+                                                  locale: FFLocalizations.of(
+                                                          context)
+                                                      .languageCode,
+                                                ),
                                                 'Fecha',
                                               ),
                                               options: FFButtonOptions(

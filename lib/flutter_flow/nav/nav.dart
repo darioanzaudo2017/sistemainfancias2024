@@ -351,6 +351,32 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.SupabaseRow,
             ),
           ),
+        ),
+        FFRoute(
+          name: 'informesenaf',
+          path: '/informesenaf',
+          builder: (context, params) => InformesenafWidget(
+            link: params.getParam(
+              'link',
+              ParamType.String,
+            ),
+            form9row: params.getParam<Formulario9Row>(
+              'form9row',
+              ParamType.SupabaseRow,
+            ),
+            exprow: params.getParam<VistaExpedientesUltimoEstadoRow>(
+              'exprow',
+              ParamType.SupabaseRow,
+            ),
+            ingreso: params.getParam<IngresosRow>(
+              'ingreso',
+              ParamType.SupabaseRow,
+            ),
+            usuariorow: params.getParam<UsuariosRow>(
+              'usuariorow',
+              ParamType.SupabaseRow,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

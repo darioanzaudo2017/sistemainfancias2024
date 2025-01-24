@@ -32,8 +32,6 @@ class PerfilModel extends FlutterFlowModel<PerfilWidget> {
   bool? checkboxValue2;
   // State field(s) for Checkbox widget.
   bool? checkboxValue3;
-  // State field(s) for Checkbox widget.
-  bool? checkboxValue4;
   // Stores action output result for [Bottom Sheet - seccion1] action in Button widget.
   bool? seccio1true;
   Completer<List<IngresosRow>>? requestCompleter;

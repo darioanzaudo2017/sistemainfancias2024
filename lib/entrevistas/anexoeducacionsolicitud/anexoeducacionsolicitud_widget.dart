@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'anexoeducacionsolicitud_model.dart';
 export 'anexoeducacionsolicitud_model.dart';
 
@@ -617,16 +618,19 @@ class _AnexoeducacionsolicitudWidgetState
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {
-                                      return AlertDialog(
-                                        title: const Text('Campo obligatorio'),
-                                        content: const Text('La fecha obligatoria!'),
-                                        actions: [
-                                          TextButton(
-                                            onPressed: () => Navigator.pop(
-                                                alertDialogContext),
-                                            child: const Text('Ok'),
-                                          ),
-                                        ],
+                                      return WebViewAware(
+                                        child: AlertDialog(
+                                          title: const Text('Campo obligatorio'),
+                                          content:
+                                              const Text('La fecha obligatoria!'),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: const Text('Ok'),
+                                            ),
+                                          ],
+                                        ),
                                       );
                                     },
                                   );
@@ -682,22 +686,24 @@ class _AnexoeducacionsolicitudWidgetState
                                     await showDialog(
                                       context: context,
                                       builder: (alertDialogContext) {
-                                        return AlertDialog(
-                                          title: const Text(
-                                              'Se cargo correctamente la informacion'),
-                                          content: const Text(
-                                              'Se guardo la informacion y se creo un documento en google docs!'),
-                                          actions: [
-                                            TextButton(
-                                              onPressed: () => Navigator.pop(
-                                                  alertDialogContext),
-                                              child: const Text('Ok'),
-                                            ),
-                                          ],
+                                        return WebViewAware(
+                                          child: AlertDialog(
+                                            title: const Text(
+                                                'Se cargo correctamente la informacion'),
+                                            content: const Text(
+                                                'Se guardo la informacion y se creo un documento en google docs!'),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext),
+                                                child: const Text('Ok'),
+                                              ),
+                                            ],
+                                          ),
                                         );
                                       },
                                     );
-                                    Navigator.pop(context);
+                                    Navigator.pop(context, true);
                                   }
                                 } else {
                                   await AnexoinstitucioneeducacionTable()
@@ -752,22 +758,24 @@ class _AnexoeducacionsolicitudWidgetState
                                     await showDialog(
                                       context: context,
                                       builder: (alertDialogContext) {
-                                        return AlertDialog(
-                                          title: const Text(
-                                              'Se cargo correctamente la informacion'),
-                                          content: const Text(
-                                              'Se guardo la informacion y se creo un documento en google docs!'),
-                                          actions: [
-                                            TextButton(
-                                              onPressed: () => Navigator.pop(
-                                                  alertDialogContext),
-                                              child: const Text('Ok'),
-                                            ),
-                                          ],
+                                        return WebViewAware(
+                                          child: AlertDialog(
+                                            title: const Text(
+                                                'Se cargo correctamente la informacion'),
+                                            content: const Text(
+                                                'Se guardo la informacion y se creo un documento en google docs!'),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext),
+                                                child: const Text('Ok'),
+                                              ),
+                                            ],
+                                          ),
                                         );
                                       },
                                     );
-                                    Navigator.pop(context);
+                                    Navigator.pop(context, true);
                                   }
                                 }
 

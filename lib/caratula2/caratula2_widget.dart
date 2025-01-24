@@ -14,6 +14,7 @@ import '/flutter_flow/random_data_util.dart' as random_data;
 import 'dart:async';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'caratula2_model.dart';
 export 'caratula2_model.dart';
 
@@ -827,19 +828,22 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                       context: context,
                                                       builder:
                                                           (alertDialogContext) {
-                                                        return AlertDialog(
-                                                          title: const Text(
-                                                              'El dni esta duplicado'),
-                                                          content: const Text(
-                                                              'El dni esta duplicado'),
-                                                          actions: [
-                                                            TextButton(
-                                                              onPressed: () =>
-                                                                  Navigator.pop(
-                                                                      alertDialogContext),
-                                                              child: const Text('Ok'),
-                                                            ),
-                                                          ],
+                                                        return WebViewAware(
+                                                          child: AlertDialog(
+                                                            title: const Text(
+                                                                'El dni esta duplicado'),
+                                                            content: const Text(
+                                                                'El dni esta duplicado'),
+                                                            actions: [
+                                                              TextButton(
+                                                                onPressed: () =>
+                                                                    Navigator.pop(
+                                                                        alertDialogContext),
+                                                                child:
+                                                                    const Text('Ok'),
+                                                              ),
+                                                            ],
+                                                          ),
                                                         );
                                                       },
                                                     );
@@ -1008,19 +1012,22 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                       context: context,
                                                       builder:
                                                           (alertDialogContext) {
-                                                        return AlertDialog(
-                                                          title: const Text(
-                                                              'El NNyA no tiene expediente'),
-                                                          content: const Text(
-                                                              'Continuamos con la carga!!'),
-                                                          actions: [
-                                                            TextButton(
-                                                              onPressed: () =>
-                                                                  Navigator.pop(
-                                                                      alertDialogContext),
-                                                              child: const Text('Ok'),
-                                                            ),
-                                                          ],
+                                                        return WebViewAware(
+                                                          child: AlertDialog(
+                                                            title: const Text(
+                                                                'El NNyA no tiene expediente'),
+                                                            content: const Text(
+                                                                'Continuamos con la carga!!'),
+                                                            actions: [
+                                                              TextButton(
+                                                                onPressed: () =>
+                                                                    Navigator.pop(
+                                                                        alertDialogContext),
+                                                                child:
+                                                                    const Text('Ok'),
+                                                              ),
+                                                            ],
+                                                          ),
                                                         );
                                                       },
                                                     );
@@ -1103,28 +1110,31 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                         enableDrag: false,
                                                         context: context,
                                                         builder: (context) {
-                                                          return GestureDetector(
-                                                            onTap: () {
-                                                              FocusScope.of(
-                                                                      context)
-                                                                  .unfocus();
-                                                              FocusManager
-                                                                  .instance
-                                                                  .primaryFocus
-                                                                  ?.unfocus();
-                                                            },
-                                                            child: Padding(
-                                                              padding: MediaQuery
-                                                                  .viewInsetsOf(
-                                                                      context),
-                                                              child:
-                                                                  DesplegablederechosprincipalWidget(
-                                                                idexp: _model
-                                                                    .crearexpnnya2
-                                                                    ?.id,
-                                                                idingreso: 0,
-                                                                form:
-                                                                    'Caratula',
+                                                          return WebViewAware(
+                                                            child:
+                                                                GestureDetector(
+                                                              onTap: () {
+                                                                FocusScope.of(
+                                                                        context)
+                                                                    .unfocus();
+                                                                FocusManager
+                                                                    .instance
+                                                                    .primaryFocus
+                                                                    ?.unfocus();
+                                                              },
+                                                              child: Padding(
+                                                                padding: MediaQuery
+                                                                    .viewInsetsOf(
+                                                                        context),
+                                                                child:
+                                                                    DesplegablederechosprincipalWidget(
+                                                                  idexp: _model
+                                                                      .crearexpnnya2
+                                                                      ?.id,
+                                                                  idingreso: 0,
+                                                                  form:
+                                                                      'Caratula',
+                                                                ),
                                                               ),
                                                             ),
                                                           );
@@ -2182,19 +2192,22 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                       context: context,
                                                       builder:
                                                           (alertDialogContext) {
-                                                        return AlertDialog(
-                                                          title: const Text(
-                                                              'Campo obligatorio'),
-                                                          content: const Text(
-                                                              'El Canal de Ingreso de la demanda es obligatorio!!'),
-                                                          actions: [
-                                                            TextButton(
-                                                              onPressed: () =>
-                                                                  Navigator.pop(
-                                                                      alertDialogContext),
-                                                              child: const Text('Ok'),
-                                                            ),
-                                                          ],
+                                                        return WebViewAware(
+                                                          child: AlertDialog(
+                                                            title: const Text(
+                                                                'Campo obligatorio'),
+                                                            content: const Text(
+                                                                'El Canal de Ingreso de la demanda es obligatorio!!'),
+                                                            actions: [
+                                                              TextButton(
+                                                                onPressed: () =>
+                                                                    Navigator.pop(
+                                                                        alertDialogContext),
+                                                                child:
+                                                                    const Text('Ok'),
+                                                              ),
+                                                            ],
+                                                          ),
                                                         );
                                                       },
                                                     );
@@ -2255,19 +2268,21 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                     context: context,
                                                     builder:
                                                         (alertDialogContext) {
-                                                      return AlertDialog(
-                                                        title: const Text(
-                                                            'Expediente Creado'),
-                                                        content: const Text(
-                                                            'Se creo correctamente el expediente!'),
-                                                        actions: [
-                                                          TextButton(
-                                                            onPressed: () =>
-                                                                Navigator.pop(
-                                                                    alertDialogContext),
-                                                            child: const Text('Ok'),
-                                                          ),
-                                                        ],
+                                                      return WebViewAware(
+                                                        child: AlertDialog(
+                                                          title: const Text(
+                                                              'Expediente Creado'),
+                                                          content: const Text(
+                                                              'Se creo correctamente el expediente!'),
+                                                          actions: [
+                                                            TextButton(
+                                                              onPressed: () =>
+                                                                  Navigator.pop(
+                                                                      alertDialogContext),
+                                                              child: const Text('Ok'),
+                                                            ),
+                                                          ],
+                                                        ),
                                                       );
                                                     },
                                                   );

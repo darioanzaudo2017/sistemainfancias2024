@@ -568,6 +568,7 @@ class ConcurrenciaVisitaAdultoCall {
     String? iddoc = 'sdf',
     String? carpeta = 'ertertert',
     String? telefono = 'sd',
+    int? dni = 5454545,
   }) async {
     final ffApiRequestBody = '''
 {
@@ -581,7 +582,8 @@ class ConcurrenciaVisitaAdultoCall {
   "idingreso": $idingreso,
   "carpeta": "${escapeStringForJson(carpeta)}",
   "telefono": "${escapeStringForJson(telefono)}",
-  "iddoc": "${escapeStringForJson(iddoc)}"
+  "iddoc": "${escapeStringForJson(iddoc)}",
+  "dni": $dni
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Concurrencia visita adulto',
@@ -1025,7 +1027,12 @@ class EmailResendCall {
     String? spd = 'villa el libertador',
     String? motivo = 'Motivo de la medida',
     String? link = 'Link',
+    String? header,
+    String? header2,
   }) async {
+    header ??= FFAppConstants.header1resend;
+    header2 ??= FFAppConstants.header2resend;
+
     final ffApiRequestBody = '''
 {
   "from": "Subsecretaria de infancias <direcciongeneral@sistemasdeinfancias.com.ar>",
@@ -1037,12 +1044,9 @@ class EmailResendCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'email resend',
-      apiUrl: 'https://api.resend.com/emails',
+      apiUrl: 'https://hook.us1.make.com/j69a1p2pzptdq3kimt7yg6o7slq1411n',
       callType: ApiCallType.POST,
-      headers: {
-        'Authorization': 'Bearer re_dWNcVrxw_HqSnrzCW7FWfZqsPrGKYYzW2',
-        'Content-Type': 'application/json',
-      },
+      headers: {},
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -1058,7 +1062,7 @@ class EmailResendCall {
 
 class ExisteDNICall {
   static Future<ApiCallResponse> call({
-    String? dni = '12312312',
+    String? dni = '56535604',
   }) async {
     final ffApiRequestBody = '''
 {
@@ -1066,7 +1070,8 @@ class ExisteDNICall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'ExisteDNI',
-      apiUrl: 'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/rpc/dni_existe',
+      apiUrl:
+          'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/rpc/dni_existe_nnya',
       callType: ApiCallType.POST,
       headers: {
         'Content-Type': 'application/json',
@@ -1091,6 +1096,25 @@ class ExisteDNICall {
         response,
         r'''$''',
       ));
+}
+
+class MailresendwebhookCall {
+  static Future<ApiCallResponse> call() async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'mailresendwebhook',
+      apiUrl: 'https://hook.us1.make.com/j69a1p2pzptdq3kimt7yg6o7slq1411n',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {},
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
 }
 
 class ApiPagingParams {

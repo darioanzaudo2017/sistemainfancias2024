@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'seccion2_model.dart';
 export 'seccion2_model.dart';
 
@@ -1097,18 +1098,20 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                         await showDialog(
                                           context: context,
                                           builder: (alertDialogContext) {
-                                            return AlertDialog(
-                                              title: const Text('Carga correcta'),
-                                              content: const Text(
-                                                  'La informacion se guardo correctamente!!'),
-                                              actions: [
-                                                TextButton(
-                                                  onPressed: () =>
-                                                      Navigator.pop(
-                                                          alertDialogContext),
-                                                  child: const Text('Ok'),
-                                                ),
-                                              ],
+                                            return WebViewAware(
+                                              child: AlertDialog(
+                                                title: const Text('Carga correcta'),
+                                                content: const Text(
+                                                    'La informacion se guardo correctamente!!'),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext),
+                                                    child: const Text('Ok'),
+                                                  ),
+                                                ],
+                                              ),
                                             );
                                           },
                                         );
@@ -1161,18 +1164,20 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                         await showDialog(
                                           context: context,
                                           builder: (alertDialogContext) {
-                                            return AlertDialog(
-                                              title: const Text('Carga correcta'),
-                                              content: const Text(
-                                                  'La informacion se guardo correctamente!!'),
-                                              actions: [
-                                                TextButton(
-                                                  onPressed: () =>
-                                                      Navigator.pop(
-                                                          alertDialogContext),
-                                                  child: const Text('Ok'),
-                                                ),
-                                              ],
+                                            return WebViewAware(
+                                              child: AlertDialog(
+                                                title: const Text('Carga correcta'),
+                                                content: const Text(
+                                                    'La informacion se guardo correctamente!!'),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext),
+                                                    child: const Text('Ok'),
+                                                  ),
+                                                ],
+                                              ),
                                             );
                                           },
                                         );

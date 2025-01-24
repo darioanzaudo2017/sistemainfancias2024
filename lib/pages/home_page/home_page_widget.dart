@@ -13,6 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'home_page_model.dart';
 export 'home_page_model.dart';
 
@@ -48,7 +49,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
     _model.textFieldFocusNode ??= FocusNode();
 
     animationsMap.addAll({
-      'iconButtonOnPageLoadAnimation': AnimationInfo(
+      'iconButtonOnPageLoadAnimation1': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         applyInitialState: true,
         effectsBuilder: () => [
@@ -61,7 +62,34 @@ class _HomePageWidgetState extends State<HomePageWidget>
           ),
         ],
       ),
-      'iconButtonOnActionTriggerAnimation': AnimationInfo(
+      'iconButtonOnActionTriggerAnimation1': AnimationInfo(
+        trigger: AnimationTrigger.onActionTrigger,
+        applyInitialState: true,
+        effectsBuilder: () => [
+          ShakeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 1000.0.ms,
+            hz: 10,
+            offset: const Offset(0.0, 0.0),
+            rotation: 0.087,
+          ),
+        ],
+      ),
+      'iconButtonOnPageLoadAnimation2': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        applyInitialState: true,
+        effectsBuilder: () => [
+          RotateEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+      'iconButtonOnActionTriggerAnimation2': AnimationInfo(
         trigger: AnimationTrigger.onActionTrigger,
         applyInitialState: true,
         effectsBuilder: () => [
@@ -138,290 +166,298 @@ class _HomePageWidgetState extends State<HomePageWidget>
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             drawer: Drawer(
               elevation: 16.0,
-              child: SingleChildScrollView(
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              20.0, 17.0, 0.0, 15.0),
-                          child: InkWell(
+              child: WebViewAware(
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                20.0, 17.0, 0.0, 15.0),
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                if (scaffoldKey.currentState!.isDrawerOpen ||
+                                    scaffoldKey.currentState!.isEndDrawerOpen) {
+                                  Navigator.pop(context);
+                                }
+                              },
+                              child: const Icon(
+                                Icons.arrow_back,
+                                color: Colors.black,
+                                size: 24.0,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Expanded(
+                            child: Container(
+                              width: 100.0,
+                              height: 100.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context).primary,
+                              ),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  const Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Stack(
+                                        children: [],
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        valueOrDefault<String>(
+                                          homePageUsuariosRow?.nombreCompleto,
+                                          'Nombre',
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        currentUserEmail,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                              fontSize: 16.0,
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Text(
+                              'Configuración de la Cuenta',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Noto Sans JP',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    letterSpacing: 0.0,
+                                  ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      ListView(
+                        padding: EdgeInsets.zero,
+                        primary: false,
+                        shrinkWrap: true,
+                        scrollDirection: Axis.vertical,
+                        children: [
+                          InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              if (scaffoldKey.currentState!.isDrawerOpen ||
-                                  scaffoldKey.currentState!.isEndDrawerOpen) {
-                                Navigator.pop(context);
-                              }
+                              context.pushNamed(
+                                'auth_2_EditProfile',
+                                extra: <String, dynamic>{
+                                  kTransitionInfoKey: const TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                  ),
+                                },
+                              );
                             },
-                            child: const Icon(
-                              Icons.arrow_back,
-                              color: Colors.black,
-                              size: 24.0,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Expanded(
-                          child: Container(
-                            width: 100.0,
-                            height: 100.0,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context).primary,
-                            ),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                const Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Stack(
-                                      children: [],
-                                    ),
-                                  ],
+                            child: Material(
+                              color: Colors.transparent,
+                              child: ListTile(
+                                leading: Icon(
+                                  Icons.person,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                 ),
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      valueOrDefault<String>(
-                                        homePageUsuariosRow?.nombreCompleto,
-                                        'Nombre',
+                                title: Text(
+                                  'Perfil',
+                                  style: FlutterFlowTheme.of(context)
+                                      .headlineSmall
+                                      .override(
+                                        fontFamily: 'Noto Sans JP',
+                                        fontSize: 18.0,
+                                        letterSpacing: 0.0,
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineSmall
-                                          .override(
-                                            fontFamily: 'Noto Sans JP',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ],
                                 ),
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      currentUserEmail,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Noto Sans JP',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                            fontSize: 16.0,
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ],
+                                trailing: const Icon(
+                                  Icons.arrow_forward_ios,
+                                  color: Color(0xFF303030),
+                                  size: 20.0,
                                 ),
-                              ],
+                                tileColor: const Color(0xFFF5F5F5),
+                                dense: false,
+                              ),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Text(
-                            'Configuración de la Cuenta',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Noto Sans JP',
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  letterSpacing: 0.0,
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed(
+                                'Dashboard',
+                                queryParameters: {
+                                  'usuariorow': serializeParam(
+                                    homePageUsuariosRow,
+                                    ParamType.SupabaseRow,
+                                  ),
+                                }.withoutNulls,
+                              );
+                            },
+                            child: Material(
+                              color: Colors.transparent,
+                              child: ListTile(
+                                leading: Icon(
+                                  Icons.list_alt_sharp,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                 ),
+                                title: Text(
+                                  'Lista SENAF',
+                                  style: FlutterFlowTheme.of(context)
+                                      .headlineSmall
+                                      .override(
+                                        fontFamily: 'Noto Sans JP',
+                                        fontSize: 18.0,
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                                trailing: const Icon(
+                                  Icons.arrow_forward_ios,
+                                  color: Color(0xFF303030),
+                                  size: 20.0,
+                                ),
+                                tileColor: const Color(0xFFF5F5F5),
+                                dense: false,
+                              ),
+                            ),
+                          ),
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed('pruebarls');
+                            },
+                            child: Material(
+                              color: Colors.transparent,
+                              child: ListTile(
+                                leading: Icon(
+                                  Icons.list_alt_sharp,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                ),
+                                title: Text(
+                                  'Prueba rls',
+                                  style: FlutterFlowTheme.of(context)
+                                      .headlineSmall
+                                      .override(
+                                        fontFamily: 'Noto Sans JP',
+                                        fontSize: 18.0,
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                                trailing: const Icon(
+                                  Icons.arrow_forward_ios,
+                                  color: Color(0xFF303030),
+                                  size: 20.0,
+                                ),
+                                tileColor: const Color(0xFFF5F5F5),
+                                dense: false,
+                              ),
+                            ),
+                          ),
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              GoRouter.of(context).prepareAuthEvent();
+                              await authManager.signOut();
+                              GoRouter.of(context).clearRedirectLocation();
+
+                              context.goNamedAuth(
+                                  'auth_2_Login', context.mounted);
+                            },
+                            child: Material(
+                              color: Colors.transparent,
+                              child: ListTile(
+                                leading: Icon(
+                                  Icons.logout,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                ),
+                                title: Text(
+                                  'Salir',
+                                  style: FlutterFlowTheme.of(context)
+                                      .headlineSmall
+                                      .override(
+                                        fontFamily: 'Noto Sans JP',
+                                        fontSize: 18.0,
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                                trailing: const Icon(
+                                  Icons.arrow_forward_ios,
+                                  color: Color(0xFF303030),
+                                  size: 20.0,
+                                ),
+                                tileColor: const Color(0xFFF5F5F5),
+                                dense: false,
+                              ),
+                            ),
                           ),
                         ],
                       ),
-                    ),
-                    ListView(
-                      padding: EdgeInsets.zero,
-                      primary: false,
-                      shrinkWrap: true,
-                      scrollDirection: Axis.vertical,
-                      children: [
-                        InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            context.pushNamed(
-                              'auth_2_EditProfile',
-                              extra: <String, dynamic>{
-                                kTransitionInfoKey: const TransitionInfo(
-                                  hasTransition: true,
-                                  transitionType: PageTransitionType.fade,
-                                ),
-                              },
-                            );
-                          },
-                          child: Material(
-                            color: Colors.transparent,
-                            child: ListTile(
-                              leading: Icon(
-                                Icons.person,
-                                color: FlutterFlowTheme.of(context).primaryText,
-                              ),
-                              title: Text(
-                                'Perfil',
-                                style: FlutterFlowTheme.of(context)
-                                    .headlineSmall
-                                    .override(
-                                      fontFamily: 'Noto Sans JP',
-                                      fontSize: 18.0,
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                              trailing: const Icon(
-                                Icons.arrow_forward_ios,
-                                color: Color(0xFF303030),
-                                size: 20.0,
-                              ),
-                              tileColor: const Color(0xFFF5F5F5),
-                              dense: false,
-                            ),
-                          ),
-                        ),
-                        InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            context.pushNamed(
-                              'Dashboard',
-                              queryParameters: {
-                                'usuariorow': serializeParam(
-                                  homePageUsuariosRow,
-                                  ParamType.SupabaseRow,
-                                ),
-                              }.withoutNulls,
-                            );
-                          },
-                          child: Material(
-                            color: Colors.transparent,
-                            child: ListTile(
-                              leading: Icon(
-                                Icons.list_alt_sharp,
-                                color: FlutterFlowTheme.of(context).primaryText,
-                              ),
-                              title: Text(
-                                'Lista SENAF',
-                                style: FlutterFlowTheme.of(context)
-                                    .headlineSmall
-                                    .override(
-                                      fontFamily: 'Noto Sans JP',
-                                      fontSize: 18.0,
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                              trailing: const Icon(
-                                Icons.arrow_forward_ios,
-                                color: Color(0xFF303030),
-                                size: 20.0,
-                              ),
-                              tileColor: const Color(0xFFF5F5F5),
-                              dense: false,
-                            ),
-                          ),
-                        ),
-                        InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            context.pushNamed('pruebarls');
-                          },
-                          child: Material(
-                            color: Colors.transparent,
-                            child: ListTile(
-                              leading: Icon(
-                                Icons.list_alt_sharp,
-                                color: FlutterFlowTheme.of(context).primaryText,
-                              ),
-                              title: Text(
-                                'Prueba rls',
-                                style: FlutterFlowTheme.of(context)
-                                    .headlineSmall
-                                    .override(
-                                      fontFamily: 'Noto Sans JP',
-                                      fontSize: 18.0,
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                              trailing: const Icon(
-                                Icons.arrow_forward_ios,
-                                color: Color(0xFF303030),
-                                size: 20.0,
-                              ),
-                              tileColor: const Color(0xFFF5F5F5),
-                              dense: false,
-                            ),
-                          ),
-                        ),
-                        InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            GoRouter.of(context).prepareAuthEvent();
-                            await authManager.signOut();
-                            GoRouter.of(context).clearRedirectLocation();
-
-                            context.goNamedAuth(
-                                'auth_2_Login', context.mounted);
-                          },
-                          child: Material(
-                            color: Colors.transparent,
-                            child: ListTile(
-                              leading: Icon(
-                                Icons.logout,
-                                color: FlutterFlowTheme.of(context).primaryText,
-                              ),
-                              title: Text(
-                                'Salir',
-                                style: FlutterFlowTheme.of(context)
-                                    .headlineSmall
-                                    .override(
-                                      fontFamily: 'Noto Sans JP',
-                                      fontSize: 18.0,
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                              trailing: const Icon(
-                                Icons.arrow_forward_ios,
-                                color: Color(0xFF303030),
-                                size: 20.0,
-                              ),
-                              tileColor: const Color(0xFFF5F5F5),
-                              dense: false,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -562,9 +598,9 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                 ),
                                                 child: Container(
                                                   width: double.infinity,
-                                                  height: 49.0,
+                                                  height: 76.55,
                                                   decoration: BoxDecoration(
-                                                    color: const Color(0xFFCDC9F8),
+                                                    color: const Color(0xFF39A9EF),
                                                     boxShadow: const [
                                                       BoxShadow(
                                                         blurRadius: 4.0,
@@ -582,7 +618,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                   ),
                                                   child: Column(
                                                     mainAxisSize:
-                                                        MainAxisSize.min,
+                                                        MainAxisSize.max,
                                                     crossAxisAlignment:
                                                         CrossAxisAlignment
                                                             .start,
@@ -747,69 +783,147 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                               return Container(
                                                                 decoration:
                                                                     const BoxDecoration(),
-                                                                child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
-                                                                      .fromSTEB(
+                                                                child: Column(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  crossAxisAlignment:
+                                                                      CrossAxisAlignment
+                                                                          .start,
+                                                                  children: [
+                                                                    Padding(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           5.0,
                                                                           0.0),
-                                                                  child: Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    children: [
-                                                                      Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            10.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            FlutterFlowIconButton(
-                                                                          borderRadius:
-                                                                              8.0,
-                                                                          buttonSize:
-                                                                              40.0,
-                                                                          icon:
-                                                                              Icon(
-                                                                            Icons.add_alert,
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).error,
-                                                                            size:
-                                                                                24.0,
-                                                                          ),
-                                                                          onPressed:
-                                                                              () async {
-                                                                            if ((containerVistaExpedientesIngresos24hsRow!.cantidadExpedientes! > 0) &&
-                                                                                (containerVistaExpedientesIngresos24hsRow.cantidadIngresos! > 0)) {
-                                                                              if (animationsMap['iconButtonOnActionTriggerAnimation'] != null) {
-                                                                                await animationsMap['iconButtonOnActionTriggerAnimation']!.controller.forward(from: 0.0);
-                                                                              }
-                                                                            }
-                                                                          },
-                                                                        ).animateOnPageLoad(animationsMap['iconButtonOnPageLoadAnimation']!).animateOnActionTrigger(
-                                                                                  animationsMap['iconButtonOnActionTriggerAnimation']!,
+                                                                      child:
+                                                                          Row(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        children: [
+                                                                          Padding(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                                0.0,
+                                                                                0.0,
+                                                                                10.0,
+                                                                                0.0),
+                                                                            child: FlutterFlowIconButton(
+                                                                              borderRadius: 8.0,
+                                                                              buttonSize: 40.0,
+                                                                              icon: Icon(
+                                                                                Icons.add_alert,
+                                                                                color: FlutterFlowTheme.of(context).error,
+                                                                                size: 24.0,
+                                                                              ),
+                                                                              onPressed: () async {
+                                                                                if ((containerVistaExpedientesIngresos24hsRow!.cantidadExpedientes! > 0) && (containerVistaExpedientesIngresos24hsRow.cantidadIngresos! > 0)) {
+                                                                                  if (animationsMap['iconButtonOnActionTriggerAnimation1'] != null) {
+                                                                                    await animationsMap['iconButtonOnActionTriggerAnimation1']!.controller.forward(from: 0.0);
+                                                                                  }
+                                                                                }
+                                                                              },
+                                                                            ).animateOnPageLoad(animationsMap['iconButtonOnPageLoadAnimation1']!).animateOnActionTrigger(
+                                                                                  animationsMap['iconButtonOnActionTriggerAnimation1']!,
                                                                                 ),
-                                                                      ),
-                                                                      Text(
-                                                                        valueOrDefault<
-                                                                            String>(
-                                                                          containerVistaExpedientesIngresos24hsRow
-                                                                              ?.cantidadExpedientes
-                                                                              ?.toString(),
-                                                                          '0',
-                                                                        ),
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: 'Noto Sans JP',
-                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              letterSpacing: 0.0,
+                                                                          ),
+                                                                          Text(
+                                                                            valueOrDefault<String>(
+                                                                              containerVistaExpedientesIngresos24hsRow?.cantidadExpedientes?.toString(),
+                                                                              '0',
                                                                             ),
+                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                  fontFamily: 'Noto Sans JP',
+                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                  letterSpacing: 0.0,
+                                                                                ),
+                                                                          ),
+                                                                          Padding(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                                10.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
+                                                                            child:
+                                                                                Text(
+                                                                              'Expedientes ',
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: 'Noto Sans JP',
+                                                                                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                    letterSpacing: 0.0,
+                                                                                  ),
+                                                                            ),
+                                                                          ),
+                                                                        ],
                                                                       ),
-                                                                    ],
-                                                                  ),
+                                                                    ),
+                                                                    Padding(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          Row(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        children: [
+                                                                          Padding(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                                0.0,
+                                                                                0.0,
+                                                                                10.0,
+                                                                                0.0),
+                                                                            child: FlutterFlowIconButton(
+                                                                              borderRadius: 8.0,
+                                                                              buttonSize: 40.0,
+                                                                              icon: Icon(
+                                                                                Icons.add_alert,
+                                                                                color: FlutterFlowTheme.of(context).error,
+                                                                                size: 24.0,
+                                                                              ),
+                                                                              onPressed: () async {
+                                                                                if ((containerVistaExpedientesIngresos24hsRow!.cantidadExpedientes! > 0) && (containerVistaExpedientesIngresos24hsRow.cantidadIngresos! > 0)) {
+                                                                                  if (animationsMap['iconButtonOnActionTriggerAnimation2'] != null) {
+                                                                                    await animationsMap['iconButtonOnActionTriggerAnimation2']!.controller.forward(from: 0.0);
+                                                                                  }
+                                                                                }
+                                                                              },
+                                                                            ).animateOnPageLoad(animationsMap['iconButtonOnPageLoadAnimation2']!).animateOnActionTrigger(
+                                                                                  animationsMap['iconButtonOnActionTriggerAnimation2']!,
+                                                                                ),
+                                                                          ),
+                                                                          Text(
+                                                                            valueOrDefault<String>(
+                                                                              containerVistaExpedientesIngresos24hsRow?.cantidadIngresos?.toString(),
+                                                                              '0',
+                                                                            ),
+                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                  fontFamily: 'Noto Sans JP',
+                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                  letterSpacing: 0.0,
+                                                                                ),
+                                                                          ),
+                                                                          Padding(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                                10.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
+                                                                            child:
+                                                                                Text(
+                                                                              'Casos',
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: 'Noto Sans JP',
+                                                                                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                    letterSpacing: 0.0,
+                                                                                  ),
+                                                                            ),
+                                                                          ),
+                                                                        ],
+                                                                      ),
+                                                                    ),
+                                                                  ],
                                                                 ),
                                                               );
                                                             },
@@ -869,7 +983,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                     width:
                                                                         110.0,
                                                                     height:
-                                                                        80.0,
+                                                                        100.0,
                                                                     decoration:
                                                                         BoxDecoration(
                                                                       color: Colors

@@ -1,5 +1,6 @@
 import '/backend/supabase/supabase.dart';
 import '/components/anexosbotonera_widget.dart';
+import '/components/tarjetaencabezado_widget.dart';
 import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
@@ -18,6 +19,8 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();
+  // Model for tarjetaencabezado component.
+  late TarjetaencabezadoModel tarjetaencabezadoModel;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
   List<VistaExpedientesUltimoEstadoRow>? expedienteprincipal;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
@@ -131,6 +134,8 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
 
   @override
   void initState(BuildContext context) {
+    tarjetaencabezadoModel =
+        createModel(context, () => TarjetaencabezadoModel());
     textFieldprofesionalesTextControllerValidator =
         _textFieldprofesionalesTextControllerValidator;
     textFieldinddevulneracionTextControllerValidator =
@@ -144,6 +149,7 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
 
   @override
   void dispose() {
+    tarjetaencabezadoModel.dispose();
     textFieldprofesionalesFocusNode?.dispose();
     textFieldprofesionalesTextController?.dispose();
 

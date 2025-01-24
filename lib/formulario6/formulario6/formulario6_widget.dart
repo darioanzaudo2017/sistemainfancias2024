@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'formulario6_model.dart';
 export 'formulario6_model.dart';
 
@@ -175,7 +176,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                               Align(
                                 alignment: const AlignmentDirectional(0.0, -1.0),
                                 child: Text(
-                                  'Formulario 6 - Definición de medidas de protección integral de derechos en acuerdo con familia y niño (Art. 42, 45, 46 y 47 ley 9944)',
+                                  'Definición de medidas de protección integral de derechos en acuerdo con familia y niño (Art. 42, 45, 46 y 47 ley 9944)',
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
@@ -1388,19 +1389,21 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                               await showDialog(
                                                 context: context,
                                                 builder: (alertDialogContext) {
-                                                  return AlertDialog(
-                                                    title:
-                                                        const Text('Carga correcta'),
-                                                    content: const Text(
-                                                        'La informacion se guardo correctamente!!'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: const Text('Ok'),
-                                                      ),
-                                                    ],
+                                                  return WebViewAware(
+                                                    child: AlertDialog(
+                                                      title: const Text(
+                                                          'Carga correcta'),
+                                                      content: const Text(
+                                                          'La informacion se guardo correctamente!!'),
+                                                      actions: [
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext),
+                                                          child: const Text('Ok'),
+                                                        ),
+                                                      ],
+                                                    ),
                                                   );
                                                 },
                                               );
@@ -1474,19 +1477,21 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                               await showDialog(
                                                 context: context,
                                                 builder: (alertDialogContext) {
-                                                  return AlertDialog(
-                                                    title:
-                                                        const Text('Carga correcta'),
-                                                    content: const Text(
-                                                        'La informacion se guardo correctamente!!'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: const Text('Ok'),
-                                                      ),
-                                                    ],
+                                                  return WebViewAware(
+                                                    child: AlertDialog(
+                                                      title: const Text(
+                                                          'Carga correcta'),
+                                                      content: const Text(
+                                                          'La informacion se guardo correctamente!!'),
+                                                      actions: [
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext),
+                                                          child: const Text('Ok'),
+                                                        ),
+                                                      ],
+                                                    ),
                                                   );
                                                 },
                                               );
@@ -1496,17 +1501,19 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                                   context: context,
                                                   builder:
                                                       (alertDialogContext) {
-                                                    return AlertDialog(
-                                                      title: const Text('1'),
-                                                      content: const Text('1'),
-                                                      actions: [
-                                                        TextButton(
-                                                          onPressed: () =>
-                                                              Navigator.pop(
-                                                                  alertDialogContext),
-                                                          child: const Text('Ok'),
-                                                        ),
-                                                      ],
+                                                    return WebViewAware(
+                                                      child: AlertDialog(
+                                                        title: const Text('1'),
+                                                        content: const Text('1'),
+                                                        actions: [
+                                                          TextButton(
+                                                            onPressed: () =>
+                                                                Navigator.pop(
+                                                                    alertDialogContext),
+                                                            child: const Text('Ok'),
+                                                          ),
+                                                        ],
+                                                      ),
                                                     );
                                                   },
                                                 );

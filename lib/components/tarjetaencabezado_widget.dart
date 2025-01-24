@@ -2,7 +2,6 @@ import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'tarjetaencabezado_model.dart';
 export 'tarjetaencabezado_model.dart';
@@ -13,19 +12,17 @@ class TarjetaencabezadoWidget extends StatefulWidget {
     required this.exprow,
     this.ingresorow,
     required this.usuariorow,
-    bool? editarcaratula,
-    bool? contactosref,
-    bool? cambia,
-  })  : editarcaratula = editarcaratula ?? true,
-        contactosref = contactosref ?? true,
-        cambia = cambia ?? true;
+    required this.editarcaratula,
+    required this.contactosref,
+    required this.cambia,
+  });
 
   final VistaExpedientesUltimoEstadoRow? exprow;
   final IngresosRow? ingresorow;
   final UsuariosRow? usuariorow;
-  final bool editarcaratula;
-  final bool contactosref;
-  final bool cambia;
+  final bool? editarcaratula;
+  final bool? contactosref;
+  final bool? cambia;
 
   @override
   State<TarjetaencabezadoWidget> createState() =>
@@ -61,7 +58,7 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
     return Align(
       alignment: const AlignmentDirectional(-1.0, 0.0),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+        padding: const EdgeInsets.all(8.0),
         child: Material(
           color: Colors.transparent,
           elevation: 5.0,
@@ -108,119 +105,130 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
                             ? Axis.horizontal
                             : Axis.vertical,
                         mainAxisSize: MainAxisSize.max,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.all(12.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'NNyA: ${widget.exprow?.nombres} , ${widget.exprow?.apellidos}',
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .override(
-                                          fontFamily: 'Outfit',
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                          fontSize: 24.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 4.0, 0.0, 0.0),
-                                    child: Text(
-                                      'DNI: ${valueOrDefault<String>(
-                                        widget.exprow!.dni! >= 90000000
-                                            ? 'Sin dato'
-                                            : widget.exprow?.dni?.toString(),
-                                        '0',
-                                      )}',
+                            child: Align(
+                              alignment: const AlignmentDirectional(0.0, -1.0),
+                              child: Padding(
+                                padding: const EdgeInsets.all(12.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'NNyA: ${widget.exprow?.nombres} , ${widget.exprow?.apellidos}',
                                       style: FlutterFlowTheme.of(context)
-                                          .bodySmall
+                                          .headlineSmall
                                           .override(
-                                            fontFamily: 'Plus Jakarta Sans',
+                                            fontFamily: 'Outfit',
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
-                                            fontSize: 12.0,
+                                            fontSize: 24.0,
                                             letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w600,
+                                            fontWeight: FontWeight.w500,
                                           ),
                                     ),
-                                  ),
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 4.0, 0.0, 0.0),
-                                        child: Text(
-                                          'Expediente: ${widget.exprow?.expediente}',
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelMedium
-                                              .override(
-                                                fontFamily: 'Plus Jakarta Sans',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                fontSize: 14.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w500,
-                                              ),
-                                        ),
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 4.0, 0.0, 0.0),
+                                      child: Text(
+                                        'DNI: ${valueOrDefault<String>(
+                                          widget.exprow!.dni! >= 90000000
+                                              ? 'Sin dato'
+                                              : widget.exprow?.dni?.toString(),
+                                          '0',
+                                        )}',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .override(
+                                              fontFamily: 'Plus Jakarta Sans',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              fontSize: 12.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w600,
+                                            ),
                                       ),
-                                    ],
-                                  ),
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 4.0, 0.0, 0.0),
-                                        child: Text(
-                                          'SPD: ${widget.exprow?.spd}',
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelMedium
-                                              .override(
-                                                fontFamily: 'Plus Jakarta Sans',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                fontSize: 14.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w500,
-                                              ),
+                                    ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 4.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Expediente: ${widget.exprow?.expediente}',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelMedium
+                                                .override(
+                                                  fontFamily:
+                                                      'Plus Jakarta Sans',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  fontSize: 14.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                          ),
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 4.0, 0.0, 0.0),
-                                        child: Text(
-                                          'Edad: ${widget.exprow?.edad?.toString()}',
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelMedium
-                                              .override(
-                                                fontFamily: 'Plus Jakarta Sans',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                fontSize: 14.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w500,
-                                              ),
+                                      ],
+                                    ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 4.0, 0.0, 0.0),
+                                          child: Text(
+                                            'SPD: ${widget.exprow?.spd}',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelMedium
+                                                .override(
+                                                  fontFamily:
+                                                      'Plus Jakarta Sans',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  fontSize: 14.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                          ),
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                ].divide(const SizedBox(height: 5.0)),
+                                      ],
+                                    ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 4.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Edad: ${widget.exprow?.edad?.toString()}',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelMedium
+                                                .override(
+                                                  fontFamily:
+                                                      'Plus Jakarta Sans',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  fontSize: 14.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ].divide(const SizedBox(height: 5.0)),
+                                ),
                               ),
                             ),
                           ),
@@ -537,108 +545,6 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
                             : const SizedBox(height: 10.0)),
                       ),
                     ),
-                  ),
-                  Flex(
-                    direction: (MediaQuery.sizeOf(context).width > 800.0)
-                        ? Axis.horizontal
-                        : Axis.vertical,
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Visibility(
-                        visible: widget.editarcaratula,
-                        child: Align(
-                          alignment: const AlignmentDirectional(1.0, 1.0),
-                          child: FFButtonWidget(
-                            onPressed: () async {},
-                            text: 'Editar Caratula',
-                            options: FFButtonOptions(
-                              height: 30.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 0.0, 16.0, 0.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    fontFamily: 'Noto Sans JP',
-                                    color: const Color(0xFF39A9EF),
-                                    letterSpacing: 0.0,
-                                  ),
-                              elevation: 2.0,
-                              borderRadius: BorderRadius.circular(25.0),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Visibility(
-                        visible: widget.contactosref,
-                        child: Align(
-                          alignment: const AlignmentDirectional(1.0, 1.0),
-                          child: FFButtonWidget(
-                            onPressed: () async {},
-                            text: 'Contactos de referencia',
-                            options: FFButtonOptions(
-                              height: 30.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 0.0, 16.0, 0.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    fontFamily: 'Noto Sans JP',
-                                    color: const Color(0xFF39A9EF),
-                                    letterSpacing: 0.0,
-                                  ),
-                              elevation: 2.0,
-                              borderRadius: BorderRadius.circular(25.0),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          if (widget.cambia)
-                            Align(
-                              alignment: const AlignmentDirectional(1.0, 1.0),
-                              child: FFButtonWidget(
-                                onPressed: () async {},
-                                text: 'Cambiar exp de SPD',
-                                options: FFButtonOptions(
-                                  height: 30.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 0.0, 16.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .override(
-                                        fontFamily: 'Noto Sans JP',
-                                        color: const Color(0xFF39A9EF),
-                                        letterSpacing: 0.0,
-                                      ),
-                                  elevation: 2.0,
-                                  borderRadius: BorderRadius.circular(25.0),
-                                ),
-                              ),
-                            ),
-                        ],
-                      ),
-                    ]
-                        .divide((MediaQuery.sizeOf(context).width > 800.0)
-                            ? const SizedBox(width: 10.0)
-                            : const SizedBox(height: 10.0))
-                        .around((MediaQuery.sizeOf(context).width > 800.0)
-                            ? const SizedBox(width: 10.0)
-                            : const SizedBox(height: 10.0)),
                   ),
                 ],
               ),
