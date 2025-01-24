@@ -16,8 +16,8 @@ const RESOURCES = {"assets/AssetManifest.bin": "ae1af8211a1ef68eae6e16e08617c38f
 "assets/assets/rive_animations/favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "assets/assets/videos/favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "assets/FontManifest.json": "5a32d4310a6f5d9a6b651e75ba0d7372",
-"assets/fonts/MaterialIcons-Regular.otf": "fb24fecb334827ce91eaf04ab7c08c0a",
-"assets/NOTICES": "b787c357eb4645b08cf75bd857d11f4f",
+"assets/fonts/MaterialIcons-Regular.otf": "808a52916ffec404d9c66b4e9a24684b",
+"assets/NOTICES": "bf7f67529dfc97bbec4f7249ca7e56cc",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "e986ebe42ef785b27164c36a9abc7818",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-brands-400.ttf": "1fcf9d26692e624eda18beed86ef6398",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-regular-400.ttf": "42ef0121626aaf12f22238ed4bc8f4a7",
@@ -40,7 +40,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "ae1af8211a1ef68eae6e16e08617c38f
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "index.html": "ac5a7d6eb6a85ad385bf04ece774ad8b",
 "/": "ac5a7d6eb6a85ad385bf04ece774ad8b",
-"main.dart.js": "9ccdc84c7e465953d6807a2e78d9061e",
+"main.dart.js": "5b3edfef21a0107898b6d2c525d4b3e8",
 "version.json": "acfffe7f6b5dfbca3589e172aeb79e0a"};
 // The application shell files that are downloaded before a service worker can
 // start.
