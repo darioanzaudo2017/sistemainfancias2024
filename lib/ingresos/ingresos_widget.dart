@@ -22,6 +22,7 @@ class IngresosWidget extends StatefulWidget {
     required this.usuariorow,
     this.spd,
     this.idcarpeta,
+    this.usuariorol,
   });
 
   final VistaExpedientesUltimoEstadoRow? idexpediente;
@@ -29,6 +30,7 @@ class IngresosWidget extends StatefulWidget {
   final UsuariosRow? usuariorow;
   final SpdRow? spd;
   final String? idcarpeta;
+  final VistaUsuariosRolesRow? usuariorol;
 
   @override
   State<IngresosWidget> createState() => _IngresosWidgetState();
@@ -261,6 +263,24 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                               usuariorow: widget
                                                                   .usuariorow!,
                                                             ),
+                                                          ),
+                                                          Text(
+                                                            valueOrDefault<
+                                                                String>(
+                                                              widget.usuariorol
+                                                                  ?.rolId
+                                                                  ?.toString(),
+                                                              'Sin dato',
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Noto Sans JP',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                           ),
                                                           Flex(
                                                             direction: (MediaQuery.sizeOf(
@@ -825,446 +845,443 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                               child: Container(
                                                                                                 width: 425.0,
                                                                                                 decoration: const BoxDecoration(),
-                                                                                                child: Column(
-                                                                                                  mainAxisSize: MainAxisSize.max,
-                                                                                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                                  children: [
-                                                                                                    Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 8.0),
-                                                                                                      child: Row(
-                                                                                                        mainAxisSize: MainAxisSize.max,
-                                                                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                                        crossAxisAlignment: CrossAxisAlignment.center,
-                                                                                                        children: [
-                                                                                                          Container(
-                                                                                                            width: 10.0,
-                                                                                                            height: 50.0,
-                                                                                                            decoration: BoxDecoration(
-                                                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                                              borderRadius: const BorderRadius.only(
-                                                                                                                bottomLeft: Radius.circular(0.0),
-                                                                                                                bottomRight: Radius.circular(0.0),
-                                                                                                                topLeft: Radius.circular(10.0),
-                                                                                                                topRight: Radius.circular(0.0),
-                                                                                                              ),
-                                                                                                            ),
-                                                                                                          ),
-                                                                                                          Align(
-                                                                                                            alignment: const AlignmentDirectional(1.0, 0.0),
-                                                                                                            child: Row(
-                                                                                                              mainAxisSize: MainAxisSize.max,
-                                                                                                              children: [
-                                                                                                                Row(
-                                                                                                                  mainAxisSize: MainAxisSize.max,
-                                                                                                                  mainAxisAlignment: MainAxisAlignment.center,
-                                                                                                                  children: [
-                                                                                                                    if (containerVarItem.estado == 'Cerrado')
-                                                                                                                      Container(
-                                                                                                                        width: 100.0,
-                                                                                                                        height: 30.0,
-                                                                                                                        decoration: BoxDecoration(
-                                                                                                                          color: FlutterFlowTheme.of(context).tertiary,
-                                                                                                                          borderRadius: const BorderRadius.only(
-                                                                                                                            bottomLeft: Radius.circular(0.0),
-                                                                                                                            bottomRight: Radius.circular(20.0),
-                                                                                                                            topLeft: Radius.circular(20.0),
-                                                                                                                            topRight: Radius.circular(20.0),
-                                                                                                                          ),
-                                                                                                                        ),
-                                                                                                                        child: Align(
-                                                                                                                          alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                                                          child: Text(
-                                                                                                                            'Cerrado',
-                                                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                                  fontFamily: 'Noto Sans JP',
-                                                                                                                                  letterSpacing: 0.0,
-                                                                                                                                ),
-                                                                                                                          ),
-                                                                                                                        ),
-                                                                                                                      ),
-                                                                                                                    if (containerVarItem.estado == 'Abierto')
-                                                                                                                      Container(
-                                                                                                                        width: 100.0,
-                                                                                                                        height: 30.0,
-                                                                                                                        decoration: BoxDecoration(
-                                                                                                                          color: FlutterFlowTheme.of(context).success,
-                                                                                                                          borderRadius: const BorderRadius.only(
-                                                                                                                            bottomLeft: Radius.circular(0.0),
-                                                                                                                            bottomRight: Radius.circular(20.0),
-                                                                                                                            topLeft: Radius.circular(20.0),
-                                                                                                                            topRight: Radius.circular(20.0),
-                                                                                                                          ),
-                                                                                                                        ),
-                                                                                                                        child: Align(
-                                                                                                                          alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                                                          child: Text(
-                                                                                                                            'Abierto',
-                                                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                                  fontFamily: 'Noto Sans JP',
-                                                                                                                                  letterSpacing: 0.0,
-                                                                                                                                ),
-                                                                                                                          ),
-                                                                                                                        ),
-                                                                                                                      ),
-                                                                                                                  ],
-                                                                                                                ),
-                                                                                                              ],
-                                                                                                            ),
-                                                                                                          ),
-                                                                                                        ].divide(const SizedBox(width: 16.0)),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                    Align(
-                                                                                                      alignment: const AlignmentDirectional(-1.0, 0.0),
-                                                                                                      child: Padding(
-                                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
-                                                                                                        child: Column(
+                                                                                                child: Padding(
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                                                                                                  child: Column(
+                                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                                    children: [
+                                                                                                      Padding(
+                                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 8.0),
+                                                                                                        child: Row(
                                                                                                           mainAxisSize: MainAxisSize.max,
-                                                                                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                                          mainAxisAlignment: MainAxisAlignment.start,
+                                                                                                          crossAxisAlignment: CrossAxisAlignment.center,
                                                                                                           children: [
-                                                                                                            Column(
-                                                                                                              mainAxisSize: MainAxisSize.max,
-                                                                                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                                              children: [
-                                                                                                                Text(
-                                                                                                                  'Datos del Ingreso',
-                                                                                                                  style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                                        fontFamily: 'Noto Sans JP',
-                                                                                                                        color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                                        letterSpacing: 0.0,
-                                                                                                                      ),
+                                                                                                            Container(
+                                                                                                              width: 10.0,
+                                                                                                              height: 50.0,
+                                                                                                              decoration: BoxDecoration(
+                                                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                                borderRadius: const BorderRadius.only(
+                                                                                                                  bottomLeft: Radius.circular(0.0),
+                                                                                                                  bottomRight: Radius.circular(0.0),
+                                                                                                                  topLeft: Radius.circular(10.0),
+                                                                                                                  topRight: Radius.circular(0.0),
                                                                                                                 ),
-                                                                                                                Text(
-                                                                                                                  'Fecha de Creación: ${dateTimeFormat(
-                                                                                                                    "d/M/y",
-                                                                                                                    containerVarItem.createdAt,
-                                                                                                                    locale: FFLocalizations.of(context).languageCode,
-                                                                                                                  )}',
-                                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                        fontFamily: 'Noto Sans JP',
-                                                                                                                        letterSpacing: 0.0,
-                                                                                                                      ),
-                                                                                                                ),
-                                                                                                                Text(
-                                                                                                                  'Dias: ${containerVarItem.diasCierre?.toString()}',
-                                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                        fontFamily: 'Noto Sans JP',
-                                                                                                                        letterSpacing: 0.0,
-                                                                                                                      ),
-                                                                                                                ),
-                                                                                                                Text(
-                                                                                                                  'Dias de la ultima actualizacion: ${dateTimeFormat(
-                                                                                                                    "relative",
-                                                                                                                    containerVarItem.updatedAt,
-                                                                                                                    locale: FFLocalizations.of(context).languageCode,
-                                                                                                                  )}',
-                                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                        fontFamily: 'Noto Sans JP',
-                                                                                                                        letterSpacing: 0.0,
-                                                                                                                      ),
-                                                                                                                ),
-                                                                                                              ].divide(const SizedBox(height: 4.0)),
+                                                                                                              ),
                                                                                                             ),
                                                                                                             Align(
-                                                                                                              alignment: const AlignmentDirectional(-1.0, -1.0),
-                                                                                                              child: Text(
-                                                                                                                'Estado de avance',
-                                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                      fontFamily: 'Noto Sans JP',
-                                                                                                                      color: FlutterFlowTheme.of(context).secondary,
-                                                                                                                      letterSpacing: 0.0,
-                                                                                                                    ),
-                                                                                                              ),
-                                                                                                            ),
-                                                                                                            Padding(
-                                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                                                                                                              alignment: const AlignmentDirectional(1.0, 0.0),
                                                                                                               child: Row(
                                                                                                                 mainAxisSize: MainAxisSize.max,
-                                                                                                                mainAxisAlignment: MainAxisAlignment.start,
                                                                                                                 children: [
-                                                                                                                  Container(
-                                                                                                                    width: 40.0,
-                                                                                                                    height: 40.0,
-                                                                                                                    decoration: BoxDecoration(
-                                                                                                                      borderRadius: BorderRadius.circular(10.0),
-                                                                                                                    ),
-                                                                                                                    child: Column(
-                                                                                                                      mainAxisSize: MainAxisSize.max,
-                                                                                                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                                                                                                      crossAxisAlignment: CrossAxisAlignment.center,
-                                                                                                                      children: [
-                                                                                                                        Text(
-                                                                                                                          '1',
-                                                                                                                          style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                                                                fontFamily: 'Noto Sans JP',
-                                                                                                                                color: FlutterFlowTheme.of(context).primary,
-                                                                                                                                fontSize: 18.0,
-                                                                                                                                letterSpacing: 0.0,
-                                                                                                                                fontWeight: FontWeight.w600,
-                                                                                                                              ),
-                                                                                                                        ),
+                                                                                                                  Row(
+                                                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                                                    mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                                    children: [
+                                                                                                                      if (containerVarItem.estado == 'Cerrado')
                                                                                                                         Container(
-                                                                                                                          width: 30.0,
+                                                                                                                          width: 100.0,
                                                                                                                           height: 30.0,
                                                                                                                           decoration: BoxDecoration(
-                                                                                                                            color: () {
-                                                                                                                              if (!containerVarItem.form1! && !containerVarItem.form1completo!) {
-                                                                                                                                return const Color(0x34EE8B60);
-                                                                                                                              } else if (containerVarItem.form1! && !containerVarItem.form1completo!) {
-                                                                                                                                return const Color(0x334B39EF);
-                                                                                                                              } else if (containerVarItem.form1! && containerVarItem.form1completo!) {
-                                                                                                                                return const Color(0x32249689);
-                                                                                                                              } else {
-                                                                                                                                return const Color(0x00000000);
-                                                                                                                              }
-                                                                                                                            }(),
-                                                                                                                            shape: BoxShape.circle,
-                                                                                                                            border: Border.all(
-                                                                                                                              color: () {
-                                                                                                                                if (!containerVarItem.form1! && !containerVarItem.form1completo!) {
-                                                                                                                                  return FlutterFlowTheme.of(context).tertiary;
-                                                                                                                                } else if (containerVarItem.form1! && !containerVarItem.form1completo!) {
-                                                                                                                                  return FlutterFlowTheme.of(context).primary;
-                                                                                                                                } else if (containerVarItem.form1! && containerVarItem.form1completo!) {
-                                                                                                                                  return FlutterFlowTheme.of(context).success;
-                                                                                                                                } else {
-                                                                                                                                  return const Color(0x00000000);
-                                                                                                                                }
-                                                                                                                              }(),
+                                                                                                                            color: FlutterFlowTheme.of(context).tertiary,
+                                                                                                                            borderRadius: const BorderRadius.only(
+                                                                                                                              bottomLeft: Radius.circular(0.0),
+                                                                                                                              bottomRight: Radius.circular(20.0),
+                                                                                                                              topLeft: Radius.circular(20.0),
+                                                                                                                              topRight: Radius.circular(20.0),
+                                                                                                                            ),
+                                                                                                                          ),
+                                                                                                                          child: Align(
+                                                                                                                            alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                                            child: Text(
+                                                                                                                              'Cerrado',
+                                                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                                    fontFamily: 'Noto Sans JP',
+                                                                                                                                    letterSpacing: 0.0,
+                                                                                                                                  ),
                                                                                                                             ),
                                                                                                                           ),
                                                                                                                         ),
-                                                                                                                      ],
-                                                                                                                    ),
-                                                                                                                  ),
-                                                                                                                  Container(
-                                                                                                                    width: 40.0,
-                                                                                                                    height: 40.0,
-                                                                                                                    decoration: BoxDecoration(
-                                                                                                                      borderRadius: BorderRadius.circular(10.0),
-                                                                                                                    ),
-                                                                                                                    child: Column(
-                                                                                                                      mainAxisSize: MainAxisSize.max,
-                                                                                                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                                                                                                      crossAxisAlignment: CrossAxisAlignment.center,
-                                                                                                                      children: [
-                                                                                                                        Text(
-                                                                                                                          '2',
-                                                                                                                          style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                                                                fontFamily: 'Noto Sans JP',
-                                                                                                                                color: FlutterFlowTheme.of(context).primary,
-                                                                                                                                fontSize: 18.0,
-                                                                                                                                letterSpacing: 0.0,
-                                                                                                                                fontWeight: FontWeight.w600,
-                                                                                                                              ),
-                                                                                                                        ),
+                                                                                                                      if (containerVarItem.estado == 'Abierto')
                                                                                                                         Container(
-                                                                                                                          width: 30.0,
+                                                                                                                          width: 100.0,
                                                                                                                           height: 30.0,
                                                                                                                           decoration: BoxDecoration(
-                                                                                                                            color: () {
-                                                                                                                              if (!containerVarItem.form2! && !containerVarItem.form2completo!) {
-                                                                                                                                return const Color(0x34EE8B60);
-                                                                                                                              } else if (containerVarItem.form2! && !containerVarItem.form2completo!) {
-                                                                                                                                return const Color(0x334B39EF);
-                                                                                                                              } else if (containerVarItem.form2! && containerVarItem.form2completo!) {
-                                                                                                                                return const Color(0x32249689);
-                                                                                                                              } else {
-                                                                                                                                return const Color(0x00000000);
-                                                                                                                              }
-                                                                                                                            }(),
-                                                                                                                            shape: BoxShape.circle,
-                                                                                                                            border: Border.all(
-                                                                                                                              color: () {
-                                                                                                                                if (!containerVarItem.form2! && !containerVarItem.form2completo!) {
-                                                                                                                                  return FlutterFlowTheme.of(context).tertiary;
-                                                                                                                                } else if (containerVarItem.form2! && !containerVarItem.form2completo!) {
-                                                                                                                                  return FlutterFlowTheme.of(context).primary;
-                                                                                                                                } else if (containerVarItem.form2! && containerVarItem.form2completo!) {
-                                                                                                                                  return FlutterFlowTheme.of(context).success;
-                                                                                                                                } else {
-                                                                                                                                  return const Color(0x00000000);
-                                                                                                                                }
-                                                                                                                              }(),
+                                                                                                                            color: FlutterFlowTheme.of(context).success,
+                                                                                                                            borderRadius: const BorderRadius.only(
+                                                                                                                              bottomLeft: Radius.circular(0.0),
+                                                                                                                              bottomRight: Radius.circular(20.0),
+                                                                                                                              topLeft: Radius.circular(20.0),
+                                                                                                                              topRight: Radius.circular(20.0),
+                                                                                                                            ),
+                                                                                                                          ),
+                                                                                                                          child: Align(
+                                                                                                                            alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                                            child: Text(
+                                                                                                                              'Abierto',
+                                                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                                    fontFamily: 'Noto Sans JP',
+                                                                                                                                    letterSpacing: 0.0,
+                                                                                                                                  ),
                                                                                                                             ),
                                                                                                                           ),
                                                                                                                         ),
-                                                                                                                      ],
-                                                                                                                    ),
+                                                                                                                    ],
                                                                                                                   ),
-                                                                                                                  Container(
-                                                                                                                    width: 40.0,
-                                                                                                                    height: 40.0,
-                                                                                                                    decoration: BoxDecoration(
-                                                                                                                      borderRadius: BorderRadius.circular(10.0),
-                                                                                                                    ),
-                                                                                                                    child: Column(
-                                                                                                                      mainAxisSize: MainAxisSize.max,
-                                                                                                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                                                                                                      crossAxisAlignment: CrossAxisAlignment.center,
-                                                                                                                      children: [
-                                                                                                                        Text(
-                                                                                                                          '3',
-                                                                                                                          style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                                                                fontFamily: 'Noto Sans JP',
-                                                                                                                                color: FlutterFlowTheme.of(context).primary,
-                                                                                                                                fontSize: 18.0,
-                                                                                                                                letterSpacing: 0.0,
-                                                                                                                                fontWeight: FontWeight.w600,
-                                                                                                                              ),
-                                                                                                                        ),
-                                                                                                                        Container(
-                                                                                                                          width: 30.0,
-                                                                                                                          height: 30.0,
-                                                                                                                          decoration: BoxDecoration(
-                                                                                                                            color: () {
-                                                                                                                              if (!containerVarItem.form3! && !containerVarItem.form3completo!) {
-                                                                                                                                return const Color(0x34EE8B60);
-                                                                                                                              } else if (containerVarItem.form3! && !containerVarItem.form3completo!) {
-                                                                                                                                return const Color(0x334B39EF);
-                                                                                                                              } else if (containerVarItem.form3! && containerVarItem.form3completo!) {
-                                                                                                                                return const Color(0x32249689);
-                                                                                                                              } else {
-                                                                                                                                return const Color(0x00000000);
-                                                                                                                              }
-                                                                                                                            }(),
-                                                                                                                            shape: BoxShape.circle,
-                                                                                                                            border: Border.all(
-                                                                                                                              color: () {
-                                                                                                                                if (!containerVarItem.form3! && !containerVarItem.form3completo!) {
-                                                                                                                                  return FlutterFlowTheme.of(context).tertiary;
-                                                                                                                                } else if (containerVarItem.form3! && !containerVarItem.form3completo!) {
-                                                                                                                                  return FlutterFlowTheme.of(context).primary;
-                                                                                                                                } else if (containerVarItem.form3! && containerVarItem.form3completo!) {
-                                                                                                                                  return FlutterFlowTheme.of(context).success;
-                                                                                                                                } else {
-                                                                                                                                  return const Color(0x00000000);
-                                                                                                                                }
-                                                                                                                              }(),
-                                                                                                                            ),
-                                                                                                                          ),
-                                                                                                                        ),
-                                                                                                                      ],
-                                                                                                                    ),
-                                                                                                                  ),
-                                                                                                                  Container(
-                                                                                                                    width: 40.0,
-                                                                                                                    height: 40.0,
-                                                                                                                    decoration: BoxDecoration(
-                                                                                                                      borderRadius: BorderRadius.circular(10.0),
-                                                                                                                    ),
-                                                                                                                    child: Column(
-                                                                                                                      mainAxisSize: MainAxisSize.max,
-                                                                                                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                                                                                                      crossAxisAlignment: CrossAxisAlignment.center,
-                                                                                                                      children: [
-                                                                                                                        Text(
-                                                                                                                          '4',
-                                                                                                                          style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                                                                fontFamily: 'Noto Sans JP',
-                                                                                                                                color: FlutterFlowTheme.of(context).primary,
-                                                                                                                                fontSize: 18.0,
-                                                                                                                                letterSpacing: 0.0,
-                                                                                                                                fontWeight: FontWeight.w600,
-                                                                                                                              ),
-                                                                                                                        ),
-                                                                                                                        Container(
-                                                                                                                          width: 30.0,
-                                                                                                                          height: 30.0,
-                                                                                                                          decoration: BoxDecoration(
-                                                                                                                            color: () {
-                                                                                                                              if (!containerVarItem.form4! && !containerVarItem.form4completo!) {
-                                                                                                                                return const Color(0x34EE8B60);
-                                                                                                                              } else if (containerVarItem.form4! && !containerVarItem.form4completo!) {
-                                                                                                                                return const Color(0x334B39EF);
-                                                                                                                              } else if (containerVarItem.form4! && containerVarItem.form4completo!) {
-                                                                                                                                return const Color(0x32249689);
-                                                                                                                              } else {
-                                                                                                                                return const Color(0x00000000);
-                                                                                                                              }
-                                                                                                                            }(),
-                                                                                                                            shape: BoxShape.circle,
-                                                                                                                            border: Border.all(
-                                                                                                                              color: () {
-                                                                                                                                if (!containerVarItem.form4! && !containerVarItem.form4completo!) {
-                                                                                                                                  return FlutterFlowTheme.of(context).tertiary;
-                                                                                                                                } else if (containerVarItem.form4! && !containerVarItem.form4completo!) {
-                                                                                                                                  return FlutterFlowTheme.of(context).primary;
-                                                                                                                                } else if (containerVarItem.form4! && containerVarItem.form4completo!) {
-                                                                                                                                  return FlutterFlowTheme.of(context).success;
-                                                                                                                                } else {
-                                                                                                                                  return const Color(0x00000000);
-                                                                                                                                }
-                                                                                                                              }(),
-                                                                                                                            ),
-                                                                                                                          ),
-                                                                                                                        ),
-                                                                                                                      ],
-                                                                                                                    ),
-                                                                                                                  ),
-                                                                                                                  Container(
-                                                                                                                    width: 40.0,
-                                                                                                                    height: 40.0,
-                                                                                                                    decoration: BoxDecoration(
-                                                                                                                      borderRadius: BorderRadius.circular(10.0),
-                                                                                                                    ),
-                                                                                                                    child: Column(
-                                                                                                                      mainAxisSize: MainAxisSize.max,
-                                                                                                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                                                                                                      crossAxisAlignment: CrossAxisAlignment.center,
-                                                                                                                      children: [
-                                                                                                                        Text(
-                                                                                                                          '5',
-                                                                                                                          style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                                                                fontFamily: 'Noto Sans JP',
-                                                                                                                                color: FlutterFlowTheme.of(context).primary,
-                                                                                                                                fontSize: 18.0,
-                                                                                                                                letterSpacing: 0.0,
-                                                                                                                                fontWeight: FontWeight.w600,
-                                                                                                                              ),
-                                                                                                                        ),
-                                                                                                                        Container(
-                                                                                                                          width: 30.0,
-                                                                                                                          height: 30.0,
-                                                                                                                          decoration: BoxDecoration(
-                                                                                                                            color: () {
-                                                                                                                              if (!containerVarItem.form5! && !containerVarItem.form5completo!) {
-                                                                                                                                return const Color(0x34EE8B60);
-                                                                                                                              } else if (containerVarItem.form5! && !containerVarItem.form5completo!) {
-                                                                                                                                return const Color(0x334B39EF);
-                                                                                                                              } else if (containerVarItem.form5! && containerVarItem.form5completo!) {
-                                                                                                                                return const Color(0x32249689);
-                                                                                                                              } else {
-                                                                                                                                return const Color(0x00000000);
-                                                                                                                              }
-                                                                                                                            }(),
-                                                                                                                            shape: BoxShape.circle,
-                                                                                                                            border: Border.all(
-                                                                                                                              color: () {
-                                                                                                                                if (!containerVarItem.form5! && !containerVarItem.form5completo!) {
-                                                                                                                                  return FlutterFlowTheme.of(context).tertiary;
-                                                                                                                                } else if (containerVarItem.form5! && !containerVarItem.form5completo!) {
-                                                                                                                                  return FlutterFlowTheme.of(context).primary;
-                                                                                                                                } else if (containerVarItem.form5! && containerVarItem.form5completo!) {
-                                                                                                                                  return FlutterFlowTheme.of(context).success;
-                                                                                                                                } else {
-                                                                                                                                  return const Color(0x00000000);
-                                                                                                                                }
-                                                                                                                              }(),
-                                                                                                                            ),
-                                                                                                                          ),
-                                                                                                                        ),
-                                                                                                                      ],
-                                                                                                                    ),
-                                                                                                                  ),
-                                                                                                                ].divide(const SizedBox(width: 10.0)),
+                                                                                                                ],
                                                                                                               ),
                                                                                                             ),
-                                                                                                          ],
+                                                                                                          ].divide(const SizedBox(width: 16.0)),
                                                                                                         ),
                                                                                                       ),
-                                                                                                    ),
-                                                                                                  ],
+                                                                                                      Align(
+                                                                                                        alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                                        child: Padding(
+                                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                                                                                                          child: Column(
+                                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                                            children: [
+                                                                                                              Column(
+                                                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                                                children: [
+                                                                                                                  Text(
+                                                                                                                    'Datos del Ingreso',
+                                                                                                                    style: FlutterFlowTheme.of(context).titleMedium.override(
+                                                                                                                          fontFamily: 'Noto Sans JP',
+                                                                                                                          color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                                          letterSpacing: 0.0,
+                                                                                                                        ),
+                                                                                                                  ),
+                                                                                                                  Text(
+                                                                                                                    'Fecha de Creación: ${dateTimeFormat(
+                                                                                                                      "d/M/y",
+                                                                                                                      containerVarItem.createdAt,
+                                                                                                                      locale: FFLocalizations.of(context).languageCode,
+                                                                                                                    )}',
+                                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                          fontFamily: 'Noto Sans JP',
+                                                                                                                          letterSpacing: 0.0,
+                                                                                                                        ),
+                                                                                                                  ),
+                                                                                                                  Text(
+                                                                                                                    'Dias: ${containerVarItem.diasCierre?.toString()}',
+                                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                          fontFamily: 'Noto Sans JP',
+                                                                                                                          letterSpacing: 0.0,
+                                                                                                                        ),
+                                                                                                                  ),
+                                                                                                                  Text(
+                                                                                                                    'Dias de la ultima actualizacion: ${dateTimeFormat(
+                                                                                                                      "relative",
+                                                                                                                      containerVarItem.updatedAt,
+                                                                                                                      locale: FFLocalizations.of(context).languageCode,
+                                                                                                                    )}',
+                                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                          fontFamily: 'Noto Sans JP',
+                                                                                                                          letterSpacing: 0.0,
+                                                                                                                        ),
+                                                                                                                  ),
+                                                                                                                ].divide(const SizedBox(height: 4.0)),
+                                                                                                              ),
+                                                                                                              Align(
+                                                                                                                alignment: const AlignmentDirectional(-1.0, -1.0),
+                                                                                                                child: Text(
+                                                                                                                  'Estado de avance',
+                                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                        fontFamily: 'Noto Sans JP',
+                                                                                                                        color: FlutterFlowTheme.of(context).secondary,
+                                                                                                                        letterSpacing: 0.0,
+                                                                                                                      ),
+                                                                                                                ),
+                                                                                                              ),
+                                                                                                              Padding(
+                                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                                                                                                                child: Row(
+                                                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                                                  mainAxisAlignment: MainAxisAlignment.start,
+                                                                                                                  children: [
+                                                                                                                    if (containerVarItem.form1 ?? true)
+                                                                                                                      Container(
+                                                                                                                        width: 40.0,
+                                                                                                                        decoration: BoxDecoration(
+                                                                                                                          borderRadius: BorderRadius.circular(10.0),
+                                                                                                                        ),
+                                                                                                                        child: Column(
+                                                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                                                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                                                                                                          crossAxisAlignment: CrossAxisAlignment.center,
+                                                                                                                          children: [
+                                                                                                                            Text(
+                                                                                                                              '1',
+                                                                                                                              style: FlutterFlowTheme.of(context).headlineSmall.override(
+                                                                                                                                    fontFamily: 'Noto Sans JP',
+                                                                                                                                    color: FlutterFlowTheme.of(context).primary,
+                                                                                                                                    fontSize: 18.0,
+                                                                                                                                    letterSpacing: 0.0,
+                                                                                                                                    fontWeight: FontWeight.w600,
+                                                                                                                                  ),
+                                                                                                                            ),
+                                                                                                                            Container(
+                                                                                                                              width: 30.0,
+                                                                                                                              height: 30.0,
+                                                                                                                              decoration: BoxDecoration(
+                                                                                                                                color: () {
+                                                                                                                                  if (!containerVarItem.form1! && !containerVarItem.form1completo!) {
+                                                                                                                                    return const Color(0x34EE8B60);
+                                                                                                                                  } else if (containerVarItem.form1! && !containerVarItem.form1completo!) {
+                                                                                                                                    return const Color(0x334B39EF);
+                                                                                                                                  } else if (containerVarItem.form1! && containerVarItem.form1completo!) {
+                                                                                                                                    return const Color(0x32249689);
+                                                                                                                                  } else {
+                                                                                                                                    return const Color(0x00000000);
+                                                                                                                                  }
+                                                                                                                                }(),
+                                                                                                                                shape: BoxShape.circle,
+                                                                                                                                border: Border.all(
+                                                                                                                                  color: () {
+                                                                                                                                    if (!containerVarItem.form1! && !containerVarItem.form1completo!) {
+                                                                                                                                      return FlutterFlowTheme.of(context).tertiary;
+                                                                                                                                    } else if (containerVarItem.form1! && !containerVarItem.form1completo!) {
+                                                                                                                                      return FlutterFlowTheme.of(context).primary;
+                                                                                                                                    } else if (containerVarItem.form1! && containerVarItem.form1completo!) {
+                                                                                                                                      return FlutterFlowTheme.of(context).success;
+                                                                                                                                    } else {
+                                                                                                                                      return const Color(0x00000000);
+                                                                                                                                    }
+                                                                                                                                  }(),
+                                                                                                                                ),
+                                                                                                                              ),
+                                                                                                                            ),
+                                                                                                                          ],
+                                                                                                                        ),
+                                                                                                                      ),
+                                                                                                                    if (containerVarItem.form2 ?? true)
+                                                                                                                      Container(
+                                                                                                                        width: 40.0,
+                                                                                                                        decoration: BoxDecoration(
+                                                                                                                          borderRadius: BorderRadius.circular(10.0),
+                                                                                                                        ),
+                                                                                                                        child: Column(
+                                                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                                                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                                                                                                          crossAxisAlignment: CrossAxisAlignment.center,
+                                                                                                                          children: [
+                                                                                                                            Text(
+                                                                                                                              '2',
+                                                                                                                              style: FlutterFlowTheme.of(context).headlineSmall.override(
+                                                                                                                                    fontFamily: 'Noto Sans JP',
+                                                                                                                                    color: FlutterFlowTheme.of(context).primary,
+                                                                                                                                    fontSize: 18.0,
+                                                                                                                                    letterSpacing: 0.0,
+                                                                                                                                    fontWeight: FontWeight.w600,
+                                                                                                                                  ),
+                                                                                                                            ),
+                                                                                                                            Container(
+                                                                                                                              width: 30.0,
+                                                                                                                              height: 30.0,
+                                                                                                                              decoration: BoxDecoration(
+                                                                                                                                color: () {
+                                                                                                                                  if (!containerVarItem.form3completo! && !containerVarItem.form2completo! && !containerVarItem.form4completo!) {
+                                                                                                                                    return const Color(0x34EE8B60);
+                                                                                                                                  } else if (containerVarItem.form2completo! || containerVarItem.form3completo! || containerVarItem.form4completo!) {
+                                                                                                                                    return const Color(0x32249689);
+                                                                                                                                  } else {
+                                                                                                                                    return const Color(0x00000000);
+                                                                                                                                  }
+                                                                                                                                }(),
+                                                                                                                                shape: BoxShape.circle,
+                                                                                                                                border: Border.all(
+                                                                                                                                  color: () {
+                                                                                                                                    if (!containerVarItem.form2! && !containerVarItem.form2completo!) {
+                                                                                                                                      return FlutterFlowTheme.of(context).tertiary;
+                                                                                                                                    } else if (containerVarItem.form2! && !containerVarItem.form2completo!) {
+                                                                                                                                      return FlutterFlowTheme.of(context).primary;
+                                                                                                                                    } else if (containerVarItem.form2! && containerVarItem.form2completo!) {
+                                                                                                                                      return FlutterFlowTheme.of(context).success;
+                                                                                                                                    } else {
+                                                                                                                                      return const Color(0x00000000);
+                                                                                                                                    }
+                                                                                                                                  }(),
+                                                                                                                                ),
+                                                                                                                              ),
+                                                                                                                            ),
+                                                                                                                          ],
+                                                                                                                        ),
+                                                                                                                      ),
+                                                                                                                    if (containerVarItem.form5 ?? true)
+                                                                                                                      Container(
+                                                                                                                        width: 40.0,
+                                                                                                                        decoration: BoxDecoration(
+                                                                                                                          borderRadius: BorderRadius.circular(10.0),
+                                                                                                                        ),
+                                                                                                                        child: Column(
+                                                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                                                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                                                                                                          crossAxisAlignment: CrossAxisAlignment.center,
+                                                                                                                          children: [
+                                                                                                                            Text(
+                                                                                                                              '3',
+                                                                                                                              style: FlutterFlowTheme.of(context).headlineSmall.override(
+                                                                                                                                    fontFamily: 'Noto Sans JP',
+                                                                                                                                    color: FlutterFlowTheme.of(context).primary,
+                                                                                                                                    fontSize: 18.0,
+                                                                                                                                    letterSpacing: 0.0,
+                                                                                                                                    fontWeight: FontWeight.w600,
+                                                                                                                                  ),
+                                                                                                                            ),
+                                                                                                                            Container(
+                                                                                                                              width: 30.0,
+                                                                                                                              height: 30.0,
+                                                                                                                              decoration: BoxDecoration(
+                                                                                                                                color: () {
+                                                                                                                                  if (!containerVarItem.form5completo!) {
+                                                                                                                                    return const Color(0x34EE8B60);
+                                                                                                                                  } else if (containerVarItem.form5completo!) {
+                                                                                                                                    return FlutterFlowTheme.of(context).accent2;
+                                                                                                                                  } else {
+                                                                                                                                    return const Color(0x00000000);
+                                                                                                                                  }
+                                                                                                                                }(),
+                                                                                                                                shape: BoxShape.circle,
+                                                                                                                                border: Border.all(
+                                                                                                                                  color: () {
+                                                                                                                                    if (!containerVarItem.form3! && !containerVarItem.form3completo!) {
+                                                                                                                                      return FlutterFlowTheme.of(context).tertiary;
+                                                                                                                                    } else if (containerVarItem.form3! && !containerVarItem.form3completo!) {
+                                                                                                                                      return FlutterFlowTheme.of(context).primary;
+                                                                                                                                    } else if (containerVarItem.form3! && containerVarItem.form3completo!) {
+                                                                                                                                      return FlutterFlowTheme.of(context).success;
+                                                                                                                                    } else {
+                                                                                                                                      return const Color(0x00000000);
+                                                                                                                                    }
+                                                                                                                                  }(),
+                                                                                                                                ),
+                                                                                                                              ),
+                                                                                                                            ),
+                                                                                                                          ],
+                                                                                                                        ),
+                                                                                                                      ),
+                                                                                                                    if (containerVarItem.form6 ?? true)
+                                                                                                                      Container(
+                                                                                                                        width: 40.0,
+                                                                                                                        decoration: BoxDecoration(
+                                                                                                                          borderRadius: BorderRadius.circular(10.0),
+                                                                                                                        ),
+                                                                                                                        child: Column(
+                                                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                                                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                                                                                                          crossAxisAlignment: CrossAxisAlignment.center,
+                                                                                                                          children: [
+                                                                                                                            Text(
+                                                                                                                              '4',
+                                                                                                                              style: FlutterFlowTheme.of(context).headlineSmall.override(
+                                                                                                                                    fontFamily: 'Noto Sans JP',
+                                                                                                                                    color: FlutterFlowTheme.of(context).primary,
+                                                                                                                                    fontSize: 18.0,
+                                                                                                                                    letterSpacing: 0.0,
+                                                                                                                                    fontWeight: FontWeight.w600,
+                                                                                                                                  ),
+                                                                                                                            ),
+                                                                                                                            Container(
+                                                                                                                              width: 30.0,
+                                                                                                                              height: 30.0,
+                                                                                                                              decoration: BoxDecoration(
+                                                                                                                                color: () {
+                                                                                                                                  if (!containerVarItem.form6completo!) {
+                                                                                                                                    return FlutterFlowTheme.of(context).accent3;
+                                                                                                                                  } else if (containerVarItem.form6completo!) {
+                                                                                                                                    return FlutterFlowTheme.of(context).accent2;
+                                                                                                                                  } else {
+                                                                                                                                    return const Color(0x00000000);
+                                                                                                                                  }
+                                                                                                                                }(),
+                                                                                                                                shape: BoxShape.circle,
+                                                                                                                                border: Border.all(
+                                                                                                                                  color: () {
+                                                                                                                                    if (!containerVarItem.form4! && !containerVarItem.form4completo!) {
+                                                                                                                                      return FlutterFlowTheme.of(context).tertiary;
+                                                                                                                                    } else if (containerVarItem.form4! && !containerVarItem.form4completo!) {
+                                                                                                                                      return FlutterFlowTheme.of(context).primary;
+                                                                                                                                    } else if (containerVarItem.form4! && containerVarItem.form4completo!) {
+                                                                                                                                      return FlutterFlowTheme.of(context).success;
+                                                                                                                                    } else {
+                                                                                                                                      return const Color(0x00000000);
+                                                                                                                                    }
+                                                                                                                                  }(),
+                                                                                                                                ),
+                                                                                                                              ),
+                                                                                                                            ),
+                                                                                                                          ],
+                                                                                                                        ),
+                                                                                                                      ),
+                                                                                                                    Container(
+                                                                                                                      width: 40.0,
+                                                                                                                      decoration: BoxDecoration(
+                                                                                                                        borderRadius: BorderRadius.circular(10.0),
+                                                                                                                      ),
+                                                                                                                      child: Visibility(
+                                                                                                                        visible: containerVarItem.form9 ?? true,
+                                                                                                                        child: Column(
+                                                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                                                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                                                                                                          crossAxisAlignment: CrossAxisAlignment.center,
+                                                                                                                          children: [
+                                                                                                                            Text(
+                                                                                                                              '5',
+                                                                                                                              style: FlutterFlowTheme.of(context).headlineSmall.override(
+                                                                                                                                    fontFamily: 'Noto Sans JP',
+                                                                                                                                    color: FlutterFlowTheme.of(context).primary,
+                                                                                                                                    fontSize: 18.0,
+                                                                                                                                    letterSpacing: 0.0,
+                                                                                                                                    fontWeight: FontWeight.w600,
+                                                                                                                                  ),
+                                                                                                                            ),
+                                                                                                                            Container(
+                                                                                                                              width: 30.0,
+                                                                                                                              height: 30.0,
+                                                                                                                              decoration: BoxDecoration(
+                                                                                                                                color: () {
+                                                                                                                                  if (!containerVarItem.form9completo!) {
+                                                                                                                                    return FlutterFlowTheme.of(context).accent3;
+                                                                                                                                  } else if (containerVarItem.form9completo!) {
+                                                                                                                                    return FlutterFlowTheme.of(context).accent2;
+                                                                                                                                  } else {
+                                                                                                                                    return const Color(0x00000000);
+                                                                                                                                  }
+                                                                                                                                }(),
+                                                                                                                                shape: BoxShape.circle,
+                                                                                                                                border: Border.all(
+                                                                                                                                  color: () {
+                                                                                                                                    if (!containerVarItem.form5! && !containerVarItem.form5completo!) {
+                                                                                                                                      return FlutterFlowTheme.of(context).tertiary;
+                                                                                                                                    } else if (containerVarItem.form5! && !containerVarItem.form5completo!) {
+                                                                                                                                      return FlutterFlowTheme.of(context).primary;
+                                                                                                                                    } else if (containerVarItem.form5! && containerVarItem.form5completo!) {
+                                                                                                                                      return FlutterFlowTheme.of(context).success;
+                                                                                                                                    } else {
+                                                                                                                                      return const Color(0x00000000);
+                                                                                                                                    }
+                                                                                                                                  }(),
+                                                                                                                                ),
+                                                                                                                              ),
+                                                                                                                            ),
+                                                                                                                          ],
+                                                                                                                        ),
+                                                                                                                      ),
+                                                                                                                    ),
+                                                                                                                  ].divide(const SizedBox(width: 10.0)),
+                                                                                                                ),
+                                                                                                              ),
+                                                                                                            ],
+                                                                                                          ),
+                                                                                                        ),
+                                                                                                      ),
+                                                                                                    ],
+                                                                                                  ),
                                                                                                 ),
                                                                                               ),
                                                                                             ),
@@ -1292,6 +1309,10 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                           ),
                                                                                                           'spd': serializeParam(
                                                                                                             widget.spd,
+                                                                                                            ParamType.SupabaseRow,
+                                                                                                          ),
+                                                                                                          'usuariorol': serializeParam(
+                                                                                                            widget.usuariorol,
                                                                                                             ParamType.SupabaseRow,
                                                                                                           ),
                                                                                                         }.withoutNulls,

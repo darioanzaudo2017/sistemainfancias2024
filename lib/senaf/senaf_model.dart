@@ -1,5 +1,6 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/tarjetaencabezado_widget.dart';
 import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
@@ -16,6 +17,8 @@ class SenafModel extends FlutterFlowModel<SenafWidget> {
   // State field(s) for PaginatedDataTable widget.
   final paginatedDataTableController =
       FlutterFlowDataTableController<GrupoConvivienteRow>();
+  // Model for tarjetaencabezado component.
+  late TarjetaencabezadoModel tarjetaencabezadoModel;
   // State field(s) for DropDowncausa widget.
   String? dropDowncausaValue;
   FormFieldController<String>? dropDowncausaValueController;
@@ -27,7 +30,6 @@ class SenafModel extends FlutterFlowModel<SenafWidget> {
   FocusNode? textFieldObsFocusNode;
   TextEditingController? textFieldObsTextController;
   String? Function(BuildContext, String?)? textFieldObsTextControllerValidator;
-  DateTime? datePicked1;
   // State field(s) for RadioButtoninscriptoagotado widget.
   FormFieldController<String>? radioButtoninscriptoagotadoValueController;
   // State field(s) for RadioButtoninscriptopermanenciafamilia widget.
@@ -43,9 +45,9 @@ class SenafModel extends FlutterFlowModel<SenafWidget> {
   String? Function(BuildContext, String?)? textController4Validator;
   // State field(s) for Checkboxsolicitud widget.
   bool? checkboxsolicitudValue;
+  DateTime? datePicked1;
   DateTime? datePicked2;
   DateTime? datePicked3;
-  DateTime? datePicked4;
   // State field(s) for TextFieldmotivosolicitud widget.
   FocusNode? textFieldmotivosolicitudFocusNode;
   TextEditingController? textFieldmotivosolicitudTextController;
@@ -55,20 +57,20 @@ class SenafModel extends FlutterFlowModel<SenafWidget> {
   bool? checkboxevaluacionValue;
   // State field(s) for Checkboxadoptada widget.
   bool? checkboxadoptadaValue;
-  DateTime? datePicked5;
-  // State field(s) for TextFieldmotivorechazo widget.
-  FocusNode? textFieldmotivorechazoFocusNode1;
-  TextEditingController? textFieldmotivorechazoTextController1;
+  DateTime? datePicked4;
+  // State field(s) for TextFieldobservacionesdemedidaadoptada widget.
+  FocusNode? textFieldobservacionesdemedidaadoptadaFocusNode;
+  TextEditingController? textFieldobservacionesdemedidaadoptadaTextController;
   String? Function(BuildContext, String?)?
-      textFieldmotivorechazoTextController1Validator;
+      textFieldobservacionesdemedidaadoptadaTextControllerValidator;
   // State field(s) for Checkboxrechazada widget.
   bool? checkboxrechazadaValue;
-  DateTime? datePicked6;
+  DateTime? datePicked5;
   // State field(s) for TextFieldmotivorechazo widget.
-  FocusNode? textFieldmotivorechazoFocusNode2;
-  TextEditingController? textFieldmotivorechazoTextController2;
+  FocusNode? textFieldmotivorechazoFocusNode;
+  TextEditingController? textFieldmotivorechazoTextController;
   String? Function(BuildContext, String?)?
-      textFieldmotivorechazoTextController2Validator;
+      textFieldmotivorechazoTextControllerValidator;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   Formulario9Row? form9;
   Completer<List<IngresosRow>>? requestCompleter1;
@@ -79,11 +81,15 @@ class SenafModel extends FlutterFlowModel<SenafWidget> {
   ApiCallResponse? apiResultznwinfsenaf2;
 
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    tarjetaencabezadoModel =
+        createModel(context, () => TarjetaencabezadoModel());
+  }
 
   @override
   void dispose() {
     paginatedDataTableController.dispose();
+    tarjetaencabezadoModel.dispose();
     textFieldFocusNode1?.dispose();
     textController1?.dispose();
 
@@ -99,11 +105,11 @@ class SenafModel extends FlutterFlowModel<SenafWidget> {
     textFieldmotivosolicitudFocusNode?.dispose();
     textFieldmotivosolicitudTextController?.dispose();
 
-    textFieldmotivorechazoFocusNode1?.dispose();
-    textFieldmotivorechazoTextController1?.dispose();
+    textFieldobservacionesdemedidaadoptadaFocusNode?.dispose();
+    textFieldobservacionesdemedidaadoptadaTextController?.dispose();
 
-    textFieldmotivorechazoFocusNode2?.dispose();
-    textFieldmotivorechazoTextController2?.dispose();
+    textFieldmotivorechazoFocusNode?.dispose();
+    textFieldmotivorechazoTextController?.dispose();
   }
 
   /// Additional helper methods.

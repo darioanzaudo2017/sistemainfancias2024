@@ -36,6 +36,7 @@ export 'tables/lista_derechos_vulneradosexpediente.dart';
 export 'tables/anexo_b_1_form1.dart';
 export 'tables/documentosadjuntos.dart';
 export 'tables/vista_expedientes.dart';
+export 'tables/vista_usuarios_roles.dart';
 export 'tables/anexo1_form1.dart';
 export 'tables/grupo_conviviente.dart';
 export 'tables/resuestas_form6.dart';

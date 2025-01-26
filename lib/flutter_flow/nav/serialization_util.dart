@@ -278,6 +278,8 @@ dynamic deserializeParam<T>(
             return DocumentosadjuntosRow(data);
           case VistaExpedientesRow:
             return VistaExpedientesRow(data);
+          case VistaUsuariosRolesRow:
+            return VistaUsuariosRolesRow(data);
           case Anexo1Form1Row:
             return Anexo1Form1Row(data);
           case GrupoConvivienteRow:

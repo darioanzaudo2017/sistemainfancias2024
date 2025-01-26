@@ -58,13 +58,23 @@ class Caratula2Model extends FlutterFlowModel<Caratula2Widget> {
   final textFieldedadMask = MaskTextInputFormatter(mask: '##');
   String? Function(BuildContext, String?)? textFieldedadTextControllerValidator;
   DateTime? datePicked1;
-  // Stores action output result for [Backend Call - API (ExisteDNI)] action in Button widget.
+  // Stores action output result for [Backend Call - API (ExisteDNIexpediente)] action in Button widget.
   ApiCallResponse? checkdnifuncion;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   ExpedienteRow? crearexpnnya2;
+  // Stores action output result for [Backend Call - API (ExisteDNInnya)] action in Button widget.
+  ApiCallResponse? checkdnifuncionnnya;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<NNyARow>? querynnyaexistente;
+  Completer<List<ListaDerechosVulneradosexpedienteRow>>? requestCompleter;
+  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
+  NNyAExpGruRow? crearexpgrupo3;
+  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
+  GrupofamiliarRow? grupofmiliar3;
+  // Stores action output result for [Backend Call - API (carpeta del expediente)] action in Button widget.
+  ApiCallResponse? apiResult42y20;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   NNyARow? crearNNyA2;
-  Completer<List<ListaDerechosVulneradosexpedienteRow>>? requestCompleter;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   NNyAExpGruRow? crearexpgrupo2;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.

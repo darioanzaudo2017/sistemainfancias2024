@@ -72,7 +72,7 @@ class AgregarConvivienteModel
   FocusNode? textFieldFocusNode6;
   TextEditingController? textController7;
   String? Function(BuildContext, String?)? textController7Validator;
-  // Stores action output result for [Backend Call - API (ExisteDNI)] action in Button widget.
+  // Stores action output result for [Backend Call - API (ExisteDNInnya)] action in Button widget.
   ApiCallResponse? chekdnigrupo;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
   List<NNyARow>? busquedapersonadni;

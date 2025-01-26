@@ -28,5 +28,4 @@ export '/caratula2/caratula2_widget.dart' show Caratula2Widget;
 export '/respuestaform6page/respuestaform6page_widget.dart'
     show Respuestaform6pageWidget;
 export '/pruebarls/pruebarls_widget.dart' show PruebarlsWidget;
-export '/perfil_copy/perfil_copy_widget.dart' show PerfilCopyWidget;
 export '/informesenaf/informesenaf_widget.dart' show InformesenafWidget;

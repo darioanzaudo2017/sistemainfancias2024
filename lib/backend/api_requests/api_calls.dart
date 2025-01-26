@@ -1060,7 +1060,7 @@ class EmailResendCall {
   }
 }
 
-class ExisteDNICall {
+class ExisteDNInnyaCall {
   static Future<ApiCallResponse> call({
     String? dni = '56535604',
   }) async {
@@ -1069,9 +1069,46 @@ class ExisteDNICall {
   "dni_param": "${escapeStringForJson(dni)}"
 }''';
     return ApiManager.instance.makeApiCall(
-      callName: 'ExisteDNI',
+      callName: 'ExisteDNInnya',
       apiUrl:
           'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/rpc/dni_existe_nnya',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
+        'Authorization':
+            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static bool? check(dynamic response) => castToType<bool>(getJsonField(
+        response,
+        r'''$''',
+      ));
+}
+
+class ExisteDNIexpedienteCall {
+  static Future<ApiCallResponse> call({
+    String? dni = '31450209',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "dni_param": "${escapeStringForJson(dni)}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'ExisteDNIexpediente',
+      apiUrl: 'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/rpc/dni_existe',
       callType: ApiCallType.POST,
       headers: {
         'Content-Type': 'application/json',

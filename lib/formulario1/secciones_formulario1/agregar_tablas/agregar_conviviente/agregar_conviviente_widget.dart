@@ -942,12 +942,12 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                   onPressed: () async {
                                     if (!widget.editar!) {
                                       _model.chekdnigrupo =
-                                          await ExisteDNICall.call(
+                                          await ExisteDNInnyaCall.call(
                                         dni: _model
                                             .textFieldDniTextController.text,
                                       );
 
-                                      if (ExisteDNICall.check(
+                                      if (ExisteDNInnyaCall.check(
                                         (_model.chekdnigrupo?.jsonBody ?? ''),
                                       )!) {
                                         _model.busquedapersonadni =
