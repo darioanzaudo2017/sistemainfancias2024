@@ -805,21 +805,15 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                     return;
                                                   }
                                                   _model.checkdnifuncion =
-                                                      await ExisteDNICall.call(
-                                                    dni: (_model.textFieldDNITextController
-                                                                        .text ==
-                                                                    ''
-                                                            ? random_data
-                                                                .randomInteger(
-                                                                    9000000,
-                                                                    1000000000)
-                                                            : int.tryParse(_model
-                                                                .textFieldDNITextController
-                                                                .text))
-                                                        ?.toString(),
+                                                      await ExisteDNIexpedienteCall
+                                                          .call(
+                                                    dni: _model
+                                                        .textFieldDNITextController
+                                                        .text,
                                                   );
 
-                                                  if (ExisteDNICall.check(
+                                                  if (ExisteDNIexpedienteCall
+                                                      .check(
                                                     (_model.checkdnifuncion
                                                             ?.jsonBody ??
                                                         ''),
@@ -905,136 +899,282 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                           widget.usuario?.spd,
                                                       'estado': true,
                                                     });
-                                                    _model.crearNNyA2 =
-                                                        await NNyATable()
-                                                            .insert({
-                                                      'Nombre': functions
-                                                          .mayusculas(_model
-                                                              .textFieldnombresTextController
-                                                              .text),
-                                                      'Apellido': functions
-                                                          .mayusculas(_model
-                                                              .textFieldapellidoTextController
-                                                              .text),
-                                                      'DNI': _model
-                                                          .crearexpnnya2?.dni,
-                                                      'edad': int.tryParse(_model
-                                                          .textFieldedadTextController
-                                                          .text),
-                                                      'iduser': currentUserUid,
-                                                    });
-                                                    safeSetState(() => _model
-                                                            .requestCompleter =
-                                                        null);
-                                                    await _model
-                                                        .waitForRequestCompleted();
-                                                    _model.crearexpgrupo2 =
-                                                        await NNyAExpGruTable()
-                                                            .insert({
-                                                      'idExp': _model
-                                                          .crearexpnnya2?.id,
-                                                      'detalle': 'expediente',
-                                                      'idNNyA':
-                                                          _model.crearNNyA2?.id,
-                                                    });
-                                                    _model.grupofmiliar2 =
-                                                        await GrupofamiliarTable()
-                                                            .insert({
-                                                      'nombregrupo':
-                                                          '${_model.crearexpnnya2?.expediente}/${_model.crearexpnnya2?.dni?.toString()}',
-                                                    });
-                                                    await GrupofamiliarexpedientesTable()
-                                                        .insert({
-                                                      'idgrupofamliar': _model
-                                                          .grupofmiliar2?.id,
-                                                      'idexpediente': _model
-                                                          .crearexpnnya2?.id,
-                                                      'expedienteprincipal':
-                                                          _model.crearexpnnya2
-                                                              ?.id,
-                                                    });
-                                                    await NNyAExpGruTable()
-                                                        .update(
-                                                      data: {
-                                                        'idNNyA': _model
-                                                            .crearNNyA2?.id,
-                                                      },
-                                                      matchingRows: (rows) =>
-                                                          rows.eqOrNull(
-                                                        'id',
-                                                        _model
-                                                            .crearexpgrupo2?.id,
-                                                      ),
-                                                    );
-                                                    _model.apiResult42y2 =
-                                                        await CarpetaDelExpedienteCall
+                                                    _model.checkdnifuncionnnya =
+                                                        await ExisteDNInnyaCall
                                                             .call(
-                                                      expediente: _model
-                                                          .crearexpnnya2
-                                                          ?.expediente,
-                                                      id: _model
-                                                          .crearexpnnya2?.id,
-                                                      fecha: _model
-                                                          .crearexpnnya2?.fecha
-                                                          ?.toString(),
-                                                      nombresDNI:
-                                                          '${_model.crearexpnnya2?.nombres}, ${_model.crearexpnnya2?.apellidos}, DNI ${_model.crearexpnnya2?.dni?.toString()}',
-                                                      idcarpetaspd: widget
-                                                          .spd?.idcarpetaspd,
+                                                      dni: _model
+                                                          .textFieldDNITextController
+                                                          .text,
                                                     );
 
-                                                    await ExpedienteTable()
-                                                        .update(
-                                                      data: {
-                                                        'idgrupofamiliar':
-                                                            _model.grupofmiliar2
+                                                    if ((_model
+                                                            .checkdnifuncionnnya
+                                                            ?.succeeded ??
+                                                        true)) {
+                                                      _model.querynnyaexistente =
+                                                          await NNyATable()
+                                                              .queryRows(
+                                                        queryFn: (q) =>
+                                                            q.eqOrNull(
+                                                          'DNI',
+                                                          int.tryParse(_model
+                                                              .textFieldDNITextController
+                                                              .text),
+                                                        ),
+                                                      );
+                                                      safeSetState(() => _model
+                                                              .requestCompleter =
+                                                          null);
+                                                      await _model
+                                                          .waitForRequestCompleted();
+                                                      _model.crearexpgrupo3 =
+                                                          await NNyAExpGruTable()
+                                                              .insert({
+                                                        'idExp': _model
+                                                            .crearexpnnya2?.id,
+                                                        'detalle': 'expediente',
+                                                        'idNNyA': _model
+                                                            .querynnyaexistente
+                                                            ?.firstOrNull
+                                                            ?.id,
+                                                      });
+                                                      _model.grupofmiliar3 =
+                                                          await GrupofamiliarTable()
+                                                              .insert({
+                                                        'nombregrupo':
+                                                            '${_model.crearexpnnya2?.expediente}/${_model.crearexpnnya2?.dni?.toString()}',
+                                                      });
+                                                      await GrupofamiliarexpedientesTable()
+                                                          .insert({
+                                                        'idgrupofamliar': _model
+                                                            .grupofmiliar3?.id,
+                                                        'idexpediente': _model
+                                                            .crearexpnnya2?.id,
+                                                        'expedienteprincipal':
+                                                            _model.crearexpnnya2
                                                                 ?.id,
-                                                        'expediente':
-                                                            '${widget.usuario?.spd}/${_model.crearexpnnya2?.id.toString()}/${dateTimeFormat(
-                                                          "y",
-                                                          getCurrentTimestamp,
-                                                          locale:
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .languageCode,
-                                                        )}',
+                                                      });
+                                                      await NNyAExpGruTable()
+                                                          .update(
+                                                        data: {
+                                                          'idNNyA': _model
+                                                              .querynnyaexistente
+                                                              ?.firstOrNull
+                                                              ?.id,
+                                                        },
+                                                        matchingRows: (rows) =>
+                                                            rows.eqOrNull(
+                                                          'id',
+                                                          _model.crearexpgrupo3
+                                                              ?.id,
+                                                        ),
+                                                      );
+                                                      _model.apiResult42y20 =
+                                                          await CarpetaDelExpedienteCall
+                                                              .call(
+                                                        expediente: _model
+                                                            .crearexpnnya2
+                                                            ?.expediente,
+                                                        id: _model
+                                                            .crearexpnnya2?.id,
+                                                        fecha: _model
+                                                            .crearexpnnya2
+                                                            ?.fecha
+                                                            ?.toString(),
+                                                        nombresDNI:
+                                                            '${_model.crearexpnnya2?.nombres}, ${_model.crearexpnnya2?.apellidos}, DNI ${_model.crearexpnnya2?.dni?.toString()}',
+                                                        idcarpetaspd: widget
+                                                            .spd?.idcarpetaspd,
+                                                      );
+
+                                                      await ExpedienteTable()
+                                                          .update(
+                                                        data: {
+                                                          'idgrupofamiliar':
+                                                              _model
+                                                                  .grupofmiliar3
+                                                                  ?.id,
+                                                          'expediente':
+                                                              '${widget.usuario?.spd}/${_model.crearexpnnya2?.id.toString()}/${dateTimeFormat(
+                                                            "y",
+                                                            getCurrentTimestamp,
+                                                            locale: FFLocalizations
+                                                                    .of(context)
+                                                                .languageCode,
+                                                          )}',
+                                                          'idNNyA': _model
+                                                              .querynnyaexistente
+                                                              ?.firstOrNull
+                                                              ?.id,
+                                                        },
+                                                        matchingRows: (rows) =>
+                                                            rows.eqOrNull(
+                                                          'id',
+                                                          _model.crearexpnnya2
+                                                              ?.id,
+                                                        ),
+                                                      );
+                                                      await showDialog(
+                                                        context: context,
+                                                        builder:
+                                                            (alertDialogContext) {
+                                                          return WebViewAware(
+                                                            child: AlertDialog(
+                                                              title: const Text(
+                                                                  'El NNyA no tiene expediente'),
+                                                              content: const Text(
+                                                                  'Continuamos con la carga!!'),
+                                                              actions: [
+                                                                TextButton(
+                                                                  onPressed: () =>
+                                                                      Navigator.pop(
+                                                                          alertDialogContext),
+                                                                  child: const Text(
+                                                                      'Ok'),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          );
+                                                        },
+                                                      );
+                                                      _model.expedientecreado =
+                                                          _model.crearexpnnya2
+                                                              ?.id;
+                                                      safeSetState(() {});
+                                                    } else {
+                                                      _model.crearNNyA2 =
+                                                          await NNyATable()
+                                                              .insert({
+                                                        'Nombre': functions
+                                                            .mayusculas(_model
+                                                                .textFieldnombresTextController
+                                                                .text),
+                                                        'Apellido': functions
+                                                            .mayusculas(_model
+                                                                .textFieldapellidoTextController
+                                                                .text),
+                                                        'DNI': _model
+                                                            .crearexpnnya2?.dni,
+                                                        'edad': int.tryParse(_model
+                                                            .textFieldedadTextController
+                                                            .text),
+                                                        'iduser':
+                                                            currentUserUid,
+                                                      });
+                                                      safeSetState(() => _model
+                                                              .requestCompleter =
+                                                          null);
+                                                      await _model
+                                                          .waitForRequestCompleted();
+                                                      _model.crearexpgrupo2 =
+                                                          await NNyAExpGruTable()
+                                                              .insert({
+                                                        'idExp': _model
+                                                            .crearexpnnya2?.id,
+                                                        'detalle': 'expediente',
                                                         'idNNyA': _model
                                                             .crearNNyA2?.id,
-                                                      },
-                                                      matchingRows: (rows) =>
-                                                          rows.eqOrNull(
-                                                        'id',
-                                                        _model
+                                                      });
+                                                      _model.grupofmiliar2 =
+                                                          await GrupofamiliarTable()
+                                                              .insert({
+                                                        'nombregrupo':
+                                                            '${_model.crearexpnnya2?.expediente}/${_model.crearexpnnya2?.dni?.toString()}',
+                                                      });
+                                                      await GrupofamiliarexpedientesTable()
+                                                          .insert({
+                                                        'idgrupofamliar': _model
+                                                            .grupofmiliar2?.id,
+                                                        'idexpediente': _model
                                                             .crearexpnnya2?.id,
-                                                      ),
-                                                    );
-                                                    await showDialog(
-                                                      context: context,
-                                                      builder:
-                                                          (alertDialogContext) {
-                                                        return WebViewAware(
-                                                          child: AlertDialog(
-                                                            title: const Text(
-                                                                'El NNyA no tiene expediente'),
-                                                            content: const Text(
-                                                                'Continuamos con la carga!!'),
-                                                            actions: [
-                                                              TextButton(
-                                                                onPressed: () =>
-                                                                    Navigator.pop(
-                                                                        alertDialogContext),
-                                                                child:
-                                                                    const Text('Ok'),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                        );
-                                                      },
-                                                    );
-                                                    _model.expedientecreado =
-                                                        _model
-                                                            .crearexpnnya2?.id;
-                                                    safeSetState(() {});
+                                                        'expedienteprincipal':
+                                                            _model.crearexpnnya2
+                                                                ?.id,
+                                                      });
+                                                      await NNyAExpGruTable()
+                                                          .update(
+                                                        data: {
+                                                          'idNNyA': _model
+                                                              .crearNNyA2?.id,
+                                                        },
+                                                        matchingRows: (rows) =>
+                                                            rows.eqOrNull(
+                                                          'id',
+                                                          _model.crearexpgrupo2
+                                                              ?.id,
+                                                        ),
+                                                      );
+                                                      _model.apiResult42y2 =
+                                                          await CarpetaDelExpedienteCall
+                                                              .call(
+                                                        expediente: _model
+                                                            .crearexpnnya2
+                                                            ?.expediente,
+                                                        id: _model
+                                                            .crearexpnnya2?.id,
+                                                        fecha: _model
+                                                            .crearexpnnya2
+                                                            ?.fecha
+                                                            ?.toString(),
+                                                        nombresDNI:
+                                                            '${_model.crearexpnnya2?.nombres}, ${_model.crearexpnnya2?.apellidos}, DNI ${_model.crearexpnnya2?.dni?.toString()}',
+                                                        idcarpetaspd: widget
+                                                            .spd?.idcarpetaspd,
+                                                      );
+
+                                                      await ExpedienteTable()
+                                                          .update(
+                                                        data: {
+                                                          'idgrupofamiliar':
+                                                              _model
+                                                                  .grupofmiliar2
+                                                                  ?.id,
+                                                          'expediente':
+                                                              '${widget.usuario?.spd}/${_model.crearexpnnya2?.id.toString()}/${dateTimeFormat(
+                                                            "y",
+                                                            getCurrentTimestamp,
+                                                            locale: FFLocalizations
+                                                                    .of(context)
+                                                                .languageCode,
+                                                          )}',
+                                                          'idNNyA': _model
+                                                              .crearNNyA2?.id,
+                                                        },
+                                                        matchingRows: (rows) =>
+                                                            rows.eqOrNull(
+                                                          'id',
+                                                          _model.crearexpnnya2
+                                                              ?.id,
+                                                        ),
+                                                      );
+                                                      await showDialog(
+                                                        context: context,
+                                                        builder:
+                                                            (alertDialogContext) {
+                                                          return WebViewAware(
+                                                            child: AlertDialog(
+                                                              title: const Text(
+                                                                  'El NNyA no tiene expediente'),
+                                                              content: const Text(
+                                                                  'Continuamos con la carga!!'),
+                                                              actions: [
+                                                                TextButton(
+                                                                  onPressed: () =>
+                                                                      Navigator.pop(
+                                                                          alertDialogContext),
+                                                                  child: const Text(
+                                                                      'Ok'),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          );
+                                                        },
+                                                      );
+                                                      _model.expedientecreado =
+                                                          _model.crearexpnnya2
+                                                              ?.id;
+                                                      safeSetState(() {});
+                                                    }
                                                   }
 
                                                   safeSetState(() {});

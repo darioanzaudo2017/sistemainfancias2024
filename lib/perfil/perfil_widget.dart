@@ -36,12 +36,14 @@ class PerfilWidget extends StatefulWidget {
     required this.rowexp,
     required this.usuariorow,
     this.spd,
+    this.usuariorol,
   });
 
   final int? idingreso;
   final VistaExpedientesUltimoEstadoRow? rowexp;
   final UsuariosRow? usuariorow;
   final SpdRow? spd;
+  final VistaUsuariosRolesRow? usuariorol;
 
   @override
   State<PerfilWidget> createState() => _PerfilWidgetState();
@@ -742,6 +744,21 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                   cambia: true,
                                                 ),
                                               ),
+                                              Text(
+                                                valueOrDefault<String>(
+                                                  widget.usuariorol?.rolId
+                                                      ?.toString(),
+                                                  'Sin dato',
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Noto Sans JP',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
                                               Flex(
                                                 direction:
                                                     (MediaQuery.sizeOf(context)
@@ -1135,6 +1152,10 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                               widget.usuariorow,
                                                                                               ParamType.SupabaseRow,
                                                                                             ),
+                                                                                            'usuariorol': serializeParam(
+                                                                                              widget.usuariorol,
+                                                                                              ParamType.SupabaseRow,
+                                                                                            ),
                                                                                           }.withoutNulls,
                                                                                         );
                                                                                       },
@@ -1177,6 +1198,10 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                             ),
                                                                                             'usuariorow': serializeParam(
                                                                                               widget.usuariorow,
+                                                                                              ParamType.SupabaseRow,
+                                                                                            ),
+                                                                                            'usuariorol': serializeParam(
+                                                                                              widget.usuariorol,
                                                                                               ParamType.SupabaseRow,
                                                                                             ),
                                                                                           }.withoutNulls,

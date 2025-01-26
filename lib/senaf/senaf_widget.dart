@@ -1,7 +1,7 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
-import '/components/formcaratula_widget.dart';
+import '/components/tarjetaencabezado_widget.dart';
 import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -23,11 +23,13 @@ class SenafWidget extends StatefulWidget {
     this.ingrow,
     this.expediente,
     required this.usuariorow,
+    this.usuariorol,
   });
 
   final IngresosRow? ingrow;
   final VistaExpedientesUltimoEstadoRow? expediente;
   final UsuariosRow? usuariorow;
+  final VistaUsuariosRolesRow? usuariorol;
 
   @override
   State<SenafWidget> createState() => _SenafWidgetState();
@@ -64,10 +66,11 @@ class _SenafWidgetState extends State<SenafWidget> {
 
     _model.textFieldmotivosolicitudFocusNode ??= FocusNode();
 
-    _model.textFieldmotivorechazoTextController1 ??= TextEditingController();
-    _model.textFieldmotivorechazoFocusNode1 ??= FocusNode();
+    _model.textFieldobservacionesdemedidaadoptadaTextController ??=
+        TextEditingController();
+    _model.textFieldobservacionesdemedidaadoptadaFocusNode ??= FocusNode();
 
-    _model.textFieldmotivorechazoFocusNode2 ??= FocusNode();
+    _model.textFieldmotivorechazoFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -991,48 +994,23 @@ class _SenafWidgetState extends State<SenafWidget> {
                                           ),
                                         ].divide(const SizedBox(height: 10.0)),
                                       ),
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Align(
-                                            alignment:
-                                                const AlignmentDirectional(0.0, -1.0),
-                                            child: Container(
-                                              height: 800.0,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                              ),
-                                              child: Align(
-                                                alignment: const AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Material(
-                                                  color: Colors.transparent,
-                                                  elevation: 5.0,
-                                                  shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10.0),
-                                                  ),
+                                      Expanded(
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Expanded(
+                                                child: Align(
+                                                  alignment:
+                                                      const AlignmentDirectional(
+                                                          0.0, -1.0),
                                                   child: Container(
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
                                                           .secondaryBackground,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              10.0),
-                                                      border: Border.all(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .alternate,
-                                                      ),
                                                     ),
-                                                    alignment:
-                                                        const AlignmentDirectional(
-                                                            0.0, 0.0),
                                                     child: Form(
                                                       key: _model.formKey,
                                                       autovalidateMode:
@@ -1043,7 +1021,6 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                             const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Container(
-                                                          width: 980.0,
                                                           height:
                                                               MediaQuery.sizeOf(
                                                                           context)
@@ -1072,179 +1049,28 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                     CrossAxisAlignment
                                                                         .stretch,
                                                                 children: [
-                                                                  Container(
-                                                                    height:
-                                                                        225.0,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryBackground,
-                                                                    ),
+                                                                  wrapWithModel(
+                                                                    model: _model
+                                                                        .tarjetaencabezadoModel,
+                                                                    updateCallback: () =>
+                                                                        safeSetState(
+                                                                            () {}),
                                                                     child:
-                                                                        Align(
-                                                                      alignment:
-                                                                          const AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0),
-                                                                      child:
-                                                                          Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                            16.0,
-                                                                            0.0,
-                                                                            16.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Container(
-                                                                          width:
-                                                                              MediaQuery.sizeOf(context).width * 0.8,
-                                                                          height:
-                                                                              219.0,
-                                                                          decoration:
-                                                                              BoxDecoration(
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primaryBackground,
-                                                                            boxShadow: const [
-                                                                              BoxShadow(
-                                                                                blurRadius: 4.0,
-                                                                                color: Color(0x19000000),
-                                                                                offset: Offset(
-                                                                                  0.0,
-                                                                                  2.0,
-                                                                                ),
-                                                                              )
-                                                                            ],
-                                                                            borderRadius:
-                                                                                const BorderRadius.only(
-                                                                              bottomLeft: Radius.circular(12.0),
-                                                                              bottomRight: Radius.circular(12.0),
-                                                                              topLeft: Radius.circular(12.0),
-                                                                              topRight: Radius.circular(12.0),
-                                                                            ),
-                                                                          ),
-                                                                          child:
-                                                                              Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                16.0,
-                                                                                16.0,
-                                                                                16.0,
-                                                                                16.0),
-                                                                            child:
-                                                                                Column(
-                                                                              mainAxisSize: MainAxisSize.min,
-                                                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                                                              children: [
-                                                                                Text(
-                                                                                  '${widget.expediente?.nombres}, ${widget.expediente?.apellidos}',
-                                                                                  style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                        fontFamily: 'Noto Sans JP',
-                                                                                        letterSpacing: 0.0,
-                                                                                      ),
-                                                                                ),
-                                                                                Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
-                                                                                  child: Text(
-                                                                                    valueOrDefault<String>(
-                                                                                      widget.expediente?.dni?.toString(),
-                                                                                      'no tienen dni cargado',
-                                                                                    ),
-                                                                                    style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                          fontFamily: 'Noto Sans JP',
-                                                                                          letterSpacing: 0.0,
-                                                                                        ),
-                                                                                  ),
-                                                                                ),
-                                                                                Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
-                                                                                  child: Text(
-                                                                                    valueOrDefault<String>(
-                                                                                      widget.expediente?.fechaNac?.toString(),
-                                                                                      'No tiene fecha de nacimiento cargado',
-                                                                                    ),
-                                                                                    style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                          fontFamily: 'Noto Sans JP',
-                                                                                          letterSpacing: 0.0,
-                                                                                        ),
-                                                                                  ),
-                                                                                ),
-                                                                                Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
-                                                                                  child: Text(
-                                                                                    valueOrDefault<String>(
-                                                                                      widget.expediente?.expediente,
-                                                                                      '0',
-                                                                                    ),
-                                                                                    style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                          fontFamily: 'Noto Sans JP',
-                                                                                          letterSpacing: 0.0,
-                                                                                        ),
-                                                                                  ),
-                                                                                ),
-                                                                                Expanded(
-                                                                                  child: Align(
-                                                                                    alignment: const AlignmentDirectional(1.0, 1.0),
-                                                                                    child: Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 8.0, 0.0),
-                                                                                      child: FFButtonWidget(
-                                                                                        onPressed: () async {
-                                                                                          await showModalBottomSheet(
-                                                                                            isScrollControlled: true,
-                                                                                            backgroundColor: Colors.transparent,
-                                                                                            enableDrag: false,
-                                                                                            context: context,
-                                                                                            builder: (context) {
-                                                                                              return WebViewAware(
-                                                                                                child: GestureDetector(
-                                                                                                  onTap: () {
-                                                                                                    FocusScope.of(context).unfocus();
-                                                                                                    FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                  },
-                                                                                                  child: Padding(
-                                                                                                    padding: MediaQuery.viewInsetsOf(context),
-                                                                                                    child: FormcaratulaWidget(
-                                                                                                      idexp: widget.expediente?.id,
-                                                                                                      editar: true,
-                                                                                                      dniok: false,
-                                                                                                      usuariorow: widget.usuariorow!,
-                                                                                                    ),
-                                                                                                  ),
-                                                                                                ),
-                                                                                              );
-                                                                                            },
-                                                                                          ).then((value) => safeSetState(() {}));
-                                                                                        },
-                                                                                        text: 'editar expediente',
-                                                                                        options: FFButtonOptions(
-                                                                                          width: 200.0,
-                                                                                          height: 35.0,
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                          iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                          color: FlutterFlowTheme.of(context).primary,
-                                                                                          textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                fontFamily: 'Noto Sans JP',
-                                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                                letterSpacing: 0.0,
-                                                                                              ),
-                                                                                          borderSide: BorderSide(
-                                                                                            color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                            width: 2.0,
-                                                                                          ),
-                                                                                          borderRadius: const BorderRadius.only(
-                                                                                            bottomLeft: Radius.circular(8.0),
-                                                                                            bottomRight: Radius.circular(8.0),
-                                                                                            topLeft: Radius.circular(8.0),
-                                                                                            topRight: Radius.circular(8.0),
-                                                                                          ),
-                                                                                        ),
-                                                                                      ),
-                                                                                    ),
-                                                                                  ),
-                                                                                ),
-                                                                              ],
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
+                                                                        TarjetaencabezadoWidget(
+                                                                      editarcaratula:
+                                                                          false,
+                                                                      contactosref:
+                                                                          false,
+                                                                      cambia:
+                                                                          false,
+                                                                      exprow: widget
+                                                                          .expediente!,
+                                                                      ingresorow:
+                                                                          widget
+                                                                              .ingrow,
+                                                                      usuariorow:
+                                                                          widget
+                                                                              .usuariorow!,
                                                                     ),
                                                                   ),
                                                                   Align(
@@ -1535,134 +1361,6 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                       ),
                                                                     ),
                                                                   if (_model
-                                                                          .dropDowncausaValue !=
-                                                                      'Solicitud de medida excepcional al organismo provincial de protección de derechos (SENAF)')
-                                                                    Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                          8.0,
-                                                                          0.0,
-                                                                          8.0,
-                                                                          0.0),
-                                                                      child:
-                                                                          Row(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        mainAxisAlignment:
-                                                                            MainAxisAlignment.spaceBetween,
-                                                                        children: [
-                                                                          Align(
-                                                                            alignment:
-                                                                                const AlignmentDirectional(-1.0, 0.0),
-                                                                            child:
-                                                                                Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
-                                                                              child: Text(
-                                                                                'Fecha',
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Noto Sans JP',
-                                                                                      letterSpacing: 0.0,
-                                                                                    ),
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                          Expanded(
-                                                                            child:
-                                                                                Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(17.0, 0.0, 0.0, 0.0),
-                                                                              child: Text(
-                                                                                valueOrDefault<String>(
-                                                                                  dateTimeFormat(
-                                                                                    "d/M/y",
-                                                                                    _model.datePicked1,
-                                                                                    locale: FFLocalizations.of(context).languageCode,
-                                                                                  ),
-                                                                                  'No tiene nueva fecha seleccionada',
-                                                                                ),
-                                                                                textAlign: TextAlign.start,
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Noto Sans JP',
-                                                                                      letterSpacing: 0.0,
-                                                                                    ),
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                          Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                20.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                FFButtonWidget(
-                                                                              onPressed: () async {
-                                                                                final datePicked1Date = await showDatePicker(
-                                                                                  context: context,
-                                                                                  initialDate: getCurrentTimestamp,
-                                                                                  firstDate: DateTime(1900),
-                                                                                  lastDate: DateTime(2050),
-                                                                                  builder: (context, child) {
-                                                                                    return wrapInMaterialDatePickerTheme(
-                                                                                      context,
-                                                                                      child!,
-                                                                                      headerBackgroundColor: FlutterFlowTheme.of(context).primary,
-                                                                                      headerForegroundColor: FlutterFlowTheme.of(context).info,
-                                                                                      headerTextStyle: FlutterFlowTheme.of(context).headlineLarge.override(
-                                                                                            fontFamily: 'Noto Sans JP',
-                                                                                            fontSize: 32.0,
-                                                                                            letterSpacing: 0.0,
-                                                                                            fontWeight: FontWeight.w600,
-                                                                                          ),
-                                                                                      pickerBackgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      pickerForegroundColor: FlutterFlowTheme.of(context).primaryText,
-                                                                                      selectedDateTimeBackgroundColor: FlutterFlowTheme.of(context).primary,
-                                                                                      selectedDateTimeForegroundColor: FlutterFlowTheme.of(context).info,
-                                                                                      actionButtonForegroundColor: FlutterFlowTheme.of(context).primaryText,
-                                                                                      iconSize: 24.0,
-                                                                                    );
-                                                                                  },
-                                                                                );
-
-                                                                                if (datePicked1Date != null) {
-                                                                                  safeSetState(() {
-                                                                                    _model.datePicked1 = DateTime(
-                                                                                      datePicked1Date.year,
-                                                                                      datePicked1Date.month,
-                                                                                      datePicked1Date.day,
-                                                                                    );
-                                                                                  });
-                                                                                }
-                                                                              },
-                                                                              text: valueOrDefault<String>(
-                                                                                dateTimeFormat(
-                                                                                  "d/M/y",
-                                                                                  containerform9Formulario9Row?.fecha,
-                                                                                  locale: FFLocalizations.of(context).languageCode,
-                                                                                ),
-                                                                                'Fecha de cese',
-                                                                              ),
-                                                                              options: FFButtonOptions(
-                                                                                height: 40.0,
-                                                                                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                color: FlutterFlowTheme.of(context).primary,
-                                                                                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                      fontFamily: 'Noto Sans JP',
-                                                                                      color: Colors.white,
-                                                                                      letterSpacing: 0.0,
-                                                                                    ),
-                                                                                elevation: 3.0,
-                                                                                borderSide: const BorderSide(
-                                                                                  color: Colors.transparent,
-                                                                                  width: 1.0,
-                                                                                ),
-                                                                                borderRadius: BorderRadius.circular(8.0),
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ],
-                                                                      ),
-                                                                    ),
-                                                                  if (_model
                                                                           .dropDowncausaValue ==
                                                                       'Solicitud de medida excepcional al organismo provincial de protección de derechos (SENAF)')
                                                                     Material(
@@ -1940,7 +1638,6 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                     ),
                                                                                   ),
                                                                                   Container(
-                                                                                    width: 955.0,
                                                                                     decoration: BoxDecoration(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                       borderRadius: BorderRadius.circular(10.0),
@@ -2018,15 +1715,17 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                                           ),
                                                                                                           child: Checkbox(
                                                                                                             value: _model.checkboxsolicitudValue ??= containerform9Formulario9Row?.idForm9 == null ? false : containerform9Formulario9Row!.solicitudMedida!,
-                                                                                                            onChanged: (newValue) async {
-                                                                                                              safeSetState(() => _model.checkboxsolicitudValue = newValue!);
-                                                                                                            },
+                                                                                                            onChanged: (widget.usuariorol?.rolId != 1)
+                                                                                                                ? null
+                                                                                                                : (newValue) async {
+                                                                                                                    safeSetState(() => _model.checkboxsolicitudValue = newValue!);
+                                                                                                                  },
                                                                                                             side: BorderSide(
                                                                                                               width: 2,
                                                                                                               color: FlutterFlowTheme.of(context).error,
                                                                                                             ),
                                                                                                             activeColor: FlutterFlowTheme.of(context).primary,
-                                                                                                            checkColor: FlutterFlowTheme.of(context).info,
+                                                                                                            checkColor: (widget.usuariorol?.rolId != 1) ? null : FlutterFlowTheme.of(context).info,
                                                                                                           ),
                                                                                                         ),
                                                                                                         Text(
@@ -2071,7 +1770,7 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                                             padding: const EdgeInsetsDirectional.fromSTEB(17.0, 0.0, 0.0, 0.0),
                                                                                                             child: Text(
                                                                                                               valueOrDefault<String>(
-                                                                                                                _model.datePicked2?.toString(),
+                                                                                                                _model.datePicked1?.toString(),
                                                                                                                 'No tiene fecha de elevacion nueva',
                                                                                                               ),
                                                                                                               textAlign: TextAlign.start,
@@ -2086,7 +1785,7 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                                           padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
                                                                                                           child: FFButtonWidget(
                                                                                                             onPressed: () async {
-                                                                                                              final datePicked2Date = await showDatePicker(
+                                                                                                              final datePicked1Date = await showDatePicker(
                                                                                                                 context: context,
                                                                                                                 initialDate: getCurrentTimestamp,
                                                                                                                 firstDate: DateTime(1900),
@@ -2113,12 +1812,12 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                                                 },
                                                                                                               );
 
-                                                                                                              if (datePicked2Date != null) {
+                                                                                                              if (datePicked1Date != null) {
                                                                                                                 safeSetState(() {
-                                                                                                                  _model.datePicked2 = DateTime(
-                                                                                                                    datePicked2Date.year,
-                                                                                                                    datePicked2Date.month,
-                                                                                                                    datePicked2Date.day,
+                                                                                                                  _model.datePicked1 = DateTime(
+                                                                                                                    datePicked1Date.year,
+                                                                                                                    datePicked1Date.month,
+                                                                                                                    datePicked1Date.day,
                                                                                                                   );
                                                                                                                 });
                                                                                                               }
@@ -2156,226 +1855,234 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                                   Column(
                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                     children: [
-                                                                                                      Padding(
-                                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-                                                                                                        child: Row(
-                                                                                                          mainAxisSize: MainAxisSize.max,
-                                                                                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                                          children: [
-                                                                                                            Align(
-                                                                                                              alignment: const AlignmentDirectional(-1.0, 0.0),
-                                                                                                              child: Padding(
-                                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
-                                                                                                                child: Text(
-                                                                                                                  'Fecha de solicitud a SENAF',
-                                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                        fontFamily: 'Noto Sans JP',
-                                                                                                                        letterSpacing: 0.0,
-                                                                                                                      ),
+                                                                                                      if (widget.usuariorol?.rolId == 1)
+                                                                                                        Padding(
+                                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                                                                                                          child: Row(
+                                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                                            children: [
+                                                                                                              Align(
+                                                                                                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                                                child: Padding(
+                                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                                                                  child: Text(
+                                                                                                                    'Fecha de solicitud a SENAF',
+                                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                          fontFamily: 'Noto Sans JP',
+                                                                                                                          letterSpacing: 0.0,
+                                                                                                                        ),
+                                                                                                                  ),
                                                                                                                 ),
                                                                                                               ),
-                                                                                                            ),
-                                                                                                            Expanded(
-                                                                                                              child: Padding(
-                                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(17.0, 0.0, 0.0, 0.0),
-                                                                                                                child: Text(
-                                                                                                                  valueOrDefault<String>(
+                                                                                                              Expanded(
+                                                                                                                child: Padding(
+                                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(17.0, 0.0, 0.0, 0.0),
+                                                                                                                  child: Text(
+                                                                                                                    valueOrDefault<String>(
+                                                                                                                      dateTimeFormat(
+                                                                                                                        "d/M/y",
+                                                                                                                        _model.datePicked2,
+                                                                                                                        locale: FFLocalizations.of(context).languageCode,
+                                                                                                                      ),
+                                                                                                                      'No tiene fecha de solicitud nueva',
+                                                                                                                    ),
+                                                                                                                    textAlign: TextAlign.start,
+                                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                          fontFamily: 'Noto Sans JP',
+                                                                                                                          letterSpacing: 0.0,
+                                                                                                                        ),
+                                                                                                                  ),
+                                                                                                                ),
+                                                                                                              ),
+                                                                                                              Padding(
+                                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
+                                                                                                                child: FFButtonWidget(
+                                                                                                                  onPressed: (widget.usuariorol?.rolId != 1)
+                                                                                                                      ? null
+                                                                                                                      : () async {
+                                                                                                                          final datePicked2Date = await showDatePicker(
+                                                                                                                            context: context,
+                                                                                                                            initialDate: getCurrentTimestamp,
+                                                                                                                            firstDate: DateTime(1900),
+                                                                                                                            lastDate: DateTime(2050),
+                                                                                                                            builder: (context, child) {
+                                                                                                                              return wrapInMaterialDatePickerTheme(
+                                                                                                                                context,
+                                                                                                                                child!,
+                                                                                                                                headerBackgroundColor: FlutterFlowTheme.of(context).primary,
+                                                                                                                                headerForegroundColor: FlutterFlowTheme.of(context).info,
+                                                                                                                                headerTextStyle: FlutterFlowTheme.of(context).headlineLarge.override(
+                                                                                                                                      fontFamily: 'Noto Sans JP',
+                                                                                                                                      fontSize: 32.0,
+                                                                                                                                      letterSpacing: 0.0,
+                                                                                                                                      fontWeight: FontWeight.w600,
+                                                                                                                                    ),
+                                                                                                                                pickerBackgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                                                pickerForegroundColor: FlutterFlowTheme.of(context).primaryText,
+                                                                                                                                selectedDateTimeBackgroundColor: FlutterFlowTheme.of(context).primary,
+                                                                                                                                selectedDateTimeForegroundColor: FlutterFlowTheme.of(context).info,
+                                                                                                                                actionButtonForegroundColor: FlutterFlowTheme.of(context).primaryText,
+                                                                                                                                iconSize: 24.0,
+                                                                                                                              );
+                                                                                                                            },
+                                                                                                                          );
+
+                                                                                                                          if (datePicked2Date != null) {
+                                                                                                                            safeSetState(() {
+                                                                                                                              _model.datePicked2 = DateTime(
+                                                                                                                                datePicked2Date.year,
+                                                                                                                                datePicked2Date.month,
+                                                                                                                                datePicked2Date.day,
+                                                                                                                              );
+                                                                                                                            });
+                                                                                                                          }
+                                                                                                                        },
+                                                                                                                  text: valueOrDefault<String>(
                                                                                                                     dateTimeFormat(
                                                                                                                       "d/M/y",
-                                                                                                                      _model.datePicked3,
+                                                                                                                      containerform9Formulario9Row?.fechasolicitudsenaf,
                                                                                                                       locale: FFLocalizations.of(context).languageCode,
                                                                                                                     ),
-                                                                                                                    'No tiene fecha de solicitud nueva',
+                                                                                                                    'Fecha de solicitud senaf',
                                                                                                                   ),
-                                                                                                                  textAlign: TextAlign.start,
-                                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                        fontFamily: 'Noto Sans JP',
-                                                                                                                        letterSpacing: 0.0,
-                                                                                                                      ),
+                                                                                                                  options: FFButtonOptions(
+                                                                                                                    height: 40.0,
+                                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                                    color: FlutterFlowTheme.of(context).primary,
+                                                                                                                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                                          fontFamily: 'Noto Sans JP',
+                                                                                                                          color: Colors.white,
+                                                                                                                          letterSpacing: 0.0,
+                                                                                                                        ),
+                                                                                                                    elevation: 3.0,
+                                                                                                                    borderSide: const BorderSide(
+                                                                                                                      color: Colors.transparent,
+                                                                                                                      width: 1.0,
+                                                                                                                    ),
+                                                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                                                    disabledColor: FlutterFlowTheme.of(context).alternate,
+                                                                                                                  ),
                                                                                                                 ),
                                                                                                               ),
-                                                                                                            ),
-                                                                                                            Padding(
-                                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
-                                                                                                              child: FFButtonWidget(
-                                                                                                                onPressed: () async {
-                                                                                                                  final datePicked3Date = await showDatePicker(
-                                                                                                                    context: context,
-                                                                                                                    initialDate: getCurrentTimestamp,
-                                                                                                                    firstDate: DateTime(1900),
-                                                                                                                    lastDate: DateTime(2050),
-                                                                                                                    builder: (context, child) {
-                                                                                                                      return wrapInMaterialDatePickerTheme(
-                                                                                                                        context,
-                                                                                                                        child!,
-                                                                                                                        headerBackgroundColor: FlutterFlowTheme.of(context).primary,
-                                                                                                                        headerForegroundColor: FlutterFlowTheme.of(context).info,
-                                                                                                                        headerTextStyle: FlutterFlowTheme.of(context).headlineLarge.override(
-                                                                                                                              fontFamily: 'Noto Sans JP',
-                                                                                                                              fontSize: 32.0,
-                                                                                                                              letterSpacing: 0.0,
-                                                                                                                              fontWeight: FontWeight.w600,
-                                                                                                                            ),
-                                                                                                                        pickerBackgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                                                        pickerForegroundColor: FlutterFlowTheme.of(context).primaryText,
-                                                                                                                        selectedDateTimeBackgroundColor: FlutterFlowTheme.of(context).primary,
-                                                                                                                        selectedDateTimeForegroundColor: FlutterFlowTheme.of(context).info,
-                                                                                                                        actionButtonForegroundColor: FlutterFlowTheme.of(context).primaryText,
-                                                                                                                        iconSize: 24.0,
-                                                                                                                      );
-                                                                                                                    },
-                                                                                                                  );
-
-                                                                                                                  if (datePicked3Date != null) {
-                                                                                                                    safeSetState(() {
-                                                                                                                      _model.datePicked3 = DateTime(
-                                                                                                                        datePicked3Date.year,
-                                                                                                                        datePicked3Date.month,
-                                                                                                                        datePicked3Date.day,
-                                                                                                                      );
-                                                                                                                    });
-                                                                                                                  }
-                                                                                                                },
-                                                                                                                text: valueOrDefault<String>(
-                                                                                                                  dateTimeFormat(
-                                                                                                                    "d/M/y",
-                                                                                                                    containerform9Formulario9Row?.fechasolicitudsenaf,
-                                                                                                                    locale: FFLocalizations.of(context).languageCode,
-                                                                                                                  ),
-                                                                                                                  'Fecha de solicitud senaf',
-                                                                                                                ),
-                                                                                                                options: FFButtonOptions(
-                                                                                                                  height: 40.0,
-                                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                                  color: FlutterFlowTheme.of(context).primary,
-                                                                                                                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                                        fontFamily: 'Noto Sans JP',
-                                                                                                                        color: Colors.white,
-                                                                                                                        letterSpacing: 0.0,
-                                                                                                                      ),
-                                                                                                                  elevation: 3.0,
-                                                                                                                  borderSide: const BorderSide(
-                                                                                                                    color: Colors.transparent,
-                                                                                                                    width: 1.0,
-                                                                                                                  ),
-                                                                                                                  borderRadius: BorderRadius.circular(8.0),
-                                                                                                                ),
-                                                                                                              ),
-                                                                                                            ),
-                                                                                                          ],
+                                                                                                            ],
+                                                                                                          ),
                                                                                                         ),
-                                                                                                      ),
-                                                                                                      Padding(
-                                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-                                                                                                        child: Row(
-                                                                                                          mainAxisSize: MainAxisSize.max,
-                                                                                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                                          children: [
-                                                                                                            Align(
-                                                                                                              alignment: const AlignmentDirectional(-1.0, 0.0),
-                                                                                                              child: Padding(
-                                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
-                                                                                                                child: Text(
-                                                                                                                  'Fecha reiteracion solicitud',
-                                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                        fontFamily: 'Noto Sans JP',
-                                                                                                                        letterSpacing: 0.0,
-                                                                                                                      ),
+                                                                                                      if (widget.usuariorol?.rolId == 1)
+                                                                                                        Padding(
+                                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                                                                                                          child: Row(
+                                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                                            children: [
+                                                                                                              Align(
+                                                                                                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                                                child: Padding(
+                                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                                                                  child: Text(
+                                                                                                                    'Fecha reiteracion solicitud',
+                                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                          fontFamily: 'Noto Sans JP',
+                                                                                                                          letterSpacing: 0.0,
+                                                                                                                        ),
+                                                                                                                  ),
                                                                                                                 ),
                                                                                                               ),
-                                                                                                            ),
-                                                                                                            Expanded(
-                                                                                                              child: Padding(
-                                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(17.0, 0.0, 0.0, 0.0),
-                                                                                                                child: Text(
-                                                                                                                  valueOrDefault<String>(
+                                                                                                              Expanded(
+                                                                                                                child: Padding(
+                                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(17.0, 0.0, 0.0, 0.0),
+                                                                                                                  child: Text(
+                                                                                                                    valueOrDefault<String>(
+                                                                                                                      dateTimeFormat(
+                                                                                                                        "d/M/y",
+                                                                                                                        _model.datePicked3,
+                                                                                                                        locale: FFLocalizations.of(context).languageCode,
+                                                                                                                      ),
+                                                                                                                      'No tiene fecha de reiteracion nueva',
+                                                                                                                    ),
+                                                                                                                    textAlign: TextAlign.start,
+                                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                          fontFamily: 'Noto Sans JP',
+                                                                                                                          letterSpacing: 0.0,
+                                                                                                                        ),
+                                                                                                                  ),
+                                                                                                                ),
+                                                                                                              ),
+                                                                                                              Padding(
+                                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
+                                                                                                                child: FFButtonWidget(
+                                                                                                                  onPressed: (widget.usuariorol?.rolId != 1)
+                                                                                                                      ? null
+                                                                                                                      : () async {
+                                                                                                                          final datePicked3Date = await showDatePicker(
+                                                                                                                            context: context,
+                                                                                                                            initialDate: getCurrentTimestamp,
+                                                                                                                            firstDate: DateTime(1900),
+                                                                                                                            lastDate: DateTime(2050),
+                                                                                                                            builder: (context, child) {
+                                                                                                                              return wrapInMaterialDatePickerTheme(
+                                                                                                                                context,
+                                                                                                                                child!,
+                                                                                                                                headerBackgroundColor: FlutterFlowTheme.of(context).primary,
+                                                                                                                                headerForegroundColor: FlutterFlowTheme.of(context).info,
+                                                                                                                                headerTextStyle: FlutterFlowTheme.of(context).headlineLarge.override(
+                                                                                                                                      fontFamily: 'Noto Sans JP',
+                                                                                                                                      fontSize: 32.0,
+                                                                                                                                      letterSpacing: 0.0,
+                                                                                                                                      fontWeight: FontWeight.w600,
+                                                                                                                                    ),
+                                                                                                                                pickerBackgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                                                pickerForegroundColor: FlutterFlowTheme.of(context).primaryText,
+                                                                                                                                selectedDateTimeBackgroundColor: FlutterFlowTheme.of(context).primary,
+                                                                                                                                selectedDateTimeForegroundColor: FlutterFlowTheme.of(context).info,
+                                                                                                                                actionButtonForegroundColor: FlutterFlowTheme.of(context).primaryText,
+                                                                                                                                iconSize: 24.0,
+                                                                                                                              );
+                                                                                                                            },
+                                                                                                                          );
+
+                                                                                                                          if (datePicked3Date != null) {
+                                                                                                                            safeSetState(() {
+                                                                                                                              _model.datePicked3 = DateTime(
+                                                                                                                                datePicked3Date.year,
+                                                                                                                                datePicked3Date.month,
+                                                                                                                                datePicked3Date.day,
+                                                                                                                              );
+                                                                                                                            });
+                                                                                                                          }
+                                                                                                                        },
+                                                                                                                  text: valueOrDefault<String>(
                                                                                                                     dateTimeFormat(
                                                                                                                       "d/M/y",
-                                                                                                                      _model.datePicked4,
+                                                                                                                      containerform9Formulario9Row?.reiteracionFecha,
                                                                                                                       locale: FFLocalizations.of(context).languageCode,
                                                                                                                     ),
-                                                                                                                    'No tiene fecha de reiteracion nueva',
+                                                                                                                    'Fec de reiteracion',
                                                                                                                   ),
-                                                                                                                  textAlign: TextAlign.start,
-                                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                        fontFamily: 'Noto Sans JP',
-                                                                                                                        letterSpacing: 0.0,
-                                                                                                                      ),
+                                                                                                                  options: FFButtonOptions(
+                                                                                                                    height: 40.0,
+                                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                                    color: FlutterFlowTheme.of(context).primary,
+                                                                                                                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                                          fontFamily: 'Noto Sans JP',
+                                                                                                                          color: Colors.white,
+                                                                                                                          letterSpacing: 0.0,
+                                                                                                                        ),
+                                                                                                                    elevation: 3.0,
+                                                                                                                    borderSide: const BorderSide(
+                                                                                                                      color: Colors.transparent,
+                                                                                                                      width: 1.0,
+                                                                                                                    ),
+                                                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                                                    disabledColor: FlutterFlowTheme.of(context).alternate,
+                                                                                                                  ),
                                                                                                                 ),
                                                                                                               ),
-                                                                                                            ),
-                                                                                                            Padding(
-                                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
-                                                                                                              child: FFButtonWidget(
-                                                                                                                onPressed: () async {
-                                                                                                                  final datePicked4Date = await showDatePicker(
-                                                                                                                    context: context,
-                                                                                                                    initialDate: getCurrentTimestamp,
-                                                                                                                    firstDate: DateTime(1900),
-                                                                                                                    lastDate: DateTime(2050),
-                                                                                                                    builder: (context, child) {
-                                                                                                                      return wrapInMaterialDatePickerTheme(
-                                                                                                                        context,
-                                                                                                                        child!,
-                                                                                                                        headerBackgroundColor: FlutterFlowTheme.of(context).primary,
-                                                                                                                        headerForegroundColor: FlutterFlowTheme.of(context).info,
-                                                                                                                        headerTextStyle: FlutterFlowTheme.of(context).headlineLarge.override(
-                                                                                                                              fontFamily: 'Noto Sans JP',
-                                                                                                                              fontSize: 32.0,
-                                                                                                                              letterSpacing: 0.0,
-                                                                                                                              fontWeight: FontWeight.w600,
-                                                                                                                            ),
-                                                                                                                        pickerBackgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                                                        pickerForegroundColor: FlutterFlowTheme.of(context).primaryText,
-                                                                                                                        selectedDateTimeBackgroundColor: FlutterFlowTheme.of(context).primary,
-                                                                                                                        selectedDateTimeForegroundColor: FlutterFlowTheme.of(context).info,
-                                                                                                                        actionButtonForegroundColor: FlutterFlowTheme.of(context).primaryText,
-                                                                                                                        iconSize: 24.0,
-                                                                                                                      );
-                                                                                                                    },
-                                                                                                                  );
-
-                                                                                                                  if (datePicked4Date != null) {
-                                                                                                                    safeSetState(() {
-                                                                                                                      _model.datePicked4 = DateTime(
-                                                                                                                        datePicked4Date.year,
-                                                                                                                        datePicked4Date.month,
-                                                                                                                        datePicked4Date.day,
-                                                                                                                      );
-                                                                                                                    });
-                                                                                                                  }
-                                                                                                                },
-                                                                                                                text: valueOrDefault<String>(
-                                                                                                                  dateTimeFormat(
-                                                                                                                    "d/M/y",
-                                                                                                                    containerform9Formulario9Row?.reiteracionFecha,
-                                                                                                                    locale: FFLocalizations.of(context).languageCode,
-                                                                                                                  ),
-                                                                                                                  'Fec de reiteracion',
-                                                                                                                ),
-                                                                                                                options: FFButtonOptions(
-                                                                                                                  height: 40.0,
-                                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                                  color: FlutterFlowTheme.of(context).primary,
-                                                                                                                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                                        fontFamily: 'Noto Sans JP',
-                                                                                                                        color: Colors.white,
-                                                                                                                        letterSpacing: 0.0,
-                                                                                                                      ),
-                                                                                                                  elevation: 3.0,
-                                                                                                                  borderSide: const BorderSide(
-                                                                                                                    color: Colors.transparent,
-                                                                                                                    width: 1.0,
-                                                                                                                  ),
-                                                                                                                  borderRadius: BorderRadius.circular(8.0),
-                                                                                                                ),
-                                                                                                              ),
-                                                                                                            ),
-                                                                                                          ],
+                                                                                                            ],
+                                                                                                          ),
                                                                                                         ),
-                                                                                                      ),
                                                                                                     ].divide(const SizedBox(height: 10.0)),
                                                                                                   ),
                                                                                                   Padding(
@@ -2495,15 +2202,17 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                                           ),
                                                                                                           child: Checkbox(
                                                                                                             value: _model.checkboxevaluacionValue ??= containerform9Formulario9Row?.idForm9 == null ? false : containerform9Formulario9Row!.evaluacionMedida!,
-                                                                                                            onChanged: (newValue) async {
-                                                                                                              safeSetState(() => _model.checkboxevaluacionValue = newValue!);
-                                                                                                            },
+                                                                                                            onChanged: (widget.usuariorol?.rolId != 1)
+                                                                                                                ? null
+                                                                                                                : (newValue) async {
+                                                                                                                    safeSetState(() => _model.checkboxevaluacionValue = newValue!);
+                                                                                                                  },
                                                                                                             side: BorderSide(
                                                                                                               width: 2,
                                                                                                               color: FlutterFlowTheme.of(context).error,
                                                                                                             ),
                                                                                                             activeColor: FlutterFlowTheme.of(context).primary,
-                                                                                                            checkColor: FlutterFlowTheme.of(context).info,
+                                                                                                            checkColor: (widget.usuariorol?.rolId != 1) ? null : FlutterFlowTheme.of(context).info,
                                                                                                           ),
                                                                                                         ),
                                                                                                         Text(
@@ -2580,15 +2289,17 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                                           ),
                                                                                                           child: Checkbox(
                                                                                                             value: _model.checkboxadoptadaValue ??= containerform9Formulario9Row?.idForm9 == null ? false : containerform9Formulario9Row!.medidaAdoptada!,
-                                                                                                            onChanged: (newValue) async {
-                                                                                                              safeSetState(() => _model.checkboxadoptadaValue = newValue!);
-                                                                                                            },
+                                                                                                            onChanged: (widget.usuariorol?.rolId != 1)
+                                                                                                                ? null
+                                                                                                                : (newValue) async {
+                                                                                                                    safeSetState(() => _model.checkboxadoptadaValue = newValue!);
+                                                                                                                  },
                                                                                                             side: BorderSide(
                                                                                                               width: 2,
                                                                                                               color: FlutterFlowTheme.of(context).error,
                                                                                                             ),
                                                                                                             activeColor: FlutterFlowTheme.of(context).primary,
-                                                                                                            checkColor: FlutterFlowTheme.of(context).info,
+                                                                                                            checkColor: (widget.usuariorol?.rolId != 1) ? null : FlutterFlowTheme.of(context).info,
                                                                                                           ),
                                                                                                         ),
                                                                                                         Text(
@@ -2635,7 +2346,7 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                                               valueOrDefault<String>(
                                                                                                                 dateTimeFormat(
                                                                                                                   "d/M/y",
-                                                                                                                  _model.datePicked5,
+                                                                                                                  _model.datePicked4,
                                                                                                                   locale: FFLocalizations.of(context).languageCode,
                                                                                                                 ),
                                                                                                                 'No tiene fecha de adopcion nueva',
@@ -2651,44 +2362,46 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                                         Padding(
                                                                                                           padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
                                                                                                           child: FFButtonWidget(
-                                                                                                            onPressed: () async {
-                                                                                                              final datePicked5Date = await showDatePicker(
-                                                                                                                context: context,
-                                                                                                                initialDate: getCurrentTimestamp,
-                                                                                                                firstDate: DateTime(1900),
-                                                                                                                lastDate: DateTime(2050),
-                                                                                                                builder: (context, child) {
-                                                                                                                  return wrapInMaterialDatePickerTheme(
-                                                                                                                    context,
-                                                                                                                    child!,
-                                                                                                                    headerBackgroundColor: FlutterFlowTheme.of(context).primary,
-                                                                                                                    headerForegroundColor: FlutterFlowTheme.of(context).info,
-                                                                                                                    headerTextStyle: FlutterFlowTheme.of(context).headlineLarge.override(
-                                                                                                                          fontFamily: 'Noto Sans JP',
-                                                                                                                          fontSize: 32.0,
-                                                                                                                          letterSpacing: 0.0,
-                                                                                                                          fontWeight: FontWeight.w600,
-                                                                                                                        ),
-                                                                                                                    pickerBackgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                                                    pickerForegroundColor: FlutterFlowTheme.of(context).primaryText,
-                                                                                                                    selectedDateTimeBackgroundColor: FlutterFlowTheme.of(context).primary,
-                                                                                                                    selectedDateTimeForegroundColor: FlutterFlowTheme.of(context).info,
-                                                                                                                    actionButtonForegroundColor: FlutterFlowTheme.of(context).primaryText,
-                                                                                                                    iconSize: 24.0,
-                                                                                                                  );
-                                                                                                                },
-                                                                                                              );
+                                                                                                            onPressed: (widget.usuariorol?.rolId != 1)
+                                                                                                                ? null
+                                                                                                                : () async {
+                                                                                                                    final datePicked4Date = await showDatePicker(
+                                                                                                                      context: context,
+                                                                                                                      initialDate: getCurrentTimestamp,
+                                                                                                                      firstDate: DateTime(1900),
+                                                                                                                      lastDate: DateTime(2050),
+                                                                                                                      builder: (context, child) {
+                                                                                                                        return wrapInMaterialDatePickerTheme(
+                                                                                                                          context,
+                                                                                                                          child!,
+                                                                                                                          headerBackgroundColor: FlutterFlowTheme.of(context).primary,
+                                                                                                                          headerForegroundColor: FlutterFlowTheme.of(context).info,
+                                                                                                                          headerTextStyle: FlutterFlowTheme.of(context).headlineLarge.override(
+                                                                                                                                fontFamily: 'Noto Sans JP',
+                                                                                                                                fontSize: 32.0,
+                                                                                                                                letterSpacing: 0.0,
+                                                                                                                                fontWeight: FontWeight.w600,
+                                                                                                                              ),
+                                                                                                                          pickerBackgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                                          pickerForegroundColor: FlutterFlowTheme.of(context).primaryText,
+                                                                                                                          selectedDateTimeBackgroundColor: FlutterFlowTheme.of(context).primary,
+                                                                                                                          selectedDateTimeForegroundColor: FlutterFlowTheme.of(context).info,
+                                                                                                                          actionButtonForegroundColor: FlutterFlowTheme.of(context).primaryText,
+                                                                                                                          iconSize: 24.0,
+                                                                                                                        );
+                                                                                                                      },
+                                                                                                                    );
 
-                                                                                                              if (datePicked5Date != null) {
-                                                                                                                safeSetState(() {
-                                                                                                                  _model.datePicked5 = DateTime(
-                                                                                                                    datePicked5Date.year,
-                                                                                                                    datePicked5Date.month,
-                                                                                                                    datePicked5Date.day,
-                                                                                                                  );
-                                                                                                                });
-                                                                                                              }
-                                                                                                            },
+                                                                                                                    if (datePicked4Date != null) {
+                                                                                                                      safeSetState(() {
+                                                                                                                        _model.datePicked4 = DateTime(
+                                                                                                                          datePicked4Date.year,
+                                                                                                                          datePicked4Date.month,
+                                                                                                                          datePicked4Date.day,
+                                                                                                                        );
+                                                                                                                      });
+                                                                                                                    }
+                                                                                                                  },
                                                                                                             text: valueOrDefault<String>(
                                                                                                               dateTimeFormat(
                                                                                                                 "d/M/y",
@@ -2713,6 +2426,7 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                                                 width: 1.0,
                                                                                                               ),
                                                                                                               borderRadius: BorderRadius.circular(8.0),
+                                                                                                              disabledColor: FlutterFlowTheme.of(context).alternate,
                                                                                                             ),
                                                                                                           ),
                                                                                                         ),
@@ -2722,9 +2436,10 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                                   Padding(
                                                                                                     padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                                                                                                     child: TextFormField(
-                                                                                                      controller: _model.textFieldmotivorechazoTextController1,
-                                                                                                      focusNode: _model.textFieldmotivorechazoFocusNode1,
+                                                                                                      controller: _model.textFieldobservacionesdemedidaadoptadaTextController,
+                                                                                                      focusNode: _model.textFieldobservacionesdemedidaadoptadaFocusNode,
                                                                                                       autofocus: false,
+                                                                                                      readOnly: widget.usuariorol?.rolId != 1,
                                                                                                       obscureText: false,
                                                                                                       decoration: InputDecoration(
                                                                                                         labelText: 'Observaciones de la adopcion  de la medida de excepcion',
@@ -2769,7 +2484,7 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                                             fontFamily: 'Noto Sans JP',
                                                                                                             letterSpacing: 0.0,
                                                                                                           ),
-                                                                                                      validator: _model.textFieldmotivorechazoTextController1Validator.asValidator(context),
+                                                                                                      validator: _model.textFieldobservacionesdemedidaadoptadaTextControllerValidator.asValidator(context),
                                                                                                     ),
                                                                                                   ),
                                                                                                 ].divide(const SizedBox(height: 10.0)).around(const SizedBox(height: 10.0)),
@@ -2834,15 +2549,17 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                                           ),
                                                                                                           child: Checkbox(
                                                                                                             value: _model.checkboxrechazadaValue ??= containerform9Formulario9Row?.idForm9 == null ? false : containerform9Formulario9Row!.medidaRechazada!,
-                                                                                                            onChanged: (newValue) async {
-                                                                                                              safeSetState(() => _model.checkboxrechazadaValue = newValue!);
-                                                                                                            },
+                                                                                                            onChanged: (widget.usuariorol?.rolId != 1)
+                                                                                                                ? null
+                                                                                                                : (newValue) async {
+                                                                                                                    safeSetState(() => _model.checkboxrechazadaValue = newValue!);
+                                                                                                                  },
                                                                                                             side: BorderSide(
                                                                                                               width: 2,
                                                                                                               color: FlutterFlowTheme.of(context).error,
                                                                                                             ),
                                                                                                             activeColor: FlutterFlowTheme.of(context).primary,
-                                                                                                            checkColor: FlutterFlowTheme.of(context).info,
+                                                                                                            checkColor: (widget.usuariorol?.rolId != 1) ? null : FlutterFlowTheme.of(context).info,
                                                                                                           ),
                                                                                                         ),
                                                                                                         Text(
@@ -2889,7 +2606,7 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                                               valueOrDefault<String>(
                                                                                                                 dateTimeFormat(
                                                                                                                   "d/M/y",
-                                                                                                                  _model.datePicked6,
+                                                                                                                  _model.datePicked5,
                                                                                                                   locale: FFLocalizations.of(context).languageCode,
                                                                                                                 ),
                                                                                                                 'No tiene fecha de rechazo nueva',
@@ -2905,44 +2622,46 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                                         Padding(
                                                                                                           padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
                                                                                                           child: FFButtonWidget(
-                                                                                                            onPressed: () async {
-                                                                                                              final datePicked6Date = await showDatePicker(
-                                                                                                                context: context,
-                                                                                                                initialDate: getCurrentTimestamp,
-                                                                                                                firstDate: DateTime(1900),
-                                                                                                                lastDate: DateTime(2050),
-                                                                                                                builder: (context, child) {
-                                                                                                                  return wrapInMaterialDatePickerTheme(
-                                                                                                                    context,
-                                                                                                                    child!,
-                                                                                                                    headerBackgroundColor: FlutterFlowTheme.of(context).primary,
-                                                                                                                    headerForegroundColor: FlutterFlowTheme.of(context).info,
-                                                                                                                    headerTextStyle: FlutterFlowTheme.of(context).headlineLarge.override(
-                                                                                                                          fontFamily: 'Noto Sans JP',
-                                                                                                                          fontSize: 32.0,
-                                                                                                                          letterSpacing: 0.0,
-                                                                                                                          fontWeight: FontWeight.w600,
-                                                                                                                        ),
-                                                                                                                    pickerBackgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                                                    pickerForegroundColor: FlutterFlowTheme.of(context).primaryText,
-                                                                                                                    selectedDateTimeBackgroundColor: FlutterFlowTheme.of(context).primary,
-                                                                                                                    selectedDateTimeForegroundColor: FlutterFlowTheme.of(context).info,
-                                                                                                                    actionButtonForegroundColor: FlutterFlowTheme.of(context).primaryText,
-                                                                                                                    iconSize: 24.0,
-                                                                                                                  );
-                                                                                                                },
-                                                                                                              );
+                                                                                                            onPressed: (widget.usuariorol?.rolId != 1)
+                                                                                                                ? null
+                                                                                                                : () async {
+                                                                                                                    final datePicked5Date = await showDatePicker(
+                                                                                                                      context: context,
+                                                                                                                      initialDate: getCurrentTimestamp,
+                                                                                                                      firstDate: DateTime(1900),
+                                                                                                                      lastDate: DateTime(2050),
+                                                                                                                      builder: (context, child) {
+                                                                                                                        return wrapInMaterialDatePickerTheme(
+                                                                                                                          context,
+                                                                                                                          child!,
+                                                                                                                          headerBackgroundColor: FlutterFlowTheme.of(context).primary,
+                                                                                                                          headerForegroundColor: FlutterFlowTheme.of(context).info,
+                                                                                                                          headerTextStyle: FlutterFlowTheme.of(context).headlineLarge.override(
+                                                                                                                                fontFamily: 'Noto Sans JP',
+                                                                                                                                fontSize: 32.0,
+                                                                                                                                letterSpacing: 0.0,
+                                                                                                                                fontWeight: FontWeight.w600,
+                                                                                                                              ),
+                                                                                                                          pickerBackgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                                          pickerForegroundColor: FlutterFlowTheme.of(context).primaryText,
+                                                                                                                          selectedDateTimeBackgroundColor: FlutterFlowTheme.of(context).primary,
+                                                                                                                          selectedDateTimeForegroundColor: FlutterFlowTheme.of(context).info,
+                                                                                                                          actionButtonForegroundColor: FlutterFlowTheme.of(context).primaryText,
+                                                                                                                          iconSize: 24.0,
+                                                                                                                        );
+                                                                                                                      },
+                                                                                                                    );
 
-                                                                                                              if (datePicked6Date != null) {
-                                                                                                                safeSetState(() {
-                                                                                                                  _model.datePicked6 = DateTime(
-                                                                                                                    datePicked6Date.year,
-                                                                                                                    datePicked6Date.month,
-                                                                                                                    datePicked6Date.day,
-                                                                                                                  );
-                                                                                                                });
-                                                                                                              }
-                                                                                                            },
+                                                                                                                    if (datePicked5Date != null) {
+                                                                                                                      safeSetState(() {
+                                                                                                                        _model.datePicked5 = DateTime(
+                                                                                                                          datePicked5Date.year,
+                                                                                                                          datePicked5Date.month,
+                                                                                                                          datePicked5Date.day,
+                                                                                                                        );
+                                                                                                                      });
+                                                                                                                    }
+                                                                                                                  },
                                                                                                             text: valueOrDefault<String>(
                                                                                                               dateTimeFormat(
                                                                                                                 "d/M/y",
@@ -2967,6 +2686,7 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                                                 width: 1.0,
                                                                                                               ),
                                                                                                               borderRadius: BorderRadius.circular(8.0),
+                                                                                                              disabledColor: FlutterFlowTheme.of(context).alternate,
                                                                                                             ),
                                                                                                           ),
                                                                                                         ),
@@ -2976,11 +2696,12 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                                   Padding(
                                                                                                     padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                                                                                                     child: TextFormField(
-                                                                                                      controller: _model.textFieldmotivorechazoTextController2 ??= TextEditingController(
+                                                                                                      controller: _model.textFieldmotivorechazoTextController ??= TextEditingController(
                                                                                                         text: containerform9Formulario9Row?.motivoRechazo,
                                                                                                       ),
-                                                                                                      focusNode: _model.textFieldmotivorechazoFocusNode2,
+                                                                                                      focusNode: _model.textFieldmotivorechazoFocusNode,
                                                                                                       autofocus: false,
+                                                                                                      readOnly: widget.usuariorol?.rolId != 1,
                                                                                                       obscureText: false,
                                                                                                       decoration: InputDecoration(
                                                                                                         labelText: 'Motivo de rechazo de la medida de protección',
@@ -3025,7 +2746,7 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                                             fontFamily: 'Noto Sans JP',
                                                                                                             letterSpacing: 0.0,
                                                                                                           ),
-                                                                                                      validator: _model.textFieldmotivorechazoTextController2Validator.asValidator(context),
+                                                                                                      validator: _model.textFieldmotivorechazoTextControllerValidator.asValidator(context),
                                                                                                     ),
                                                                                                   ),
                                                                                                 ].divide(const SizedBox(height: 10.0)).around(const SizedBox(height: 10.0)),
@@ -3100,6 +2821,28 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                       if (_model.formKey.currentState == null || !_model.formKey.currentState!.validate()) {
                                                                                         return;
                                                                                       }
+                                                                                      if (_model.dropDowncausaValue == null) {
+                                                                                        return;
+                                                                                      }
+                                                                                      if (_model.datePicked1 == null) {
+                                                                                        await showDialog(
+                                                                                          context: context,
+                                                                                          builder: (alertDialogContext) {
+                                                                                            return WebViewAware(
+                                                                                              child: AlertDialog(
+                                                                                                title: const Text('fecha obligatoria'),
+                                                                                                actions: [
+                                                                                                  TextButton(
+                                                                                                    onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                    child: const Text('Ok'),
+                                                                                                  ),
+                                                                                                ],
+                                                                                              ),
+                                                                                            );
+                                                                                          },
+                                                                                        );
+                                                                                        return;
+                                                                                      }
                                                                                       if (containerform9Formulario9Row?.idForm9 == null) {
                                                                                         _model.form9 = await Formulario9Table().insert({
                                                                                           'idIngreso': widget.ingrow?.id,
@@ -3108,23 +2851,25 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                           'causa': _model.dropDowncausaValue,
                                                                                           'observacioncese': _model.textFieldObsTextController.text,
                                                                                           'solicitudMedida': true,
-                                                                                          'fechasolicitud': supaSerialize<DateTime>(_model.datePicked2),
+                                                                                          'fechasolicitud': supaSerialize<DateTime>(_model.datePicked1),
                                                                                           'evaluacionMedida': false,
                                                                                           'MedidaAdoptada': false,
                                                                                           'MedidaRechazada': false,
-                                                                                          'FechaMedidaRechazada': supaSerialize<DateTime>(_model.datePicked6),
-                                                                                          'MotivoRechazo': _model.textFieldmotivorechazoTextController1.text,
+                                                                                          'FechaMedidaRechazada': supaSerialize<DateTime>(_model.datePicked5),
+                                                                                          'MotivoRechazo': _model.textFieldmotivorechazoTextController.text,
                                                                                           'acciones': _model.textController1.text,
-                                                                                          'reiteracionFecha': supaSerialize<DateTime>(_model.datePicked4),
+                                                                                          'reiteracionFecha': supaSerialize<DateTime>(_model.datePicked3),
                                                                                           'updated_at': supaSerialize<DateTime>(getCurrentTimestamp),
                                                                                           'iduser': currentUserUid,
-                                                                                          'fechasolicitudsenaf': supaSerialize<DateTime>(_model.datePicked3),
+                                                                                          'fechasolicitudsenaf': supaSerialize<DateTime>(_model.datePicked2),
                                                                                           'agotadomedida': _model.radioButtoninscriptoagotadoValue,
                                                                                           'riesgovida': _model.radioButtoninscriptopermanenciafamiliaValue,
                                                                                           'fundamentacionsolicitud': _model.textController4.text,
-                                                                                          'FecMedidaAdoptada': supaSerialize<DateTime>(_model.datePicked5),
+                                                                                          'FecMedidaAdoptada': supaSerialize<DateTime>(_model.datePicked4),
                                                                                           'estado': 'Cerrado',
                                                                                           'reseñadelasitu': _model.textController3.text,
+                                                                                          'motivosolicitud': _model.textFieldmotivosolicitudTextController.text,
+                                                                                          'observacionesmedidaadoptada': _model.textFieldobservacionesdemedidaadoptadaTextController.text,
                                                                                         });
                                                                                         await IngresosTable().update(
                                                                                           data: {
@@ -3204,22 +2949,24 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                             'causa': _model.dropDowncausaValue,
                                                                                             'observacioncese': _model.textFieldObsTextController.text,
                                                                                             'solicitudMedida': _model.checkboxsolicitudValue,
-                                                                                            'fechasolicitud': supaSerialize<DateTime>(_model.datePicked2 ?? containerform9Formulario9Row?.fechasolicitud),
+                                                                                            'fechasolicitud': supaSerialize<DateTime>(_model.datePicked1 ?? containerform9Formulario9Row?.fechasolicitud),
                                                                                             'evaluacionMedida': _model.checkboxevaluacionValue,
                                                                                             'MedidaAdoptada': _model.checkboxadoptadaValue,
                                                                                             'MedidaRechazada': _model.checkboxrechazadaValue,
-                                                                                            'FechaMedidaRechazada': supaSerialize<DateTime>(_model.datePicked6 ?? containerform9Formulario9Row?.fechaMedidaRechazada),
-                                                                                            'MotivoRechazo': _model.textFieldmotivorechazoTextController1.text,
+                                                                                            'FechaMedidaRechazada': supaSerialize<DateTime>(_model.datePicked5 ?? containerform9Formulario9Row?.fechaMedidaRechazada),
+                                                                                            'MotivoRechazo': _model.textFieldobservacionesdemedidaadoptadaTextController.text,
                                                                                             'acciones': _model.textController1.text,
-                                                                                            'reiteracionFecha': supaSerialize<DateTime>(_model.datePicked4 ?? containerform9Formulario9Row?.reiteracionFecha),
+                                                                                            'reiteracionFecha': supaSerialize<DateTime>(_model.datePicked3 ?? containerform9Formulario9Row?.reiteracionFecha),
                                                                                             'updated_at': supaSerialize<DateTime>(getCurrentTimestamp),
                                                                                             'iduser': currentUserUid,
-                                                                                            'fechasolicitudsenaf': supaSerialize<DateTime>(_model.datePicked3 ?? containerform9Formulario9Row?.fechasolicitudsenaf),
+                                                                                            'fechasolicitudsenaf': supaSerialize<DateTime>(_model.datePicked2 ?? containerform9Formulario9Row?.fechasolicitudsenaf),
                                                                                             'agotadomedida': _model.radioButtoninscriptoagotadoValue,
                                                                                             'riesgovida': _model.radioButtoninscriptopermanenciafamiliaValue,
                                                                                             'fundamentacionsolicitud': _model.textController4.text,
-                                                                                            'FecMedidaAdoptada': supaSerialize<DateTime>(_model.datePicked5 ?? containerform9Formulario9Row?.fecMedidaAdoptada),
+                                                                                            'FecMedidaAdoptada': supaSerialize<DateTime>(_model.datePicked4 ?? containerform9Formulario9Row?.fecMedidaAdoptada),
                                                                                             'reseñadelasitu': _model.textController3.text,
+                                                                                            'motivosolicitud': _model.textFieldmotivosolicitudTextController.text,
+                                                                                            'observacionesmedidaadoptada': _model.textFieldobservacionesdemedidaadoptadaTextController.text,
                                                                                           },
                                                                                           matchingRows: (rows) => rows.eqOrNull(
                                                                                             'idIngreso',
@@ -3382,9 +3129,9 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                   ),
                                                 ),
                                               ),
-                                            ),
+                                            ],
                                           ),
-                                        ],
+                                        ),
                                       ),
                                     ],
                                   ),

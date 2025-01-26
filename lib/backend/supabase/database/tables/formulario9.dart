@@ -110,4 +110,9 @@ class Formulario9Row extends SupabaseDataRow {
 
   String? get linksolicitud => getField<String>('linksolicitud');
   set linksolicitud(String? value) => setField<String>('linksolicitud', value);
+
+  String? get observacionesmedidaadoptada =>
+      getField<String>('observacionesmedidaadoptada');
+  set observacionesmedidaadoptada(String? value) =>
+      setField<String>('observacionesmedidaadoptada', value);
 }

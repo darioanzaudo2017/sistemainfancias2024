@@ -113,6 +113,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'spd',
               ParamType.SupabaseRow,
             ),
+            usuariorol: params.getParam<VistaUsuariosRolesRow>(
+              'usuariorol',
+              ParamType.SupabaseRow,
+            ),
           ),
         ),
         FFRoute(
@@ -139,6 +143,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             idcarpeta: params.getParam(
               'idcarpeta',
               ParamType.String,
+            ),
+            usuariorol: params.getParam<VistaUsuariosRolesRow>(
+              'usuariorol',
+              ParamType.SupabaseRow,
             ),
           ),
         ),
@@ -250,6 +258,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'usuariorow',
               ParamType.SupabaseRow,
             ),
+            usuariorol: params.getParam<VistaUsuariosRolesRow>(
+              'usuariorol',
+              ParamType.SupabaseRow,
+            ),
           ),
         ),
         FFRoute(
@@ -291,7 +303,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'Admin',
           path: '/admin',
-          builder: (context, params) => const AdminWidget(),
+          builder: (context, params) => AdminWidget(
+            usuariosroles: params.getParam<VistaUsuariosRolesRow>(
+              'usuariosroles',
+              ParamType.SupabaseRow,
+            ),
+            usuariorow: params.getParam<UsuariosRow>(
+              'usuariorow',
+              ParamType.SupabaseRow,
+            ),
+          ),
         ),
         FFRoute(
           name: 'caratula2',
@@ -329,28 +350,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'pruebarls',
           path: '/pruebarls',
           builder: (context, params) => const PruebarlsWidget(),
-        ),
-        FFRoute(
-          name: 'perfilCopy',
-          path: '/perfilCopy',
-          builder: (context, params) => PerfilCopyWidget(
-            idingreso: params.getParam(
-              'idingreso',
-              ParamType.int,
-            ),
-            rowexp: params.getParam<VistaExpedientesUltimoEstadoRow>(
-              'rowexp',
-              ParamType.SupabaseRow,
-            ),
-            usuariorow: params.getParam<UsuariosRow>(
-              'usuariorow',
-              ParamType.SupabaseRow,
-            ),
-            spd: params.getParam<SpdRow>(
-              'spd',
-              ParamType.SupabaseRow,
-            ),
-          ),
         ),
         FFRoute(
           name: 'informesenaf',

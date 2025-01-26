@@ -1384,24 +1384,27 @@ class _AvisoconcurrenciaadultoWidgetState
                                                     safeSetState(() {}));
                                               },
                                             ),
-                                            FlutterFlowIconButton(
-                                              borderColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              borderRadius: 8.0,
-                                              buttonSize: 40.0,
-                                              icon: FaIcon(
-                                                FontAwesomeIcons.googleDrive,
-                                                color:
+                                            if (listaconcuItem.linkAviso !=
+                                                    null &&
+                                                listaconcuItem.linkAviso != '')
+                                              FlutterFlowIconButton(
+                                                borderColor:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
-                                                size: 24.0,
+                                                borderRadius: 8.0,
+                                                buttonSize: 40.0,
+                                                icon: FaIcon(
+                                                  FontAwesomeIcons.googleDrive,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  size: 24.0,
+                                                ),
+                                                onPressed: () async {
+                                                  await launchURL(listaconcuItem
+                                                      .linkAviso!);
+                                                },
                                               ),
-                                              onPressed: () async {
-                                                await launchURL(
-                                                    listaconcuItem.linkAviso!);
-                                              },
-                                            ),
                                           ].divide(const SizedBox(width: 3.0)),
                                         ),
                                       ),
