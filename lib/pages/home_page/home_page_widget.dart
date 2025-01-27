@@ -979,8 +979,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                               valueOrDefault<
                                                                   String>(
                                                                 containerVistaUsuariosRolesRow
-                                                                    ?.rolId
-                                                                    ?.toString(),
+                                                                    ?.rolNombre,
                                                                 'Sin dato',
                                                               ),
                                                               style: FlutterFlowTheme
