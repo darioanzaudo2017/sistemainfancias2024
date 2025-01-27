@@ -121058,7 +121058,7 @@ m=A.bB(a1.a.c,B.a5,!1)
 l=a1.d.a7
 if(l==null)l=null
 else{l=A.c8(l)
-l=l==null?null:l.i("idcarpeta",a)}A.eS(h,"Ingresos",null,A.fc(A.h(["idexp",a2,"idexpediente",o,"usuariorow",m,"idcarpeta",A.bB(l,B.c3,!1)],a,t.u)),t.X)
+l=l==null?null:l.i("idcarpeta",a)}A.eS(h,"Ingresos",null,A.fc(A.h(["idexp",a2,"idexpediente",o,"usuariorow",m,"idcarpeta",A.bB(l,B.c3,!1),"spd",A.bB(a1.a.d,B.a5,!1)],a,t.u)),t.X)
 if(a1.c!=null)a1.u(new A.bkA())
 case 1:return A.y(q,r)}})
 return A.z($async$$0,r)},
@@ -143655,9 +143655,7 @@ l=l.e
 l.toString
 m=A.j5(A.act(!0,!1,!0,k,f,l),m,new A.bEc(n),t.FG)
 l=n.a.w
-if(l==null)l=f
-else{l=l.i("rol_id",t.S)
-l=l==null?f:B.p.l(l)}l=A.a1(l,"Sin dato")
+l=A.a1(l==null?f:l.i("rol_nombre",t.N),"Sin dato")
 l=A.u(l,f,f,f,f,f,f,f,A.k(A.j(e,(A.b(a).ax.a===B.a?A.c():A.d()).gp(),f,14,f,B.d,f,f,f),f,e,f,f,f,0,f),f,f,f)
 k=A.Z(a,B.U,d).w.a.a>800?B.aF:B.W
 j=(A.b(a).ax.a===B.a?A.c():A.d()).gD()
@@ -144351,9 +144349,7 @@ j=this.a
 l=A.O(A.e([A.O(A.e([new A.N(B.au,d,d,new A.m(B.ov,p,d),d),new A.N(B.cx,d,d,new A.m(B.iU,A.u(m,d,d,d,d,d,d,d,A.k(l,(A.b(a3).ax.a===B.a?A.c():A.d()).gD(),c,22,d,d,0,d),d,d,d),d),d)],k),B.l,B.t,B.i,d),new A.m(B.ub,A.qR(A.l(10),A.aWd(u.z,B.iA,50,150),B.cg),d),A.bn(new A.bC_(j),new A.B3().cd(new A.bC0(this.c)),t.Z3)],k),B.l,B.Y,B.i,d)
 p=A.B(A.a1(n?d:o.i("nombreCompleto",t.N),a))
 p=A.u("Email: "+p,d,d,d,d,d,d,d,A.k(A.j(c,(A.b(a3).ax.a===B.a?A.c():A.d()).gp(),d,14,d,B.d,d,d,d),B.v,a0,22,d,B.r,0,d),d,d,d)
-if(n)o=d
-else{o=o.i("rol_id",t.S)
-o=o==null?d:B.p.l(o)}o=A.a1(o,a)
+o=A.a1(n?d:o.i("rol_nombre",t.N),a)
 o=A.u(o,d,d,d,d,d,d,d,A.k(A.j(c,(A.b(a3).ax.a===B.a?A.c():A.d()).gp(),d,14,d,B.d,d,d,d),B.v,a0,22,d,B.r,0,d),d,d,d)
 n=A.l(12)
 m=A.O(A.e([A.aR(A.u("Expedientes de asesoramiento",d,d,d,d,d,d,d,A.k(A.j(c,(A.b(a3).ax.a===B.a?A.c():A.d()).gp(),d,16,d,B.d,d,d,d),B.aT,a0,10,d,B.r,0,d),B.bA,d,d),1,d)],k),B.l,B.ag,B.i,d)
@@ -144897,9 +144893,7 @@ h=h.e
 h.toString
 i=A.j5(A.act(!0,!0,!0,g,r,h),i,new A.bJo(j),t.FG)
 h=j.a.r
-if(h==null)h=c1
-else{h=h.i("rol_id",t.S)
-h=h==null?c1:B.p.l(h)}h=A.a1(h,"Sin dato")
+h=A.a1(h==null?c1:h.i("rol_nombre",t.N),"Sin dato")
 h=A.u(h,c1,c1,c1,c1,c1,c1,c1,A.k(A.j(c2,(A.b(e6).ax.a===B.a?A.c():A.d()).gp(),c1,14,c1,B.d,c1,c1,c1),c1,c2,c1,c1,c1,0,c1),c1,c1,c1)
 g=A.Z(e6,B.U,e5).w.a.a>800?B.aF:B.W
 f=(A.b(e6).ax.a===B.a?A.c():A.d()).gD()
