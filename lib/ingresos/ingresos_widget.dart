@@ -268,8 +268,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                             valueOrDefault<
                                                                 String>(
                                                               widget.usuariorol
-                                                                  ?.rolId
-                                                                  ?.toString(),
+                                                                  ?.rolNombre,
                                                               'Sin dato',
                                                             ),
                                                             style: FlutterFlowTheme

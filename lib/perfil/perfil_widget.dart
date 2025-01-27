@@ -746,8 +746,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                               ),
                                               Text(
                                                 valueOrDefault<String>(
-                                                  widget.usuariorol?.rolId
-                                                      ?.toString(),
+                                                  widget.usuariorol?.rolNombre,
                                                   'Sin dato',
                                                 ),
                                                 style:
