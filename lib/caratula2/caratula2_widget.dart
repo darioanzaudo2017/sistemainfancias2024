@@ -2470,6 +2470,10 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                             ?.idcarpeta,
                                                         ParamType.String,
                                                       ),
+                                                      'spd': serializeParam(
+                                                        widget.spd,
+                                                        ParamType.SupabaseRow,
+                                                      ),
                                                     }.withoutNulls,
                                                   );
 
