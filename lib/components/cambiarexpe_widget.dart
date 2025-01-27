@@ -183,12 +183,6 @@ class _CambiarexpeWidgetState extends State<CambiarexpeWidget> {
                   if (confirmDialogResponse) {
                     await ExpedienteTable().update(
                       data: {
-                        'expediente':
-                            '${_model.dropDownValue}/${widget.expe?.id?.toString()}/${dateTimeFormat(
-                          "y",
-                          getCurrentTimestamp,
-                          locale: FFLocalizations.of(context).languageCode,
-                        )}',
                         'spd': _model.dropDownValue,
                       },
                       matchingRows: (rows) => rows.eqOrNull(
