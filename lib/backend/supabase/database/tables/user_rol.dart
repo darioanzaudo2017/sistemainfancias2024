@@ -28,7 +28,4 @@ class UserRolRow extends SupabaseDataRow {
 
   String? get rol => getField<String>('rol');
   set rol(String? value) => setField<String>('rol', value);
-
-  int? get idgrupofamiliar => getField<int>('idgrupofamiliar');
-  set idgrupofamiliar(int? value) => setField<int>('idgrupofamiliar', value);
 }

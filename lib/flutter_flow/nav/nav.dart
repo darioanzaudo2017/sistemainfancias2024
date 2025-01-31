@@ -376,6 +376,28 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.SupabaseRow,
             ),
           ),
+        ),
+        FFRoute(
+          name: 'SenafCopy',
+          path: '/senafCopy',
+          builder: (context, params) => SenafCopyWidget(
+            ingrow: params.getParam<IngresosRow>(
+              'ingrow',
+              ParamType.SupabaseRow,
+            ),
+            expediente: params.getParam<VistaExpedientesUltimoEstadoRow>(
+              'expediente',
+              ParamType.SupabaseRow,
+            ),
+            usuariorow: params.getParam<UsuariosRow>(
+              'usuariorow',
+              ParamType.SupabaseRow,
+            ),
+            usuariorol: params.getParam<VistaUsuariosRolesRow>(
+              'usuariorol',
+              ParamType.SupabaseRow,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

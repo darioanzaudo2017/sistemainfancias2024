@@ -800,6 +800,20 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                           _model.dropDownbarrioValue = val),
                                       width: 200.0,
                                       height: 40.0,
+                                      searchHintTextStyle:
+                                          FlutterFlowTheme.of(context)
+                                              .labelMedium
+                                              .override(
+                                                fontFamily: 'Noto Sans JP',
+                                                letterSpacing: 0.0,
+                                              ),
+                                      searchTextStyle:
+                                          FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Noto Sans JP',
+                                                letterSpacing: 0.0,
+                                              ),
                                       textStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -807,6 +821,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                             letterSpacing: 0.0,
                                           ),
                                       hintText: 'Barrio',
+                                      searchHintText: 'Buscar barrio',
                                       icon: Icon(
                                         Icons.keyboard_arrow_down_rounded,
                                         color: FlutterFlowTheme.of(context)
@@ -824,7 +839,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                           12.0, 0.0, 12.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
-                                      isSearchable: false,
+                                      isSearchable: true,
                                       isMultiSelect: false,
                                     );
                                   },

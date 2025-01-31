@@ -1,4 +1,3 @@
-import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -58,18 +57,6 @@ class FormcaratulaModel extends FlutterFlowModel<FormcaratulaWidget> {
   final textFieldedadMask = MaskTextInputFormatter(mask: '########');
   String? Function(BuildContext, String?)? textFieldedadTextControllerValidator;
   DateTime? datePicked1;
-  // Stores action output result for [Custom Action - checkDNI] action in Button widget.
-  bool? accionexitosa;
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  ExpedienteRow? crearexpnnya1;
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  NNyAExpGruRow? crearexpgrupo;
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  NNyARow? crearNNyA;
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  GrupofamiliarRow? grupofmiliar;
-  // Stores action output result for [Backend Call - API (carpeta del expediente)] action in Button widget.
-  ApiCallResponse? apiResult42y;
   // Stores action output result for [Bottom Sheet - desplegablederechosprincipal] action in Button widget.
   bool? agregarderecho;
   Completer<List<ListaDerechosVulneradosexpedienteRow>>? requestCompleter;
@@ -98,10 +85,6 @@ class FormcaratulaModel extends FlutterFlowModel<FormcaratulaWidget> {
   TextEditingController? textFieldprofesionalTextController;
   String? Function(BuildContext, String?)?
       textFieldprofesionalTextControllerValidator;
-  // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
-  List<ExpedienteRow>? creaexpprimeravez;
-  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
-  List<VistaExpedientesUltimoEstadoRow>? vistaExpediente;
   // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
   List<ExpedienteRow>? updatedeexpedicion;
 

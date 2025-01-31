@@ -647,16 +647,23 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                         return;
                                       }
 
-                                      await UsuariosTable().insert({
+                                      _model.createusuario =
+                                          await UsuariosTable().insert({
                                         'id': currentUserUid,
                                         'nombreCompleto': _model
                                             .nombreCompletoTextController.text,
                                         'rol': 'Usuario',
                                         'SPD': _model.dropDownValue,
                                       });
+                                      await UserRolTable().insert({
+                                        'iduser': _model.createusuario?.id,
+                                        'idrol': 3,
+                                      });
 
                                       context.goNamedAuth(
                                           'HomePage', context.mounted);
+
+                                      safeSetState(() {});
                                     },
                                     text: 'Crear Cuenta',
                                     options: FFButtonOptions(

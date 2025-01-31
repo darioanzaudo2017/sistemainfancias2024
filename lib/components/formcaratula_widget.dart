@@ -1,5 +1,4 @@
 import '/auth/supabase_auth/auth_util.dart';
-import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/desplegablederechosprincipal_widget.dart';
 import '/flutter_flow/flutter_flow_data_table.dart';
@@ -9,9 +8,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
-import '/flutter_flow/random_data_util.dart' as random_data;
 import 'dart:async';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
@@ -704,220 +701,6 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                         ],
                                       ),
                                     ),
-                                    if (currentUserEmail == '1')
-                                      Align(
-                                        alignment:
-                                            const AlignmentDirectional(1.0, 0.0),
-                                        child: FFButtonWidget(
-                                          onPressed: () async {
-                                            _model.accionexitosa =
-                                                await actions.checkDNI(
-                                              () async {
-                                                if (_model.formKey2
-                                                            .currentState ==
-                                                        null ||
-                                                    !_model
-                                                        .formKey2.currentState!
-                                                        .validate()) {
-                                                  return;
-                                                }
-                                                _model.crearexpnnya1 =
-                                                    await ExpedienteTable()
-                                                        .insert({
-                                                  'nombres': _model
-                                                      .textFieldnombresTextController
-                                                      .text,
-                                                  'apellidos': _model
-                                                      .textFieldapellidoTextController
-                                                      .text,
-                                                  'dni': _model
-                                                                  .textFieldDNITextController
-                                                                  .text ==
-                                                              ''
-                                                      ? random_data
-                                                          .randomInteger(
-                                                              999999999,
-                                                              1000000000)
-                                                      : int.tryParse(_model
-                                                          .textFieldDNITextController
-                                                          .text),
-                                                  'expediente':
-                                                      '${widget.usuariorow?.spd}/${random_data.randomInteger(0, 10000).toString()}/${dateTimeFormat(
-                                                    "y",
-                                                    _model.datePicked1,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  )}',
-                                                  'fechaNac':
-                                                      supaSerialize<DateTime>(
-                                                          _model.datePicked1),
-                                                  'edad': int.tryParse(_model
-                                                      .textFieldedadTextController
-                                                      .text),
-                                                  'iduser': currentUserUid,
-                                                });
-                                                _model.crearexpgrupo =
-                                                    await NNyAExpGruTable()
-                                                        .insert({
-                                                  'idExp':
-                                                      _model.crearexpnnya1?.id,
-                                                  'detalle': 'expediente',
-                                                });
-                                                _model.crearNNyA =
-                                                    await NNyATable().insert({
-                                                  'Nombre': _model
-                                                      .textFieldnombresTextController
-                                                      .text,
-                                                  'Apellido': _model
-                                                      .textFieldapellidoTextController
-                                                      .text,
-                                                  'DNI':
-                                                      _model.crearexpnnya1?.dni,
-                                                  'edad': int.tryParse(_model
-                                                      .textFieldedadTextController
-                                                      .text),
-                                                  'iduser': currentUserUid,
-                                                });
-                                                _model.grupofmiliar =
-                                                    await GrupofamiliarTable()
-                                                        .insert({
-                                                  'nombregrupo':
-                                                      '${_model.crearexpnnya1?.expediente}/${_model.crearexpnnya1?.dni?.toString()}',
-                                                });
-                                                await GrupofamiliarexpedientesTable()
-                                                    .insert({
-                                                  'idgrupofamliar':
-                                                      _model.grupofmiliar?.id,
-                                                  'idexpediente':
-                                                      _model.crearexpnnya1?.id,
-                                                });
-                                                await NNyAExpGruTable().update(
-                                                  data: {
-                                                    'idNNyA':
-                                                        _model.crearNNyA?.id,
-                                                  },
-                                                  matchingRows: (rows) =>
-                                                      rows.eqOrNull(
-                                                    'id',
-                                                    _model.crearexpgrupo?.id,
-                                                  ),
-                                                );
-                                                await ExpedienteTable().update(
-                                                  data: {
-                                                    'idgrupofamiliar':
-                                                        _model.grupofmiliar?.id,
-                                                  },
-                                                  matchingRows: (rows) =>
-                                                      rows.eqOrNull(
-                                                    'id',
-                                                    _model.crearexpnnya1?.id,
-                                                  ),
-                                                );
-                                                _model.apiResult42y =
-                                                    await CarpetaDelExpedienteCall
-                                                        .call(
-                                                  expediente: _model
-                                                      .crearexpnnya1
-                                                      ?.expediente,
-                                                  id: _model.crearexpnnya1?.id,
-                                                  fecha: dateTimeFormat(
-                                                    "d/M/y",
-                                                    _model.crearexpnnya1?.fecha,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ),
-                                                  nombresDNI:
-                                                      '${_model.crearexpnnya1?.nombres}, ${_model.crearexpnnya1?.apellidos}, DNI ${_model.crearexpnnya1?.dni?.toString()}',
-                                                );
-                                              },
-                                            );
-                                            if (_model.accionexitosa!) {
-                                              await showDialog(
-                                                context: context,
-                                                builder: (alertDialogContext) {
-                                                  return WebViewAware(
-                                                    child: AlertDialog(
-                                                      title: const Text(
-                                                          'El dni esta duplicado'),
-                                                      content: const Text(
-                                                          'El dni esta duplicado'),
-                                                      actions: [
-                                                        TextButton(
-                                                          onPressed: () =>
-                                                              Navigator.pop(
-                                                                  alertDialogContext),
-                                                          child: const Text('Ok'),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  );
-                                                },
-                                              );
-                                              safeSetState(() {
-                                                _model
-                                                    .textFieldDNITextController
-                                                    ?.clear();
-                                              });
-                                            } else {
-                                              _model.dniok = false;
-                                              safeSetState(() {});
-                                              await showDialog(
-                                                context: context,
-                                                builder: (alertDialogContext) {
-                                                  return WebViewAware(
-                                                    child: AlertDialog(
-                                                      title: const Text(
-                                                          'El NNyA no tiene expediente'),
-                                                      content: const Text(
-                                                          'Continuamos con la carga!!'),
-                                                      actions: [
-                                                        TextButton(
-                                                          onPressed: () =>
-                                                              Navigator.pop(
-                                                                  alertDialogContext),
-                                                          child: const Text('Ok'),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  );
-                                                },
-                                              );
-                                            }
-
-                                            safeSetState(() {});
-                                          },
-                                          text: 'verificar NNyA ',
-                                          options: FFButtonOptions(
-                                            height: 40.0,
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    24.0, 0.0, 24.0, 0.0),
-                                            iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily:
-                                                          'Noto Sans JP',
-                                                      color: Colors.white,
-                                                      letterSpacing: 0.0,
-                                                    ),
-                                            elevation: 3.0,
-                                            borderSide: const BorderSide(
-                                              color: Colors.transparent,
-                                              width: 1.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                        ),
-                                      ),
                                   ].divide(const SizedBox(height: 10.0)),
                                 ),
                               ),
@@ -959,8 +742,9 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                                               context),
                                                       child:
                                                           DesplegablederechosprincipalWidget(
-                                                        idexp: _model
-                                                            .crearexpnnya1?.id,
+                                                        idexp:
+                                                            containerExpedienteRow
+                                                                ?.id,
                                                         idingreso: 0,
                                                         form: 'Caratula',
                                                       ),
@@ -1815,228 +1599,102 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                           widget.editar!)
                                         FFButtonWidget(
                                           onPressed: () async {
-                                            if (!widget.editar!) {
-                                              await ExpedienteTable().update(
-                                                data: {
-                                                  'fecha':
-                                                      supaSerialize<DateTime>(
-                                                          _model.datePicked2),
-                                                  'nombres': functions
-                                                      .mayusculas(_model
-                                                          .textFieldnombresTextController
-                                                          .text),
-                                                  'apellidos': functions
-                                                      .mayusculas(_model
-                                                          .textFieldapellidoTextController
-                                                          .text),
-                                                  'expediente':
-                                                      '${widget.usuariorow?.spd}/${_model.crearexpnnya1?.id.toString()}/${dateTimeFormat(
-                                                    "y",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  )}',
-                                                  'spd':
-                                                      widget.usuariorow?.spd,
-                                                  'canalIngr': _model
-                                                      .dropDowncanaldeingresoValue,
-                                                  'epecificar': _model
-                                                      .textFieldespecificarTextController
-                                                      .text,
-                                                  'actuacion': _model
-                                                      .textFieldnumactuacionTextController
-                                                      .text,
-                                                  'profesional': _model
-                                                      .textFieldprofesionalTextController
-                                                      .text,
-                                                  'fechaNac':
-                                                      supaSerialize<DateTime>(
-                                                          _model.datePicked1),
-                                                  'edad': int.tryParse(_model
-                                                      .textFieldedadTextController
-                                                      .text),
-                                                  'estado': true,
-                                                  'iduser': currentUserUid,
-                                                },
-                                                matchingRows: (rows) =>
-                                                    rows.eqOrNull(
-                                                  'id',
-                                                  _model.crearexpnnya1?.id,
-                                                ),
-                                              );
-                                              await NNyATable().update(
-                                                data: {
-                                                  'Nombre': functions
-                                                      .mayusculas(_model
-                                                          .textFieldnombresTextController
-                                                          .text),
-                                                  'Apellido': functions
-                                                      .mayusculas(_model
-                                                          .textFieldapellidoTextController
-                                                          .text),
-                                                  'DNI': int.tryParse(_model
-                                                      .textFieldDNITextController
-                                                      .text),
-                                                  'edad': int.tryParse(_model
-                                                      .textFieldedadTextController
-                                                      .text),
-                                                },
-                                                matchingRows: (rows) =>
-                                                    rows.eqOrNull(
-                                                  'id',
-                                                  containerExpedienteRow
-                                                      ?.idNNyA,
-                                                ),
-                                              );
-                                              await showDialog(
-                                                context: context,
-                                                builder: (alertDialogContext) {
-                                                  return WebViewAware(
-                                                    child: AlertDialog(
-                                                      title: const Text(
-                                                          'Expediente Creado'),
-                                                      content: const Text(
-                                                          'Se creo correctamente el expediente!'),
-                                                      actions: [
-                                                        TextButton(
-                                                          onPressed: () =>
-                                                              Navigator.pop(
-                                                                  alertDialogContext),
-                                                          child: const Text('Ok'),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  );
-                                                },
-                                              );
-                                              Navigator.pop(context);
-                                              _model.vistaExpediente =
-                                                  await VistaExpedientesUltimoEstadoTable()
-                                                      .queryRows(
-                                                queryFn: (q) => q.eqOrNull(
-                                                  'id',
-                                                  _model.crearexpnnya1?.id,
-                                                ),
-                                              );
-
-                                              context.pushNamed(
-                                                'Ingresos',
-                                                queryParameters: {
-                                                  'idexp': serializeParam(
-                                                    _model.crearexpnnya1?.id,
-                                                    ParamType.int,
+                                            await ExpedienteTable().update(
+                                              data: {
+                                                'fecha': supaSerialize<
+                                                        DateTime>(
+                                                    _model.datePicked2 ?? containerExpedienteRow
+                                                            ?.fecha),
+                                                'nombres': functions.mayusculas(
+                                                    _model
+                                                        .textFieldnombresTextController
+                                                        .text),
+                                                'apellidos':
+                                                    functions.mayusculas(_model
+                                                        .textFieldapellidoTextController
+                                                        .text),
+                                                'spd': widget.usuariorow?.spd,
+                                                'canalIngr': _model
+                                                    .dropDowncanaldeingresoValue,
+                                                'epecificar': _model
+                                                    .textFieldespecificarTextController
+                                                    .text,
+                                                'actuacion': _model
+                                                    .textFieldnumactuacionTextController
+                                                    .text,
+                                                'profesional': _model
+                                                    .textFieldprofesionalTextController
+                                                    .text,
+                                                'fechaNac': supaSerialize<
+                                                        DateTime>(
+                                                    _model.datePicked1 ?? containerExpedienteRow
+                                                            ?.fechaNac),
+                                                'edad': int.tryParse(_model
+                                                    .textFieldedadTextController
+                                                    .text),
+                                                'estado': true,
+                                                'dni': _model
+                                                            .textFieldDNITextController
+                                                            .text ==
+                                                        'Sin dato'
+                                                    ? containerExpedienteRow
+                                                        ?.dni
+                                                    : int.tryParse(_model
+                                                        .textFieldDNITextController
+                                                        .text),
+                                                'iduser': currentUserUid,
+                                              },
+                                              matchingRows: (rows) =>
+                                                  rows.eqOrNull(
+                                                'id',
+                                                containerExpedienteRow?.id,
+                                              ),
+                                            );
+                                            await NNyATable().update(
+                                              data: {
+                                                'Nombre': functions.mayusculas(
+                                                    _model
+                                                        .textFieldnombresTextController
+                                                        .text),
+                                                'Apellido':
+                                                    functions.mayusculas(_model
+                                                        .textFieldapellidoTextController
+                                                        .text),
+                                                'DNI': int.tryParse(_model
+                                                    .textFieldDNITextController
+                                                    .text),
+                                                'edad': int.tryParse(_model
+                                                    .textFieldedadTextController
+                                                    .text),
+                                              },
+                                              matchingRows: (rows) =>
+                                                  rows.eqOrNull(
+                                                'id',
+                                                containerExpedienteRow?.idNNyA,
+                                              ),
+                                            );
+                                            await showDialog(
+                                              context: context,
+                                              builder: (alertDialogContext) {
+                                                return WebViewAware(
+                                                  child: AlertDialog(
+                                                    title: const Text(
+                                                        'Expediente Editado'),
+                                                    content: const Text(
+                                                        'Se edito correctamente el expediente!'),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext),
+                                                        child: const Text('Ok'),
+                                                      ),
+                                                    ],
                                                   ),
-                                                  'idexpediente':
-                                                      serializeParam(
-                                                    _model.vistaExpediente
-                                                        ?.firstOrNull,
-                                                    ParamType.SupabaseRow,
-                                                  ),
-                                                  'usuariorow': serializeParam(
-                                                    widget.usuariorow,
-                                                    ParamType.SupabaseRow,
-                                                  ),
-                                                }.withoutNulls,
-                                              );
-                                            } else {
-                                              await ExpedienteTable().update(
-                                                data: {
-                                                  'fecha': supaSerialize<
-                                                      DateTime>(_model.datePicked2 ?? containerExpedienteRow
-                                                          ?.fecha),
-                                                  'nombres': functions
-                                                      .mayusculas(_model
-                                                          .textFieldnombresTextController
-                                                          .text),
-                                                  'apellidos': functions
-                                                      .mayusculas(_model
-                                                          .textFieldapellidoTextController
-                                                          .text),
-                                                  'spd':
-                                                      widget.usuariorow?.spd,
-                                                  'canalIngr': _model
-                                                      .dropDowncanaldeingresoValue,
-                                                  'epecificar': _model
-                                                      .textFieldespecificarTextController
-                                                      .text,
-                                                  'actuacion': _model
-                                                      .textFieldnumactuacionTextController
-                                                      .text,
-                                                  'profesional': _model
-                                                      .textFieldprofesionalTextController
-                                                      .text,
-                                                  'fechaNac': supaSerialize<
-                                                      DateTime>(_model.datePicked1 ?? containerExpedienteRow
-                                                          ?.fechaNac),
-                                                  'edad': int.tryParse(_model
-                                                      .textFieldedadTextController
-                                                      .text),
-                                                  'estado': true,
-                                                  'dni': _model
-                                                              .textFieldDNITextController
-                                                              .text ==
-                                                          'Sin dato'
-                                                      ? containerExpedienteRow
-                                                          ?.dni
-                                                      : int.tryParse(_model
-                                                          .textFieldDNITextController
-                                                          .text),
-                                                  'iduser': currentUserUid,
-                                                },
-                                                matchingRows: (rows) =>
-                                                    rows.eqOrNull(
-                                                  'id',
-                                                  containerExpedienteRow?.id,
-                                                ),
-                                              );
-                                              await NNyATable().update(
-                                                data: {
-                                                  'Nombre': functions
-                                                      .mayusculas(_model
-                                                          .textFieldnombresTextController
-                                                          .text),
-                                                  'Apellido': functions
-                                                      .mayusculas(_model
-                                                          .textFieldapellidoTextController
-                                                          .text),
-                                                  'DNI': int.tryParse(_model
-                                                      .textFieldDNITextController
-                                                      .text),
-                                                  'edad': int.tryParse(_model
-                                                      .textFieldedadTextController
-                                                      .text),
-                                                },
-                                                matchingRows: (rows) =>
-                                                    rows.eqOrNull(
-                                                  'id',
-                                                  containerExpedienteRow
-                                                      ?.idNNyA,
-                                                ),
-                                              );
-                                              await showDialog(
-                                                context: context,
-                                                builder: (alertDialogContext) {
-                                                  return WebViewAware(
-                                                    child: AlertDialog(
-                                                      title: const Text(
-                                                          'Expediente Editado'),
-                                                      content: const Text(
-                                                          'Se edito correctamente el expediente!'),
-                                                      actions: [
-                                                        TextButton(
-                                                          onPressed: () =>
-                                                              Navigator.pop(
-                                                                  alertDialogContext),
-                                                          child: const Text('Ok'),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  );
-                                                },
-                                              );
-                                              Navigator.pop(context);
-                                            }
+                                                );
+                                              },
+                                            );
+                                            Navigator.pop(context);
 
                                             safeSetState(() {});
                                           },

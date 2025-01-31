@@ -1,5 +1,6 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/adjuntardocumento_widget.dart';
 import '/components/listareunioninterinstitucional_widget.dart';
 import '/entrevistas/anexo5requerimientoacciones/anexo5requerimientoacciones_widget.dart';
 import '/entrevistas/anexoeducacionsolicitud/anexoeducacionsolicitud_widget.dart';
@@ -37,6 +38,7 @@ class AnexosbotoneraWidget extends StatefulWidget {
     this.numentrevistannya,
     this.numentrevistaflia,
     String? numampliacioninfo,
+    this.editar,
   }) : numampliacioninfo = numampliacioninfo ?? '0';
 
   final IngresosRow? ingresorow;
@@ -54,6 +56,9 @@ class AnexosbotoneraWidget extends StatefulWidget {
   final String? numentrevistannya;
   final String? numentrevistaflia;
   final String numampliacioninfo;
+
+  /// editar
+  final bool? editar;
 
   @override
   State<AnexosbotoneraWidget> createState() => _AnexosbotoneraWidgetState();
@@ -1027,7 +1032,8 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                         children: [
                                           Flexible(
                                             child: FFButtonWidget(
-                                              onPressed: !_model.entrevistaflia
+                                              onPressed: !widget
+                                                      .entrevistaflia!
                                                   ? null
                                                   : () async {
                                                       await showModalBottomSheet(
@@ -1055,7 +1061,8 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                                     widget
                                                                         .etapa,
                                                                 identrevista: 0,
-                                                                editar: false,
+                                                                editar: widget
+                                                                    .editar,
                                                               ),
                                                             ),
                                                           );
@@ -1269,6 +1276,89 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                             ),
                                           ),
                                         ],
+                                      ),
+                                    ),
+                                  ),
+                                  Align(
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    child: InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        await showModalBottomSheet(
+                                          isScrollControlled: true,
+                                          backgroundColor: Colors.transparent,
+                                          enableDrag: false,
+                                          context: context,
+                                          builder: (context) {
+                                            return WebViewAware(
+                                              child: Padding(
+                                                padding:
+                                                    MediaQuery.viewInsetsOf(
+                                                        context),
+                                                child: AdjuntardocumentoWidget(
+                                                  exprow: widget.exorow,
+                                                  ingrow: widget.ingresorow,
+                                                ),
+                                              ),
+                                            );
+                                          },
+                                        ).then((value) => safeSetState(() {}));
+                                      },
+                                      child: AnimatedContainer(
+                                        duration: const Duration(milliseconds: 200),
+                                        curve: Curves.easeInOut,
+                                        width: double.infinity,
+                                        height: 44.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .accent1,
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                          shape: BoxShape.rectangle,
+                                        ),
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  8.0, 0.0, 8.0, 0.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              const Icon(
+                                                Icons.upload_file,
+                                                color: Color(0xFF15161E),
+                                                size: 24.0,
+                                              ),
+                                              Expanded(
+                                                child: Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          12.0, 0.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    'Adjuntar documentos',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          color:
+                                                              const Color(0xFF15161E),
+                                                          fontSize: 14.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ),

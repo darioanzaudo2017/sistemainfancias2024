@@ -115,9 +115,6 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
             child: Container(
               width: 1000.0,
               height: 1000.0,
-              constraints: const BoxConstraints(
-                maxWidth: 800.0,
-              ),
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 borderRadius: BorderRadius.circular(20.0),
@@ -136,9 +133,9 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                     padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                     child: SingleChildScrollView(
                       child: Column(
-                        mainAxisSize: MainAxisSize.max,
+                        mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Align(
                             alignment: const AlignmentDirectional(1.0, -1.0),
@@ -162,15 +159,10 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               child: Container(
-                                width: double.infinity,
-                                height: 292.0,
-                                constraints: const BoxConstraints(
-                                  maxWidth: 530.0,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                  boxShadow: const [
+                                height: 134.8,
+                                decoration: const BoxDecoration(
+                                  color: Color(0xFF39A9EF),
+                                  boxShadow: [
                                     BoxShadow(
                                       blurRadius: 4.0,
                                       color: Color(0x19000000),
@@ -180,7 +172,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                       ),
                                     )
                                   ],
-                                  borderRadius: const BorderRadius.only(
+                                  borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(12.0),
                                     bottomRight: Radius.circular(12.0),
                                     topLeft: Radius.circular(12.0),
@@ -195,64 +187,6 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text(
-                                        '${widget.rowexp?.nombres}, ${widget.rowexp?.apellidos}',
-                                        style: FlutterFlowTheme.of(context)
-                                            .headlineSmall
-                                            .override(
-                                              fontFamily: 'Noto Sans JP',
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 8.0, 0.0, 0.0),
-                                        child: Text(
-                                          valueOrDefault<String>(
-                                            widget.rowexp?.dni?.toString(),
-                                            'No tiene dni cargado',
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodySmall
-                                              .override(
-                                                fontFamily: 'Noto Sans JP',
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 8.0, 0.0, 0.0),
-                                        child: Text(
-                                          valueOrDefault<String>(
-                                            widget.rowexp?.fechaNac
-                                                ?.toString(),
-                                            'No tiene fecha de nacimiento cargado',
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodySmall
-                                              .override(
-                                                fontFamily: 'Noto Sans JP',
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 8.0, 0.0, 0.0),
-                                        child: Text(
-                                          valueOrDefault<String>(
-                                            widget.rowexp?.expediente,
-                                            'exp',
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodySmall
-                                              .override(
-                                                fontFamily: 'Noto Sans JP',
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
-                                      ),
                                       Expanded(
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -378,9 +312,9 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                                     ).then((value) =>
                                                         safeSetState(() {}));
                                                   },
-                                                  text: 'Formulario 1',
+                                                  text:
+                                                      'ir a recepcion de la demanda',
                                                   options: FFButtonOptions(
-                                                    width: 200.0,
                                                     height: 35.0,
                                                     padding:
                                                         const EdgeInsetsDirectional
@@ -1239,17 +1173,21 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
                             ),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 10.0, 0.0, 0.0),
-                              child: Text(
-                                'A) REGISTRO DE ENTREVISTA',
-                                style: FlutterFlowTheme.of(context)
-                                    .titleMedium
-                                    .override(
-                                      fontFamily: 'Noto Sans JP',
-                                      letterSpacing: 0.0,
-                                    ),
+                            child: Container(
+                              width: 1.0,
+                              decoration: const BoxDecoration(),
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 10.0, 0.0, 0.0),
+                                child: Text(
+                                  'A) REGISTRO DE ENTREVISTA',
+                                  style: FlutterFlowTheme.of(context)
+                                      .titleMedium
+                                      .override(
+                                        fontFamily: 'Noto Sans JP',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
                               ),
                             ),
                           ),
@@ -1335,17 +1273,19 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                   .asValidator(context),
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                10.0, 0.0, 0.0, 10.0),
-                            child: Text(
-                              '2. Antecedentes en relación a la situación planteada (que otras situaciones \nviviste antes que se puedan relacionar con lo que está pasando ahora)',
-                              style: FlutterFlowTheme.of(context)
-                                  .titleMedium
-                                  .override(
-                                    fontFamily: 'Noto Sans JP',
-                                    letterSpacing: 0.0,
-                                  ),
+                          Flexible(
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  10.0, 0.0, 0.0, 10.0),
+                              child: Text(
+                                '2. Antecedentes en relación a la situación planteada (que otras situaciones \nviviste antes que se puedan relacionar con lo que está pasando ahora)',
+                                style: FlutterFlowTheme.of(context)
+                                    .titleMedium
+                                    .override(
+                                      fontFamily: 'Noto Sans JP',
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
                             ),
                           ),
                           Padding(

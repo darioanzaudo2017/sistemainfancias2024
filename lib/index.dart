@@ -29,3 +29,4 @@ export '/respuestaform6page/respuestaform6page_widget.dart'
     show Respuestaform6pageWidget;
 export '/pruebarls/pruebarls_widget.dart' show PruebarlsWidget;
 export '/informesenaf/informesenaf_widget.dart' show InformesenafWidget;
+export '/senaf_copy/senaf_copy_widget.dart' show SenafCopyWidget;

@@ -1243,7 +1243,11 @@ class _Formulario4WidgetState extends State<Formulario4Widget> {
                                               'ValSugerencias':
                                                   _model.textController11.text,
                                             },
-                                            matchingRows: (rows) => rows,
+                                            matchingRows: (rows) =>
+                                                rows.eqOrNull(
+                                              'idForm4',
+                                              widget.identrevista,
+                                            ),
                                           );
                                           await IngresosTable().update(
                                             data: {

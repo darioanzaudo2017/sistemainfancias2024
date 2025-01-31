@@ -296,6 +296,8 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                 idingreso:
                                                                     containerIngresosRow!
                                                                         .id,
+                                                                etapa:
+                                                                    'Entrevistas y Ampliacion de informacion',
                                                                 reqacciones:
                                                                     false,
                                                                 anexoeducacion:
@@ -997,7 +999,6 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                                         idingreso: containerIngresosRow,
                                                                                                         rowexp: widget.rowexp!,
                                                                                                         editar: false,
-                                                                                                        identrevista: 0,
                                                                                                         usuariorow: widget.usuariorow!,
                                                                                                         formulario: 'Entrevistas y Ampliacion de informacion',
                                                                                                       ),

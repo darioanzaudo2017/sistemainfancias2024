@@ -96,7 +96,8 @@ class _InformesenafWidgetState extends State<InformesenafWidget> {
                 child: FFButtonWidget(
                   onPressed: () async {
                     _model.apiResultnlg = await EmailResendCall.call(
-                      mail: 'darioanzaudo@gmail.com',
+                      mail:
+                          'darioanzaudo@gmail.com,direcgenerlinfanciasme@gmail.com',
                       titulo:
                           'Solicitud de medida excepcional: ${widget.usuariorow?.spd}Solicita: ${widget.usuariorow?.nombreCompleto}',
                       mensaje: 'Solicitud de medida excepcional',
@@ -133,7 +134,7 @@ class _InformesenafWidgetState extends State<InformesenafWidget> {
 
                     safeSetState(() {});
                   },
-                  text: 'enviar mail a senar',
+                  text: 'enviar mail direccion general para senaf',
                   options: FFButtonOptions(
                     height: 40.0,
                     padding:
