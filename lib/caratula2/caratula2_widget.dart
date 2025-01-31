@@ -907,10 +907,11 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                           .text,
                                                     );
 
-                                                    if ((_model
-                                                            .checkdnifuncionnnya
-                                                            ?.succeeded ??
-                                                        true)) {
+                                                    if (ExisteDNInnyaCall.check(
+                                                      (_model.checkdnifuncionnnya
+                                                              ?.jsonBody ??
+                                                          ''),
+                                                    )!) {
                                                       _model.querynnyaexistente =
                                                           await NNyATable()
                                                               .queryRows(
