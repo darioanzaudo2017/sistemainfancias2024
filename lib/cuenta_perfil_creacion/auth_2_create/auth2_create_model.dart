@@ -1,3 +1,4 @@
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'auth2_create_widget.dart' show Auth2CreateWidget;
@@ -29,6 +30,8 @@ class Auth2CreateModel extends FlutterFlowModel<Auth2CreateWidget> {
   late bool passwordConfirmVisibility;
   String? Function(BuildContext, String?)?
       passwordConfirmTextControllerValidator;
+  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
+  UsuariosRow? createusuario;
 
   @override
   void initState(BuildContext context) {

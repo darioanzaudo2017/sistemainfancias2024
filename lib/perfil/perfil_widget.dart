@@ -336,6 +336,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                               entrevistaflia:
                                                                   true,
                                                               ampliacion: true,
+                                                              editar: false,
                                                             ),
                                                           ),
                                                         ),
@@ -3284,7 +3285,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                           size: 24.0,
                                                                                         ),
                                                                                         Text(
-                                                                                          'Desicion',
+                                                                                          'Decision',
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                 fontFamily: 'Noto Sans JP',
                                                                                                 letterSpacing: 0.0,
