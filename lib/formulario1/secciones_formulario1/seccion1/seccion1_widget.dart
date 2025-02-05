@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'seccion1_model.dart';
 export 'seccion1_model.dart';
@@ -82,6 +83,8 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Align(
       alignment: const AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<Seccion1Row>>(
@@ -1949,111 +1952,18 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  FFButtonWidget(
-                                    onPressed: () async {
-                                      if (_model.formKey.currentState == null ||
-                                          !_model.formKey.currentState!
-                                              .validate()) {
-                                        return;
-                                      }
-                                      if (!widget.editar!) {
-                                        await Seccion1Table().insert({
-                                          'lugarNac': _model
-                                              .textFieldlunacimientoTextController
-                                              .text,
-                                          'domicilio': _model
-                                              .textFielddomicilioTextController
-                                              .text,
-                                          'telefono': double.tryParse(_model
-                                              .textFieldtelefonoTextController
-                                              .text),
-                                          'genero': _model.dropGeneroValue,
-                                          'adultoRes':
-                                              _model.textController4.text,
-                                          'rnp': _model.radioButtonrnpValue,
-                                          'centro': _model.textController6.text,
-                                          'historiaCli':
-                                              _model.textController7.text,
-                                          'cud': _model.radioButtoncudValue,
-                                          'obraSoc':
-                                              _model.textController8.text,
-                                          'escuela':
-                                              _model.textController9.text,
-                                          'cursoEsc':
-                                              _model.dropDownSalaGradoValue,
-                                          'domEsc': _model
-                                              .textFielddomicilioescuelaTextController
-                                              .text,
-                                          'telEsc': double.tryParse(_model
-                                              .textFieldtelescuelaTextController
-                                              .text),
-                                          'cocurrenciaEsc':
-                                              _model.radioButtonescuelaValue,
-                                          'nivelAlcanzado': _model
-                                              .dropDownNivelAlcanzadoValue,
-                                          'referente':
-                                              _model.textController12.text,
-                                          'trabaja':
-                                              _model.radioButtontrabjaninoValue,
-                                          'idIngreso': widget.idingreso?.id,
-                                          'idExpediente': widget.rowexp?.id,
-                                          'turno': _model.dropDownTurnoValue,
-                                          'trabajoObs':
-                                              _model.textController13.text,
-                                          'Matriculo':
-                                              _model.radioButtomatriculoValue,
-                                          'iduser': currentUserUid,
-                                          'TipoFamilia':
-                                              _model.droptipofliaValue,
-                                          'barrio':
-                                              _model.dropDownbarrioValue ==
-                                                      'Otro'
-                                                  ? _model.textController5.text
-                                                  : _model.dropDownbarrioValue,
-                                        });
-                                        await IngresosTable().update(
-                                          data: {
-                                            'form1seccion1': true,
-                                            'updated_at':
-                                                supaSerialize<DateTime>(
-                                                    getCurrentTimestamp),
-                                            'iduser': currentUserUid,
-                                          },
-                                          matchingRows: (rows) => rows.eqOrNull(
-                                            'id',
-                                            widget.idingreso?.id,
-                                          ),
-                                        );
-                                        await showDialog(
-                                          context: context,
-                                          builder: (alertDialogContext) {
-                                            return WebViewAware(
-                                              child: AlertDialog(
-                                                title: const Text('Carga correcta'),
-                                                content: const Text(
-                                                    'La informacion se guardo correctamente!!'),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext),
-                                                    child: const Text('Ok'),
-                                                  ),
-                                                ],
-                                              ),
-                                            );
-                                          },
-                                        );
-                                        Navigator.pop(context, true);
-                                        await HistorialingresoTable().insert({
-                                          'Etapa':
-                                              'Recepcion de la demanda seccion 1',
-                                          'idingreso': widget.idingreso?.id,
-                                          'idexpediente': widget.rowexp?.id,
-                                        });
-                                      } else {
-                                        await Seccion1Table().update(
-                                          data: {
+                                  if (widget.usuariorow?.spd ==
+                                      FFAppState().spd)
+                                    FFButtonWidget(
+                                      onPressed: () async {
+                                        if (_model.formKey.currentState ==
+                                                null ||
+                                            !_model.formKey.currentState!
+                                                .validate()) {
+                                          return;
+                                        }
+                                        if (!widget.editar!) {
+                                          await Seccion1Table().insert({
                                             'lugarNac': _model
                                                 .textFieldlunacimientoTextController
                                                 .text,
@@ -2107,84 +2017,190 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                     'Otro'
                                                 ? _model.textController5.text
                                                 : _model.dropDownbarrioValue,
-                                          },
-                                          matchingRows: (rows) => rows.eqOrNull(
-                                            'idSec1',
-                                            containerSeccion1Row?.idSec1,
-                                          ),
-                                        );
-                                        await IngresosTable().update(
-                                          data: {
-                                            'updated_at':
-                                                supaSerialize<DateTime>(
-                                                    getCurrentTimestamp),
-                                            'iduser': currentUserUid,
-                                          },
-                                          matchingRows: (rows) => rows.eqOrNull(
-                                            'id',
-                                            widget.idingreso?.id,
-                                          ),
-                                        );
-                                        await showDialog(
-                                          context: context,
-                                          builder: (alertDialogContext) {
-                                            return WebViewAware(
-                                              child: AlertDialog(
-                                                title: const Text('Carga correcta'),
-                                                content: const Text(
-                                                    'La informacion se guardo correctamente!!'),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext),
-                                                    child: const Text('Ok'),
-                                                  ),
-                                                ],
-                                              ),
-                                            );
-                                          },
-                                        );
-                                        Navigator.pop(context);
-                                        await HistorialingresoTable().insert({
-                                          'Etapa':
-                                              'Recepcion de la demanda seccion 1',
-                                          'idingreso': widget.idingreso?.id,
-                                          'idexpediente': widget.rowexp?.id,
-                                        });
-                                      }
-                                    },
-                                    text: 'Guardar',
-                                    icon: const Icon(
-                                      Icons.save,
-                                      size: 15.0,
-                                    ),
-                                    options: FFButtonOptions(
-                                      width: 250.0,
-                                      height: 40.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          24.0, 0.0, 24.0, 0.0),
-                                      iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color:
-                                          FlutterFlowTheme.of(context).success,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Noto Sans JP',
-                                            color: Colors.white,
-                                            letterSpacing: 0.0,
-                                          ),
-                                      elevation: 2.0,
-                                      borderSide: const BorderSide(
-                                        color: Colors.transparent,
-                                        width: 1.0,
+                                          });
+                                          await IngresosTable().update(
+                                            data: {
+                                              'form1seccion1': true,
+                                              'updated_at':
+                                                  supaSerialize<DateTime>(
+                                                      getCurrentTimestamp),
+                                              'iduser': currentUserUid,
+                                            },
+                                            matchingRows: (rows) =>
+                                                rows.eqOrNull(
+                                              'id',
+                                              widget.idingreso?.id,
+                                            ),
+                                          );
+                                          await showDialog(
+                                            context: context,
+                                            builder: (alertDialogContext) {
+                                              return WebViewAware(
+                                                child: AlertDialog(
+                                                  title: const Text('Carga correcta'),
+                                                  content: const Text(
+                                                      'La informacion se guardo correctamente!!'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: const Text('Ok'),
+                                                    ),
+                                                  ],
+                                                ),
+                                              );
+                                            },
+                                          );
+                                          Navigator.pop(context, true);
+                                          await HistorialingresoTable().insert({
+                                            'Etapa':
+                                                'Recepcion de la demanda seccion 1',
+                                            'idingreso': widget.idingreso?.id,
+                                            'idexpediente': widget.rowexp?.id,
+                                          });
+                                        } else {
+                                          await Seccion1Table().update(
+                                            data: {
+                                              'lugarNac': _model
+                                                  .textFieldlunacimientoTextController
+                                                  .text,
+                                              'domicilio': _model
+                                                  .textFielddomicilioTextController
+                                                  .text,
+                                              'telefono': double.tryParse(_model
+                                                  .textFieldtelefonoTextController
+                                                  .text),
+                                              'genero': _model.dropGeneroValue,
+                                              'adultoRes':
+                                                  _model.textController4.text,
+                                              'rnp': _model.radioButtonrnpValue,
+                                              'centro':
+                                                  _model.textController6.text,
+                                              'historiaCli':
+                                                  _model.textController7.text,
+                                              'cud': _model.radioButtoncudValue,
+                                              'obraSoc':
+                                                  _model.textController8.text,
+                                              'escuela':
+                                                  _model.textController9.text,
+                                              'cursoEsc':
+                                                  _model.dropDownSalaGradoValue,
+                                              'domEsc': _model
+                                                  .textFielddomicilioescuelaTextController
+                                                  .text,
+                                              'telEsc': double.tryParse(_model
+                                                  .textFieldtelescuelaTextController
+                                                  .text),
+                                              'cocurrenciaEsc': _model
+                                                  .radioButtonescuelaValue,
+                                              'nivelAlcanzado': _model
+                                                  .dropDownNivelAlcanzadoValue,
+                                              'referente':
+                                                  _model.textController12.text,
+                                              'trabaja': _model
+                                                  .radioButtontrabjaninoValue,
+                                              'idIngreso':
+                                                  widget.idingreso?.id,
+                                              'idExpediente':
+                                                  widget.rowexp?.id,
+                                              'turno':
+                                                  _model.dropDownTurnoValue,
+                                              'trabajoObs':
+                                                  _model.textController13.text,
+                                              'Matriculo': _model
+                                                  .radioButtomatriculoValue,
+                                              'iduser': currentUserUid,
+                                              'TipoFamilia':
+                                                  _model.droptipofliaValue,
+                                              'barrio':
+                                                  _model.dropDownbarrioValue ==
+                                                          'Otro'
+                                                      ? _model
+                                                          .textController5.text
+                                                      : _model
+                                                          .dropDownbarrioValue,
+                                            },
+                                            matchingRows: (rows) =>
+                                                rows.eqOrNull(
+                                              'idSec1',
+                                              containerSeccion1Row?.idSec1,
+                                            ),
+                                          );
+                                          await IngresosTable().update(
+                                            data: {
+                                              'updated_at':
+                                                  supaSerialize<DateTime>(
+                                                      getCurrentTimestamp),
+                                              'iduser': currentUserUid,
+                                            },
+                                            matchingRows: (rows) =>
+                                                rows.eqOrNull(
+                                              'id',
+                                              widget.idingreso?.id,
+                                            ),
+                                          );
+                                          await showDialog(
+                                            context: context,
+                                            builder: (alertDialogContext) {
+                                              return WebViewAware(
+                                                child: AlertDialog(
+                                                  title: const Text('Carga correcta'),
+                                                  content: const Text(
+                                                      'La informacion se guardo correctamente!!'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: const Text('Ok'),
+                                                    ),
+                                                  ],
+                                                ),
+                                              );
+                                            },
+                                          );
+                                          Navigator.pop(context);
+                                          await HistorialingresoTable().insert({
+                                            'Etapa':
+                                                'Recepcion de la demanda seccion 1',
+                                            'idingreso': widget.idingreso?.id,
+                                            'idexpediente': widget.rowexp?.id,
+                                          });
+                                        }
+                                      },
+                                      text: 'Guardar',
+                                      icon: const Icon(
+                                        Icons.save,
+                                        size: 15.0,
                                       ),
-                                      borderRadius: BorderRadius.circular(20.0),
-                                      hoverElevation: 4.0,
+                                      options: FFButtonOptions(
+                                        width: 250.0,
+                                        height: 40.0,
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            24.0, 0.0, 24.0, 0.0),
+                                        iconPadding:
+                                            const EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .success,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
+                                              color: Colors.white,
+                                              letterSpacing: 0.0,
+                                            ),
+                                        elevation: 2.0,
+                                        borderSide: const BorderSide(
+                                          color: Colors.transparent,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(20.0),
+                                        hoverElevation: 4.0,
+                                      ),
                                     ),
-                                  ),
                                 ],
                               ),
                             ],

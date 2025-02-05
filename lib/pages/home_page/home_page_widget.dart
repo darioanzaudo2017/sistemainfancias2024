@@ -966,9 +966,9 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                 const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
-                                                                        4.0,
+                                                                        5.0,
                                                                         0.0,
-                                                                        12.0),
+                                                                        5.0),
                                                             child: Text(
                                                               'Email: ${valueOrDefault<String>(
                                                                 containerVistaUsuariosRolesRow
@@ -984,7 +984,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                     color: Colors
                                                                         .white,
                                                                     fontSize:
-                                                                        22.0,
+                                                                        18.0,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     fontWeight:
@@ -998,9 +998,9 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                 const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
-                                                                        4.0,
+                                                                        5.0,
                                                                         0.0,
-                                                                        12.0),
+                                                                        5.0),
                                                             child: Text(
                                                               valueOrDefault<
                                                                   String>(
@@ -1017,7 +1017,35 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                     color: Colors
                                                                         .white,
                                                                     fontSize:
-                                                                        22.0,
+                                                                        15.0,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                          Padding(
+                                                            padding:
+                                                                const EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        16.0,
+                                                                        5.0,
+                                                                        0.0,
+                                                                        5.0),
+                                                            child: Text(
+                                                              'Actualizacion: 05/02/2025',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Plus Jakarta Sans',
+                                                                    color: Colors
+                                                                        .white,
+                                                                    fontSize:
+                                                                        15.0,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     fontWeight:
@@ -1675,6 +1703,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                           ),
                                                         }.withoutNulls,
                                                       );
+
+                                                      FFAppState().spd =
+                                                          homePageUsuariosRow!
+                                                              .spd!;
+                                                      safeSetState(() {});
                                                     },
                                                     text: 'Agregar expediente',
                                                     icon: const Icon(
@@ -2318,6 +2351,13 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                     ),
                                                                   }.withoutNulls,
                                                                 );
+
+                                                                FFAppState()
+                                                                        .spd =
+                                                                    homePageUsuariosRow!
+                                                                        .spd!;
+                                                                safeSetState(
+                                                                    () {});
                                                               },
                                                               text: 'Ver',
                                                               options:
@@ -2336,9 +2376,16 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primary,
+                                                                color: containerSpdRow
+                                                                            ?.nombrespd ==
+                                                                        homePageUsuariosRow
+                                                                            ?.spd
+                                                                    ? FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondary
+                                                                    : FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primary,
                                                                 textStyle: FlutterFlowTheme.of(
                                                                         context)
                                                                     .titleSmall
@@ -2409,12 +2456,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                               future:
                                                   VistaExpedientesUltimoEstadoTable()
                                                       .queryRows(
-                                                queryFn: (q) => q
-                                                    .eqOrNull(
-                                                      'spd',
-                                                      homePageUsuariosRow?.spd,
-                                                    )
-                                                    .order('updated_at'),
+                                                queryFn: (q) =>
+                                                    q.order('updated_at'),
                                                 limit: 15,
                                               ),
                                               builder: (context, snapshot) {
@@ -2798,6 +2841,13 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                         ),
                                                                       }.withoutNulls,
                                                                     );
+
+                                                                    FFAppState()
+                                                                            .spd =
+                                                                        homePageUsuariosRow!
+                                                                            .spd!;
+                                                                    safeSetState(
+                                                                        () {});
                                                                   },
                                                                   text: 'Ver',
                                                                   options:

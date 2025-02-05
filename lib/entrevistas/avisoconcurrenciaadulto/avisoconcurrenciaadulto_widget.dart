@@ -493,7 +493,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                     autofocus: true,
                                     obscureText: false,
                                     decoration: InputDecoration(
-                                      labelText: 'CPC',
+                                      labelText: 'SPD',
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
@@ -501,7 +501,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                             letterSpacing: 0.0,
                                           ),
                                       alignLabelWithHint: true,
-                                      hintText: 'CPC',
+                                      hintText: 'SPD',
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
