@@ -12,6 +12,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/formulario4/formulario4/formulario4_widget.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
@@ -477,7 +478,14 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                                   ),
                                                                                                 );
                                                                                               },
-                                                                                            ).then((value) => safeSetState(() {}));
+                                                                                            ).then((value) => safeSetState(() => _model.crearconvocatoria = value));
+
+                                                                                            if (_model.crearconvocatoria!) {
+                                                                                              safeSetState(() => _model.requestCompleter = null);
+                                                                                              await _model.waitForRequestCompleted();
+                                                                                            }
+
+                                                                                            safeSetState(() {});
                                                                                           },
                                                                                           text: 'Convocatoria entrevista',
                                                                                           options: FFButtonOptions(
@@ -545,12 +553,14 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                         ),
                                                                                       ),
                                                                                       FutureBuilder<List<AvisovisitaNNyARow>>(
-                                                                                        future: AvisovisitaNNyATable().querySingleRow(
-                                                                                          queryFn: (q) => q.eqOrNull(
-                                                                                            'idIngreso',
-                                                                                            widget.ingresorow,
-                                                                                          ),
-                                                                                        ),
+                                                                                        future: (_model.requestCompleter ??= Completer<List<AvisovisitaNNyARow>>()
+                                                                                              ..complete(AvisovisitaNNyATable().querySingleRow(
+                                                                                                queryFn: (q) => q.eqOrNull(
+                                                                                                  'idIngreso',
+                                                                                                  widget.ingresorow,
+                                                                                                ),
+                                                                                              )))
+                                                                                            .future,
                                                                                         builder: (context, snapshot) {
                                                                                           // Customize what your widget looks like when it's loading.
                                                                                           if (!snapshot.hasData) {
@@ -822,12 +832,6 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                                       size: 24.0,
                                                                                                     ),
                                                                                                     onPressed: () async {
-                                                                                                      await Formulario3Table().delete(
-                                                                                                        matchingRows: (rows) => rows.eqOrNull(
-                                                                                                          'idForm3',
-                                                                                                          listaentrevistasalNNyaItem.idForm3,
-                                                                                                        ),
-                                                                                                      );
                                                                                                       var confirmDialogResponse = await showDialog<bool>(
                                                                                                             context: context,
                                                                                                             builder: (alertDialogContext) {
@@ -850,6 +854,14 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                                             },
                                                                                                           ) ??
                                                                                                           false;
+                                                                                                      if (confirmDialogResponse) {
+                                                                                                        await Formulario3Table().delete(
+                                                                                                          matchingRows: (rows) => rows.eqOrNull(
+                                                                                                            'idForm3',
+                                                                                                            listaentrevistasalNNyaItem.idForm3,
+                                                                                                          ),
+                                                                                                        );
+                                                                                                      }
                                                                                                     },
                                                                                                   ),
                                                                                                 ].divide(const SizedBox(height: 3.0)),
@@ -1001,6 +1013,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                                         editar: false,
                                                                                                         usuariorow: widget.usuariorow!,
                                                                                                         formulario: 'Entrevistas y Ampliacion de informacion',
+                                                                                                        identrevista: 0,
                                                                                                       ),
                                                                                                     ),
                                                                                                   ),
@@ -1305,12 +1318,6 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                                   size: 24.0,
                                                                                                 ),
                                                                                                 onPressed: () async {
-                                                                                                  await Formulario2Table().delete(
-                                                                                                    matchingRows: (rows) => rows.eqOrNull(
-                                                                                                      'idForm2',
-                                                                                                      listaentrevistasalafliaItem.idForm2,
-                                                                                                    ),
-                                                                                                  );
                                                                                                   var confirmDialogResponse = await showDialog<bool>(
                                                                                                         context: context,
                                                                                                         builder: (alertDialogContext) {
@@ -1333,6 +1340,14 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                                         },
                                                                                                       ) ??
                                                                                                       false;
+                                                                                                  if (confirmDialogResponse) {
+                                                                                                    await Formulario2Table().delete(
+                                                                                                      matchingRows: (rows) => rows.eqOrNull(
+                                                                                                        'idForm2',
+                                                                                                        listaentrevistasalafliaItem.idForm2,
+                                                                                                      ),
+                                                                                                    );
+                                                                                                  }
                                                                                                 },
                                                                                               ),
                                                                                             ].divide(const SizedBox(height: 3.0)),
@@ -1632,63 +1647,109 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                                   letterSpacing: 0.0,
                                                                                                 ),
                                                                                           ),
-                                                                                          Align(
-                                                                                            alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                            child: FFButtonWidget(
-                                                                                              onPressed: () async {
-                                                                                                await showModalBottomSheet(
-                                                                                                  isScrollControlled: true,
-                                                                                                  backgroundColor: Colors.transparent,
-                                                                                                  enableDrag: false,
-                                                                                                  context: context,
-                                                                                                  builder: (context) {
-                                                                                                    return WebViewAware(
-                                                                                                      child: GestureDetector(
-                                                                                                        onTap: () {
-                                                                                                          FocusScope.of(context).unfocus();
-                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                        },
-                                                                                                        child: Padding(
-                                                                                                          padding: MediaQuery.viewInsetsOf(context),
-                                                                                                          child: Formulario4Widget(
-                                                                                                            idingreso: containerIngresosRow,
-                                                                                                            rowexp: widget.rowexp,
-                                                                                                            editar: true,
-                                                                                                            identrevista: listform4Item.idForm4,
-                                                                                                            formulario: 'Entrevistas y Ampliacion de informacion',
+                                                                                          Column(
+                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                            children: [
+                                                                                              Align(
+                                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                child: FFButtonWidget(
+                                                                                                  onPressed: () async {
+                                                                                                    await showModalBottomSheet(
+                                                                                                      isScrollControlled: true,
+                                                                                                      backgroundColor: Colors.transparent,
+                                                                                                      enableDrag: false,
+                                                                                                      context: context,
+                                                                                                      builder: (context) {
+                                                                                                        return WebViewAware(
+                                                                                                          child: GestureDetector(
+                                                                                                            onTap: () {
+                                                                                                              FocusScope.of(context).unfocus();
+                                                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                            },
+                                                                                                            child: Padding(
+                                                                                                              padding: MediaQuery.viewInsetsOf(context),
+                                                                                                              child: Formulario4Widget(
+                                                                                                                idingreso: containerIngresosRow,
+                                                                                                                rowexp: widget.rowexp,
+                                                                                                                editar: true,
+                                                                                                                identrevista: listform4Item.idForm4,
+                                                                                                                formulario: 'Entrevistas y Ampliacion de informacion',
+                                                                                                              ),
+                                                                                                            ),
                                                                                                           ),
+                                                                                                        );
+                                                                                                      },
+                                                                                                    ).then((value) => safeSetState(() {}));
+                                                                                                  },
+                                                                                                  text: 'Ver y editar',
+                                                                                                  icon: const Icon(
+                                                                                                    Icons.remove_red_eye_outlined,
+                                                                                                    size: 15.0,
+                                                                                                  ),
+                                                                                                  options: FFButtonOptions(
+                                                                                                    width: 130.0,
+                                                                                                    height: 36.0,
+                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                    color: const Color(0x4C4B39EF),
+                                                                                                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                                          color: const Color(0xFF14181B),
+                                                                                                          fontSize: 14.0,
+                                                                                                          letterSpacing: 0.0,
+                                                                                                          fontWeight: FontWeight.w500,
                                                                                                         ),
+                                                                                                    elevation: 0.0,
+                                                                                                    borderSide: const BorderSide(
+                                                                                                      color: Color(0xFF4B39EF),
+                                                                                                      width: 2.0,
+                                                                                                    ),
+                                                                                                    borderRadius: BorderRadius.circular(12.0),
+                                                                                                  ),
+                                                                                                ),
+                                                                                              ),
+                                                                                              FlutterFlowIconButton(
+                                                                                                borderRadius: 8.0,
+                                                                                                buttonSize: 40.0,
+                                                                                                icon: Icon(
+                                                                                                  Icons.delete_rounded,
+                                                                                                  color: FlutterFlowTheme.of(context).error,
+                                                                                                  size: 24.0,
+                                                                                                ),
+                                                                                                onPressed: () async {
+                                                                                                  var confirmDialogResponse = await showDialog<bool>(
+                                                                                                        context: context,
+                                                                                                        builder: (alertDialogContext) {
+                                                                                                          return WebViewAware(
+                                                                                                            child: AlertDialog(
+                                                                                                              title: const Text('Borrar entrevista'),
+                                                                                                              content: const Text('Estas por borrar la entrevista. Estas seguro?'),
+                                                                                                              actions: [
+                                                                                                                TextButton(
+                                                                                                                  onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                                                  child: const Text('Cancelar'),
+                                                                                                                ),
+                                                                                                                TextButton(
+                                                                                                                  onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                                                  child: const Text('Confirmar'),
+                                                                                                                ),
+                                                                                                              ],
+                                                                                                            ),
+                                                                                                          );
+                                                                                                        },
+                                                                                                      ) ??
+                                                                                                      false;
+                                                                                                  if (confirmDialogResponse) {
+                                                                                                    await Formulario4Table().delete(
+                                                                                                      matchingRows: (rows) => rows.eqOrNull(
+                                                                                                        'idForm4',
+                                                                                                        listform4Item.idForm4,
                                                                                                       ),
                                                                                                     );
-                                                                                                  },
-                                                                                                ).then((value) => safeSetState(() {}));
-                                                                                              },
-                                                                                              text: 'Ver y editar',
-                                                                                              icon: const Icon(
-                                                                                                Icons.remove_red_eye_outlined,
-                                                                                                size: 15.0,
+                                                                                                  }
+                                                                                                },
                                                                                               ),
-                                                                                              options: FFButtonOptions(
-                                                                                                width: 130.0,
-                                                                                                height: 36.0,
-                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                color: const Color(0x4C4B39EF),
-                                                                                                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                      fontFamily: 'Plus Jakarta Sans',
-                                                                                                      color: const Color(0xFF14181B),
-                                                                                                      fontSize: 14.0,
-                                                                                                      letterSpacing: 0.0,
-                                                                                                      fontWeight: FontWeight.w500,
-                                                                                                    ),
-                                                                                                elevation: 0.0,
-                                                                                                borderSide: const BorderSide(
-                                                                                                  color: Color(0xFF4B39EF),
-                                                                                                  width: 2.0,
-                                                                                                ),
-                                                                                                borderRadius: BorderRadius.circular(12.0),
-                                                                                              ),
-                                                                                            ),
+                                                                                            ],
                                                                                           ),
                                                                                         ].map((c) => DataCell(c)).toList(),
                                                                                       ),
@@ -1697,7 +1758,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                       hidePaginator: false,
                                                                                       showFirstLastButtons: false,
                                                                                       headingRowHeight: 56.0,
-                                                                                      dataRowHeight: 48.0,
+                                                                                      dataRowHeight: 100.0,
                                                                                       columnSpacing: 20.0,
                                                                                       headingRowColor: FlutterFlowTheme.of(context).primary,
                                                                                       borderRadius: BorderRadius.circular(8.0),
@@ -1945,61 +2006,108 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                                   letterSpacing: 0.0,
                                                                                                 ),
                                                                                           ),
-                                                                                          Align(
-                                                                                            alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                            child: FFButtonWidget(
-                                                                                              onPressed: () async {
-                                                                                                await showModalBottomSheet(
-                                                                                                  isScrollControlled: true,
-                                                                                                  backgroundColor: Colors.transparent,
-                                                                                                  enableDrag: false,
-                                                                                                  context: context,
-                                                                                                  builder: (context) {
-                                                                                                    return WebViewAware(
-                                                                                                      child: GestureDetector(
-                                                                                                        onTap: () {
-                                                                                                          FocusScope.of(context).unfocus();
-                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                        },
-                                                                                                        child: Padding(
-                                                                                                          padding: MediaQuery.viewInsetsOf(context),
-                                                                                                          child: OtrasactividadesWidget(
-                                                                                                            expe: widget.rowexp,
-                                                                                                            ingreso: containerIngresosRow,
-                                                                                                            idacciones: listaccionesaccesoriasItem.id,
+                                                                                          Column(
+                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                            mainAxisAlignment: MainAxisAlignment.center,
+                                                                                            children: [
+                                                                                              Align(
+                                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                child: FFButtonWidget(
+                                                                                                  onPressed: () async {
+                                                                                                    await showModalBottomSheet(
+                                                                                                      isScrollControlled: true,
+                                                                                                      backgroundColor: Colors.transparent,
+                                                                                                      enableDrag: false,
+                                                                                                      context: context,
+                                                                                                      builder: (context) {
+                                                                                                        return WebViewAware(
+                                                                                                          child: GestureDetector(
+                                                                                                            onTap: () {
+                                                                                                              FocusScope.of(context).unfocus();
+                                                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                            },
+                                                                                                            child: Padding(
+                                                                                                              padding: MediaQuery.viewInsetsOf(context),
+                                                                                                              child: OtrasactividadesWidget(
+                                                                                                                expe: widget.rowexp,
+                                                                                                                ingreso: containerIngresosRow,
+                                                                                                                idacciones: listaccionesaccesoriasItem.id,
+                                                                                                              ),
+                                                                                                            ),
                                                                                                           ),
+                                                                                                        );
+                                                                                                      },
+                                                                                                    ).then((value) => safeSetState(() {}));
+                                                                                                  },
+                                                                                                  text: 'Ver y editar',
+                                                                                                  icon: const Icon(
+                                                                                                    Icons.remove_red_eye_outlined,
+                                                                                                    size: 15.0,
+                                                                                                  ),
+                                                                                                  options: FFButtonOptions(
+                                                                                                    width: 130.0,
+                                                                                                    height: 36.0,
+                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                    color: const Color(0x4C4B39EF),
+                                                                                                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                          fontFamily: 'Plus Jakarta Sans',
+                                                                                                          color: const Color(0xFF14181B),
+                                                                                                          fontSize: 14.0,
+                                                                                                          letterSpacing: 0.0,
+                                                                                                          fontWeight: FontWeight.w500,
                                                                                                         ),
+                                                                                                    elevation: 0.0,
+                                                                                                    borderSide: const BorderSide(
+                                                                                                      color: Color(0xFF4B39EF),
+                                                                                                      width: 2.0,
+                                                                                                    ),
+                                                                                                    borderRadius: BorderRadius.circular(12.0),
+                                                                                                  ),
+                                                                                                ),
+                                                                                              ),
+                                                                                              FlutterFlowIconButton(
+                                                                                                borderRadius: 8.0,
+                                                                                                buttonSize: 40.0,
+                                                                                                icon: Icon(
+                                                                                                  Icons.delete_rounded,
+                                                                                                  color: FlutterFlowTheme.of(context).error,
+                                                                                                  size: 24.0,
+                                                                                                ),
+                                                                                                onPressed: () async {
+                                                                                                  var confirmDialogResponse = await showDialog<bool>(
+                                                                                                        context: context,
+                                                                                                        builder: (alertDialogContext) {
+                                                                                                          return WebViewAware(
+                                                                                                            child: AlertDialog(
+                                                                                                              title: const Text('Borrar entrevista'),
+                                                                                                              content: const Text('Estas por borrar la entrevista. Estas seguro?'),
+                                                                                                              actions: [
+                                                                                                                TextButton(
+                                                                                                                  onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                                                  child: const Text('Cancelar'),
+                                                                                                                ),
+                                                                                                                TextButton(
+                                                                                                                  onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                                                  child: const Text('Confirmar'),
+                                                                                                                ),
+                                                                                                              ],
+                                                                                                            ),
+                                                                                                          );
+                                                                                                        },
+                                                                                                      ) ??
+                                                                                                      false;
+                                                                                                  if (confirmDialogResponse) {
+                                                                                                    await AccionesAccesoriasTable().delete(
+                                                                                                      matchingRows: (rows) => rows.eqOrNull(
+                                                                                                        'id',
+                                                                                                        listaccionesaccesoriasItem.id,
                                                                                                       ),
                                                                                                     );
-                                                                                                  },
-                                                                                                ).then((value) => safeSetState(() {}));
-                                                                                              },
-                                                                                              text: 'Ver y editar',
-                                                                                              icon: const Icon(
-                                                                                                Icons.remove_red_eye_outlined,
-                                                                                                size: 15.0,
+                                                                                                  }
+                                                                                                },
                                                                                               ),
-                                                                                              options: FFButtonOptions(
-                                                                                                width: 130.0,
-                                                                                                height: 36.0,
-                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                color: const Color(0x4C4B39EF),
-                                                                                                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                      fontFamily: 'Plus Jakarta Sans',
-                                                                                                      color: const Color(0xFF14181B),
-                                                                                                      fontSize: 14.0,
-                                                                                                      letterSpacing: 0.0,
-                                                                                                      fontWeight: FontWeight.w500,
-                                                                                                    ),
-                                                                                                elevation: 0.0,
-                                                                                                borderSide: const BorderSide(
-                                                                                                  color: Color(0xFF4B39EF),
-                                                                                                  width: 2.0,
-                                                                                                ),
-                                                                                                borderRadius: BorderRadius.circular(12.0),
-                                                                                              ),
-                                                                                            ),
+                                                                                            ],
                                                                                           ),
                                                                                         ].map((c) => DataCell(c)).toList(),
                                                                                       ),
@@ -2008,7 +2116,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                       hidePaginator: false,
                                                                                       showFirstLastButtons: false,
                                                                                       headingRowHeight: 56.0,
-                                                                                      dataRowHeight: 48.0,
+                                                                                      dataRowHeight: 100.0,
                                                                                       columnSpacing: 20.0,
                                                                                       headingRowColor: FlutterFlowTheme.of(context).primary,
                                                                                       borderRadius: BorderRadius.circular(8.0),

@@ -505,137 +505,175 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                           children: [
                                             FFButtonWidget(
                                               onPressed: () async {
-                                                _model.expedienteprincipal =
-                                                    await VistaExpedientesUltimoEstadoTable()
-                                                        .queryRows(
-                                                  queryFn: (q) => q.eqOrNull(
-                                                    'idexpediente',
-                                                    containerGrupofamiliarexpedientesRow
-                                                        ?.expedienteprincipal,
-                                                  ),
-                                                );
-                                                await showDialog(
-                                                  context: context,
-                                                  builder:
-                                                      (alertDialogContext) {
-                                                    return WebViewAware(
-                                                      child: AlertDialog(
-                                                        title: const Text('1'),
-                                                        actions: [
-                                                          TextButton(
-                                                            onPressed: () =>
-                                                                Navigator.pop(
-                                                                    alertDialogContext),
-                                                            child: const Text('Ok'),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    );
-                                                  },
-                                                );
-                                                _model.form6principal =
-                                                    await Formulario6Table()
-                                                        .queryRows(
-                                                  queryFn: (q) => q.eqOrNull(
-                                                    'idIngresoform6',
-                                                    _model
-                                                        .expedienteprincipal
-                                                        ?.firstOrNull
-                                                        ?.idIngreso,
-                                                  ),
-                                                );
-                                                _model.contador = 0;
-                                                safeSetState(() {});
-                                                while (_model.contador! <=
-                                                    _model.form6principal!
-                                                        .length) {
-                                                  _model.creaform60 =
-                                                      await Formulario6Table()
-                                                          .insert({
-                                                    'propuestasDemedidas': _model
-                                                        .form6principal
-                                                        ?.elementAtOrNull(
-                                                            _model.contador!)
-                                                        ?.propuestasDemedidas,
-                                                    'DescripcionDeAcciones': _model
-                                                        .form6principal
-                                                        ?.elementAtOrNull(
-                                                            _model.contador!)
-                                                        ?.descripcionDeAcciones,
-                                                    'Responsables': _model
-                                                        .form6principal
-                                                        ?.elementAtOrNull(
-                                                            _model.contador!)
-                                                        ?.responsables,
-                                                    'plazos': _model
-                                                        .form6principal
-                                                        ?.elementAtOrNull(
-                                                            _model.contador!)
-                                                        ?.plazos,
-                                                    'AccionesDeSeguimiento': _model
-                                                        .form6principal
-                                                        ?.elementAtOrNull(
-                                                            _model.contador!)
-                                                        ?.accionesDeSeguimiento,
-                                                    'Fecha': supaSerialize<
-                                                            DateTime>(
-                                                        _model.form6principal
-                                                            ?.elementAtOrNull(
-                                                                _model
-                                                                    .contador!)
-                                                            ?.fecha),
-                                                    'idIngresoform6':
-                                                        widget.ingresorow?.id,
-                                                    'idExpform6':
-                                                        widget.rowexp?.id,
-                                                    'estado': _model
-                                                        .form6principal
-                                                        ?.elementAtOrNull(
-                                                            _model.contador!)
-                                                        ?.estado,
-                                                    'idmedidasustiuida': _model
-                                                        .form6principal
-                                                        ?.elementAtOrNull(
-                                                            _model.contador!)
-                                                        ?.idmedidasustiuida,
-                                                    'DerechoVul': _model
-                                                        .form6principal
-                                                        ?.elementAtOrNull(
-                                                            _model.contador!)
-                                                        ?.derechoVul,
-                                                    'subDerecho': _model
-                                                        .form6principal
-                                                        ?.elementAtOrNull(
-                                                            _model.contador!)
-                                                        ?.subDerecho,
-                                                  });
-                                                  await ResuestasForm6Table()
-                                                      .insert({
-                                                    'inform6':
-                                                        _model.creaform60?.id,
-                                                    'idingreso':
-                                                        widget.ingresorow?.id,
-                                                    'respuesta': true,
-                                                    'reiteracion': false,
-                                                    'elevacion': false,
-                                                  });
-                                                  await IngresosTable().update(
-                                                    data: {
-                                                      'Form7': true,
-                                                      'form6completo': true,
-                                                      'form9': true,
-                                                      'updated_at': supaSerialize<
-                                                              DateTime>(
-                                                          getCurrentTimestamp),
-                                                    },
-                                                    matchingRows: (rows) =>
-                                                        rows.eqOrNull(
-                                                      'id',
-                                                      widget.ingresorow?.id,
+                                                var confirmDialogResponse =
+                                                    await showDialog<bool>(
+                                                          context: context,
+                                                          builder:
+                                                              (alertDialogContext) {
+                                                            return WebViewAware(
+                                                              child:
+                                                                  AlertDialog(
+                                                                title: const Text(
+                                                                    'Copiar lista de medidas'),
+                                                                content: const Text(
+                                                                    'Estas por copiar la lista de medidas del NNyA principal'),
+                                                                actions: [
+                                                                  TextButton(
+                                                                    onPressed: () =>
+                                                                        Navigator.pop(
+                                                                            alertDialogContext,
+                                                                            false),
+                                                                    child: const Text(
+                                                                        'Cancelar'),
+                                                                  ),
+                                                                  TextButton(
+                                                                    onPressed: () =>
+                                                                        Navigator.pop(
+                                                                            alertDialogContext,
+                                                                            true),
+                                                                    child: const Text(
+                                                                        'Confirmar'),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            );
+                                                          },
+                                                        ) ??
+                                                        false;
+                                                if (confirmDialogResponse) {
+                                                  _model.expedienteprincipal =
+                                                      await VistaExpedientesUltimoEstadoTable()
+                                                          .queryRows(
+                                                    queryFn: (q) => q.eqOrNull(
+                                                      'idexpediente',
+                                                      containerGrupofamiliarexpedientesRow
+                                                          ?.expedienteprincipal,
                                                     ),
                                                   );
-                                                  _model.contador =
-                                                      _model.contador! + 1;
+                                                  await showDialog(
+                                                    context: context,
+                                                    builder:
+                                                        (alertDialogContext) {
+                                                      return WebViewAware(
+                                                        child: AlertDialog(
+                                                          title: const Text('1'),
+                                                          actions: [
+                                                            TextButton(
+                                                              onPressed: () =>
+                                                                  Navigator.pop(
+                                                                      alertDialogContext),
+                                                              child: const Text('Ok'),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      );
+                                                    },
+                                                  );
+                                                  _model.form6principal =
+                                                      await Formulario6Table()
+                                                          .queryRows(
+                                                    queryFn: (q) => q.eqOrNull(
+                                                      'idIngresoform6',
+                                                      _model
+                                                          .expedienteprincipal
+                                                          ?.firstOrNull
+                                                          ?.idIngreso,
+                                                    ),
+                                                  );
+                                                  while (_model.contador! <=
+                                                      _model.form6principal!
+                                                          .length) {
+                                                    _model.creaform60 =
+                                                        await Formulario6Table()
+                                                            .insert({
+                                                      'propuestasDemedidas': _model
+                                                          .form6principal
+                                                          ?.elementAtOrNull(
+                                                              _model.contador!)
+                                                          ?.propuestasDemedidas,
+                                                      'DescripcionDeAcciones': _model
+                                                          .form6principal
+                                                          ?.elementAtOrNull(
+                                                              _model.contador!)
+                                                          ?.descripcionDeAcciones,
+                                                      'Responsables': _model
+                                                          .form6principal
+                                                          ?.elementAtOrNull(
+                                                              _model.contador!)
+                                                          ?.responsables,
+                                                      'plazos': _model
+                                                          .form6principal
+                                                          ?.elementAtOrNull(
+                                                              _model.contador!)
+                                                          ?.plazos,
+                                                      'AccionesDeSeguimiento': _model
+                                                          .form6principal
+                                                          ?.elementAtOrNull(
+                                                              _model.contador!)
+                                                          ?.accionesDeSeguimiento,
+                                                      'Fecha': supaSerialize<
+                                                              DateTime>(
+                                                          _model.form6principal
+                                                              ?.elementAtOrNull(
+                                                                  _model
+                                                                      .contador!)
+                                                              ?.fecha),
+                                                      'idIngresoform6': widget
+                                                          .ingresorow?.id,
+                                                      'idExpform6':
+                                                          widget.rowexp?.id,
+                                                      'estado': _model
+                                                          .form6principal
+                                                          ?.elementAtOrNull(
+                                                              _model.contador!)
+                                                          ?.estado,
+                                                      'idmedidasustiuida': _model
+                                                          .form6principal
+                                                          ?.elementAtOrNull(
+                                                              _model.contador!)
+                                                          ?.idmedidasustiuida,
+                                                      'DerechoVul': _model
+                                                          .form6principal
+                                                          ?.elementAtOrNull(
+                                                              _model.contador!)
+                                                          ?.derechoVul,
+                                                      'subDerecho': _model
+                                                          .form6principal
+                                                          ?.elementAtOrNull(
+                                                              _model.contador!)
+                                                          ?.subDerecho,
+                                                    });
+                                                    await ResuestasForm6Table()
+                                                        .insert({
+                                                      'inform6':
+                                                          _model.creaform60?.id,
+                                                      'idingreso': widget
+                                                          .ingresorow?.id,
+                                                      'respuesta': true,
+                                                      'reiteracion': false,
+                                                      'elevacion': false,
+                                                    });
+                                                    await IngresosTable()
+                                                        .update(
+                                                      data: {
+                                                        'Form7': true,
+                                                        'form6completo': true,
+                                                        'form9': true,
+                                                        'updated_at': supaSerialize<
+                                                                DateTime>(
+                                                            getCurrentTimestamp),
+                                                      },
+                                                      matchingRows: (rows) =>
+                                                          rows.eqOrNull(
+                                                        'id',
+                                                        widget.ingresorow?.id,
+                                                      ),
+                                                    );
+                                                    _model.contador =
+                                                        _model.contador! + 1;
+                                                    safeSetState(() {});
+                                                  }
+                                                  _model.contador = 0;
                                                   safeSetState(() {});
                                                 }
 
@@ -1772,7 +1810,11 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                                 ),
                                                                           ),
                                                                           Text(
-                                                                            'Agendado para  13/jul/2022 - 10:30AM',
+                                                                            'Fecha de acta: ${dateTimeFormat(
+                                                                              "d/M/y",
+                                                                              containerform7Formulario7Row?.fecha,
+                                                                              locale: FFLocalizations.of(context).languageCode,
+                                                                            )}',
                                                                             style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                   fontFamily: 'Noto Sans JP',
                                                                                   color: FlutterFlowTheme.of(context).secondaryText,

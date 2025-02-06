@@ -777,12 +777,13 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                   MainAxisAlignment
                                                                       .spaceEvenly,
                                                               children: [
-                                                                if (containerVarItem
-                                                                            .documentopdf ==
-                                                                        null ||
-                                                                    containerVarItem
-                                                                            .documentopdf ==
-                                                                        '')
+                                                                if ((containerVarItem.documentopdf ==
+                                                                            null ||
+                                                                        containerVarItem.documentopdf ==
+                                                                            '') &&
+                                                                    (containerVarItem
+                                                                            .orden !=
+                                                                        null))
                                                                   FFButtonWidget(
                                                                     onPressed:
                                                                         () async {
@@ -1043,12 +1044,13 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                               8.0),
                                                                     ),
                                                                   ),
-                                                                if (containerVarItem
-                                                                            .documentopdf !=
-                                                                        null &&
-                                                                    containerVarItem
-                                                                            .documentopdf !=
-                                                                        '')
+                                                                if ((containerVarItem.documentopdf !=
+                                                                            null &&
+                                                                        containerVarItem.documentopdf !=
+                                                                            '') &&
+                                                                    (containerVarItem
+                                                                            .orden !=
+                                                                        null))
                                                                   FFButtonWidget(
                                                                     onPressed:
                                                                         () async {

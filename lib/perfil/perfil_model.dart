@@ -19,7 +19,7 @@ class PerfilModel extends FlutterFlowModel<PerfilWidget> {
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   ExpedienteRow? creaexpgrupoCopy;
   // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
-  List<ExpedienteRow>? expedienteCopy;
+  List<ExpedienteRow>? expedienteCopy1;
   // Stores action output result for [Backend Call - API (carpeta del expediente)] action in Button widget.
   ApiCallResponse? apiResult42yCopy;
   // Stores action output result for [Backend Call - Query Rows] action in IconButton widget.
