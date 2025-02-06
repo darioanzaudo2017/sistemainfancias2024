@@ -1035,7 +1035,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                         0.0,
                                                                         5.0),
                                                             child: Text(
-                                                              'Actualizacion: 05/02/2025',
+                                                              'Actualizacion: 06/02/2025',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium

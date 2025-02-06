@@ -75,8 +75,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
 
     _model.textFieldobjetivoFocusNode2 ??= FocusNode();
 
-    _model.textFieldobjetivoTextController3 ??= TextEditingController();
-    _model.textFieldobjetivoFocusNode3 ??= FocusNode();
+    _model.textFieldpercepcionFocusNode ??= FocusNode();
 
     _model.textFielddescripcionFocusNode ??= FocusNode();
 
@@ -84,18 +83,15 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
 
     _model.textFieldFocusNode7 ??= FocusNode();
 
-    _model.textController17 ??= TextEditingController();
     _model.textFieldFocusNode8 ??= FocusNode();
 
-    _model.textController18 ??= TextEditingController();
     _model.textFieldFocusNode9 ??= FocusNode();
 
     _model.textFieldFocusNode10 ??= FocusNode();
 
-    _model.textFieldFocusNode11 ??= FocusNode();
+    _model.textFieldpersonasservicioFocusNode ??= FocusNode();
 
-    _model.textController21 ??= TextEditingController();
-    _model.textFieldFocusNode12 ??= FocusNode();
+    _model.textFieldvaloracionFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -2107,9 +2103,13 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller: _model
-                                          .textFieldobjetivoTextController3,
+                                              .textFieldpercepcionTextController ??=
+                                          TextEditingController(
+                                        text: containerFormulario2Row
+                                            ?.percepciondelaflia,
+                                      ),
                                       focusNode:
-                                          _model.textFieldobjetivoFocusNode3,
+                                          _model.textFieldpercepcionFocusNode,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -2176,7 +2176,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                       maxLines: 10,
                                       minLines: 2,
                                       validator: _model
-                                          .textFieldobjetivoTextController3Validator
+                                          .textFieldpercepcionTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -2565,7 +2565,11 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
-                                      controller: _model.textController17,
+                                      controller: _model.textController17 ??=
+                                          TextEditingController(
+                                        text: containerFormulario2Row
+                                            ?.estrategiasSobrevivencia,
+                                      ),
                                       focusNode: _model.textFieldFocusNode8,
                                       autofocus: true,
                                       obscureText: false,
@@ -2658,7 +2662,12 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     child: FlutterFlowDropDown<String>(
                                       multiSelectController: _model
                                               .dropDownredesValueController ??=
-                                          FormListFieldController<String>(null),
+                                          FormListFieldController<String>(
+                                              _model.dropDownredesValue ??=
+                                                  List<String>.from(
+                                        containerFormulario2Row?.redes2drop ??
+                                            [],
+                                      )),
                                       options: const [
                                         'Centro de salud',
                                         'Escuela',
@@ -2677,7 +2686,8 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                         'Talleres de capacitación laboral o formativos',
                                         'Cooperativa',
                                         'Sala cuna',
-                                        'Otros'
+                                        'Otros',
+                                        'No tiene redes'
                                       ],
                                       height: 56.0,
                                       textStyle: FlutterFlowTheme.of(context)
@@ -2718,7 +2728,10 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 8.0, 0.0),
                                       child: TextFormField(
-                                        controller: _model.textController18,
+                                        controller: _model.textController18 ??=
+                                            TextEditingController(
+                                          text: containerFormulario2Row?.otros,
+                                        ),
                                         focusNode: _model.textFieldFocusNode9,
                                         autofocus: true,
                                         obscureText: false,
@@ -2948,11 +2961,14 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
-                                      controller: _model.textController20 ??=
+                                      controller: _model
+                                              .textFieldpersonasservicioTextController ??=
                                           TextEditingController(
-                                        text: containerFormulario2Row?.otros,
+                                        text: containerFormulario2Row
+                                            ?.personasServicios,
                                       ),
-                                      focusNode: _model.textFieldFocusNode11,
+                                      focusNode: _model
+                                          .textFieldpersonasservicioFocusNode,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -3016,7 +3032,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                           ),
                                       maxLines: null,
                                       validator: _model
-                                          .textController20Validator
+                                          .textFieldpersonasservicioTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -3056,8 +3072,14 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
-                                      controller: _model.textController21,
-                                      focusNode: _model.textFieldFocusNode12,
+                                      controller: _model
+                                              .textFieldvaloracionTextController ??=
+                                          TextEditingController(
+                                        text: containerFormulario2Row
+                                            ?.valoracionSugerencias,
+                                      ),
+                                      focusNode:
+                                          _model.textFieldvaloracionFocusNode,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -3120,7 +3142,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                       maxLines: 10,
                                       minLines: 2,
                                       validator: _model
-                                          .textController21Validator
+                                          .textFieldvaloracionTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -3171,11 +3193,13 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                 'espacios': _model
                                                     .textController19.text,
                                                 'personasServicios': _model
-                                                    .textController20.text,
+                                                    .textFieldpersonasservicioTextController
+                                                    .text,
                                                 'otros': _model
                                                     .textController18.text,
                                                 'observaciones': _model
-                                                    .textController21.text,
+                                                    .textFieldvaloracionTextController
+                                                    .text,
                                                 'idIngreso':
                                                     widget.idingreso?.id,
                                                 'idExpediente':
@@ -3206,6 +3230,12 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                     widget.formulario,
                                                 'derechosvul': _model
                                                     .textFieldobjetivoTextController2
+                                                    .text,
+                                                'valoracionSugerencias': _model
+                                                    .textFieldvaloracionTextController
+                                                    .text,
+                                                'percepciondelaflia': _model
+                                                    .textFieldpercepcionTextController
                                                     .text,
                                               });
                                               await IngresosTable().update(
@@ -3296,9 +3326,9 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                               }
                                               await Formulario2Table().update(
                                                 data: {
-                                                  'fecha': supaSerialize<
-                                                      DateTime>(_model.datePicked2 ?? containerFormulario2Row
-                                                          ?.fecha),
+                                                  'fecha':
+                                                      supaSerialize<DateTime>(
+                                                          _model.datePicked2),
                                                   'profesionales': _model
                                                       .textFieldprofesionalTextController
                                                       .text,
@@ -3325,11 +3355,13 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                   'espacios': _model
                                                       .textController19.text,
                                                   'personasServicios': _model
-                                                      .textController20.text,
+                                                      .textFieldpersonasservicioTextController
+                                                      .text,
                                                   'otros': _model
                                                       .textController18.text,
                                                   'observaciones': _model
-                                                      .textController21.text,
+                                                      .textFieldvaloracionTextController
+                                                      .text,
                                                   'idIngreso':
                                                       widget.idingreso?.id,
                                                   'idExpediente':
@@ -3340,7 +3372,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                   'redes2drop':
                                                       _model.dropDownredesValue,
                                                   'espacios2': _model
-                                                      .textController19.text,
+                                                      .radioButtonespaciosValue,
                                                   'fecDeNacEnt':
                                                       supaSerialize<DateTime>(
                                                           _model.datePicked1),
@@ -3356,8 +3388,16 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                   'edadEnt': int.tryParse(_model
                                                       .textFieldDNITextController2
                                                       .text),
+                                                  'Formulario':
+                                                      widget.formulario,
                                                   'derechosvul': _model
                                                       .textFieldobjetivoTextController2
+                                                      .text,
+                                                  'valoracionSugerencias': _model
+                                                      .textFieldvaloracionTextController
+                                                      .text,
+                                                  'percepciondelaflia': _model
+                                                      .textFieldpercepcionTextController
                                                       .text,
                                                 },
                                                 matchingRows: (rows) =>

@@ -164,7 +164,7 @@ class _Formulario4WidgetState extends State<Formulario4Widget> {
                           Align(
                             alignment: const AlignmentDirectional(0.0, -1.0),
                             child: Text(
-                              'Formulario 4 - Ampliación de información',
+                              'Ampliación de información',
                               style: FlutterFlowTheme.of(context)
                                   .headlineSmall
                                   .override(

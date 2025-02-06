@@ -545,6 +545,8 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                       'estado': false,
                                                                                       'updated_at': supaSerialize<DateTime>(getCurrentTimestamp),
                                                                                       'iduser': currentUserUid,
+                                                                                      'idgrupofamiliar': widget.rowexp?.idgrupofamiliarvista,
+                                                                                      'idNNyA': containerVarItem.idnnya,
                                                                                     });
                                                                                     await ExpedienteTable().update(
                                                                                       data: {
@@ -583,7 +585,11 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                       ),
                                                                                     );
                                                                                     _model.apiResult42yCopy = await CarpetaDelExpedienteCall.call(
-                                                                                      expediente: _model.expedienteCopy?.firstOrNull?.expediente,
+                                                                                      expediente: '${widget.usuariorow?.spd}/${_model.creaexpgrupoCopy?.id.toString()}/${dateTimeFormat(
+                                                                                        "y",
+                                                                                        getCurrentTimestamp,
+                                                                                        locale: FFLocalizations.of(context).languageCode,
+                                                                                      )}',
                                                                                       id: _model.creaexpgrupoCopy?.id,
                                                                                       fecha: dateTimeFormat(
                                                                                         "d/M/y",

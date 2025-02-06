@@ -137,7 +137,7 @@ class _SenafWidgetState extends State<SenafWidget> {
                 },
               ),
               title: Text(
-                'SENAF',
+                'Cese de la intervencion ',
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Noto Sans JP',
                       color: Colors.white,

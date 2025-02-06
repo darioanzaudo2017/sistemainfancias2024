@@ -730,7 +730,6 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                                       );
                                     },
                                   );
-                                  Navigator.pop(context, true);
                                   if (!(containerAvisovisitaNNyARow?.linkdoc ==
                                           null ||
                                       containerAvisovisitaNNyARow?.linkdoc ==
@@ -761,6 +760,7 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                                       carpeta: widget.rowingreso?.idcarpeta,
                                     );
                                   }
+                                  Navigator.pop(context, true);
                                 }
 
                                 safeSetState(() {});

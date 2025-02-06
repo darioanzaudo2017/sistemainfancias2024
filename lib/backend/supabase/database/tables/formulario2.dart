@@ -134,4 +134,13 @@ class Formulario2Row extends SupabaseDataRow {
 
   String? get derechosvul => getField<String>('derechosvul');
   set derechosvul(String? value) => setField<String>('derechosvul', value);
+
+  String? get valoracionSugerencias =>
+      getField<String>('valoracionSugerencias');
+  set valoracionSugerencias(String? value) =>
+      setField<String>('valoracionSugerencias', value);
+
+  String? get percepciondelaflia => getField<String>('percepciondelaflia');
+  set percepciondelaflia(String? value) =>
+      setField<String>('percepciondelaflia', value);
 }

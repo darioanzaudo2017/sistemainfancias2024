@@ -168,679 +168,741 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                       ),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 16.0, 0.0),
-                                child: Container(
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        blurRadius: 7.0,
-                                        color: Color(0x2F1D2429),
-                                        offset: Offset(
-                                          0.0,
-                                          3.0,
-                                        ),
-                                      )
-                                    ],
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  child: Padding(
+                      child: SingleChildScrollView(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            SingleChildScrollView(
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 12.0, 16.0, 12.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Entrevista al NNyA',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Plus Jakarta Sans',
-                                                color: const Color(0xFF39D2C0),
-                                                fontSize: 14.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w500,
-                                              ),
-                                        ),
-                                        const Divider(
-                                          height: 16.0,
-                                          thickness: 2.0,
-                                          color: Color(0xFFF1F4F8),
-                                        ),
-                                        Container(
-                                          width: 287.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                          ),
-                                          child: FutureBuilder<
-                                              List<Formulario3Row>>(
-                                            future:
-                                                Formulario3Table().queryRows(
-                                              queryFn: (q) => q.eqOrNull(
-                                                'idIngreso',
-                                                widget.idingreso,
-                                              ),
+                                        16.0, 0.0, 16.0, 0.0),
+                                    child: Container(
+                                      width: double.infinity,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        boxShadow: const [
+                                          BoxShadow(
+                                            blurRadius: 7.0,
+                                            color: Color(0x2F1D2429),
+                                            offset: Offset(
+                                              0.0,
+                                              3.0,
                                             ),
-                                            builder: (context, snapshot) {
-                                              // Customize what your widget looks like when it's loading.
-                                              if (!snapshot.hasData) {
-                                                return Center(
-                                                  child: SizedBox(
-                                                    width: 50.0,
-                                                    height: 50.0,
-                                                    child:
-                                                        CircularProgressIndicator(
-                                                      valueColor:
-                                                          AlwaysStoppedAnimation<
-                                                              Color>(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primary,
-                                                      ),
-                                                    ),
+                                          )
+                                        ],
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            16.0, 12.0, 16.0, 12.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'Entrevista al NNyA',
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily:
+                                                        'Plus Jakarta Sans',
+                                                    color: const Color(0xFF39D2C0),
+                                                    fontSize: 14.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w500,
                                                   ),
-                                                );
-                                              }
-                                              List<Formulario3Row>
-                                                  listViewFormulario3RowList =
-                                                  snapshot.data!;
-
-                                              return ListView.builder(
-                                                padding: EdgeInsets.zero,
-                                                shrinkWrap: true,
-                                                scrollDirection: Axis.vertical,
-                                                itemCount:
-                                                    listViewFormulario3RowList
-                                                        .length,
-                                                itemBuilder:
-                                                    (context, listViewIndex) {
-                                                  final listViewFormulario3Row =
-                                                      listViewFormulario3RowList[
-                                                          listViewIndex];
-                                                  return Padding(
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(5.0, 0.0,
-                                                                5.0, 0.0),
-                                                    child: Container(
-                                                      width: double.infinity,
-                                                      decoration: BoxDecoration(
-                                                        color: Colors.white,
-                                                        boxShadow: const [
-                                                          BoxShadow(
-                                                            blurRadius: 7.0,
-                                                            color: Color(
-                                                                0x2F1D2429),
-                                                            offset: Offset(
-                                                              0.0,
-                                                              3.0,
-                                                            ),
-                                                          )
-                                                        ],
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(8.0),
+                                            ),
+                                            const Divider(
+                                              height: 16.0,
+                                              thickness: 2.0,
+                                              color: Color(0xFFF1F4F8),
+                                            ),
+                                            Container(
+                                              width: 287.0,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                              ),
+                                              child: FutureBuilder<
+                                                  List<Formulario3Row>>(
+                                                future: Formulario3Table()
+                                                    .queryRows(
+                                                  queryFn: (q) => q.eqOrNull(
+                                                    'idIngreso',
+                                                    widget.idingreso,
+                                                  ),
+                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                          ),
+                                                        ),
                                                       ),
-                                                      child: Padding(
+                                                    );
+                                                  }
+                                                  List<Formulario3Row>
+                                                      listViewFormulario3RowList =
+                                                      snapshot.data!;
+
+                                                  return ListView.builder(
+                                                    padding: EdgeInsets.zero,
+                                                    shrinkWrap: true,
+                                                    scrollDirection:
+                                                        Axis.vertical,
+                                                    itemCount:
+                                                        listViewFormulario3RowList
+                                                            .length,
+                                                    itemBuilder: (context,
+                                                        listViewIndex) {
+                                                      final listViewFormulario3Row =
+                                                          listViewFormulario3RowList[
+                                                              listViewIndex];
+                                                      return Padding(
                                                         padding:
                                                             const EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    16.0,
-                                                                    12.0,
-                                                                    16.0,
-                                                                    12.0),
-                                                        child: Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .start,
-                                                          children: [
-                                                            Text(
-                                                              valueOrDefault<
-                                                                  String>(
-                                                                dateTimeFormat(
-                                                                  "d/M/y",
-                                                                  listViewFormulario3Row
-                                                                      .fecha,
-                                                                  locale: FFLocalizations.of(
-                                                                          context)
-                                                                      .languageCode,
+                                                                    5.0,
+                                                                    0.0,
+                                                                    5.0,
+                                                                    0.0),
+                                                        child: Container(
+                                                          width:
+                                                              double.infinity,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: Colors.white,
+                                                            boxShadow: const [
+                                                              BoxShadow(
+                                                                blurRadius: 7.0,
+                                                                color: Color(
+                                                                    0x2F1D2429),
+                                                                offset: Offset(
+                                                                  0.0,
+                                                                  3.0,
                                                                 ),
-                                                                '0',
-                                                              ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Plus Jakarta Sans',
-                                                                    color: const Color(
-                                                                        0xFF39D2C0),
-                                                                    fontSize:
-                                                                        14.0,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w500,
-                                                                  ),
-                                                            ),
-                                                            const Divider(
-                                                              height: 16.0,
-                                                              thickness: 2.0,
-                                                              color: Color(
-                                                                  0xFFF1F4F8),
-                                                            ),
-                                                            Text(
-                                                              valueOrDefault<
-                                                                  String>(
-                                                                listViewFormulario3Row
-                                                                    .objetivosdeentrevista,
-                                                                'objetivos',
-                                                              ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyLarge
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Plus Jakarta Sans',
-                                                                    color: const Color(
-                                                                        0xFF14181B),
-                                                                    fontSize:
+                                                              )
+                                                            ],
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        8.0),
+                                                          ),
+                                                          child: Padding(
+                                                            padding:
+                                                                const EdgeInsetsDirectional
+                                                                    .fromSTEB(
                                                                         16.0,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w500,
+                                                                        12.0,
+                                                                        16.0,
+                                                                        12.0),
+                                                            child: Column(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .start,
+                                                              children: [
+                                                                Text(
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    dateTimeFormat(
+                                                                      "d/M/y",
+                                                                      listViewFormulario3Row
+                                                                          .fecha,
+                                                                      locale: FFLocalizations.of(
+                                                                              context)
+                                                                          .languageCode,
+                                                                    ),
+                                                                    'No tiene fecha',
                                                                   ),
-                                                            ),
-                                                            Padding(
-                                                              padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Plus Jakarta Sans',
+                                                                        color: const Color(
+                                                                            0xFF39D2C0),
+                                                                        fontSize:
+                                                                            14.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w500,
+                                                                      ),
+                                                                ),
+                                                                const Divider(
+                                                                  height: 16.0,
+                                                                  thickness:
+                                                                      2.0,
+                                                                  color: Color(
+                                                                      0xFFF1F4F8),
+                                                                ),
+                                                                Text(
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    listViewFormulario3Row
+                                                                        .objetivosdeentrevista,
+                                                                    'objetivos',
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Plus Jakarta Sans',
+                                                                        color: const Color(
+                                                                            0xFF14181B),
+                                                                        fontSize:
+                                                                            16.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w500,
+                                                                      ),
+                                                                ),
+                                                                Padding(
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
                                                                           0.0,
                                                                           0.0),
-                                                              child: Text(
-                                                                valueOrDefault<
-                                                                    String>(
-                                                                  listViewFormulario3Row
-                                                                      .valoracionSugerencias,
-                                                                  'Valoraciones y sugerencias',
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Plus Jakarta Sans',
-                                                                      color: const Color(
-                                                                          0xFF57636C),
-                                                                      fontSize:
-                                                                          14.0,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w500,
-                                                                    ),
-                                                              ),
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      1.0, 1.0),
-                                                              child:
-                                                                  FFButtonWidget(
-                                                                onPressed:
-                                                                    () async {
-                                                                  await showModalBottomSheet(
-                                                                    isScrollControlled:
-                                                                        true,
-                                                                    backgroundColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    enableDrag:
-                                                                        false,
-                                                                    context:
-                                                                        context,
-                                                                    builder:
-                                                                        (context) {
-                                                                      return WebViewAware(
-                                                                        child:
-                                                                            GestureDetector(
-                                                                          onTap:
-                                                                              () {
-                                                                            FocusScope.of(context).unfocus();
-                                                                            FocusManager.instance.primaryFocus?.unfocus();
-                                                                          },
-                                                                          child:
-                                                                              Padding(
-                                                                            padding:
-                                                                                MediaQuery.viewInsetsOf(context),
-                                                                            child:
-                                                                                Formulario3Widget(
-                                                                              idingreso: widget.rowingreso,
-                                                                              rowexp: widget.rowexpediente,
-                                                                              identrevista: listViewFormulario3Row.idForm3,
-                                                                              editar: true,
-                                                                              usuariosrow: widget.usuariorow!,
-                                                                            ),
-                                                                          ),
+                                                                  child: Text(
+                                                                    'Valoracionse',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          color:
+                                                                              const Color(0xFF57636C),
+                                                                          fontSize:
+                                                                              14.0,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight:
+                                                                              FontWeight.w600,
                                                                         ),
-                                                                      );
-                                                                    },
-                                                                  ).then((value) =>
-                                                                      safeSetState(
-                                                                          () {}));
-                                                                },
-                                                                text:
-                                                                    'Ver entrevista',
-                                                                options:
-                                                                    FFButtonOptions(
-                                                                  height: 30.0,
+                                                                  ),
+                                                                ),
+                                                                Padding(
                                                                   padding: const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          16.0,
-                                                                          0.0,
-                                                                          16.0,
-                                                                          0.0),
-                                                                  iconPadding: const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primary,
-                                                                  textStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleSmall
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Noto Sans JP',
-                                                                        color: Colors
-                                                                            .white,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
-                                                                  elevation:
-                                                                      0.0,
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              8.0),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ].divide(const SizedBox(
-                                                              height: 5.0)),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  );
-                                                },
-                                              );
-                                            },
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 16.0, 0.0),
-                                child: Container(
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        blurRadius: 7.0,
-                                        color: Color(0x2F1D2429),
-                                        offset: Offset(
-                                          0.0,
-                                          3.0,
-                                        ),
-                                      )
-                                    ],
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 12.0, 16.0, 12.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Entrevista a la familia',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Plus Jakarta Sans',
-                                                color: const Color(0xFF39D2C0),
-                                                fontSize: 14.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w500,
-                                              ),
-                                        ),
-                                        const Divider(
-                                          height: 16.0,
-                                          thickness: 2.0,
-                                          color: Color(0xFFF1F4F8),
-                                        ),
-                                        Container(
-                                          width: 287.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                          ),
-                                          child: FutureBuilder<
-                                              List<Formulario2Row>>(
-                                            future:
-                                                Formulario2Table().queryRows(
-                                              queryFn: (q) => q.eqOrNull(
-                                                'idIngreso',
-                                                widget.idingreso,
-                                              ),
-                                            ),
-                                            builder: (context, snapshot) {
-                                              // Customize what your widget looks like when it's loading.
-                                              if (!snapshot.hasData) {
-                                                return Center(
-                                                  child: SizedBox(
-                                                    width: 50.0,
-                                                    height: 50.0,
-                                                    child:
-                                                        CircularProgressIndicator(
-                                                      valueColor:
-                                                          AlwaysStoppedAnimation<
-                                                              Color>(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primary,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                );
-                                              }
-                                              List<Formulario2Row>
-                                                  listViewFormulario2RowList =
-                                                  snapshot.data!;
-
-                                              return ListView.builder(
-                                                padding: EdgeInsets.zero,
-                                                shrinkWrap: true,
-                                                scrollDirection: Axis.vertical,
-                                                itemCount:
-                                                    listViewFormulario2RowList
-                                                        .length,
-                                                itemBuilder:
-                                                    (context, listViewIndex) {
-                                                  final listViewFormulario2Row =
-                                                      listViewFormulario2RowList[
-                                                          listViewIndex];
-                                                  return Padding(
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(5.0, 0.0,
-                                                                5.0, 0.0),
-                                                    child: Container(
-                                                      width: double.infinity,
-                                                      decoration: BoxDecoration(
-                                                        color: Colors.white,
-                                                        boxShadow: const [
-                                                          BoxShadow(
-                                                            blurRadius: 7.0,
-                                                            color: Color(
-                                                                0x2F1D2429),
-                                                            offset: Offset(
-                                                              0.0,
-                                                              3.0,
-                                                            ),
-                                                          )
-                                                        ],
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(8.0),
-                                                      ),
-                                                      child: Padding(
-                                                        padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    16.0,
-                                                                    12.0,
-                                                                    16.0,
-                                                                    12.0),
-                                                        child: Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .start,
-                                                          children: [
-                                                            Text(
-                                                              valueOrDefault<
-                                                                  String>(
-                                                                dateTimeFormat(
-                                                                  "d/M/y",
-                                                                  listViewFormulario2Row
-                                                                      .fecha,
-                                                                  locale: FFLocalizations.of(
-                                                                          context)
-                                                                      .languageCode,
-                                                                ),
-                                                                'No tiene fecha',
-                                                              ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Plus Jakarta Sans',
-                                                                    color: const Color(
-                                                                        0xFF39D2C0),
-                                                                    fontSize:
-                                                                        14.0,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w500,
-                                                                  ),
-                                                            ),
-                                                            const Divider(
-                                                              height: 16.0,
-                                                              thickness: 2.0,
-                                                              color: Color(
-                                                                  0xFFF1F4F8),
-                                                            ),
-                                                            Text(
-                                                              valueOrDefault<
-                                                                  String>(
-                                                                listViewFormulario2Row
-                                                                    .objetivoEnt,
-                                                                'Objetivos',
-                                                              ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyLarge
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Plus Jakarta Sans',
-                                                                    color: const Color(
-                                                                        0xFF14181B),
-                                                                    fontSize:
-                                                                        16.0,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w500,
-                                                                  ),
-                                                            ),
-                                                            Padding(
-                                                              padding:
-                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
                                                                           0.0,
                                                                           0.0),
-                                                              child: Text(
-                                                                valueOrDefault<
-                                                                    String>(
-                                                                  listViewFormulario2Row
-                                                                      .observaciones,
-                                                                  'No tiene',
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Plus Jakarta Sans',
-                                                                      color: const Color(
-                                                                          0xFF57636C),
-                                                                      fontSize:
-                                                                          14.0,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w500,
+                                                                  child: Text(
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      listViewFormulario3Row
+                                                                          .valoracionSugerencias,
+                                                                      'Valoraciones y sugerencias',
                                                                     ),
-                                                              ),
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      1.0, 1.0),
-                                                              child:
-                                                                  FFButtonWidget(
-                                                                onPressed:
-                                                                    () async {
-                                                                  await showModalBottomSheet(
-                                                                    isScrollControlled:
-                                                                        true,
-                                                                    backgroundColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    enableDrag:
-                                                                        false,
-                                                                    context:
-                                                                        context,
-                                                                    builder:
-                                                                        (context) {
-                                                                      return WebViewAware(
-                                                                        child:
-                                                                            GestureDetector(
-                                                                          onTap:
-                                                                              () {
-                                                                            FocusScope.of(context).unfocus();
-                                                                            FocusManager.instance.primaryFocus?.unfocus();
-                                                                          },
-                                                                          child:
-                                                                              Padding(
-                                                                            padding:
-                                                                                MediaQuery.viewInsetsOf(context),
-                                                                            child:
-                                                                                Formulario2Widget(
-                                                                              idingreso: widget.rowingreso!,
-                                                                              rowexp: widget.rowexpediente!,
-                                                                              identrevista: listViewFormulario2Row.idForm2,
-                                                                              editar: true,
-                                                                              usuariorow: widget.usuariorow!,
-                                                                            ),
-                                                                          ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          color:
+                                                                              const Color(0xFF57636C),
+                                                                          fontSize:
+                                                                              14.0,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight:
+                                                                              FontWeight.w500,
                                                                         ),
-                                                                      );
-                                                                    },
-                                                                  ).then((value) =>
-                                                                      safeSetState(
-                                                                          () {}));
-                                                                },
-                                                                text:
-                                                                    'Ver entrevista',
-                                                                options:
-                                                                    FFButtonOptions(
-                                                                  height: 30.0,
-                                                                  padding: const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          16.0,
-                                                                          0.0,
-                                                                          16.0,
-                                                                          0.0),
-                                                                  iconPadding: const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primary,
-                                                                  textStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleSmall
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Noto Sans JP',
-                                                                        color: Colors
-                                                                            .white,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
-                                                                  elevation:
-                                                                      0.0,
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              8.0),
+                                                                  ),
                                                                 ),
-                                                              ),
+                                                                Align(
+                                                                  alignment:
+                                                                      const AlignmentDirectional(
+                                                                          1.0,
+                                                                          1.0),
+                                                                  child:
+                                                                      FFButtonWidget(
+                                                                    onPressed:
+                                                                        () async {
+                                                                      await showModalBottomSheet(
+                                                                        isScrollControlled:
+                                                                            true,
+                                                                        backgroundColor:
+                                                                            Colors.transparent,
+                                                                        enableDrag:
+                                                                            false,
+                                                                        context:
+                                                                            context,
+                                                                        builder:
+                                                                            (context) {
+                                                                          return WebViewAware(
+                                                                            child:
+                                                                                GestureDetector(
+                                                                              onTap: () {
+                                                                                FocusScope.of(context).unfocus();
+                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                              },
+                                                                              child: Padding(
+                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                child: Formulario3Widget(
+                                                                                  idingreso: widget.rowingreso,
+                                                                                  rowexp: widget.rowexpediente,
+                                                                                  identrevista: listViewFormulario3Row.idForm3,
+                                                                                  editar: true,
+                                                                                  usuariosrow: widget.usuariorow!,
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          );
+                                                                        },
+                                                                      ).then((value) =>
+                                                                          safeSetState(
+                                                                              () {}));
+                                                                    },
+                                                                    text:
+                                                                        'Ver entrevista',
+                                                                    options:
+                                                                        FFButtonOptions(
+                                                                      height:
+                                                                          30.0,
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          16.0,
+                                                                          0.0,
+                                                                          16.0,
+                                                                          0.0),
+                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
+                                                                      textStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmall
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Noto Sans JP',
+                                                                            color:
+                                                                                Colors.white,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                          ),
+                                                                      elevation:
+                                                                          0.0,
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              8.0),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ].divide(const SizedBox(
+                                                                  height: 5.0)),
                                                             ),
-                                                          ].divide(const SizedBox(
-                                                              height: 5.0)),
+                                                          ),
                                                         ),
-                                                      ),
-                                                    ),
+                                                      );
+                                                    },
                                                   );
                                                 },
-                                              );
-                                            },
-                                          ),
+                                              ),
+                                            ),
+                                          ],
                                         ),
-                                      ],
+                                      ),
                                     ),
                                   ),
-                                ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 0.0, 16.0, 0.0),
+                                    child: Container(
+                                      width: double.infinity,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        boxShadow: const [
+                                          BoxShadow(
+                                            blurRadius: 7.0,
+                                            color: Color(0x2F1D2429),
+                                            offset: Offset(
+                                              0.0,
+                                              3.0,
+                                            ),
+                                          )
+                                        ],
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            16.0, 12.0, 16.0, 12.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'Entrevista a la familia',
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily:
+                                                        'Plus Jakarta Sans',
+                                                    color: const Color(0xFF39D2C0),
+                                                    fontSize: 14.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
+                                            ),
+                                            const Divider(
+                                              height: 16.0,
+                                              thickness: 2.0,
+                                              color: Color(0xFFF1F4F8),
+                                            ),
+                                            Container(
+                                              width: 287.0,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                              ),
+                                              child: FutureBuilder<
+                                                  List<Formulario2Row>>(
+                                                future: Formulario2Table()
+                                                    .queryRows(
+                                                  queryFn: (q) => q.eqOrNull(
+                                                    'idIngreso',
+                                                    widget.idingreso,
+                                                  ),
+                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    );
+                                                  }
+                                                  List<Formulario2Row>
+                                                      listViewFormulario2RowList =
+                                                      snapshot.data!;
+
+                                                  return ListView.builder(
+                                                    padding: EdgeInsets.zero,
+                                                    shrinkWrap: true,
+                                                    scrollDirection:
+                                                        Axis.vertical,
+                                                    itemCount:
+                                                        listViewFormulario2RowList
+                                                            .length,
+                                                    itemBuilder: (context,
+                                                        listViewIndex) {
+                                                      final listViewFormulario2Row =
+                                                          listViewFormulario2RowList[
+                                                              listViewIndex];
+                                                      return Padding(
+                                                        padding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    5.0,
+                                                                    0.0,
+                                                                    5.0,
+                                                                    0.0),
+                                                        child: Container(
+                                                          width:
+                                                              double.infinity,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: Colors.white,
+                                                            boxShadow: const [
+                                                              BoxShadow(
+                                                                blurRadius: 7.0,
+                                                                color: Color(
+                                                                    0x2F1D2429),
+                                                                offset: Offset(
+                                                                  0.0,
+                                                                  3.0,
+                                                                ),
+                                                              )
+                                                            ],
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        8.0),
+                                                          ),
+                                                          child: Padding(
+                                                            padding:
+                                                                const EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        16.0,
+                                                                        12.0,
+                                                                        16.0,
+                                                                        12.0),
+                                                            child: Column(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .start,
+                                                              children: [
+                                                                Text(
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    dateTimeFormat(
+                                                                      "d/M/y",
+                                                                      listViewFormulario2Row
+                                                                          .fecha,
+                                                                      locale: FFLocalizations.of(
+                                                                              context)
+                                                                          .languageCode,
+                                                                    ),
+                                                                    'No tiene fecha',
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Plus Jakarta Sans',
+                                                                        color: const Color(
+                                                                            0xFF39D2C0),
+                                                                        fontSize:
+                                                                            14.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w500,
+                                                                      ),
+                                                                ),
+                                                                const Divider(
+                                                                  height: 16.0,
+                                                                  thickness:
+                                                                      2.0,
+                                                                  color: Color(
+                                                                      0xFFF1F4F8),
+                                                                ),
+                                                                Text(
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    listViewFormulario2Row
+                                                                        .objetivoEnt,
+                                                                    'Objetivos',
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Plus Jakarta Sans',
+                                                                        color: const Color(
+                                                                            0xFF14181B),
+                                                                        fontSize:
+                                                                            16.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w500,
+                                                                      ),
+                                                                ),
+                                                                Padding(
+                                                                  padding: const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          4.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    'Valoraciones',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          color:
+                                                                              const Color(0xFF57636C),
+                                                                          fontSize:
+                                                                              14.0,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight:
+                                                                              FontWeight.w600,
+                                                                        ),
+                                                                  ),
+                                                                ),
+                                                                Padding(
+                                                                  padding: const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          4.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      listViewFormulario2Row
+                                                                          .valoracionSugerencias,
+                                                                      'No tiene valoraciones',
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          color:
+                                                                              const Color(0xFF57636C),
+                                                                          fontSize:
+                                                                              14.0,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight:
+                                                                              FontWeight.w500,
+                                                                        ),
+                                                                  ),
+                                                                ),
+                                                                Align(
+                                                                  alignment:
+                                                                      const AlignmentDirectional(
+                                                                          1.0,
+                                                                          1.0),
+                                                                  child:
+                                                                      FFButtonWidget(
+                                                                    onPressed:
+                                                                        () async {
+                                                                      await showModalBottomSheet(
+                                                                        isScrollControlled:
+                                                                            true,
+                                                                        backgroundColor:
+                                                                            Colors.transparent,
+                                                                        enableDrag:
+                                                                            false,
+                                                                        context:
+                                                                            context,
+                                                                        builder:
+                                                                            (context) {
+                                                                          return WebViewAware(
+                                                                            child:
+                                                                                GestureDetector(
+                                                                              onTap: () {
+                                                                                FocusScope.of(context).unfocus();
+                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                              },
+                                                                              child: Padding(
+                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                child: Formulario2Widget(
+                                                                                  idingreso: widget.rowingreso!,
+                                                                                  rowexp: widget.rowexpediente!,
+                                                                                  identrevista: listViewFormulario2Row.idForm2,
+                                                                                  editar: true,
+                                                                                  usuariorow: widget.usuariorow!,
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          );
+                                                                        },
+                                                                      ).then((value) =>
+                                                                          safeSetState(
+                                                                              () {}));
+                                                                    },
+                                                                    text:
+                                                                        'Ver entrevista',
+                                                                    options:
+                                                                        FFButtonOptions(
+                                                                      height:
+                                                                          30.0,
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          16.0,
+                                                                          0.0,
+                                                                          16.0,
+                                                                          0.0),
+                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
+                                                                      textStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmall
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Noto Sans JP',
+                                                                            color:
+                                                                                Colors.white,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                          ),
+                                                                      elevation:
+                                                                          0.0,
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              8.0),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ].divide(const SizedBox(
+                                                                  height: 5.0)),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      );
+                                                    },
+                                                  );
+                                                },
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ]
+                                    .divide(const SizedBox(height: 10.0))
+                                    .around(const SizedBox(height: 10.0)),
                               ),
-                            ]
-                                .divide(const SizedBox(height: 10.0))
-                                .around(const SizedBox(height: 10.0)),
-                          ),
-                        ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -1209,137 +1271,136 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                   FFButtonWidget(
                                                                 onPressed:
                                                                     () async {
-                                                                  _model.expedienteprincipal =
-                                                                      await VistaExpedientesUltimoEstadoTable()
-                                                                          .queryRows(
-                                                                    queryFn: (q) =>
-                                                                        q.eqOrNull(
-                                                                      'idexpediente',
-                                                                      containerGrupofamiliarexpedientesRow
-                                                                          ?.expedienteprincipal,
-                                                                    ),
-                                                                  );
-                                                                  await showDialog(
-                                                                    context:
-                                                                        context,
-                                                                    builder:
-                                                                        (alertDialogContext) {
-                                                                      return WebViewAware(
-                                                                        child:
-                                                                            AlertDialog(
-                                                                          title:
-                                                                              const Text('1'),
-                                                                          actions: [
-                                                                            TextButton(
-                                                                              onPressed: () => Navigator.pop(alertDialogContext),
-                                                                              child: const Text('Ok'),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      );
-                                                                    },
-                                                                  );
-                                                                  _model.form5principal =
+                                                                  var confirmDialogResponse =
+                                                                      await showDialog<
+                                                                              bool>(
+                                                                            context:
+                                                                                context,
+                                                                            builder:
+                                                                                (alertDialogContext) {
+                                                                              return WebViewAware(
+                                                                                child: AlertDialog(
+                                                                                  title: const Text('Copiar informe sintesis'),
+                                                                                  content: const Text('Estas por copiar el informe sintesis del NNyA principal'),
+                                                                                  actions: [
+                                                                                    TextButton(
+                                                                                      onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                      child: const Text('Cancela'),
+                                                                                    ),
+                                                                                    TextButton(
+                                                                                      onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                      child: const Text('Confirmar'),
+                                                                                    ),
+                                                                                  ],
+                                                                                ),
+                                                                              );
+                                                                            },
+                                                                          ) ??
+                                                                          false;
+                                                                  if (confirmDialogResponse) {
+                                                                    _model.expedienteprincipal =
+                                                                        await VistaExpedientesUltimoEstadoTable()
+                                                                            .queryRows(
+                                                                      queryFn:
+                                                                          (q) =>
+                                                                              q.eqOrNull(
+                                                                        'idexpediente',
+                                                                        containerGrupofamiliarexpedientesRow
+                                                                            ?.expedienteprincipal,
+                                                                      ),
+                                                                    );
+                                                                    _model.form5principal =
+                                                                        await Formulario5Table()
+                                                                            .queryRows(
+                                                                      queryFn:
+                                                                          (q) =>
+                                                                              q.eqOrNull(
+                                                                        'idIngreso',
+                                                                        _model
+                                                                            .expedienteprincipal
+                                                                            ?.firstOrNull
+                                                                            ?.idIngreso,
+                                                                      ),
+                                                                    );
+                                                                    _model.contador =
+                                                                        0;
+                                                                    safeSetState(
+                                                                        () {});
+                                                                    while (_model
+                                                                            .contador! <=
+                                                                        _model
+                                                                            .form5principal!
+                                                                            .length) {
                                                                       await Formulario5Table()
-                                                                          .queryRows(
-                                                                    queryFn: (q) =>
-                                                                        q.eqOrNull(
-                                                                      'idIngreso',
-                                                                      _model
-                                                                          .expedienteprincipal
-                                                                          ?.firstOrNull
-                                                                          ?.idIngreso,
-                                                                    ),
-                                                                  );
-                                                                  _model.contador =
-                                                                      0;
-                                                                  safeSetState(
-                                                                      () {});
-                                                                  while (_model
-                                                                          .contador! <=
-                                                                      _model
-                                                                          .form5principal!
-                                                                          .length) {
-                                                                    await Formulario5Table()
-                                                                        .insert({
-                                                                      'fecha': supaSerialize<DateTime>(_model
-                                                                          .form5principal
-                                                                          ?.elementAtOrNull(
-                                                                              _model.contador!)
-                                                                          ?.fecha),
-                                                                      'profesionales': _model
-                                                                          .form5principal
-                                                                          ?.elementAtOrNull(
-                                                                              _model.contador!)
-                                                                          ?.profesionales,
-                                                                      'antecedentes': _model
-                                                                          .form5principal
-                                                                          ?.elementAtOrNull(
-                                                                              _model.contador!)
-                                                                          ?.antecedentes,
-                                                                      'indicadores': _model
-                                                                          .form5principal
-                                                                          ?.elementAtOrNull(
-                                                                              _model.contador!)
-                                                                          ?.indicadores,
-                                                                      'info1': _model
-                                                                          .form5principal
-                                                                          ?.elementAtOrNull(
-                                                                              _model.contador!)
-                                                                          ?.info1,
-                                                                      'info2': _model
-                                                                          .form5principal
-                                                                          ?.elementAtOrNull(
-                                                                              _model.contador!)
-                                                                          ?.info2,
-                                                                      'idIngreso': widget
-                                                                          .rowingreso
-                                                                          ?.id,
-                                                                      'idExpediente': widget
-                                                                          .rowexpediente
-                                                                          ?.id,
-                                                                      'responsables': _model
-                                                                          .form5principal
-                                                                          ?.elementAtOrNull(
-                                                                              _model.contador!)
-                                                                          ?.responsables,
-                                                                      'criteriopriorizaciondrop': _model
-                                                                          .form5principal
-                                                                          ?.elementAtOrNull(
-                                                                              _model.contador!)
-                                                                          ?.criteriopriorizaciondrop,
-                                                                      'actoresdrop': _model
-                                                                          .form5principal
-                                                                          ?.elementAtOrNull(
-                                                                              _model.contador!)
-                                                                          ?.actoresdrop,
-                                                                      'Valoracion Integral': _model
-                                                                          .form5principal
-                                                                          ?.elementAtOrNull(
-                                                                              _model.contador!)
-                                                                          ?.valoracionIntegral,
-                                                                      'PropuestaMedida': _model
-                                                                          .form5principal
-                                                                          ?.elementAtOrNull(
-                                                                              _model.contador!)
-                                                                          ?.propuestaMedida,
-                                                                      'iduser':
-                                                                          currentUserUid,
-                                                                    });
-                                                                    await IngresosTable()
-                                                                        .update(
-                                                                      data: {
-                                                                        'form6':
-                                                                            true,
-                                                                        'form5completo':
-                                                                            true,
+                                                                          .insert({
+                                                                        'fecha': supaSerialize<DateTime>(_model
+                                                                            .form5principal
+                                                                            ?.elementAtOrNull(_model.contador!)
+                                                                            ?.fecha),
+                                                                        'profesionales': _model
+                                                                            .form5principal
+                                                                            ?.elementAtOrNull(_model.contador!)
+                                                                            ?.profesionales,
+                                                                        'antecedentes': _model
+                                                                            .form5principal
+                                                                            ?.elementAtOrNull(_model.contador!)
+                                                                            ?.antecedentes,
+                                                                        'indicadores': _model
+                                                                            .form5principal
+                                                                            ?.elementAtOrNull(_model.contador!)
+                                                                            ?.indicadores,
+                                                                        'info1': _model
+                                                                            .form5principal
+                                                                            ?.elementAtOrNull(_model.contador!)
+                                                                            ?.info1,
+                                                                        'info2': _model
+                                                                            .form5principal
+                                                                            ?.elementAtOrNull(_model.contador!)
+                                                                            ?.info2,
+                                                                        'idIngreso': widget
+                                                                            .rowingreso
+                                                                            ?.id,
+                                                                        'idExpediente': widget
+                                                                            .rowexpediente
+                                                                            ?.id,
+                                                                        'responsables': _model
+                                                                            .form5principal
+                                                                            ?.elementAtOrNull(_model.contador!)
+                                                                            ?.responsables,
+                                                                        'criteriopriorizaciondrop': _model
+                                                                            .form5principal
+                                                                            ?.elementAtOrNull(_model.contador!)
+                                                                            ?.criteriopriorizaciondrop,
+                                                                        'actoresdrop': _model
+                                                                            .form5principal
+                                                                            ?.elementAtOrNull(_model.contador!)
+                                                                            ?.actoresdrop,
+                                                                        'Valoracion Integral': _model
+                                                                            .form5principal
+                                                                            ?.elementAtOrNull(_model.contador!)
+                                                                            ?.valoracionIntegral,
+                                                                        'PropuestaMedida': _model
+                                                                            .form5principal
+                                                                            ?.elementAtOrNull(_model.contador!)
+                                                                            ?.propuestaMedida,
                                                                         'iduser':
                                                                             currentUserUid,
-                                                                      },
-                                                                      matchingRows:
-                                                                          (rows) =>
-                                                                              rows,
-                                                                    );
+                                                                      });
+                                                                      await IngresosTable()
+                                                                          .update(
+                                                                        data: {
+                                                                          'form6':
+                                                                              true,
+                                                                          'form5completo':
+                                                                              true,
+                                                                          'iduser':
+                                                                              currentUserUid,
+                                                                        },
+                                                                        matchingRows:
+                                                                            (rows) =>
+                                                                                rows,
+                                                                      );
+                                                                    }
                                                                   }
 
                                                                   safeSetState(
@@ -1393,98 +1454,100 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                   FFButtonWidget(
                                                                 onPressed:
                                                                     () async {
-                                                                  _model.expedienteprincipal1 =
-                                                                      await VistaExpedientesUltimoEstadoTable()
-                                                                          .queryRows(
-                                                                    queryFn: (q) =>
-                                                                        q.eqOrNull(
-                                                                      'idexpediente',
-                                                                      containerGrupofamiliarexpedientesRow
-                                                                          ?.expedienteprincipal,
-                                                                    ),
-                                                                  );
-                                                                  await showDialog(
-                                                                    context:
-                                                                        context,
-                                                                    builder:
-                                                                        (alertDialogContext) {
-                                                                      return WebViewAware(
-                                                                        child:
-                                                                            AlertDialog(
-                                                                          title:
-                                                                              const Text('1'),
-                                                                          actions: [
-                                                                            TextButton(
-                                                                              onPressed: () => Navigator.pop(alertDialogContext),
-                                                                              child: const Text('Ok'),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      );
-                                                                    },
-                                                                  );
-                                                                  _model.formderechosprincipal =
-                                                                      await ListaDerechosVulneradosexpedienteTable()
-                                                                          .queryRows(
-                                                                    queryFn: (q) =>
-                                                                        q.eqOrNull(
-                                                                      'idingreso',
-                                                                      _model
-                                                                          .expedienteprincipal1
-                                                                          ?.firstOrNull
-                                                                          ?.idIngreso,
-                                                                    ),
-                                                                  );
-                                                                  _model.contador =
-                                                                      0;
-                                                                  safeSetState(
-                                                                      () {});
-                                                                  while (_model
-                                                                          .contador! <=
-                                                                      _model
-                                                                          .formderechosprincipal!
-                                                                          .length) {
-                                                                    await ListaDerechosVulneradosexpedienteTable()
-                                                                        .insert({
-                                                                      'Derecho': _model
-                                                                          .formderechosprincipal
-                                                                          ?.elementAtOrNull(
-                                                                              _model.contador!)
-                                                                          ?.derecho,
-                                                                      'Subcategoria': _model
-                                                                          .formderechosprincipal
-                                                                          ?.elementAtOrNull(
-                                                                              _model.contador!)
-                                                                          ?.subcategoria,
-                                                                      'Fecha': supaSerialize<DateTime>(_model
-                                                                          .formderechosprincipal
-                                                                          ?.elementAtOrNull(
-                                                                              _model.contador!)
-                                                                          ?.fecha),
-                                                                      'principal': _model
-                                                                          .formderechosprincipal
-                                                                          ?.elementAtOrNull(
-                                                                              _model.contador!)
-                                                                          ?.principal,
-                                                                      'idexp': widget
-                                                                          .rowexpediente
-                                                                          ?.id,
-                                                                      'idingreso':
-                                                                          widget
-                                                                              .idingreso,
-                                                                      'formulario': _model
-                                                                          .formderechosprincipal
-                                                                          ?.elementAtOrNull(
-                                                                              _model.contador!)
-                                                                          ?.formulario,
-                                                                      'iduser':
-                                                                          currentUserUid,
-                                                                    });
+                                                                  var confirmDialogResponse =
+                                                                      await showDialog<
+                                                                              bool>(
+                                                                            context:
+                                                                                context,
+                                                                            builder:
+                                                                                (alertDialogContext) {
+                                                                              return WebViewAware(
+                                                                                child: AlertDialog(
+                                                                                  title: const Text('Copiar lista de derechos vulnerados'),
+                                                                                  content: const Text('Estas por copiar lso derechos vulnerados registrados en el NNyA principal'),
+                                                                                  actions: [
+                                                                                    TextButton(
+                                                                                      onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                      child: const Text('Cancel'),
+                                                                                    ),
+                                                                                    TextButton(
+                                                                                      onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                      child: const Text('Confirm'),
+                                                                                    ),
+                                                                                  ],
+                                                                                ),
+                                                                              );
+                                                                            },
+                                                                          ) ??
+                                                                          false;
+                                                                  if (confirmDialogResponse) {
+                                                                    _model.expedienteprincipal1 =
+                                                                        await VistaExpedientesUltimoEstadoTable()
+                                                                            .queryRows(
+                                                                      queryFn:
+                                                                          (q) =>
+                                                                              q.eqOrNull(
+                                                                        'idexpediente',
+                                                                        containerGrupofamiliarexpedientesRow
+                                                                            ?.expedienteprincipal,
+                                                                      ),
+                                                                    );
+                                                                    _model.formderechosprincipal =
+                                                                        await ListaDerechosVulneradosexpedienteTable()
+                                                                            .queryRows(
+                                                                      queryFn:
+                                                                          (q) =>
+                                                                              q.eqOrNull(
+                                                                        'idingreso',
+                                                                        widget
+                                                                            .idingreso,
+                                                                      ),
+                                                                    );
                                                                     _model.contador =
-                                                                        _model.contador! +
-                                                                            1;
+                                                                        0;
                                                                     safeSetState(
                                                                         () {});
+                                                                    while (_model
+                                                                            .contador! <=
+                                                                        _model
+                                                                            .formderechosprincipal!
+                                                                            .length) {
+                                                                      await ListaDerechosVulneradosexpedienteTable()
+                                                                          .insert({
+                                                                        'Derecho': _model
+                                                                            .formderechosprincipal
+                                                                            ?.elementAtOrNull(_model.contador!)
+                                                                            ?.derecho,
+                                                                        'Subcategoria': _model
+                                                                            .formderechosprincipal
+                                                                            ?.elementAtOrNull(_model.contador!)
+                                                                            ?.subcategoria,
+                                                                        'Fecha': supaSerialize<DateTime>(_model
+                                                                            .formderechosprincipal
+                                                                            ?.elementAtOrNull(_model.contador!)
+                                                                            ?.fecha),
+                                                                        'principal': _model
+                                                                            .formderechosprincipal
+                                                                            ?.elementAtOrNull(_model.contador!)
+                                                                            ?.principal,
+                                                                        'idexp': widget
+                                                                            .rowexpediente
+                                                                            ?.id,
+                                                                        'idingreso':
+                                                                            widget.idingreso,
+                                                                        'formulario': _model
+                                                                            .formderechosprincipal
+                                                                            ?.elementAtOrNull(_model.contador!)
+                                                                            ?.formulario,
+                                                                        'iduser':
+                                                                            currentUserUid,
+                                                                      });
+                                                                      _model.contador =
+                                                                          _model.contador! +
+                                                                              1;
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    }
                                                                   }
 
                                                                   safeSetState(
@@ -2335,6 +2398,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                                   listadederchosItem.id,
                                                                                 ),
                                                                               );
+                                                                              safeSetState(() => _model.requestCompleter = null);
+                                                                              await _model.waitForRequestCompleted();
                                                                             }
                                                                           },
                                                                         ),

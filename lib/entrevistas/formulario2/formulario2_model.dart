@@ -110,11 +110,11 @@ class Formulario2Model extends FlutterFlowModel<Formulario2Widget> {
     return null;
   }
 
-  // State field(s) for TextFieldobjetivo widget.
-  FocusNode? textFieldobjetivoFocusNode3;
-  TextEditingController? textFieldobjetivoTextController3;
+  // State field(s) for TextFieldpercepcion widget.
+  FocusNode? textFieldpercepcionFocusNode;
+  TextEditingController? textFieldpercepcionTextController;
   String? Function(BuildContext, String?)?
-      textFieldobjetivoTextController3Validator;
+      textFieldpercepcionTextControllerValidator;
   // State field(s) for TextFielddescripcion widget.
   FocusNode? textFielddescripcionFocusNode;
   TextEditingController? textFielddescripcionTextController;
@@ -154,14 +154,16 @@ class Formulario2Model extends FlutterFlowModel<Formulario2Widget> {
   FocusNode? textFieldFocusNode10;
   TextEditingController? textController19;
   String? Function(BuildContext, String?)? textController19Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode11;
-  TextEditingController? textController20;
-  String? Function(BuildContext, String?)? textController20Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode12;
-  TextEditingController? textController21;
-  String? Function(BuildContext, String?)? textController21Validator;
+  // State field(s) for TextFieldpersonasservicio widget.
+  FocusNode? textFieldpersonasservicioFocusNode;
+  TextEditingController? textFieldpersonasservicioTextController;
+  String? Function(BuildContext, String?)?
+      textFieldpersonasservicioTextControllerValidator;
+  // State field(s) for TextFieldvaloracion widget.
+  FocusNode? textFieldvaloracionFocusNode;
+  TextEditingController? textFieldvaloracionTextController;
+  String? Function(BuildContext, String?)?
+      textFieldvaloracionTextControllerValidator;
 
   @override
   void initState(BuildContext context) {
@@ -215,8 +217,8 @@ class Formulario2Model extends FlutterFlowModel<Formulario2Widget> {
     textFieldobjetivoFocusNode2?.dispose();
     textFieldobjetivoTextController2?.dispose();
 
-    textFieldobjetivoFocusNode3?.dispose();
-    textFieldobjetivoTextController3?.dispose();
+    textFieldpercepcionFocusNode?.dispose();
+    textFieldpercepcionTextController?.dispose();
 
     textFielddescripcionFocusNode?.dispose();
     textFielddescripcionTextController?.dispose();
@@ -236,11 +238,11 @@ class Formulario2Model extends FlutterFlowModel<Formulario2Widget> {
     textFieldFocusNode10?.dispose();
     textController19?.dispose();
 
-    textFieldFocusNode11?.dispose();
-    textController20?.dispose();
+    textFieldpersonasservicioFocusNode?.dispose();
+    textFieldpersonasservicioTextController?.dispose();
 
-    textFieldFocusNode12?.dispose();
-    textController21?.dispose();
+    textFieldvaloracionFocusNode?.dispose();
+    textFieldvaloracionTextController?.dispose();
   }
 
   /// Additional helper methods.

@@ -13,6 +13,8 @@ class AvisoconcurrenciaadultoModel
 
   int? indexlist;
 
+  bool visibilidadform = false;
+
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();
@@ -81,6 +83,8 @@ class AvisoconcurrenciaadultoModel
   // State field(s) for PaginatedDataTable widget.
   final paginatedDataTableController =
       FlutterFlowDataTableController<AvisovisitaadultosRow>();
+  // Stores action output result for [Bottom Sheet - AvisoVisitaadulto] action in IconButton widget.
+  bool? crearavisovisita;
 
   @override
   void initState(BuildContext context) {

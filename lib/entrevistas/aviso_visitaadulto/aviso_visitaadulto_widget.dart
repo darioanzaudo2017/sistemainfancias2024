@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'aviso_visitaadulto_model.dart';
@@ -59,15 +58,12 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
     return Align(
       alignment: const AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<AvisovisitaadultosRow>>(
-        future: (_model.requestCompleter ??=
-                Completer<List<AvisovisitaadultosRow>>()
-                  ..complete(AvisovisitaadultosTable().querySingleRow(
-                    queryFn: (q) => q.eqOrNull(
-                      'id',
-                      widget.formvisita?.id,
-                    ),
-                  )))
-            .future,
+        future: AvisovisitaadultosTable().querySingleRow(
+          queryFn: (q) => q.eqOrNull(
+            'id',
+            widget.formvisita?.id,
+          ),
+        ),
         builder: (context, snapshot) {
           // Customize what your widget looks like when it's loading.
           if (!snapshot.hasData) {
@@ -518,9 +514,7 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                                       );
                                     },
                                   );
-                                  safeSetState(
-                                      () => _model.requestCompleter = null);
-                                  await _model.waitForRequestCompleted();
+                                  Navigator.pop(context, true);
                                 }
 
                                 safeSetState(() {});
