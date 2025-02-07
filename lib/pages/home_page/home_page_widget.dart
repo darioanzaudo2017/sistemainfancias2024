@@ -1035,7 +1035,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                         0.0,
                                                                         5.0),
                                                             child: Text(
-                                                              'Actualizacion: 06/02/2025',
+                                                              'Actualizacion: 07/02/2025',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium
@@ -2182,45 +2182,68 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                     .max,
                                                             mainAxisAlignment:
                                                                 MainAxisAlignment
-                                                                    .spaceAround,
+                                                                    .spaceBetween,
                                                             children: [
-                                                              Padding(
-                                                                padding:
-                                                                    const EdgeInsetsDirectional
+                                                              Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  if (homePageUsuariosRow
+                                                                          ?.spd ==
+                                                                      listaexpedientesItem
+                                                                          .spd)
+                                                                    Padding(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          20.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          Icon(
+                                                                        Icons
+                                                                            .done_rounded,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondary,
+                                                                        size:
+                                                                            24.0,
+                                                                      ),
+                                                                    ),
+                                                                  Padding(
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             5.0,
                                                                             0.0),
-                                                                child:
-                                                                    Container(
-                                                                  width: 10.0,
-                                                                  height: 40.0,
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    color: () {
-                                                                      if (listaexpedientesItem
-                                                                              .ultimoEstado ==
-                                                                          'Abierto') {
-                                                                        return FlutterFlowTheme.of(context)
-                                                                            .secondary;
-                                                                      } else if (listaexpedientesItem
-                                                                              .ultimoEstado ==
-                                                                          'Cerrado') {
-                                                                        return FlutterFlowTheme.of(context)
-                                                                            .error;
-                                                                      } else {
-                                                                        return FlutterFlowTheme.of(context)
-                                                                            .primary;
-                                                                      }
-                                                                    }(),
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            15.0),
-                                                                    shape: BoxShape
-                                                                        .rectangle,
+                                                                    child:
+                                                                        Container(
+                                                                      width:
+                                                                          10.0,
+                                                                      height:
+                                                                          40.0,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color:
+                                                                            () {
+                                                                          if (listaexpedientesItem.ultimoEstado ==
+                                                                              'Abierto') {
+                                                                            return FlutterFlowTheme.of(context).secondary;
+                                                                          } else if (listaexpedientesItem.ultimoEstado ==
+                                                                              'Cerrado') {
+                                                                            return FlutterFlowTheme.of(context).error;
+                                                                          } else {
+                                                                            return FlutterFlowTheme.of(context).primary;
+                                                                          }
+                                                                        }(),
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(15.0),
+                                                                        shape: BoxShape
+                                                                            .rectangle,
+                                                                      ),
+                                                                    ),
                                                                   ),
-                                                                ),
+                                                                ],
                                                               ),
                                                               Flexible(
                                                                 child: Text(
@@ -2228,7 +2251,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                       String>(
                                                                     listaexpedientesItem
                                                                         .expediente,
-                                                                    '0',
+                                                                    'No tiene nombre de exp',
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)

@@ -941,6 +941,13 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                               ParamType
                                                                   .SupabaseRow,
                                                             ),
+                                                            'usuariorol':
+                                                                serializeParam(
+                                                              widget
+                                                                  .usuariorol,
+                                                              ParamType
+                                                                  .SupabaseRow,
+                                                            ),
                                                           }.withoutNulls,
                                                         );
                                                       },

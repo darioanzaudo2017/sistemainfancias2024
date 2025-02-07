@@ -22,8 +22,8 @@ class VistaEstadisticasRow extends SupabaseDataRow {
   set cantidadExpedientes(int? value) =>
       setField<int>('cantidad_expedientes', value);
 
-  int? get cantidadPersonas => getField<int>('cantidad_personas');
-  set cantidadPersonas(int? value) => setField<int>('cantidad_personas', value);
+  int? get cantidadNnya => getField<int>('cantidad_nnya');
+  set cantidadNnya(int? value) => setField<int>('cantidad_nnya', value);
 
   int? get cantidadNnyaMenores18 => getField<int>('cantidad_nnya_menores_18');
   set cantidadNnyaMenores18(int? value) =>

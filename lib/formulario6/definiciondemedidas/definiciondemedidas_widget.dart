@@ -27,11 +27,13 @@ class DefiniciondemedidasWidget extends StatefulWidget {
     required this.ingresorow,
     required this.rowexp,
     required this.usuariorow,
+    required this.usuariosrol,
   });
 
   final IngresosRow? ingresorow;
   final VistaExpedientesUltimoEstadoRow? rowexp;
   final UsuariosRow? usuariorow;
+  final VistaUsuariosRolesRow? usuariosrol;
 
   @override
   State<DefiniciondemedidasWidget> createState() =>
@@ -404,6 +406,8 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                       rowexp: widget.rowexp!,
                                                       usuariorow:
                                                           widget.usuariorow!,
+                                                      usuariosrol:
+                                                          widget.usuariosrol!,
                                                     ),
                                                   ),
                                                 ),

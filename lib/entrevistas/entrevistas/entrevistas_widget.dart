@@ -25,11 +25,13 @@ class EntrevistasWidget extends StatefulWidget {
     required this.ingresorow,
     required this.rowexp,
     required this.usuariorow,
+    required this.usuariorol,
   });
 
   final int? ingresorow;
   final VistaExpedientesUltimoEstadoRow? rowexp;
   final UsuariosRow? usuariorow;
+  final VistaUsuariosRolesRow? usuariorol;
 
   @override
   State<EntrevistasWidget> createState() => _EntrevistasWidgetState();
@@ -416,6 +418,8 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                                       editar: false,
                                                                                                       usuariosrow: widget.usuariorow!,
                                                                                                       formulario: _model.nombrepagina,
+                                                                                                      identrevista: 0,
+                                                                                                      usuariorol: widget.usuariorol!,
                                                                                                     ),
                                                                                                   ),
                                                                                                 ),
@@ -776,6 +780,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                                                   identrevista: listaentrevistasalNNyaItem.idForm3,
                                                                                                                   usuariosrow: widget.usuariorow!,
                                                                                                                   formulario: 'Entrevistas y Ampliacion de informacion',
+                                                                                                                  usuariorol: widget.usuariorol!,
                                                                                                                 ),
                                                                                                               ),
                                                                                                             ),
@@ -1014,6 +1019,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                                         usuariorow: widget.usuariorow!,
                                                                                                         formulario: 'Entrevistas y Ampliacion de informacion',
                                                                                                         identrevista: 0,
+                                                                                                        usuariorol: widget.usuariorol!,
                                                                                                       ),
                                                                                                     ),
                                                                                                   ),
@@ -1275,6 +1281,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                                                 identrevista: listaentrevistasalafliaItem.idForm2,
                                                                                                                 editar: true,
                                                                                                                 usuariorow: widget.usuariorow!,
+                                                                                                                usuariorol: widget.usuariorol!,
                                                                                                               ),
                                                                                                             ),
                                                                                                           ),

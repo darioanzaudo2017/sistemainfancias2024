@@ -24,6 +24,7 @@ class Formulario2Widget extends StatefulWidget {
     this.editar,
     required this.usuariorow,
     this.formulario,
+    required this.usuariorol,
   });
 
   final IngresosRow? idingreso;
@@ -32,6 +33,7 @@ class Formulario2Widget extends StatefulWidget {
   final bool? editar;
   final UsuariosRow? usuariorow;
   final String? formulario;
+  final VistaUsuariosRolesRow? usuariorol;
 
   @override
   State<Formulario2Widget> createState() => _Formulario2WidgetState();
@@ -329,6 +331,8 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                                 widget.rowexp!,
                                                             usuariorow: widget
                                                                 .usuariorow!,
+                                                            usuariosrol: widget
+                                                                .usuariorol!,
                                                           ),
                                                         ),
                                                       );
