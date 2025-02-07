@@ -8,7 +8,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'seccion1_model.dart';
 export 'seccion1_model.dart';
@@ -20,12 +19,14 @@ class Seccion1Widget extends StatefulWidget {
     this.rowexp,
     this.editar,
     required this.usuariorow,
+    required this.usuariorol,
   });
 
   final IngresosRow? idingreso;
   final VistaExpedientesUltimoEstadoRow? rowexp;
   final bool? editar;
   final UsuariosRow? usuariorow;
+  final VistaUsuariosRolesRow? usuariorol;
 
   @override
   State<Seccion1Widget> createState() => _Seccion1WidgetState();
@@ -83,8 +84,6 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Align(
       alignment: const AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<Seccion1Row>>(
@@ -1953,7 +1952,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   if (widget.usuariorow?.spd ==
-                                      FFAppState().spd)
+                                      widget.rowexp?.spd)
                                     FFButtonWidget(
                                       onPressed: () async {
                                         if (_model.formKey.currentState ==

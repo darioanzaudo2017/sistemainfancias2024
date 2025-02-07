@@ -23,6 +23,7 @@ class Formulario3Widget extends StatefulWidget {
     this.editar,
     required this.usuariosrow,
     this.formulario,
+    required this.usuariorol,
   }) : identrevista = identrevista ?? 0;
 
   final IngresosRow? idingreso;
@@ -31,6 +32,7 @@ class Formulario3Widget extends StatefulWidget {
   final bool? editar;
   final UsuariosRow? usuariosrow;
   final String? formulario;
+  final VistaUsuariosRolesRow? usuariorol;
 
   @override
   State<Formulario3Widget> createState() => _Formulario3WidgetState();
@@ -305,6 +307,8 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                                                   .rowexp!,
                                                               usuariorow: widget
                                                                   .usuariosrow!,
+                                                              usuariosrol: widget
+                                                                  .usuariorol!,
                                                             ),
                                                           ),
                                                         );

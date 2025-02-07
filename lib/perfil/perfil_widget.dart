@@ -1411,6 +1411,10 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                         widget.usuariorow,
                                                                                         ParamType.SupabaseRow,
                                                                                       ),
+                                                                                      'usuariosrol': serializeParam(
+                                                                                        widget.usuariorol,
+                                                                                        ParamType.SupabaseRow,
+                                                                                      ),
                                                                                     }.withoutNulls,
                                                                                   );
                                                                                 },
@@ -1625,6 +1629,10 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                           widget.usuariorow,
                                                                                           ParamType.SupabaseRow,
                                                                                         ),
+                                                                                        'usuariorol': serializeParam(
+                                                                                          widget.usuariorol,
+                                                                                          ParamType.SupabaseRow,
+                                                                                        ),
                                                                                       }.withoutNulls,
                                                                                     );
                                                                                   },
@@ -1676,6 +1684,10 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                         ),
                                                                                         'usuariorow': serializeParam(
                                                                                           widget.usuariorow,
+                                                                                          ParamType.SupabaseRow,
+                                                                                        ),
+                                                                                        'usuariorol': serializeParam(
+                                                                                          widget.usuariorol,
                                                                                           ParamType.SupabaseRow,
                                                                                         ),
                                                                                       }.withoutNulls,
@@ -1986,6 +1998,10 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                         widget.usuariorow,
                                                                                         ParamType.SupabaseRow,
                                                                                       ),
+                                                                                      'usuariorol': serializeParam(
+                                                                                        widget.usuariorol,
+                                                                                        ParamType.SupabaseRow,
+                                                                                      ),
                                                                                     }.withoutNulls,
                                                                                   );
                                                                                 },
@@ -2265,6 +2281,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                               rowexp: widget.rowexp,
                                                                                                               editar: false,
                                                                                                               usuariorow: widget.usuariorow!,
+                                                                                                              usuariorol: widget.usuariorol!,
                                                                                                             ),
                                                                                                           ),
                                                                                                         ),
@@ -2323,6 +2340,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                               rowexp: widget.rowexp,
                                                                                                               editar: true,
                                                                                                               usuariorow: widget.usuariorow!,
+                                                                                                              usuariorol: widget.usuariorol!,
                                                                                                             ),
                                                                                                           ),
                                                                                                         ),
@@ -2406,6 +2424,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                             rowingreso: containeringresosIngresosRow,
                                                                                                             rowexp: widget.rowexp!,
                                                                                                             editar: false,
+                                                                                                            usuariorow: widget.usuariorol!,
                                                                                                           ),
                                                                                                         ),
                                                                                                       ),
@@ -2463,6 +2482,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                             rowingreso: containeringresosIngresosRow,
                                                                                                             rowexp: widget.rowexp!,
                                                                                                             editar: true,
+                                                                                                            usuariorow: widget.usuariorol!,
                                                                                                           ),
                                                                                                         ),
                                                                                                       ),

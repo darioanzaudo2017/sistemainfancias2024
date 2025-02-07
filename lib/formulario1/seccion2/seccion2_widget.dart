@@ -18,11 +18,13 @@ class Seccion2Widget extends StatefulWidget {
     required this.rowingreso,
     required this.rowexp,
     this.editar,
+    required this.usuariorow,
   });
 
   final IngresosRow? rowingreso;
   final VistaExpedientesUltimoEstadoRow? rowexp;
   final bool? editar;
+  final VistaUsuariosRolesRow? usuariorow;
 
   @override
   State<Seccion2Widget> createState() => _Seccion2WidgetState();
@@ -1046,79 +1048,18 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  FFButtonWidget(
-                                    onPressed: () async {
-                                      if (_model.formKey.currentState == null ||
-                                          !_model.formKey.currentState!
-                                              .validate()) {
-                                        return;
-                                      }
-                                      if (!widget.editar!) {
-                                        await Seccion2Table().insert({
-                                          'edad': int.tryParse(
-                                              _model.textController2.text),
-                                          'dni': int.tryParse(
-                                              _model.textController3.text),
-                                          'direccion':
-                                              _model.textController4.text,
-                                          'referencias':
-                                              _model.textController5.text,
-                                          'telefono':
-                                              _model.textController6.text,
-                                          'vinculo': _model.dropDownValue,
-                                          'reservaId':
-                                              _model.radioButtonresidenValue,
-                                          'institucion':
-                                              _model.textController7.text,
-                                          'direccionInst':
-                                              _model.textController8.text,
-                                          'telefonoInst':
-                                              _model.textController9.text,
-                                          'correoInst':
-                                              _model.textController10.text,
-                                          'idIngreso': widget.rowingreso?.id,
-                                          'idExpediente': widget.rowexp?.id,
-                                          'idSolicitante': _model
-                                              .textFieldsolicitanteTextController
-                                              .text,
-                                          'iduser': currentUserUid,
-                                        });
-                                        await IngresosTable().update(
-                                          data: {
-                                            'form1seccion2': true,
-                                            'updated_at':
-                                                supaSerialize<DateTime>(
-                                                    getCurrentTimestamp),
-                                          },
-                                          matchingRows: (rows) => rows.eqOrNull(
-                                            'id',
-                                            widget.rowingreso?.id,
-                                          ),
-                                        );
-                                        await showDialog(
-                                          context: context,
-                                          builder: (alertDialogContext) {
-                                            return WebViewAware(
-                                              child: AlertDialog(
-                                                title: const Text('Carga correcta'),
-                                                content: const Text(
-                                                    'La informacion se guardo correctamente!!'),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext),
-                                                    child: const Text('Ok'),
-                                                  ),
-                                                ],
-                                              ),
-                                            );
-                                          },
-                                        );
-                                        Navigator.pop(context, true);
-                                      } else {
-                                        await Seccion2Table().update(
-                                          data: {
+                                  if (widget.rowexp?.spd ==
+                                      widget.usuariorow?.spd)
+                                    FFButtonWidget(
+                                      onPressed: () async {
+                                        if (_model.formKey.currentState ==
+                                                null ||
+                                            !_model.formKey.currentState!
+                                                .validate()) {
+                                          return;
+                                        }
+                                        if (!widget.editar!) {
+                                          await Seccion2Table().insert({
                                             'edad': int.tryParse(
                                                 _model.textController2.text),
                                             'dni': int.tryParse(
@@ -1140,81 +1081,149 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                                 _model.textController9.text,
                                             'correoInst':
                                                 _model.textController10.text,
+                                            'idIngreso': widget.rowingreso?.id,
+                                            'idExpediente': widget.rowexp?.id,
                                             'idSolicitante': _model
                                                 .textFieldsolicitanteTextController
                                                 .text,
                                             'iduser': currentUserUid,
-                                          },
-                                          matchingRows: (rows) => rows.eqOrNull(
-                                            'idIngreso',
-                                            widget.rowingreso?.id,
-                                          ),
-                                        );
-                                        await IngresosTable().update(
-                                          data: {
-                                            'updated_at':
-                                                supaSerialize<DateTime>(
-                                                    getCurrentTimestamp),
-                                          },
-                                          matchingRows: (rows) => rows.eqOrNull(
-                                            'id',
-                                            widget.rowingreso?.id,
-                                          ),
-                                        );
-                                        await showDialog(
-                                          context: context,
-                                          builder: (alertDialogContext) {
-                                            return WebViewAware(
-                                              child: AlertDialog(
-                                                title: const Text('Carga correcta'),
-                                                content: const Text(
-                                                    'La informacion se guardo correctamente!!'),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext),
-                                                    child: const Text('Ok'),
-                                                  ),
-                                                ],
-                                              ),
-                                            );
-                                          },
-                                        );
-                                        Navigator.pop(context, true);
-                                      }
-                                    },
-                                    text: 'Guardar',
-                                    icon: const Icon(
-                                      Icons.save,
-                                      size: 15.0,
-                                    ),
-                                    options: FFButtonOptions(
-                                      width: 250.0,
-                                      height: 40.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          24.0, 0.0, 24.0, 0.0),
-                                      iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color:
-                                          FlutterFlowTheme.of(context).success,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Noto Sans JP',
-                                            color: Colors.white,
-                                            letterSpacing: 0.0,
-                                          ),
-                                      elevation: 2.0,
-                                      borderSide: const BorderSide(
-                                        color: Colors.transparent,
-                                        width: 1.0,
+                                          });
+                                          await IngresosTable().update(
+                                            data: {
+                                              'form1seccion2': true,
+                                              'updated_at':
+                                                  supaSerialize<DateTime>(
+                                                      getCurrentTimestamp),
+                                            },
+                                            matchingRows: (rows) =>
+                                                rows.eqOrNull(
+                                              'id',
+                                              widget.rowingreso?.id,
+                                            ),
+                                          );
+                                          await showDialog(
+                                            context: context,
+                                            builder: (alertDialogContext) {
+                                              return WebViewAware(
+                                                child: AlertDialog(
+                                                  title: const Text('Carga correcta'),
+                                                  content: const Text(
+                                                      'La informacion se guardo correctamente!!'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: const Text('Ok'),
+                                                    ),
+                                                  ],
+                                                ),
+                                              );
+                                            },
+                                          );
+                                          Navigator.pop(context, true);
+                                        } else {
+                                          await Seccion2Table().update(
+                                            data: {
+                                              'edad': int.tryParse(
+                                                  _model.textController2.text),
+                                              'dni': int.tryParse(
+                                                  _model.textController3.text),
+                                              'direccion':
+                                                  _model.textController4.text,
+                                              'referencias':
+                                                  _model.textController5.text,
+                                              'telefono':
+                                                  _model.textController6.text,
+                                              'vinculo': _model.dropDownValue,
+                                              'reservaId': _model
+                                                  .radioButtonresidenValue,
+                                              'institucion':
+                                                  _model.textController7.text,
+                                              'direccionInst':
+                                                  _model.textController8.text,
+                                              'telefonoInst':
+                                                  _model.textController9.text,
+                                              'correoInst':
+                                                  _model.textController10.text,
+                                              'idSolicitante': _model
+                                                  .textFieldsolicitanteTextController
+                                                  .text,
+                                              'iduser': currentUserUid,
+                                            },
+                                            matchingRows: (rows) =>
+                                                rows.eqOrNull(
+                                              'idIngreso',
+                                              widget.rowingreso?.id,
+                                            ),
+                                          );
+                                          await IngresosTable().update(
+                                            data: {
+                                              'updated_at':
+                                                  supaSerialize<DateTime>(
+                                                      getCurrentTimestamp),
+                                            },
+                                            matchingRows: (rows) =>
+                                                rows.eqOrNull(
+                                              'id',
+                                              widget.rowingreso?.id,
+                                            ),
+                                          );
+                                          await showDialog(
+                                            context: context,
+                                            builder: (alertDialogContext) {
+                                              return WebViewAware(
+                                                child: AlertDialog(
+                                                  title: const Text('Carga correcta'),
+                                                  content: const Text(
+                                                      'La informacion se guardo correctamente!!'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: const Text('Ok'),
+                                                    ),
+                                                  ],
+                                                ),
+                                              );
+                                            },
+                                          );
+                                          Navigator.pop(context, true);
+                                        }
+                                      },
+                                      text: 'Guardar',
+                                      icon: const Icon(
+                                        Icons.save,
+                                        size: 15.0,
                                       ),
-                                      borderRadius: BorderRadius.circular(20.0),
-                                      hoverElevation: 4.0,
+                                      options: FFButtonOptions(
+                                        width: 250.0,
+                                        height: 40.0,
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            24.0, 0.0, 24.0, 0.0),
+                                        iconPadding:
+                                            const EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .success,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
+                                              color: Colors.white,
+                                              letterSpacing: 0.0,
+                                            ),
+                                        elevation: 2.0,
+                                        borderSide: const BorderSide(
+                                          color: Colors.transparent,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(20.0),
+                                        hoverElevation: 4.0,
+                                      ),
                                     ),
-                                  ),
                                 ],
                               ),
                             ],

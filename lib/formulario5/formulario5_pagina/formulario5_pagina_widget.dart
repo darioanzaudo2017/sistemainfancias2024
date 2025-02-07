@@ -29,6 +29,7 @@ class Formulario5PaginaWidget extends StatefulWidget {
     this.rowingreso,
     this.edit,
     required this.usuariorow,
+    required this.usuariorol,
   });
 
   final int? idingreso;
@@ -36,6 +37,7 @@ class Formulario5PaginaWidget extends StatefulWidget {
   final IngresosRow? rowingreso;
   final bool? edit;
   final UsuariosRow? usuariorow;
+  final VistaUsuariosRolesRow? usuariorol;
 
   @override
   State<Formulario5PaginaWidget> createState() =>
@@ -473,6 +475,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                                   identrevista: listViewFormulario3Row.idForm3,
                                                                                   editar: true,
                                                                                   usuariosrow: widget.usuariorow!,
+                                                                                  usuariorol: widget.usuariorol!,
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -833,6 +836,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                                   identrevista: listViewFormulario2Row.idForm2,
                                                                                   editar: true,
                                                                                   usuariorow: widget.usuariorow!,
+                                                                                  usuariorol: widget.usuariorol!,
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -1131,6 +1135,9 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                     usuariorow:
                                                                         widget
                                                                             .usuariorow!,
+                                                                    usuariosrol:
+                                                                        widget
+                                                                            .usuariorol!,
                                                                   ),
                                                                 ),
                                                               ),
@@ -4082,6 +4089,13 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                       serializeParam(
                                                                     widget
                                                                         .usuariorow,
+                                                                    ParamType
+                                                                        .SupabaseRow,
+                                                                  ),
+                                                                  'usuariosrol':
+                                                                      serializeParam(
+                                                                    widget
+                                                                        .usuariorol,
                                                                     ParamType
                                                                         .SupabaseRow,
                                                                   ),

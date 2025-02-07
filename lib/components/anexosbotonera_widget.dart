@@ -39,6 +39,7 @@ class AnexosbotoneraWidget extends StatefulWidget {
     this.numentrevistaflia,
     String? numampliacioninfo,
     this.editar,
+    this.usuariorol,
   }) : numampliacioninfo = numampliacioninfo ?? '0';
 
   final IngresosRow? ingresorow;
@@ -59,6 +60,8 @@ class AnexosbotoneraWidget extends StatefulWidget {
 
   /// editar
   final bool? editar;
+
+  final VistaUsuariosRolesRow? usuariorol;
 
   @override
   State<AnexosbotoneraWidget> createState() => _AnexosbotoneraWidgetState();
@@ -934,6 +937,8 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                                 formulario:
                                                                     widget
                                                                         .etapa,
+                                                                usuariorol: widget
+                                                                    .usuariorol!,
                                                               ),
                                                             ),
                                                           );
@@ -1063,6 +1068,8 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                                 identrevista: 0,
                                                                 editar: widget
                                                                     .editar,
+                                                                usuariorol: widget
+                                                                    .usuariorol!,
                                                               ),
                                                             ),
                                                           );

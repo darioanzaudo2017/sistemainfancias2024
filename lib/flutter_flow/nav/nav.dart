@@ -166,6 +166,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'usuariorow',
               ParamType.SupabaseRow,
             ),
+            usuariorol: params.getParam<VistaUsuariosRolesRow>(
+              'usuariorol',
+              ParamType.SupabaseRow,
+            ),
           ),
         ),
         FFRoute(
@@ -182,6 +186,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             ),
             usuariorow: params.getParam<UsuariosRow>(
               'usuariorow',
+              ParamType.SupabaseRow,
+            ),
+            usuariosrol: params.getParam<VistaUsuariosRolesRow>(
+              'usuariosrol',
               ParamType.SupabaseRow,
             ),
           ),
@@ -238,6 +246,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             ),
             usuariorow: params.getParam<UsuariosRow>(
               'usuariorow',
+              ParamType.SupabaseRow,
+            ),
+            usuariorol: params.getParam<VistaUsuariosRolesRow>(
+              'usuariorol',
               ParamType.SupabaseRow,
             ),
           ),

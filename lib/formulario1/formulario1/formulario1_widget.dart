@@ -27,11 +27,13 @@ class Formulario1Widget extends StatefulWidget {
     required this.idingreso,
     required this.rowexp,
     required this.usuariorow,
+    required this.usuariosrol,
   });
 
   final IngresosRow? idingreso;
   final VistaExpedientesUltimoEstadoRow? rowexp;
   final UsuariosRow? usuariorow;
+  final VistaUsuariosRolesRow? usuariosrol;
 
   @override
   State<Formulario1Widget> createState() => _Formulario1WidgetState();
@@ -236,6 +238,8 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                       editar: false,
                                                       usuariorow:
                                                           widget.usuariorow!,
+                                                      usuariorol:
+                                                          widget.usuariosrol!,
                                                     ),
                                                   ),
                                                 );
@@ -313,6 +317,8 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                       editar: true,
                                                       usuariorow:
                                                           widget.usuariorow!,
+                                                      usuariorol:
+                                                          widget.usuariosrol!,
                                                     ),
                                                   ),
                                                 );
@@ -413,6 +419,8 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                           widget.idingreso!,
                                                       rowexp: widget.rowexp!,
                                                       editar: false,
+                                                      usuariorow:
+                                                          widget.usuariosrol!,
                                                     ),
                                                   ),
                                                 );
@@ -488,6 +496,8 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                           widget.idingreso!,
                                                       rowexp: widget.rowexp!,
                                                       editar: true,
+                                                      usuariorow:
+                                                          widget.usuariosrol!,
                                                     ),
                                                   ),
                                                 );
