@@ -21,6 +21,7 @@ import '/formulario1/secciones_formulario1/seccion5/seccion5_widget.dart';
 import '/formulario1/secciones_formulario1/seccion7/seccion7_widget.dart';
 import '/formulario1/secciones_formulario1/seccion8/seccion8_widget.dart';
 import '/formulario1/secciones_formulario1/seccion9/seccion9_widget.dart';
+import '/index.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -44,6 +45,9 @@ class PerfilWidget extends StatefulWidget {
   final UsuariosRow? usuariorow;
   final SpdRow? spd;
   final VistaUsuariosRolesRow? usuariorol;
+
+  static String routeName = 'perfil';
+  static String routePath = '/perfil';
 
   @override
   State<PerfilWidget> createState() => _PerfilWidgetState();
@@ -656,7 +660,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                     );
 
                                                                                     context.pushNamed(
-                                                                                      'Ingresos',
+                                                                                      IngresosWidget.routeName,
                                                                                       queryParameters: {
                                                                                         'idexpediente': serializeParam(
                                                                                           _model.exp?.firstOrNull,
@@ -1144,7 +1148,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                     child: FFButtonWidget(
                                                                                       onPressed: () async {
                                                                                         context.pushNamed(
-                                                                                          'Senaf',
+                                                                                          SenafWidget.routeName,
                                                                                           queryParameters: {
                                                                                             'ingrow': serializeParam(
                                                                                               containeringresosIngresosRow,
@@ -1192,7 +1196,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                     child: FFButtonWidget(
                                                                                       onPressed: () async {
                                                                                         context.pushNamed(
-                                                                                          'Senaf',
+                                                                                          SenafWidget.routeName,
                                                                                           queryParameters: {
                                                                                             'ingrow': serializeParam(
                                                                                               containeringresosIngresosRow,
@@ -1397,7 +1401,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                               child: FFButtonWidget(
                                                                                 onPressed: () async {
                                                                                   context.pushNamed(
-                                                                                    'Definiciondemedidas',
+                                                                                    DefiniciondemedidasWidget.routeName,
                                                                                     queryParameters: {
                                                                                       'ingresorow': serializeParam(
                                                                                         containeringresosIngresosRow,
@@ -1607,7 +1611,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     context.pushNamed(
-                                                                                      'formulario5Pagina',
+                                                                                      Formulario5PaginaWidget.routeName,
                                                                                       queryParameters: {
                                                                                         'idingreso': serializeParam(
                                                                                           widget.idingreso,
@@ -1664,7 +1668,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     context.pushNamed(
-                                                                                      'formulario5Pagina',
+                                                                                      Formulario5PaginaWidget.routeName,
                                                                                       queryParameters: {
                                                                                         'idingreso': serializeParam(
                                                                                           widget.idingreso,
@@ -1984,7 +1988,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                               child: FFButtonWidget(
                                                                                 onPressed: () async {
                                                                                   context.pushNamed(
-                                                                                    'Entrevistas',
+                                                                                    EntrevistasWidget.routeName,
                                                                                     queryParameters: {
                                                                                       'ingresorow': serializeParam(
                                                                                         widget.idingreso,

@@ -8,6 +8,9 @@ export 'pruebarls_model.dart';
 class PruebarlsWidget extends StatefulWidget {
   const PruebarlsWidget({super.key});
 
+  static String routeName = 'pruebarls';
+  static String routePath = '/pruebarls';
+
   @override
   State<PruebarlsWidget> createState() => _PruebarlsWidgetState();
 }

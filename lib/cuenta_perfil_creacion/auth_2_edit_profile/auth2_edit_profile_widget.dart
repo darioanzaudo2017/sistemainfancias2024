@@ -11,6 +11,9 @@ export 'auth2_edit_profile_model.dart';
 class Auth2EditProfileWidget extends StatefulWidget {
   const Auth2EditProfileWidget({super.key});
 
+  static String routeName = 'auth_2_EditProfile';
+  static String routePath = '/auth2EditProfile';
+
   @override
   State<Auth2EditProfileWidget> createState() => _Auth2EditProfileWidgetState();
 }

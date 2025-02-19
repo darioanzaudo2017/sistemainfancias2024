@@ -13,6 +13,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/formulario1/formulario1/formulario1_widget.dart';
 import '/formulario6/formulario6/formulario6_widget.dart';
 import '/formulario7/formulario7/formulario7_widget.dart';
+import '/index.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -34,6 +35,9 @@ class DefiniciondemedidasWidget extends StatefulWidget {
   final VistaExpedientesUltimoEstadoRow? rowexp;
   final UsuariosRow? usuariorow;
   final VistaUsuariosRolesRow? usuariosrol;
+
+  static String routeName = 'Definiciondemedidas';
+  static String routePath = '/definiciondemedidas';
 
   @override
   State<DefiniciondemedidasWidget> createState() =>
@@ -1412,7 +1416,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                             () async {
                                                                           context
                                                                               .pushNamed(
-                                                                            'Respuestaform6page',
+                                                                            Respuestaform6pageWidget.routeName,
                                                                             queryParameters:
                                                                                 {
                                                                               'idingreso': serializeParam(

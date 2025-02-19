@@ -12,6 +12,9 @@ export 'auth2_forgot_password_model.dart';
 class Auth2ForgotPasswordWidget extends StatefulWidget {
   const Auth2ForgotPasswordWidget({super.key});
 
+  static String routeName = 'auth_2_ForgotPassword';
+  static String routePath = '/auth2ForgotPassword';
+
   @override
   State<Auth2ForgotPasswordWidget> createState() =>
       _Auth2ForgotPasswordWidgetState();

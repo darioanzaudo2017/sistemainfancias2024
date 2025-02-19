@@ -2,6 +2,7 @@ import 'dart:math' as math;
 
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
+import 'flutter_flow_util.dart';
 
 export 'package:data_table_2/data_table_2.dart' show DataColumn2;
 
@@ -250,9 +251,9 @@ class _FlutterFlowDataTableState<T> extends State<FlutterFlowDataTable<T>> {
       ),
       fillColor: WidgetStateProperty.resolveWith(
         (states) => states.contains(WidgetState.selected)
-            ? widget.checkboxSelectedFillColor ?? Colors.white.withOpacity(0.01)
+            ? widget.checkboxSelectedFillColor ?? Colors.white.applyAlpha(0.01)
             : widget.checkboxUnselectedFillColor ??
-                Colors.white.withOpacity(0.01),
+                Colors.white.applyAlpha(0.01),
       ),
       side: WidgetStateBorderSide.resolveWith(
         (states) => BorderSide(

@@ -56,6 +56,8 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
 
     _model.textFieldFocusNode3 ??= FocusNode();
 
+    _model.textFieldvinculoFocusNode ??= FocusNode();
+
     _model.textFieldFocusNode4 ??= FocusNode();
 
     _model.textFieldFocusNode5 ??= FocusNode();
@@ -729,7 +731,88 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: TextFormField(
-                                    controller: _model.textController5 ??=
+                                    controller: _model
+                                            .textFieldvinculoTextController ??=
+                                        TextEditingController(
+                                      text:
+                                          containerGrupoConvivienteRow?.vinculo,
+                                    ),
+                                    focusNode: _model.textFieldvinculoFocusNode,
+                                    autofocus: true,
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      labelText: 'Otro vinculo',
+                                      labelStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintText: 'Otro vinculo',
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .alternate,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedErrorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Noto Sans JP',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    validator: _model
+                                        .textFieldvinculoTextControllerValidator
+                                        .asValidator(context),
+                                    inputFormatters: [
+                                      _model.textFieldvinculoMask
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      8.0, 0.0, 8.0, 0.0),
+                                  child: TextFormField(
+                                    controller: _model.textController6 ??=
                                         TextEditingController(
                                       text: containerGrupoConvivienteRow
                                           ?.telefono,
@@ -794,7 +877,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                           fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
-                                    validator: _model.textController5Validator
+                                    validator: _model.textController6Validator
                                         .asValidator(context),
                                     inputFormatters: [_model.textFieldMask4],
                                   ),
@@ -807,7 +890,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: TextFormField(
-                            controller: _model.textController6 ??=
+                            controller: _model.textController7 ??=
                                 TextEditingController(
                               text: containerGrupoConvivienteRow?.direccion,
                             ),
@@ -863,7 +946,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                   fontFamily: 'Noto Sans JP',
                                   letterSpacing: 0.0,
                                 ),
-                            validator: _model.textController6Validator
+                            validator: _model.textController7Validator
                                 .asValidator(context),
                           ),
                         ),
@@ -871,7 +954,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: TextFormField(
-                            controller: _model.textController7 ??=
+                            controller: _model.textController8 ??=
                                 TextEditingController(
                               text: containerGrupoConvivienteRow?.observaciones,
                             ),
@@ -929,7 +1012,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                   letterSpacing: 0.0,
                                 ),
                             maxLines: 5,
-                            validator: _model.textController7Validator
+                            validator: _model.textController8Validator
                                 .asValidator(context),
                           ),
                         ),
@@ -1053,11 +1136,11 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                             'edad': _model.busquedapersonadni
                                                 ?.firstOrNull?.edad,
                                             'telefono':
-                                                _model.textController5.text,
-                                            'direccion':
                                                 _model.textController6.text,
-                                            'observaciones':
+                                            'direccion':
                                                 _model.textController7.text,
+                                            'observaciones':
+                                                _model.textController8.text,
                                             'idingreso': widget.rowingreso?.id,
                                             'idexpe': widget.idexp?.id,
                                             'conviviente':
@@ -1117,7 +1200,12 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                               _model.textController1.text),
                                           'apellido': functions.mayusculas(
                                               _model.textController2.text),
-                                          'vinculo': _model.dropDownValue,
+                                          'vinculo': _model.dropDownValue !=
+                                                  'Otros'
+                                              ? _model.dropDownValue
+                                              : _model
+                                                  .textFieldvinculoTextController
+                                                  .text,
                                           'dni': int.tryParse(_model
                                               .textFieldDniTextController.text),
                                           'fecha_nacimiento':
@@ -1126,11 +1214,11 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                           'edad': int.tryParse(
                                               _model.textController4.text),
                                           'telefono':
-                                              _model.textController5.text,
-                                          'direccion':
                                               _model.textController6.text,
-                                          'observaciones':
+                                          'direccion':
                                               _model.textController7.text,
+                                          'observaciones':
+                                              _model.textController8.text,
                                           'idingreso': widget.rowingreso?.id,
                                           'idexpe': widget.idexp?.id,
                                           'conviviente':
@@ -1198,7 +1286,12 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                           'nombre': _model.textController1.text,
                                           'apellido':
                                               _model.textController2.text,
-                                          'vinculo': _model.dropDownValue,
+                                          'vinculo': _model.dropDownValue !=
+                                                  'Otros'
+                                              ? _model.dropDownValue
+                                              : _model
+                                                  .textFieldvinculoTextController
+                                                  .text,
                                           'dni': int.tryParse(_model
                                               .textFieldDniTextController.text),
                                           'fecha_nacimiento':
@@ -1211,11 +1304,11 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                           'edad': int.tryParse(
                                               _model.textController4.text),
                                           'telefono':
-                                              _model.textController5.text,
-                                          'direccion':
                                               _model.textController6.text,
-                                          'observaciones':
+                                          'direccion':
                                               _model.textController7.text,
+                                          'observaciones':
+                                              _model.textController8.text,
                                           'idingreso': widget.rowingreso?.id,
                                           'idexpe': widget.idexp?.id,
                                           'conviviente':

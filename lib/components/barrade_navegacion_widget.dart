@@ -2,6 +2,7 @@ import '/backend/supabase/supabase.dart';
 import '/components/adjuntardocumento_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
@@ -104,7 +105,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
               hoverColor: Colors.transparent,
               highlightColor: Colors.transparent,
               onTap: () async {
-                context.pushNamed('HomePage');
+                context.pushNamed(HomePageWidget.routeName);
               },
               child: AnimatedContainer(
                 duration: Duration(milliseconds: 200),
@@ -161,7 +162,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                 highlightColor: Colors.transparent,
                 onTap: () async {
                   context.pushNamed(
-                    'Ingresos',
+                    IngresosWidget.routeName,
                     queryParameters: {
                       'idexpediente': serializeParam(
                         widget.exprow,
@@ -233,7 +234,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                 highlightColor: Colors.transparent,
                 onTap: () async {
                   context.pushNamed(
-                    'perfil',
+                    PerfilWidget.routeName,
                     queryParameters: {
                       'idingreso': serializeParam(
                         widget.ingresorow?.id,
@@ -377,7 +378,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                 highlightColor: Colors.transparent,
                 onTap: () async {
                   context.pushNamed(
-                    'Imprimir',
+                    ImprimirWidget.routeName,
                     queryParameters: {
                       'idexpediente': serializeParam(
                         widget.idexp,

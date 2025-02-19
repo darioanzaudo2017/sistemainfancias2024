@@ -2,6 +2,7 @@ import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'tarjetaencabezado_model.dart';
 export 'tarjetaencabezado_model.dart';
@@ -498,7 +499,8 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
                                                           );
 
                                                           context.pushNamed(
-                                                            'Ingresos',
+                                                            IngresosWidget
+                                                                .routeName,
                                                             queryParameters: {
                                                               'idexpediente':
                                                                   serializeParam(

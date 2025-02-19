@@ -27,6 +27,9 @@ class ImprimirWidget extends StatefulWidget {
   final DateTime? fechaexp;
   final VistaExpedientesUltimoEstadoRow? exprow;
 
+  static String routeName = 'Imprimir';
+  static String routePath = '/imprimir';
+
   @override
   State<ImprimirWidget> createState() => _ImprimirWidgetState();
 }

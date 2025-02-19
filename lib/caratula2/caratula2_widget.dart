@@ -11,6 +11,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/flutter_flow/random_data_util.dart' as random_data;
+import '/index.dart';
 import 'dart:async';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
@@ -27,6 +28,9 @@ class Caratula2Widget extends StatefulWidget {
 
   final UsuariosRow? usuario;
   final SpdRow? spd;
+
+  static String routeName = 'caratula2';
+  static String routePath = '/caratula2';
 
   @override
   State<Caratula2Widget> createState() => _Caratula2WidgetState();
@@ -2466,7 +2470,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                   );
 
                                                   context.pushNamed(
-                                                    'Ingresos',
+                                                    IngresosWidget.routeName,
                                                     queryParameters: {
                                                       'idexp': serializeParam(
                                                         _model

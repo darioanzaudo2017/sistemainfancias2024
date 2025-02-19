@@ -9,6 +9,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -19,6 +20,9 @@ export 'home_page_model.dart';
 
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({super.key});
+
+  static String routeName = 'HomePage';
+  static String routePath = '/homePage';
 
   @override
   State<HomePageWidget> createState() => _HomePageWidgetState();
@@ -322,7 +326,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             highlightColor: Colors.transparent,
                             onTap: () async {
                               context.pushNamed(
-                                'auth_2_EditProfile',
+                                Auth2EditProfileWidget.routeName,
                                 extra: <String, dynamic>{
                                   kTransitionInfoKey: TransitionInfo(
                                     hasTransition: true,
@@ -366,7 +370,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             highlightColor: Colors.transparent,
                             onTap: () async {
                               context.pushNamed(
-                                'Dashboard',
+                                DashboardWidget.routeName,
                                 queryParameters: {
                                   'usuariorow': serializeParam(
                                     homePageUsuariosRow,
@@ -440,7 +444,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               GoRouter.of(context).clearRedirectLocation();
 
                               context.goNamedAuth(
-                                  'auth_2_Login', context.mounted);
+                                  Auth2LoginWidget.routeName, context.mounted);
                             },
                             child: Material(
                               color: Colors.transparent,
@@ -1637,7 +1641,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                 FFButtonWidget(
                                                   onPressed: () async {
                                                     context.pushNamed(
-                                                      'Admin',
+                                                      AdminWidget.routeName,
                                                       queryParameters: {
                                                         'usuariosroles':
                                                             serializeParam(
@@ -1688,7 +1692,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                   child: FFButtonWidget(
                                                     onPressed: () async {
                                                       context.pushNamed(
-                                                        'caratula2',
+                                                        Caratula2Widget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'usuario':
                                                               serializeParam(
@@ -2338,7 +2343,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                   () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'Ingresos',
+                                                                  IngresosWidget
+                                                                      .routeName,
                                                                   queryParameters:
                                                                       {
                                                                     'idexpediente':
@@ -2828,7 +2834,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                       () async {
                                                                     context
                                                                         .pushNamed(
-                                                                      'Ingresos',
+                                                                      IngresosWidget
+                                                                          .routeName,
                                                                       queryParameters:
                                                                           {
                                                                         'idexpediente':

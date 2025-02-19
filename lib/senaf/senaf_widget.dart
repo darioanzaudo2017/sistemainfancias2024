@@ -10,6 +10,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/index.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -30,6 +31,9 @@ class SenafWidget extends StatefulWidget {
   final VistaExpedientesUltimoEstadoRow? expediente;
   final UsuariosRow? usuariorow;
   final VistaUsuariosRolesRow? usuariorol;
+
+  static String routeName = 'Senaf';
+  static String routePath = '/senaf';
 
   @override
   State<SenafWidget> createState() => _SenafWidgetState();
@@ -882,7 +886,8 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                       FFButtonWidget(
                                                         onPressed: () async {
                                                           context.pushNamed(
-                                                            'formulario5Pagina',
+                                                            Formulario5PaginaWidget
+                                                                .routeName,
                                                             queryParameters: {
                                                               'idingreso':
                                                                   serializeParam(
@@ -3069,7 +3074,7 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                               child: FFButtonWidget(
                                                                                 onPressed: () async {
                                                                                   context.pushNamed(
-                                                                                    'informesenaf',
+                                                                                    InformesenafWidget.routeName,
                                                                                     queryParameters: {
                                                                                       'link': serializeParam(
                                                                                         containerform9Formulario9Row?.linksolicitud,
