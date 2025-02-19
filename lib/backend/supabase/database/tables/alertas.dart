@@ -9,7 +9,7 @@ class AlertasTable extends SupabaseTable<AlertasRow> {
 }
 
 class AlertasRow extends SupabaseDataRow {
-  AlertasRow(super.data);
+  AlertasRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => AlertasTable();

@@ -38,7 +38,7 @@ class _CheckDNIWidgetState extends State<CheckDNIWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Material(
         color: Colors.transparent,
         elevation: 2.0,
@@ -47,7 +47,7 @@ class _CheckDNIWidgetState extends State<CheckDNIWidget> {
         ),
         child: Container(
           width: MediaQuery.sizeOf(context).width * 1.0,
-          constraints: const BoxConstraints(
+          constraints: BoxConstraints(
             maxWidth: 600.0,
           ),
           decoration: BoxDecoration(
@@ -57,7 +57,7 @@ class _CheckDNIWidgetState extends State<CheckDNIWidget> {
               color: FlutterFlowTheme.of(context).primary,
             ),
           ),
-          alignment: const AlignmentDirectional(0.0, 0.0),
+          alignment: AlignmentDirectional(0.0, 0.0),
         ),
       ),
     );

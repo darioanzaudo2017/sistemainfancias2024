@@ -80,7 +80,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -98,7 +98,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -116,29 +116,29 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                   width: MediaQuery.sizeOf(context).width * 0.25,
                   height: double.infinity,
                   decoration: BoxDecoration(
-                    color: const Color(0xFFF1F4F8),
+                    color: Color(0xFFF1F4F8),
                     borderRadius: BorderRadius.circular(0.0),
                     border: Border.all(
-                      color: const Color(0xFFE5E7EB),
+                      color: Color(0xFFE5E7EB),
                       width: 1.0,
                     ),
                   ),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 16.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 16.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 12.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -151,14 +151,14 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                             .bodyLarge
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
-                                              color: const Color(0xFF15161E),
+                                              color: Color(0xFF15161E),
                                               fontSize: 16.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 4.0, 0.0, 0.0),
                                         child: Text(
                                           currentUserEmail,
@@ -166,7 +166,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                               .labelMedium
                                               .override(
                                                 fontFamily: 'Plus Jakarta Sans',
-                                                color: const Color(0xFF606A85),
+                                                color: Color(0xFF606A85),
                                                 fontSize: 14.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
@@ -180,7 +180,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                             ],
                           ),
                         ),
-                        const Divider(
+                        Divider(
                           height: 12.0,
                           thickness: 2.0,
                           color: Color(0xFFE5E7EB),
@@ -235,11 +235,11 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                     usuariosrow: widget.usuariorow!,
                                   ),
                                 ),
-                              ].divide(const SizedBox(height: 5.0)),
+                              ].divide(SizedBox(height: 5.0)),
                             ),
                           ),
                         ),
-                        const Divider(
+                        Divider(
                           height: 12.0,
                           thickness: 2.0,
                           color: Color(0xFFE5E7EB),
@@ -250,7 +250,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                 ),
               Expanded(
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, -1.0),
+                  alignment: AlignmentDirectional(0.0, -1.0),
                   child: FutureBuilder<List<IngresosRow>>(
                     future: IngresosTable().querySingleRow(
                       queryFn: (q) => q.eqOrNull(
@@ -305,9 +305,9 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(1.0, -1.0),
+                                alignment: AlignmentDirectional(1.0, -1.0),
                                 child: Container(
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: Flex(
                                     direction:
                                         (MediaQuery.sizeOf(context).width >
@@ -356,10 +356,10 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                         options: FFButtonOptions(
                                           height: 35.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
@@ -368,11 +368,11 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                   .titleSmall
                                                   .override(
                                                     fontFamily: 'Noto Sans JP',
-                                                    color: const Color(0xFF39A9EF),
+                                                    color: Color(0xFF39A9EF),
                                                     letterSpacing: 0.0,
                                                   ),
                                           elevation: 3.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Color(0xFF39A9EF),
                                           ),
                                           borderRadius:
@@ -421,10 +421,10 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                         options: FFButtonOptions(
                                           height: 35.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
@@ -433,11 +433,11 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                   .titleSmall
                                                   .override(
                                                     fontFamily: 'Noto Sans JP',
-                                                    color: const Color(0xFF39A9EF),
+                                                    color: Color(0xFF39A9EF),
                                                     letterSpacing: 0.0,
                                                   ),
                                           elevation: 3.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Color(0xFF39A9EF),
                                           ),
                                           borderRadius:
@@ -448,20 +448,20 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                         .divide(
                                             (MediaQuery.sizeOf(context).width >
                                                     1200.0)
-                                                ? const SizedBox(width: 10.0)
-                                                : const SizedBox(height: 10.0))
+                                                ? SizedBox(width: 10.0)
+                                                : SizedBox(height: 10.0))
                                         .around(
                                             (MediaQuery.sizeOf(context).width >
                                                     1200.0)
-                                                ? const SizedBox(width: 10.0)
-                                                : const SizedBox(height: 10.0)),
+                                                ? SizedBox(width: 10.0)
+                                                : SizedBox(height: 10.0)),
                                   ),
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(1.0, 0.0),
+                                alignment: AlignmentDirectional(1.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 10.0, 0.0),
                                   child: FutureBuilder<
                                       List<GrupofamiliarexpedientesRow>>(
@@ -501,7 +501,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                               : null;
 
                                       return Container(
-                                        decoration: const BoxDecoration(),
+                                        decoration: BoxDecoration(),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           crossAxisAlignment:
@@ -517,9 +517,9 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                             return WebViewAware(
                                                               child:
                                                                   AlertDialog(
-                                                                title: const Text(
+                                                                title: Text(
                                                                     'Copiar lista de medidas'),
-                                                                content: const Text(
+                                                                content: Text(
                                                                     'Estas por copiar la lista de medidas del NNyA principal'),
                                                                 actions: [
                                                                   TextButton(
@@ -527,7 +527,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                         Navigator.pop(
                                                                             alertDialogContext,
                                                                             false),
-                                                                    child: const Text(
+                                                                    child: Text(
                                                                         'Cancelar'),
                                                                   ),
                                                                   TextButton(
@@ -535,7 +535,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                         Navigator.pop(
                                                                             alertDialogContext,
                                                                             true),
-                                                                    child: const Text(
+                                                                    child: Text(
                                                                         'Confirmar'),
                                                                   ),
                                                                 ],
@@ -560,13 +560,13 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                         (alertDialogContext) {
                                                       return WebViewAware(
                                                         child: AlertDialog(
-                                                          title: const Text('1'),
+                                                          title: Text('1'),
                                                           actions: [
                                                             TextButton(
                                                               onPressed: () =>
                                                                   Navigator.pop(
                                                                       alertDialogContext),
-                                                              child: const Text('Ok'),
+                                                              child: Text('Ok'),
                                                             ),
                                                           ],
                                                         ),
@@ -687,11 +687,11 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                   'Cargar informacion de expediente principal',
                                               options: FFButtonOptions(
                                                 height: 40.0,
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 iconPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -712,8 +712,8 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                               ),
                                             ),
                                           ]
-                                              .divide(const SizedBox(height: 5.0))
-                                              .around(const SizedBox(height: 5.0)),
+                                              .divide(SizedBox(height: 5.0))
+                                              .around(SizedBox(height: 5.0)),
                                         ),
                                       );
                                     },
@@ -721,12 +721,12 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                 ),
                               ),
                               Container(
-                                decoration: const BoxDecoration(),
+                                decoration: BoxDecoration(),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsets.all(10.0),
+                                      padding: EdgeInsets.all(10.0),
                                       child:
                                           FutureBuilder<List<Formulario6Row>>(
                                         future: (_model.requestCompleter1 ??=
@@ -781,7 +781,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsets.all(10.0),
+                                              padding: EdgeInsets.all(10.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -795,7 +795,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                       Flexible(
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -817,7 +817,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                       ),
                                                       Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 1.0, -1.0),
                                                         child: FFButtonWidget(
                                                           onPressed: () async {
@@ -885,14 +885,14 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                               FFButtonOptions(
                                                             height: 40.0,
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         24.0,
                                                                         0.0,
                                                                         24.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -915,7 +915,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                     ),
                                                             elevation: 3.0,
                                                             borderSide:
-                                                                const BorderSide(
+                                                                BorderSide(
                                                               color: Colors
                                                                   .transparent,
                                                               width: 1.0,
@@ -931,14 +931,14 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
                                                                 16.0, 16.0),
                                                     child: Container(
                                                       width: double.infinity,
                                                       decoration: BoxDecoration(
                                                         color: Colors.white,
-                                                        boxShadow: const [
+                                                        boxShadow: [
                                                           BoxShadow(
                                                             blurRadius: 4.0,
                                                             color: Color(
@@ -1063,7 +1063,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                       true,
                                                                   child: Align(
                                                                     alignment:
-                                                                        const AlignmentDirectional(
+                                                                        AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                     child: Text(
@@ -1093,7 +1093,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                       true,
                                                                   child: Align(
                                                                     alignment:
-                                                                        const AlignmentDirectional(
+                                                                        AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                     child: Text(
@@ -1124,7 +1124,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                       true,
                                                                   child: Align(
                                                                     alignment:
-                                                                        const AlignmentDirectional(
+                                                                        AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                     child: Text(
@@ -1167,7 +1167,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                               cells: [
                                                                 Align(
                                                                   alignment:
-                                                                      const AlignmentDirectional(
+                                                                      AlignmentDirectional(
                                                                           -1.0,
                                                                           0.0),
                                                                   child: Row(
@@ -1211,7 +1211,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                 ),
                                                                 Align(
                                                                   alignment:
-                                                                      const AlignmentDirectional(
+                                                                      AlignmentDirectional(
                                                                           0.0,
                                                                           0.0),
                                                                   child: Text(
@@ -1234,7 +1234,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                 ),
                                                                 Align(
                                                                   alignment:
-                                                                      const AlignmentDirectional(
+                                                                      AlignmentDirectional(
                                                                           0.0,
                                                                           0.0),
                                                                   child: Text(
@@ -1257,7 +1257,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                 ),
                                                                 Align(
                                                                   alignment:
-                                                                      const AlignmentDirectional(
+                                                                      AlignmentDirectional(
                                                                           0.0,
                                                                           0.0),
                                                                   child: Column(
@@ -1269,7 +1269,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                             .center,
                                                                     children: [
                                                                       Align(
-                                                                        alignment: const AlignmentDirectional(
+                                                                        alignment: AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                         child:
@@ -1341,7 +1341,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
 
                                                                     return Container(
                                                                       decoration:
-                                                                          const BoxDecoration(),
+                                                                          BoxDecoration(),
                                                                       child:
                                                                           Column(
                                                                         mainAxisSize:
@@ -1354,7 +1354,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                           Flexible(
                                                                             child:
                                                                                 Align(
-                                                                              alignment: const AlignmentDirectional(-1.0, -1.0),
+                                                                              alignment: AlignmentDirectional(-1.0, -1.0),
                                                                               child: Text(
                                                                                 valueOrDefault<String>(
                                                                                   containerListaDerechosVulneradosexpedienteRow?.derecho,
@@ -1374,7 +1374,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                           Flexible(
                                                                             child:
                                                                                 Align(
-                                                                              alignment: const AlignmentDirectional(-1.0, -1.0),
+                                                                              alignment: AlignmentDirectional(-1.0, -1.0),
                                                                               child: Text(
                                                                                 valueOrDefault<String>(
                                                                                   containerListaDerechosVulneradosexpedienteRow?.subcategoria,
@@ -1398,7 +1398,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                 ),
                                                                 Container(
                                                                   decoration:
-                                                                      const BoxDecoration(),
+                                                                      BoxDecoration(),
                                                                   child: Column(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -1436,12 +1436,12 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                             FFButtonOptions(
                                                                           height:
                                                                               30.0,
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               24.0,
                                                                               0.0,
                                                                               24.0,
                                                                               0.0),
-                                                                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               0.0,
@@ -1458,7 +1458,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                           elevation:
                                                                               3.0,
                                                                           borderSide:
-                                                                              const BorderSide(
+                                                                              BorderSide(
                                                                             color:
                                                                                 Colors.transparent,
                                                                             width:
@@ -1469,7 +1469,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                         ),
                                                                       ),
                                                                       Align(
-                                                                        alignment: const AlignmentDirectional(
+                                                                        alignment: AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                         child:
@@ -1543,7 +1543,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                           text:
                                                                               'Ver y editar',
                                                                           icon:
-                                                                              const Icon(
+                                                                              Icon(
                                                                             Icons.remove_red_eye_outlined,
                                                                             size:
                                                                                 15.0,
@@ -1554,21 +1554,21 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                                 130.0,
                                                                             height:
                                                                                 30.0,
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 0.0,
                                                                                 0.0),
-                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 0.0,
                                                                                 0.0),
                                                                             color:
-                                                                                const Color(0x4C4B39EF),
+                                                                                Color(0x4C4B39EF),
                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                   fontFamily: 'Plus Jakarta Sans',
-                                                                                  color: const Color(0xFF14181B),
+                                                                                  color: Color(0xFF14181B),
                                                                                   fontSize: 14.0,
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.w500,
@@ -1576,7 +1576,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                             elevation:
                                                                                 0.0,
                                                                             borderSide:
-                                                                                const BorderSide(
+                                                                                BorderSide(
                                                                               color: Color(0xFF4B39EF),
                                                                               width: 2.0,
                                                                             ),
@@ -1585,7 +1585,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                           ),
                                                                         ),
                                                                       ),
-                                                                    ].divide(const SizedBox(
+                                                                    ].divide(SizedBox(
                                                                         height:
                                                                             5.0)),
                                                                   ),
@@ -1640,7 +1640,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                       ),
                                                     ),
                                                   ),
-                                                ].divide(const SizedBox(height: 5.0)),
+                                                ].divide(SizedBox(height: 5.0)),
                                               ),
                                             ),
                                           );
@@ -1650,7 +1650,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                     if (containerIngresosRow?.form7 ?? true)
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(-1.0, 0.0),
+                                            AlignmentDirectional(-1.0, 0.0),
                                         child:
                                             FutureBuilder<List<Formulario7Row>>(
                                           future: (_model.requestCompleter2 ??=
@@ -1715,7 +1715,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                           20.0),
                                                 ),
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 5.0),
                                                   child: Column(
@@ -1724,11 +1724,11 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                     children: [
                                                       Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, -1.0),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -1747,7 +1747,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                             children: [
                                                               Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         1.0,
                                                                         0.0),
                                                                 child: Row(
@@ -1772,11 +1772,11 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                               containerIngresosRow.form7completo!) {
                                                                             return FlutterFlowTheme.of(context).accent2;
                                                                           } else {
-                                                                            return const Color(0x00000000);
+                                                                            return Color(0x00000000);
                                                                           }
                                                                         }(),
                                                                         borderRadius:
-                                                                            const BorderRadius.only(
+                                                                            BorderRadius.only(
                                                                           bottomLeft:
                                                                               Radius.circular(20.0),
                                                                           bottomRight:
@@ -1791,7 +1791,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           15.0,
                                                                           0.0,
                                                                           0.0,
@@ -1845,12 +1845,12 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                                         builder: (alertDialogContext) {
                                                                                           return WebViewAware(
                                                                                             child: AlertDialog(
-                                                                                              title: const Text('Carga correcta'),
-                                                                                              content: const Text('EL acta se genero un tu drive correctamente!!'),
+                                                                                              title: Text('Carga correcta'),
+                                                                                              content: Text('EL acta se genero un tu drive correctamente!!'),
                                                                                               actions: [
                                                                                                 TextButton(
                                                                                                   onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                  child: const Text('Ok'),
+                                                                                                  child: Text('Ok'),
                                                                                                 ),
                                                                                               ],
                                                                                             ),
@@ -1872,12 +1872,12 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                                         builder: (alertDialogContext) {
                                                                                           return WebViewAware(
                                                                                             child: AlertDialog(
-                                                                                              title: const Text('Carga correcta'),
-                                                                                              content: const Text('EL acta se genero un tu drive correctamente!!'),
+                                                                                              title: Text('Carga correcta'),
+                                                                                              content: Text('EL acta se genero un tu drive correctamente!!'),
                                                                                               actions: [
                                                                                                 TextButton(
                                                                                                   onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                  child: const Text('Ok'),
+                                                                                                  child: Text('Ok'),
                                                                                                 ),
                                                                                               ],
                                                                                             ),
@@ -1891,15 +1891,15 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                                   text: 'Imprimir acta',
                                                                                   options: FFButtonOptions(
                                                                                     height: 40.0,
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                     color: () {
                                                                                       if (containerform7Formulario7Row?.linkDocs == null || containerform7Formulario7Row?.linkDocs == '') {
                                                                                         return FlutterFlowTheme.of(context).tertiary;
                                                                                       } else if (containerform7Formulario7Row?.linkDocs != null && containerform7Formulario7Row?.linkDocs != '') {
                                                                                         return FlutterFlowTheme.of(context).secondary;
                                                                                       } else {
-                                                                                        return const Color(0x00000000);
+                                                                                        return Color(0x00000000);
                                                                                       }
                                                                                     }(),
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
@@ -1908,7 +1908,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                                           letterSpacing: 0.0,
                                                                                         ),
                                                                                     elevation: 3.0,
-                                                                                    borderSide: const BorderSide(
+                                                                                    borderSide: BorderSide(
                                                                                       color: Colors.transparent,
                                                                                       width: 1.0,
                                                                                     ),
@@ -1931,9 +1931,9 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                                       await launchURL(containerform7Formulario7Row!.linkDocs!);
                                                                                     },
                                                                                   ),
-                                                                              ].divide(const SizedBox(width: 10.0)),
+                                                                              ].divide(SizedBox(width: 10.0)),
                                                                             ),
-                                                                        ].divide(const SizedBox(height: 4.0)),
+                                                                        ].divide(SizedBox(height: 4.0)),
                                                                       ),
                                                                     ),
                                                                   ],
@@ -1944,7 +1944,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                     Container(
                                                                   width: 200.0,
                                                                   decoration:
-                                                                      const BoxDecoration(),
+                                                                      BoxDecoration(),
                                                                   child: Column(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -1966,7 +1966,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                               [
                                                                             if (!containerIngresosRow!.form7completo!)
                                                                               Align(
-                                                                                alignment: const AlignmentDirectional(0.0, 1.0),
+                                                                                alignment: AlignmentDirectional(0.0, 1.0),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     await showModalBottomSheet(
@@ -2008,8 +2008,8 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                                   options: FFButtonOptions(
                                                                                     width: 150.0,
                                                                                     height: 30.0,
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: 'Noto Sans JP',
@@ -2017,7 +2017,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                                           letterSpacing: 0.0,
                                                                                         ),
                                                                                     elevation: 3.0,
-                                                                                    borderSide: const BorderSide(
+                                                                                    borderSide: BorderSide(
                                                                                       color: Colors.transparent,
                                                                                       width: 1.0,
                                                                                     ),
@@ -2028,7 +2028,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                             if (containerIngresosRow.form7completo ??
                                                                                 true)
                                                                               Align(
-                                                                                alignment: const AlignmentDirectional(0.0, 1.0),
+                                                                                alignment: AlignmentDirectional(0.0, 1.0),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     await showModalBottomSheet(
@@ -2061,8 +2061,8 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                                   options: FFButtonOptions(
                                                                                     width: 150.0,
                                                                                     height: 30.0,
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                     color: FlutterFlowTheme.of(context).secondary,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: 'Noto Sans JP',
@@ -2070,7 +2070,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                                           letterSpacing: 0.0,
                                                                                         ),
                                                                                     elevation: 3.0,
-                                                                                    borderSide: const BorderSide(
+                                                                                    borderSide: BorderSide(
                                                                                       color: Colors.transparent,
                                                                                       width: 1.0,
                                                                                     ),
@@ -2078,15 +2078,15 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                                   ),
                                                                                 ),
                                                                               ),
-                                                                          ].divide(const SizedBox(height: 5.0)),
+                                                                          ].divide(SizedBox(height: 5.0)),
                                                                         ),
-                                                                    ].divide(const SizedBox(
+                                                                    ].divide(SizedBox(
                                                                         height:
                                                                             5.0)),
                                                                   ),
                                                                 ),
                                                               ),
-                                                            ].divide(const SizedBox(
+                                                            ].divide(SizedBox(
                                                                 width: 16.0)),
                                                           ),
                                                         ),
@@ -2103,8 +2103,8 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                 ),
                               ),
                             ]
-                                .divide(const SizedBox(height: 10.0))
-                                .around(const SizedBox(height: 10.0)),
+                                .divide(SizedBox(height: 10.0))
+                                .around(SizedBox(height: 10.0)),
                           ),
                         ),
                       );

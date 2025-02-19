@@ -21,7 +21,7 @@ class AgregarConvivienteWidget extends StatefulWidget {
     int? idgrupoconviviente,
     this.editar,
     this.idnnya,
-  }) : idgrupoconviviente = idgrupoconviviente ?? 0;
+  }) : this.idgrupoconviviente = idgrupoconviviente ?? 0;
 
   final IngresosRow? rowingreso;
   final VistaExpedientesUltimoEstadoRow? idexp;
@@ -75,7 +75,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<GrupoConvivienteRow>>(
         future: GrupoConvivienteTable().querySingleRow(
           queryFn: (q) => q.eqOrNull(
@@ -122,14 +122,14 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                   color: FlutterFlowTheme.of(context).primary,
                 ),
               ),
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Form(
                 key: _model.formKey,
                 autovalidateMode: AutovalidateMode.disabled,
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -140,9 +140,9 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Align(
-                              alignment: const AlignmentDirectional(0.0, -1.0),
+                              alignment: AlignmentDirectional(0.0, -1.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     80.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   '3. Grupo conviviente / No conviviente',
@@ -175,14 +175,14 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                           ],
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Es grupo conviente?',
@@ -195,7 +195,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 10.0, 0.0),
                                 child: FlutterFlowRadioButton(
                                   options: ['Si', 'No'].toList(),
@@ -234,7 +234,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                   verticalAlignment: WrapCrossAlignment.start,
                                 ),
                               ),
-                            ].divide(const SizedBox(width: 10.0)),
+                            ].divide(SizedBox(width: 10.0)),
                           ),
                         ),
                         Row(
@@ -242,7 +242,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                           children: [
                             Expanded(
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     8.0, 0.0, 8.0, 0.0),
                                 child: TextFormField(
                                   controller: _model.textController1 ??=
@@ -312,7 +312,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                             ),
                             Expanded(
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     8.0, 0.0, 8.0, 0.0),
                                 child: TextFormField(
                                   controller: _model.textController2 ??=
@@ -383,7 +383,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                             ),
                             Expanded(
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     8.0, 0.0, 8.0, 0.0),
                                 child: TextFormField(
                                   controller:
@@ -458,7 +458,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                           ],
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -466,7 +466,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                             children: [
                               Flexible(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Fecha de nacimiento:',
@@ -500,11 +500,11 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 10.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
-                                    final datePickedDate =
+                                    final _datePickedDate =
                                         await showDatePicker(
                                       context: context,
                                       initialDate: getCurrentTimestamp,
@@ -547,13 +547,17 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                       },
                                     );
 
-                                    if (datePickedDate != null) {
+                                    if (_datePickedDate != null) {
                                       safeSetState(() {
                                         _model.datePicked = DateTime(
-                                          datePickedDate.year,
-                                          datePickedDate.month,
-                                          datePickedDate.day,
+                                          _datePickedDate.year,
+                                          _datePickedDate.month,
+                                          _datePickedDate.day,
                                         );
+                                      });
+                                    } else if (_model.datePicked != null) {
+                                      safeSetState(() {
+                                        _model.datePicked = getCurrentTimestamp;
                                       });
                                     }
                                   },
@@ -569,9 +573,9 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                   ),
                                   options: FFButtonOptions(
                                     height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).primary,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -582,7 +586,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -592,9 +596,9 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
-                                  child: SizedBox(
+                                  child: Container(
                                     width: 100.0,
                                     child: TextFormField(
                                       controller: _model.textController4 ??=
@@ -670,7 +674,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
                                 child: FlutterFlowDropDown<String>(
                                   controller: _model.dropDownValueController ??=
@@ -678,7 +682,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                     _model.dropDownValue ??=
                                         containerGrupoConvivienteRow?.vinculo,
                                   ),
-                                  options: const [
+                                  options: [
                                     'Madre',
                                     'Padre',
                                     'Hemana/os',
@@ -712,7 +716,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                       FlutterFlowTheme.of(context).accent1,
                                   borderWidth: 0.0,
                                   borderRadius: 8.0,
-                                  margin: const EdgeInsetsDirectional.fromSTEB(
+                                  margin: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 12.0, 0.0),
                                   hidesUnderline: true,
                                   isOverButton: false,
@@ -722,7 +726,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: TextFormField(
                                     controller: _model.textController5 ??=
@@ -796,11 +800,11 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                   ),
                                 ),
                               ),
-                            ].divide(const SizedBox(width: 10.0)),
+                            ].divide(SizedBox(width: 10.0)),
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: TextFormField(
                             controller: _model.textController6 ??=
@@ -864,7 +868,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: TextFormField(
                             controller: _model.textController7 ??=
@@ -977,7 +981,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                                       (alertDialogContext) {
                                                     return WebViewAware(
                                                       child: AlertDialog(
-                                                        title: const Text(
+                                                        title: Text(
                                                             'El DNI esta duplicado'),
                                                         content: Text(
                                                             'Desea guardar como grupo conviviente a:${_model.nombre}, ${_model.apellido}, DNI: ${_model.dni?.toString()}'),
@@ -988,7 +992,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                                                     alertDialogContext,
                                                                     false),
                                                             child:
-                                                                const Text('Cancel'),
+                                                                Text('Cancel'),
                                                           ),
                                                           TextButton(
                                                             onPressed: () =>
@@ -996,7 +1000,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                                                     alertDialogContext,
                                                                     true),
                                                             child:
-                                                                const Text('Confirm'),
+                                                                Text('Confirm'),
                                                           ),
                                                         ],
                                                       ),
@@ -1162,16 +1166,16 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                           builder: (alertDialogContext) {
                                             return WebViewAware(
                                               child: AlertDialog(
-                                                title: const Text(
+                                                title: Text(
                                                     'Se guardo correctamente'),
-                                                content: const Text(
+                                                content: Text(
                                                     'Se gardo correctamente la informacion'),
                                                 actions: [
                                                   TextButton(
                                                     onPressed: () =>
                                                         Navigator.pop(
                                                             alertDialogContext),
-                                                    child: const Text('Ok'),
+                                                    child: Text('Ok'),
                                                   ),
                                                 ],
                                               ),
@@ -1198,7 +1202,11 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                           'dni': int.tryParse(_model
                                               .textFieldDniTextController.text),
                                           'fecha_nacimiento':
-                                              supaSerialize<DateTime>(_model.datePicked ?? containerGrupoConvivienteRow
+                                              supaSerialize<DateTime>(_model
+                                                          .datePicked !=
+                                                      null
+                                                  ? _model.datePicked
+                                                  : containerGrupoConvivienteRow
                                                       ?.fechaNacimiento),
                                           'edad': int.tryParse(
                                               _model.textController4.text),
@@ -1239,16 +1247,16 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                     safeSetState(() {});
                                   },
                                   text: 'Guardar',
-                                  icon: const Icon(
+                                  icon: Icon(
                                     Icons.save,
                                     size: 15.0,
                                   ),
                                   options: FFButtonOptions(
                                     width: 250.0,
                                     height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).success,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -1259,7 +1267,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 2.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -1272,8 +1280,8 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                           ],
                         ),
                       ]
-                          .divide(const SizedBox(height: 8.0))
-                          .around(const SizedBox(height: 8.0)),
+                          .divide(SizedBox(height: 8.0))
+                          .around(SizedBox(height: 8.0)),
                     ),
                   ),
                 ),

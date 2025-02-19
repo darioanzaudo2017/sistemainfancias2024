@@ -69,7 +69,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -87,7 +87,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -122,7 +122,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                   : null;
 
               return Container(
-                decoration: const BoxDecoration(),
+                decoration: BoxDecoration(),
                 child: FutureBuilder<List<IngresosRow>>(
                   future: IngresosTable().querySingleRow(
                     queryFn: (q) => q.eqOrNull(
@@ -158,7 +158,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                         color: FlutterFlowTheme.of(context).alternate,
                       ),
                       child: Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: FutureBuilder<List<DocumentosadjuntosRow>>(
                           future: (_model.requestCompleter ??= Completer<
                                   List<DocumentosadjuntosRow>>()
@@ -193,7 +193,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                             return Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: MediaQuery.sizeOf(context).height * 0.93,
-                              constraints: const BoxConstraints(
+                              constraints: BoxConstraints(
                                 maxWidth: 800.0,
                               ),
                               decoration: BoxDecoration(
@@ -213,7 +213,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.all(20.0),
+                                    padding: EdgeInsets.all(20.0),
                                     child: FutureBuilder<
                                         List<ImpresionesExpedientesRow>>(
                                       future: ImpresionesExpedientesTable()
@@ -268,7 +268,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                   BorderRadius.circular(10.0),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsets.all(10.0),
+                                              padding: EdgeInsets.all(10.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -303,14 +303,14 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                             FFButtonOptions(
                                                           height: 40.0,
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       0.0,
                                                                       16.0,
                                                                       0.0),
                                                           iconPadding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -402,7 +402,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                             safeSetState(() {});
                                                           },
                                                           text: 'Crear listado',
-                                                          icon: const Icon(
+                                                          icon: Icon(
                                                             Icons.list_alt,
                                                             size: 15.0,
                                                           ),
@@ -410,14 +410,14 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                               FFButtonOptions(
                                                             height: 40.0,
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         0.0,
                                                                         16.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -447,7 +447,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                         ),
                                                     ],
                                                   ),
-                                                ].divide(const SizedBox(height: 5.0)),
+                                                ].divide(SizedBox(height: 5.0)),
                                               ),
                                             ),
                                           ),
@@ -488,17 +488,17 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                     .waitForRequestCompleted();
                                               },
                                               text: 'Refrescar ',
-                                              icon: const Icon(
+                                              icon: Icon(
                                                 Icons.update_sharp,
                                                 size: 15.0,
                                               ),
                                               options: FFButtonOptions(
                                                 height: 40.0,
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 iconPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -522,7 +522,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                         ),
                                         Container(
                                           height: 650.0,
-                                          decoration: const BoxDecoration(),
+                                          decoration: BoxDecoration(),
                                           child: Builder(
                                             builder: (context) {
                                               final containerVar =
@@ -541,7 +541,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                           containerVarIndex];
                                                   return Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 20.0,
                                                                 12.0,
@@ -551,7 +551,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                       width: double.infinity,
                                                       decoration: BoxDecoration(
                                                         color: Colors.white,
-                                                        boxShadow: const [
+                                                        boxShadow: [
                                                           BoxShadow(
                                                             blurRadius: 5.0,
                                                             color: Color(
@@ -570,7 +570,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsets.all(8.0),
+                                                            EdgeInsets.all(8.0),
                                                         child: Row(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -588,7 +588,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                         .start,
                                                                 children: [
                                                                   Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             12.0,
                                                                             4.0,
@@ -608,7 +608,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                             fontFamily:
                                                                                 'Plus Jakarta Sans',
                                                                             color:
-                                                                                const Color(0xFF14181B),
+                                                                                Color(0xFF14181B),
                                                                             fontSize:
                                                                                 16.0,
                                                                             letterSpacing:
@@ -619,7 +619,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                     ),
                                                                   ),
                                                                   Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             12.0,
                                                                             0.0,
@@ -640,7 +640,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                             fontFamily:
                                                                                 'Plus Jakarta Sans',
                                                                             color:
-                                                                                const Color(0xFF57636C),
+                                                                                Color(0xFF57636C),
                                                                             fontSize:
                                                                                 12.0,
                                                                             letterSpacing:
@@ -651,7 +651,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                     ),
                                                                   ),
                                                                   Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             12.0,
                                                                             0.0,
@@ -671,7 +671,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                             fontFamily:
                                                                                 'Plus Jakarta Sans',
                                                                             color:
-                                                                                const Color(0xFF57636C),
+                                                                                Color(0xFF57636C),
                                                                             fontSize:
                                                                                 12.0,
                                                                             letterSpacing:
@@ -694,12 +694,12 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                           containerVarItem.documento !=
                                                                               '')
                                                                         Align(
-                                                                          alignment: const AlignmentDirectional(
+                                                                          alignment: AlignmentDirectional(
                                                                               -1.0,
                                                                               0.0),
                                                                           child:
                                                                               Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 12.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -725,7 +725,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                           containerVarItem.documentopdf !=
                                                                               '')
                                                                         Align(
-                                                                          alignment: const AlignmentDirectional(
+                                                                          alignment: AlignmentDirectional(
                                                                               -1.0,
                                                                               0.0),
                                                                           child:
@@ -748,7 +748,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                             },
                                                                           ),
                                                                         ),
-                                                                    ].divide(const SizedBox(
+                                                                    ].divide(SizedBox(
                                                                         width:
                                                                             10.0)),
                                                                   ),
@@ -764,7 +764,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                               0.0,
                                                                         ),
                                                                   ),
-                                                                ].divide(const SizedBox(
+                                                                ].divide(SizedBox(
                                                                     height:
                                                                         5.0)),
                                                               ),
@@ -818,12 +818,12 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                 (alertDialogContext) {
                                                                               return WebViewAware(
                                                                                 child: AlertDialog(
-                                                                                  title: const Text('Se ejecuto correctamente!'),
-                                                                                  content: const Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                  title: Text('Se ejecuto correctamente!'),
+                                                                                  content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
                                                                                   actions: [
                                                                                     TextButton(
                                                                                       onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                      child: const Text('Ok'),
+                                                                                      child: Text('Ok'),
                                                                                     ),
                                                                                   ],
                                                                                 ),
@@ -862,12 +862,12 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                               builder: (alertDialogContext) {
                                                                                 return WebViewAware(
                                                                                   child: AlertDialog(
-                                                                                    title: const Text('Se ejecuto correctamente!'),
-                                                                                    content: const Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                    title: Text('Se ejecuto correctamente!'),
+                                                                                    content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
                                                                                     actions: [
                                                                                       TextButton(
                                                                                         onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                        child: const Text('Ok'),
+                                                                                        child: Text('Ok'),
                                                                                       ),
                                                                                     ],
                                                                                   ),
@@ -899,12 +899,12 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                 builder: (alertDialogContext) {
                                                                                   return WebViewAware(
                                                                                     child: AlertDialog(
-                                                                                      title: const Text('Se ejecuto correctamente!'),
-                                                                                      content: const Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                      title: Text('Se ejecuto correctamente!'),
+                                                                                      content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
                                                                                       actions: [
                                                                                         TextButton(
                                                                                           onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                          child: const Text('Ok'),
+                                                                                          child: Text('Ok'),
                                                                                         ),
                                                                                       ],
                                                                                     ),
@@ -933,12 +933,12 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                   builder: (alertDialogContext) {
                                                                                     return WebViewAware(
                                                                                       child: AlertDialog(
-                                                                                        title: const Text('Se ejecuto correctamente!'),
-                                                                                        content: const Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                        title: Text('Se ejecuto correctamente!'),
+                                                                                        content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
                                                                                         actions: [
                                                                                           TextButton(
                                                                                             onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                            child: const Text('Ok'),
+                                                                                            child: Text('Ok'),
                                                                                           ),
                                                                                         ],
                                                                                       ),
@@ -966,12 +966,12 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                     builder: (alertDialogContext) {
                                                                                       return WebViewAware(
                                                                                         child: AlertDialog(
-                                                                                          title: const Text('Se ejecuto correctamente!'),
-                                                                                          content: const Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                          title: Text('Se ejecuto correctamente!'),
+                                                                                          content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
                                                                                           actions: [
                                                                                             TextButton(
                                                                                               onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                              child: const Text('Ok'),
+                                                                                              child: Text('Ok'),
                                                                                             ),
                                                                                           ],
                                                                                         ),
@@ -985,12 +985,12 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                     builder: (alertDialogContext) {
                                                                                       return WebViewAware(
                                                                                         child: AlertDialog(
-                                                                                          title: const Text('Se enviara un mail a la cordinacion!'),
-                                                                                          content: const Text('Se envio el mail!!'),
+                                                                                          title: Text('Se enviara un mail a la cordinacion!'),
+                                                                                          content: Text('Se envio el mail!!'),
                                                                                           actions: [
                                                                                             TextButton(
                                                                                               onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                              child: const Text('Ok'),
+                                                                                              child: Text('Ok'),
                                                                                             ),
                                                                                           ],
                                                                                         ),
@@ -1013,12 +1013,12 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                         FFButtonOptions(
                                                                       height:
                                                                           40.0,
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
                                                                           0.0),
-                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -1087,12 +1087,12 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                 (alertDialogContext) {
                                                                               return WebViewAware(
                                                                                 child: AlertDialog(
-                                                                                  title: const Text('Se ejecuto correctamente!'),
-                                                                                  content: const Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                  title: Text('Se ejecuto correctamente!'),
+                                                                                  content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
                                                                                   actions: [
                                                                                     TextButton(
                                                                                       onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                      child: const Text('Ok'),
+                                                                                      child: Text('Ok'),
                                                                                     ),
                                                                                   ],
                                                                                 ),
@@ -1133,12 +1133,12 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                               builder: (alertDialogContext) {
                                                                                 return WebViewAware(
                                                                                   child: AlertDialog(
-                                                                                    title: const Text('Se ejecuto correctamente!'),
-                                                                                    content: const Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                    title: Text('Se ejecuto correctamente!'),
+                                                                                    content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
                                                                                     actions: [
                                                                                       TextButton(
                                                                                         onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                        child: const Text('Ok'),
+                                                                                        child: Text('Ok'),
                                                                                       ),
                                                                                     ],
                                                                                   ),
@@ -1171,12 +1171,12 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                 builder: (alertDialogContext) {
                                                                                   return WebViewAware(
                                                                                     child: AlertDialog(
-                                                                                      title: const Text('Se ejecuto correctamente!'),
-                                                                                      content: const Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                      title: Text('Se ejecuto correctamente!'),
+                                                                                      content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
                                                                                       actions: [
                                                                                         TextButton(
                                                                                           onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                          child: const Text('Ok'),
+                                                                                          child: Text('Ok'),
                                                                                         ),
                                                                                       ],
                                                                                     ),
@@ -1206,12 +1206,12 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                   builder: (alertDialogContext) {
                                                                                     return WebViewAware(
                                                                                       child: AlertDialog(
-                                                                                        title: const Text('Se ejecuto correctamente!'),
-                                                                                        content: const Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                        title: Text('Se ejecuto correctamente!'),
+                                                                                        content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
                                                                                         actions: [
                                                                                           TextButton(
                                                                                             onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                            child: const Text('Ok'),
+                                                                                            child: Text('Ok'),
                                                                                           ),
                                                                                         ],
                                                                                       ),
@@ -1240,12 +1240,12 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                     builder: (alertDialogContext) {
                                                                                       return WebViewAware(
                                                                                         child: AlertDialog(
-                                                                                          title: const Text('Se ejecuto correctamente!'),
-                                                                                          content: const Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                          title: Text('Se ejecuto correctamente!'),
+                                                                                          content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
                                                                                           actions: [
                                                                                             TextButton(
                                                                                               onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                              child: const Text('Ok'),
+                                                                                              child: Text('Ok'),
                                                                                             ),
                                                                                           ],
                                                                                         ),
@@ -1259,12 +1259,12 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                     builder: (alertDialogContext) {
                                                                                       return WebViewAware(
                                                                                         child: AlertDialog(
-                                                                                          title: const Text('Se enviara una mail a la coordinacion'),
-                                                                                          content: const Text('Se envio un mail!!!'),
+                                                                                          title: Text('Se enviara una mail a la coordinacion'),
+                                                                                          content: Text('Se envio un mail!!!'),
                                                                                           actions: [
                                                                                             TextButton(
                                                                                               onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                              child: const Text('Ok'),
+                                                                                              child: Text('Ok'),
                                                                                             ),
                                                                                           ],
                                                                                         ),
@@ -1287,12 +1287,12 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                         FFButtonOptions(
                                                                       height:
                                                                           40.0,
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
                                                                           0.0),
-                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -1318,7 +1318,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                               8.0),
                                                                     ),
                                                                   ),
-                                                              ].divide(const SizedBox(
+                                                              ].divide(SizedBox(
                                                                   height: 5.0)),
                                                             ),
                                                           ],

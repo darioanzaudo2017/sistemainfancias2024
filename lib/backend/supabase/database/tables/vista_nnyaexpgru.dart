@@ -10,7 +10,7 @@ class VistaNnyaexpgruTable extends SupabaseTable<VistaNnyaexpgruRow> {
 }
 
 class VistaNnyaexpgruRow extends SupabaseDataRow {
-  VistaNnyaexpgruRow(super.data);
+  VistaNnyaexpgruRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => VistaNnyaexpgruTable();

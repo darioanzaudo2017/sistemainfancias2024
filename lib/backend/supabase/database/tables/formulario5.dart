@@ -9,7 +9,7 @@ class Formulario5Table extends SupabaseTable<Formulario5Row> {
 }
 
 class Formulario5Row extends SupabaseDataRow {
-  Formulario5Row(super.data);
+  Formulario5Row(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => Formulario5Table();

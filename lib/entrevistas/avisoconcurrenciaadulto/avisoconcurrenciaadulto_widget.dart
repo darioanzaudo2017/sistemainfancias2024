@@ -82,7 +82,7 @@ class _AvisoconcurrenciaadultoWidgetState
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<AvisovisitaadultosRow>>(
         future: (_model.requestCompleter ??=
                 Completer<List<AvisovisitaadultosRow>>()
@@ -120,7 +120,7 @@ class _AvisoconcurrenciaadultoWidgetState
             child: Container(
               width: MediaQuery.sizeOf(context).width * 4.5,
               height: MediaQuery.sizeOf(context).height * 0.9,
-              constraints: const BoxConstraints(
+              constraints: BoxConstraints(
                 maxWidth: 900.0,
               ),
               decoration: BoxDecoration(
@@ -130,14 +130,14 @@ class _AvisoconcurrenciaadultoWidgetState
                   color: FlutterFlowTheme.of(context).primary,
                 ),
               ),
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Form(
                 key: _model.formKey,
                 autovalidateMode: AutovalidateMode.disabled,
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
@@ -148,9 +148,9 @@ class _AvisoconcurrenciaadultoWidgetState
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Align(
-                                alignment: const AlignmentDirectional(0.0, -1.0),
+                                alignment: AlignmentDirectional(0.0, -1.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       250.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Aviso de concurrencia adulto',
@@ -167,7 +167,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(1.0, 0.0),
+                                alignment: AlignmentDirectional(1.0, 0.0),
                                 child: FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
                                   borderRadius: 20.0,
@@ -193,9 +193,9 @@ class _AvisoconcurrenciaadultoWidgetState
                             text: 'Abrir formulario para agregar visita',
                             options: FFButtonOptions(
                               height: 40.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -212,12 +212,12 @@ class _AvisoconcurrenciaadultoWidgetState
                           if (_model.visibilidadform)
                             Container(
                               height: 630.0,
-                              decoration: const BoxDecoration(),
+                              decoration: BoxDecoration(),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller:
@@ -291,7 +291,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller:
@@ -365,7 +365,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller:
@@ -439,7 +439,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller:
@@ -513,7 +513,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller:
@@ -587,7 +587,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller:
@@ -667,7 +667,7 @@ class _AvisoconcurrenciaadultoWidgetState
 
                                   // traer info de la tabla spd (telefono)
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller: _model
@@ -767,7 +767,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                       ),
                                       FFButtonWidget(
                                         onPressed: () async {
-                                          final datePicked1Date =
+                                          final _datePicked1Date =
                                               await showDatePicker(
                                             context: context,
                                             initialDate: getCurrentTimestamp,
@@ -814,13 +814,19 @@ class _AvisoconcurrenciaadultoWidgetState
                                             },
                                           );
 
-                                          if (datePicked1Date != null) {
+                                          if (_datePicked1Date != null) {
                                             safeSetState(() {
                                               _model.datePicked1 = DateTime(
-                                                datePicked1Date.year,
-                                                datePicked1Date.month,
-                                                datePicked1Date.day,
+                                                _datePicked1Date.year,
+                                                _datePicked1Date.month,
+                                                _datePicked1Date.day,
                                               );
+                                            });
+                                          } else if (_model.datePicked1 !=
+                                              null) {
+                                            safeSetState(() {
+                                              _model.datePicked1 =
+                                                  getCurrentTimestamp;
                                             });
                                           }
                                         },
@@ -828,10 +834,10 @@ class _AvisoconcurrenciaadultoWidgetState
                                         options: FFButtonOptions(
                                           height: 40.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
@@ -849,8 +855,8 @@ class _AvisoconcurrenciaadultoWidgetState
                                         ),
                                       ),
                                     ]
-                                        .divide(const SizedBox(width: 10.0))
-                                        .around(const SizedBox(width: 10.0)),
+                                        .divide(SizedBox(width: 10.0))
+                                        .around(SizedBox(width: 10.0)),
                                   ),
                                   Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -875,7 +881,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                       ),
                                       FFButtonWidget(
                                         onPressed: () async {
-                                          final datePicked2Date =
+                                          final _datePicked2Date =
                                               await showDatePicker(
                                             context: context,
                                             initialDate: getCurrentTimestamp,
@@ -922,13 +928,19 @@ class _AvisoconcurrenciaadultoWidgetState
                                             },
                                           );
 
-                                          if (datePicked2Date != null) {
+                                          if (_datePicked2Date != null) {
                                             safeSetState(() {
                                               _model.datePicked2 = DateTime(
-                                                datePicked2Date.year,
-                                                datePicked2Date.month,
-                                                datePicked2Date.day,
+                                                _datePicked2Date.year,
+                                                _datePicked2Date.month,
+                                                _datePicked2Date.day,
                                               );
+                                            });
+                                          } else if (_model.datePicked2 !=
+                                              null) {
+                                            safeSetState(() {
+                                              _model.datePicked2 =
+                                                  getCurrentTimestamp;
                                             });
                                           }
                                         },
@@ -936,10 +948,10 @@ class _AvisoconcurrenciaadultoWidgetState
                                         options: FFButtonOptions(
                                           height: 40.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
@@ -957,10 +969,10 @@ class _AvisoconcurrenciaadultoWidgetState
                                         ),
                                       ),
                                     ]
-                                        .divide(const SizedBox(width: 10.0))
-                                        .around(const SizedBox(width: 10.0)),
+                                        .divide(SizedBox(width: 10.0))
+                                        .around(SizedBox(width: 10.0)),
                                   ),
-                                ].divide(const SizedBox(height: 10.0)),
+                                ].divide(SizedBox(height: 10.0)),
                               ),
                             ),
                           Row(
@@ -980,14 +992,14 @@ class _AvisoconcurrenciaadultoWidgetState
                                       builder: (alertDialogContext) {
                                         return WebViewAware(
                                           child: AlertDialog(
-                                            title: const Text('Campo obligatorio'),
+                                            title: Text('Campo obligatorio'),
                                             content:
-                                                const Text('La fecha obligatoria!'),
+                                                Text('La fecha obligatoria!'),
                                             actions: [
                                               TextButton(
                                                 onPressed: () => Navigator.pop(
                                                     alertDialogContext),
-                                                child: const Text('Ok'),
+                                                child: Text('Ok'),
                                               ),
                                             ],
                                           ),
@@ -1002,14 +1014,14 @@ class _AvisoconcurrenciaadultoWidgetState
                                       builder: (alertDialogContext) {
                                         return WebViewAware(
                                           child: AlertDialog(
-                                            title: const Text('Campo obligatorio'),
+                                            title: Text('Campo obligatorio'),
                                             content:
-                                                const Text('La fecha obligatoria!'),
+                                                Text('La fecha obligatoria!'),
                                             actions: [
                                               TextButton(
                                                 onPressed: () => Navigator.pop(
                                                     alertDialogContext),
-                                                child: const Text('Ok'),
+                                                child: Text('Ok'),
                                               ),
                                             ],
                                           ),
@@ -1085,14 +1097,14 @@ class _AvisoconcurrenciaadultoWidgetState
                                         return WebViewAware(
                                           child: AlertDialog(
                                             title:
-                                                const Text('Se creo el documento!'),
-                                            content: const Text(
+                                                Text('Se creo el documento!'),
+                                            content: Text(
                                                 'Se creo el aviso de visita de entrevista a adulto!!'),
                                             actions: [
                                               TextButton(
                                                 onPressed: () => Navigator.pop(
                                                     alertDialogContext),
-                                                child: const Text('Ok'),
+                                                child: Text('Ok'),
                                               ),
                                             ],
                                           ),
@@ -1107,16 +1119,16 @@ class _AvisoconcurrenciaadultoWidgetState
                                   safeSetState(() {});
                                 },
                                 text: 'generar aviso de concurrencia',
-                                icon: const Icon(
+                                icon: Icon(
                                   Icons.save,
                                   size: 15.0,
                                 ),
                                 options: FFButtonOptions(
                                   width: 250.0,
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).success,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -1127,7 +1139,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 2.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -1138,9 +1150,9 @@ class _AvisoconcurrenciaadultoWidgetState
                             ],
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(1.0, 0.0),
+                            alignment: AlignmentDirectional(1.0, 0.0),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 100.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
@@ -1149,15 +1161,15 @@ class _AvisoconcurrenciaadultoWidgetState
                                   await _model.waitForRequestCompleted();
                                 },
                                 text: 'Refrescar',
-                                icon: const Icon(
+                                icon: Icon(
                                   Icons.refresh,
                                   size: 15.0,
                                 ),
                                 options: FFButtonOptions(
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -1176,7 +1188,7 @@ class _AvisoconcurrenciaadultoWidgetState
                           Container(
                             width: MediaQuery.sizeOf(context).width * 0.8,
                             height: 400.0,
-                            decoration: const BoxDecoration(),
+                            decoration: BoxDecoration(),
                             child: Builder(
                               builder: (context) {
                                 final listaconcu =
@@ -1244,7 +1256,8 @@ class _AvisoconcurrenciaadultoWidgetState
                                       label: DefaultTextStyle.merge(
                                         softWrap: true,
                                         child: Text(
-                                          'Aviso concurrencia',
+                                          'Convocatoria a entrevista',
+                                          textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
@@ -1260,17 +1273,21 @@ class _AvisoconcurrenciaadultoWidgetState
                                     DataColumn2(
                                       label: DefaultTextStyle.merge(
                                         softWrap: true,
-                                        child: Text(
-                                          'Aviso de visita',
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelLarge
-                                              .override(
-                                                fontFamily: 'Noto Sans JP',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                letterSpacing: 0.0,
-                                              ),
+                                        child: Align(
+                                          alignment:
+                                              AlignmentDirectional(0.0, 0.0),
+                                          child: Text(
+                                            'Aviso de visita',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelLarge
+                                                .override(
+                                                  fontFamily: 'Noto Sans JP',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -1346,9 +1363,9 @@ class _AvisoconcurrenciaadultoWidgetState
                                                             (alertDialogContext) {
                                                           return WebViewAware(
                                                             child: AlertDialog(
-                                                              title: const Text(
+                                                              title: Text(
                                                                   'Eliminar aviso de concurrencia!'),
-                                                              content: const Text(
+                                                              content: Text(
                                                                   'Estas por eliminar el aviso de concurrencia!'),
                                                               actions: [
                                                                 TextButton(
@@ -1356,7 +1373,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                                                       Navigator.pop(
                                                                           alertDialogContext,
                                                                           false),
-                                                                  child: const Text(
+                                                                  child: Text(
                                                                       'Cancelar'),
                                                                 ),
                                                                 TextButton(
@@ -1364,7 +1381,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                                                       Navigator.pop(
                                                                           alertDialogContext,
                                                                           true),
-                                                                  child: const Text(
+                                                                  child: Text(
                                                                       'Confirmar'),
                                                                 ),
                                                               ],
@@ -1408,7 +1425,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                       ),
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -1488,7 +1505,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                                       .linkAviso!);
                                                 },
                                               ),
-                                          ].divide(const SizedBox(width: 3.0)),
+                                          ].divide(SizedBox(width: 3.0)),
                                         ),
                                       ),
                                     ].map((c) => DataCell(c)).toList(),
@@ -1516,8 +1533,8 @@ class _AvisoconcurrenciaadultoWidgetState
                             ),
                           ),
                         ]
-                            .divide(const SizedBox(height: 12.0))
-                            .around(const SizedBox(height: 12.0)),
+                            .divide(SizedBox(height: 12.0))
+                            .around(SizedBox(height: 12.0)),
                       ),
                     ),
                   ),

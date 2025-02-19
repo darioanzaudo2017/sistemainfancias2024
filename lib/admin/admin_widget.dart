@@ -97,7 +97,7 @@ class _AdminWidgetState extends State<AdminWidget>
                 borderRadius: 30.0,
                 borderWidth: 1.0,
                 buttonSize: 60.0,
-                icon: const Icon(
+                icon: Icon(
                   Icons.arrow_back_rounded,
                   color: Colors.white,
                   size: 30.0,
@@ -107,7 +107,7 @@ class _AdminWidgetState extends State<AdminWidget>
                 },
               ),
               title: Align(
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 child: Text(
                   'Admin',
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
@@ -118,7 +118,7 @@ class _AdminWidgetState extends State<AdminWidget>
                       ),
                 ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: true,
               elevation: 2.0,
             ),
@@ -127,7 +127,7 @@ class _AdminWidgetState extends State<AdminWidget>
               child: Container(
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 height: MediaQuery.sizeOf(context).height * 1.0,
-                decoration: const BoxDecoration(),
+                decoration: BoxDecoration(),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -144,29 +144,29 @@ class _AdminWidgetState extends State<AdminWidget>
                               width: MediaQuery.sizeOf(context).width * 0.25,
                               height: double.infinity,
                               decoration: BoxDecoration(
-                                color: const Color(0xFFF1F4F8),
+                                color: Color(0xFFF1F4F8),
                                 borderRadius: BorderRadius.circular(0.0),
                                 border: Border.all(
-                                  color: const Color(0xFFE5E7EB),
+                                  color: Color(0xFFE5E7EB),
                                   width: 1.0,
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 24.0, 0.0, 16.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 12.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Expanded(
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 0.0, 0.0, 0.0),
                                               child: Column(
@@ -183,7 +183,7 @@ class _AdminWidgetState extends State<AdminWidget>
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              const Color(0xFF15161E),
+                                                              Color(0xFF15161E),
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -192,7 +192,7 @@ class _AdminWidgetState extends State<AdminWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 4.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -203,7 +203,7 @@ class _AdminWidgetState extends State<AdminWidget>
                                                           .override(
                                                             fontFamily:
                                                                 'Plus Jakarta Sans',
-                                                            color: const Color(
+                                                            color: Color(
                                                                 0xFF606A85),
                                                             fontSize: 14.0,
                                                             letterSpacing: 0.0,
@@ -219,12 +219,12 @@ class _AdminWidgetState extends State<AdminWidget>
                                         ],
                                       ),
                                     ),
-                                    const Divider(
+                                    Divider(
                                       height: 12.0,
                                       thickness: 2.0,
                                       color: Color(0xFFE5E7EB),
                                     ),
-                                    const Divider(
+                                    Divider(
                                       height: 12.0,
                                       thickness: 2.0,
                                       color: Color(0xFFE5E7EB),
@@ -238,7 +238,7 @@ class _AdminWidgetState extends State<AdminWidget>
                     ),
                     Expanded(
                       child: Padding(
-                        padding: const EdgeInsets.all(10.0),
+                        padding: EdgeInsets.all(10.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -277,8 +277,8 @@ class _AdminWidgetState extends State<AdminWidget>
                                         MediaQuery.sizeOf(context).width * 1.0,
                                     height: 123.95,
                                     decoration: BoxDecoration(
-                                      color: const Color(0xFF39A9EF),
-                                      boxShadow: const [
+                                      color: Color(0xFF39A9EF),
+                                      boxShadow: [
                                         BoxShadow(
                                           blurRadius: 4.0,
                                           color: Color(0x33000000),
@@ -309,11 +309,11 @@ class _AdminWidgetState extends State<AdminWidget>
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           -1.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0,
                                                                 12.0, 0.0, 0.0),
                                                     child: Text(
@@ -336,11 +336,11 @@ class _AdminWidgetState extends State<AdminWidget>
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.0, 1.0),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 12.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -369,7 +369,7 @@ class _AdminWidgetState extends State<AdminWidget>
                                               ],
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 5.0, 5.0, 0.0),
                                               child: ClipRRect(
                                                 borderRadius:
@@ -422,7 +422,7 @@ class _AdminWidgetState extends State<AdminWidget>
                                                         : null;
 
                                                 return Container(
-                                                  decoration: const BoxDecoration(),
+                                                  decoration: BoxDecoration(),
                                                 );
                                               },
                                             ),
@@ -430,7 +430,7 @@ class _AdminWidgetState extends State<AdminWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 4.0, 0.0, 12.0),
                                           child: Text(
                                             'Email: ${widget.usuariosroles?.nombreCompleto}',
@@ -456,7 +456,7 @@ class _AdminWidgetState extends State<AdminWidget>
                               child: Column(
                                 children: [
                                   Align(
-                                    alignment: const Alignment(0.0, 0),
+                                    alignment: Alignment(0.0, 0),
                                     child: TabBar(
                                       labelColor: FlutterFlowTheme.of(context)
                                           .primaryText,
@@ -478,7 +478,7 @@ class _AdminWidgetState extends State<AdminWidget>
                                               ),
                                       indicatorColor:
                                           FlutterFlowTheme.of(context).primary,
-                                      tabs: const [
+                                      tabs: [
                                         Tab(
                                           text: 'SPD',
                                         ),
@@ -539,7 +539,7 @@ class _AdminWidgetState extends State<AdminWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
                                               ),
-                                              child: SizedBox(
+                                              child: Container(
                                                 height: 200.0,
                                                 child: Builder(
                                                   builder: (context) {
@@ -839,7 +839,7 @@ class _AdminWidgetState extends State<AdminWidget>
                                                       containerRolesRowList =
                                                       snapshot.data!;
 
-                                                  return SizedBox(
+                                                  return Container(
                                                     height: 200.0,
                                                     child: Builder(
                                                       builder: (context) {
@@ -1075,13 +1075,13 @@ class _AdminWidgetState extends State<AdminWidget>
                                                                 options:
                                                                     FFButtonOptions(
                                                                   height: 40.0,
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
                                                                           0.0),
-                                                                  iconPadding: const EdgeInsetsDirectional
+                                                                  iconPadding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1189,7 +1189,7 @@ class _AdminWidgetState extends State<AdminWidget>
                                                       .width *
                                                   1.001,
                                               height: 799.0,
-                                              constraints: const BoxConstraints(
+                                              constraints: BoxConstraints(
                                                 maxWidth: 1000.0,
                                               ),
                                               decoration: BoxDecoration(
@@ -1735,7 +1735,7 @@ class _AdminWidgetState extends State<AdminWidget>
                                                         ),
                                                         Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Container(
                                                             width: 30.0,
@@ -1832,14 +1832,14 @@ class _AdminWidgetState extends State<AdminWidget>
                                                               FFButtonOptions(
                                                             height: 40.0,
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         0.0,
                                                                         16.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,

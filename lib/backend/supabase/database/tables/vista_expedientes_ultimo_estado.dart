@@ -11,7 +11,7 @@ class VistaExpedientesUltimoEstadoTable
 }
 
 class VistaExpedientesUltimoEstadoRow extends SupabaseDataRow {
-  VistaExpedientesUltimoEstadoRow(super.data);
+  VistaExpedientesUltimoEstadoRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => VistaExpedientesUltimoEstadoTable();

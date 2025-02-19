@@ -9,7 +9,7 @@ class AnexoB1Form1Table extends SupabaseTable<AnexoB1Form1Row> {
 }
 
 class AnexoB1Form1Row extends SupabaseDataRow {
-  AnexoB1Form1Row(super.data);
+  AnexoB1Form1Row(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => AnexoB1Form1Table();

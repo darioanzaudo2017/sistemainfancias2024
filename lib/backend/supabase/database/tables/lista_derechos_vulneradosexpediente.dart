@@ -11,7 +11,7 @@ class ListaDerechosVulneradosexpedienteTable
 }
 
 class ListaDerechosVulneradosexpedienteRow extends SupabaseDataRow {
-  ListaDerechosVulneradosexpedienteRow(super.data);
+  ListaDerechosVulneradosexpedienteRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => ListaDerechosVulneradosexpedienteTable();

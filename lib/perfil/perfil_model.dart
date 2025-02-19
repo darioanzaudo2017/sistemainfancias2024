@@ -49,6 +49,8 @@ class PerfilModel extends FlutterFlowModel<PerfilWidget> {
   bool? seccion6true;
   // Stores action output result for [Bottom Sheet - seccion7] action in Button widget.
   bool? seccion7true;
+  // Stores action output result for [Bottom Sheet - seccion8] action in Button widget.
+  bool? seccion8guardada;
   // Stores action output result for [Bottom Sheet - seccion9] action in Button widget.
   bool? seccion9true;
   // State field(s) for RadioButton widget.
@@ -77,7 +79,7 @@ class PerfilModel extends FlutterFlowModel<PerfilWidget> {
   }) async {
     final stopwatch = Stopwatch()..start();
     while (true) {
-      await Future.delayed(const Duration(milliseconds: 50));
+      await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
       final requestComplete = requestCompleter?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {

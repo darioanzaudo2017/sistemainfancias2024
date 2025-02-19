@@ -79,17 +79,17 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.sizeOf(context).width * 0.25,
-      decoration: const BoxDecoration(),
+      decoration: BoxDecoration(),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
             child: Text(
               'Menu',
               style: FlutterFlowTheme.of(context).labelMedium.override(
                     fontFamily: 'Plus Jakarta Sans',
-                    color: const Color(0xFF606A85),
+                    color: Color(0xFF606A85),
                     fontSize: 14.0,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
@@ -97,7 +97,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
             ),
           ),
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
             child: InkWell(
               splashColor: Colors.transparent,
               focusColor: Colors.transparent,
@@ -107,7 +107,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                 context.pushNamed('HomePage');
               },
               child: AnimatedContainer(
-                duration: const Duration(milliseconds: 200),
+                duration: Duration(milliseconds: 200),
                 curve: Curves.easeInOut,
                 width: double.infinity,
                 height: 44.0,
@@ -117,19 +117,19 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                   shape: BoxShape.rectangle,
                 ),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Icon(
+                      Icon(
                         Icons.home,
                         color: Color(0xFF15161E),
                         size: 24.0,
                       ),
                       Expanded(
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'Inicio',
@@ -137,7 +137,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                                 .bodyMedium
                                 .override(
                                   fontFamily: 'Plus Jakarta Sans',
-                                  color: const Color(0xFF15161E),
+                                  color: Color(0xFF15161E),
                                   fontSize: 14.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
@@ -153,7 +153,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
           ),
           if (widget.ingreso ?? true)
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
               child: InkWell(
                 splashColor: Colors.transparent,
                 focusColor: Colors.transparent,
@@ -179,7 +179,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                   );
                 },
                 child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 200),
+                  duration: Duration(milliseconds: 200),
                   curve: Curves.easeInOut,
                   width: double.infinity,
                   height: 44.0,
@@ -189,19 +189,19 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                     shape: BoxShape.rectangle,
                   ),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const FaIcon(
+                        FaIcon(
                           FontAwesomeIcons.addressBook,
                           color: Color(0xFF15161E),
                           size: 24.0,
                         ),
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'ingreso',
@@ -209,7 +209,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Plus Jakarta Sans',
-                                    color: const Color(0xFF15161E),
+                                    color: Color(0xFF15161E),
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -225,7 +225,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
             ),
           if (widget.perfil ?? true)
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
               child: InkWell(
                 splashColor: Colors.transparent,
                 focusColor: Colors.transparent,
@@ -251,7 +251,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                   );
                 },
                 child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 200),
+                  duration: Duration(milliseconds: 200),
                   curve: Curves.easeInOut,
                   width: double.infinity,
                   height: 44.0,
@@ -261,19 +261,19 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                     shape: BoxShape.rectangle,
                   ),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const FaIcon(
+                        FaIcon(
                           FontAwesomeIcons.addressBook,
                           color: Color(0xFF15161E),
                           size: 24.0,
                         ),
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Perfil',
@@ -281,7 +281,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Plus Jakarta Sans',
-                                    color: const Color(0xFF15161E),
+                                    color: Color(0xFF15161E),
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -297,7 +297,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
             ),
           if (widget.adjuntar ?? true)
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
               child: InkWell(
                 splashColor: Colors.transparent,
                 focusColor: Colors.transparent,
@@ -323,7 +323,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                   ).then((value) => safeSetState(() {}));
                 },
                 child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 200),
+                  duration: Duration(milliseconds: 200),
                   curve: Curves.easeInOut,
                   width: double.infinity,
                   height: 44.0,
@@ -333,19 +333,19 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                     shape: BoxShape.rectangle,
                   ),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Icon(
+                        Icon(
                           Icons.upload_file,
                           color: Color(0xFF15161E),
                           size: 24.0,
                         ),
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Adjuntar documentos',
@@ -353,7 +353,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Plus Jakarta Sans',
-                                    color: const Color(0xFF15161E),
+                                    color: Color(0xFF15161E),
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -369,7 +369,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
             ),
           if (widget.imprimir ?? true)
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
               child: InkWell(
                 splashColor: Colors.transparent,
                 focusColor: Colors.transparent,
@@ -403,7 +403,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                   );
                 },
                 child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 200),
+                  duration: Duration(milliseconds: 200),
                   curve: Curves.easeInOut,
                   width: double.infinity,
                   height: 44.0,
@@ -413,19 +413,19 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                     shape: BoxShape.rectangle,
                   ),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Icon(
+                        Icon(
                           Icons.print_sharp,
                           color: Color(0xFF15161E),
                           size: 24.0,
                         ),
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Imprimir expediente',
@@ -433,7 +433,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Plus Jakarta Sans',
-                                    color: const Color(0xFF15161E),
+                                    color: Color(0xFF15161E),
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -449,7 +449,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
             ),
           if (widget.carpeta ?? true)
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
               child: FutureBuilder<List<ImpresionesExpedientesRow>>(
                 future: ImpresionesExpedientesTable().querySingleRow(
                   queryFn: (q) => q.eqOrNull(
@@ -491,7 +491,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                           contentView1ImpresionesExpedientesRow!.linkcarpeta!);
                     },
                     child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 200),
+                      duration: Duration(milliseconds: 200),
                       curve: Curves.easeInOut,
                       width: double.infinity,
                       height: 44.0,
@@ -502,19 +502,19 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                       ),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const FaIcon(
+                            FaIcon(
                               FontAwesomeIcons.googleDrive,
                               color: Color(0xFF15161E),
                               size: 24.0,
                             ),
                             Expanded(
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Carpeta drive',
@@ -522,7 +522,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Plus Jakarta Sans',
-                                        color: const Color(0xFF15161E),
+                                        color: Color(0xFF15161E),
                                         fontSize: 14.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
@@ -538,7 +538,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                 },
               ),
             ),
-        ].divide(const SizedBox(height: 10.0)),
+        ].divide(SizedBox(height: 10.0)),
       ),
     );
   }

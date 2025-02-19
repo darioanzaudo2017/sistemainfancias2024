@@ -11,7 +11,7 @@ class VistaExpedientesIngresos24hsTable
 }
 
 class VistaExpedientesIngresos24hsRow extends SupabaseDataRow {
-  VistaExpedientesIngresos24hsRow(super.data);
+  VistaExpedientesIngresos24hsRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => VistaExpedientesIngresos24hsTable();

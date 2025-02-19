@@ -10,7 +10,7 @@ class PaginaFormulario2y3Table extends SupabaseTable<PaginaFormulario2y3Row> {
 }
 
 class PaginaFormulario2y3Row extends SupabaseDataRow {
-  PaginaFormulario2y3Row(super.data);
+  PaginaFormulario2y3Row(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => PaginaFormulario2y3Table();

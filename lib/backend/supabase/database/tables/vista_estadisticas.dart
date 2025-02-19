@@ -10,7 +10,7 @@ class VistaEstadisticasTable extends SupabaseTable<VistaEstadisticasRow> {
 }
 
 class VistaEstadisticasRow extends SupabaseDataRow {
-  VistaEstadisticasRow(super.data);
+  VistaEstadisticasRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => VistaEstadisticasTable();

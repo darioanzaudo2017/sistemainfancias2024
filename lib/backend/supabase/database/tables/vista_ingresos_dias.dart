@@ -10,7 +10,7 @@ class VistaIngresosDiasTable extends SupabaseTable<VistaIngresosDiasRow> {
 }
 
 class VistaIngresosDiasRow extends SupabaseDataRow {
-  VistaIngresosDiasRow(super.data);
+  VistaIngresosDiasRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => VistaIngresosDiasTable();

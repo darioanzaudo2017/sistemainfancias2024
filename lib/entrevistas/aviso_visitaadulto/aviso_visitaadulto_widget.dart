@@ -56,7 +56,7 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<AvisovisitaadultosRow>>(
         future: AvisovisitaadultosTable().querySingleRow(
           queryFn: (q) => q.eqOrNull(
@@ -96,7 +96,7 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
             child: Container(
               width: MediaQuery.sizeOf(context).width * 4.5,
               height: 633.0,
-              constraints: const BoxConstraints(
+              constraints: BoxConstraints(
                 maxWidth: 600.0,
               ),
               decoration: BoxDecoration(
@@ -106,14 +106,14 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                   color: FlutterFlowTheme.of(context).primary,
                 ),
               ),
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Form(
                 key: _model.formKey,
                 autovalidateMode: AutovalidateMode.disabled,
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -123,9 +123,9 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Align(
-                              alignment: const AlignmentDirectional(0.0, -1.0),
+                              alignment: AlignmentDirectional(0.0, -1.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     30.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'AVISO DE CONCURRENCIA AL DOMICILIO',
@@ -142,7 +142,7 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(1.0, 0.0),
+                              alignment: AlignmentDirectional(1.0, 0.0),
                               child: FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
                                 borderRadius: 20.0,
@@ -161,14 +161,14 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                           ],
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: Container(
                             width: double.infinity,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
-                              boxShadow: const [
+                              boxShadow: [
                                 BoxShadow(
                                   blurRadius: 7.0,
                                   color: Color(0x2F1D2429),
@@ -181,7 +181,7 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 12.0, 16.0, 12.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -217,7 +217,7 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 4.0, 0.0, 0.0),
                                     child: Text(
                                       valueOrDefault<String>(
@@ -257,10 +257,10 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                                     text: 'Editar',
                                     options: FFButtonOptions(
                                       height: 30.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).primary,
@@ -275,13 +275,13 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
                                   ),
-                                ].divide(const SizedBox(height: 5.0)),
+                                ].divide(SizedBox(height: 5.0)),
                               ),
                             ),
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               15.0, 0.0, 15.0, 0.0),
                           child: TextFormField(
                             controller: _model.textFieldmotivoTextController,
@@ -368,7 +368,7 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                             ),
                             FFButtonWidget(
                               onPressed: () async {
-                                final datePickedDate = await showDatePicker(
+                                final _datePickedDate = await showDatePicker(
                                   context: context,
                                   initialDate: getCurrentTimestamp,
                                   firstDate: getCurrentTimestamp,
@@ -408,22 +408,26 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                                   },
                                 );
 
-                                if (datePickedDate != null) {
+                                if (_datePickedDate != null) {
                                   safeSetState(() {
                                     _model.datePicked = DateTime(
-                                      datePickedDate.year,
-                                      datePickedDate.month,
-                                      datePickedDate.day,
+                                      _datePickedDate.year,
+                                      _datePickedDate.month,
+                                      _datePickedDate.day,
                                     );
+                                  });
+                                } else if (_model.datePicked != null) {
+                                  safeSetState(() {
+                                    _model.datePicked = getCurrentTimestamp;
                                   });
                                 }
                               },
                               text: 'Fecha de visita',
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -455,14 +459,14 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                                     builder: (alertDialogContext) {
                                       return WebViewAware(
                                         child: AlertDialog(
-                                          title: const Text('Campo obligatorio'),
+                                          title: Text('Campo obligatorio'),
                                           content:
-                                              const Text('La fecha obligatoria!'),
+                                              Text('La fecha obligatoria!'),
                                           actions: [
                                             TextButton(
                                               onPressed: () => Navigator.pop(
                                                   alertDialogContext),
-                                              child: const Text('Ok'),
+                                              child: Text('Ok'),
                                             ),
                                           ],
                                         ),
@@ -500,14 +504,14 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                                     builder: (alertDialogContext) {
                                       return WebViewAware(
                                         child: AlertDialog(
-                                          title: const Text('Se creo documento!'),
-                                          content: const Text(
+                                          title: Text('Se creo documento!'),
+                                          content: Text(
                                               'Se creo el aviso de visita a adulto!'),
                                           actions: [
                                             TextButton(
                                               onPressed: () => Navigator.pop(
                                                   alertDialogContext),
-                                              child: const Text('Ok'),
+                                              child: Text('Ok'),
                                             ),
                                           ],
                                         ),
@@ -520,16 +524,16 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                                 safeSetState(() {});
                               },
                               text: 'Crear aviso de visita',
-                              icon: const Icon(
+                              icon: Icon(
                                 Icons.save,
                                 size: 15.0,
                               ),
                               options: FFButtonOptions(
                                 width: 250.0,
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).success,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -540,7 +544,7 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 2.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -551,8 +555,8 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                           ],
                         ),
                       ]
-                          .divide(const SizedBox(height: 10.0))
-                          .around(const SizedBox(height: 10.0)),
+                          .divide(SizedBox(height: 10.0))
+                          .around(SizedBox(height: 10.0)),
                     ),
                   ),
                 ),

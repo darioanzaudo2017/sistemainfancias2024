@@ -11,7 +11,7 @@ class VistaRecepciondelademandaTable
 }
 
 class VistaRecepciondelademandaRow extends SupabaseDataRow {
-  VistaRecepciondelademandaRow(super.data);
+  VistaRecepciondelademandaRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => VistaRecepciondelademandaTable();

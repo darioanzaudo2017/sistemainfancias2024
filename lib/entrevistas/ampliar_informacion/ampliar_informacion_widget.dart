@@ -68,7 +68,7 @@ class _AmpliarInformacionWidgetState extends State<AmpliarInformacionWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Material(
         color: Colors.transparent,
         elevation: 2.0,
@@ -77,7 +77,7 @@ class _AmpliarInformacionWidgetState extends State<AmpliarInformacionWidget> {
         ),
         child: Container(
           width: MediaQuery.sizeOf(context).width * 1.0,
-          constraints: const BoxConstraints(
+          constraints: BoxConstraints(
             maxWidth: 600.0,
           ),
           decoration: BoxDecoration(
@@ -87,20 +87,20 @@ class _AmpliarInformacionWidgetState extends State<AmpliarInformacionWidget> {
               color: FlutterFlowTheme.of(context).primary,
             ),
           ),
-          alignment: const AlignmentDirectional(0.0, 0.0),
+          alignment: AlignmentDirectional(0.0, 0.0),
           child: Form(
             key: _model.formKey,
             autovalidateMode: AutovalidateMode.disabled,
             child: Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Align(
-                      alignment: const AlignmentDirectional(0.0, -1.0),
+                      alignment: AlignmentDirectional(0.0, -1.0),
                       child: Text(
                         'Grupo familiar ampliado',
                         style:
@@ -117,7 +117,7 @@ class _AmpliarInformacionWidgetState extends State<AmpliarInformacionWidget> {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController1,
@@ -181,7 +181,7 @@ class _AmpliarInformacionWidgetState extends State<AmpliarInformacionWidget> {
                         ),
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController2,
@@ -250,7 +250,7 @@ class _AmpliarInformacionWidgetState extends State<AmpliarInformacionWidget> {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController3,
@@ -314,7 +314,7 @@ class _AmpliarInformacionWidgetState extends State<AmpliarInformacionWidget> {
                         ),
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController4,
@@ -380,14 +380,14 @@ class _AmpliarInformacionWidgetState extends State<AmpliarInformacionWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Flexible(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Fecha de nacimiento:',
@@ -416,11 +416,11 @@ class _AmpliarInformacionWidgetState extends State<AmpliarInformacionWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 10.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
-                                final datePickedDate = await showDatePicker(
+                                final _datePickedDate = await showDatePicker(
                                   context: context,
                                   initialDate: getCurrentTimestamp,
                                   firstDate: DateTime(1900),
@@ -460,22 +460,26 @@ class _AmpliarInformacionWidgetState extends State<AmpliarInformacionWidget> {
                                   },
                                 );
 
-                                if (datePickedDate != null) {
+                                if (_datePickedDate != null) {
                                   safeSetState(() {
                                     _model.datePicked = DateTime(
-                                      datePickedDate.year,
-                                      datePickedDate.month,
-                                      datePickedDate.day,
+                                      _datePickedDate.year,
+                                      _datePickedDate.month,
+                                      _datePickedDate.day,
                                     );
+                                  });
+                                } else if (_model.datePicked != null) {
+                                  safeSetState(() {
+                                    _model.datePicked = getCurrentTimestamp;
                                   });
                                 }
                               },
                               text: 'Fecha',
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -486,7 +490,7 @@ class _AmpliarInformacionWidgetState extends State<AmpliarInformacionWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -499,7 +503,7 @@ class _AmpliarInformacionWidgetState extends State<AmpliarInformacionWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                       child: TextFormField(
                         controller: _model.textController5,
                         focusNode: _model.textFieldFocusNode5,
@@ -556,7 +560,7 @@ class _AmpliarInformacionWidgetState extends State<AmpliarInformacionWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                       child: TextFormField(
                         controller: _model.textController6,
                         focusNode: _model.textFieldFocusNode6,
@@ -615,13 +619,13 @@ class _AmpliarInformacionWidgetState extends State<AmpliarInformacionWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Convive con el NNA',
@@ -634,7 +638,7 @@ class _AmpliarInformacionWidgetState extends State<AmpliarInformacionWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 10.0, 0.0),
                             child: FlutterFlowRadioButton(
                               options: ['Si', 'No'].toList(),
@@ -683,16 +687,16 @@ class _AmpliarInformacionWidgetState extends State<AmpliarInformacionWidget> {
                                 print('Button pressed ...');
                               },
                               text: 'Guardar',
-                              icon: const Icon(
+                              icon: Icon(
                                 Icons.save,
                                 size: 15.0,
                               ),
                               options: FFButtonOptions(
                                 width: 250.0,
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).success,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -703,7 +707,7 @@ class _AmpliarInformacionWidgetState extends State<AmpliarInformacionWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 2.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -715,7 +719,7 @@ class _AmpliarInformacionWidgetState extends State<AmpliarInformacionWidget> {
                         ),
                       ],
                     ),
-                  ].divide(const SizedBox(height: 8.0)).around(const SizedBox(height: 8.0)),
+                  ].divide(SizedBox(height: 8.0)).around(SizedBox(height: 8.0)),
                 ),
               ),
             ),

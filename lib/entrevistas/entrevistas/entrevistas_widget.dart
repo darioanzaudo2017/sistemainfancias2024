@@ -75,7 +75,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -109,7 +109,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -145,16 +145,16 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
 
               return Container(
                 width: MediaQuery.sizeOf(context).width * 0.99,
-                decoration: const BoxDecoration(),
+                decoration: BoxDecoration(),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(0.0, -1.0),
+                        alignment: AlignmentDirectional(0.0, -1.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 0.0, 0.0),
                           child: Container(
                             height: MediaQuery.sizeOf(context).height * 1.0,
@@ -163,7 +163,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                   .secondaryBackground,
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: SingleChildScrollView(
                                 child: Column(
@@ -219,13 +219,13 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                 snapshot.data!;
 
                                             return Container(
-                                              decoration: const BoxDecoration(),
+                                              decoration: BoxDecoration(),
                                               child: Container(
                                                 width:
                                                     MediaQuery.sizeOf(context)
                                                             .width *
                                                         1.0,
-                                                decoration: const BoxDecoration(),
+                                                decoration: BoxDecoration(),
                                                 child: FutureBuilder<
                                                     List<Formulario3Row>>(
                                                   future: Formulario3Table()
@@ -335,13 +335,13 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                               children: [
                                                                 Padding(
                                                                   padding:
-                                                                      const EdgeInsets
+                                                                      EdgeInsets
                                                                           .all(
                                                                               10.0),
                                                                   child:
                                                                       Container(
                                                                     constraints:
-                                                                        const BoxConstraints(
+                                                                        BoxConstraints(
                                                                       maxWidth:
                                                                           800.0,
                                                                     ),
@@ -363,7 +363,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                     child:
                                                                         Padding(
                                                                       padding:
-                                                                          const EdgeInsets.all(
+                                                                          EdgeInsets.all(
                                                                               10.0),
                                                                       child:
                                                                           Column(
@@ -372,7 +372,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                         children:
                                                                             [
                                                                           Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -395,7 +395,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                           ),
                                                                                     ),
                                                                                     Align(
-                                                                                      alignment: const AlignmentDirectional(1.0, -1.0),
+                                                                                      alignment: AlignmentDirectional(1.0, -1.0),
                                                                                       child: FFButtonWidget(
                                                                                         onPressed: () async {
                                                                                           await showModalBottomSheet(
@@ -430,8 +430,8 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                         text: 'Agregar entrevista al NNyA',
                                                                                         options: FFButtonOptions(
                                                                                           height: 40.0,
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                          iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                           color: FlutterFlowTheme.of(context).primary,
                                                                                           textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                 fontFamily: 'Noto Sans JP',
@@ -439,7 +439,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                                 letterSpacing: 0.0,
                                                                                               ),
                                                                                           elevation: 3.0,
-                                                                                          borderSide: const BorderSide(
+                                                                                          borderSide: BorderSide(
                                                                                             color: Colors.transparent,
                                                                                             width: 1.0,
                                                                                           ),
@@ -447,16 +447,16 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                         ),
                                                                                       ),
                                                                                     ),
-                                                                                  ].divide(const SizedBox(height: 8.0)),
+                                                                                  ].divide(SizedBox(height: 8.0)),
                                                                                 ),
                                                                                 Column(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   crossAxisAlignment: CrossAxisAlignment.end,
                                                                                   children: [
                                                                                     Align(
-                                                                                      alignment: const AlignmentDirectional(1.0, 0.0),
+                                                                                      alignment: AlignmentDirectional(1.0, 0.0),
                                                                                       child: Padding(
-                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                         child: FFButtonWidget(
                                                                                           onPressed: () async {
                                                                                             await showModalBottomSheet(
@@ -494,8 +494,8 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                           text: 'Convocatoria entrevista',
                                                                                           options: FFButtonOptions(
                                                                                             height: 40.0,
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                             color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                   fontFamily: 'Noto Sans JP',
@@ -511,13 +511,13 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                         ),
                                                                                       ),
                                                                                     ),
-                                                                                  ].divide(const SizedBox(height: 5.0)),
+                                                                                  ].divide(SizedBox(height: 5.0)),
                                                                                 ),
                                                                               ],
                                                                             ),
                                                                           ),
                                                                           Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 16.0,
                                                                                 0.0,
                                                                                 16.0,
@@ -527,7 +527,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                               width: double.infinity,
                                                                               decoration: BoxDecoration(
                                                                                 color: Colors.white,
-                                                                                boxShadow: const [
+                                                                                boxShadow: [
                                                                                   BoxShadow(
                                                                                     blurRadius: 7.0,
                                                                                     color: Color(0x2F1D2429),
@@ -547,7 +547,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                     crossAxisAlignment: CrossAxisAlignment.end,
                                                                                     children: [
                                                                                       Padding(
-                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                         child: Text(
                                                                                           'Convocatoria entrevista',
                                                                                           style: FlutterFlowTheme.of(context).titleMedium.override(
@@ -591,9 +591,9 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                             child: Visibility(
                                                                                               visible: containerdriveAvisovisitaNNyARow?.id != null,
                                                                                               child: Align(
-                                                                                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                                alignment: AlignmentDirectional(-1.0, 0.0),
                                                                                                 child: Padding(
-                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                                   child: FlutterFlowIconButton(
                                                                                                     borderRadius: 8.0,
                                                                                                     buttonSize: 40.0,
@@ -625,7 +625,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                   ),
                                                                                   Container(
                                                                                     height: 300.0,
-                                                                                    decoration: const BoxDecoration(),
+                                                                                    decoration: BoxDecoration(),
                                                                                     child: Builder(
                                                                                       builder: (context) {
                                                                                         final listaentrevistasalNNya = containerFormulario3RowList.toList();
@@ -690,7 +690,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                               label: DefaultTextStyle.merge(
                                                                                                 softWrap: true,
                                                                                                 child: Align(
-                                                                                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                  alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                   child: Text(
                                                                                                     'Acciones',
                                                                                                     style: FlutterFlowTheme.of(context).labelLarge.override(
@@ -789,15 +789,15 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                                       ).then((value) => safeSetState(() {}));
                                                                                                     },
                                                                                                     text: 'Editar',
-                                                                                                    icon: const Icon(
+                                                                                                    icon: Icon(
                                                                                                       Icons.edit,
                                                                                                       size: 15.0,
                                                                                                     ),
                                                                                                     options: FFButtonOptions(
                                                                                                       height: 30.0,
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                      color: const Color(0x4C4B39EF),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                      color: Color(0x4C4B39EF),
                                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                             fontFamily: 'Noto Sans JP',
                                                                                                             color: FlutterFlowTheme.of(context).primary,
@@ -815,9 +815,9 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                                     text: 'Constancia de entrevista',
                                                                                                     options: FFButtonOptions(
                                                                                                       height: 30.0,
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                      color: const Color(0x4C4B39EF),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                      color: Color(0x4C4B39EF),
                                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                             fontFamily: 'Noto Sans JP',
                                                                                                             color: FlutterFlowTheme.of(context).primary,
@@ -842,16 +842,16 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                                             builder: (alertDialogContext) {
                                                                                                               return WebViewAware(
                                                                                                                 child: AlertDialog(
-                                                                                                                  title: const Text('Borrar entrevista'),
-                                                                                                                  content: const Text('Estas por borrar la entrevista. Estas seguro?'),
+                                                                                                                  title: Text('Borrar entrevista'),
+                                                                                                                  content: Text('Estas por borrar la entrevista. Estas seguro?'),
                                                                                                                   actions: [
                                                                                                                     TextButton(
                                                                                                                       onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                                                      child: const Text('Cancelar'),
+                                                                                                                      child: Text('Cancelar'),
                                                                                                                     ),
                                                                                                                     TextButton(
                                                                                                                       onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                                                      child: const Text('Confirmar'),
+                                                                                                                      child: Text('Confirmar'),
                                                                                                                     ),
                                                                                                                   ],
                                                                                                                 ),
@@ -869,7 +869,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                                       }
                                                                                                     },
                                                                                                   ),
-                                                                                                ].divide(const SizedBox(height: 3.0)),
+                                                                                                ].divide(SizedBox(height: 3.0)),
                                                                                               ),
                                                                                             ].map((c) => DataCell(c)).toList(),
                                                                                           ),
@@ -892,18 +892,18 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                       },
                                                                                     ),
                                                                                   ),
-                                                                                ].divide(const SizedBox(height: 5.0)),
+                                                                                ].divide(SizedBox(height: 5.0)),
                                                                               ),
                                                                             ),
                                                                           ),
-                                                                        ].divide(const SizedBox(height: 5.0)),
+                                                                        ].divide(SizedBox(height: 5.0)),
                                                                       ),
                                                                     ),
                                                                   ),
                                                                 ),
                                                                 Padding(
                                                                   padding:
-                                                                      const EdgeInsets
+                                                                      EdgeInsets
                                                                           .all(
                                                                               10.0),
                                                                   child:
@@ -912,7 +912,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                             .width *
                                                                         1.0,
                                                                     constraints:
-                                                                        const BoxConstraints(
+                                                                        BoxConstraints(
                                                                       maxWidth:
                                                                           800.0,
                                                                     ),
@@ -934,7 +934,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                     child:
                                                                         Padding(
                                                                       padding:
-                                                                          const EdgeInsets.all(
+                                                                          EdgeInsets.all(
                                                                               10.0),
                                                                       child:
                                                                           Column(
@@ -987,15 +987,15 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                               final containerAvisovisitaadultosRow = containerAvisovisitaadultosRowList.isNotEmpty ? containerAvisovisitaadultosRowList.first : null;
 
                                                                               return Container(
-                                                                                decoration: const BoxDecoration(),
+                                                                                decoration: BoxDecoration(),
                                                                                 child: Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                                                                                   child: Row(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                     children: [
                                                                                       Align(
-                                                                                        alignment: const AlignmentDirectional(1.0, -1.0),
+                                                                                        alignment: AlignmentDirectional(1.0, -1.0),
                                                                                         child: FFButtonWidget(
                                                                                           onPressed: () async {
                                                                                             await showModalBottomSheet(
@@ -1030,8 +1030,8 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                           text: 'Agregar entrevista al la flia',
                                                                                           options: FFButtonOptions(
                                                                                             height: 40.0,
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                             color: FlutterFlowTheme.of(context).primary,
                                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                   fontFamily: 'Noto Sans JP',
@@ -1039,7 +1039,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                                   letterSpacing: 0.0,
                                                                                                 ),
                                                                                             elevation: 3.0,
-                                                                                            borderSide: const BorderSide(
+                                                                                            borderSide: BorderSide(
                                                                                               color: Colors.transparent,
                                                                                               width: 1.0,
                                                                                             ),
@@ -1048,7 +1048,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                         ),
                                                                                       ),
                                                                                       Align(
-                                                                                        alignment: const AlignmentDirectional(1.0, 0.0),
+                                                                                        alignment: AlignmentDirectional(1.0, 0.0),
                                                                                         child: FFButtonWidget(
                                                                                           onPressed: () async {
                                                                                             await showModalBottomSheet(
@@ -1078,8 +1078,8 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                           text: 'CONVOCATORIA DE ENTREVISTA AL ADULTO',
                                                                                           options: FFButtonOptions(
                                                                                             height: 40.0,
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                             color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                   fontFamily: 'Noto Sans JP',
@@ -1095,14 +1095,14 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                           ),
                                                                                         ),
                                                                                       ),
-                                                                                    ].divide(const SizedBox(width: 3.0)),
+                                                                                    ].divide(SizedBox(width: 3.0)),
                                                                                   ),
                                                                                 ),
                                                                               );
                                                                             },
                                                                           ),
                                                                           Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 16.0,
                                                                                 0.0,
                                                                                 16.0,
@@ -1112,7 +1112,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                               width: double.infinity,
                                                                               decoration: BoxDecoration(
                                                                                 color: Colors.white,
-                                                                                boxShadow: const [
+                                                                                boxShadow: [
                                                                                   BoxShadow(
                                                                                     blurRadius: 7.0,
                                                                                     color: Color(0x2F1D2429),
@@ -1124,7 +1124,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                 ],
                                                                                 borderRadius: BorderRadius.circular(8.0),
                                                                               ),
-                                                                              child: SizedBox(
+                                                                              child: Container(
                                                                                 height: 300.0,
                                                                                 child: Builder(
                                                                                   builder: (context) {
@@ -1250,7 +1250,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                                       letterSpacing: 0.0,
                                                                                                     ),
                                                                                               ),
-                                                                                            ].divide(const SizedBox(height: 3.0)),
+                                                                                            ].divide(SizedBox(height: 3.0)),
                                                                                           ),
                                                                                           Column(
                                                                                             mainAxisSize: MainAxisSize.max,
@@ -1258,7 +1258,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                             crossAxisAlignment: CrossAxisAlignment.center,
                                                                                             children: [
                                                                                               Align(
-                                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                 child: FFButtonWidget(
                                                                                                   onPressed: () async {
                                                                                                     await showModalBottomSheet(
@@ -1290,25 +1290,25 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                                     ).then((value) => safeSetState(() {}));
                                                                                                   },
                                                                                                   text: 'Ver y editar',
-                                                                                                  icon: const Icon(
+                                                                                                  icon: Icon(
                                                                                                     Icons.remove_red_eye_outlined,
                                                                                                     size: 15.0,
                                                                                                   ),
                                                                                                   options: FFButtonOptions(
                                                                                                     width: 130.0,
                                                                                                     height: 30.0,
-                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                    color: const Color(0x4C4B39EF),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                    color: Color(0x4C4B39EF),
                                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                           fontFamily: 'Plus Jakarta Sans',
-                                                                                                          color: const Color(0xFF14181B),
+                                                                                                          color: Color(0xFF14181B),
                                                                                                           fontSize: 14.0,
                                                                                                           letterSpacing: 0.0,
                                                                                                           fontWeight: FontWeight.w500,
                                                                                                         ),
                                                                                                     elevation: 0.0,
-                                                                                                    borderSide: const BorderSide(
+                                                                                                    borderSide: BorderSide(
                                                                                                       color: Color(0xFF4B39EF),
                                                                                                       width: 2.0,
                                                                                                     ),
@@ -1330,16 +1330,16 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                                         builder: (alertDialogContext) {
                                                                                                           return WebViewAware(
                                                                                                             child: AlertDialog(
-                                                                                                              title: const Text('Borrar entrevista'),
-                                                                                                              content: const Text('Estas por borrar la entrevista. Estas seguro?'),
+                                                                                                              title: Text('Borrar entrevista'),
+                                                                                                              content: Text('Estas por borrar la entrevista. Estas seguro?'),
                                                                                                               actions: [
                                                                                                                 TextButton(
                                                                                                                   onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                                                  child: const Text('Cancelar'),
+                                                                                                                  child: Text('Cancelar'),
                                                                                                                 ),
                                                                                                                 TextButton(
                                                                                                                   onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                                                  child: const Text('Confirmar'),
+                                                                                                                  child: Text('Confirmar'),
                                                                                                                 ),
                                                                                                               ],
                                                                                                             ),
@@ -1357,7 +1357,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                                   }
                                                                                                 },
                                                                                               ),
-                                                                                            ].divide(const SizedBox(height: 3.0)),
+                                                                                            ].divide(SizedBox(height: 3.0)),
                                                                                           ),
                                                                                         ].map((c) => DataCell(c)).toList(),
                                                                                       ),
@@ -1382,14 +1382,14 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                               ),
                                                                             ),
                                                                           ),
-                                                                        ].divide(const SizedBox(height: 5.0)),
+                                                                        ].divide(SizedBox(height: 5.0)),
                                                                       ),
                                                                     ),
                                                                   ),
                                                                 ),
                                                                 Padding(
                                                                   padding:
-                                                                      const EdgeInsets
+                                                                      EdgeInsets
                                                                           .all(
                                                                               10.0),
                                                                   child: FutureBuilder<
@@ -1438,7 +1438,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                         height:
                                                                             500.0,
                                                                         constraints:
-                                                                            const BoxConstraints(
+                                                                            BoxConstraints(
                                                                           maxWidth:
                                                                               800.0,
                                                                         ),
@@ -1457,7 +1457,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                         child:
                                                                             Padding(
                                                                           padding:
-                                                                              const EdgeInsets.all(10.0),
+                                                                              EdgeInsets.all(10.0),
                                                                           child:
                                                                               Column(
                                                                             mainAxisSize:
@@ -1480,7 +1480,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                             ),
                                                                                       ),
                                                                                       Align(
-                                                                                        alignment: const AlignmentDirectional(1.0, -1.0),
+                                                                                        alignment: AlignmentDirectional(1.0, -1.0),
                                                                                         child: FFButtonWidget(
                                                                                           onPressed: () async {
                                                                                             await showModalBottomSheet(
@@ -1513,8 +1513,8 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                           text: 'Agregar entrevista',
                                                                                           options: FFButtonOptions(
                                                                                             height: 40.0,
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                             color: FlutterFlowTheme.of(context).primary,
                                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                   fontFamily: 'Noto Sans JP',
@@ -1522,7 +1522,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                                   letterSpacing: 0.0,
                                                                                                 ),
                                                                                             elevation: 3.0,
-                                                                                            borderSide: const BorderSide(
+                                                                                            borderSide: BorderSide(
                                                                                               color: Colors.transparent,
                                                                                               width: 1.0,
                                                                                             ),
@@ -1530,7 +1530,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                           ),
                                                                                         ),
                                                                                       ),
-                                                                                    ].divide(const SizedBox(height: 8.0)),
+                                                                                    ].divide(SizedBox(height: 8.0)),
                                                                                   ),
                                                                                 ],
                                                                               ),
@@ -1658,7 +1658,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                             mainAxisSize: MainAxisSize.max,
                                                                                             children: [
                                                                                               Align(
-                                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                 child: FFButtonWidget(
                                                                                                   onPressed: () async {
                                                                                                     await showModalBottomSheet(
@@ -1689,25 +1689,25 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                                     ).then((value) => safeSetState(() {}));
                                                                                                   },
                                                                                                   text: 'Ver y editar',
-                                                                                                  icon: const Icon(
+                                                                                                  icon: Icon(
                                                                                                     Icons.remove_red_eye_outlined,
                                                                                                     size: 15.0,
                                                                                                   ),
                                                                                                   options: FFButtonOptions(
                                                                                                     width: 130.0,
                                                                                                     height: 36.0,
-                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                    color: const Color(0x4C4B39EF),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                    color: Color(0x4C4B39EF),
                                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                           fontFamily: 'Plus Jakarta Sans',
-                                                                                                          color: const Color(0xFF14181B),
+                                                                                                          color: Color(0xFF14181B),
                                                                                                           fontSize: 14.0,
                                                                                                           letterSpacing: 0.0,
                                                                                                           fontWeight: FontWeight.w500,
                                                                                                         ),
                                                                                                     elevation: 0.0,
-                                                                                                    borderSide: const BorderSide(
+                                                                                                    borderSide: BorderSide(
                                                                                                       color: Color(0xFF4B39EF),
                                                                                                       width: 2.0,
                                                                                                     ),
@@ -1729,16 +1729,16 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                                         builder: (alertDialogContext) {
                                                                                                           return WebViewAware(
                                                                                                             child: AlertDialog(
-                                                                                                              title: const Text('Borrar entrevista'),
-                                                                                                              content: const Text('Estas por borrar la entrevista. Estas seguro?'),
+                                                                                                              title: Text('Borrar entrevista'),
+                                                                                                              content: Text('Estas por borrar la entrevista. Estas seguro?'),
                                                                                                               actions: [
                                                                                                                 TextButton(
                                                                                                                   onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                                                  child: const Text('Cancelar'),
+                                                                                                                  child: Text('Cancelar'),
                                                                                                                 ),
                                                                                                                 TextButton(
                                                                                                                   onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                                                  child: const Text('Confirmar'),
+                                                                                                                  child: Text('Confirmar'),
                                                                                                                 ),
                                                                                                               ],
                                                                                                             ),
@@ -1779,7 +1779,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                   },
                                                                                 ),
                                                                               ),
-                                                                            ].divide(const SizedBox(height: 5.0)),
+                                                                            ].divide(SizedBox(height: 5.0)),
                                                                           ),
                                                                         ),
                                                                       );
@@ -1788,7 +1788,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                 ),
                                                                 Padding(
                                                                   padding:
-                                                                      const EdgeInsets
+                                                                      EdgeInsets
                                                                           .all(
                                                                               10.0),
                                                                   child: FutureBuilder<
@@ -1837,7 +1837,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                         height:
                                                                             500.0,
                                                                         constraints:
-                                                                            const BoxConstraints(
+                                                                            BoxConstraints(
                                                                           maxWidth:
                                                                               800.0,
                                                                         ),
@@ -1856,7 +1856,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                         child:
                                                                             Padding(
                                                                           padding:
-                                                                              const EdgeInsets.all(10.0),
+                                                                              EdgeInsets.all(10.0),
                                                                           child:
                                                                               Column(
                                                                             mainAxisSize:
@@ -1879,7 +1879,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                             ),
                                                                                       ),
                                                                                       Align(
-                                                                                        alignment: const AlignmentDirectional(1.0, -1.0),
+                                                                                        alignment: AlignmentDirectional(1.0, -1.0),
                                                                                         child: FFButtonWidget(
                                                                                           onPressed: () async {
                                                                                             await showModalBottomSheet(
@@ -1909,8 +1909,8 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                           text: 'Agregar acciones accesorias',
                                                                                           options: FFButtonOptions(
                                                                                             height: 40.0,
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                             color: FlutterFlowTheme.of(context).primary,
                                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                   fontFamily: 'Noto Sans JP',
@@ -1918,7 +1918,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                                   letterSpacing: 0.0,
                                                                                                 ),
                                                                                             elevation: 3.0,
-                                                                                            borderSide: const BorderSide(
+                                                                                            borderSide: BorderSide(
                                                                                               color: Colors.transparent,
                                                                                               width: 1.0,
                                                                                             ),
@@ -1926,7 +1926,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                           ),
                                                                                         ),
                                                                                       ),
-                                                                                    ].divide(const SizedBox(height: 8.0)),
+                                                                                    ].divide(SizedBox(height: 8.0)),
                                                                                   ),
                                                                                 ],
                                                                               ),
@@ -1957,7 +1957,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                           label: DefaultTextStyle.merge(
                                                                                             softWrap: true,
                                                                                             child: Align(
-                                                                                              alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                              alignment: AlignmentDirectional(0.0, 0.0),
                                                                                               child: Text(
                                                                                                 'Descripcion',
                                                                                                 style: FlutterFlowTheme.of(context).labelLarge.override(
@@ -2018,7 +2018,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                             mainAxisAlignment: MainAxisAlignment.center,
                                                                                             children: [
                                                                                               Align(
-                                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                 child: FFButtonWidget(
                                                                                                   onPressed: () async {
                                                                                                     await showModalBottomSheet(
@@ -2047,25 +2047,25 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                                     ).then((value) => safeSetState(() {}));
                                                                                                   },
                                                                                                   text: 'Ver y editar',
-                                                                                                  icon: const Icon(
+                                                                                                  icon: Icon(
                                                                                                     Icons.remove_red_eye_outlined,
                                                                                                     size: 15.0,
                                                                                                   ),
                                                                                                   options: FFButtonOptions(
                                                                                                     width: 130.0,
                                                                                                     height: 36.0,
-                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                    color: const Color(0x4C4B39EF),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                    color: Color(0x4C4B39EF),
                                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                           fontFamily: 'Plus Jakarta Sans',
-                                                                                                          color: const Color(0xFF14181B),
+                                                                                                          color: Color(0xFF14181B),
                                                                                                           fontSize: 14.0,
                                                                                                           letterSpacing: 0.0,
                                                                                                           fontWeight: FontWeight.w500,
                                                                                                         ),
                                                                                                     elevation: 0.0,
-                                                                                                    borderSide: const BorderSide(
+                                                                                                    borderSide: BorderSide(
                                                                                                       color: Color(0xFF4B39EF),
                                                                                                       width: 2.0,
                                                                                                     ),
@@ -2087,16 +2087,16 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                                         builder: (alertDialogContext) {
                                                                                                           return WebViewAware(
                                                                                                             child: AlertDialog(
-                                                                                                              title: const Text('Borrar entrevista'),
-                                                                                                              content: const Text('Estas por borrar la entrevista. Estas seguro?'),
+                                                                                                              title: Text('Borrar entrevista'),
+                                                                                                              content: Text('Estas por borrar la entrevista. Estas seguro?'),
                                                                                                               actions: [
                                                                                                                 TextButton(
                                                                                                                   onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                                                  child: const Text('Cancelar'),
+                                                                                                                  child: Text('Cancelar'),
                                                                                                                 ),
                                                                                                                 TextButton(
                                                                                                                   onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                                                  child: const Text('Confirmar'),
+                                                                                                                  child: Text('Confirmar'),
                                                                                                                 ),
                                                                                                               ],
                                                                                                             ),
@@ -2137,7 +2137,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                                                                   },
                                                                                 ),
                                                                               ),
-                                                                            ].divide(const SizedBox(height: 5.0)),
+                                                                            ].divide(SizedBox(height: 5.0)),
                                                                           ),
                                                                         ),
                                                                       );
@@ -2159,8 +2159,8 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
                                       ],
                                     ),
                                   ]
-                                      .divide(const SizedBox(height: 10.0))
-                                      .around(const SizedBox(height: 10.0)),
+                                      .divide(SizedBox(height: 10.0))
+                                      .around(SizedBox(height: 10.0)),
                                 ),
                               ),
                             ),

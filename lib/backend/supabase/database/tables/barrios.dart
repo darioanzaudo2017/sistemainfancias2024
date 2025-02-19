@@ -9,7 +9,7 @@ class BarriosTable extends SupabaseTable<BarriosRow> {
 }
 
 class BarriosRow extends SupabaseDataRow {
-  BarriosRow(super.data);
+  BarriosRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => BarriosTable();

@@ -104,7 +104,7 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<Formulario7Row>>(
         future: Formulario7Table().querySingleRow(
           queryFn: (q) => q.eqOrNull(
@@ -141,7 +141,7 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
             ),
             child: Container(
               width: MediaQuery.sizeOf(context).width * 1.0,
-              constraints: const BoxConstraints(
+              constraints: BoxConstraints(
                 maxWidth: 800.0,
               ),
               decoration: BoxDecoration(
@@ -152,14 +152,14 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                   color: FlutterFlowTheme.of(context).primary,
                 ),
               ),
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Form(
                 key: _model.formKey,
                 autovalidateMode: AutovalidateMode.disabled,
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, -1.0),
+                  alignment: AlignmentDirectional(0.0, -1.0),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
@@ -167,7 +167,7 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Align(
-                            alignment: const AlignmentDirectional(1.0, -1.0),
+                            alignment: AlignmentDirectional(1.0, -1.0),
                             child: FlutterFlowIconButton(
                               borderColor: Colors.transparent,
                               borderRadius: 20.0,
@@ -184,9 +184,9 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(0.0, -1.0),
+                            alignment: AlignmentDirectional(0.0, -1.0),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 10.0),
                               child: Text(
                                 'Acta acuerdo administrativa',
@@ -204,7 +204,7 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -212,7 +212,7 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                               children: [
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 4.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.textController1,
@@ -284,7 +284,7 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         4.0, 0.0, 4.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.textController2,
@@ -356,7 +356,7 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         4.0, 0.0, 0.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.textController3,
@@ -430,7 +430,7 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -438,7 +438,7 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                               children: [
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 4.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.textController4 ??=
@@ -513,7 +513,7 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         4.0, 0.0, 4.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.textController5 ??=
@@ -588,7 +588,7 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         4.0, 0.0, 0.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.textController6 ??=
@@ -665,7 +665,7 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController7 ??=
@@ -731,9 +731,9 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                           ),
                           Container(
                             height: 40.0,
-                            decoration: const BoxDecoration(),
+                            decoration: BoxDecoration(),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -741,9 +741,9 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         'Fecha inicio de expediente',
@@ -758,7 +758,7 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                   ),
                                   Expanded(
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 0.0, 0.0),
                                       child: TextFormField(
                                         controller: _model.textController8,
@@ -842,9 +842,9 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                           ),
                           Container(
                             height: 40.0,
-                            decoration: const BoxDecoration(),
+                            decoration: BoxDecoration(),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -852,9 +852,9 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         'N° de expediente',
@@ -869,7 +869,7 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                   ),
                                   Expanded(
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 0.0, 0.0),
                                       child: TextFormField(
                                         controller: _model.textController9,
@@ -959,7 +959,7 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                   .secondaryBackground,
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Completar los datos restantes para imprimir el documento:',
@@ -977,7 +977,7 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                             children: [
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: TextFormField(
                                     controller: _model.textController10 ??=
@@ -1050,7 +1050,7 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     8.0, 0.0, 8.0, 0.0),
                                 child: FlutterFlowDropDown<String>(
                                   controller: _model.dropDownValueController ??=
@@ -1061,7 +1061,7 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                       'enero',
                                     ),
                                   ),
-                                  options: const [
+                                  options: [
                                     'enero',
                                     'febrero',
                                     'marzo',
@@ -1099,7 +1099,7 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                       FlutterFlowTheme.of(context).alternate,
                                   borderWidth: 2.0,
                                   borderRadius: 10.0,
-                                  margin: const EdgeInsetsDirectional.fromSTEB(
+                                  margin: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   hidesUnderline: true,
                                   isOverButton: true,
@@ -1109,7 +1109,7 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: TextFormField(
                                     controller: _model.textController11 ??=
@@ -1187,7 +1187,7 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                             ],
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController12 ??=
@@ -1252,7 +1252,7 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController13 ??=
@@ -1318,7 +1318,7 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController14 ??=
@@ -1385,7 +1385,7 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController15 ??=
@@ -1455,7 +1455,7 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController16 ??=
@@ -1523,7 +1523,7 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController17 ??=
@@ -1592,7 +1592,7 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController18 ??=
@@ -1733,15 +1733,15 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                           builder: (alertDialogContext) {
                                             return WebViewAware(
                                               child: AlertDialog(
-                                                title: const Text('Carga correcta'),
-                                                content: const Text(
+                                                title: Text('Carga correcta'),
+                                                content: Text(
                                                     'La informacion se guardo correctamente!!'),
                                                 actions: [
                                                   TextButton(
                                                     onPressed: () =>
                                                         Navigator.pop(
                                                             alertDialogContext),
-                                                    child: const Text('Ok'),
+                                                    child: Text('Ok'),
                                                   ),
                                                 ],
                                               ),
@@ -1809,15 +1809,15 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                           builder: (alertDialogContext) {
                                             return WebViewAware(
                                               child: AlertDialog(
-                                                title: const Text('Carga correcta'),
-                                                content: const Text(
+                                                title: Text('Carga correcta'),
+                                                content: Text(
                                                     'La informacion se guardo correctamente!!'),
                                                 actions: [
                                                   TextButton(
                                                     onPressed: () =>
                                                         Navigator.pop(
                                                             alertDialogContext),
-                                                    child: const Text('Ok'),
+                                                    child: Text('Ok'),
                                                   ),
                                                 ],
                                               ),
@@ -1828,17 +1828,17 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                       }
                                     },
                                     text: 'Guardar',
-                                    icon: const Icon(
+                                    icon: Icon(
                                       Icons.save,
                                       size: 15.0,
                                     ),
                                     options: FFButtonOptions(
                                       width: 250.0,
                                       height: 40.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).success,
@@ -1850,7 +1850,7 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                             letterSpacing: 0.0,
                                           ),
                                       elevation: 2.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -1863,8 +1863,8 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                             ],
                           ),
                         ]
-                            .divide(const SizedBox(height: 8.0))
-                            .around(const SizedBox(height: 8.0)),
+                            .divide(SizedBox(height: 8.0))
+                            .around(SizedBox(height: 8.0)),
                       ),
                     ),
                   ),

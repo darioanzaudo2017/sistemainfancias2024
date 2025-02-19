@@ -19,7 +19,7 @@ class Formulario5Widget extends StatefulWidget {
     this.edit,
     String? formderecho,
     required this.idform5historial,
-  }) : formderecho = formderecho ?? 'Informe sintesis';
+  }) : this.formderecho = formderecho ?? 'Informe sintesis';
 
   final IngresosRow? idingreso;
   final VistaExpedientesUltimoEstadoRow? rowexp;
@@ -58,7 +58,7 @@ class _Formulario5WidgetState extends State<Formulario5Widget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<Formulario5HistorialRow>>(
         future: Formulario5HistorialTable().querySingleRow(
           queryFn: (q) => q
@@ -102,7 +102,7 @@ class _Formulario5WidgetState extends State<Formulario5Widget> {
             ),
             child: Container(
               width: MediaQuery.sizeOf(context).width * 1.0,
-              constraints: const BoxConstraints(
+              constraints: BoxConstraints(
                 maxWidth: 800.0,
               ),
               decoration: BoxDecoration(
@@ -113,14 +113,14 @@ class _Formulario5WidgetState extends State<Formulario5Widget> {
                   color: FlutterFlowTheme.of(context).primary,
                 ),
               ),
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Form(
                 key: _model.formKey,
                 autovalidateMode: AutovalidateMode.disabled,
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
@@ -128,7 +128,7 @@ class _Formulario5WidgetState extends State<Formulario5Widget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Align(
-                            alignment: const AlignmentDirectional(1.0, -1.0),
+                            alignment: AlignmentDirectional(1.0, -1.0),
                             child: FlutterFlowIconButton(
                               borderColor: Colors.transparent,
                               borderRadius: 20.0,
@@ -145,7 +145,7 @@ class _Formulario5WidgetState extends State<Formulario5Widget> {
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(0.0, -1.0),
+                            alignment: AlignmentDirectional(0.0, -1.0),
                             child: Text(
                               'Formulario 5 - Informe síntesis de la vulneración de derechos para definir propuestas de medida de protección',
                               textAlign: TextAlign.center,
@@ -160,7 +160,7 @@ class _Formulario5WidgetState extends State<Formulario5Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -196,7 +196,7 @@ class _Formulario5WidgetState extends State<Formulario5Widget> {
                                         ),
                                   ),
                                 ),
-                              ].divide(const SizedBox(width: 10.0)),
+                              ].divide(SizedBox(width: 10.0)),
                             ),
                           ),
                           Column(
@@ -228,7 +228,7 @@ class _Formulario5WidgetState extends State<Formulario5Widget> {
                           ),
                           Flexible(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 '1. Derechos vulnerados (según Cuadro de Derechos):',
@@ -286,7 +286,7 @@ class _Formulario5WidgetState extends State<Formulario5Widget> {
                                   children: [
                                     Align(
                                       alignment:
-                                          const AlignmentDirectional(1.0, -1.0),
+                                          AlignmentDirectional(1.0, -1.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
                                           await showModalBottomSheet(
@@ -328,10 +328,10 @@ class _Formulario5WidgetState extends State<Formulario5Widget> {
                                         options: FFButtonOptions(
                                           height: 40.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 0.0, 24.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
@@ -344,7 +344,7 @@ class _Formulario5WidgetState extends State<Formulario5Widget> {
                                                     letterSpacing: 0.0,
                                                   ),
                                           elevation: 3.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -409,7 +409,7 @@ class _Formulario5WidgetState extends State<Formulario5Widget> {
                                                   softWrap: true,
                                                   child: Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Text(
                                                       'Principal',
@@ -500,7 +500,7 @@ class _Formulario5WidgetState extends State<Formulario5Widget> {
                                                       'Si',
                                                   child: Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Container(
                                                       width: 65.0,
@@ -516,7 +516,7 @@ class _Formulario5WidgetState extends State<Formulario5Widget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -582,7 +582,7 @@ class _Formulario5WidgetState extends State<Formulario5Widget> {
                                         },
                                       ),
                                     ),
-                                  ].divide(const SizedBox(height: 10.0)),
+                                  ].divide(SizedBox(height: 10.0)),
                                 ),
                               );
                             },
@@ -675,7 +675,7 @@ class _Formulario5WidgetState extends State<Formulario5Widget> {
                           ),
                           Flexible(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 '2. Fortalezas familiares y factores protectores',
@@ -718,7 +718,7 @@ class _Formulario5WidgetState extends State<Formulario5Widget> {
                           ),
                           Flexible(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 '3. Actores referentes para articulación comunitaria',
@@ -786,7 +786,7 @@ class _Formulario5WidgetState extends State<Formulario5Widget> {
                           ),
                           Flexible(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 '4. Redefinición de criterios de priorización',
@@ -857,7 +857,7 @@ class _Formulario5WidgetState extends State<Formulario5Widget> {
                           ),
                           Flexible(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 '5. Propuestas para medidas de Proteccion Integral',
@@ -901,8 +901,8 @@ class _Formulario5WidgetState extends State<Formulario5Widget> {
                             ],
                           ),
                         ]
-                            .divide(const SizedBox(height: 12.0))
-                            .around(const SizedBox(height: 12.0)),
+                            .divide(SizedBox(height: 12.0))
+                            .around(SizedBox(height: 12.0)),
                       ),
                     ),
                   ),

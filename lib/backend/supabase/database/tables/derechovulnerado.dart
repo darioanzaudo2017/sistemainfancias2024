@@ -10,7 +10,7 @@ class DerechovulneradoTable extends SupabaseTable<DerechovulneradoRow> {
 }
 
 class DerechovulneradoRow extends SupabaseDataRow {
-  DerechovulneradoRow(super.data);
+  DerechovulneradoRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => DerechovulneradoTable();

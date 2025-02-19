@@ -51,7 +51,7 @@ class _CambiarexpeWidgetState extends State<CambiarexpeWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Material(
         color: Colors.transparent,
         elevation: 5.0,
@@ -69,7 +69,7 @@ class _CambiarexpeWidgetState extends State<CambiarexpeWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Align(
-                alignment: const AlignmentDirectional(1.0, 0.0),
+                alignment: AlignmentDirectional(1.0, 0.0),
                 child: FlutterFlowIconButton(
                   borderColor: Colors.transparent,
                   borderRadius: 20.0,
@@ -144,7 +144,7 @@ class _CambiarexpeWidgetState extends State<CambiarexpeWidget> {
                     borderWidth: 0.0,
                     borderRadius: 8.0,
                     margin:
-                        const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                     hidesUnderline: true,
                     isOverButton: false,
                     isSearchable: false,
@@ -159,20 +159,20 @@ class _CambiarexpeWidgetState extends State<CambiarexpeWidget> {
                         builder: (alertDialogContext) {
                           return WebViewAware(
                             child: AlertDialog(
-                              title: const Text(
+                              title: Text(
                                   'Estas a punto de cambiar de SPD el expediente'),
-                              content: const Text(
+                              content: Text(
                                   'Estas a punto de cambiar de SPD el expediente. Deseas continuar?'),
                               actions: [
                                 TextButton(
                                   onPressed: () =>
                                       Navigator.pop(alertDialogContext, false),
-                                  child: const Text('Cancelar'),
+                                  child: Text('Cancelar'),
                                 ),
                                 TextButton(
                                   onPressed: () =>
                                       Navigator.pop(alertDialogContext, true),
-                                  child: const Text('Confirmar'),
+                                  child: Text('Confirmar'),
                                 ),
                               ],
                             ),
@@ -195,14 +195,14 @@ class _CambiarexpeWidgetState extends State<CambiarexpeWidget> {
                       builder: (alertDialogContext) {
                         return WebViewAware(
                           child: AlertDialog(
-                            title: const Text('Se cambio el expediente'),
+                            title: Text('Se cambio el expediente'),
                             content:
-                                const Text('El expediente se cambio correctamente!'),
+                                Text('El expediente se cambio correctamente!'),
                             actions: [
                               TextButton(
                                 onPressed: () =>
                                     Navigator.pop(alertDialogContext),
-                                child: const Text('Ok'),
+                                child: Text('Ok'),
                               ),
                             ],
                           ),
@@ -215,9 +215,9 @@ class _CambiarexpeWidgetState extends State<CambiarexpeWidget> {
                 text: 'Cambiar Expediente',
                 options: FFButtonOptions(
                   height: 40.0,
-                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   iconPadding:
-                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Noto Sans JP',
@@ -228,7 +228,7 @@ class _CambiarexpeWidgetState extends State<CambiarexpeWidget> {
                   borderRadius: BorderRadius.circular(8.0),
                 ),
               ),
-            ].divide(const SizedBox(height: 5.0)).around(const SizedBox(height: 5.0)),
+            ].divide(SizedBox(height: 5.0)).around(SizedBox(height: 5.0)),
           ),
         ),
       ),

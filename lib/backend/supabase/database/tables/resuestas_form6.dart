@@ -10,7 +10,7 @@ class ResuestasForm6Table extends SupabaseTable<ResuestasForm6Row> {
 }
 
 class ResuestasForm6Row extends SupabaseDataRow {
-  ResuestasForm6Row(super.data);
+  ResuestasForm6Row(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => ResuestasForm6Table();

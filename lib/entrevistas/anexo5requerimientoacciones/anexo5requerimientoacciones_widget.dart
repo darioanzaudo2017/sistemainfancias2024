@@ -70,7 +70,7 @@ class _Anexo5requerimientoaccionesWidgetState
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<Anexo5requerimientoaccionesRow>>(
         future: (_model.requestCompleter ??=
                 Completer<List<Anexo5requerimientoaccionesRow>>()
@@ -107,7 +107,7 @@ class _Anexo5requerimientoaccionesWidgetState
             ),
             child: Container(
               width: MediaQuery.sizeOf(context).width * 4.5,
-              constraints: const BoxConstraints(
+              constraints: BoxConstraints(
                 maxWidth: 600.0,
               ),
               decoration: BoxDecoration(
@@ -117,23 +117,23 @@ class _Anexo5requerimientoaccionesWidgetState
                   color: FlutterFlowTheme.of(context).primary,
                 ),
               ),
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Align(
-                alignment: const AlignmentDirectional(0.0, -1.0),
+                alignment: AlignmentDirectional(0.0, -1.0),
                 child: Form(
                   key: _model.formKey,
                   autovalidateMode: AutovalidateMode.disabled,
                   child: Align(
-                    alignment: const AlignmentDirectional(0.0, -1.0),
+                    alignment: AlignmentDirectional(0.0, -1.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Align(
-                            alignment: const AlignmentDirectional(1.0, -1.0),
+                            alignment: AlignmentDirectional(1.0, -1.0),
                             child: FlutterFlowIconButton(
                               borderColor: Colors.transparent,
                               borderRadius: 20.0,
@@ -155,9 +155,9 @@ class _Anexo5requerimientoaccionesWidgetState
                             children: [
                               Flexible(
                                 child: Align(
-                                  alignment: const AlignmentDirectional(0.0, -1.0),
+                                  alignment: AlignmentDirectional(0.0, -1.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         25.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'REQUERIMIENTO DE EJECUCIÓN DE ACCIONES',
@@ -179,7 +179,7 @@ class _Anexo5requerimientoaccionesWidgetState
                           ),
                           Flexible(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 1.0),
                               child: Material(
                                 color: Colors.transparent,
@@ -192,7 +192,7 @@ class _Anexo5requerimientoaccionesWidgetState
                                   height: 100.0,
                                   decoration: BoxDecoration(
                                     color: Colors.white,
-                                    boxShadow: const [
+                                    boxShadow: [
                                       BoxShadow(
                                         blurRadius: 0.0,
                                         color: Color(0xFFF5FBFB),
@@ -209,7 +209,7 @@ class _Anexo5requerimientoaccionesWidgetState
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -220,7 +220,7 @@ class _Anexo5requerimientoaccionesWidgetState
                                           flex: 4,
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 12.0, 12.0, 12.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -230,7 +230,7 @@ class _Anexo5requerimientoaccionesWidgetState
                                                 Expanded(
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Column(
@@ -252,7 +252,7 @@ class _Anexo5requerimientoaccionesWidgetState
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -266,7 +266,7 @@ class _Anexo5requerimientoaccionesWidgetState
                                                                     .override(
                                                                       fontFamily:
                                                                           'Inter',
-                                                                      color: const Color(
+                                                                      color: Color(
                                                                           0xFF101518),
                                                                       fontSize:
                                                                           16.0,
@@ -279,7 +279,7 @@ class _Anexo5requerimientoaccionesWidgetState
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       4.0,
@@ -299,7 +299,7 @@ class _Anexo5requerimientoaccionesWidgetState
                                                                 .override(
                                                                   fontFamily:
                                                                       'Inter',
-                                                                  color: const Color(
+                                                                  color: Color(
                                                                       0xFF06D5CD),
                                                                   fontSize:
                                                                       12.0,
@@ -313,7 +313,7 @@ class _Anexo5requerimientoaccionesWidgetState
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       4.0,
@@ -332,7 +332,7 @@ class _Anexo5requerimientoaccionesWidgetState
                                                                 .override(
                                                                   fontFamily:
                                                                       'Inter',
-                                                                  color: const Color(
+                                                                  color: Color(
                                                                       0xFF57636C),
                                                                   fontSize:
                                                                       12.0,
@@ -360,7 +360,7 @@ class _Anexo5requerimientoaccionesWidgetState
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.textFieldmotivoTextController1,
@@ -426,7 +426,7 @@ class _Anexo5requerimientoaccionesWidgetState
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.textFieldmotivoTextController2,
@@ -492,7 +492,7 @@ class _Anexo5requerimientoaccionesWidgetState
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.textFieldmotivoTextController3,
@@ -580,7 +580,7 @@ class _Anexo5requerimientoaccionesWidgetState
                               ),
                               FFButtonWidget(
                                 onPressed: () async {
-                                  final datePickedDate = await showDatePicker(
+                                  final _datePickedDate = await showDatePicker(
                                     context: context,
                                     initialDate: getCurrentTimestamp,
                                     firstDate: getCurrentTimestamp,
@@ -622,22 +622,26 @@ class _Anexo5requerimientoaccionesWidgetState
                                     },
                                   );
 
-                                  if (datePickedDate != null) {
+                                  if (_datePickedDate != null) {
                                     safeSetState(() {
                                       _model.datePicked = DateTime(
-                                        datePickedDate.year,
-                                        datePickedDate.month,
-                                        datePickedDate.day,
+                                        _datePickedDate.year,
+                                        _datePickedDate.month,
+                                        _datePickedDate.day,
                                       );
+                                    });
+                                  } else if (_model.datePicked != null) {
+                                    safeSetState(() {
+                                      _model.datePicked = getCurrentTimestamp;
                                     });
                                   }
                                 },
                                 text: 'Fecha',
                                 options: FFButtonOptions(
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -670,14 +674,14 @@ class _Anexo5requerimientoaccionesWidgetState
                                       builder: (alertDialogContext) {
                                         return WebViewAware(
                                           child: AlertDialog(
-                                            title: const Text('Campo obligatorio'),
+                                            title: Text('Campo obligatorio'),
                                             content:
-                                                const Text('La fecha obligatoria!'),
+                                                Text('La fecha obligatoria!'),
                                             actions: [
                                               TextButton(
                                                 onPressed: () => Navigator.pop(
                                                     alertDialogContext),
-                                                child: const Text('Ok'),
+                                                child: Text('Ok'),
                                               ),
                                             ],
                                           ),
@@ -747,15 +751,15 @@ class _Anexo5requerimientoaccionesWidgetState
                                       builder: (alertDialogContext) {
                                         return WebViewAware(
                                           child: AlertDialog(
-                                            title: const Text(
+                                            title: Text(
                                                 'Se cargo correctamente la informacion'),
-                                            content: const Text(
+                                            content: Text(
                                                 'Se guardo la informacion y se creo un documento en google docs!'),
                                             actions: [
                                               TextButton(
                                                 onPressed: () => Navigator.pop(
                                                     alertDialogContext),
-                                                child: const Text('Ok'),
+                                                child: Text('Ok'),
                                               ),
                                             ],
                                           ),
@@ -771,16 +775,16 @@ class _Anexo5requerimientoaccionesWidgetState
                                   safeSetState(() {});
                                 },
                                 text: 'Guardar y generar Docs',
-                                icon: const Icon(
+                                icon: Icon(
                                   Icons.save,
                                   size: 15.0,
                                 ),
                                 options: FFButtonOptions(
                                   width: 250.0,
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).success,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -791,7 +795,7 @@ class _Anexo5requerimientoaccionesWidgetState
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 2.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -816,13 +820,13 @@ class _Anexo5requerimientoaccionesWidgetState
                                   final listareqaccionesItem =
                                       listareqacciones[listareqaccionesIndex];
                                   return Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: Container(
                                       width: double.infinity,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
-                                        boxShadow: const [
+                                        boxShadow: [
                                           BoxShadow(
                                             blurRadius: 7.0,
                                             color: Color(0x2F1D2429),
@@ -836,7 +840,7 @@ class _Anexo5requerimientoaccionesWidgetState
                                             BorderRadius.circular(8.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 12.0, 16.0, 12.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -855,19 +859,19 @@ class _Anexo5requerimientoaccionesWidgetState
                                                   .override(
                                                     fontFamily:
                                                         'Plus Jakarta Sans',
-                                                    color: const Color(0xFF39D2C0),
+                                                    color: Color(0xFF39D2C0),
                                                     fontSize: 14.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                             ),
-                                            const Divider(
+                                            Divider(
                                               height: 16.0,
                                               thickness: 2.0,
                                               color: Color(0xFFF1F4F8),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 4.0, 0.0, 0.0),
                                               child: Text(
                                                 valueOrDefault<String>(
@@ -887,7 +891,7 @@ class _Anexo5requerimientoaccionesWidgetState
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              const Color(0xFF57636C),
+                                                              Color(0xFF57636C),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -896,7 +900,7 @@ class _Anexo5requerimientoaccionesWidgetState
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 4.0, 0.0, 0.0),
                                               child: Text(
                                                 valueOrDefault<String>(
@@ -910,7 +914,7 @@ class _Anexo5requerimientoaccionesWidgetState
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              const Color(0xFF57636C),
+                                                              Color(0xFF57636C),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -928,8 +932,8 @@ class _Anexo5requerimientoaccionesWidgetState
                             },
                           ),
                         ]
-                            .divide(const SizedBox(height: 8.0))
-                            .around(const SizedBox(height: 8.0)),
+                            .divide(SizedBox(height: 8.0))
+                            .around(SizedBox(height: 8.0)),
                       ),
                     ),
                   ),

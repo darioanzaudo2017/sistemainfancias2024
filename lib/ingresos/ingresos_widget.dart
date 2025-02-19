@@ -107,7 +107,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                 borderRadius: 30.0,
                 borderWidth: 1.0,
                 buttonSize: 60.0,
-                icon: const Icon(
+                icon: Icon(
                   Icons.arrow_back_rounded,
                   color: Colors.white,
                   size: 30.0,
@@ -125,14 +125,14 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: true,
               elevation: 2.0,
             ),
             body: SafeArea(
               top: true,
               child: Container(
-                decoration: const BoxDecoration(),
+                decoration: BoxDecoration(),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -214,7 +214,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                 CrossAxisAlignment.stretch,
                                             children: [
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Container(
                                                   width:
@@ -225,12 +225,12 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                       MediaQuery.sizeOf(context)
                                                               .height *
                                                           0.918,
-                                                  decoration: const BoxDecoration(
+                                                  decoration: BoxDecoration(
                                                     color: Color(0x49F1F4F8),
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(8.0, 0.0,
                                                                 8.0, 0.0),
                                                     child:
@@ -343,13 +343,13 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                 options:
                                                                     FFButtonOptions(
                                                                   height: 35.0,
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
                                                                           0.0),
-                                                                  iconPadding: const EdgeInsetsDirectional
+                                                                  iconPadding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -364,7 +364,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                       .override(
                                                                         fontFamily:
                                                                             'Noto Sans JP',
-                                                                        color: const Color(
+                                                                        color: Color(
                                                                             0xFF39A9EF),
                                                                         letterSpacing:
                                                                             0.0,
@@ -372,7 +372,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                   elevation:
                                                                       3.0,
                                                                   borderSide:
-                                                                      const BorderSide(
+                                                                      BorderSide(
                                                                     color: Color(
                                                                         0xFF39A9EF),
                                                                   ),
@@ -441,12 +441,12 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                         FFButtonOptions(
                                                                       height:
                                                                           35.0,
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
                                                                           0.0),
-                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -461,14 +461,14 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                             fontFamily:
                                                                                 'Noto Sans JP',
                                                                             color:
-                                                                                const Color(0xFF39A9EF),
+                                                                                Color(0xFF39A9EF),
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
                                                                       elevation:
                                                                           3.0,
                                                                       borderSide:
-                                                                          const BorderSide(
+                                                                          BorderSide(
                                                                         color: Color(
                                                                             0xFF39A9EF),
                                                                       ),
@@ -483,25 +483,25 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                 .divide((MediaQuery.sizeOf(context)
                                                                             .width >
                                                                         800.0)
-                                                                    ? const SizedBox(
+                                                                    ? SizedBox(
                                                                         width:
                                                                             10.0)
-                                                                    : const SizedBox(
+                                                                    : SizedBox(
                                                                         height:
                                                                             10.0))
                                                                 .around((MediaQuery.sizeOf(context)
                                                                             .width >
                                                                         800.0)
-                                                                    ? const SizedBox(
+                                                                    ? SizedBox(
                                                                         width:
                                                                             10.0)
-                                                                    : const SizedBox(
+                                                                    : SizedBox(
                                                                         height:
                                                                             10.0)),
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -552,7 +552,9 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                             .where((e) =>
                                                                                 e.estado ==
                                                                                 'Abierto')
-                                                                            .toList().isNotEmpty
+                                                                            .toList()
+                                                                            .length >
+                                                                        0
                                                                     ? false
                                                                     : true)
                                                                   FFButtonWidget(
@@ -707,12 +709,12 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                           230.0,
                                                                       height:
                                                                           40.0,
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
-                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -732,7 +734,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                 0.0,
                                                                           ),
                                                                       borderSide:
-                                                                          const BorderSide(
+                                                                          BorderSide(
                                                                         color: Colors
                                                                             .transparent,
                                                                         width:
@@ -753,11 +755,11 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                             children: [
                                                               Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -783,7 +785,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                           BoxDecoration(
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryBackground,
-                                                                        boxShadow: const [
+                                                                        boxShadow: [
                                                                           BoxShadow(
                                                                             blurRadius:
                                                                                 4.0,
@@ -801,7 +803,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                       ),
                                                                       child:
                                                                           Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             10.0,
                                                                             10.0,
                                                                             10.0,
@@ -814,14 +816,14 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                 ingresosVistaIngresosDiasRowList.toList();
 
                                                                             return ListView.separated(
-                                                                              padding: const EdgeInsets.symmetric(vertical: 10.0),
+                                                                              padding: EdgeInsets.symmetric(vertical: 10.0),
                                                                               scrollDirection: Axis.vertical,
                                                                               itemCount: containerVar.length,
-                                                                              separatorBuilder: (_, __) => const SizedBox(height: 10.0),
+                                                                              separatorBuilder: (_, __) => SizedBox(height: 10.0),
                                                                               itemBuilder: (context, containerVarIndex) {
                                                                                 final containerVarItem = containerVar[containerVarIndex];
                                                                                 return Align(
-                                                                                  alignment: const AlignmentDirectional(-1.0, -1.0),
+                                                                                  alignment: AlignmentDirectional(-1.0, -1.0),
                                                                                   child: Material(
                                                                                     color: Colors.transparent,
                                                                                     elevation: 5.0,
@@ -834,24 +836,24 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                         borderRadius: BorderRadius.circular(10.0),
                                                                                       ),
                                                                                       child: Padding(
-                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                                                                                         child: Row(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                           children: [
                                                                                             Padding(
-                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                                                                                               child: Container(
                                                                                                 width: 425.0,
-                                                                                                decoration: const BoxDecoration(),
+                                                                                                decoration: BoxDecoration(),
                                                                                                 child: Padding(
-                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                                                                                                   child: Column(
                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                                                                     children: [
                                                                                                       Padding(
-                                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 8.0),
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 8.0),
                                                                                                         child: Row(
                                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                                           mainAxisAlignment: MainAxisAlignment.start,
@@ -862,7 +864,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                               height: 50.0,
                                                                                                               decoration: BoxDecoration(
                                                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                                                borderRadius: const BorderRadius.only(
+                                                                                                                borderRadius: BorderRadius.only(
                                                                                                                   bottomLeft: Radius.circular(0.0),
                                                                                                                   bottomRight: Radius.circular(0.0),
                                                                                                                   topLeft: Radius.circular(10.0),
@@ -871,7 +873,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                               ),
                                                                                                             ),
                                                                                                             Align(
-                                                                                                              alignment: const AlignmentDirectional(1.0, 0.0),
+                                                                                                              alignment: AlignmentDirectional(1.0, 0.0),
                                                                                                               child: Row(
                                                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                                                 children: [
@@ -885,7 +887,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                           height: 30.0,
                                                                                                                           decoration: BoxDecoration(
                                                                                                                             color: FlutterFlowTheme.of(context).tertiary,
-                                                                                                                            borderRadius: const BorderRadius.only(
+                                                                                                                            borderRadius: BorderRadius.only(
                                                                                                                               bottomLeft: Radius.circular(0.0),
                                                                                                                               bottomRight: Radius.circular(20.0),
                                                                                                                               topLeft: Radius.circular(20.0),
@@ -893,7 +895,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                             ),
                                                                                                                           ),
                                                                                                                           child: Align(
-                                                                                                                            alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                                            alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                                             child: Text(
                                                                                                                               'Cerrado',
                                                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -909,7 +911,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                           height: 30.0,
                                                                                                                           decoration: BoxDecoration(
                                                                                                                             color: FlutterFlowTheme.of(context).success,
-                                                                                                                            borderRadius: const BorderRadius.only(
+                                                                                                                            borderRadius: BorderRadius.only(
                                                                                                                               bottomLeft: Radius.circular(0.0),
                                                                                                                               bottomRight: Radius.circular(20.0),
                                                                                                                               topLeft: Radius.circular(20.0),
@@ -917,7 +919,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                             ),
                                                                                                                           ),
                                                                                                                           child: Align(
-                                                                                                                            alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                                                            alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                                             child: Text(
                                                                                                                               'Abierto',
                                                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -932,13 +934,13 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                 ],
                                                                                                               ),
                                                                                                             ),
-                                                                                                          ].divide(const SizedBox(width: 16.0)),
+                                                                                                          ].divide(SizedBox(width: 16.0)),
                                                                                                         ),
                                                                                                       ),
                                                                                                       Align(
-                                                                                                        alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                                        alignment: AlignmentDirectional(-1.0, 0.0),
                                                                                                         child: Padding(
-                                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                                                                                                           child: Column(
                                                                                                             mainAxisSize: MainAxisSize.max,
                                                                                                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -984,10 +986,10 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                           letterSpacing: 0.0,
                                                                                                                         ),
                                                                                                                   ),
-                                                                                                                ].divide(const SizedBox(height: 4.0)),
+                                                                                                                ].divide(SizedBox(height: 4.0)),
                                                                                                               ),
                                                                                                               Align(
-                                                                                                                alignment: const AlignmentDirectional(-1.0, -1.0),
+                                                                                                                alignment: AlignmentDirectional(-1.0, -1.0),
                                                                                                                 child: Text(
                                                                                                                   'Estado de avance',
                                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -998,7 +1000,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                 ),
                                                                                                               ),
                                                                                                               Padding(
-                                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                                                                                                                 child: Row(
                                                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -1030,13 +1032,13 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                               decoration: BoxDecoration(
                                                                                                                                 color: () {
                                                                                                                                   if (!containerVarItem.form1! && !containerVarItem.form1completo!) {
-                                                                                                                                    return const Color(0x34EE8B60);
+                                                                                                                                    return Color(0x34EE8B60);
                                                                                                                                   } else if (containerVarItem.form1! && !containerVarItem.form1completo!) {
-                                                                                                                                    return const Color(0x334B39EF);
+                                                                                                                                    return Color(0x334B39EF);
                                                                                                                                   } else if (containerVarItem.form1! && containerVarItem.form1completo!) {
-                                                                                                                                    return const Color(0x32249689);
+                                                                                                                                    return Color(0x32249689);
                                                                                                                                   } else {
-                                                                                                                                    return const Color(0x00000000);
+                                                                                                                                    return Color(0x00000000);
                                                                                                                                   }
                                                                                                                                 }(),
                                                                                                                                 shape: BoxShape.circle,
@@ -1049,7 +1051,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                                     } else if (containerVarItem.form1! && containerVarItem.form1completo!) {
                                                                                                                                       return FlutterFlowTheme.of(context).success;
                                                                                                                                     } else {
-                                                                                                                                      return const Color(0x00000000);
+                                                                                                                                      return Color(0x00000000);
                                                                                                                                     }
                                                                                                                                   }(),
                                                                                                                                 ),
@@ -1085,11 +1087,11 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                               decoration: BoxDecoration(
                                                                                                                                 color: () {
                                                                                                                                   if (!containerVarItem.form3completo! && !containerVarItem.form2completo! && !containerVarItem.form4completo!) {
-                                                                                                                                    return const Color(0x34EE8B60);
+                                                                                                                                    return Color(0x34EE8B60);
                                                                                                                                   } else if (containerVarItem.form2completo! || containerVarItem.form3completo! || containerVarItem.form4completo!) {
-                                                                                                                                    return const Color(0x32249689);
+                                                                                                                                    return Color(0x32249689);
                                                                                                                                   } else {
-                                                                                                                                    return const Color(0x00000000);
+                                                                                                                                    return Color(0x00000000);
                                                                                                                                   }
                                                                                                                                 }(),
                                                                                                                                 shape: BoxShape.circle,
@@ -1102,7 +1104,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                                     } else if (containerVarItem.form2! && containerVarItem.form2completo!) {
                                                                                                                                       return FlutterFlowTheme.of(context).success;
                                                                                                                                     } else {
-                                                                                                                                      return const Color(0x00000000);
+                                                                                                                                      return Color(0x00000000);
                                                                                                                                     }
                                                                                                                                   }(),
                                                                                                                                 ),
@@ -1138,11 +1140,11 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                               decoration: BoxDecoration(
                                                                                                                                 color: () {
                                                                                                                                   if (!containerVarItem.form5completo!) {
-                                                                                                                                    return const Color(0x34EE8B60);
+                                                                                                                                    return Color(0x34EE8B60);
                                                                                                                                   } else if (containerVarItem.form5completo!) {
                                                                                                                                     return FlutterFlowTheme.of(context).accent2;
                                                                                                                                   } else {
-                                                                                                                                    return const Color(0x00000000);
+                                                                                                                                    return Color(0x00000000);
                                                                                                                                   }
                                                                                                                                 }(),
                                                                                                                                 shape: BoxShape.circle,
@@ -1155,7 +1157,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                                     } else if (containerVarItem.form3! && containerVarItem.form3completo!) {
                                                                                                                                       return FlutterFlowTheme.of(context).success;
                                                                                                                                     } else {
-                                                                                                                                      return const Color(0x00000000);
+                                                                                                                                      return Color(0x00000000);
                                                                                                                                     }
                                                                                                                                   }(),
                                                                                                                                 ),
@@ -1195,7 +1197,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                                   } else if (containerVarItem.form6completo!) {
                                                                                                                                     return FlutterFlowTheme.of(context).accent2;
                                                                                                                                   } else {
-                                                                                                                                    return const Color(0x00000000);
+                                                                                                                                    return Color(0x00000000);
                                                                                                                                   }
                                                                                                                                 }(),
                                                                                                                                 shape: BoxShape.circle,
@@ -1208,7 +1210,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                                     } else if (containerVarItem.form4! && containerVarItem.form4completo!) {
                                                                                                                                       return FlutterFlowTheme.of(context).success;
                                                                                                                                     } else {
-                                                                                                                                      return const Color(0x00000000);
+                                                                                                                                      return Color(0x00000000);
                                                                                                                                     }
                                                                                                                                   }(),
                                                                                                                                 ),
@@ -1249,7 +1251,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                                   } else if (containerVarItem.form9completo!) {
                                                                                                                                     return FlutterFlowTheme.of(context).accent2;
                                                                                                                                   } else {
-                                                                                                                                    return const Color(0x00000000);
+                                                                                                                                    return Color(0x00000000);
                                                                                                                                   }
                                                                                                                                 }(),
                                                                                                                                 shape: BoxShape.circle,
@@ -1262,7 +1264,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                                     } else if (containerVarItem.form5! && containerVarItem.form5completo!) {
                                                                                                                                       return FlutterFlowTheme.of(context).success;
                                                                                                                                     } else {
-                                                                                                                                      return const Color(0x00000000);
+                                                                                                                                      return Color(0x00000000);
                                                                                                                                     }
                                                                                                                                   }(),
                                                                                                                                 ),
@@ -1272,7 +1274,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                         ),
                                                                                                                       ),
                                                                                                                     ),
-                                                                                                                  ].divide(const SizedBox(width: 10.0)),
+                                                                                                                  ].divide(SizedBox(width: 10.0)),
                                                                                                                 ),
                                                                                                               ),
                                                                                                             ],
@@ -1288,7 +1290,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                               mainAxisSize: MainAxisSize.max,
                                                                                               children: [
                                                                                                 Align(
-                                                                                                  alignment: const AlignmentDirectional(0.0, 1.0),
+                                                                                                  alignment: AlignmentDirectional(0.0, 1.0),
                                                                                                   child: FFButtonWidget(
                                                                                                     onPressed: () async {
                                                                                                       context.pushNamed(
@@ -1321,8 +1323,8 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                     options: FFButtonOptions(
                                                                                                       width: 150.0,
                                                                                                       height: 50.0,
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                                       color: FlutterFlowTheme.of(context).primary,
                                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                             fontFamily: 'Noto Sans JP',
@@ -1330,7 +1332,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                             letterSpacing: 0.0,
                                                                                                           ),
                                                                                                       elevation: 3.0,
-                                                                                                      borderSide: const BorderSide(
+                                                                                                      borderSide: BorderSide(
                                                                                                         color: Colors.transparent,
                                                                                                         width: 1.0,
                                                                                                       ),
@@ -1358,9 +1360,9 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                             ],
                                                           ),
                                                         ]
-                                                            .divide(const SizedBox(
+                                                            .divide(SizedBox(
                                                                 height: 10.0))
-                                                            .around(const SizedBox(
+                                                            .around(SizedBox(
                                                                 height: 10.0)),
                                                       ),
                                                     ),

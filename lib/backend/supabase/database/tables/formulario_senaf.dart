@@ -10,7 +10,7 @@ class FormularioSenafTable extends SupabaseTable<FormularioSenafRow> {
 }
 
 class FormularioSenafRow extends SupabaseDataRow {
-  FormularioSenafRow(super.data);
+  FormularioSenafRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => FormularioSenafTable();

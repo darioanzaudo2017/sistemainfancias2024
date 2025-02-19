@@ -66,7 +66,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<IngresosRow>>(
         future: (_model.requestCompleter1 ??= Completer<List<IngresosRow>>()
               ..complete(IngresosTable().querySingleRow(
@@ -105,7 +105,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
             ),
             child: Container(
               width: MediaQuery.sizeOf(context).width * 1.0,
-              constraints: const BoxConstraints(
+              constraints: BoxConstraints(
                 maxWidth: 600.0,
               ),
               decoration: BoxDecoration(
@@ -116,14 +116,14 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                   color: FlutterFlowTheme.of(context).primary,
                 ),
               ),
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Form(
                 key: _model.formKey,
                 autovalidateMode: AutovalidateMode.disabled,
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
@@ -135,9 +135,9 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Align(
-                                alignment: const AlignmentDirectional(0.0, -1.0),
+                                alignment: AlignmentDirectional(0.0, -1.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       60.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Formulario 1 - Recepción de Demanda',
@@ -154,7 +154,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(1.0, 0.0),
+                                alignment: AlignmentDirectional(1.0, 0.0),
                                 child: FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
                                   borderRadius: 20.0,
@@ -173,7 +173,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                             ],
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Text(
                               'Derechos Vulnerados',
                               style: FlutterFlowTheme.of(context)
@@ -191,7 +191,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                             children: [
                               Flexible(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     '* 1. Datos del niño/s, niña/s o adolescente/s',
@@ -206,7 +206,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     8.0, 0.0, 8.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -215,7 +215,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                   children: [
                                     if (!containerIngresosRow!.form1seccion1!)
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 8.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -260,10 +260,10 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                           options: FFButtonOptions(
                                             height: 40.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: containerIngresosRow
                                                         .form1seccion1 ==
@@ -282,7 +282,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -294,7 +294,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                     if (containerIngresosRow.form1seccion1 ??
                                         true)
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 8.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -330,10 +330,10 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                           options: FFButtonOptions(
                                             height: 40.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: containerIngresosRow
                                                         .form1seccion1 ==
@@ -352,7 +352,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -371,7 +371,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                             color: FlutterFlowTheme.of(context).alternate,
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -379,7 +379,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                               children: [
                                 Flexible(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       '* 2. Datos del consultante/entrevistado/institución',
@@ -398,7 +398,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                   children: [
                                     if (!containerIngresosRow.form1seccion2!)
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 8.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -441,10 +441,10 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                           options: FFButtonOptions(
                                             height: 40.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: containerIngresosRow
                                                         .form1seccion2 ==
@@ -463,7 +463,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -475,7 +475,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                     if (containerIngresosRow.form1seccion2 ??
                                         true)
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 8.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -509,10 +509,10 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                           options: FFButtonOptions(
                                             height: 40.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: containerIngresosRow
                                                         .form1seccion2 ==
@@ -531,7 +531,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -550,7 +550,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                             color: FlutterFlowTheme.of(context).alternate,
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -558,7 +558,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                               children: [
                                 Flexible(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       '*5. Motivo de la consulta',
@@ -578,7 +578,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                     if (containerIngresosRow.form1seccion5 ??
                                         true)
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 8.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -610,10 +610,10 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                           options: FFButtonOptions(
                                             height: 40.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: containerIngresosRow
                                                         .form1seccion5 ==
@@ -632,7 +632,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -643,7 +643,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                       ),
                                     if (!containerIngresosRow.form1seccion5!)
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 8.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -684,10 +684,10 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                           options: FFButtonOptions(
                                             height: 40.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: containerIngresosRow
                                                         .form1seccion5 ==
@@ -706,7 +706,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -725,7 +725,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                             color: FlutterFlowTheme.of(context).alternate,
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -733,7 +733,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                               children: [
                                 Flexible(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       '4. Otros datos significativos',
@@ -753,7 +753,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                     if (containerIngresosRow.form1seccion4 ??
                                         true)
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 8.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -785,10 +785,10 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                           options: FFButtonOptions(
                                             height: 40.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: containerIngresosRow
                                                         .form1seccion4 ==
@@ -807,7 +807,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -818,7 +818,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                       ),
                                     if (!containerIngresosRow.form1seccion4!)
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 8.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -859,10 +859,10 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                           options: FFButtonOptions(
                                             height: 40.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: containerIngresosRow
                                                         .form1seccion4 ==
@@ -881,7 +881,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -904,7 +904,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                             color: FlutterFlowTheme.of(context).alternate,
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -912,7 +912,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                               children: [
                                 Flexible(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       '6. Intervenciones realizadas anteriormente',
@@ -932,7 +932,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                     if (containerIngresosRow.form1seccion6 ??
                                         true)
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 8.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -964,10 +964,10 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                           options: FFButtonOptions(
                                             height: 40.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: containerIngresosRow
                                                         .form1seccion6 ==
@@ -986,7 +986,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -997,7 +997,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                       ),
                                     if (!containerIngresosRow.form1seccion6!)
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 8.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -1038,10 +1038,10 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                           options: FFButtonOptions(
                                             height: 40.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: containerIngresosRow
                                                         .form1seccion6 ==
@@ -1060,7 +1060,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -1079,7 +1079,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                             color: FlutterFlowTheme.of(context).alternate,
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -1087,7 +1087,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                               children: [
                                 Flexible(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       '3. Grupo conviviente',
@@ -1106,7 +1106,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                   children: [
                                     if (!containerIngresosRow.form1seccion3!)
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 8.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -1149,10 +1149,10 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                           options: FFButtonOptions(
                                             height: 40.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: containerIngresosRow
                                                         .form1seccion3 ==
@@ -1171,7 +1171,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -1183,7 +1183,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                     if (containerIngresosRow.form1seccion3 ??
                                         true)
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 8.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -1217,10 +1217,10 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                           options: FFButtonOptions(
                                             height: 40.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: containerIngresosRow
                                                         .form1seccion3 ==
@@ -1239,7 +1239,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -1258,7 +1258,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                             color: FlutterFlowTheme.of(context).alternate,
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -1266,7 +1266,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                               children: [
                                 Flexible(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       '* 7. Cuadro de derechos amenazados y/o vulnerados',
@@ -1286,7 +1286,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                     if (containerIngresosRow.form1seccion7 ??
                                         true)
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 8.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -1318,10 +1318,10 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                           options: FFButtonOptions(
                                             height: 40.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: containerIngresosRow
                                                         .form1seccion7 ==
@@ -1340,7 +1340,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -1351,7 +1351,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                       ),
                                     if (!containerIngresosRow.form1seccion7!)
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 8.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -1392,10 +1392,10 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                           options: FFButtonOptions(
                                             height: 40.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: containerIngresosRow
                                                         .form1seccion7 ==
@@ -1414,7 +1414,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -1433,7 +1433,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                             color: FlutterFlowTheme.of(context).alternate,
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -1441,7 +1441,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                               children: [
                                 Flexible(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       '8. Personas relacionadas para ampliar información',
@@ -1456,7 +1456,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 8.0, 0.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
@@ -1483,10 +1483,10 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                     text: 'Sección 8',
                                     options: FFButtonOptions(
                                       height: 40.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).primary,
@@ -1498,7 +1498,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                             letterSpacing: 0.0,
                                           ),
                                       elevation: 3.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -1514,7 +1514,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                             color: FlutterFlowTheme.of(context).alternate,
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -1522,7 +1522,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                               children: [
                                 Flexible(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       '*9. Cierre de la intervención o apertura del expediente',
@@ -1542,7 +1542,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                     if (containerIngresosRow.form1seccion9 ??
                                         true)
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 8.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -1574,10 +1574,10 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                           options: FFButtonOptions(
                                             height: 40.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: containerIngresosRow
                                                         .form1seccion9 ==
@@ -1596,7 +1596,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -1607,7 +1607,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                       ),
                                     if (!containerIngresosRow.form1seccion9!)
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 8.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -1648,10 +1648,10 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                           options: FFButtonOptions(
                                             height: 40.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: containerIngresosRow
                                                         .form1seccion9 ==
@@ -1670,7 +1670,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -1690,7 +1690,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                               containerIngresosRow.form1seccion7! &&
                               containerIngresosRow.form1seccion9!)
                             Padding(
-                              padding: const EdgeInsets.all(10.0),
+                              padding: EdgeInsets.all(10.0),
                               child: Container(
                                 width: 100.0,
                                 height: 120.0,
@@ -1708,7 +1708,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           5.0, 0.0, 5.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -1789,7 +1789,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                             null &&
                                         containerIngresosRow.emergencia != '')
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 8.0, 0.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -1831,16 +1831,16 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               builder: (alertDialogContext) {
                                                 return WebViewAware(
                                                   child: AlertDialog(
-                                                    title: const Text(
+                                                    title: Text(
                                                         'Ok para avanzar!!'),
-                                                    content: const Text(
+                                                    content: Text(
                                                         'Se completaron los requisitos minimos para avanzar!!'),
                                                     actions: [
                                                       TextButton(
                                                         onPressed: () =>
                                                             Navigator.pop(
                                                                 alertDialogContext),
-                                                        child: const Text('Ok'),
+                                                        child: Text('Ok'),
                                                       ),
                                                     ],
                                                   ),
@@ -1850,7 +1850,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                             Navigator.pop(context);
                                           },
                                           text: 'Ok para avanzar',
-                                          icon: const Icon(
+                                          icon: Icon(
                                             Icons.save,
                                             size: 15.0,
                                           ),
@@ -1858,10 +1858,10 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                             width: 300.0,
                                             height: 40.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .success,
@@ -1875,7 +1875,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 2.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -1885,7 +1885,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                           ),
                                         ),
                                       ),
-                                  ].divide(const SizedBox(height: 10.0)),
+                                  ].divide(SizedBox(height: 10.0)),
                                 ),
                               ),
                             ),
@@ -1900,7 +1900,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(1.0, -1.0),
+                                  alignment: AlignmentDirectional(1.0, -1.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.end,
@@ -1939,17 +1939,17 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                           safeSetState(() {});
                                         },
                                         text: 'Adjuntar documento ',
-                                        icon: const Icon(
+                                        icon: Icon(
                                           Icons.upload_file,
                                           size: 15.0,
                                         ),
                                         options: FFButtonOptions(
                                           height: 40.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
@@ -2038,7 +2038,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                           ),
                                         );
                                       }).divide(
-                                        const SizedBox(width: 5.0),
+                                        SizedBox(width: 5.0),
                                         filterFn: (rowIndex) {
                                           final rowDocumentosadjuntosRow =
                                               rowDocumentosadjuntosRowList[
@@ -2050,7 +2050,7 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                       .documentopdf !=
                                                   '';
                                         },
-                                      ).around(const SizedBox(width: 5.0)),
+                                      ).around(SizedBox(width: 5.0)),
                                     );
                                   },
                                 ),
@@ -2058,8 +2058,8 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                             ),
                           ),
                         ]
-                            .divide(const SizedBox(height: 8.0))
-                            .around(const SizedBox(height: 8.0)),
+                            .divide(SizedBox(height: 8.0))
+                            .around(SizedBox(height: 8.0)),
                       ),
                     ),
                   ),

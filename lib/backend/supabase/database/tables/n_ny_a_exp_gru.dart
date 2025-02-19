@@ -9,7 +9,7 @@ class NNyAExpGruTable extends SupabaseTable<NNyAExpGruRow> {
 }
 
 class NNyAExpGruRow extends SupabaseDataRow {
-  NNyAExpGruRow(super.data);
+  NNyAExpGruRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => NNyAExpGruTable();

@@ -70,7 +70,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<FormularioSenafRow>>(
         future: FormularioSenafTable().querySingleRow(
           queryFn: (q) => q.eqOrNull(
@@ -102,7 +102,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                   : null;
 
           return Container(
-            decoration: const BoxDecoration(),
+            decoration: BoxDecoration(),
             child: FutureBuilder<List<Formulario9Row>>(
               future:
                   (_model.requestCompleter ??= Completer<List<Formulario9Row>>()
@@ -144,7 +144,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                   ),
                   child: Container(
                     width: 600.0,
-                    constraints: const BoxConstraints(
+                    constraints: BoxConstraints(
                       maxWidth: 600.0,
                     ),
                     decoration: BoxDecoration(
@@ -155,12 +155,12 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                         color: FlutterFlowTheme.of(context).primary,
                       ),
                     ),
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: Form(
                       key: _model.formKey,
                       autovalidateMode: AutovalidateMode.disabled,
                       child: Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child:
                             FutureBuilder<List<VistaRecepciondelademandaRow>>(
                           future:
@@ -199,9 +199,9 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                             return Container(
                               width: 600.0,
                               height: MediaQuery.sizeOf(context).height * 0.964,
-                              decoration: const BoxDecoration(),
+                              decoration: BoxDecoration(),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 0.0, 5.0, 0.0),
                                 child: SingleChildScrollView(
                                   child: Column(
@@ -212,7 +212,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                     children: [
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(1.0, -1.0),
+                                            AlignmentDirectional(1.0, -1.0),
                                         child: FlutterFlowIconButton(
                                           borderColor: Colors.transparent,
                                           borderRadius: 20.0,
@@ -238,22 +238,22 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                         ),
                                         child: Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: Container(
                                               width: double.infinity,
                                               height: 219.0,
-                                              constraints: const BoxConstraints(
+                                              constraints: BoxConstraints(
                                                 maxWidth: 530.0,
                                               ),
                                               decoration: BoxDecoration(
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryBackground,
-                                                boxShadow: const [
+                                                boxShadow: [
                                                   BoxShadow(
                                                     blurRadius: 4.0,
                                                     color: Color(0x19000000),
@@ -263,7 +263,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                     ),
                                                   )
                                                 ],
-                                                borderRadius: const BorderRadius.only(
+                                                borderRadius: BorderRadius.only(
                                                   bottomLeft:
                                                       Radius.circular(12.0),
                                                   bottomRight:
@@ -275,7 +275,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 16.0, 16.0, 16.0),
                                                 child: Column(
@@ -297,7 +297,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   8.0,
@@ -323,7 +323,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   8.0,
@@ -350,7 +350,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   8.0,
@@ -377,11 +377,11 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                     Expanded(
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 1.0, 1.0),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       16.0,
@@ -434,14 +434,14 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                               width: 200.0,
                                                               height: 35.0,
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
                                                               iconPadding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -470,7 +470,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                 width: 2.0,
                                                               ),
                                                               borderRadius:
-                                                                  const BorderRadius
+                                                                  BorderRadius
                                                                       .only(
                                                                 bottomLeft: Radius
                                                                     .circular(
@@ -499,7 +499,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                       ),
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(0.0, -1.0),
+                                            AlignmentDirectional(0.0, -1.0),
                                         child: Text(
                                           'Formulario 9 - Cese de la intervencion ',
                                           textAlign: TextAlign.center,
@@ -516,7 +516,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 8.0, 0.0),
                                         child: FlutterFlowDropDown<String>(
                                           controller: _model
@@ -525,7 +525,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                             _model.dropDowncausaValue ??=
                                                 containerFormulario9Row?.causa,
                                           ),
-                                          options: const [
+                                          options: [
                                             'Restitución integral de los derechos vulnerados',
                                             'Incumplimiento reiterado de las estrategias acordadas por parte del niño/adolescente o familia u organismo/institución requerido',
                                             'Fallecimiento del NNA',
@@ -566,7 +566,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                           borderWidth: 2.0,
                                           borderRadius: 10.0,
                                           margin:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           isOverButton: false,
                                           isSearchable: false,
@@ -577,7 +577,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                           'Incumplimiento reiterado de las estrategias acordadas por parte del niño/adolescente o familia u organismo/institución requerido')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 8.0, 0.0),
                                           child: TextFormField(
                                             controller:
@@ -657,7 +657,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                           ),
                                         ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller: _model
@@ -744,7 +744,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 8.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -752,10 +752,10 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: Text(
@@ -773,7 +773,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                             ),
                                             Expanded(
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         17.0, 0.0, 0.0, 0.0),
                                                 child: Text(
@@ -801,12 +801,12 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 20.0, 0.0),
                                               child: FFButtonWidget(
                                                 onPressed: () async {
-                                                  final datePicked1Date =
+                                                  final _datePicked1Date =
                                                       await showDatePicker(
                                                     context: context,
                                                     initialDate:
@@ -865,15 +865,22 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                     },
                                                   );
 
-                                                  if (datePicked1Date !=
+                                                  if (_datePicked1Date !=
                                                       null) {
                                                     safeSetState(() {
                                                       _model.datePicked1 =
                                                           DateTime(
-                                                        datePicked1Date.year,
-                                                        datePicked1Date.month,
-                                                        datePicked1Date.day,
+                                                        _datePicked1Date.year,
+                                                        _datePicked1Date.month,
+                                                        _datePicked1Date.day,
                                                       );
+                                                    });
+                                                  } else if (_model
+                                                          .datePicked1 !=
+                                                      null) {
+                                                    safeSetState(() {
+                                                      _model.datePicked1 =
+                                                          getCurrentTimestamp;
                                                     });
                                                   }
                                                 },
@@ -890,11 +897,11 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                 ),
                                                 options: FFButtonOptions(
                                                   height: 40.0,
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           24.0, 0.0, 24.0, 0.0),
                                                   iconPadding:
-                                                      const EdgeInsetsDirectional
+                                                      EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
@@ -911,7 +918,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                             letterSpacing: 0.0,
                                                           ),
                                                   elevation: 3.0,
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                     color: Colors.transparent,
                                                     width: 1.0,
                                                   ),
@@ -928,7 +935,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                           'Solicitud de medida excepcional al organismo provincial de protección de derechos (SENAF)')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: Material(
                                             color: Colors.transparent,
                                             elevation: 5.0,
@@ -949,10 +956,10 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                       .alternate,
                                                 ),
                                               ),
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 0.0, 10.0, 0.0),
                                                 child: SingleChildScrollView(
@@ -988,7 +995,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                         children: [
                                                           Align(
                                                             alignment:
-                                                                const AlignmentDirectional(
+                                                                AlignmentDirectional(
                                                                     -1.0, -1.0),
                                                             child: Text(
                                                               'Se resuelve el CESE DE LAS MEDIDAS DE PROTECCIÓN DE DERECHOS y la SOLICITUD DE LA MEDIDA EXCEPCIONAL A SENAF en razón de',
@@ -1014,7 +1021,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                               Container(
                                                                 width: 450.0,
                                                                 decoration:
-                                                                    const BoxDecoration(),
+                                                                    BoxDecoration(),
                                                                 child: Text(
                                                                   'a) Haber agotado las Medidas de protección posibles para la restitución de los derechos vulnerados sin que los mismos hayan podido ser restituidos. (art 42, 45, 48 y 51 de la ley 9944)',
                                                                   style: FlutterFlowTheme.of(
@@ -1107,7 +1114,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                               Container(
                                                                 width: 450.0,
                                                                 decoration:
-                                                                    const BoxDecoration(),
+                                                                    BoxDecoration(),
                                                                 child: Text(
                                                                   'b) Que la permanencia en su medio familiar implica un grave riesgo para la vida e integridad psicofisica de la niñajo o adolescente. (art 42 y 51 de la ley say4)',
                                                                   style: FlutterFlowTheme.of(
@@ -1183,7 +1190,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                               ),
                                                             ],
                                                           ),
-                                                        ].divide(const SizedBox(
+                                                        ].divide(SizedBox(
                                                             height: 5.0)),
                                                       ),
                                                       Divider(
@@ -1193,7 +1200,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                     context)
                                                                 .alternate,
                                                       ),
-                                                      SizedBox(
+                                                      Container(
                                                         width:
                                                             MediaQuery.sizeOf(
                                                                         context)
@@ -1257,7 +1264,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                             focusedBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  const BorderSide(
+                                                                  BorderSide(
                                                                 color: Color(
                                                                     0x00000000),
                                                                 width: 1.0,
@@ -1321,9 +1328,9 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                         ),
                                                       ),
                                                     ]
-                                                        .divide(const SizedBox(
+                                                        .divide(SizedBox(
                                                             height: 10.0))
-                                                        .around(const SizedBox(
+                                                        .around(SizedBox(
                                                             height: 10.0)),
                                                   ),
                                                 ),
@@ -1337,7 +1344,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 0.0, 8.0, 0.0),
                                               child:
                                                   FlutterFlowDropDown<String>(
@@ -1345,7 +1352,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                         .dropDownValueController ??=
                                                     FormFieldController<String>(
                                                         null),
-                                                options: const [
+                                                options: [
                                                   'Solicitada',
                                                   'Reiterada',
                                                   'Adoptada',
@@ -1383,7 +1390,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                         .alternate,
                                                 borderWidth: 2.0,
                                                 borderRadius: 10.0,
-                                                margin: const EdgeInsetsDirectional
+                                                margin: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 hidesUnderline: true,
@@ -1393,7 +1400,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                               ),
                                             ),
                                             Container(
-                                              decoration: const BoxDecoration(),
+                                              decoration: BoxDecoration(),
                                               child: Text(
                                                 'Estado de avance de solicitud de medida Excepcional',
                                                 style:
@@ -1421,7 +1428,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsets.all(10.0),
+                                                padding: EdgeInsets.all(10.0),
                                                 child: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -1457,7 +1464,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                           children: [
                                                             Align(
                                                               alignment:
-                                                                  const AlignmentDirectional(
+                                                                  AlignmentDirectional(
                                                                       -1.0,
                                                                       -1.0),
                                                               child: Container(
@@ -1473,7 +1480,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                               context)
                                                                           .warning,
                                                                   borderRadius:
-                                                                      const BorderRadius
+                                                                      BorderRadius
                                                                           .only(
                                                                     bottomLeft:
                                                                         Radius.circular(
@@ -1493,7 +1500,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           0.0,
@@ -1511,7 +1518,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                     data:
                                                                         ThemeData(
                                                                       checkboxTheme:
-                                                                          const CheckboxThemeData(
+                                                                          CheckboxThemeData(
                                                                         visualDensity:
                                                                             VisualDensity.compact,
                                                                         materialTapTargetSize:
@@ -1590,7 +1597,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           0.0,
@@ -1606,12 +1613,12 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                 children: [
                                                                   Align(
                                                                     alignment:
-                                                                        const AlignmentDirectional(
+                                                                        AlignmentDirectional(
                                                                             -1.0,
                                                                             0.0),
                                                                     child:
                                                                         Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           10.0,
                                                                           0.0,
                                                                           0.0,
@@ -1631,7 +1638,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           17.0,
                                                                           0.0,
                                                                           0.0,
@@ -1660,7 +1667,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                     ),
                                                                   ),
                                                                   Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1670,7 +1677,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                         FFButtonWidget(
                                                                       onPressed:
                                                                           () async {
-                                                                        final datePicked2Date =
+                                                                        final _datePicked2Date =
                                                                             await showDatePicker(
                                                                           context:
                                                                               context,
@@ -1703,16 +1710,23 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                           },
                                                                         );
 
-                                                                        if (datePicked2Date !=
+                                                                        if (_datePicked2Date !=
                                                                             null) {
                                                                           safeSetState(
                                                                               () {
                                                                             _model.datePicked2 =
                                                                                 DateTime(
-                                                                              datePicked2Date.year,
-                                                                              datePicked2Date.month,
-                                                                              datePicked2Date.day,
+                                                                              _datePicked2Date.year,
+                                                                              _datePicked2Date.month,
+                                                                              _datePicked2Date.day,
                                                                             );
+                                                                          });
+                                                                        } else if (_model.datePicked2 !=
+                                                                            null) {
+                                                                          safeSetState(
+                                                                              () {
+                                                                            _model.datePicked2 =
+                                                                                getCurrentTimestamp;
                                                                           });
                                                                         }
                                                                       },
@@ -1731,12 +1745,12 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                           FFButtonOptions(
                                                                         height:
                                                                             40.0,
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             24.0,
                                                                             0.0,
                                                                             24.0,
                                                                             0.0),
-                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -1753,7 +1767,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                         elevation:
                                                                             3.0,
                                                                         borderSide:
-                                                                            const BorderSide(
+                                                                            BorderSide(
                                                                           color:
                                                                               Colors.transparent,
                                                                           width:
@@ -1773,7 +1787,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                       .max,
                                                               children: [
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           0.0,
@@ -1788,12 +1802,12 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                             .spaceBetween,
                                                                     children: [
                                                                       Align(
-                                                                        alignment: const AlignmentDirectional(
+                                                                        alignment: AlignmentDirectional(
                                                                             -1.0,
                                                                             0.0),
                                                                         child:
                                                                             Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               10.0,
                                                                               0.0,
                                                                               0.0,
@@ -1811,7 +1825,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                       Expanded(
                                                                         child:
                                                                             Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               17.0,
                                                                               0.0,
                                                                               0.0,
@@ -1836,7 +1850,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                         ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             20.0,
@@ -1845,7 +1859,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                             FFButtonWidget(
                                                                           onPressed:
                                                                               () async {
-                                                                            final datePicked3Date =
+                                                                            final _datePicked3Date =
                                                                                 await showDatePicker(
                                                                               context: context,
                                                                               initialDate: getCurrentTimestamp,
@@ -1873,14 +1887,19 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                               },
                                                                             );
 
-                                                                            if (datePicked3Date !=
+                                                                            if (_datePicked3Date !=
                                                                                 null) {
                                                                               safeSetState(() {
                                                                                 _model.datePicked3 = DateTime(
-                                                                                  datePicked3Date.year,
-                                                                                  datePicked3Date.month,
-                                                                                  datePicked3Date.day,
+                                                                                  _datePicked3Date.year,
+                                                                                  _datePicked3Date.month,
+                                                                                  _datePicked3Date.day,
                                                                                 );
+                                                                              });
+                                                                            } else if (_model.datePicked3 !=
+                                                                                null) {
+                                                                              safeSetState(() {
+                                                                                _model.datePicked3 = getCurrentTimestamp;
                                                                               });
                                                                             }
                                                                           },
@@ -1897,12 +1916,12 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                               FFButtonOptions(
                                                                             height:
                                                                                 40.0,
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 24.0,
                                                                                 0.0,
                                                                                 24.0,
                                                                                 0.0),
-                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -1917,7 +1936,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                             elevation:
                                                                                 3.0,
                                                                             borderSide:
-                                                                                const BorderSide(
+                                                                                BorderSide(
                                                                               color: Colors.transparent,
                                                                               width: 1.0,
                                                                             ),
@@ -1930,7 +1949,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           0.0,
@@ -1945,12 +1964,12 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                             .spaceBetween,
                                                                     children: [
                                                                       Align(
-                                                                        alignment: const AlignmentDirectional(
+                                                                        alignment: AlignmentDirectional(
                                                                             -1.0,
                                                                             0.0),
                                                                         child:
                                                                             Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               10.0,
                                                                               0.0,
                                                                               0.0,
@@ -1968,7 +1987,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                       Expanded(
                                                                         child:
                                                                             Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               17.0,
                                                                               0.0,
                                                                               0.0,
@@ -1993,7 +2012,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                         ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             20.0,
@@ -2002,7 +2021,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                             FFButtonWidget(
                                                                           onPressed:
                                                                               () async {
-                                                                            final datePicked4Date =
+                                                                            final _datePicked4Date =
                                                                                 await showDatePicker(
                                                                               context: context,
                                                                               initialDate: getCurrentTimestamp,
@@ -2030,14 +2049,19 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                               },
                                                                             );
 
-                                                                            if (datePicked4Date !=
+                                                                            if (_datePicked4Date !=
                                                                                 null) {
                                                                               safeSetState(() {
                                                                                 _model.datePicked4 = DateTime(
-                                                                                  datePicked4Date.year,
-                                                                                  datePicked4Date.month,
-                                                                                  datePicked4Date.day,
+                                                                                  _datePicked4Date.year,
+                                                                                  _datePicked4Date.month,
+                                                                                  _datePicked4Date.day,
                                                                                 );
+                                                                              });
+                                                                            } else if (_model.datePicked4 !=
+                                                                                null) {
+                                                                              safeSetState(() {
+                                                                                _model.datePicked4 = getCurrentTimestamp;
                                                                               });
                                                                             }
                                                                           },
@@ -2054,12 +2078,12 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                               FFButtonOptions(
                                                                             height:
                                                                                 40.0,
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 24.0,
                                                                                 0.0,
                                                                                 24.0,
                                                                                 0.0),
-                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -2074,7 +2098,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                             elevation:
                                                                                 3.0,
                                                                             borderSide:
-                                                                                const BorderSide(
+                                                                                BorderSide(
                                                                               color: Colors.transparent,
                                                                               width: 1.0,
                                                                             ),
@@ -2086,13 +2110,13 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                     ],
                                                                   ),
                                                                 ),
-                                                              ].divide(const SizedBox(
+                                                              ].divide(SizedBox(
                                                                   height:
                                                                       10.0)),
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           0.0,
@@ -2206,9 +2230,9 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                               ),
                                                             ),
                                                           ]
-                                                              .divide(const SizedBox(
+                                                              .divide(SizedBox(
                                                                   height: 10.0))
-                                                              .around(const SizedBox(
+                                                              .around(SizedBox(
                                                                   height:
                                                                       10.0)),
                                                         ),
@@ -2245,7 +2269,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                           children: [
                                                             Align(
                                                               alignment:
-                                                                  const AlignmentDirectional(
+                                                                  AlignmentDirectional(
                                                                       -1.0,
                                                                       -1.0),
                                                               child: Container(
@@ -2261,7 +2285,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                               context)
                                                                           .warning,
                                                                   borderRadius:
-                                                                      const BorderRadius
+                                                                      BorderRadius
                                                                           .only(
                                                                     bottomLeft:
                                                                         Radius.circular(
@@ -2281,7 +2305,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           0.0,
@@ -2299,7 +2323,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                     data:
                                                                         ThemeData(
                                                                       checkboxTheme:
-                                                                          const CheckboxThemeData(
+                                                                          CheckboxThemeData(
                                                                         visualDensity:
                                                                             VisualDensity.compact,
                                                                         materialTapTargetSize:
@@ -2369,9 +2393,9 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                               ),
                                                             ),
                                                           ]
-                                                              .divide(const SizedBox(
+                                                              .divide(SizedBox(
                                                                   height: 10.0))
-                                                              .around(const SizedBox(
+                                                              .around(SizedBox(
                                                                   height:
                                                                       10.0)),
                                                         ),
@@ -2408,7 +2432,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                           children: [
                                                             Align(
                                                               alignment:
-                                                                  const AlignmentDirectional(
+                                                                  AlignmentDirectional(
                                                                       -1.0,
                                                                       -1.0),
                                                               child: Container(
@@ -2424,7 +2448,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                               context)
                                                                           .warning,
                                                                   borderRadius:
-                                                                      const BorderRadius
+                                                                      BorderRadius
                                                                           .only(
                                                                     bottomLeft:
                                                                         Radius.circular(
@@ -2444,7 +2468,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           0.0,
@@ -2462,7 +2486,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                     data:
                                                                         ThemeData(
                                                                       checkboxTheme:
-                                                                          const CheckboxThemeData(
+                                                                          CheckboxThemeData(
                                                                         visualDensity:
                                                                             VisualDensity.compact,
                                                                         materialTapTargetSize:
@@ -2541,7 +2565,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           0.0,
@@ -2557,12 +2581,12 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                 children: [
                                                                   Align(
                                                                     alignment:
-                                                                        const AlignmentDirectional(
+                                                                        AlignmentDirectional(
                                                                             -1.0,
                                                                             0.0),
                                                                     child:
                                                                         Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           10.0,
                                                                           0.0,
                                                                           0.0,
@@ -2582,7 +2606,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           17.0,
                                                                           0.0,
                                                                           0.0,
@@ -2611,7 +2635,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                     ),
                                                                   ),
                                                                   Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -2621,7 +2645,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                         FFButtonWidget(
                                                                       onPressed:
                                                                           () async {
-                                                                        final datePicked5Date =
+                                                                        final _datePicked5Date =
                                                                             await showDatePicker(
                                                                           context:
                                                                               context,
@@ -2654,16 +2678,23 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                           },
                                                                         );
 
-                                                                        if (datePicked5Date !=
+                                                                        if (_datePicked5Date !=
                                                                             null) {
                                                                           safeSetState(
                                                                               () {
                                                                             _model.datePicked5 =
                                                                                 DateTime(
-                                                                              datePicked5Date.year,
-                                                                              datePicked5Date.month,
-                                                                              datePicked5Date.day,
+                                                                              _datePicked5Date.year,
+                                                                              _datePicked5Date.month,
+                                                                              _datePicked5Date.day,
                                                                             );
+                                                                          });
+                                                                        } else if (_model.datePicked5 !=
+                                                                            null) {
+                                                                          safeSetState(
+                                                                              () {
+                                                                            _model.datePicked5 =
+                                                                                getCurrentTimestamp;
                                                                           });
                                                                         }
                                                                       },
@@ -2682,12 +2713,12 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                           FFButtonOptions(
                                                                         height:
                                                                             40.0,
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             24.0,
                                                                             0.0,
                                                                             24.0,
                                                                             0.0),
-                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -2704,7 +2735,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                         elevation:
                                                                             3.0,
                                                                         borderSide:
-                                                                            const BorderSide(
+                                                                            BorderSide(
                                                                           color:
                                                                               Colors.transparent,
                                                                           width:
@@ -2719,9 +2750,9 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                               ),
                                                             ),
                                                           ]
-                                                              .divide(const SizedBox(
+                                                              .divide(SizedBox(
                                                                   height: 10.0))
-                                                              .around(const SizedBox(
+                                                              .around(SizedBox(
                                                                   height:
                                                                       10.0)),
                                                         ),
@@ -2758,7 +2789,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                           children: [
                                                             Align(
                                                               alignment:
-                                                                  const AlignmentDirectional(
+                                                                  AlignmentDirectional(
                                                                       -1.0,
                                                                       -1.0),
                                                               child: Container(
@@ -2774,7 +2805,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                               context)
                                                                           .warning,
                                                                   borderRadius:
-                                                                      const BorderRadius
+                                                                      BorderRadius
                                                                           .only(
                                                                     bottomLeft:
                                                                         Radius.circular(
@@ -2794,7 +2825,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           0.0,
@@ -2812,7 +2843,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                     data:
                                                                         ThemeData(
                                                                       checkboxTheme:
-                                                                          const CheckboxThemeData(
+                                                                          CheckboxThemeData(
                                                                         visualDensity:
                                                                             VisualDensity.compact,
                                                                         materialTapTargetSize:
@@ -2891,7 +2922,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           0.0,
@@ -2907,12 +2938,12 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                 children: [
                                                                   Align(
                                                                     alignment:
-                                                                        const AlignmentDirectional(
+                                                                        AlignmentDirectional(
                                                                             -1.0,
                                                                             0.0),
                                                                     child:
                                                                         Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           10.0,
                                                                           0.0,
                                                                           0.0,
@@ -2932,7 +2963,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           17.0,
                                                                           0.0,
                                                                           0.0,
@@ -2961,7 +2992,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                     ),
                                                                   ),
                                                                   Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -2971,7 +3002,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                         FFButtonWidget(
                                                                       onPressed:
                                                                           () async {
-                                                                        final datePicked6Date =
+                                                                        final _datePicked6Date =
                                                                             await showDatePicker(
                                                                           context:
                                                                               context,
@@ -3004,16 +3035,23 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                           },
                                                                         );
 
-                                                                        if (datePicked6Date !=
+                                                                        if (_datePicked6Date !=
                                                                             null) {
                                                                           safeSetState(
                                                                               () {
                                                                             _model.datePicked6 =
                                                                                 DateTime(
-                                                                              datePicked6Date.year,
-                                                                              datePicked6Date.month,
-                                                                              datePicked6Date.day,
+                                                                              _datePicked6Date.year,
+                                                                              _datePicked6Date.month,
+                                                                              _datePicked6Date.day,
                                                                             );
+                                                                          });
+                                                                        } else if (_model.datePicked6 !=
+                                                                            null) {
+                                                                          safeSetState(
+                                                                              () {
+                                                                            _model.datePicked6 =
+                                                                                getCurrentTimestamp;
                                                                           });
                                                                         }
                                                                       },
@@ -3032,12 +3070,12 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                           FFButtonOptions(
                                                                         height:
                                                                             40.0,
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             24.0,
                                                                             0.0,
                                                                             24.0,
                                                                             0.0),
-                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -3054,7 +3092,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                                         elevation:
                                                                             3.0,
                                                                         borderSide:
-                                                                            const BorderSide(
+                                                                            BorderSide(
                                                                           color:
                                                                               Colors.transparent,
                                                                           width:
@@ -3070,7 +3108,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           0.0,
@@ -3184,20 +3222,20 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                               ),
                                                             ),
                                                           ]
-                                                              .divide(const SizedBox(
+                                                              .divide(SizedBox(
                                                                   height: 10.0))
-                                                              .around(const SizedBox(
+                                                              .around(SizedBox(
                                                                   height:
                                                                       10.0)),
                                                         ),
                                                       ),
                                                     ),
                                                   ].divide(
-                                                      const SizedBox(height: 10.0)),
+                                                      SizedBox(height: 10.0)),
                                                 ),
                                               ),
                                             ),
-                                          ].divide(const SizedBox(height: 10.0)),
+                                          ].divide(SizedBox(height: 10.0)),
                                         ),
                                       ListView(
                                         padding: EdgeInsets.zero,
@@ -3210,7 +3248,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                 MainAxisAlignment.center,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 8.0, 0.0, 0.0),
                                                 child: FFButtonWidget(
@@ -3291,16 +3329,16 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                             (alertDialogContext) {
                                                           return WebViewAware(
                                                             child: AlertDialog(
-                                                              title: const Text(
+                                                              title: Text(
                                                                   'Carga correcta'),
-                                                              content: const Text(
+                                                              content: Text(
                                                                   'La informacion se guardo correctamente!!'),
                                                               actions: [
                                                                 TextButton(
                                                                   onPressed: () =>
                                                                       Navigator.pop(
                                                                           alertDialogContext),
-                                                                  child: const Text(
+                                                                  child: Text(
                                                                       'Ok'),
                                                                 ),
                                                               ],
@@ -3406,16 +3444,16 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                             return WebViewAware(
                                                               child:
                                                                   AlertDialog(
-                                                                title: const Text(
+                                                                title: Text(
                                                                     'Se envio email de aviso!'),
-                                                                content: const Text(
+                                                                content: Text(
                                                                     'Se envio un email de aviso de esta solicitud a la direccion de infancias!!'),
                                                                 actions: [
                                                                   TextButton(
                                                                     onPressed: () =>
                                                                         Navigator.pop(
                                                                             alertDialogContext),
-                                                                    child: const Text(
+                                                                    child: Text(
                                                                         'Ok'),
                                                                   ),
                                                                 ],
@@ -3437,7 +3475,11 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                         data: {
                                                           'fecha': supaSerialize<
                                                               DateTime>(_model
-                                                                  .datePicked1 ?? containerFormulario9Row
+                                                                      .datePicked1 !=
+                                                                  null
+                                                              ? _model
+                                                                  .datePicked1
+                                                              : containerFormulario9Row
                                                                   ?.fecha),
                                                           'causa': _model
                                                               .dropDowncausaValue,
@@ -3458,7 +3500,11 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                               .checkboxsolicitudValue,
                                                           'fechasolicitud': supaSerialize<
                                                               DateTime>(_model
-                                                                  .datePicked2 ?? containerFormulario9Row
+                                                                      .datePicked2 !=
+                                                                  null
+                                                              ? _model
+                                                                  .datePicked2
+                                                              : containerFormulario9Row
                                                                   ?.fechasolicitud),
                                                           'motivosolicitud': _model
                                                               .textFieldmotivosolicitudTextController
@@ -3469,20 +3515,32 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                               .checkboxadoptadaValue,
                                                           'FecMedidaAdoptada': supaSerialize<
                                                               DateTime>(_model
-                                                                  .datePicked5 ?? containerFormulario9Row
+                                                                      .datePicked5 !=
+                                                                  null
+                                                              ? _model
+                                                                  .datePicked5
+                                                              : containerFormulario9Row
                                                                   ?.fecMedidaAdoptada),
                                                           'MedidaRechazada': _model
                                                               .checkboxrechazadaValue,
                                                           'FechaMedidaRechazada': supaSerialize<
                                                               DateTime>(_model
-                                                                  .datePicked6 ?? containerFormulario9Row
+                                                                      .datePicked6 !=
+                                                                  null
+                                                              ? _model
+                                                                  .datePicked6
+                                                              : containerFormulario9Row
                                                                   ?.fechaMedidaRechazada),
                                                           'MotivoRechazo': _model
                                                               .textFieldmotivorechazoTextController
                                                               .text,
                                                           'reiteracionFecha': supaSerialize<
                                                               DateTime>(_model
-                                                                  .datePicked4 ?? containerFormulario9Row
+                                                                      .datePicked4 !=
+                                                                  null
+                                                              ? _model
+                                                                  .datePicked4
+                                                              : containerFormulario9Row
                                                                   ?.reiteracionFecha),
                                                           'fechasolicitudsenaf': supaSerialize<
                                                               DateTime>(_model
@@ -3506,7 +3564,11 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                           'form9completo': true,
                                                           'fechacierre': supaSerialize<
                                                               DateTime>(_model
-                                                                  .datePicked1 ?? containerFormulario9Row
+                                                                      .datePicked1 !=
+                                                                  null
+                                                              ? _model
+                                                                  .datePicked1
+                                                              : containerFormulario9Row
                                                                   ?.fecha),
                                                           'Motivocierre': _model
                                                               .dropDowncausaValue,
@@ -3532,16 +3594,16 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                             (alertDialogContext) {
                                                           return WebViewAware(
                                                             child: AlertDialog(
-                                                              title: const Text(
+                                                              title: Text(
                                                                   'Carga correcta'),
-                                                              content: const Text(
+                                                              content: Text(
                                                                   'La informacion se edito correctamente!!'),
                                                               actions: [
                                                                 TextButton(
                                                                   onPressed: () =>
                                                                       Navigator.pop(
                                                                           alertDialogContext),
-                                                                  child: const Text(
+                                                                  child: Text(
                                                                       'Ok'),
                                                                 ),
                                                               ],
@@ -3583,16 +3645,16 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                             return WebViewAware(
                                                               child:
                                                                   AlertDialog(
-                                                                title: const Text(
+                                                                title: Text(
                                                                     'Se envio email de aviso!'),
-                                                                content: const Text(
+                                                                content: Text(
                                                                     'Se envio un email de aviso de esta solicitud a la direccion de infancias!!'),
                                                                 actions: [
                                                                   TextButton(
                                                                     onPressed: () =>
                                                                         Navigator.pop(
                                                                             alertDialogContext),
-                                                                    child: const Text(
+                                                                    child: Text(
                                                                         'Ok'),
                                                                   ),
                                                                 ],
@@ -3616,7 +3678,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                     safeSetState(() {});
                                                   },
                                                   text: 'Guardar',
-                                                  icon: const Icon(
+                                                  icon: Icon(
                                                     Icons.save,
                                                     size: 15.0,
                                                   ),
@@ -3624,11 +3686,11 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                     width: 250.0,
                                                     height: 40.0,
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(24.0, 0.0,
                                                                 24.0, 0.0),
                                                     iconPadding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
@@ -3644,7 +3706,7 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                     elevation: 2.0,
-                                                    borderSide: const BorderSide(
+                                                    borderSide: BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1.0,
                                                     ),
@@ -3660,8 +3722,8 @@ class _Formulario9WidgetState extends State<Formulario9Widget> {
                                         ],
                                       ),
                                     ]
-                                        .divide(const SizedBox(height: 8.0))
-                                        .around(const SizedBox(height: 8.0)),
+                                        .divide(SizedBox(height: 8.0))
+                                        .around(SizedBox(height: 8.0)),
                                   ),
                                 ),
                               ),

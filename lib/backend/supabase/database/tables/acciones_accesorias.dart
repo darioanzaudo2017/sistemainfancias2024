@@ -10,7 +10,7 @@ class AccionesAccesoriasTable extends SupabaseTable<AccionesAccesoriasRow> {
 }
 
 class AccionesAccesoriasRow extends SupabaseDataRow {
-  AccionesAccesoriasRow(super.data);
+  AccionesAccesoriasRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => AccionesAccesoriasTable();

@@ -58,7 +58,7 @@ class _AnexoeducacionsolicitudWidgetState
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<AnexoinstitucioneeducacionRow>>(
         future: AnexoinstitucioneeducacionTable().querySingleRow(
           queryFn: (q) => q.eqOrNull(
@@ -98,7 +98,7 @@ class _AnexoeducacionsolicitudWidgetState
             child: Container(
               width: MediaQuery.sizeOf(context).width * 4.5,
               height: 686.0,
-              constraints: const BoxConstraints(
+              constraints: BoxConstraints(
                 maxWidth: 600.0,
               ),
               decoration: BoxDecoration(
@@ -108,20 +108,20 @@ class _AnexoeducacionsolicitudWidgetState
                   color: FlutterFlowTheme.of(context).primary,
                 ),
               ),
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Form(
                 key: _model.formKey,
                 autovalidateMode: AutovalidateMode.disabled,
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         Align(
-                          alignment: const AlignmentDirectional(1.0, -1.0),
+                          alignment: AlignmentDirectional(1.0, -1.0),
                           child: FlutterFlowIconButton(
                             borderColor: Colors.transparent,
                             borderRadius: 20.0,
@@ -143,9 +143,9 @@ class _AnexoeducacionsolicitudWidgetState
                           children: [
                             Flexible(
                               child: Align(
-                                alignment: const AlignmentDirectional(0.0, -1.0),
+                                alignment: AlignmentDirectional(0.0, -1.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       25.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'ANEXO SOLICITA INFORMACIÓN A INSTITUCIÓN EDUCATIVA DESDE SPD.',
@@ -167,7 +167,7 @@ class _AnexoeducacionsolicitudWidgetState
                         ),
                         Flexible(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 1.0),
                             child: Material(
                               color: Colors.transparent,
@@ -180,7 +180,7 @@ class _AnexoeducacionsolicitudWidgetState
                                 height: 100.0,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
-                                  boxShadow: const [
+                                  boxShadow: [
                                     BoxShadow(
                                       blurRadius: 0.0,
                                       color: Color(0xFFF5FBFB),
@@ -197,7 +197,7 @@ class _AnexoeducacionsolicitudWidgetState
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -208,7 +208,7 @@ class _AnexoeducacionsolicitudWidgetState
                                         flex: 4,
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 12.0, 12.0, 12.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -217,7 +217,7 @@ class _AnexoeducacionsolicitudWidgetState
                                             children: [
                                               Expanded(
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 0.0, 0.0),
                                                   child: Column(
@@ -238,7 +238,7 @@ class _AnexoeducacionsolicitudWidgetState
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         4.0,
@@ -252,7 +252,7 @@ class _AnexoeducacionsolicitudWidgetState
                                                                   .override(
                                                                     fontFamily:
                                                                         'Inter',
-                                                                    color: const Color(
+                                                                    color: Color(
                                                                         0xFF101518),
                                                                     fontSize:
                                                                         16.0,
@@ -265,7 +265,7 @@ class _AnexoeducacionsolicitudWidgetState
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     4.0,
@@ -284,7 +284,7 @@ class _AnexoeducacionsolicitudWidgetState
                                                               .override(
                                                                 fontFamily:
                                                                     'Inter',
-                                                                color: const Color(
+                                                                color: Color(
                                                                     0xFF06D5CD),
                                                                 fontSize: 12.0,
                                                                 letterSpacing:
@@ -297,7 +297,7 @@ class _AnexoeducacionsolicitudWidgetState
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     4.0,
@@ -315,7 +315,7 @@ class _AnexoeducacionsolicitudWidgetState
                                                               .override(
                                                                 fontFamily:
                                                                     'Inter',
-                                                                color: const Color(
+                                                                color: Color(
                                                                     0xFF57636C),
                                                                 fontSize: 12.0,
                                                                 letterSpacing:
@@ -364,7 +364,7 @@ class _AnexoeducacionsolicitudWidgetState
                             ),
                             FFButtonWidget(
                               onPressed: () async {
-                                final datePicked1Date = await showDatePicker(
+                                final _datePicked1Date = await showDatePicker(
                                   context: context,
                                   initialDate: getCurrentTimestamp,
                                   firstDate: getCurrentTimestamp,
@@ -404,13 +404,17 @@ class _AnexoeducacionsolicitudWidgetState
                                   },
                                 );
 
-                                if (datePicked1Date != null) {
+                                if (_datePicked1Date != null) {
                                   safeSetState(() {
                                     _model.datePicked1 = DateTime(
-                                      datePicked1Date.year,
-                                      datePicked1Date.month,
-                                      datePicked1Date.day,
+                                      _datePicked1Date.year,
+                                      _datePicked1Date.month,
+                                      _datePicked1Date.day,
                                     );
+                                  });
+                                } else if (_model.datePicked1 != null) {
+                                  safeSetState(() {
+                                    _model.datePicked1 = getCurrentTimestamp;
                                   });
                                 }
                               },
@@ -420,9 +424,9 @@ class _AnexoeducacionsolicitudWidgetState
                               ),
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -439,7 +443,7 @@ class _AnexoeducacionsolicitudWidgetState
                           ],
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: TextFormField(
                             controller: _model.textFieldmotivoTextController ??=
@@ -530,7 +534,7 @@ class _AnexoeducacionsolicitudWidgetState
                             ),
                             FFButtonWidget(
                               onPressed: () async {
-                                final datePicked2Date = await showDatePicker(
+                                final _datePicked2Date = await showDatePicker(
                                   context: context,
                                   initialDate: getCurrentTimestamp,
                                   firstDate: getCurrentTimestamp,
@@ -570,13 +574,17 @@ class _AnexoeducacionsolicitudWidgetState
                                   },
                                 );
 
-                                if (datePicked2Date != null) {
+                                if (_datePicked2Date != null) {
                                   safeSetState(() {
                                     _model.datePicked2 = DateTime(
-                                      datePicked2Date.year,
-                                      datePicked2Date.month,
-                                      datePicked2Date.day,
+                                      _datePicked2Date.year,
+                                      _datePicked2Date.month,
+                                      _datePicked2Date.day,
                                     );
+                                  });
+                                } else if (_model.datePicked2 != null) {
+                                  safeSetState(() {
+                                    _model.datePicked2 = getCurrentTimestamp;
                                   });
                                 }
                               },
@@ -586,9 +594,9 @@ class _AnexoeducacionsolicitudWidgetState
                               ),
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -620,14 +628,14 @@ class _AnexoeducacionsolicitudWidgetState
                                     builder: (alertDialogContext) {
                                       return WebViewAware(
                                         child: AlertDialog(
-                                          title: const Text('Campo obligatorio'),
+                                          title: Text('Campo obligatorio'),
                                           content:
-                                              const Text('La fecha obligatoria!'),
+                                              Text('La fecha obligatoria!'),
                                           actions: [
                                             TextButton(
                                               onPressed: () => Navigator.pop(
                                                   alertDialogContext),
-                                              child: const Text('Ok'),
+                                              child: Text('Ok'),
                                             ),
                                           ],
                                         ),
@@ -688,15 +696,15 @@ class _AnexoeducacionsolicitudWidgetState
                                       builder: (alertDialogContext) {
                                         return WebViewAware(
                                           child: AlertDialog(
-                                            title: const Text(
+                                            title: Text(
                                                 'Se cargo correctamente la informacion'),
-                                            content: const Text(
+                                            content: Text(
                                                 'Se guardo la informacion y se creo un documento en google docs!'),
                                             actions: [
                                               TextButton(
                                                 onPressed: () => Navigator.pop(
                                                     alertDialogContext),
-                                                child: const Text('Ok'),
+                                                child: Text('Ok'),
                                               ),
                                             ],
                                           ),
@@ -760,15 +768,15 @@ class _AnexoeducacionsolicitudWidgetState
                                       builder: (alertDialogContext) {
                                         return WebViewAware(
                                           child: AlertDialog(
-                                            title: const Text(
+                                            title: Text(
                                                 'Se cargo correctamente la informacion'),
-                                            content: const Text(
+                                            content: Text(
                                                 'Se guardo la informacion y se creo un documento en google docs!'),
                                             actions: [
                                               TextButton(
                                                 onPressed: () => Navigator.pop(
                                                     alertDialogContext),
-                                                child: const Text('Ok'),
+                                                child: Text('Ok'),
                                               ),
                                             ],
                                           ),
@@ -782,16 +790,16 @@ class _AnexoeducacionsolicitudWidgetState
                                 safeSetState(() {});
                               },
                               text: 'Guardar y generar Docs',
-                              icon: const Icon(
+                              icon: Icon(
                                 Icons.save,
                                 size: 15.0,
                               ),
                               options: FFButtonOptions(
                                 width: 250.0,
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).success,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -802,7 +810,7 @@ class _AnexoeducacionsolicitudWidgetState
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 2.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -813,8 +821,8 @@ class _AnexoeducacionsolicitudWidgetState
                           ],
                         ),
                       ]
-                          .divide(const SizedBox(height: 8.0))
-                          .around(const SizedBox(height: 8.0)),
+                          .divide(SizedBox(height: 8.0))
+                          .around(SizedBox(height: 8.0)),
                     ),
                   ),
                 ),

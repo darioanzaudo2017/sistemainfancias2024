@@ -17,7 +17,7 @@ class DerivacionAnexo1Widget extends StatefulWidget {
     this.rowexpediente,
     bool? edit,
     this.rowseccion9,
-  }) : edit = edit ?? false;
+  }) : this.edit = edit ?? false;
 
   final IngresosRow? rowingreso;
   final VistaExpedientesUltimoEstadoRow? rowexpediente;
@@ -69,7 +69,7 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<Anexo1Form1Row>>(
         future: Anexo1Form1Table().querySingleRow(
           queryFn: (q) => q.eqOrNull(
@@ -106,7 +106,7 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
             ),
             child: Container(
               width: MediaQuery.sizeOf(context).width * 1.0,
-              constraints: const BoxConstraints(
+              constraints: BoxConstraints(
                 maxWidth: 600.0,
               ),
               decoration: BoxDecoration(
@@ -116,11 +116,11 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                   color: FlutterFlowTheme.of(context).primary,
                 ),
               ),
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Align(
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -130,9 +130,9 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Align(
-                            alignment: const AlignmentDirectional(0.0, -1.0),
+                            alignment: AlignmentDirectional(0.0, -1.0),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   120.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'FORMULARIO 1 ANEXO B  \nDERIVACION para ATENCIÓN  \nESPECIALIZADA\n',
@@ -149,7 +149,7 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(1.0, 0.0),
+                            alignment: AlignmentDirectional(1.0, 0.0),
                             child: FlutterFlowIconButton(
                               borderColor: Colors.transparent,
                               borderRadius: 20.0,
@@ -177,7 +177,7 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: TextFormField(
                                 controller: _model.textController1,
@@ -242,7 +242,7 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -263,7 +263,7 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                                   ),
                                   FFButtonWidget(
                                     onPressed: () async {
-                                      final datePickedDate =
+                                      final _datePickedDate =
                                           await showDatePicker(
                                         context: context,
                                         initialDate: getCurrentTimestamp,
@@ -310,13 +310,18 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                                         },
                                       );
 
-                                      if (datePickedDate != null) {
+                                      if (_datePickedDate != null) {
                                         safeSetState(() {
                                           _model.datePicked = DateTime(
-                                            datePickedDate.year,
-                                            datePickedDate.month,
-                                            datePickedDate.day,
+                                            _datePickedDate.year,
+                                            _datePickedDate.month,
+                                            _datePickedDate.day,
                                           );
+                                        });
+                                      } else if (_model.datePicked != null) {
+                                        safeSetState(() {
+                                          _model.datePicked =
+                                              getCurrentTimestamp;
                                         });
                                       }
                                     },
@@ -331,10 +336,10 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                                     ),
                                     options: FFButtonOptions(
                                       height: 40.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).primary,
@@ -346,7 +351,7 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                                             letterSpacing: 0.0,
                                           ),
                                       elevation: 3.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -357,7 +362,7 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: TextFormField(
                                 controller: _model.textController2 ??=
@@ -426,7 +431,7 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: TextFormField(
                                 controller: _model.textController3 ??=
@@ -495,7 +500,7 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: TextFormField(
                                 controller: _model.textController4 ??=
@@ -563,7 +568,7 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: TextFormField(
                                 controller: _model.textController5 ??=
@@ -630,7 +635,7 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: TextFormField(
                                 controller: _model.textController6 ??=
@@ -708,7 +713,9 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                                           'expediente':
                                               widget.rowexpediente?.expediente,
                                           'fecha': supaSerialize<DateTime>(
-                                              _model.datePicked ?? containerAnexo1Form1Row
+                                              _model.datePicked != null
+                                                  ? _model.datePicked
+                                                  : containerAnexo1Form1Row
                                                       ?.fecha),
                                           'orgOProfRemitente':
                                               _model.textController2.text,
@@ -759,16 +766,16 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                                           builder: (alertDialogContext) {
                                             return WebViewAware(
                                               child: AlertDialog(
-                                                title: const Text(
+                                                title: Text(
                                                     'Se guardo correctamente la informacion!'),
-                                                content: const Text(
+                                                content: Text(
                                                     'Se creo un documento con la informacion de derivacion en drive!'),
                                                 actions: [
                                                   TextButton(
                                                     onPressed: () =>
                                                         Navigator.pop(
                                                             alertDialogContext),
-                                                    child: const Text('Ok'),
+                                                    child: Text('Ok'),
                                                   ),
                                                 ],
                                               ),
@@ -838,16 +845,16 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                                           builder: (alertDialogContext) {
                                             return WebViewAware(
                                               child: AlertDialog(
-                                                title: const Text(
+                                                title: Text(
                                                     'Se guardo correctamente la informacion!'),
-                                                content: const Text(
+                                                content: Text(
                                                     'Se creo un documento con la informacion de derivacion en drive!'),
                                                 actions: [
                                                   TextButton(
                                                     onPressed: () =>
                                                         Navigator.pop(
                                                             alertDialogContext),
-                                                    child: const Text('Ok'),
+                                                    child: Text('Ok'),
                                                   ),
                                                 ],
                                               ),
@@ -860,16 +867,16 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                                     safeSetState(() {});
                                   },
                                   text: 'Guardar',
-                                  icon: const Icon(
+                                  icon: Icon(
                                     Icons.save,
                                     size: 15.0,
                                   ),
                                   options: FFButtonOptions(
                                     width: 250.0,
                                     height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).success,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -880,7 +887,7 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 2.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -890,7 +897,7 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                                 ),
                               ],
                             ),
-                          ].divide(const SizedBox(height: 10.0)),
+                          ].divide(SizedBox(height: 10.0)),
                         ),
                       ),
                       FFButtonWidget(
@@ -908,15 +915,15 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                           );
                         },
                         text: 'Descargar PDF',
-                        icon: const Icon(
+                        icon: Icon(
                           Icons.picture_as_pdf_rounded,
                           size: 15.0,
                         ),
                         options: FFButtonOptions(
                           height: 40.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
@@ -930,8 +937,8 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                         ),
                       ),
                     ]
-                        .divide(const SizedBox(height: 10.0))
-                        .around(const SizedBox(height: 10.0)),
+                        .divide(SizedBox(height: 10.0))
+                        .around(SizedBox(height: 10.0)),
                   ),
                 ),
               ),

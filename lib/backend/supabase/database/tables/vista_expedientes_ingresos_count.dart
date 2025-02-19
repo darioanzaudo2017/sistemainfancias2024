@@ -11,7 +11,7 @@ class VistaExpedientesIngresosCountTable
 }
 
 class VistaExpedientesIngresosCountRow extends SupabaseDataRow {
-  VistaExpedientesIngresosCountRow(super.data);
+  VistaExpedientesIngresosCountRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => VistaExpedientesIngresosCountTable();

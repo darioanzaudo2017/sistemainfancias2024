@@ -64,7 +64,7 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<AvisovisitaNNyARow>>(
         future: AvisovisitaNNyATable().querySingleRow(
           queryFn: (q) => q.eqOrNull(
@@ -104,7 +104,7 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
             child: Container(
               width: MediaQuery.sizeOf(context).width * 5.0,
               height: 500.0,
-              constraints: const BoxConstraints(
+              constraints: BoxConstraints(
                 maxWidth: 600.0,
               ),
               decoration: BoxDecoration(
@@ -114,14 +114,14 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                   color: FlutterFlowTheme.of(context).primary,
                 ),
               ),
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Form(
                 key: _model.formKey,
                 autovalidateMode: AutovalidateMode.disabled,
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -131,9 +131,9 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Align(
-                              alignment: const AlignmentDirectional(0.0, -1.0),
+                              alignment: AlignmentDirectional(0.0, -1.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     100.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Convocatoria de entrevista a NNYA',
@@ -150,7 +150,7 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(1.0, 0.0),
+                              alignment: AlignmentDirectional(1.0, 0.0),
                               child: FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
                                 borderRadius: 20.0,
@@ -169,7 +169,7 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                           ],
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: TextFormField(
                             controller: _model.textFieldmotivoTextController1,
@@ -234,7 +234,7 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: TextFormField(
                             controller: _model.textFieldmotivoTextController2,
@@ -299,7 +299,7 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: TextFormField(
                             controller: _model.textFieldresenaTextController,
@@ -387,7 +387,7 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                             ),
                             FFButtonWidget(
                               onPressed: () async {
-                                final datePicked1Date = await showDatePicker(
+                                final _datePicked1Date = await showDatePicker(
                                   context: context,
                                   initialDate: getCurrentTimestamp,
                                   firstDate: getCurrentTimestamp,
@@ -427,13 +427,17 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                                   },
                                 );
 
-                                if (datePicked1Date != null) {
+                                if (_datePicked1Date != null) {
                                   safeSetState(() {
                                     _model.datePicked1 = DateTime(
-                                      datePicked1Date.year,
-                                      datePicked1Date.month,
-                                      datePicked1Date.day,
+                                      _datePicked1Date.year,
+                                      _datePicked1Date.month,
+                                      _datePicked1Date.day,
                                     );
+                                  });
+                                } else if (_model.datePicked1 != null) {
+                                  safeSetState(() {
+                                    _model.datePicked1 = getCurrentTimestamp;
                                   });
                                 }
                               },
@@ -448,9 +452,9 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                               ),
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -465,8 +469,8 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                               ),
                             ),
                           ]
-                              .divide(const SizedBox(width: 10.0))
-                              .around(const SizedBox(width: 10.0)),
+                              .divide(SizedBox(width: 10.0))
+                              .around(SizedBox(width: 10.0)),
                         ),
                         Row(
                           mainAxisSize: MainAxisSize.max,
@@ -491,7 +495,7 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                             ),
                             FFButtonWidget(
                               onPressed: () async {
-                                final datePicked2Date = await showDatePicker(
+                                final _datePicked2Date = await showDatePicker(
                                   context: context,
                                   initialDate: getCurrentTimestamp,
                                   firstDate: getCurrentTimestamp,
@@ -531,13 +535,17 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                                   },
                                 );
 
-                                if (datePicked2Date != null) {
+                                if (_datePicked2Date != null) {
                                   safeSetState(() {
                                     _model.datePicked2 = DateTime(
-                                      datePicked2Date.year,
-                                      datePicked2Date.month,
-                                      datePicked2Date.day,
+                                      _datePicked2Date.year,
+                                      _datePicked2Date.month,
+                                      _datePicked2Date.day,
                                     );
+                                  });
+                                } else if (_model.datePicked2 != null) {
+                                  safeSetState(() {
+                                    _model.datePicked2 = getCurrentTimestamp;
                                   });
                                 }
                               },
@@ -552,9 +560,9 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                               ),
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -569,8 +577,8 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                               ),
                             ),
                           ]
-                              .divide(const SizedBox(width: 10.0))
-                              .around(const SizedBox(width: 10.0)),
+                              .divide(SizedBox(width: 10.0))
+                              .around(SizedBox(width: 10.0)),
                         ),
                         Row(
                           mainAxisSize: MainAxisSize.max,
@@ -588,14 +596,14 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                                     builder: (alertDialogContext) {
                                       return WebViewAware(
                                         child: AlertDialog(
-                                          title: const Text('Campo obligatorio'),
+                                          title: Text('Campo obligatorio'),
                                           content:
-                                              const Text('La fecha obligatoria!'),
+                                              Text('La fecha obligatoria!'),
                                           actions: [
                                             TextButton(
                                               onPressed: () => Navigator.pop(
                                                   alertDialogContext),
-                                              child: const Text('Ok'),
+                                              child: Text('Ok'),
                                             ),
                                           ],
                                         ),
@@ -610,14 +618,14 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                                     builder: (alertDialogContext) {
                                       return WebViewAware(
                                         child: AlertDialog(
-                                          title: const Text('Campo obligatorio'),
+                                          title: Text('Campo obligatorio'),
                                           content:
-                                              const Text('La fecha obligatoria!'),
+                                              Text('La fecha obligatoria!'),
                                           actions: [
                                             TextButton(
                                               onPressed: () => Navigator.pop(
                                                   alertDialogContext),
-                                              child: const Text('Ok'),
+                                              child: Text('Ok'),
                                             ),
                                           ],
                                         ),
@@ -646,14 +654,14 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                                     builder: (alertDialogContext) {
                                       return WebViewAware(
                                         child: AlertDialog(
-                                          title: const Text('Carga correcta'),
-                                          content: const Text(
+                                          title: Text('Carga correcta'),
+                                          content: Text(
                                               'La informacion se guardo correctamente!!'),
                                           actions: [
                                             TextButton(
                                               onPressed: () => Navigator.pop(
                                                   alertDialogContext),
-                                              child: const Text('Ok'),
+                                              child: Text('Ok'),
                                             ),
                                           ],
                                         ),
@@ -716,14 +724,14 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                                     builder: (alertDialogContext) {
                                       return WebViewAware(
                                         child: AlertDialog(
-                                          title: const Text('Carga correcta'),
-                                          content: const Text(
+                                          title: Text('Carga correcta'),
+                                          content: Text(
                                               'La informacion se guardo correctamente!!'),
                                           actions: [
                                             TextButton(
                                               onPressed: () => Navigator.pop(
                                                   alertDialogContext),
-                                              child: const Text('Ok'),
+                                              child: Text('Ok'),
                                             ),
                                           ],
                                         ),
@@ -766,16 +774,16 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                                 safeSetState(() {});
                               },
                               text: 'Guardar',
-                              icon: const Icon(
+                              icon: Icon(
                                 Icons.save,
                                 size: 15.0,
                               ),
                               options: FFButtonOptions(
                                 width: 250.0,
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).success,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -786,7 +794,7 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 2.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -797,8 +805,8 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                           ],
                         ),
                       ]
-                          .divide(const SizedBox(height: 8.0))
-                          .around(const SizedBox(height: 8.0)),
+                          .divide(SizedBox(height: 8.0))
+                          .around(SizedBox(height: 8.0)),
                     ),
                   ),
                 ),

@@ -9,7 +9,7 @@ class Seccion2Table extends SupabaseTable<Seccion2Row> {
 }
 
 class Seccion2Row extends SupabaseDataRow {
-  Seccion2Row(super.data);
+  Seccion2Row(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => Seccion2Table();
@@ -70,4 +70,7 @@ class Seccion2Row extends SupabaseDataRow {
 
   int? get idgrupofamiliar => getField<int>('idgrupofamiliar');
   set idgrupofamiliar(int? value) => setField<int>('idgrupofamiliar', value);
+
+  String? get vinculoObs => getField<String>('vinculoObs');
+  set vinculoObs(String? value) => setField<String>('vinculoObs', value);
 }

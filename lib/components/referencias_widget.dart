@@ -38,7 +38,7 @@ class _ReferenciasWidgetState extends State<ReferenciasWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Material(
         color: Colors.transparent,
         elevation: 10.0,
@@ -53,7 +53,7 @@ class _ReferenciasWidgetState extends State<ReferenciasWidget> {
             borderRadius: BorderRadius.circular(10.0),
           ),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -75,7 +75,7 @@ class _ReferenciasWidgetState extends State<ReferenciasWidget> {
                             letterSpacing: 0.0,
                           ),
                     ),
-                  ].divide(const SizedBox(width: 10.0)),
+                  ].divide(SizedBox(width: 10.0)),
                 ),
                 Row(
                   mainAxisSize: MainAxisSize.max,
@@ -95,7 +95,7 @@ class _ReferenciasWidgetState extends State<ReferenciasWidget> {
                             letterSpacing: 0.0,
                           ),
                     ),
-                  ].divide(const SizedBox(width: 10.0)),
+                  ].divide(SizedBox(width: 10.0)),
                 ),
                 Row(
                   mainAxisSize: MainAxisSize.max,
@@ -115,9 +115,9 @@ class _ReferenciasWidgetState extends State<ReferenciasWidget> {
                             letterSpacing: 0.0,
                           ),
                     ),
-                  ].divide(const SizedBox(width: 10.0)),
+                  ].divide(SizedBox(width: 10.0)),
                 ),
-              ].divide(const SizedBox(width: 10.0)),
+              ].divide(SizedBox(width: 10.0)),
             ),
           ),
         ),

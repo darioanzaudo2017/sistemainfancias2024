@@ -71,7 +71,7 @@ class _InformesenafWidgetState extends State<InformesenafWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -81,7 +81,7 @@ class _InformesenafWidgetState extends State<InformesenafWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Align(
-                alignment: const AlignmentDirectional(0.0, -1.0),
+                alignment: AlignmentDirectional(0.0, -1.0),
                 child: FlutterFlowWebView(
                   content: widget.link!,
                   bypass: false,
@@ -92,7 +92,7 @@ class _InformesenafWidgetState extends State<InformesenafWidget> {
                 ),
               ),
               Align(
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     _model.apiResultnlg = await EmailResendCall.call(
@@ -116,14 +116,14 @@ class _InformesenafWidgetState extends State<InformesenafWidget> {
                           return WebViewAware(
                             child: AlertDialog(
                               title:
-                                  const Text('Email enviado a la direccion general'),
+                                  Text('Email enviado a la direccion general'),
                               content:
-                                  const Text('El email se envio correctamente!!'),
+                                  Text('El email se envio correctamente!!'),
                               actions: [
                                 TextButton(
                                   onPressed: () =>
                                       Navigator.pop(alertDialogContext),
-                                  child: const Text('Ok'),
+                                  child: Text('Ok'),
                                 ),
                               ],
                             ),
@@ -138,9 +138,9 @@ class _InformesenafWidgetState extends State<InformesenafWidget> {
                   options: FFButtonOptions(
                     height: 40.0,
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Noto Sans JP',

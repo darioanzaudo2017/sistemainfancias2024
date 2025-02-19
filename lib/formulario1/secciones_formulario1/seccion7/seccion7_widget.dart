@@ -57,7 +57,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<Seccion7Row>>(
         future: Seccion7Table().querySingleRow(
           queryFn: (q) => q.eqOrNull(
@@ -101,14 +101,14 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                   color: FlutterFlowTheme.of(context).primary,
                 ),
               ),
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Form(
                 key: _model.formKey,
                 autovalidateMode: AutovalidateMode.always,
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, -1.0),
+                  alignment: AlignmentDirectional(0.0, -1.0),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
@@ -119,9 +119,9 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Align(
-                                alignment: const AlignmentDirectional(0.0, -1.0),
+                                alignment: AlignmentDirectional(0.0, -1.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       60.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     '7. Derechos amenazados y/o vulnerados',
@@ -138,7 +138,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(1.0, 0.0),
+                                alignment: AlignmentDirectional(1.0, 0.0),
                                 child: FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
                                   borderRadius: 20.0,
@@ -157,14 +157,14 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                             ],
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Ley Provincial 9944',
@@ -182,14 +182,14 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Marca el o las casillas que correspondan:',
@@ -207,14 +207,14 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 8.0, 8.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Criterios de priorización de situaciones.',
@@ -230,7 +230,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(1.0, -1.0),
+                            alignment: AlignmentDirectional(1.0, -1.0),
                             child: FFButtonWidget(
                               onPressed: () async {
                                 await showModalBottomSheet(
@@ -268,9 +268,9 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                               text: 'Agregar Derecho Vulnerado',
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -281,7 +281,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -393,7 +393,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                                   softWrap: true,
                                                   child: Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Text(
                                                       'Principal',
@@ -484,7 +484,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                                       'Si',
                                                   child: Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Container(
                                                       width: 65.0,
@@ -500,7 +500,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -566,13 +566,13 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                         },
                                       ),
                                     ),
-                                  ].divide(const SizedBox(height: 10.0)),
+                                  ].divide(SizedBox(height: 10.0)),
                                 ),
                               );
                             },
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -580,7 +580,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                               children: [
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Las siguientes son indicadores de “intervenciones prioritarias” en el abordaje que ingresa al SPD.\nEn caso de existencia conjunta de factores protectores y los indicadores mencionados las situaciones pueden dejar de ser de “intervenciones prioritarias”. Se entiende por factores protectores aquellos que pueden modificar y mejorar las condiciones familiares que evitan la posibilidad de dañar a los NNYA en el futuro.',
@@ -599,7 +599,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: FlutterFlowDropDown<String>(
                               multiSelectController:
@@ -609,7 +609,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                               List<String>.from(
                                 containerSeccion7Row?.criterios ?? [],
                               )),
-                              options: const [
+                              options: [
                                 'No tiene criterios de priorizacion',
                                 'Riesgo de vida.',
                                 'Sospecha de violencia sexual contra NNYA.',
@@ -658,7 +658,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                   FlutterFlowTheme.of(context).alternate,
                               borderWidth: 2.0,
                               borderRadius: 8.0,
-                              margin: const EdgeInsetsDirectional.fromSTEB(
+                              margin: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 4.0, 16.0, 4.0),
                               hidesUnderline: true,
                               isOverButton: true,
@@ -683,14 +683,14 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                   final listacriteriosItem =
                                       listacriterios[listacriteriosIndex];
                                   return Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         20.0, 12.0, 20.0, 0.0),
                                     child: Container(
                                       width: double.infinity,
                                       height: 40.0,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
-                                        boxShadow: const [
+                                        boxShadow: [
                                           BoxShadow(
                                             blurRadius: 5.0,
                                             color: Color(0x3416202A),
@@ -709,7 +709,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
+                                        padding: EdgeInsets.all(8.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
@@ -722,7 +722,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                             ),
                                             Expanded(
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 0.0, 0.0, 0.0),
                                                 child: Text(
@@ -734,7 +734,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                                         fontFamily:
                                                             'Plus Jakarta Sans',
                                                         color:
-                                                            const Color(0xFF14181B),
+                                                            Color(0xFF14181B),
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -758,7 +758,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                             children: [
                               if (_model.agregarderecho ?? true)
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 0.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
@@ -775,15 +775,15 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                             return WebViewAware(
                                               child: AlertDialog(
                                                 title:
-                                                    const Text('Campo obligatorio'),
-                                                content: const Text(
+                                                    Text('Campo obligatorio'),
+                                                content: Text(
                                                     'Si no tiene criterio de priorizacion seleccionar que no tiene!!'),
                                                 actions: [
                                                   TextButton(
                                                     onPressed: () =>
                                                         Navigator.pop(
                                                             alertDialogContext),
-                                                    child: const Text('Ok'),
+                                                    child: Text('Ok'),
                                                   ),
                                                 ],
                                               ),
@@ -826,15 +826,15 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                           builder: (alertDialogContext) {
                                             return WebViewAware(
                                               child: AlertDialog(
-                                                title: const Text('Carga correcta'),
-                                                content: const Text(
+                                                title: Text('Carga correcta'),
+                                                content: Text(
                                                     'La informacion se guardo correctamente!!'),
                                                 actions: [
                                                   TextButton(
                                                     onPressed: () =>
                                                         Navigator.pop(
                                                             alertDialogContext),
-                                                    child: const Text('Ok'),
+                                                    child: Text('Ok'),
                                                   ),
                                                 ],
                                               ),
@@ -871,15 +871,15 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                           builder: (alertDialogContext) {
                                             return WebViewAware(
                                               child: AlertDialog(
-                                                title: const Text('Carga correcta'),
-                                                content: const Text(
+                                                title: Text('Carga correcta'),
+                                                content: Text(
                                                     'La informacion se guardo correctamente!!'),
                                                 actions: [
                                                   TextButton(
                                                     onPressed: () =>
                                                         Navigator.pop(
                                                             alertDialogContext),
-                                                    child: const Text('Ok'),
+                                                    child: Text('Ok'),
                                                   ),
                                                 ],
                                               ),
@@ -890,17 +890,17 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                       }
                                     },
                                     text: 'Guardar',
-                                    icon: const Icon(
+                                    icon: Icon(
                                       Icons.save,
                                       size: 15.0,
                                     ),
                                     options: FFButtonOptions(
                                       width: 250.0,
                                       height: 40.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).success,
@@ -912,7 +912,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                             letterSpacing: 0.0,
                                           ),
                                       elevation: 2.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -924,8 +924,8 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                             ],
                           ),
                         ]
-                            .divide(const SizedBox(height: 8.0))
-                            .around(const SizedBox(height: 8.0)),
+                            .divide(SizedBox(height: 8.0))
+                            .around(SizedBox(height: 8.0)),
                       ),
                     ),
                   ),

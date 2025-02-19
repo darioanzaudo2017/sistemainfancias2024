@@ -10,7 +10,7 @@ class VistaExpedientesTable extends SupabaseTable<VistaExpedientesRow> {
 }
 
 class VistaExpedientesRow extends SupabaseDataRow {
-  VistaExpedientesRow(super.data);
+  VistaExpedientesRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => VistaExpedientesTable();

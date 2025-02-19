@@ -1,4 +1,5 @@
 import '/backend/supabase/supabase.dart';
+import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_radio_button.dart';
@@ -64,7 +65,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<Formulario6Row>>(
         future: Formulario6Table().querySingleRow(
           queryFn: (q) => q.eqOrNull(
@@ -110,7 +111,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                   color: FlutterFlowTheme.of(context).primary,
                 ),
               ),
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: FutureBuilder<List<ListaDerechosVulneradosexpedienteRow>>(
                 future: ListaDerechosVulneradosexpedienteTable().queryRows(
                   queryFn: (q) => q
@@ -146,10 +147,10 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                     key: _model.formKey,
                     autovalidateMode: AutovalidateMode.disabled,
                     child: Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                         child: SingleChildScrollView(
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
@@ -157,7 +158,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Align(
-                                alignment: const AlignmentDirectional(1.0, -1.0),
+                                alignment: AlignmentDirectional(1.0, -1.0),
                                 child: FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
                                   borderRadius: 20.0,
@@ -174,7 +175,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(0.0, -1.0),
+                                alignment: AlignmentDirectional(0.0, -1.0),
                                 child: Text(
                                   'Definición de medidas de protección integral de derechos en acuerdo con familia y niño (Art. 42, 45, 46 y 47 ley 9944)',
                                   textAlign: TextAlign.center,
@@ -191,9 +192,9 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                               ),
                               Flexible(
                                 child: Container(
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Propuestas de medidas restitutivas de derechos',
@@ -208,7 +209,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 0.0, 5.0, 0.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
@@ -221,7 +222,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                       children: [
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: FlutterFlowDropDown<String>(
                                             controller: _model
                                                     .dropDownValueController1 ??=
@@ -230,16 +231,16 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                                   containerFormulario6Row
                                                       ?.propuestasDemedidas,
                                             ),
-                                            options: const [
+                                            options: [
                                               'Inclusión de NNA y /o familia en programas Educativos: (inserción, becas, apoyo escolar, docente integrador,etc), Culturales / Recreativos, Deportivos, Capacitaciones',
                                               'Inclusión/inserción laboral del adolescente y/o su familia',
                                               'Asistencia económica (asistencia directa de recursos materiales)',
-                                              'Articulación con  Programas o acciones de  Instituciones  \nestatales y no estatales  \n(Documentación,  AUH, certificados,  prestaciones de  seguridad social,  articulaciones con  organismos del primer nivel de  \nintervención, etc).',
-                                              'Tratamientos en  Salud dirigidos al  Niño/Adolesc.,o  \nfamilia; Médicos (internac.o  ambulatorio) Terapéuticos (  \npsicolog. O  psiquiátrico, A T ) \nConsumo  problemático de  sustancias. \nAbordaje de  Discapacidad.',
+                                              'Articulación con  Programas o acciones de  Instituciones  estatales y no estatales  (Documentación,  AUH, certificados,  prestaciones de seguridad social,  articulaciones con organismos del primer nivel de intervención, etc).',
+                                              'Tratamientos en  Salud dirigidos al Niño/Adolesc.,o  familia; Médicos (internac.o  ambulatorio) Terapéuticos (  \npsicolog. O  psiquiátrico, A T ) Consumo  problemático de  sustancias. Abordaje de  Discapacidad.',
                                               'Asistencia integral  a la embarazada.',
-                                              'Estrategias para el  cuidado de niños/adolesc. en  su propio hogar,  con apoyo vecinal,  comunitario o de  algún operador/AT fortaleciendo a adultos responsables',
-                                              'Articulación de acciones con el  \nPoder Judicial.',
-                                              'Acciones o estrategias de  \nfortalecimiento familiar para la  \npermanencia del niño en su grupo  convivencial.',
+                                              'Estrategias para el  cuidado de niños /adolesc. en  su propio hogar,  con apoyo vecinal,  comunitario o de  algún operador/AT fortaleciendo a adultos responsables',
+                                              'Articulación de acciones con el  Poder Judicial.',
+                                              'Acciones o estrategias de fortalecimiento familiar para la permanencia del niño en su grupo convivencial.',
                                               'Otras acciones o  estrategias.'
                                             ],
                                             onChanged: (val) => safeSetState(
@@ -248,7 +249,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
                                                 0.75,
-                                            height: 80.0,
+                                            height: 100.0,
                                             maxHeight: 350.0,
                                             textStyle: FlutterFlowTheme.of(
                                                     context)
@@ -258,8 +259,9 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
-                                                  fontSize: 14.0,
+                                                  fontSize: 12.0,
                                                   letterSpacing: 0.0,
+                                                  lineHeight: 1.5,
                                                 ),
                                             hintText:
                                                 'Seleccion tipo de medida restitutiva',
@@ -280,7 +282,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                             borderWidth: 2.0,
                                             borderRadius: 8.0,
                                             margin:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 4.0, 16.0, 4.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
@@ -301,8 +303,88 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                         ),
                                       ],
                                     ),
+                                    Container(
+                                      height: 200.0,
+                                      child: Align(
+                                        alignment:
+                                            AlignmentDirectional(0.0, 0.0),
+                                        child: FlutterFlowChoiceChips(
+                                          options: [
+                                            ChipData(
+                                                'Inclusión de NNA y /o familia en programas Educativos: (inserción, becas, apoyo escolar, docente integrador,etc), Culturales / Recreativos, Deportivos, Capacitaciones'),
+                                            ChipData(
+                                                'Inclusión/inserción laboral del adolescente y/o su familia'),
+                                            ChipData(
+                                                'Asistencia económica (asistencia directa de recursos materiales)'),
+                                            ChipData(
+                                                'Articulación con  Programas o acciones de  Instituciones  \nestatales y no estatales  \n(Documentación,  AUH, certificados,  prestaciones de  seguridad social,  articulaciones con  organismos del primer nivel de  \nintervención, etc).'),
+                                            ChipData(
+                                                'Tratamientos en  Salud dirigidos al  Niño/Adolesc.,o  \nfamilia; Médicos (internac.o  ambulatorio) Terapéuticos (  \npsicolog. O  psiquiátrico, A T ) \nConsumo  problemático de  sustancias. \nAbordaje de  Discapacidad.'),
+                                            ChipData(
+                                                'Asistencia integral  a la embarazada.')
+                                          ],
+                                          onChanged: (val) => safeSetState(() =>
+                                              _model.choiceChipsValue =
+                                                  val?.firstOrNull),
+                                          selectedChipStyle: ChipStyle(
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                            textStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Noto Sans JP',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .info,
+                                                  letterSpacing: 0.0,
+                                                ),
+                                            iconColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .info,
+                                            iconSize: 16.0,
+                                            elevation: 0.0,
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          unselectedChipStyle: ChipStyle(
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryBackground,
+                                            textStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Noto Sans JP',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryText,
+                                                  letterSpacing: 0.0,
+                                                ),
+                                            iconColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryText,
+                                            iconSize: 16.0,
+                                            elevation: 0.0,
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          chipSpacing: 8.0,
+                                          rowSpacing: 8.0,
+                                          multiselect: false,
+                                          alignment: WrapAlignment.start,
+                                          controller: _model
+                                                  .choiceChipsValueController ??=
+                                              FormFieldController<List<String>>(
+                                            [],
+                                          ),
+                                          wrapped: true,
+                                        ),
+                                      ),
+                                    ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 8.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -311,9 +393,9 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                         children: [
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(-1.0, 0.0),
+                                                AlignmentDirectional(-1.0, 0.0),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -331,7 +413,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                           ),
                                           Expanded(
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       17.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -354,11 +436,11 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 20.0, 0.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
-                                                final datePicked1Date =
+                                                final _datePicked1Date =
                                                     await showDatePicker(
                                                   context: context,
                                                   initialDate:
@@ -416,14 +498,20 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                                   },
                                                 );
 
-                                                if (datePicked1Date != null) {
+                                                if (_datePicked1Date != null) {
                                                   safeSetState(() {
                                                     _model.datePicked1 =
                                                         DateTime(
-                                                      datePicked1Date.year,
-                                                      datePicked1Date.month,
-                                                      datePicked1Date.day,
+                                                      _datePicked1Date.year,
+                                                      _datePicked1Date.month,
+                                                      _datePicked1Date.day,
                                                     );
+                                                  });
+                                                } else if (_model.datePicked1 !=
+                                                    null) {
+                                                  safeSetState(() {
+                                                    _model.datePicked1 =
+                                                        getCurrentTimestamp;
                                                   });
                                                 }
                                               },
@@ -440,11 +528,11 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                               ),
                                               options: FFButtonOptions(
                                                 height: 40.0,
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         24.0, 0.0, 24.0, 0.0),
                                                 iconPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -460,7 +548,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                 elevation: 3.0,
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),
@@ -473,7 +561,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 8.0, 0.0),
                                       child: TextFormField(
                                         controller: _model.textController1 ??=
@@ -558,7 +646,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 8.0, 0.0),
                                       child: TextFormField(
                                         controller: _model
@@ -645,7 +733,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 8.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -654,9 +742,9 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                         children: [
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(-1.0, 0.0),
+                                                AlignmentDirectional(-1.0, 0.0),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -674,7 +762,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                           ),
                                           Expanded(
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       17.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -697,11 +785,11 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 20.0, 0.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
-                                                final datePicked2Date =
+                                                final _datePicked2Date =
                                                     await showDatePicker(
                                                   context: context,
                                                   initialDate:
@@ -759,14 +847,20 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                                   },
                                                 );
 
-                                                if (datePicked2Date != null) {
+                                                if (_datePicked2Date != null) {
                                                   safeSetState(() {
                                                     _model.datePicked2 =
                                                         DateTime(
-                                                      datePicked2Date.year,
-                                                      datePicked2Date.month,
-                                                      datePicked2Date.day,
+                                                      _datePicked2Date.year,
+                                                      _datePicked2Date.month,
+                                                      _datePicked2Date.day,
                                                     );
+                                                  });
+                                                } else if (_model.datePicked2 !=
+                                                    null) {
+                                                  safeSetState(() {
+                                                    _model.datePicked2 =
+                                                        getCurrentTimestamp;
                                                   });
                                                 }
                                               },
@@ -783,11 +877,11 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                               ),
                                               options: FFButtonOptions(
                                                 height: 40.0,
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         24.0, 0.0, 24.0, 0.0),
                                                 iconPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -803,7 +897,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                 elevation: 3.0,
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),
@@ -816,7 +910,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 8.0, 0.0),
                                       child: TextFormField(
                                         controller: _model.textController3 ??=
@@ -917,7 +1011,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -939,7 +1033,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                             ),
                                             Container(
                                               height: 165.0,
-                                              decoration: const BoxDecoration(),
+                                              decoration: BoxDecoration(),
                                               child: FlutterFlowRadioButton(
                                                 options:
                                                     formListaDerechosVulneradosexpedienteRowList
@@ -1065,8 +1159,8 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                               ],
                                             ),
                                           ]
-                                              .divide(const SizedBox(height: 5.0))
-                                              .around(const SizedBox(height: 5.0)),
+                                              .divide(SizedBox(height: 5.0))
+                                              .around(SizedBox(height: 5.0)),
                                         ),
                                       ),
                                     ),
@@ -1089,10 +1183,10 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: Text(
@@ -1109,10 +1203,10 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                               ),
                                             ),
                                             Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: Text(
@@ -1130,7 +1224,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsets.all(10.0),
+                                              padding: EdgeInsets.all(10.0),
                                               child:
                                                   FlutterFlowDropDown<String>(
                                                 controller: _model
@@ -1143,7 +1237,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                                     'Activa',
                                                   ),
                                                 ),
-                                                options: const [
+                                                options: [
                                                   'Activa',
                                                   'Sustituida'
                                                 ],
@@ -1177,7 +1271,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                                         .secondaryText,
                                                 borderWidth: 0.0,
                                                 borderRadius: 8.0,
-                                                margin: const EdgeInsetsDirectional
+                                                margin: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 0.0, 12.0, 0.0),
                                                 hidesUnderline: true,
@@ -1187,7 +1281,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 0.0, 8.0, 0.0),
                                               child: TextFormField(
                                                 controller:
@@ -1292,11 +1386,11 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                               ),
                                             ),
                                           ]
-                                              .divide(const SizedBox(height: 5.0))
-                                              .around(const SizedBox(height: 5.0)),
+                                              .divide(SizedBox(height: 5.0))
+                                              .around(SizedBox(height: 5.0)),
                                         ),
                                       ),
-                                  ].divide(const SizedBox(height: 15.0)),
+                                  ].divide(SizedBox(height: 15.0)),
                                 ),
                               ),
                               ListView(
@@ -1309,7 +1403,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 8.0, 0.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -1391,16 +1485,16 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                                 builder: (alertDialogContext) {
                                                   return WebViewAware(
                                                     child: AlertDialog(
-                                                      title: const Text(
+                                                      title: Text(
                                                           'Carga correcta'),
-                                                      content: const Text(
+                                                      content: Text(
                                                           'La informacion se guardo correctamente!!'),
                                                       actions: [
                                                         TextButton(
                                                           onPressed: () =>
                                                               Navigator.pop(
                                                                   alertDialogContext),
-                                                          child: const Text('Ok'),
+                                                          child: Text('Ok'),
                                                         ),
                                                       ],
                                                     ),
@@ -1429,7 +1523,11 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                                       _model
                                                           .textController3.text,
                                                   'Fecha': supaSerialize<
-                                                      DateTime>(_model.datePicked1 ?? containerFormulario6Row
+                                                      DateTime>(_model
+                                                              .datePicked1 !=
+                                                          null
+                                                      ? _model.datePicked1
+                                                      : containerFormulario6Row
                                                           ?.fecha),
                                                   'estado':
                                                       _model.dropDownValue2,
@@ -1438,7 +1536,11 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                                   'idmedidasustiuida':
                                                       _model.idform6,
                                                   'fechaPlazo': supaSerialize<
-                                                      DateTime>(_model.datePicked2 ?? containerFormulario6Row
+                                                      DateTime>(_model
+                                                              .datePicked2 !=
+                                                          null
+                                                      ? _model.datePicked2
+                                                      : containerFormulario6Row
                                                           ?.fechaPlazo),
                                                   'restituido':
                                                       _model.radioButtonValue,
@@ -1479,16 +1581,16 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                                 builder: (alertDialogContext) {
                                                   return WebViewAware(
                                                     child: AlertDialog(
-                                                      title: const Text(
+                                                      title: Text(
                                                           'Carga correcta'),
-                                                      content: const Text(
+                                                      content: Text(
                                                           'La informacion se guardo correctamente!!'),
                                                       actions: [
                                                         TextButton(
                                                           onPressed: () =>
                                                               Navigator.pop(
                                                                   alertDialogContext),
-                                                          child: const Text('Ok'),
+                                                          child: Text('Ok'),
                                                         ),
                                                       ],
                                                     ),
@@ -1503,14 +1605,14 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                                       (alertDialogContext) {
                                                     return WebViewAware(
                                                       child: AlertDialog(
-                                                        title: const Text('1'),
-                                                        content: const Text('1'),
+                                                        title: Text('1'),
+                                                        content: Text('1'),
                                                         actions: [
                                                           TextButton(
                                                             onPressed: () =>
                                                                 Navigator.pop(
                                                                     alertDialogContext),
-                                                            child: const Text('Ok'),
+                                                            child: Text('Ok'),
                                                           ),
                                                         ],
                                                       ),
@@ -1528,7 +1630,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                             safeSetState(() {});
                                           },
                                           text: 'Guardar',
-                                          icon: const Icon(
+                                          icon: Icon(
                                             Icons.save,
                                             size: 15.0,
                                           ),
@@ -1536,10 +1638,10 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                             width: 250.0,
                                             height: 40.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .success,
@@ -1553,7 +1655,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 2.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -1568,8 +1670,8 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                 ],
                               ),
                             ]
-                                .divide(const SizedBox(height: 15.0))
-                                .around(const SizedBox(height: 15.0)),
+                                .divide(SizedBox(height: 15.0))
+                                .around(SizedBox(height: 15.0)),
                           ),
                         ),
                       ),

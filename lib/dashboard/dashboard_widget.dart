@@ -58,7 +58,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -76,7 +76,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -143,7 +143,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                               return Container(
                                 width: MediaQuery.sizeOf(context).width * 1.001,
                                 height: 799.0,
-                                constraints: const BoxConstraints(
+                                constraints: BoxConstraints(
                                   maxWidth: 1000.0,
                                 ),
                                 decoration: BoxDecoration(
@@ -610,10 +610,10 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                             text: 'ver',
                                             options: FFButtonOptions(
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 16.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -666,7 +666,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                   );
                 },
               ),
-            ].divide(const SizedBox(height: 10.0)).around(const SizedBox(height: 10.0)),
+            ].divide(SizedBox(height: 10.0)).around(SizedBox(height: 10.0)),
           ),
         ),
       ),

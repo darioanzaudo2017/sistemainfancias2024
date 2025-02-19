@@ -79,7 +79,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Material(
         color: Colors.transparent,
         elevation: 2.0,
@@ -88,7 +88,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
         ),
         child: Container(
           width: MediaQuery.sizeOf(context).width * 1.0,
-          constraints: const BoxConstraints(
+          constraints: BoxConstraints(
             maxWidth: 600.0,
           ),
           decoration: BoxDecoration(
@@ -99,14 +99,14 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
               color: FlutterFlowTheme.of(context).primary,
             ),
           ),
-          alignment: const AlignmentDirectional(0.0, 0.0),
+          alignment: AlignmentDirectional(0.0, 0.0),
           child: Form(
             key: _model.formKey,
             autovalidateMode: AutovalidateMode.disabled,
             child: Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -114,7 +114,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(1.0, -1.0),
+                        alignment: AlignmentDirectional(1.0, -1.0),
                         child: FlutterFlowIconButton(
                           borderColor: Colors.transparent,
                           borderRadius: 20.0,
@@ -131,7 +131,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                         ),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, -1.0),
+                        alignment: AlignmentDirectional(0.0, -1.0),
                         child: Text(
                           'Formulario 8 - Sustitución o modificación de la medida de protección adoptada (art. 42 ley 9944)',
                           textAlign: TextAlign.center,
@@ -147,7 +147,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                       ),
                       Flexible(
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'Se resuelve sustituir o modificar la medida de protección de derechos',
@@ -162,7 +162,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                         child: TextFormField(
                           controller: _model.textController1,
                           focusNode: _model.textFieldFocusNode1,
@@ -224,7 +224,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                       ),
                       Flexible(
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'en razón de la variación de las circunstancias que le dieron origen.\nFundamentación',
@@ -239,7 +239,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                         child: TextFormField(
                           controller: _model.textController2,
                           focusNode: _model.textFieldFocusNode2,
@@ -301,7 +301,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                       ),
                       Flexible(
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'La nueva medida de protección de derechos tiene como finalidad preservar o restituir el goce y ejercicio del/los derechos de que es titular el NNA.',
@@ -326,7 +326,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                   .secondaryBackground,
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Nueva medida de protección',
@@ -340,16 +340,16 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                                  alignment: AlignmentDirectional(-1.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Fecha',
@@ -364,7 +364,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         17.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       valueOrDefault<String>(
@@ -382,11 +382,11 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 20.0, 0.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      final datePicked1Date =
+                                      final _datePicked1Date =
                                           await showDatePicker(
                                         context: context,
                                         initialDate: getCurrentTimestamp,
@@ -433,23 +433,28 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                         },
                                       );
 
-                                      if (datePicked1Date != null) {
+                                      if (_datePicked1Date != null) {
                                         safeSetState(() {
                                           _model.datePicked1 = DateTime(
-                                            datePicked1Date.year,
-                                            datePicked1Date.month,
-                                            datePicked1Date.day,
+                                            _datePicked1Date.year,
+                                            _datePicked1Date.month,
+                                            _datePicked1Date.day,
                                           );
+                                        });
+                                      } else if (_model.datePicked1 != null) {
+                                        safeSetState(() {
+                                          _model.datePicked1 =
+                                              getCurrentTimestamp;
                                         });
                                       }
                                     },
                                     text: 'Fecha',
                                     options: FFButtonOptions(
                                       height: 40.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).primary,
@@ -461,7 +466,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                             letterSpacing: 0.0,
                                           ),
                                       elevation: 3.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -473,7 +478,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController3,
@@ -538,7 +543,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController4,
@@ -601,7 +606,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                   .asValidator(context),
                             ),
                           ),
-                        ].divide(const SizedBox(height: 8.0)),
+                        ].divide(SizedBox(height: 8.0)),
                       ),
                       Column(
                         mainAxisSize: MainAxisSize.min,
@@ -615,7 +620,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                   .secondaryBackground,
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Respuesta de la institución organismo requerido',
@@ -629,16 +634,16 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                                  alignment: AlignmentDirectional(-1.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Fecha',
@@ -653,7 +658,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         17.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       valueOrDefault<String>(
@@ -671,11 +676,11 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 20.0, 0.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      final datePicked2Date =
+                                      final _datePicked2Date =
                                           await showDatePicker(
                                         context: context,
                                         initialDate: getCurrentTimestamp,
@@ -722,23 +727,28 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                         },
                                       );
 
-                                      if (datePicked2Date != null) {
+                                      if (_datePicked2Date != null) {
                                         safeSetState(() {
                                           _model.datePicked2 = DateTime(
-                                            datePicked2Date.year,
-                                            datePicked2Date.month,
-                                            datePicked2Date.day,
+                                            _datePicked2Date.year,
+                                            _datePicked2Date.month,
+                                            _datePicked2Date.day,
                                           );
+                                        });
+                                      } else if (_model.datePicked2 != null) {
+                                        safeSetState(() {
+                                          _model.datePicked2 =
+                                              getCurrentTimestamp;
                                         });
                                       }
                                     },
                                     text: 'Fecha',
                                     options: FFButtonOptions(
                                       height: 40.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).primary,
@@ -750,7 +760,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                             letterSpacing: 0.0,
                                           ),
                                       elevation: 3.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -762,12 +772,12 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: FlutterFlowDropDown<String>(
                               controller: _model.dropDownValueController1 ??=
                                   FormFieldController<String>(null),
-                              options: const [
+                              options: [
                                 'Otorga recurso solicitado',
                                 'No otorga recurso solicitado'
                               ],
@@ -795,7 +805,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                   FlutterFlowTheme.of(context).alternate,
                               borderWidth: 2.0,
                               borderRadius: 10.0,
-                              margin: const EdgeInsetsDirectional.fromSTEB(
+                              margin: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 4.0, 16.0, 4.0),
                               hidesUnderline: true,
                               isOverButton: true,
@@ -803,7 +813,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                               isMultiSelect: false,
                             ),
                           ),
-                        ].divide(const SizedBox(height: 8.0)),
+                        ].divide(SizedBox(height: 8.0)),
                       ),
                       Column(
                         mainAxisSize: MainAxisSize.min,
@@ -817,7 +827,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                   .secondaryBackground,
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Reiteración de solicitud a organismo/institución requerido',
@@ -831,16 +841,16 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                                  alignment: AlignmentDirectional(-1.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Fecha',
@@ -855,7 +865,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         17.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       valueOrDefault<String>(
@@ -873,11 +883,11 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 20.0, 0.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      final datePicked3Date =
+                                      final _datePicked3Date =
                                           await showDatePicker(
                                         context: context,
                                         initialDate: getCurrentTimestamp,
@@ -924,23 +934,28 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                         },
                                       );
 
-                                      if (datePicked3Date != null) {
+                                      if (_datePicked3Date != null) {
                                         safeSetState(() {
                                           _model.datePicked3 = DateTime(
-                                            datePicked3Date.year,
-                                            datePicked3Date.month,
-                                            datePicked3Date.day,
+                                            _datePicked3Date.year,
+                                            _datePicked3Date.month,
+                                            _datePicked3Date.day,
                                           );
+                                        });
+                                      } else if (_model.datePicked3 != null) {
+                                        safeSetState(() {
+                                          _model.datePicked3 =
+                                              getCurrentTimestamp;
                                         });
                                       }
                                     },
                                     text: 'Fecha',
                                     options: FFButtonOptions(
                                       height: 40.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).primary,
@@ -952,7 +967,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                             letterSpacing: 0.0,
                                           ),
                                       elevation: 3.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -964,12 +979,12 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: FlutterFlowDropDown<String>(
                               controller: _model.dropDownValueController2 ??=
                                   FormFieldController<String>(null),
-                              options: const [
+                              options: [
                                 'Otorga recurso',
                                 'No otorga recurso',
                                 'Otorga otro recurso'
@@ -998,7 +1013,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                   FlutterFlowTheme.of(context).alternate,
                               borderWidth: 2.0,
                               borderRadius: 10.0,
-                              margin: const EdgeInsetsDirectional.fromSTEB(
+                              margin: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 4.0, 16.0, 4.0),
                               hidesUnderline: true,
                               isOverButton: true,
@@ -1007,7 +1022,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController5,
@@ -1072,7 +1087,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController6,
@@ -1136,7 +1151,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                   .asValidator(context),
                             ),
                           ),
-                        ].divide(const SizedBox(height: 8.0)),
+                        ].divide(SizedBox(height: 8.0)),
                       ),
                       Column(
                         mainAxisSize: MainAxisSize.min,
@@ -1150,7 +1165,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                   .secondaryBackground,
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Elevación a la dirección general de infancias y adolescencias municipal por falta de respuesta a las acciones requeridas a otro organismo',
@@ -1164,16 +1179,16 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                                  alignment: AlignmentDirectional(-1.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Fecha de elevación',
@@ -1188,7 +1203,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         17.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       valueOrDefault<String>(
@@ -1206,11 +1221,11 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 20.0, 0.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      final datePicked4Date =
+                                      final _datePicked4Date =
                                           await showDatePicker(
                                         context: context,
                                         initialDate: getCurrentTimestamp,
@@ -1257,23 +1272,28 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                         },
                                       );
 
-                                      if (datePicked4Date != null) {
+                                      if (_datePicked4Date != null) {
                                         safeSetState(() {
                                           _model.datePicked4 = DateTime(
-                                            datePicked4Date.year,
-                                            datePicked4Date.month,
-                                            datePicked4Date.day,
+                                            _datePicked4Date.year,
+                                            _datePicked4Date.month,
+                                            _datePicked4Date.day,
                                           );
+                                        });
+                                      } else if (_model.datePicked4 != null) {
+                                        safeSetState(() {
+                                          _model.datePicked4 =
+                                              getCurrentTimestamp;
                                         });
                                       }
                                     },
                                     text: 'Fecha',
                                     options: FFButtonOptions(
                                       height: 40.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).primary,
@@ -1285,7 +1305,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                             letterSpacing: 0.0,
                                           ),
                                       elevation: 3.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -1297,7 +1317,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController7,
@@ -1360,16 +1380,16 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                                  alignment: AlignmentDirectional(-1.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Fecha de requerimiento',
@@ -1384,7 +1404,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         17.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       valueOrDefault<String>(
@@ -1402,11 +1422,11 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 20.0, 0.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      final datePicked5Date =
+                                      final _datePicked5Date =
                                           await showDatePicker(
                                         context: context,
                                         initialDate: getCurrentTimestamp,
@@ -1453,23 +1473,28 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                         },
                                       );
 
-                                      if (datePicked5Date != null) {
+                                      if (_datePicked5Date != null) {
                                         safeSetState(() {
                                           _model.datePicked5 = DateTime(
-                                            datePicked5Date.year,
-                                            datePicked5Date.month,
-                                            datePicked5Date.day,
+                                            _datePicked5Date.year,
+                                            _datePicked5Date.month,
+                                            _datePicked5Date.day,
                                           );
+                                        });
+                                      } else if (_model.datePicked5 != null) {
+                                        safeSetState(() {
+                                          _model.datePicked5 =
+                                              getCurrentTimestamp;
                                         });
                                       }
                                     },
                                     text: 'Fecha',
                                     options: FFButtonOptions(
                                       height: 40.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).primary,
@@ -1481,7 +1506,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                             letterSpacing: 0.0,
                                           ),
                                       elevation: 3.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -1493,7 +1518,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController8,
@@ -1556,16 +1581,16 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                                  alignment: AlignmentDirectional(-1.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Fecha de requerimiento',
@@ -1580,7 +1605,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         17.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       valueOrDefault<String>(
@@ -1598,11 +1623,11 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 20.0, 0.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      final datePicked6Date =
+                                      final _datePicked6Date =
                                           await showDatePicker(
                                         context: context,
                                         initialDate: getCurrentTimestamp,
@@ -1649,23 +1674,28 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                         },
                                       );
 
-                                      if (datePicked6Date != null) {
+                                      if (_datePicked6Date != null) {
                                         safeSetState(() {
                                           _model.datePicked6 = DateTime(
-                                            datePicked6Date.year,
-                                            datePicked6Date.month,
-                                            datePicked6Date.day,
+                                            _datePicked6Date.year,
+                                            _datePicked6Date.month,
+                                            _datePicked6Date.day,
                                           );
+                                        });
+                                      } else if (_model.datePicked6 != null) {
+                                        safeSetState(() {
+                                          _model.datePicked6 =
+                                              getCurrentTimestamp;
                                         });
                                       }
                                     },
                                     text: 'Fecha',
                                     options: FFButtonOptions(
                                       height: 40.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).primary,
@@ -1677,7 +1707,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                             letterSpacing: 0.0,
                                           ),
                                       elevation: 3.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -1689,7 +1719,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController9,
@@ -1751,7 +1781,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                   .asValidator(context),
                             ),
                           ),
-                        ].divide(const SizedBox(height: 8.0)),
+                        ].divide(SizedBox(height: 8.0)),
                       ),
                       ListView(
                         padding: EdgeInsets.zero,
@@ -1763,21 +1793,21 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 8.0, 0.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {},
                                   text: 'Guardar',
-                                  icon: const Icon(
+                                  icon: Icon(
                                     Icons.save,
                                     size: 15.0,
                                   ),
                                   options: FFButtonOptions(
                                     width: 250.0,
                                     height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).success,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -1788,7 +1818,7 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 2.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -1802,8 +1832,8 @@ class _Formulario8WidgetState extends State<Formulario8Widget> {
                         ],
                       ),
                     ]
-                        .divide(const SizedBox(height: 8.0))
-                        .around(const SizedBox(height: 8.0)),
+                        .divide(SizedBox(height: 8.0))
+                        .around(SizedBox(height: 8.0)),
                   ),
                 ),
               ),

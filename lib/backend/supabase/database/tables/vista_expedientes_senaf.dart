@@ -11,7 +11,7 @@ class VistaExpedientesSenafTable
 }
 
 class VistaExpedientesSenafRow extends SupabaseDataRow {
-  VistaExpedientesSenafRow(super.data);
+  VistaExpedientesSenafRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => VistaExpedientesSenafTable();

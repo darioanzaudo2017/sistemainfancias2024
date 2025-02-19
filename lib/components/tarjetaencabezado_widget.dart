@@ -56,13 +56,13 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(-1.0, 0.0),
+      alignment: AlignmentDirectional(-1.0, 0.0),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(8.0),
         child: Material(
           color: Colors.transparent,
           elevation: 5.0,
-          shape: const RoundedRectangleBorder(
+          shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(12.0),
               bottomRight: Radius.circular(12.0),
@@ -71,7 +71,7 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
             ),
           ),
           child: Container(
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               color: Color(0xFF39A9EF),
               boxShadow: [
                 BoxShadow(
@@ -91,15 +91,15 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
               ),
             ),
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Align(
-                    alignment: const AlignmentDirectional(0.0, -1.0),
+                    alignment: AlignmentDirectional(0.0, -1.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
+                          EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
                       child: Flex(
                         direction: (MediaQuery.sizeOf(context).width > 800.0)
                             ? Axis.horizontal
@@ -109,9 +109,9 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
                         children: [
                           Expanded(
                             child: Align(
-                              alignment: const AlignmentDirectional(0.0, -1.0),
+                              alignment: AlignmentDirectional(0.0, -1.0),
                               child: Padding(
-                                padding: const EdgeInsets.all(12.0),
+                                padding: EdgeInsets.all(12.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -130,7 +130,7 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
                                           ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
                                       child: Text(
                                         'DNI: ${valueOrDefault<String>(
@@ -157,7 +157,7 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
                                             'Expediente: ${widget.exprow?.expediente}',
@@ -182,7 +182,7 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
                                             'SPD: ${widget.exprow?.spd}',
@@ -207,7 +207,7 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
                                             'Edad: ${widget.exprow?.edad?.toString()}',
@@ -227,7 +227,7 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
                                         ),
                                       ],
                                     ),
-                                  ].divide(const SizedBox(height: 5.0)),
+                                  ].divide(SizedBox(height: 5.0)),
                                 ),
                               ),
                             ),
@@ -243,11 +243,11 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
                             child: Container(
                               width: 280.0,
                               height: 250.0,
-                              decoration: const BoxDecoration(),
+                              decoration: BoxDecoration(),
                               child: Align(
-                                alignment: const AlignmentDirectional(0.0, -1.0),
+                                alignment: AlignmentDirectional(0.0, -1.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 5.0, 0.0, 5.0),
                                   child:
                                       FutureBuilder<List<VistaNnyaexpgruRow>>(
@@ -291,13 +291,13 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
                                                   listViewIndex];
                                           return Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 0.0, 10.0, 5.0),
                                             child: Container(
                                               width: double.infinity,
                                               decoration: BoxDecoration(
                                                 color: Colors.white,
-                                                boxShadow: const [
+                                                boxShadow: [
                                                   BoxShadow(
                                                     blurRadius: 7.0,
                                                     color: Color(0x2F1D2429),
@@ -311,7 +311,7 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
                                                     BorderRadius.circular(8.0),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 5.0, 12.0, 5.0),
                                                 child: Flex(
@@ -327,7 +327,7 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
                                                     Expanded(
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     12.0,
                                                                     0.0,
@@ -356,7 +356,7 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
                                                                   .override(
                                                                     fontFamily:
                                                                         'Plus Jakarta Sans',
-                                                                    color: const Color(
+                                                                    color: Color(
                                                                         0xFF14181B),
                                                                     fontSize:
                                                                         12.0,
@@ -380,7 +380,7 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
                                                                   .override(
                                                                     fontFamily:
                                                                         'Plus Jakarta Sans',
-                                                                    color: const Color(
+                                                                    color: Color(
                                                                         0xFF14181B),
                                                                     fontSize:
                                                                         10.0,
@@ -446,7 +446,7 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
                                                                       .override(
                                                                         fontFamily:
                                                                             'Plus Jakarta Sans',
-                                                                        color: const Color(
+                                                                        color: Color(
                                                                             0xFF14181B),
                                                                         fontSize:
                                                                             10.0,
@@ -471,7 +471,7 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
                                                       child:
                                                           FlutterFlowIconButton(
                                                         borderColor:
-                                                            const Color(0xFFE0E3E7),
+                                                            Color(0xFFE0E3E7),
                                                         borderRadius: 8.0,
                                                         borderWidth: 2.0,
                                                         buttonSize: 40.0,
@@ -479,7 +479,7 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .secondary,
-                                                        icon: const Icon(
+                                                        icon: Icon(
                                                           Icons.navigate_next,
                                                           color:
                                                               Color(0xFF57636C),
@@ -541,8 +541,8 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
                             ),
                           ),
                         ].divide((MediaQuery.sizeOf(context).width > 800.0)
-                            ? const SizedBox(width: 10.0)
-                            : const SizedBox(height: 10.0)),
+                            ? SizedBox(width: 10.0)
+                            : SizedBox(height: 10.0)),
                       ),
                     ),
                   ),
