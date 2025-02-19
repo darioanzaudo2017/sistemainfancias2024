@@ -51,7 +51,7 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Material(
         color: Colors.transparent,
         elevation: 2.0,
@@ -68,14 +68,14 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
               color: FlutterFlowTheme.of(context).primary,
             ),
           ),
-          alignment: const AlignmentDirectional(0.0, 0.0),
+          alignment: AlignmentDirectional(0.0, 0.0),
           child: Form(
             key: _model.formKey,
             autovalidateMode: AutovalidateMode.disabled,
             child: Align(
-              alignment: const AlignmentDirectional(0.0, -1.0),
+              alignment: AlignmentDirectional(0.0, -1.0),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -86,9 +86,9 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Align(
-                            alignment: const AlignmentDirectional(0.0, -1.0),
+                            alignment: AlignmentDirectional(0.0, -1.0),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 '8. Ampliar información de personas relacionadas',
@@ -105,7 +105,7 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(1.0, 0.0),
+                            alignment: AlignmentDirectional(1.0, 0.0),
                             child: FlutterFlowIconButton(
                               borderColor: Colors.transparent,
                               borderRadius: 20.0,
@@ -117,7 +117,7 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
                                 size: 24.0,
                               ),
                               onPressed: () async {
-                                Navigator.pop(context);
+                                Navigator.pop(context, true);
                               },
                             ),
                           ),
@@ -368,16 +368,16 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
                           ).then((value) => safeSetState(() {}));
                         },
                         text: 'Ampliar información',
-                        icon: const Icon(
+                        icon: Icon(
                           Icons.add_box,
                           size: 15.0,
                         ),
                         options: FFButtonOptions(
                           width: 250.0,
                           height: 40.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
@@ -387,7 +387,7 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
                                     letterSpacing: 0.0,
                                   ),
                           elevation: 3.0,
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
@@ -426,33 +426,33 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
                                     builder: (alertDialogContext) {
                                       return WebViewAware(
                                         child: AlertDialog(
-                                          title: const Text('Carga correcta'),
-                                          content: const Text(
+                                          title: Text('Carga correcta'),
+                                          content: Text(
                                               'La informacion se guardo correctamente!!'),
                                           actions: [
                                             TextButton(
                                               onPressed: () => Navigator.pop(
                                                   alertDialogContext),
-                                              child: const Text('Ok'),
+                                              child: Text('Ok'),
                                             ),
                                           ],
                                         ),
                                       );
                                     },
                                   );
-                                  Navigator.pop(context);
+                                  Navigator.pop(context, true);
                                 },
                                 text: 'Guardar',
-                                icon: const Icon(
+                                icon: Icon(
                                   Icons.chevron_left_outlined,
                                   size: 15.0,
                                 ),
                                 options: FFButtonOptions(
                                   width: 250.0,
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).success,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -463,7 +463,7 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 2.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -476,8 +476,8 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
                         ],
                       ),
                     ]
-                        .divide(const SizedBox(height: 8.0))
-                        .around(const SizedBox(height: 8.0)),
+                        .divide(SizedBox(height: 8.0))
+                        .around(SizedBox(height: 8.0)),
                   ),
                 ),
               ),

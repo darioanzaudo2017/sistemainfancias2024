@@ -9,7 +9,7 @@ class Seccion8Table extends SupabaseTable<Seccion8Row> {
 }
 
 class Seccion8Row extends SupabaseDataRow {
-  Seccion8Row(super.data);
+  Seccion8Row(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => Seccion8Table();

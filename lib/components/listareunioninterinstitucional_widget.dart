@@ -59,7 +59,7 @@ class _ListareunioninterinstitucionalWidgetState
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<Anexo4RequerimientoaccionesRow>>(
         future: (_model.requestCompleter ??=
                 Completer<List<Anexo4RequerimientoaccionesRow>>()
@@ -91,7 +91,7 @@ class _ListareunioninterinstitucionalWidgetState
           return Material(
             color: Colors.transparent,
             elevation: 5.0,
-            shape: const RoundedRectangleBorder(
+            shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(0.0),
                 bottomRight: Radius.circular(0.0),
@@ -103,7 +103,7 @@ class _ListareunioninterinstitucionalWidgetState
               width: MediaQuery.sizeOf(context).width * 0.6,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
-                borderRadius: const BorderRadius.only(
+                borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(0.0),
                   bottomRight: Radius.circular(0.0),
                   topLeft: Radius.circular(16.0),
@@ -111,13 +111,13 @@ class _ListareunioninterinstitucionalWidgetState
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: EdgeInsets.all(10.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                       child: Container(
                         width: 50.0,
                         height: 4.0,
@@ -128,7 +128,7 @@ class _ListareunioninterinstitucionalWidgetState
                       ),
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(1.0, -1.0),
+                      alignment: AlignmentDirectional(1.0, -1.0),
                       child: FlutterFlowIconButton(
                         borderRadius: 8.0,
                         buttonSize: 40.0,
@@ -144,7 +144,7 @@ class _ListareunioninterinstitucionalWidgetState
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -161,7 +161,7 @@ class _ListareunioninterinstitucionalWidgetState
                       ),
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(1.0, 0.0),
+                      alignment: AlignmentDirectional(1.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           await showModalBottomSheet(
@@ -196,9 +196,9 @@ class _ListareunioninterinstitucionalWidgetState
                         text: 'Agregar',
                         options: FFButtonOptions(
                           height: 40.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
@@ -214,7 +214,7 @@ class _ListareunioninterinstitucionalWidgetState
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 32.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 32.0),
                       child: Builder(
                         builder: (context) {
                           final optionsVar =
@@ -231,7 +231,7 @@ class _ListareunioninterinstitucionalWidgetState
                               final optionsVarItem =
                                   optionsVar[optionsVarIndex];
                               return Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 12.0, 16.0, 0.0),
                                 child: Container(
                                   width: double.infinity,
@@ -246,7 +246,7 @@ class _ListareunioninterinstitucionalWidgetState
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 12.0, 8.0, 12.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -316,11 +316,11 @@ class _ListareunioninterinstitucionalWidgetState
                                                   options: FFButtonOptions(
                                                     height: 40.0,
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
                                                                 16.0, 0.0),
                                                     iconPadding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
@@ -367,7 +367,7 @@ class _ListareunioninterinstitucionalWidgetState
                                                               .linkdoc!);
                                                     },
                                                   ),
-                                              ].divide(const SizedBox(width: 10.0)),
+                                              ].divide(SizedBox(width: 10.0)),
                                             ),
                                           ],
                                         ),
@@ -406,7 +406,7 @@ class _ListareunioninterinstitucionalWidgetState
                                             ).then(
                                                 (value) => safeSetState(() {}));
                                           },
-                                          child: const Icon(
+                                          child: Icon(
                                             Icons.chevron_right_rounded,
                                             color: Color(0xFF7C8791),
                                             size: 24.0,

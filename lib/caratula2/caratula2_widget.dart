@@ -91,7 +91,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -109,7 +109,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -120,7 +120,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Align(
-                  alignment: const AlignmentDirectional(0.0, -1.0),
+                  alignment: AlignmentDirectional(0.0, -1.0),
                   child: Material(
                     color: Colors.transparent,
                     elevation: 2.0,
@@ -129,7 +129,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                     ),
                     child: Container(
                       width: MediaQuery.sizeOf(context).width * 1.0,
-                      constraints: const BoxConstraints(
+                      constraints: BoxConstraints(
                         maxWidth: 600.0,
                       ),
                       decoration: BoxDecoration(
@@ -139,11 +139,11 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                           color: FlutterFlowTheme.of(context).primary,
                         ),
                       ),
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Align(
-                        alignment: const AlignmentDirectional(0.0, -1.0),
+                        alignment: AlignmentDirectional(0.0, -1.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               5.0, 0.0, 5.0, 0.0),
                           child: SingleChildScrollView(
                             child: Column(
@@ -156,9 +156,9 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             180.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           'Formulario caratula',
@@ -193,11 +193,11 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                   ],
                                 ),
                                 Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Container(
                                     width: 600.0,
-                                    decoration: const BoxDecoration(),
-                                    child: SizedBox(
+                                    decoration: BoxDecoration(),
+                                    child: Container(
                                       width: MediaQuery.sizeOf(context).width *
                                           1.0,
                                       child: Form(
@@ -221,7 +221,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                   ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 0.0, 8.0, 0.0),
                                               child: TextFormField(
                                                 controller: _model
@@ -319,7 +319,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 0.0, 8.0, 0.0),
                                               child: TextFormField(
                                                 controller: _model
@@ -417,7 +417,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 0.0, 8.0, 0.0),
                                               child: TextFormField(
                                                 controller: _model
@@ -427,7 +427,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                 onChanged: (_) =>
                                                     EasyDebounce.debounce(
                                                   '_model.textFieldDNITextController',
-                                                  const Duration(milliseconds: 2000),
+                                                  Duration(milliseconds: 2000),
                                                   () => safeSetState(() {}),
                                                 ),
                                                 autofocus: true,
@@ -525,7 +525,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 0.0, 8.0, 0.0),
                                               child: TextFormField(
                                                 controller: _model
@@ -535,7 +535,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                 onChanged: (_) =>
                                                     EasyDebounce.debounce(
                                                   '_model.textFieldedadTextController',
-                                                  const Duration(milliseconds: 2000),
+                                                  Duration(milliseconds: 2000),
                                                   () => safeSetState(() {}),
                                                 ),
                                                 autofocus: true,
@@ -636,7 +636,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 0.0, 8.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -667,7 +667,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                   ),
                                                   FFButtonWidget(
                                                     onPressed: () async {
-                                                      final datePicked1Date =
+                                                      final _datePicked1Date =
                                                           await showDatePicker(
                                                         context: context,
                                                         initialDate:
@@ -729,18 +729,25 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                         },
                                                       );
 
-                                                      if (datePicked1Date !=
+                                                      if (_datePicked1Date !=
                                                           null) {
                                                         safeSetState(() {
                                                           _model.datePicked1 =
                                                               DateTime(
-                                                            datePicked1Date
+                                                            _datePicked1Date
                                                                 .year,
-                                                            datePicked1Date
+                                                            _datePicked1Date
                                                                 .month,
-                                                            datePicked1Date
+                                                            _datePicked1Date
                                                                 .day,
                                                           );
+                                                        });
+                                                      } else if (_model
+                                                              .datePicked1 !=
+                                                          null) {
+                                                        safeSetState(() {
+                                                          _model.datePicked1 =
+                                                              getCurrentTimestamp;
                                                         });
                                                       }
                                                     },
@@ -748,14 +755,14 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                     options: FFButtonOptions(
                                                       height: 40.0,
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   24.0,
                                                                   0.0,
                                                                   24.0,
                                                                   0.0),
                                                       iconPadding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -778,7 +785,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                                     0.0,
                                                               ),
                                                       elevation: 3.0,
-                                                      borderSide: const BorderSide(
+                                                      borderSide: BorderSide(
                                                         color:
                                                             Colors.transparent,
                                                         width: 1.0,
@@ -792,7 +799,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                               ),
                                             ),
                                             Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   1.0, 0.0),
                                               child: FFButtonWidget(
                                                 onPressed: () async {
@@ -824,9 +831,9 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                           (alertDialogContext) {
                                                         return WebViewAware(
                                                           child: AlertDialog(
-                                                            title: const Text(
+                                                            title: Text(
                                                                 'El dni esta duplicado'),
-                                                            content: const Text(
+                                                            content: Text(
                                                                 'El dni esta duplicado'),
                                                             actions: [
                                                               TextButton(
@@ -834,7 +841,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                                     Navigator.pop(
                                                                         alertDialogContext),
                                                                 child:
-                                                                    const Text('Ok'),
+                                                                    Text('Ok'),
                                                               ),
                                                             ],
                                                           ),
@@ -1021,16 +1028,16 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                             (alertDialogContext) {
                                                           return WebViewAware(
                                                             child: AlertDialog(
-                                                              title: const Text(
+                                                              title: Text(
                                                                   'El NNyA no tiene expediente'),
-                                                              content: const Text(
+                                                              content: Text(
                                                                   'Continuamos con la carga!!'),
                                                               actions: [
                                                                 TextButton(
                                                                   onPressed: () =>
                                                                       Navigator.pop(
                                                                           alertDialogContext),
-                                                                  child: const Text(
+                                                                  child: Text(
                                                                       'Ok'),
                                                                 ),
                                                               ],
@@ -1154,16 +1161,16 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                             (alertDialogContext) {
                                                           return WebViewAware(
                                                             child: AlertDialog(
-                                                              title: const Text(
+                                                              title: Text(
                                                                   'El NNyA no tiene expediente'),
-                                                              content: const Text(
+                                                              content: Text(
                                                                   'Continuamos con la carga!!'),
                                                               actions: [
                                                                 TextButton(
                                                                   onPressed: () =>
                                                                       Navigator.pop(
                                                                           alertDialogContext),
-                                                                  child: const Text(
+                                                                  child: Text(
                                                                       'Ok'),
                                                                 ),
                                                               ],
@@ -1183,11 +1190,11 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                 text: 'verificar NNyA ',
                                                 options: FFButtonOptions(
                                                   height: 40.0,
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           24.0, 0.0, 24.0, 0.0),
                                                   iconPadding:
-                                                      const EdgeInsetsDirectional
+                                                      EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
@@ -1204,7 +1211,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                             letterSpacing: 0.0,
                                                           ),
                                                   elevation: 3.0,
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                     color: Colors.transparent,
                                                     width: 1.0,
                                                   ),
@@ -1214,7 +1221,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                 ),
                                               ),
                                             ),
-                                          ].divide(const SizedBox(height: 10.0)),
+                                          ].divide(SizedBox(height: 10.0)),
                                         ),
                                       ),
                                     ),
@@ -1223,7 +1230,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                 if (_model.dniok)
                                   Container(
                                     width: 600.0,
-                                    decoration: const BoxDecoration(),
+                                    decoration: BoxDecoration(),
                                     child: Form(
                                       key: _model.formKey1,
                                       autovalidateMode: AutovalidateMode.always,
@@ -1233,13 +1240,13 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Container(
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           1.0, -1.0),
                                                   child: FFButtonWidget(
                                                     onPressed: () async {
@@ -1303,14 +1310,14 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                     options: FFButtonOptions(
                                                       height: 40.0,
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   24.0,
                                                                   0.0,
                                                                   24.0,
                                                                   0.0),
                                                       iconPadding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -1333,7 +1340,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                                     0.0,
                                                               ),
                                                       elevation: 3.0,
-                                                      borderSide: const BorderSide(
+                                                      borderSide: BorderSide(
                                                         color:
                                                             Colors.transparent,
                                                         width: 1.0,
@@ -1463,7 +1470,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                                             true,
                                                                         child:
                                                                             Align(
-                                                                          alignment: const AlignmentDirectional(
+                                                                          alignment: AlignmentDirectional(
                                                                               0.0,
                                                                               0.0),
                                                                           child:
@@ -1530,7 +1537,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                                                 'Si',
                                                                         child:
                                                                             Align(
-                                                                          alignment: const AlignmentDirectional(
+                                                                          alignment: AlignmentDirectional(
                                                                               0.0,
                                                                               0.0),
                                                                           child:
@@ -1546,7 +1553,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                                             ),
                                                                             child:
                                                                                 Align(
-                                                                              alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                              alignment: AlignmentDirectional(0.0, 0.0),
                                                                               child: Text(
                                                                                 valueOrDefault<String>(
                                                                                   listadederchosItem.principal,
@@ -1606,18 +1613,18 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                               },
                                                             ),
                                                           ),
-                                                        ].divide(const SizedBox(
+                                                        ].divide(SizedBox(
                                                             height: 10.0)),
                                                       ),
                                                     );
                                                   },
                                                 ),
-                                              ].divide(const SizedBox(height: 10.0)),
+                                              ].divide(SizedBox(height: 10.0)),
                                             ),
                                           ),
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Text(
                                               'Información de expediente',
                                               style: FlutterFlowTheme.of(
@@ -1718,7 +1725,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                         .secondaryText,
                                                 borderWidth: 0.0,
                                                 borderRadius: 8.0,
-                                                margin: const EdgeInsetsDirectional
+                                                margin: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 0.0, 12.0, 0.0),
                                                 hidesUnderline: true,
@@ -1732,7 +1739,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 8.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -1764,7 +1771,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                 ),
                                                 FFButtonWidget(
                                                   onPressed: () async {
-                                                    final datePicked2Date =
+                                                    final _datePicked2Date =
                                                         await showDatePicker(
                                                       context: context,
                                                       initialDate:
@@ -1824,16 +1831,23 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                       },
                                                     );
 
-                                                    if (datePicked2Date !=
+                                                    if (_datePicked2Date !=
                                                         null) {
                                                       safeSetState(() {
                                                         _model.datePicked2 =
                                                             DateTime(
-                                                          datePicked2Date.year,
-                                                          datePicked2Date
+                                                          _datePicked2Date.year,
+                                                          _datePicked2Date
                                                               .month,
-                                                          datePicked2Date.day,
+                                                          _datePicked2Date.day,
                                                         );
+                                                      });
+                                                    } else if (_model
+                                                            .datePicked2 !=
+                                                        null) {
+                                                      safeSetState(() {
+                                                        _model.datePicked2 =
+                                                            getCurrentTimestamp;
                                                       });
                                                     }
                                                   },
@@ -1841,11 +1855,11 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                   options: FFButtonOptions(
                                                     height: 40.0,
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(24.0, 0.0,
                                                                 24.0, 0.0),
                                                     iconPadding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
@@ -1861,7 +1875,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                     elevation: 3.0,
-                                                    borderSide: const BorderSide(
+                                                    borderSide: BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1.0,
                                                     ),
@@ -1875,14 +1889,14 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 0.0, 0.0),
                                             child: FlutterFlowDropDown<String>(
                                               controller: _model
                                                       .dropDowncanaldeingresoValueController ??=
                                                   FormFieldController<String>(
                                                       null),
-                                              options: const [
+                                              options: [
                                                 'Demanda espontanea',
                                                 'Oficio Judicial',
                                                 'Derivación de otra Institución/Organismo/Servicio'
@@ -1919,7 +1933,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                       .alternate,
                                               borderWidth: 2.0,
                                               borderRadius: 8.0,
-                                              margin: const EdgeInsetsDirectional
+                                              margin: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 4.0, 16.0, 4.0),
                                               hidesUnderline: true,
@@ -1941,7 +1955,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 0.0, 8.0, 0.0),
                                                 child: TextFormField(
@@ -2039,7 +2053,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 0.0, 8.0, 0.0),
                                                 child: TextFormField(
@@ -2135,7 +2149,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 0.0, 8.0, 0.0),
                                                 child: TextFormField(
@@ -2231,8 +2245,8 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                 ),
                                               ),
                                             ]
-                                                .divide(const SizedBox(height: 10.0))
-                                                .around(const SizedBox(height: 10.0)),
+                                                .divide(SizedBox(height: 10.0))
+                                                .around(SizedBox(height: 10.0)),
                                           ),
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -2251,7 +2265,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                   }
                                                   if (_model.datePicked2 ==
                                                       null) {
-                                                    final datePicked2Date =
+                                                    final _datePicked2Date =
                                                         await showDatePicker(
                                                       context: context,
                                                       initialDate:
@@ -2312,16 +2326,23 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                       },
                                                     );
 
-                                                    if (datePicked2Date !=
+                                                    if (_datePicked2Date !=
                                                         null) {
                                                       safeSetState(() {
                                                         _model.datePicked2 =
                                                             DateTime(
-                                                          datePicked2Date.year,
-                                                          datePicked2Date
+                                                          _datePicked2Date.year,
+                                                          _datePicked2Date
                                                               .month,
-                                                          datePicked2Date.day,
+                                                          _datePicked2Date.day,
                                                         );
+                                                      });
+                                                    } else if (_model
+                                                            .datePicked2 !=
+                                                        null) {
+                                                      safeSetState(() {
+                                                        _model.datePicked2 =
+                                                            getCurrentTimestamp;
                                                       });
                                                     }
                                                     return;
@@ -2335,9 +2356,9 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                           (alertDialogContext) {
                                                         return WebViewAware(
                                                           child: AlertDialog(
-                                                            title: const Text(
+                                                            title: Text(
                                                                 'Campo obligatorio'),
-                                                            content: const Text(
+                                                            content: Text(
                                                                 'El Canal de Ingreso de la demanda es obligatorio!!'),
                                                             actions: [
                                                               TextButton(
@@ -2345,7 +2366,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                                     Navigator.pop(
                                                                         alertDialogContext),
                                                                 child:
-                                                                    const Text('Ok'),
+                                                                    Text('Ok'),
                                                               ),
                                                             ],
                                                           ),
@@ -2411,16 +2432,16 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                         (alertDialogContext) {
                                                       return WebViewAware(
                                                         child: AlertDialog(
-                                                          title: const Text(
+                                                          title: Text(
                                                               'Expediente Creado'),
-                                                          content: const Text(
+                                                          content: Text(
                                                               'Se creo correctamente el expediente!'),
                                                           actions: [
                                                             TextButton(
                                                               onPressed: () =>
                                                                   Navigator.pop(
                                                                       alertDialogContext),
-                                                              child: const Text('Ok'),
+                                                              child: Text('Ok'),
                                                             ),
                                                           ],
                                                         ),
@@ -2481,18 +2502,18 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                   safeSetState(() {});
                                                 },
                                                 text: 'Guardar',
-                                                icon: const Icon(
+                                                icon: Icon(
                                                   Icons.save,
                                                   size: 15.0,
                                                 ),
                                                 options: FFButtonOptions(
                                                   width: 250.0,
                                                   height: 40.0,
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           24.0, 0.0, 24.0, 0.0),
                                                   iconPadding:
-                                                      const EdgeInsetsDirectional
+                                                      EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
@@ -2509,7 +2530,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                             letterSpacing: 0.0,
                                                           ),
                                                   elevation: 2.0,
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                     color: Colors.transparent,
                                                     width: 1.0,
                                                   ),
@@ -2521,13 +2542,13 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                               ),
                                             ],
                                           ),
-                                        ].divide(const SizedBox(height: 10.0)),
+                                        ].divide(SizedBox(height: 10.0)),
                                       ),
                                     ),
                                   ),
                               ]
-                                  .divide(const SizedBox(height: 8.0))
-                                  .around(const SizedBox(height: 8.0)),
+                                  .divide(SizedBox(height: 8.0))
+                                  .around(SizedBox(height: 8.0)),
                             ),
                           ),
                         ),

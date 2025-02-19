@@ -9,7 +9,7 @@ class NNyATable extends SupabaseTable<NNyARow> {
 }
 
 class NNyARow extends SupabaseDataRow {
-  NNyARow(super.data);
+  NNyARow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => NNyATable();

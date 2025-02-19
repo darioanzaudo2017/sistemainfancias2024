@@ -58,7 +58,7 @@ class _Formulario6reiteracionWidgetState
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<ResuestasForm6Row>>(
         future:
             (_model.requestCompleter ??= Completer<List<ResuestasForm6Row>>()
@@ -104,7 +104,7 @@ class _Formulario6reiteracionWidgetState
                 color: valueOrDefault<Color>(
                   containerResuestasForm6Row?.fechareiteracion == null
                       ? FlutterFlowTheme.of(context).secondaryBackground
-                      : const Color(0xFF6CD239),
+                      : Color(0xFF6CD239),
                   FlutterFlowTheme.of(context).secondaryBackground,
                 ),
                 borderRadius: BorderRadius.circular(20.0),
@@ -113,14 +113,14 @@ class _Formulario6reiteracionWidgetState
                   color: FlutterFlowTheme.of(context).primary,
                 ),
               ),
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Form(
                 key: _model.formKey,
                 autovalidateMode: AutovalidateMode.disabled,
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, -1.0),
+                  alignment: AlignmentDirectional(0.0, -1.0),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
@@ -129,17 +129,17 @@ class _Formulario6reiteracionWidgetState
                         children: [
                           Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
-                            constraints: const BoxConstraints(
+                            constraints: BoxConstraints(
                               maxWidth: 600.0,
                             ),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20.0),
                             ),
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Align(
-                              alignment: const AlignmentDirectional(0.0, -1.0),
+                              alignment: AlignmentDirectional(0.0, -1.0),
                               child: Padding(
-                                padding: const EdgeInsets.all(5.0),
+                                padding: EdgeInsets.all(5.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -148,9 +148,9 @@ class _Formulario6reiteracionWidgetState
                                       width: MediaQuery.sizeOf(context).width *
                                           1.0,
                                       height: 50.0,
-                                      decoration: const BoxDecoration(),
+                                      decoration: BoxDecoration(),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           'Reiteración de solicitud a organismo/institución a quien se solicitó una medida de protección',
@@ -165,7 +165,7 @@ class _Formulario6reiteracionWidgetState
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 8.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -174,9 +174,9 @@ class _Formulario6reiteracionWidgetState
                                         children: [
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(-1.0, 0.0),
+                                                AlignmentDirectional(-1.0, 0.0),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -194,7 +194,7 @@ class _Formulario6reiteracionWidgetState
                                           ),
                                           Expanded(
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       17.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -222,11 +222,11 @@ class _Formulario6reiteracionWidgetState
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 20.0, 0.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
-                                                final datePicked1Date =
+                                                final _datePicked1Date =
                                                     await showDatePicker(
                                                   context: context,
                                                   initialDate:
@@ -284,14 +284,20 @@ class _Formulario6reiteracionWidgetState
                                                   },
                                                 );
 
-                                                if (datePicked1Date != null) {
+                                                if (_datePicked1Date != null) {
                                                   safeSetState(() {
                                                     _model.datePicked1 =
                                                         DateTime(
-                                                      datePicked1Date.year,
-                                                      datePicked1Date.month,
-                                                      datePicked1Date.day,
+                                                      _datePicked1Date.year,
+                                                      _datePicked1Date.month,
+                                                      _datePicked1Date.day,
                                                     );
+                                                  });
+                                                } else if (_model.datePicked1 !=
+                                                    null) {
+                                                  safeSetState(() {
+                                                    _model.datePicked1 =
+                                                        getCurrentTimestamp;
                                                   });
                                                 }
                                               },
@@ -308,11 +314,11 @@ class _Formulario6reiteracionWidgetState
                                               ),
                                               options: FFButtonOptions(
                                                 height: 40.0,
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         24.0, 0.0, 24.0, 0.0),
                                                 iconPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -328,7 +334,7 @@ class _Formulario6reiteracionWidgetState
                                                           letterSpacing: 0.0,
                                                         ),
                                                 elevation: 3.0,
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),
@@ -341,7 +347,7 @@ class _Formulario6reiteracionWidgetState
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 8.0, 0.0),
                                       child: FlutterFlowDropDown<String>(
                                         controller:
@@ -354,7 +360,7 @@ class _Formulario6reiteracionWidgetState
                                             'Otorga otro recurso',
                                           ),
                                         ),
-                                        options: const [
+                                        options: [
                                           'Otorga recurso solicitado',
                                           'No otorga recurso solicitado',
                                           'Otorga otro recurso'
@@ -382,7 +388,7 @@ class _Formulario6reiteracionWidgetState
                                                 .alternate,
                                         borderWidth: 2.0,
                                         borderRadius: 10.0,
-                                        margin: const EdgeInsetsDirectional.fromSTEB(
+                                        margin: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 4.0, 16.0, 4.0),
                                         hidesUnderline: true,
                                         isOverButton: true,
@@ -391,7 +397,7 @@ class _Formulario6reiteracionWidgetState
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 8.0, 0.0),
                                       child: TextFormField(
                                         controller: _model.textController ??=
@@ -475,7 +481,7 @@ class _Formulario6reiteracionWidgetState
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 8.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -484,9 +490,9 @@ class _Formulario6reiteracionWidgetState
                                         children: [
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(-1.0, 0.0),
+                                                AlignmentDirectional(-1.0, 0.0),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -504,7 +510,7 @@ class _Formulario6reiteracionWidgetState
                                           ),
                                           Expanded(
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       17.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -532,11 +538,11 @@ class _Formulario6reiteracionWidgetState
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 20.0, 0.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
-                                                final datePicked2Date =
+                                                final _datePicked2Date =
                                                     await showDatePicker(
                                                   context: context,
                                                   initialDate:
@@ -594,14 +600,20 @@ class _Formulario6reiteracionWidgetState
                                                   },
                                                 );
 
-                                                if (datePicked2Date != null) {
+                                                if (_datePicked2Date != null) {
                                                   safeSetState(() {
                                                     _model.datePicked2 =
                                                         DateTime(
-                                                      datePicked2Date.year,
-                                                      datePicked2Date.month,
-                                                      datePicked2Date.day,
+                                                      _datePicked2Date.year,
+                                                      _datePicked2Date.month,
+                                                      _datePicked2Date.day,
                                                     );
+                                                  });
+                                                } else if (_model.datePicked2 !=
+                                                    null) {
+                                                  safeSetState(() {
+                                                    _model.datePicked2 =
+                                                        getCurrentTimestamp;
                                                   });
                                                 }
                                               },
@@ -618,11 +630,11 @@ class _Formulario6reiteracionWidgetState
                                               ),
                                               options: FFButtonOptions(
                                                 height: 40.0,
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         24.0, 0.0, 24.0, 0.0),
                                                 iconPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -638,7 +650,7 @@ class _Formulario6reiteracionWidgetState
                                                           letterSpacing: 0.0,
                                                         ),
                                                 elevation: 3.0,
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),
@@ -650,7 +662,7 @@ class _Formulario6reiteracionWidgetState
                                         ],
                                       ),
                                     ),
-                                  ].divide(const SizedBox(height: 8.0)),
+                                  ].divide(SizedBox(height: 8.0)),
                                 ),
                               ),
                             ),
@@ -665,7 +677,7 @@ class _Formulario6reiteracionWidgetState
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 8.0, 0.0, 0.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
@@ -692,17 +704,17 @@ class _Formulario6reiteracionWidgetState
                                         await _model.waitForRequestCompleted();
                                       },
                                       text: 'Guardar',
-                                      icon: const Icon(
+                                      icon: Icon(
                                         Icons.save,
                                         size: 15.0,
                                       ),
                                       options: FFButtonOptions(
                                         width: 250.0,
                                         height: 40.0,
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             24.0, 0.0, 24.0, 0.0),
                                         iconPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .success,
@@ -714,7 +726,7 @@ class _Formulario6reiteracionWidgetState
                                               letterSpacing: 0.0,
                                             ),
                                         elevation: 2.0,
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Colors.transparent,
                                           width: 1.0,
                                         ),
@@ -729,8 +741,8 @@ class _Formulario6reiteracionWidgetState
                             ],
                           ),
                         ]
-                            .divide(const SizedBox(height: 8.0))
-                            .around(const SizedBox(height: 8.0)),
+                            .divide(SizedBox(height: 8.0))
+                            .around(SizedBox(height: 8.0)),
                       ),
                     ),
                   ),

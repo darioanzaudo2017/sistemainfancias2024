@@ -9,7 +9,7 @@ class SpdTable extends SupabaseTable<SpdRow> {
 }
 
 class SpdRow extends SupabaseDataRow {
-  SpdRow(super.data);
+  SpdRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => SpdTable();

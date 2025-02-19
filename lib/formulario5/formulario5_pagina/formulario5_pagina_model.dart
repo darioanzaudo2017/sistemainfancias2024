@@ -50,10 +50,13 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
   // State field(s) for PaginatedDataTable widget.
   final paginatedDataTableController =
       FlutterFlowDataTableController<ListaDerechosVulneradosexpedienteRow>();
-  // State field(s) for Checkbox widget.
-  Map<ListaDerechosVulneradosexpedienteRow, bool> checkboxValueMap = {};
-  List<ListaDerechosVulneradosexpedienteRow> get checkboxCheckedItems =>
-      checkboxValueMap.entries.where((e) => e.value).map((e) => e.key).toList();
+  // State field(s) for Checkboxderecho widget.
+  Map<ListaDerechosVulneradosexpedienteRow, bool> checkboxderechoValueMap = {};
+  List<ListaDerechosVulneradosexpedienteRow> get checkboxderechoCheckedItems =>
+      checkboxderechoValueMap.entries
+          .where((e) => e.value)
+          .map((e) => e.key)
+          .toList();
 
   // State field(s) for TextFieldinddevulneracion widget.
   FocusNode? textFieldinddevulneracionFocusNode;
@@ -185,7 +188,7 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
   }) async {
     final stopwatch = Stopwatch()..start();
     while (true) {
-      await Future.delayed(const Duration(milliseconds: 50));
+      await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
       final requestComplete = requestCompleter?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {

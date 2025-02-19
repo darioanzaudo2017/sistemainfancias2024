@@ -54,7 +54,7 @@ class _PruebarlsWidgetState extends State<PruebarlsWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -69,7 +69,7 @@ class _PruebarlsWidgetState extends State<PruebarlsWidget> {
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
-                child: const SizedBox(
+                child: Container(
                   width: 250.0,
                   height: 500.0,
                   child: custom_widgets.CustomTimeline(

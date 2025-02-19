@@ -108,7 +108,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<Formulario2Row>>(
         future: Formulario2Table().querySingleRow(
           queryFn: (q) => q.eqOrNull(
@@ -153,12 +153,12 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                   color: FlutterFlowTheme.of(context).primary,
                 ),
               ),
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Form(
                 key: _model.formKey,
                 autovalidateMode: AutovalidateMode.disabled,
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -166,7 +166,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Align(
-                          alignment: const AlignmentDirectional(1.0, -1.0),
+                          alignment: AlignmentDirectional(1.0, -1.0),
                           child: FlutterFlowIconButton(
                             borderColor: Colors.transparent,
                             borderRadius: 20.0,
@@ -183,13 +183,13 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
                             child: Container(
                               height: 190.2,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 color: Color(0xFF39A9EF),
                                 boxShadow: [
                                   BoxShadow(
@@ -209,7 +209,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 16.0, 16.0, 16.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -221,9 +221,9 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                         children: [
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(1.0, 1.0),
+                                                AlignmentDirectional(1.0, 1.0),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 16.0, 8.0, 0.0),
                                               child: FFButtonWidget(
@@ -259,11 +259,11 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                 options: FFButtonOptions(
                                                   width: 200.0,
                                                   height: 35.0,
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 0.0),
                                                   iconPadding:
-                                                      const EdgeInsetsDirectional
+                                                      EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
@@ -288,7 +288,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                     width: 2.0,
                                                   ),
                                                   borderRadius:
-                                                      const BorderRadius.only(
+                                                      BorderRadius.only(
                                                     bottomLeft:
                                                         Radius.circular(8.0),
                                                     bottomRight:
@@ -304,9 +304,9 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                           ),
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(1.0, 1.0),
+                                                AlignmentDirectional(1.0, 1.0),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 16.0, 8.0, 0.0),
                                               child: FFButtonWidget(
@@ -344,11 +344,11 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                 options: FFButtonOptions(
                                                   width: 200.0,
                                                   height: 35.0,
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 0.0),
                                                   iconPadding:
-                                                      const EdgeInsetsDirectional
+                                                      EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
@@ -373,7 +373,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                     width: 2.0,
                                                   ),
                                                   borderRadius:
-                                                      const BorderRadius.only(
+                                                      BorderRadius.only(
                                                     bottomLeft:
                                                         Radius.circular(8.0),
                                                     bottomRight:
@@ -395,7 +395,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                       children: [
                                         Flexible(
                                           child: Padding(
-                                            padding: const EdgeInsets.all(10.0),
+                                            padding: EdgeInsets.all(10.0),
                                             child: Text(
                                               'Datos personales del NNyA y Grupo familiar ampliado (Completar en boton \"Editar formulario 1\")',
                                               style: FlutterFlowTheme.of(
@@ -415,7 +415,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                       ],
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 10.0, 0.0, 0.0),
                                       child: FutureBuilder<
                                           List<GrupofamiliarexpedientesRow>>(
@@ -457,9 +457,9 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                   : null;
 
                                           return Container(
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: FFButtonWidget(
                                                 onPressed: () async {
@@ -471,23 +471,23 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                               return WebViewAware(
                                                                 child:
                                                                     AlertDialog(
-                                                                  title: const Text(
+                                                                  title: Text(
                                                                       'Copia de entrevistas de familia'),
-                                                                  content: const Text(
+                                                                  content: Text(
                                                                       'Estas a punto de copiar todas las entrevistas a la familia del NNyA principal!!'),
                                                                   actions: [
                                                                     TextButton(
                                                                       onPressed: () => Navigator.pop(
                                                                           alertDialogContext,
                                                                           false),
-                                                                      child: const Text(
+                                                                      child: Text(
                                                                           'Cancelar'),
                                                                     ),
                                                                     TextButton(
                                                                       onPressed: () => Navigator.pop(
                                                                           alertDialogContext,
                                                                           true),
-                                                                      child: const Text(
+                                                                      child: Text(
                                                                           'Confirmar'),
                                                                     ),
                                                                   ],
@@ -513,14 +513,14 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                           (alertDialogContext) {
                                                         return WebViewAware(
                                                           child: AlertDialog(
-                                                            title: const Text('1'),
+                                                            title: Text('1'),
                                                             actions: [
                                                               TextButton(
                                                                 onPressed: () =>
                                                                     Navigator.pop(
                                                                         alertDialogContext),
                                                                 child:
-                                                                    const Text('Ok'),
+                                                                    Text('Ok'),
                                                               ),
                                                             ],
                                                           ),
@@ -727,16 +727,16 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                             (alertDialogContext) {
                                                           return WebViewAware(
                                                             child: AlertDialog(
-                                                              title: const Text(
+                                                              title: Text(
                                                                   'Carga correcta'),
-                                                              content: const Text(
+                                                              content: Text(
                                                                   'La informacion se guardo correctamente!!'),
                                                               actions: [
                                                                 TextButton(
                                                                   onPressed: () =>
                                                                       Navigator.pop(
                                                                           alertDialogContext),
-                                                                  child: const Text(
+                                                                  child: Text(
                                                                       'Ok'),
                                                                 ),
                                                               ],
@@ -757,11 +757,11 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                     'Cargar informacion de expediente principal',
                                                 options: FFButtonOptions(
                                                   height: 40.0,
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 0.0, 16.0, 0.0),
                                                   iconPadding:
-                                                      const EdgeInsetsDirectional
+                                                      EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
@@ -795,12 +795,12 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                           ),
                         ),
                         Container(
-                          decoration: const BoxDecoration(),
+                          decoration: BoxDecoration(),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Align(
-                                alignment: const AlignmentDirectional(0.0, -1.0),
+                                alignment: AlignmentDirectional(0.0, -1.0),
                                 child: Text(
                                   'Entrevistas a la familia y/o adultos responsables',
                                   textAlign: TextAlign.center,
@@ -817,7 +817,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                               ),
                               Container(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: TextFormField(
                                     controller: _model
@@ -918,7 +918,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 8.0, 0.0),
                                           child: TextFormField(
                                             controller: _model
@@ -1006,7 +1006,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 8.0, 0.0),
                                           child: TextFormField(
                                             controller: _model
@@ -1099,7 +1099,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 8.0, 0.0),
                                           child: TextFormField(
                                             controller: _model
@@ -1113,7 +1113,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                             onChanged: (_) =>
                                                 EasyDebounce.debounce(
                                               '_model.textFieldDNITextController1',
-                                              const Duration(milliseconds: 2000),
+                                              Duration(milliseconds: 2000),
                                               () => safeSetState(() {}),
                                             ),
                                             autofocus: true,
@@ -1197,7 +1197,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 8.0, 0.0),
                                           child: TextFormField(
                                             controller: _model
@@ -1214,7 +1214,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                             onChanged: (_) =>
                                                 EasyDebounce.debounce(
                                               '_model.textFieldDNITextController2',
-                                              const Duration(milliseconds: 2000),
+                                              Duration(milliseconds: 2000),
                                               () => safeSetState(() {}),
                                             ),
                                             autofocus: true,
@@ -1298,9 +1298,9 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     ],
                                   ),
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 8.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -1327,7 +1327,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                           ),
                                           FFButtonWidget(
                                             onPressed: () async {
-                                              final datePicked1Date =
+                                              final _datePicked1Date =
                                                   await showDatePicker(
                                                 context: context,
                                                 initialDate:
@@ -1385,13 +1385,19 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                 },
                                               );
 
-                                              if (datePicked1Date != null) {
+                                              if (_datePicked1Date != null) {
                                                 safeSetState(() {
                                                   _model.datePicked1 = DateTime(
-                                                    datePicked1Date.year,
-                                                    datePicked1Date.month,
-                                                    datePicked1Date.day,
+                                                    _datePicked1Date.year,
+                                                    _datePicked1Date.month,
+                                                    _datePicked1Date.day,
                                                   );
+                                                });
+                                              } else if (_model.datePicked1 !=
+                                                  null) {
+                                                safeSetState(() {
+                                                  _model.datePicked1 =
+                                                      getCurrentTimestamp;
                                                 });
                                               }
                                             },
@@ -1408,10 +1414,10 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                             ),
                                             options: FFButtonOptions(
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -1426,7 +1432,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                               elevation: 3.0,
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Colors.transparent,
                                                 width: 1.0,
                                               ),
@@ -1434,7 +1440,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                   BorderRadius.circular(8.0),
                                             ),
                                           ),
-                                        ].divide(const SizedBox(width: 10.0)),
+                                        ].divide(SizedBox(width: 10.0)),
                                       ),
                                     ),
                                   ),
@@ -1444,7 +1450,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                         FlutterFlowTheme.of(context).alternate,
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -1467,7 +1473,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                         ),
                                         FFButtonWidget(
                                           onPressed: () async {
-                                            final datePicked2Date =
+                                            final _datePicked2Date =
                                                 await showDatePicker(
                                               context: context,
                                               initialDate: getCurrentTimestamp,
@@ -1522,13 +1528,19 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                               },
                                             );
 
-                                            if (datePicked2Date != null) {
+                                            if (_datePicked2Date != null) {
                                               safeSetState(() {
                                                 _model.datePicked2 = DateTime(
-                                                  datePicked2Date.year,
-                                                  datePicked2Date.month,
-                                                  datePicked2Date.day,
+                                                  _datePicked2Date.year,
+                                                  _datePicked2Date.month,
+                                                  _datePicked2Date.day,
                                                 );
+                                              });
+                                            } else if (_model.datePicked2 !=
+                                                null) {
+                                              safeSetState(() {
+                                                _model.datePicked2 =
+                                                    getCurrentTimestamp;
                                               });
                                             }
                                           },
@@ -1545,10 +1557,10 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                           options: FFButtonOptions(
                                             height: 40.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
@@ -1562,7 +1574,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -1574,7 +1586,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.textController6 ??=
@@ -1646,7 +1658,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.textController7 ??=
@@ -1718,7 +1730,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.textController8 ??=
@@ -1791,7 +1803,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.textController9 ??=
@@ -1863,7 +1875,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.textController10 ??=
@@ -1937,14 +1949,14 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     ),
                                   ),
                                 ]
-                                    .divide(const SizedBox(height: 10.0))
-                                    .around(const SizedBox(height: 10.0)),
+                                    .divide(SizedBox(height: 10.0))
+                                    .around(SizedBox(height: 10.0)),
                               ),
                               Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller: _model
@@ -2023,7 +2035,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller: _model
@@ -2103,7 +2115,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller: _model
@@ -2185,16 +2197,16 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     ),
                                   ),
                                 ]
-                                    .divide(const SizedBox(height: 10.0))
-                                    .around(const SizedBox(height: 10.0)),
+                                    .divide(SizedBox(height: 10.0))
+                                    .around(SizedBox(height: 10.0)),
                               ),
                               Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         'A) REGISTRO DE LA ENTREVISTA',
@@ -2209,9 +2221,9 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         '1.  Descripcion de la situacion',
@@ -2226,7 +2238,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller: _model
@@ -2303,9 +2315,9 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           18.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         '2. Personas /datos que la familia propone para ampliar información',
@@ -2319,7 +2331,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 8.0, 0.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
@@ -2347,10 +2359,10 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                           'Datos de personas para ampliar informacion',
                                       options: FFButtonOptions(
                                         height: 30.0,
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             24.0, 0.0, 24.0, 0.0),
                                         iconPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
@@ -2362,7 +2374,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                               letterSpacing: 0.0,
                                             ),
                                         elevation: 3.0,
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Colors.transparent,
                                           width: 1.0,
                                         ),
@@ -2372,9 +2384,9 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           18.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         '3. Antecedentes en relación a la situación planteada',
@@ -2388,7 +2400,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.textController15 ??=
@@ -2463,16 +2475,16 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     ),
                                   ),
                                 ]
-                                    .divide(const SizedBox(height: 10.0))
-                                    .around(const SizedBox(height: 10.0)),
+                                    .divide(SizedBox(height: 10.0))
+                                    .around(SizedBox(height: 10.0)),
                               ),
                               Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           18.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         '4. Descripción de fortalezas familiares:',
@@ -2487,7 +2499,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.textController16 ??=
@@ -2566,7 +2578,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.textController17 ??=
@@ -2645,9 +2657,9 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         'c. Redes o actores comunitarios con los que se vincula',
@@ -2661,7 +2673,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: FlutterFlowDropDown<String>(
                                       multiSelectController: _model
@@ -2672,7 +2684,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                         containerFormulario2Row?.redes2drop ??
                                             [],
                                       )),
-                                      options: const [
+                                      options: [
                                         'Centro de salud',
                                         'Escuela',
                                         'Equipo de salud mental',
@@ -2714,7 +2726,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                           .alternate,
                                       borderWidth: 2.0,
                                       borderRadius: 8.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
@@ -2729,7 +2741,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                           ?.contains('Otros') ??
                                       true)
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 8.0, 0.0),
                                       child: TextFormField(
                                         controller: _model.textController18 ??=
@@ -2811,7 +2823,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                       ),
                                     ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -2820,7 +2832,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             'Participa activamente de  Espacios sociales?',
@@ -2834,7 +2846,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 10.0, 0.0),
                                           child: FlutterFlowRadioButton(
                                             options: ['Si', 'No'].toList(),
@@ -2886,7 +2898,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.textController19 ??=
@@ -2962,7 +2974,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller: _model
@@ -3041,14 +3053,14 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     ),
                                   ),
                                 ]
-                                    .divide(const SizedBox(height: 10.0))
-                                    .around(const SizedBox(height: 10.0)),
+                                    .divide(SizedBox(height: 10.0))
+                                    .around(SizedBox(height: 10.0)),
                               ),
                               Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -3057,7 +3069,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             'VALORACION / SUGERENCIAS DEL/A ENTREVISTADOR/A',
@@ -3073,7 +3085,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller: _model
@@ -3157,7 +3169,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                       if (!widget.editar!)
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 0.0, 0.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
@@ -3261,16 +3273,16 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                 builder: (alertDialogContext) {
                                                   return WebViewAware(
                                                     child: AlertDialog(
-                                                      title: const Text(
+                                                      title: Text(
                                                           'Carga correcta'),
-                                                      content: const Text(
+                                                      content: Text(
                                                           'La informacion se guardo correctamente!!'),
                                                       actions: [
                                                         TextButton(
                                                           onPressed: () =>
                                                               Navigator.pop(
                                                                   alertDialogContext),
-                                                          child: const Text('Ok'),
+                                                          child: Text('Ok'),
                                                         ),
                                                       ],
                                                     ),
@@ -3280,17 +3292,17 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                               Navigator.pop(context);
                                             },
                                             text: 'Guardar',
-                                            icon: const Icon(
+                                            icon: Icon(
                                               Icons.save,
                                               size: 15.0,
                                             ),
                                             options: FFButtonOptions(
                                               width: 250.0,
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -3305,7 +3317,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                               elevation: 2.0,
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Colors.transparent,
                                                 width: 1.0,
                                               ),
@@ -3318,7 +3330,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                       if (widget.editar ?? true)
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 0.0, 0.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
@@ -3427,16 +3439,16 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                 builder: (alertDialogContext) {
                                                   return WebViewAware(
                                                     child: AlertDialog(
-                                                      title: const Text(
+                                                      title: Text(
                                                           'Carga correcta'),
-                                                      content: const Text(
+                                                      content: Text(
                                                           'La informacion se guardo correctamente!!'),
                                                       actions: [
                                                         TextButton(
                                                           onPressed: () =>
                                                               Navigator.pop(
                                                                   alertDialogContext),
-                                                          child: const Text('Ok'),
+                                                          child: Text('Ok'),
                                                         ),
                                                       ],
                                                     ),
@@ -3445,18 +3457,18 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                               );
                                               Navigator.pop(context);
                                             },
-                                            text: 'Editar',
-                                            icon: const Icon(
+                                            text: 'Guardar',
+                                            icon: Icon(
                                               Icons.save,
                                               size: 15.0,
                                             ),
                                             options: FFButtonOptions(
                                               width: 250.0,
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -3471,7 +3483,7 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                               elevation: 2.0,
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Colors.transparent,
                                                 width: 1.0,
                                               ),
@@ -3484,15 +3496,15 @@ class _Formulario2WidgetState extends State<Formulario2Widget> {
                                     ],
                                   ),
                                 ]
-                                    .divide(const SizedBox(height: 10.0))
-                                    .around(const SizedBox(height: 10.0)),
+                                    .divide(SizedBox(height: 10.0))
+                                    .around(SizedBox(height: 10.0)),
                               ),
                             ],
                           ),
                         ),
                       ]
-                          .divide(const SizedBox(height: 10.0))
-                          .around(const SizedBox(height: 10.0)),
+                          .divide(SizedBox(height: 10.0))
+                          .around(SizedBox(height: 10.0)),
                     ),
                   ),
                 ),

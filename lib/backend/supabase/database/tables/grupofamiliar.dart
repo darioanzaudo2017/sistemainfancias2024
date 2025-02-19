@@ -10,7 +10,7 @@ class GrupofamiliarTable extends SupabaseTable<GrupofamiliarRow> {
 }
 
 class GrupofamiliarRow extends SupabaseDataRow {
-  GrupofamiliarRow(super.data);
+  GrupofamiliarRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => GrupofamiliarTable();

@@ -64,7 +64,7 @@ class _Respuestaform6pageWidgetState extends State<Respuestaform6pageWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -74,7 +74,7 @@ class _Respuestaform6pageWidgetState extends State<Respuestaform6pageWidget> {
             },
           ),
           title: Align(
-            alignment: const AlignmentDirectional(0.0, -1.0),
+            alignment: AlignmentDirectional(0.0, -1.0),
             child: Text(
               'Respuestas de medidas',
               style: FlutterFlowTheme.of(context).headlineMedium.override(
@@ -85,14 +85,14 @@ class _Respuestaform6pageWidgetState extends State<Respuestaform6pageWidget> {
                   ),
             ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: const AlignmentDirectional(0.0, -1.0),
+            alignment: AlignmentDirectional(0.0, -1.0),
             child: Material(
               color: Colors.transparent,
               elevation: 2.0,
@@ -106,7 +106,7 @@ class _Respuestaform6pageWidgetState extends State<Respuestaform6pageWidget> {
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(10.0),
                   child: SingleChildScrollView(
                     primary: false,
                     child: Column(
@@ -142,7 +142,7 @@ class _Respuestaform6pageWidgetState extends State<Respuestaform6pageWidget> {
                             rowexp: widget.expedienterow,
                           ),
                         ),
-                      ].divide(const SizedBox(height: 10.0)),
+                      ].divide(SizedBox(height: 10.0)),
                     ),
                   ),
                 ),

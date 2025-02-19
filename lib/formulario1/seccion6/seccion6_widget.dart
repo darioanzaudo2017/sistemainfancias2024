@@ -58,7 +58,7 @@ class _Seccion6WidgetState extends State<Seccion6Widget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<Seccion6Row>>(
         future: (_model.requestCompleter ??= Completer<List<Seccion6Row>>()
               ..complete(Seccion6Table().queryRows(
@@ -101,14 +101,14 @@ class _Seccion6WidgetState extends State<Seccion6Widget> {
                   color: FlutterFlowTheme.of(context).primary,
                 ),
               ),
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Form(
                 key: _model.formKey,
                 autovalidateMode: AutovalidateMode.disabled,
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
@@ -120,7 +120,7 @@ class _Seccion6WidgetState extends State<Seccion6Widget> {
                             children: [
                               Flexible(
                                 child: Align(
-                                  alignment: const AlignmentDirectional(0.0, -1.0),
+                                  alignment: AlignmentDirectional(0.0, -1.0),
                                   child: Text(
                                     '6. Intervenciones realizadas anteriormente',
                                     style: FlutterFlowTheme.of(context)
@@ -136,7 +136,7 @@ class _Seccion6WidgetState extends State<Seccion6Widget> {
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(1.0, 0.0),
+                                alignment: AlignmentDirectional(1.0, 0.0),
                                 child: FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
                                   borderRadius: 20.0,
@@ -162,9 +162,9 @@ class _Seccion6WidgetState extends State<Seccion6Widget> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     8.0, 0.0, 8.0, 15.0),
-                                child: SizedBox(
+                                child: Container(
                                   width: 300.0,
                                   child: TextFormField(
                                     controller: _model.textController1,
@@ -236,9 +236,9 @@ class _Seccion6WidgetState extends State<Seccion6Widget> {
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
-                                  child: SizedBox(
+                                  child: Container(
                                     width: 600.0,
                                     child: TextFormField(
                                       controller: _model.textController2,
@@ -339,9 +339,9 @@ class _Seccion6WidgetState extends State<Seccion6Widget> {
                             options: FFButtonOptions(
                               width: 300.0,
                               height: 40.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -356,7 +356,7 @@ class _Seccion6WidgetState extends State<Seccion6Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 4.0, 0.0, 2.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 0.8,
@@ -467,7 +467,7 @@ class _Seccion6WidgetState extends State<Seccion6Widget> {
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: FlutterFlowIconButton(
                                             borderRadius: 8.0,
                                             buttonSize: 40.0,
@@ -520,8 +520,8 @@ class _Seccion6WidgetState extends State<Seccion6Widget> {
                             ),
                           ),
                         ]
-                            .divide(const SizedBox(height: 8.0))
-                            .around(const SizedBox(height: 8.0)),
+                            .divide(SizedBox(height: 8.0))
+                            .around(SizedBox(height: 8.0)),
                       ),
                     ),
                   ),

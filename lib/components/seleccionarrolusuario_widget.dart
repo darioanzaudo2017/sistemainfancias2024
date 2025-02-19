@@ -52,7 +52,7 @@ class _SeleccionarrolusuarioWidgetState
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<UserRolRow>>(
         future: UserRolTable().querySingleRow(
           queryFn: (q) => q.eqOrNull(
@@ -87,7 +87,7 @@ class _SeleccionarrolusuarioWidgetState
             height: 180.61,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
-              boxShadow: const [
+              boxShadow: [
                 BoxShadow(
                   blurRadius: 5.0,
                   color: Color(0x3B1D2429),
@@ -100,7 +100,7 @@ class _SeleccionarrolusuarioWidgetState
               borderRadius: BorderRadius.circular(10.0),
             ),
             child: Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: EdgeInsets.all(20.0),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -166,7 +166,7 @@ class _SeleccionarrolusuarioWidgetState
                         borderColor: FlutterFlowTheme.of(context).alternate,
                         borderWidth: 0.0,
                         borderRadius: 8.0,
-                        margin: const EdgeInsetsDirectional.fromSTEB(
+                        margin: EdgeInsetsDirectional.fromSTEB(
                             12.0, 0.0, 12.0, 0.0),
                         hidesUnderline: true,
                         isOverButton: false,
@@ -177,7 +177,7 @@ class _SeleccionarrolusuarioWidgetState
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         await UserRolTable().update(
@@ -194,14 +194,14 @@ class _SeleccionarrolusuarioWidgetState
                           builder: (alertDialogContext) {
                             return WebViewAware(
                               child: AlertDialog(
-                                title: const Text('Rol actualizado'),
+                                title: Text('Rol actualizado'),
                                 content:
-                                    const Text('EL rol se actualizo correctamente'),
+                                    Text('EL rol se actualizo correctamente'),
                                 actions: [
                                   TextButton(
                                     onPressed: () =>
                                         Navigator.pop(alertDialogContext),
-                                    child: const Text('Ok'),
+                                    child: Text('Ok'),
                                   ),
                                 ],
                               ),
@@ -215,9 +215,9 @@ class _SeleccionarrolusuarioWidgetState
                         width: double.infinity,
                         height: 60.0,
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                         textStyle: FlutterFlowTheme.of(context)
                             .titleSmall

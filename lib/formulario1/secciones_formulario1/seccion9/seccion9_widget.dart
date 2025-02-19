@@ -56,7 +56,7 @@ class _Seccion9WidgetState extends State<Seccion9Widget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<Seccion9Row>>(
         future: (_model.requestCompleter ??= Completer<List<Seccion9Row>>()
               ..complete(Seccion9Table().querySingleRow(
@@ -103,14 +103,14 @@ class _Seccion9WidgetState extends State<Seccion9Widget> {
                   color: FlutterFlowTheme.of(context).primary,
                 ),
               ),
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Form(
                 key: _model.formKey,
                 autovalidateMode: AutovalidateMode.disabled,
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -121,9 +121,9 @@ class _Seccion9WidgetState extends State<Seccion9Widget> {
                           children: [
                             Flexible(
                               child: Align(
-                                alignment: const AlignmentDirectional(-1.0, -1.0),
+                                alignment: AlignmentDirectional(-1.0, -1.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     '9. Cierre de intervención/apertura de expediente',
@@ -141,7 +141,7 @@ class _Seccion9WidgetState extends State<Seccion9Widget> {
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(1.0, 0.0),
+                              alignment: AlignmentDirectional(1.0, 0.0),
                               child: FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
                                 borderRadius: 20.0,
@@ -160,7 +160,7 @@ class _Seccion9WidgetState extends State<Seccion9Widget> {
                           ],
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: FlutterFlowDropDown<String>(
                             controller: _model.dropDownValueController ??=
@@ -170,7 +170,7 @@ class _Seccion9WidgetState extends State<Seccion9Widget> {
                                 'Apertura',
                               ),
                             ),
-                            options: const ['Asesoramiento', 'Apertura'],
+                            options: ['Asesoramiento', 'Apertura'],
                             onChanged: (val) =>
                                 safeSetState(() => _model.dropDownValue = val),
                             width: 300.0,
@@ -193,7 +193,7 @@ class _Seccion9WidgetState extends State<Seccion9Widget> {
                             borderColor: FlutterFlowTheme.of(context).alternate,
                             borderWidth: 1.0,
                             borderRadius: 8.0,
-                            margin: const EdgeInsetsDirectional.fromSTEB(
+                            margin: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 4.0, 16.0, 4.0),
                             hidesUnderline: true,
                             isOverButton: false,
@@ -230,15 +230,15 @@ class _Seccion9WidgetState extends State<Seccion9Widget> {
                                         builder: (alertDialogContext) {
                                           return WebViewAware(
                                             child: AlertDialog(
-                                              title: const Text('Carga correcta'),
-                                              content: const Text(
+                                              title: Text('Carga correcta'),
+                                              content: Text(
                                                   'La informacion se guardo correctamente!!'),
                                               actions: [
                                                 TextButton(
                                                   onPressed: () =>
                                                       Navigator.pop(
                                                           alertDialogContext),
-                                                  child: const Text('Ok'),
+                                                  child: Text('Ok'),
                                                 ),
                                               ],
                                             ),
@@ -303,15 +303,15 @@ class _Seccion9WidgetState extends State<Seccion9Widget> {
                                         builder: (alertDialogContext) {
                                           return WebViewAware(
                                             child: AlertDialog(
-                                              title: const Text('Carga correcta'),
-                                              content: const Text(
+                                              title: Text('Carga correcta'),
+                                              content: Text(
                                                   'La informacion se guardo correctamente!!'),
                                               actions: [
                                                 TextButton(
                                                   onPressed: () =>
                                                       Navigator.pop(
                                                           alertDialogContext),
-                                                  child: const Text('Ok'),
+                                                  child: Text('Ok'),
                                                 ),
                                               ],
                                             ),
@@ -365,16 +365,16 @@ class _Seccion9WidgetState extends State<Seccion9Widget> {
                                     safeSetState(() {});
                                   },
                                   text: 'Guardar',
-                                  icon: const Icon(
+                                  icon: Icon(
                                     Icons.save,
                                     size: 15.0,
                                   ),
                                   options: FFButtonOptions(
                                     width: 250.0,
                                     height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).success,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -385,7 +385,7 @@ class _Seccion9WidgetState extends State<Seccion9Widget> {
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 2.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -447,10 +447,10 @@ class _Seccion9WidgetState extends State<Seccion9Widget> {
                                         options: FFButtonOptions(
                                           height: 40.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
@@ -467,14 +467,14 @@ class _Seccion9WidgetState extends State<Seccion9Widget> {
                                               BorderRadius.circular(8.0),
                                         ),
                                       ),
-                                  ].divide(const SizedBox(width: 10.0)),
+                                  ].divide(SizedBox(width: 10.0)),
                                 ),
                               ],
                             ),
                           ),
                       ]
-                          .divide(const SizedBox(height: 8.0))
-                          .around(const SizedBox(height: 8.0)),
+                          .divide(SizedBox(height: 8.0))
+                          .around(SizedBox(height: 8.0)),
                     ),
                   ),
                 ),

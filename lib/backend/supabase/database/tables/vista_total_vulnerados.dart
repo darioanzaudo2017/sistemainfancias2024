@@ -10,7 +10,7 @@ class VistaTotalVulneradosTable extends SupabaseTable<VistaTotalVulneradosRow> {
 }
 
 class VistaTotalVulneradosRow extends SupabaseDataRow {
-  VistaTotalVulneradosRow(super.data);
+  VistaTotalVulneradosRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => VistaTotalVulneradosTable();

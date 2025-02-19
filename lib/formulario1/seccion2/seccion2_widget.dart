@@ -64,6 +64,8 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
 
     _model.textFieldFocusNode9 ??= FocusNode();
 
+    _model.textFieldFocusNode10 ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -77,7 +79,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<Seccion2Row>>(
         future: Seccion2Table().querySingleRow(
           queryFn: (q) => q.eqOrNull(
@@ -122,14 +124,14 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                   color: FlutterFlowTheme.of(context).primary,
                 ),
               ),
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Form(
                 key: _model.formKey,
                 autovalidateMode: AutovalidateMode.disabled,
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, -1.0),
+                  alignment: AlignmentDirectional(0.0, -1.0),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
@@ -140,9 +142,9 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     '2. Datos del Solicitante',
@@ -159,7 +161,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(1.0, 0.0),
+                                alignment: AlignmentDirectional(1.0, 0.0),
                                 child: FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
                                   borderRadius: 20.0,
@@ -181,7 +183,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                             children: [
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: TextFormField(
                                     controller: _model
@@ -261,7 +263,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: TextFormField(
                                     controller: _model.textController2 ??=
@@ -336,7 +338,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: TextFormField(
                                     controller: _model.textController3 ??=
@@ -412,7 +414,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                             ],
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController4 ??=
@@ -477,7 +479,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController5 ??=
@@ -543,7 +545,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController6 ??=
@@ -612,7 +614,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 5.0, 10.0, 5.0),
                                 child: FlutterFlowDropDown<String>(
                                   controller: _model.dropDownValueController ??=
@@ -620,7 +622,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                     _model.dropDownValue ??=
                                         containerSeccion2Row?.vinculo,
                                   ),
-                                  options: const [
+                                  options: [
                                     'Madre',
                                     'Padre',
                                     'Hemana/os',
@@ -654,7 +656,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                       .secondaryText,
                                   borderWidth: 0.0,
                                   borderRadius: 8.0,
-                                  margin: const EdgeInsetsDirectional.fromSTEB(
+                                  margin: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 12.0, 0.0),
                                   hidesUnderline: true,
                                   isOverButton: false,
@@ -662,8 +664,87 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                   isMultiSelect: false,
                                 ),
                               ),
+                              Expanded(
+                                child: Container(
+                                  width: 200.0,
+                                  child: TextFormField(
+                                    controller: _model.textController7 ??=
+                                        TextEditingController(
+                                      text: containerSeccion2Row?.vinculoObs,
+                                    ),
+                                    focusNode: _model.textFieldFocusNode6,
+                                    autofocus: false,
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      isDense: true,
+                                      labelText: 'Especificar vinculo',
+                                      labelStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintText: 'Especificar vinculo',
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: Color(0x00000000),
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedErrorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      filled: true,
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Noto Sans JP',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    cursorColor: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    validator: _model.textController7Validator
+                                        .asValidator(context),
+                                  ),
+                                ),
+                              ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     8.0, 0.0, 8.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -671,7 +752,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         'Reserva de identidad:',
@@ -684,7 +765,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 10.0, 0.0),
                                       child: FlutterFlowRadioButton(
                                         options: ['Si', 'No'].toList(),
@@ -737,92 +818,18 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                             children: [
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      8.0, 0.0, 8.0, 0.0),
-                                  child: TextFormField(
-                                    controller: _model.textController7 ??=
-                                        TextEditingController(
-                                      text: containerSeccion2Row?.institucion,
-                                    ),
-                                    focusNode: _model.textFieldFocusNode6,
-                                    autofocus: true,
-                                    obscureText: false,
-                                    decoration: InputDecoration(
-                                      labelText: 'Institución (si corresponde)',
-                                      labelStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .override(
-                                            fontFamily: 'Noto Sans JP',
-                                            letterSpacing: 0.0,
-                                          ),
-                                      hintStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .override(
-                                            fontFamily: 'Noto Sans JP',
-                                            letterSpacing: 0.0,
-                                          ),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .alternate,
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(10.0),
-                                      ),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(10.0),
-                                      ),
-                                      errorBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .error,
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(10.0),
-                                      ),
-                                      focusedErrorBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .error,
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(10.0),
-                                      ),
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Noto Sans JP',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    validator: _model.textController7Validator
-                                        .asValidator(context),
-                                  ),
-                                ),
-                              ),
-                              Expanded(
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: TextFormField(
                                     controller: _model.textController8 ??=
                                         TextEditingController(
-                                      text: containerSeccion2Row?.direccionInst,
+                                      text: containerSeccion2Row?.institucion,
                                     ),
                                     focusNode: _model.textFieldFocusNode7,
                                     autofocus: true,
                                     obscureText: false,
                                     decoration: InputDecoration(
-                                      labelText: 'Dirección',
+                                      labelText: 'Institución (si corresponde)',
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
@@ -883,6 +890,80 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                   ),
                                 ),
                               ),
+                              Expanded(
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      8.0, 0.0, 8.0, 0.0),
+                                  child: TextFormField(
+                                    controller: _model.textController9 ??=
+                                        TextEditingController(
+                                      text: containerSeccion2Row?.direccionInst,
+                                    ),
+                                    focusNode: _model.textFieldFocusNode8,
+                                    autofocus: true,
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      labelText: 'Dirección',
+                                      labelStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .alternate,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedErrorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Noto Sans JP',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    validator: _model.textController9Validator
+                                        .asValidator(context),
+                                  ),
+                                ),
+                              ),
                             ],
                           ),
                           Row(
@@ -890,14 +971,14 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                             children: [
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: TextFormField(
-                                    controller: _model.textController9 ??=
+                                    controller: _model.textController10 ??=
                                         TextEditingController(
                                       text: containerSeccion2Row?.telefonoInst,
                                     ),
-                                    focusNode: _model.textFieldFocusNode8,
+                                    focusNode: _model.textFieldFocusNode9,
                                     autofocus: true,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -957,22 +1038,22 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                           fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
-                                    validator: _model.textController9Validator
+                                    validator: _model.textController10Validator
                                         .asValidator(context),
-                                    inputFormatters: [_model.textFieldMask8],
+                                    inputFormatters: [_model.textFieldMask9],
                                   ),
                                 ),
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: TextFormField(
-                                    controller: _model.textController10 ??=
+                                    controller: _model.textController11 ??=
                                         TextEditingController(
                                       text: containerSeccion2Row?.correoInst,
                                     ),
-                                    focusNode: _model.textFieldFocusNode9,
+                                    focusNode: _model.textFieldFocusNode10,
                                     autofocus: true,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -1032,7 +1113,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                           fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
-                                    validator: _model.textController10Validator
+                                    validator: _model.textController11Validator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -1074,19 +1155,21 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                             'reservaId':
                                                 _model.radioButtonresidenValue,
                                             'institucion':
-                                                _model.textController7.text,
-                                            'direccionInst':
                                                 _model.textController8.text,
-                                            'telefonoInst':
+                                            'direccionInst':
                                                 _model.textController9.text,
-                                            'correoInst':
+                                            'telefonoInst':
                                                 _model.textController10.text,
+                                            'correoInst':
+                                                _model.textController11.text,
                                             'idIngreso': widget.rowingreso?.id,
                                             'idExpediente': widget.rowexp?.id,
                                             'idSolicitante': _model
                                                 .textFieldsolicitanteTextController
                                                 .text,
                                             'iduser': currentUserUid,
+                                            'vinculoObs':
+                                                _model.textController7.text,
                                           });
                                           await IngresosTable().update(
                                             data: {
@@ -1106,15 +1189,15 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                             builder: (alertDialogContext) {
                                               return WebViewAware(
                                                 child: AlertDialog(
-                                                  title: const Text('Carga correcta'),
-                                                  content: const Text(
+                                                  title: Text('Carga correcta'),
+                                                  content: Text(
                                                       'La informacion se guardo correctamente!!'),
                                                   actions: [
                                                     TextButton(
                                                       onPressed: () =>
                                                           Navigator.pop(
                                                               alertDialogContext),
-                                                      child: const Text('Ok'),
+                                                      child: Text('Ok'),
                                                     ),
                                                   ],
                                                 ),
@@ -1139,17 +1222,19 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                               'reservaId': _model
                                                   .radioButtonresidenValue,
                                               'institucion':
-                                                  _model.textController7.text,
-                                              'direccionInst':
                                                   _model.textController8.text,
-                                              'telefonoInst':
+                                              'direccionInst':
                                                   _model.textController9.text,
-                                              'correoInst':
+                                              'telefonoInst':
                                                   _model.textController10.text,
+                                              'correoInst':
+                                                  _model.textController11.text,
                                               'idSolicitante': _model
                                                   .textFieldsolicitanteTextController
                                                   .text,
                                               'iduser': currentUserUid,
+                                              'vinculoObs':
+                                                  _model.textController7.text,
                                             },
                                             matchingRows: (rows) =>
                                                 rows.eqOrNull(
@@ -1174,15 +1259,15 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                             builder: (alertDialogContext) {
                                               return WebViewAware(
                                                 child: AlertDialog(
-                                                  title: const Text('Carga correcta'),
-                                                  content: const Text(
+                                                  title: Text('Carga correcta'),
+                                                  content: Text(
                                                       'La informacion se guardo correctamente!!'),
                                                   actions: [
                                                     TextButton(
                                                       onPressed: () =>
                                                           Navigator.pop(
                                                               alertDialogContext),
-                                                      child: const Text('Ok'),
+                                                      child: Text('Ok'),
                                                     ),
                                                   ],
                                                 ),
@@ -1193,17 +1278,17 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                         }
                                       },
                                       text: 'Guardar',
-                                      icon: const Icon(
+                                      icon: Icon(
                                         Icons.save,
                                         size: 15.0,
                                       ),
                                       options: FFButtonOptions(
                                         width: 250.0,
                                         height: 40.0,
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             24.0, 0.0, 24.0, 0.0),
                                         iconPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .success,
@@ -1215,7 +1300,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                               letterSpacing: 0.0,
                                             ),
                                         elevation: 2.0,
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Colors.transparent,
                                           width: 1.0,
                                         ),
@@ -1229,8 +1314,8 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                             ],
                           ),
                         ]
-                            .divide(const SizedBox(height: 8.0))
-                            .around(const SizedBox(height: 8.0)),
+                            .divide(SizedBox(height: 8.0))
+                            .around(SizedBox(height: 8.0)),
                       ),
                     ),
                   ),

@@ -15,7 +15,7 @@ class BuscarPersonaCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "search_query": "$buscar"
+  "search_query": "${buscar}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'buscar persona',
@@ -75,8 +75,8 @@ class BusquedaExpedienteCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "search_query": "$busquedaExp",
-  "user_id": "$iduser"
+  "search_query": "${busquedaExp}",
+  "user_id": "${iduser}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'busqueda expediente',
@@ -165,8 +165,8 @@ class BusquedaExpedienteCopyCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "search_query": "$busquedaExp",
-  "user_id": "$iduser"
+  "search_query": "${busquedaExp}",
+  "user_id": "${iduser}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'busqueda expediente Copy',
@@ -255,7 +255,7 @@ class GrupoconvivienteCall {
     return ApiManager.instance.makeApiCall(
       callName: 'grupoconviviente',
       apiUrl:
-          'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/grupo_conviviente?idingreso=eq.$idingresovar&select=*',
+          'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/grupo_conviviente?idingreso=eq.${idingresovar}&select=*',
       callType: ApiCallType.GET,
       headers: {
         'apikey':
@@ -315,12 +315,12 @@ class WebhoohkCall {
 
     final ffApiRequestBody = '''
 {
-  "expediente": "$expediente",
-  "nombre": "$nombre",
-  "tipo": "$tipo",
-  "variable": "$variable",
+  "expediente": "${expediente}",
+  "nombre": "${nombre}",
+  "tipo": "${tipo}",
+  "variable": "${variable}",
   "lista": [
-    $lista
+    ${lista}
   ]
 }''';
     return ApiManager.instance.makeApiCall(
@@ -350,10 +350,10 @@ class CrearCarpetaIngresoCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "expediente": "$expediente",
-  "idingreso": $idingreso,
-  "fecha": "$fecha",
-  "carpeta": "$carpeta"
+  "expediente": "${expediente}",
+  "idingreso": ${idingreso},
+  "fecha": "${fecha}",
+  "carpeta": "${carpeta}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'crear carpeta ingreso',
@@ -385,13 +385,13 @@ class CrearCaratulaCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "idexpediente": $idexp,
-  "tipo": "$tipo",
-  "edit": $editar,
-  "idingreso": $idigreso,
-  "carpeta": "$carpeta",
-  "iddocumentoimprimir": "$iddocumentoadjunto",
-  "iddocdrive": "$idDocedit"
+  "idexpediente": ${idexp},
+  "tipo": "${tipo}",
+  "edit": ${editar},
+  "idingreso": ${idigreso},
+  "carpeta": "${carpeta}",
+  "iddocumentoimprimir": "${iddocumentoadjunto}",
+  "iddocdrive": "${idDocedit}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Crear Caratula',
@@ -418,8 +418,8 @@ class CrearlistadocumentosadjuntosCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "p_idexpediente": $idexpe,
-  "p_idingreso": $idingreso
+  "p_idexpediente": ${idexpe},
+  "p_idingreso": ${idingreso}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'crearlistadocumentosadjuntos',
@@ -456,11 +456,11 @@ class CarpetaDelExpedienteCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "expediente": "$expediente",
-  "fecha": "$fecha",
-  "id": $id,
-"idcarpetaspd":"$idcarpetaspd",
-  "nombres": "$nombresDNI"
+  "expediente": "${expediente}",
+  "fecha": "${fecha}",
+  "id": ${id},
+"idcarpetaspd":"${idcarpetaspd}",
+  "nombres": "${nombresDNI}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'carpeta del expediente',
@@ -488,9 +488,9 @@ class ActaCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "idingreso": $idingreso,
-  "edit": $edit,
-  "carpeta": "$carpeta"
+  "idingreso": ${idingreso},
+  "edit": ${edit},
+  "carpeta": "${carpeta}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'acta',
@@ -532,7 +532,7 @@ class AvisoVisitaNNyACall {
   "fecha": "${escapeStringForJson(fecha)}",
   "hora": "${escapeStringForJson(hora)}",
   "CPC": "${escapeStringForJson(cpc)}",
-  "idingreso": $idingreso,
+  "idingreso": ${idingreso},
   "carpeta": "${escapeStringForJson(carpeta)}",
   "iddoc": "${escapeStringForJson(iddoc)}",
 "asd":"asdasdasdasd"
@@ -579,11 +579,11 @@ class ConcurrenciaVisitaAdultoCall {
   "fecha": "${escapeStringForJson(fecha)}",
   "hora": "${escapeStringForJson(hora)}",
   "CPC": "${escapeStringForJson(cpc)}",
-  "idingreso": $idingreso,
+  "idingreso": ${idingreso},
   "carpeta": "${escapeStringForJson(carpeta)}",
   "telefono": "${escapeStringForJson(telefono)}",
   "iddoc": "${escapeStringForJson(iddoc)}",
-  "dni": $dni
+  "dni": ${dni}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Concurrencia visita adulto',
@@ -624,11 +624,11 @@ class AvisoVisitaAdultoCall {
   "fechadocumento": "${escapeStringForJson(fechadoc)}",
   "nombre": "${escapeStringForJson(nombre)}",
   "apellido": "${escapeStringForJson(apellido)}",
-"dni":$dni,
+"dni":${dni},
   "fecha": "${escapeStringForJson(fecha)}",
   "CPC": "${escapeStringForJson(cpc)}",
   "telefono": "${escapeStringForJson(telefono)}",
-  "idingreso": $idingreso,
+  "idingreso": ${idingreso},
   "carpeta": "${escapeStringForJson(carpeta)}",
   "expediente": "${escapeStringForJson(expediente)}",
   "iddoc": "${escapeStringForJson(iddoc)}"
@@ -686,7 +686,7 @@ class AnexoformasesoramientoCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "idingreso": $idingreso,
+  "idingreso": ${idingreso},
   "expediente": "${escapeStringForJson(expediente)}",
   "spd": "${escapeStringForJson(spd)}",
   "profesional": "${escapeStringForJson(profesional)}",
@@ -735,7 +735,7 @@ class AnexoformderivacionCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "idingreso": $idingreso,
+  "idingreso": ${idingreso},
   "expediente": "${escapeStringForJson(expediente)}",
   "spd": "${escapeStringForJson(spd)}",
   "profesionalrem": "${escapeStringForJson(profesional)}",
@@ -786,7 +786,7 @@ class AnexoformreiteracionderivacionCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "idingreso": $idingreso,
+  "idingreso": ${idingreso},
   "expediente": "${escapeStringForJson(expediente)}",
   "spd": "${escapeStringForJson(spd)}",
   "profesionalrem": "${escapeStringForJson(profesional)}",
@@ -837,14 +837,14 @@ class AnexoSolicitudSaludCall {
 {
   "fecha": "${escapeStringForJson(fecha)}",
   "nombre y apellido": "${escapeStringForJson(nombreyapellido)}",
-  "dni": $dni,
+  "dni": ${dni},
   "domicilio": "${escapeStringForJson(domicilio)}",
   "barrio": "${escapeStringForJson(barrio)}",
   "historiaclinica": "${escapeStringForJson(historiaclinica)}",
   "mes": "${escapeStringForJson(mes)}",
   "año": "${escapeStringForJson(ano)}",
   "expediente": "${escapeStringForJson(expediente)}",
-  "idingreso": $idingreso,
+  "idingreso": ${idingreso},
   "carpeta": "${escapeStringForJson(carpeta)}"
 }''';
     return ApiManager.instance.makeApiCall(
@@ -884,16 +884,16 @@ class AnexoReuninInterinstitucionalCall {
 {
   "fecha": "${escapeStringForJson(fecha)}",
   "nombre y apellido": "${escapeStringForJson(nombreyapellido)}",
-  "dni": $dni,
+  "dni": ${dni},
   "institucion": "${escapeStringForJson(institucion)}",
   "objetivos": "${escapeStringForJson(objetivos)}",
   "reunion": "${escapeStringForJson(reunion)}",
   "puntosacuerdos": "${escapeStringForJson(puntosacuerdos)}",
   "expediente": "${escapeStringForJson(expediente)}",
-  "idingreso": $idingreso,
+  "idingreso": ${idingreso},
   "profesionales": "${escapeStringForJson(profesionales)}",
   "carpeta": "${escapeStringForJson(carpeta)}",
-  "idreunion": $idreunion
+  "idreunion": ${idreunion}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'ANEXO  REUNIN INTERINSTITUCIONAL',
@@ -933,14 +933,14 @@ class AnexoSolicitaInformacinAInstitucinEducativaCall {
 {
   "fecha": "${escapeStringForJson(fecha)}",
   "nombre y apellido": "${escapeStringForJson(nombreyapellido)}",
-  "dni": $dni,
+  "dni": ${dni},
   "domicilio": "${escapeStringForJson(domicilio)}",
   "numestablecimiento": "${escapeStringForJson(numestablecimiento)}",
   "historiaclinica": "${escapeStringForJson(historiaclinica)}",
   "mes": "${escapeStringForJson(mes)}",
   "año": "${escapeStringForJson(ano)}",
   "expediente": "${escapeStringForJson(expediente)}",
-  "idingreso": $idingreso,
+  "idingreso": ${idingreso},
   "carpeta": "${escapeStringForJson(carpeta)}",
   "spd": "${escapeStringForJson(spd)}",
   "fechacomienzo": "${escapeStringForJson(fechadecomienzo)}"
@@ -986,17 +986,17 @@ class ANEXOREQUERIMIENTODEEJECUCIoNDEACCIONESCall {
 {
   "fecha": "${escapeStringForJson(fecha)}",
   "nombre y apellido": "${escapeStringForJson(nombreyapellido)}",
-  "dni": $dni,
+  "dni": ${dni},
   "lugar": "<domicilio>",
   "barrio": "${escapeStringForJson(barrio)}",
   "expediente": "${escapeStringForJson(expediente)}",
-  "idingreso": $idingreso,
+  "idingreso": ${idingreso},
   "acciones": "${escapeStringForJson(acciones)}",
   "institucionderiva": "${escapeStringForJson(institucionderiva)}",
   "spd": "${escapeStringForJson(spd)}",
   "carpeta": "${escapeStringForJson(carpeta)}",
-  "idmedida": $idmedida,
-  "idreqacciones": $idreqacciones,
+  "idmedida": ${idmedida},
+  "idreqacciones": ${idreqacciones},
   "datosspd": "${escapeStringForJson(datosspd)}"
 }''';
     return ApiManager.instance.makeApiCall(

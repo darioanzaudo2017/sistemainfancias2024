@@ -16,7 +16,7 @@ class ReiteracionAnexoB1Widget extends StatefulWidget {
     this.rowexpediente,
     bool? edit,
     this.rowseccion9,
-  }) : edit = edit ?? false;
+  }) : this.edit = edit ?? false;
 
   final IngresosRow? rowingreso;
   final VistaExpedientesUltimoEstadoRow? rowexpediente;
@@ -65,7 +65,7 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<AnexoB1Form1Row>>(
         future: AnexoB1Form1Table().querySingleRow(
           queryFn: (q) => q.eqOrNull(
@@ -103,7 +103,7 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
             ),
             child: Container(
               width: MediaQuery.sizeOf(context).width * 1.0,
-              constraints: const BoxConstraints(
+              constraints: BoxConstraints(
                 maxWidth: 600.0,
               ),
               decoration: BoxDecoration(
@@ -113,11 +113,11 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                   color: FlutterFlowTheme.of(context).primary,
                 ),
               ),
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Align(
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -128,9 +128,9 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                         children: [
                           Expanded(
                             child: Align(
-                              alignment: const AlignmentDirectional(0.0, -1.0),
+                              alignment: AlignmentDirectional(0.0, -1.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     20.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'FORMULARIO 1 ANEXO B-1\nREITERACION DE DERIVACION DE SITUACIÓN\n',
@@ -148,7 +148,7 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(1.0, 0.0),
+                            alignment: AlignmentDirectional(1.0, 0.0),
                             child: FlutterFlowIconButton(
                               borderColor: Colors.transparent,
                               borderRadius: 20.0,
@@ -176,7 +176,7 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: TextFormField(
                                 controller: _model.textController1,
@@ -241,7 +241,7 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -262,7 +262,7 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                   ),
                                   FFButtonWidget(
                                     onPressed: () async {
-                                      final datePicked1Date =
+                                      final _datePicked1Date =
                                           await showDatePicker(
                                         context: context,
                                         initialDate: getCurrentTimestamp,
@@ -309,13 +309,18 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                         },
                                       );
 
-                                      if (datePicked1Date != null) {
+                                      if (_datePicked1Date != null) {
                                         safeSetState(() {
                                           _model.datePicked1 = DateTime(
-                                            datePicked1Date.year,
-                                            datePicked1Date.month,
-                                            datePicked1Date.day,
+                                            _datePicked1Date.year,
+                                            _datePicked1Date.month,
+                                            _datePicked1Date.day,
                                           );
+                                        });
+                                      } else if (_model.datePicked1 != null) {
+                                        safeSetState(() {
+                                          _model.datePicked1 =
+                                              getCurrentTimestamp;
                                         });
                                       }
                                     },
@@ -330,10 +335,10 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                     ),
                                     options: FFButtonOptions(
                                       height: 40.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).primary,
@@ -345,7 +350,7 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                             letterSpacing: 0.0,
                                           ),
                                       elevation: 3.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -356,7 +361,7 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -377,7 +382,7 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                   ),
                                   FFButtonWidget(
                                     onPressed: () async {
-                                      final datePicked2Date =
+                                      final _datePicked2Date =
                                           await showDatePicker(
                                         context: context,
                                         initialDate: getCurrentTimestamp,
@@ -424,13 +429,18 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                         },
                                       );
 
-                                      if (datePicked2Date != null) {
+                                      if (_datePicked2Date != null) {
                                         safeSetState(() {
                                           _model.datePicked2 = DateTime(
-                                            datePicked2Date.year,
-                                            datePicked2Date.month,
-                                            datePicked2Date.day,
+                                            _datePicked2Date.year,
+                                            _datePicked2Date.month,
+                                            _datePicked2Date.day,
                                           );
+                                        });
+                                      } else if (_model.datePicked2 != null) {
+                                        safeSetState(() {
+                                          _model.datePicked2 =
+                                              getCurrentTimestamp;
                                         });
                                       }
                                     },
@@ -446,10 +456,10 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                     ),
                                     options: FFButtonOptions(
                                       height: 40.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).primary,
@@ -461,7 +471,7 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                             letterSpacing: 0.0,
                                           ),
                                       elevation: 3.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -472,7 +482,7 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: TextFormField(
                                 controller: _model.textController2 ??=
@@ -541,7 +551,7 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: TextFormField(
                                 controller: _model.textController3 ??=
@@ -610,7 +620,7 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: TextFormField(
                                 controller: _model.textController4 ??=
@@ -687,7 +697,9 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                       await AnexoB1Form1Table().update(
                                         data: {
                                           'fecha': supaSerialize<DateTime>(
-                                              _model.datePicked1 ?? containerAnexoB1Form1Row
+                                              _model.datePicked1 != null
+                                                  ? _model.datePicked1
+                                                  : containerAnexoB1Form1Row
                                                       ?.fecha),
                                           'orgOProfRemitente':
                                               _model.textController2.text,
@@ -697,7 +709,9 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                               _model.textController4.text,
                                           'fechareiteracion':
                                               supaSerialize<DateTime>(
-                                                  _model.datePicked2 ?? containerAnexoB1Form1Row
+                                                  _model.datePicked2 != null
+                                                      ? _model.datePicked2
+                                                      : containerAnexoB1Form1Row
                                                           ?.fechareiteracion),
                                         },
                                         matchingRows: (rows) => rows.eqOrNull(
@@ -711,9 +725,9 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                                 builder: (alertDialogContext) {
                                                   return WebViewAware(
                                                     child: AlertDialog(
-                                                      title: const Text(
+                                                      title: Text(
                                                           'Crear google docs'),
-                                                      content: const Text(
+                                                      content: Text(
                                                           'Desea crear un archivo de google docs para imprimir?'),
                                                       actions: [
                                                         TextButton(
@@ -721,7 +735,7 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                                               Navigator.pop(
                                                                   alertDialogContext,
                                                                   false),
-                                                          child: const Text('Cancel'),
+                                                          child: Text('Cancel'),
                                                         ),
                                                         TextButton(
                                                           onPressed: () =>
@@ -729,7 +743,7 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                                                   alertDialogContext,
                                                                   true),
                                                           child:
-                                                              const Text('Confirmar'),
+                                                              Text('Confirmar'),
                                                         ),
                                                       ],
                                                     ),
@@ -780,16 +794,16 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                             builder: (alertDialogContext) {
                                               return WebViewAware(
                                                 child: AlertDialog(
-                                                  title: const Text(
+                                                  title: Text(
                                                       'Se cargo correctamente la informacion'),
-                                                  content: const Text(
+                                                  content: Text(
                                                       'Se cargo la informacion de reiteracion y se creo un documento en google drive!!'),
                                                   actions: [
                                                     TextButton(
                                                       onPressed: () =>
                                                           Navigator.pop(
                                                               alertDialogContext),
-                                                      child: const Text('Ok'),
+                                                      child: Text('Ok'),
                                                     ),
                                                   ],
                                                 ),
@@ -837,9 +851,9 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                                 builder: (alertDialogContext) {
                                                   return WebViewAware(
                                                     child: AlertDialog(
-                                                      title: const Text(
+                                                      title: Text(
                                                           'Crear google docs'),
-                                                      content: const Text(
+                                                      content: Text(
                                                           'Desea crear un archivo de google docs para imprimir?'),
                                                       actions: [
                                                         TextButton(
@@ -847,7 +861,7 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                                               Navigator.pop(
                                                                   alertDialogContext,
                                                                   false),
-                                                          child: const Text('Cancel'),
+                                                          child: Text('Cancel'),
                                                         ),
                                                         TextButton(
                                                           onPressed: () =>
@@ -855,7 +869,7 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                                                   alertDialogContext,
                                                                   true),
                                                           child:
-                                                              const Text('Confirmar'),
+                                                              Text('Confirmar'),
                                                         ),
                                                       ],
                                                     ),
@@ -907,16 +921,16 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                             builder: (alertDialogContext) {
                                               return WebViewAware(
                                                 child: AlertDialog(
-                                                  title: const Text(
+                                                  title: Text(
                                                       'Se cargo correctamente la informacion'),
-                                                  content: const Text(
+                                                  content: Text(
                                                       'Se cargo la informacion de reiteracion y se creo un documento en google drive!!'),
                                                   actions: [
                                                     TextButton(
                                                       onPressed: () =>
                                                           Navigator.pop(
                                                               alertDialogContext),
-                                                      child: const Text('Ok'),
+                                                      child: Text('Ok'),
                                                     ),
                                                   ],
                                                 ),
@@ -933,16 +947,16 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                     safeSetState(() {});
                                   },
                                   text: 'Guardar',
-                                  icon: const Icon(
+                                  icon: Icon(
                                     Icons.save,
                                     size: 15.0,
                                   ),
                                   options: FFButtonOptions(
                                     width: 250.0,
                                     height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).success,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -953,7 +967,7 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 2.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -963,12 +977,12 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                 ),
                               ],
                             ),
-                          ].divide(const SizedBox(height: 10.0)),
+                          ].divide(SizedBox(height: 10.0)),
                         ),
                       ),
                     ]
-                        .divide(const SizedBox(height: 10.0))
-                        .around(const SizedBox(height: 10.0)),
+                        .divide(SizedBox(height: 10.0))
+                        .around(SizedBox(height: 10.0)),
                   ),
                 ),
               ),

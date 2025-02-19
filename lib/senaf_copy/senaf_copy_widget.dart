@@ -128,7 +128,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                 borderRadius: 30.0,
                 borderWidth: 1.0,
                 buttonSize: 60.0,
-                icon: const Icon(
+                icon: Icon(
                   Icons.arrow_back_rounded,
                   color: Colors.white,
                   size: 30.0,
@@ -146,7 +146,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: true,
               elevation: 2.0,
             ),
@@ -186,7 +186,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                           : null;
 
                   return Container(
-                    decoration: const BoxDecoration(),
+                    decoration: BoxDecoration(),
                     child: FutureBuilder<List<IngresosRow>>(
                       future: (_model.requestCompleter2 ??=
                               Completer<List<IngresosRow>>()
@@ -221,7 +221,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                 : null;
 
                         return Container(
-                          decoration: const BoxDecoration(),
+                          decoration: BoxDecoration(),
                           child: FutureBuilder<List<Formulario5Row>>(
                             future: Formulario5Table().querySingleRow(
                               queryFn: (q) => q.eqOrNull(
@@ -253,9 +253,9 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                       : null;
 
                               return Container(
-                                decoration: const BoxDecoration(),
+                                decoration: BoxDecoration(),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 10.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -529,7 +529,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -540,7 +540,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                         decoration:
                                                             BoxDecoration(
                                                           color: Colors.white,
-                                                          boxShadow: const [
+                                                          boxShadow: [
                                                             BoxShadow(
                                                               blurRadius: 7.0,
                                                               color: Color(
@@ -558,7 +558,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       12.0,
@@ -582,7 +582,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                       .override(
                                                                         fontFamily:
                                                                             'Plus Jakarta Sans',
-                                                                        color: const Color(
+                                                                        color: Color(
                                                                             0xFF39D2C0),
                                                                         fontSize:
                                                                             14.0,
@@ -592,7 +592,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                             FontWeight.w500,
                                                                       ),
                                                                 ),
-                                                                const Divider(
+                                                                Divider(
                                                                   height: 16.0,
                                                                   thickness:
                                                                       2.0,
@@ -616,7 +616,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                             fontFamily:
                                                                                 'Plus Jakarta Sans',
                                                                             color:
-                                                                                const Color(0xFF14181B),
+                                                                                Color(0xFF14181B),
                                                                             fontSize:
                                                                                 16.0,
                                                                             letterSpacing:
@@ -626,7 +626,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                           ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           4.0,
                                                                           0.0,
@@ -643,7 +643,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                             .labelMedium
                                                                             .override(
                                                                               fontFamily: 'Plus Jakarta Sans',
-                                                                              color: const Color(0xFF57636C),
+                                                                              color: Color(0xFF57636C),
                                                                               fontSize: 14.0,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w500,
@@ -683,7 +683,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                             fontFamily:
                                                                                 'Plus Jakarta Sans',
                                                                             color:
-                                                                                const Color(0xFF14181B),
+                                                                                Color(0xFF14181B),
                                                                             fontSize:
                                                                                 16.0,
                                                                             letterSpacing:
@@ -693,7 +693,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                           ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           4.0,
                                                                           0.0,
@@ -710,7 +710,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                             .labelMedium
                                                                             .override(
                                                                               fontFamily: 'Plus Jakarta Sans',
-                                                                              color: const Color(0xFF57636C),
+                                                                              color: Color(0xFF57636C),
                                                                               fontSize: 14.0,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w500,
@@ -743,7 +743,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                             fontFamily:
                                                                                 'Plus Jakarta Sans',
                                                                             color:
-                                                                                const Color(0xFF14181B),
+                                                                                Color(0xFF14181B),
                                                                             fontSize:
                                                                                 16.0,
                                                                             letterSpacing:
@@ -753,7 +753,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                           ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           4.0,
                                                                           0.0,
@@ -770,7 +770,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                             .labelMedium
                                                                             .override(
                                                                               fontFamily: 'Plus Jakarta Sans',
-                                                                              color: const Color(0xFF57636C),
+                                                                              color: Color(0xFF57636C),
                                                                               fontSize: 14.0,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w500,
@@ -803,7 +803,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                             fontFamily:
                                                                                 'Plus Jakarta Sans',
                                                                             color:
-                                                                                const Color(0xFF14181B),
+                                                                                Color(0xFF14181B),
                                                                             fontSize:
                                                                                 16.0,
                                                                             letterSpacing:
@@ -813,7 +813,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                           ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           4.0,
                                                                           0.0,
@@ -830,7 +830,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                             .labelMedium
                                                                             .override(
                                                                               fontFamily: 'Plus Jakarta Sans',
-                                                                              color: const Color(0xFF57636C),
+                                                                              color: Color(0xFF57636C),
                                                                               fontSize: 14.0,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w500,
@@ -863,7 +863,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                             fontFamily:
                                                                                 'Plus Jakarta Sans',
                                                                             color:
-                                                                                const Color(0xFF14181B),
+                                                                                Color(0xFF14181B),
                                                                             fontSize:
                                                                                 16.0,
                                                                             letterSpacing:
@@ -873,7 +873,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                           ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           4.0,
                                                                           0.0,
@@ -890,7 +890,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                             .labelMedium
                                                                             .override(
                                                                               fontFamily: 'Plus Jakarta Sans',
-                                                                              color: const Color(0xFF57636C),
+                                                                              color: Color(0xFF57636C),
                                                                               fontSize: 14.0,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w500,
@@ -956,14 +956,14 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                       options: FFButtonOptions(
                                                         height: 40.0,
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
                                                                     16.0,
                                                                     0.0),
                                                         iconPadding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -992,26 +992,26 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                       ),
                                                     ),
                                                   ]
-                                                      .divide(const SizedBox(
+                                                      .divide(SizedBox(
                                                           height: 10.0))
-                                                      .around(const SizedBox(
+                                                      .around(SizedBox(
                                                           height: 10.0)),
                                                 ),
                                               ),
                                             ),
                                           ),
-                                        ].divide(const SizedBox(height: 10.0)),
+                                        ].divide(SizedBox(height: 10.0)),
                                       ),
                                       Expanded(
                                         child: Padding(
-                                          padding: const EdgeInsets.all(10.0),
+                                          padding: EdgeInsets.all(10.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Expanded(
                                                 child: Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.0, -1.0),
                                                   child: Container(
                                                     decoration: BoxDecoration(
@@ -1026,7 +1026,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                               .disabled,
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Container(
                                                           height:
@@ -1035,10 +1035,10 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                       .height *
                                                                   0.93,
                                                           decoration:
-                                                              const BoxDecoration(),
+                                                              BoxDecoration(),
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         5.0,
                                                                         0.0,
@@ -1083,7 +1083,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                   ),
                                                                   Align(
                                                                     alignment:
-                                                                        const AlignmentDirectional(
+                                                                        AlignmentDirectional(
                                                                             0.0,
                                                                             -1.0),
                                                                     child: Text(
@@ -1107,7 +1107,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                     ),
                                                                   ),
                                                                   Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             0.0,
@@ -1122,7 +1122,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                         _model.dropDowncausaValue ??=
                                                                             containerform9Formulario9Row?.causa,
                                                                       ),
-                                                                      options: const [
+                                                                      options: [
                                                                         'Restitución integral de los derechos vulnerados',
                                                                         'Incumplimiento reiterado de las estrategias acordadas por parte del niño/adolescente o familia u organismo/institución requerido',
                                                                         'Fallecimiento del NNA',
@@ -1175,7 +1175,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                           2.0,
                                                                       borderRadius:
                                                                           10.0,
-                                                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                                                      margin: EdgeInsetsDirectional.fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
@@ -1192,7 +1192,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                           .dropDowncausaValue ==
                                                                       'Incumplimiento reiterado de las estrategias acordadas por parte del niño/adolescente o familia u organismo/institución requerido')
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           8.0,
                                                                           0.0,
                                                                           8.0,
@@ -1279,7 +1279,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                           .dropDowncausaValue !=
                                                                       'Solicitud de medida excepcional al organismo provincial de protección de derechos (SENAF)')
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           8.0,
                                                                           0.0,
                                                                           8.0,
@@ -1401,7 +1401,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                               _model.dropDowncausaValue == 'Solicitud de medida excepcional al organismo provincial de protección de derechos (SENAF)',
                                                                           child:
                                                                               Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 10.0,
                                                                                 0.0,
                                                                                 10.0,
@@ -1413,7 +1413,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                 mainAxisAlignment: MainAxisAlignment.start,
                                                                                 children: [
                                                                                   Container(
-                                                                                    decoration: const BoxDecoration(),
+                                                                                    decoration: BoxDecoration(),
                                                                                   ),
                                                                                   Text(
                                                                                     'SOLICITUD DE MEDIDA EXCEPCIONAL A SeNAF',
@@ -1430,7 +1430,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     children: [
                                                                                       Align(
-                                                                                        alignment: const AlignmentDirectional(-1.0, -1.0),
+                                                                                        alignment: AlignmentDirectional(-1.0, -1.0),
                                                                                         child: Text(
                                                                                           'Se resuelve el CESE DE LAS MEDIDAS DE PROTECCIÓN DE DERECHOS y la SOLICITUD DE LA MEDIDA EXCEPCIONAL A SENAF en razón de',
                                                                                           style: FlutterFlowTheme.of(context).titleMedium.override(
@@ -1445,7 +1445,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                         children: [
                                                                                           Container(
                                                                                             width: 450.0,
-                                                                                            decoration: const BoxDecoration(),
+                                                                                            decoration: BoxDecoration(),
                                                                                             child: Text(
                                                                                               'a) Haber agotado las Medidas de protección posibles para la restitución de los derechos vulnerados sin que los mismos hayan podido ser restituidos. (art 42, 45, 48 y 51 de la ley 9944)',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1490,7 +1490,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                         children: [
                                                                                           Container(
                                                                                             width: 450.0,
-                                                                                            decoration: const BoxDecoration(),
+                                                                                            decoration: BoxDecoration(),
                                                                                             child: Text(
                                                                                               'b) Que la permanencia en su medio familiar implica un grave riesgo para la vida e integridad psicofisica de la niñajo o adolescente. (art 42 y 51 de la ley say4)',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1522,13 +1522,13 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                           ),
                                                                                         ],
                                                                                       ),
-                                                                                    ].divide(const SizedBox(height: 5.0)),
+                                                                                    ].divide(SizedBox(height: 5.0)),
                                                                                   ),
                                                                                   Divider(
                                                                                     thickness: 2.0,
                                                                                     color: FlutterFlowTheme.of(context).alternate,
                                                                                   ),
-                                                                                  SizedBox(
+                                                                                  Container(
                                                                                     width: MediaQuery.sizeOf(context).width * 6.0,
                                                                                     child: TextFormField(
                                                                                       controller: _model.textController3 ??= TextEditingController(
@@ -1558,7 +1558,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                           borderRadius: BorderRadius.circular(8.0),
                                                                                         ),
                                                                                         focusedBorder: OutlineInputBorder(
-                                                                                          borderSide: const BorderSide(
+                                                                                          borderSide: BorderSide(
                                                                                             color: Color(0x00000000),
                                                                                             width: 1.0,
                                                                                           ),
@@ -1590,7 +1590,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                       validator: _model.textController3Validator.asValidator(context),
                                                                                     ),
                                                                                   ),
-                                                                                  SizedBox(
+                                                                                  Container(
                                                                                     width: MediaQuery.sizeOf(context).width * 6.0,
                                                                                     child: TextFormField(
                                                                                       controller: _model.textController4 ??= TextEditingController(
@@ -1620,7 +1620,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                           borderRadius: BorderRadius.circular(8.0),
                                                                                         ),
                                                                                         focusedBorder: OutlineInputBorder(
-                                                                                          borderSide: const BorderSide(
+                                                                                          borderSide: BorderSide(
                                                                                             color: Color(0x00000000),
                                                                                             width: 1.0,
                                                                                           ),
@@ -1661,7 +1661,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                       ),
                                                                                     ),
                                                                                     child: Padding(
-                                                                                      padding: const EdgeInsets.all(10.0),
+                                                                                      padding: EdgeInsets.all(10.0),
                                                                                       child: Column(
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         children: [
@@ -1690,21 +1690,21 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                         ),
                                                                                                   ),
                                                                                                   Align(
-                                                                                                    alignment: const AlignmentDirectional(-1.0, -1.0),
+                                                                                                    alignment: AlignmentDirectional(-1.0, -1.0),
                                                                                                     child: Container(
                                                                                                       width: 100.0,
                                                                                                       height: 10.0,
                                                                                                       decoration: BoxDecoration(
                                                                                                         color: () {
                                                                                                           if (containerform9Formulario9Row?.idForm9 == null) {
-                                                                                                            return const Color(0x00000000);
+                                                                                                            return Color(0x00000000);
                                                                                                           } else if (containerform9Formulario9Row!.solicitudMedida!) {
                                                                                                             return FlutterFlowTheme.of(context).secondary;
                                                                                                           } else {
                                                                                                             return FlutterFlowTheme.of(context).warning;
                                                                                                           }
                                                                                                         }(),
-                                                                                                        borderRadius: const BorderRadius.only(
+                                                                                                        borderRadius: BorderRadius.only(
                                                                                                           bottomLeft: Radius.circular(0.0),
                                                                                                           bottomRight: Radius.circular(0.0),
                                                                                                           topLeft: Radius.circular(10.0),
@@ -1714,14 +1714,14 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                     ),
                                                                                                   ),
                                                                                                   Padding(
-                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                                                                                                     child: Row(
                                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                                       mainAxisAlignment: MainAxisAlignment.start,
                                                                                                       children: [
                                                                                                         Theme(
                                                                                                           data: ThemeData(
-                                                                                                            checkboxTheme: const CheckboxThemeData(
+                                                                                                            checkboxTheme: CheckboxThemeData(
                                                                                                               visualDensity: VisualDensity.compact,
                                                                                                               materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                                                                                                               shape: CircleBorder(),
@@ -1762,15 +1762,15 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                     color: FlutterFlowTheme.of(context).alternate,
                                                                                                   ),
                                                                                                   Padding(
-                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                                                                                                     child: Row(
                                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                                       children: [
                                                                                                         Align(
-                                                                                                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                                          alignment: AlignmentDirectional(-1.0, 0.0),
                                                                                                           child: Padding(
-                                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                                                            padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                                                                                                             child: Text(
                                                                                                               'Fecha de elevacion a direccion general',
                                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1782,7 +1782,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                         ),
                                                                                                         Expanded(
                                                                                                           child: Padding(
-                                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(17.0, 0.0, 0.0, 0.0),
+                                                                                                            padding: EdgeInsetsDirectional.fromSTEB(17.0, 0.0, 0.0, 0.0),
                                                                                                             child: Text(
                                                                                                               valueOrDefault<String>(
                                                                                                                 _model.datePicked1?.toString(),
@@ -1797,10 +1797,10 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                           ),
                                                                                                         ),
                                                                                                         Padding(
-                                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
+                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
                                                                                                           child: FFButtonWidget(
                                                                                                             onPressed: () async {
-                                                                                                              final datePicked1Date = await showDatePicker(
+                                                                                                              final _datePicked1Date = await showDatePicker(
                                                                                                                 context: context,
                                                                                                                 initialDate: getCurrentTimestamp,
                                                                                                                 firstDate: DateTime(1900),
@@ -1827,13 +1827,17 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                                 },
                                                                                                               );
 
-                                                                                                              if (datePicked1Date != null) {
+                                                                                                              if (_datePicked1Date != null) {
                                                                                                                 safeSetState(() {
                                                                                                                   _model.datePicked1 = DateTime(
-                                                                                                                    datePicked1Date.year,
-                                                                                                                    datePicked1Date.month,
-                                                                                                                    datePicked1Date.day,
+                                                                                                                    _datePicked1Date.year,
+                                                                                                                    _datePicked1Date.month,
+                                                                                                                    _datePicked1Date.day,
                                                                                                                   );
+                                                                                                                });
+                                                                                                              } else if (_model.datePicked1 != null) {
+                                                                                                                safeSetState(() {
+                                                                                                                  _model.datePicked1 = getCurrentTimestamp;
                                                                                                                 });
                                                                                                               }
                                                                                                             },
@@ -1847,8 +1851,8 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                             ),
                                                                                                             options: FFButtonOptions(
                                                                                                               height: 40.0,
-                                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                              padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                                               color: FlutterFlowTheme.of(context).primary,
                                                                                                               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                                     fontFamily: 'Noto Sans JP',
@@ -1856,7 +1860,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                                     letterSpacing: 0.0,
                                                                                                                   ),
                                                                                                               elevation: 3.0,
-                                                                                                              borderSide: const BorderSide(
+                                                                                                              borderSide: BorderSide(
                                                                                                                 color: Colors.transparent,
                                                                                                                 width: 1.0,
                                                                                                               ),
@@ -1872,15 +1876,15 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                     children: [
                                                                                                       if (widget.usuariorol?.rolId == 1)
                                                                                                         Padding(
-                                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                                                                                                           child: Row(
                                                                                                             mainAxisSize: MainAxisSize.max,
                                                                                                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                                             children: [
                                                                                                               Align(
-                                                                                                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                                                alignment: AlignmentDirectional(-1.0, 0.0),
                                                                                                                 child: Padding(
-                                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                                                                                                                   child: Text(
                                                                                                                     'Fecha de solicitud a SENAF',
                                                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1892,7 +1896,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                               ),
                                                                                                               Expanded(
                                                                                                                 child: Padding(
-                                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(17.0, 0.0, 0.0, 0.0),
+                                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(17.0, 0.0, 0.0, 0.0),
                                                                                                                   child: Text(
                                                                                                                     valueOrDefault<String>(
                                                                                                                       dateTimeFormat(
@@ -1911,12 +1915,12 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                                 ),
                                                                                                               ),
                                                                                                               Padding(
-                                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
+                                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
                                                                                                                 child: FFButtonWidget(
                                                                                                                   onPressed: (widget.usuariorol?.rolId != 1)
                                                                                                                       ? null
                                                                                                                       : () async {
-                                                                                                                          final datePicked2Date = await showDatePicker(
+                                                                                                                          final _datePicked2Date = await showDatePicker(
                                                                                                                             context: context,
                                                                                                                             initialDate: getCurrentTimestamp,
                                                                                                                             firstDate: DateTime(1900),
@@ -1943,13 +1947,17 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                                             },
                                                                                                                           );
 
-                                                                                                                          if (datePicked2Date != null) {
+                                                                                                                          if (_datePicked2Date != null) {
                                                                                                                             safeSetState(() {
                                                                                                                               _model.datePicked2 = DateTime(
-                                                                                                                                datePicked2Date.year,
-                                                                                                                                datePicked2Date.month,
-                                                                                                                                datePicked2Date.day,
+                                                                                                                                _datePicked2Date.year,
+                                                                                                                                _datePicked2Date.month,
+                                                                                                                                _datePicked2Date.day,
                                                                                                                               );
+                                                                                                                            });
+                                                                                                                          } else if (_model.datePicked2 != null) {
+                                                                                                                            safeSetState(() {
+                                                                                                                              _model.datePicked2 = getCurrentTimestamp;
                                                                                                                             });
                                                                                                                           }
                                                                                                                         },
@@ -1963,8 +1971,8 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                                   ),
                                                                                                                   options: FFButtonOptions(
                                                                                                                     height: 40.0,
-                                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                                           fontFamily: 'Noto Sans JP',
@@ -1972,7 +1980,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                                           letterSpacing: 0.0,
                                                                                                                         ),
                                                                                                                     elevation: 3.0,
-                                                                                                                    borderSide: const BorderSide(
+                                                                                                                    borderSide: BorderSide(
                                                                                                                       color: Colors.transparent,
                                                                                                                       width: 1.0,
                                                                                                                     ),
@@ -1986,15 +1994,15 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                         ),
                                                                                                       if (widget.usuariorol?.rolId == 1)
                                                                                                         Padding(
-                                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                                                                                                           child: Row(
                                                                                                             mainAxisSize: MainAxisSize.max,
                                                                                                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                                             children: [
                                                                                                               Align(
-                                                                                                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                                                alignment: AlignmentDirectional(-1.0, 0.0),
                                                                                                                 child: Padding(
-                                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                                                                                                                   child: Text(
                                                                                                                     'Fecha reiteracion solicitud',
                                                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -2006,7 +2014,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                               ),
                                                                                                               Expanded(
                                                                                                                 child: Padding(
-                                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(17.0, 0.0, 0.0, 0.0),
+                                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(17.0, 0.0, 0.0, 0.0),
                                                                                                                   child: Text(
                                                                                                                     valueOrDefault<String>(
                                                                                                                       dateTimeFormat(
@@ -2025,12 +2033,12 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                                 ),
                                                                                                               ),
                                                                                                               Padding(
-                                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
+                                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
                                                                                                                 child: FFButtonWidget(
                                                                                                                   onPressed: (widget.usuariorol?.rolId != 1)
                                                                                                                       ? null
                                                                                                                       : () async {
-                                                                                                                          final datePicked3Date = await showDatePicker(
+                                                                                                                          final _datePicked3Date = await showDatePicker(
                                                                                                                             context: context,
                                                                                                                             initialDate: getCurrentTimestamp,
                                                                                                                             firstDate: DateTime(1900),
@@ -2057,13 +2065,17 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                                             },
                                                                                                                           );
 
-                                                                                                                          if (datePicked3Date != null) {
+                                                                                                                          if (_datePicked3Date != null) {
                                                                                                                             safeSetState(() {
                                                                                                                               _model.datePicked3 = DateTime(
-                                                                                                                                datePicked3Date.year,
-                                                                                                                                datePicked3Date.month,
-                                                                                                                                datePicked3Date.day,
+                                                                                                                                _datePicked3Date.year,
+                                                                                                                                _datePicked3Date.month,
+                                                                                                                                _datePicked3Date.day,
                                                                                                                               );
+                                                                                                                            });
+                                                                                                                          } else if (_model.datePicked3 != null) {
+                                                                                                                            safeSetState(() {
+                                                                                                                              _model.datePicked3 = getCurrentTimestamp;
                                                                                                                             });
                                                                                                                           }
                                                                                                                         },
@@ -2077,8 +2089,8 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                                   ),
                                                                                                                   options: FFButtonOptions(
                                                                                                                     height: 40.0,
-                                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                                           fontFamily: 'Noto Sans JP',
@@ -2086,7 +2098,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                                           letterSpacing: 0.0,
                                                                                                                         ),
                                                                                                                     elevation: 3.0,
-                                                                                                                    borderSide: const BorderSide(
+                                                                                                                    borderSide: BorderSide(
                                                                                                                       color: Colors.transparent,
                                                                                                                       width: 1.0,
                                                                                                                     ),
@@ -2098,10 +2110,10 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                             ],
                                                                                                           ),
                                                                                                         ),
-                                                                                                    ].divide(const SizedBox(height: 10.0)),
+                                                                                                    ].divide(SizedBox(height: 10.0)),
                                                                                                   ),
                                                                                                   Padding(
-                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                                                                                                     child: TextFormField(
                                                                                                       controller: _model.textFieldmotivosolicitudTextController ??= TextEditingController(
                                                                                                         text: containerform9Formulario9Row?.motivosolicitud,
@@ -2155,7 +2167,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                       validator: _model.textFieldmotivosolicitudTextControllerValidator.asValidator(context),
                                                                                                     ),
                                                                                                   ),
-                                                                                                ].divide(const SizedBox(height: 10.0)).around(const SizedBox(height: 10.0)),
+                                                                                                ].divide(SizedBox(height: 10.0)).around(SizedBox(height: 10.0)),
                                                                                               ),
                                                                                             ),
                                                                                           ),
@@ -2177,21 +2189,21 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                                 children: [
                                                                                                   Align(
-                                                                                                    alignment: const AlignmentDirectional(-1.0, -1.0),
+                                                                                                    alignment: AlignmentDirectional(-1.0, -1.0),
                                                                                                     child: Container(
                                                                                                       width: 100.0,
                                                                                                       height: 10.0,
                                                                                                       decoration: BoxDecoration(
                                                                                                         color: () {
                                                                                                           if (containerform9Formulario9Row?.idForm9 == null) {
-                                                                                                            return const Color(0x00000000);
+                                                                                                            return Color(0x00000000);
                                                                                                           } else if (containerform9Formulario9Row!.evaluacionMedida!) {
                                                                                                             return FlutterFlowTheme.of(context).secondary;
                                                                                                           } else {
                                                                                                             return FlutterFlowTheme.of(context).warning;
                                                                                                           }
                                                                                                         }(),
-                                                                                                        borderRadius: const BorderRadius.only(
+                                                                                                        borderRadius: BorderRadius.only(
                                                                                                           bottomLeft: Radius.circular(0.0),
                                                                                                           bottomRight: Radius.circular(0.0),
                                                                                                           topLeft: Radius.circular(10.0),
@@ -2201,14 +2213,14 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                     ),
                                                                                                   ),
                                                                                                   Padding(
-                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                                                                                                     child: Row(
                                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                                       mainAxisAlignment: MainAxisAlignment.start,
                                                                                                       children: [
                                                                                                         Theme(
                                                                                                           data: ThemeData(
-                                                                                                            checkboxTheme: const CheckboxThemeData(
+                                                                                                            checkboxTheme: CheckboxThemeData(
                                                                                                               visualDensity: VisualDensity.compact,
                                                                                                               materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                                                                                                               shape: CircleBorder(),
@@ -2242,7 +2254,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                       ],
                                                                                                     ),
                                                                                                   ),
-                                                                                                ].divide(const SizedBox(height: 10.0)).around(const SizedBox(height: 10.0)),
+                                                                                                ].divide(SizedBox(height: 10.0)).around(SizedBox(height: 10.0)),
                                                                                               ),
                                                                                             ),
                                                                                           ),
@@ -2264,21 +2276,21 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                                 children: [
                                                                                                   Align(
-                                                                                                    alignment: const AlignmentDirectional(-1.0, -1.0),
+                                                                                                    alignment: AlignmentDirectional(-1.0, -1.0),
                                                                                                     child: Container(
                                                                                                       width: 100.0,
                                                                                                       height: 10.0,
                                                                                                       decoration: BoxDecoration(
                                                                                                         color: () {
                                                                                                           if (containerform9Formulario9Row?.idForm9 == null) {
-                                                                                                            return const Color(0x00000000);
+                                                                                                            return Color(0x00000000);
                                                                                                           } else if (containerform9Formulario9Row!.medidaAdoptada!) {
                                                                                                             return FlutterFlowTheme.of(context).secondary;
                                                                                                           } else {
                                                                                                             return FlutterFlowTheme.of(context).warning;
                                                                                                           }
                                                                                                         }(),
-                                                                                                        borderRadius: const BorderRadius.only(
+                                                                                                        borderRadius: BorderRadius.only(
                                                                                                           bottomLeft: Radius.circular(0.0),
                                                                                                           bottomRight: Radius.circular(0.0),
                                                                                                           topLeft: Radius.circular(10.0),
@@ -2288,14 +2300,14 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                     ),
                                                                                                   ),
                                                                                                   Padding(
-                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                                                                                                     child: Row(
                                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                                       mainAxisAlignment: MainAxisAlignment.start,
                                                                                                       children: [
                                                                                                         Theme(
                                                                                                           data: ThemeData(
-                                                                                                            checkboxTheme: const CheckboxThemeData(
+                                                                                                            checkboxTheme: CheckboxThemeData(
                                                                                                               visualDensity: VisualDensity.compact,
                                                                                                               materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                                                                                                               shape: CircleBorder(),
@@ -2336,15 +2348,15 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                     color: FlutterFlowTheme.of(context).alternate,
                                                                                                   ),
                                                                                                   Padding(
-                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                                                                                                     child: Row(
                                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                                       children: [
                                                                                                         Align(
-                                                                                                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                                          alignment: AlignmentDirectional(-1.0, 0.0),
                                                                                                           child: Padding(
-                                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                                                            padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                                                                                                             child: Text(
                                                                                                               'Fecha medida adoptada',
                                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -2356,7 +2368,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                         ),
                                                                                                         Expanded(
                                                                                                           child: Padding(
-                                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(17.0, 0.0, 0.0, 0.0),
+                                                                                                            padding: EdgeInsetsDirectional.fromSTEB(17.0, 0.0, 0.0, 0.0),
                                                                                                             child: Text(
                                                                                                               valueOrDefault<String>(
                                                                                                                 dateTimeFormat(
@@ -2375,12 +2387,12 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                           ),
                                                                                                         ),
                                                                                                         Padding(
-                                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
+                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
                                                                                                           child: FFButtonWidget(
                                                                                                             onPressed: (widget.usuariorol?.rolId != 1)
                                                                                                                 ? null
                                                                                                                 : () async {
-                                                                                                                    final datePicked4Date = await showDatePicker(
+                                                                                                                    final _datePicked4Date = await showDatePicker(
                                                                                                                       context: context,
                                                                                                                       initialDate: getCurrentTimestamp,
                                                                                                                       firstDate: DateTime(1900),
@@ -2407,13 +2419,17 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                                       },
                                                                                                                     );
 
-                                                                                                                    if (datePicked4Date != null) {
+                                                                                                                    if (_datePicked4Date != null) {
                                                                                                                       safeSetState(() {
                                                                                                                         _model.datePicked4 = DateTime(
-                                                                                                                          datePicked4Date.year,
-                                                                                                                          datePicked4Date.month,
-                                                                                                                          datePicked4Date.day,
+                                                                                                                          _datePicked4Date.year,
+                                                                                                                          _datePicked4Date.month,
+                                                                                                                          _datePicked4Date.day,
                                                                                                                         );
+                                                                                                                      });
+                                                                                                                    } else if (_model.datePicked4 != null) {
+                                                                                                                      safeSetState(() {
+                                                                                                                        _model.datePicked4 = getCurrentTimestamp;
                                                                                                                       });
                                                                                                                     }
                                                                                                                   },
@@ -2427,8 +2443,8 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                             ),
                                                                                                             options: FFButtonOptions(
                                                                                                               height: 40.0,
-                                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                              padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                                               color: FlutterFlowTheme.of(context).primary,
                                                                                                               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                                     fontFamily: 'Noto Sans JP',
@@ -2436,7 +2452,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                                     letterSpacing: 0.0,
                                                                                                                   ),
                                                                                                               elevation: 3.0,
-                                                                                                              borderSide: const BorderSide(
+                                                                                                              borderSide: BorderSide(
                                                                                                                 color: Colors.transparent,
                                                                                                                 width: 1.0,
                                                                                                               ),
@@ -2449,7 +2465,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                     ),
                                                                                                   ),
                                                                                                   Padding(
-                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                                                                                                     child: TextFormField(
                                                                                                       controller: _model.textFieldobservacionesdemedidaadoptadaTextController,
                                                                                                       focusNode: _model.textFieldobservacionesdemedidaadoptadaFocusNode,
@@ -2502,7 +2518,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                       validator: _model.textFieldobservacionesdemedidaadoptadaTextControllerValidator.asValidator(context),
                                                                                                     ),
                                                                                                   ),
-                                                                                                ].divide(const SizedBox(height: 10.0)).around(const SizedBox(height: 10.0)),
+                                                                                                ].divide(SizedBox(height: 10.0)).around(SizedBox(height: 10.0)),
                                                                                               ),
                                                                                             ),
                                                                                           ),
@@ -2524,21 +2540,21 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                                 children: [
                                                                                                   Align(
-                                                                                                    alignment: const AlignmentDirectional(-1.0, -1.0),
+                                                                                                    alignment: AlignmentDirectional(-1.0, -1.0),
                                                                                                     child: Container(
                                                                                                       width: 100.0,
                                                                                                       height: 10.0,
                                                                                                       decoration: BoxDecoration(
                                                                                                         color: () {
                                                                                                           if (containerform9Formulario9Row?.idForm9 == null) {
-                                                                                                            return const Color(0x00000000);
+                                                                                                            return Color(0x00000000);
                                                                                                           } else if (containerform9Formulario9Row!.medidaRechazada!) {
                                                                                                             return FlutterFlowTheme.of(context).secondary;
                                                                                                           } else {
                                                                                                             return FlutterFlowTheme.of(context).warning;
                                                                                                           }
                                                                                                         }(),
-                                                                                                        borderRadius: const BorderRadius.only(
+                                                                                                        borderRadius: BorderRadius.only(
                                                                                                           bottomLeft: Radius.circular(0.0),
                                                                                                           bottomRight: Radius.circular(0.0),
                                                                                                           topLeft: Radius.circular(10.0),
@@ -2548,14 +2564,14 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                     ),
                                                                                                   ),
                                                                                                   Padding(
-                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                                                                                                     child: Row(
                                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                                       mainAxisAlignment: MainAxisAlignment.start,
                                                                                                       children: [
                                                                                                         Theme(
                                                                                                           data: ThemeData(
-                                                                                                            checkboxTheme: const CheckboxThemeData(
+                                                                                                            checkboxTheme: CheckboxThemeData(
                                                                                                               visualDensity: VisualDensity.compact,
                                                                                                               materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                                                                                                               shape: CircleBorder(),
@@ -2596,15 +2612,15 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                     color: FlutterFlowTheme.of(context).alternate,
                                                                                                   ),
                                                                                                   Padding(
-                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                                                                                                     child: Row(
                                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                                       children: [
                                                                                                         Align(
-                                                                                                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                                                                                                          alignment: AlignmentDirectional(-1.0, 0.0),
                                                                                                           child: Padding(
-                                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                                                            padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                                                                                                             child: Text(
                                                                                                               'Fecha medida rechazada',
                                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -2616,7 +2632,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                         ),
                                                                                                         Expanded(
                                                                                                           child: Padding(
-                                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(17.0, 0.0, 0.0, 0.0),
+                                                                                                            padding: EdgeInsetsDirectional.fromSTEB(17.0, 0.0, 0.0, 0.0),
                                                                                                             child: Text(
                                                                                                               valueOrDefault<String>(
                                                                                                                 dateTimeFormat(
@@ -2635,12 +2651,12 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                           ),
                                                                                                         ),
                                                                                                         Padding(
-                                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
+                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
                                                                                                           child: FFButtonWidget(
                                                                                                             onPressed: (widget.usuariorol?.rolId != 1)
                                                                                                                 ? null
                                                                                                                 : () async {
-                                                                                                                    final datePicked5Date = await showDatePicker(
+                                                                                                                    final _datePicked5Date = await showDatePicker(
                                                                                                                       context: context,
                                                                                                                       initialDate: getCurrentTimestamp,
                                                                                                                       firstDate: DateTime(1900),
@@ -2667,13 +2683,17 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                                       },
                                                                                                                     );
 
-                                                                                                                    if (datePicked5Date != null) {
+                                                                                                                    if (_datePicked5Date != null) {
                                                                                                                       safeSetState(() {
                                                                                                                         _model.datePicked5 = DateTime(
-                                                                                                                          datePicked5Date.year,
-                                                                                                                          datePicked5Date.month,
-                                                                                                                          datePicked5Date.day,
+                                                                                                                          _datePicked5Date.year,
+                                                                                                                          _datePicked5Date.month,
+                                                                                                                          _datePicked5Date.day,
                                                                                                                         );
+                                                                                                                      });
+                                                                                                                    } else if (_model.datePicked5 != null) {
+                                                                                                                      safeSetState(() {
+                                                                                                                        _model.datePicked5 = getCurrentTimestamp;
                                                                                                                       });
                                                                                                                     }
                                                                                                                   },
@@ -2687,8 +2707,8 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                             ),
                                                                                                             options: FFButtonOptions(
                                                                                                               height: 40.0,
-                                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                              padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                                               color: FlutterFlowTheme.of(context).primary,
                                                                                                               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                                     fontFamily: 'Noto Sans JP',
@@ -2696,7 +2716,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                                     letterSpacing: 0.0,
                                                                                                                   ),
                                                                                                               elevation: 3.0,
-                                                                                                              borderSide: const BorderSide(
+                                                                                                              borderSide: BorderSide(
                                                                                                                 color: Colors.transparent,
                                                                                                                 width: 1.0,
                                                                                                               ),
@@ -2709,7 +2729,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                     ),
                                                                                                   ),
                                                                                                   Padding(
-                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                                                                                                     child: TextFormField(
                                                                                                       controller: _model.textFieldmotivorechazoTextController ??= TextEditingController(
                                                                                                         text: containerform9Formulario9Row?.motivoRechazo,
@@ -2764,15 +2784,15 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                                       validator: _model.textFieldmotivorechazoTextControllerValidator.asValidator(context),
                                                                                                     ),
                                                                                                   ),
-                                                                                                ].divide(const SizedBox(height: 10.0)).around(const SizedBox(height: 10.0)),
+                                                                                                ].divide(SizedBox(height: 10.0)).around(SizedBox(height: 10.0)),
                                                                                               ),
                                                                                             ),
                                                                                           ),
-                                                                                        ].divide(const SizedBox(height: 10.0)),
+                                                                                        ].divide(SizedBox(height: 10.0)),
                                                                                       ),
                                                                                     ),
                                                                                   ),
-                                                                                ].divide(const SizedBox(height: 10.0)).around(const SizedBox(height: 10.0)),
+                                                                                ].divide(SizedBox(height: 10.0)).around(SizedBox(height: 10.0)),
                                                                               ),
                                                                             ),
                                                                           ),
@@ -2796,10 +2816,10 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                         children: [
                                                                           Align(
                                                                             alignment:
-                                                                                const AlignmentDirectional(0.0, 0.0),
+                                                                                AlignmentDirectional(0.0, 0.0),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                                                                               child: FutureBuilder<List<DocumentosadjuntosRow>>(
                                                                                 future: DocumentosadjuntosTable().querySingleRow(
                                                                                   queryFn: (q) => q
@@ -2845,11 +2865,11 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                           builder: (alertDialogContext) {
                                                                                             return WebViewAware(
                                                                                               child: AlertDialog(
-                                                                                                title: const Text('fecha obligatoria'),
+                                                                                                title: Text('fecha obligatoria'),
                                                                                                 actions: [
                                                                                                   TextButton(
                                                                                                     onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                    child: const Text('Ok'),
+                                                                                                    child: Text('Ok'),
                                                                                                   ),
                                                                                                 ],
                                                                                               ),
@@ -2906,12 +2926,12 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                           builder: (alertDialogContext) {
                                                                                             return WebViewAware(
                                                                                               child: AlertDialog(
-                                                                                                title: const Text('Carga correcta'),
-                                                                                                content: const Text('La informacion se guardo correctamente!!'),
+                                                                                                title: Text('Carga correcta'),
+                                                                                                content: Text('La informacion se guardo correctamente!!'),
                                                                                                 actions: [
                                                                                                   TextButton(
                                                                                                     onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                    child: const Text('Ok'),
+                                                                                                    child: Text('Ok'),
                                                                                                   ),
                                                                                                 ],
                                                                                               ),
@@ -2939,12 +2959,12 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                               builder: (alertDialogContext) {
                                                                                                 return WebViewAware(
                                                                                                   child: AlertDialog(
-                                                                                                    title: const Text('Se ejecuto correctamente!'),
-                                                                                                    content: const Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                                    title: Text('Se ejecuto correctamente!'),
+                                                                                                    content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
                                                                                                     actions: [
                                                                                                       TextButton(
                                                                                                         onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                        child: const Text('Ok'),
+                                                                                                        child: Text('Ok'),
                                                                                                       ),
                                                                                                     ],
                                                                                                   ),
@@ -2960,25 +2980,25 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                           data: {
                                                                                             'idIngreso': widget.ingrow?.id,
                                                                                             'idExpediente': widget.expediente?.id,
-                                                                                            'fecha': supaSerialize<DateTime>(_model.datePicked1 ?? containerform9Formulario9Row?.fecha),
+                                                                                            'fecha': supaSerialize<DateTime>(_model.datePicked1 != null ? _model.datePicked1 : containerform9Formulario9Row?.fecha),
                                                                                             'causa': _model.dropDowncausaValue,
                                                                                             'observacioncese': _model.textFieldObsTextController.text,
                                                                                             'solicitudMedida': _model.checkboxsolicitudValue,
-                                                                                            'fechasolicitud': supaSerialize<DateTime>(_model.datePicked1 ?? containerform9Formulario9Row?.fechasolicitud),
+                                                                                            'fechasolicitud': supaSerialize<DateTime>(_model.datePicked1 != null ? _model.datePicked1 : containerform9Formulario9Row?.fechasolicitud),
                                                                                             'evaluacionMedida': _model.checkboxevaluacionValue,
                                                                                             'MedidaAdoptada': _model.checkboxadoptadaValue,
                                                                                             'MedidaRechazada': _model.checkboxrechazadaValue,
-                                                                                            'FechaMedidaRechazada': supaSerialize<DateTime>(_model.datePicked5 ?? containerform9Formulario9Row?.fechaMedidaRechazada),
+                                                                                            'FechaMedidaRechazada': supaSerialize<DateTime>(_model.datePicked5 != null ? _model.datePicked5 : containerform9Formulario9Row?.fechaMedidaRechazada),
                                                                                             'MotivoRechazo': _model.textFieldobservacionesdemedidaadoptadaTextController.text,
                                                                                             'acciones': _model.textController1.text,
-                                                                                            'reiteracionFecha': supaSerialize<DateTime>(_model.datePicked3 ?? containerform9Formulario9Row?.reiteracionFecha),
+                                                                                            'reiteracionFecha': supaSerialize<DateTime>(_model.datePicked3 != null ? _model.datePicked3 : containerform9Formulario9Row?.reiteracionFecha),
                                                                                             'updated_at': supaSerialize<DateTime>(getCurrentTimestamp),
                                                                                             'iduser': currentUserUid,
-                                                                                            'fechasolicitudsenaf': supaSerialize<DateTime>(_model.datePicked2 ?? containerform9Formulario9Row?.fechasolicitudsenaf),
+                                                                                            'fechasolicitudsenaf': supaSerialize<DateTime>(_model.datePicked2 != null ? _model.datePicked2 : containerform9Formulario9Row?.fechasolicitudsenaf),
                                                                                             'agotadomedida': _model.radioButtoninscriptoagotadoValue,
                                                                                             'riesgovida': _model.radioButtoninscriptopermanenciafamiliaValue,
                                                                                             'fundamentacionsolicitud': _model.textController4.text,
-                                                                                            'FecMedidaAdoptada': supaSerialize<DateTime>(_model.datePicked4 ?? containerform9Formulario9Row?.fecMedidaAdoptada),
+                                                                                            'FecMedidaAdoptada': supaSerialize<DateTime>(_model.datePicked4 != null ? _model.datePicked4 : containerform9Formulario9Row?.fecMedidaAdoptada),
                                                                                             'reseñadelasitu': _model.textController3.text,
                                                                                             'motivosolicitud': _model.textFieldmotivosolicitudTextController.text,
                                                                                             'observacionesmedidaadoptada': _model.textFieldobservacionesdemedidaadoptadaTextController.text,
@@ -2997,11 +3017,11 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                           builder: (alertDialogContext) {
                                                                                             return WebViewAware(
                                                                                               child: AlertDialog(
-                                                                                                title: const Text('Se guardo correctamente la informacion'),
+                                                                                                title: Text('Se guardo correctamente la informacion'),
                                                                                                 actions: [
                                                                                                   TextButton(
                                                                                                     onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                    child: const Text('Ok'),
+                                                                                                    child: Text('Ok'),
                                                                                                   ),
                                                                                                 ],
                                                                                               ),
@@ -3025,12 +3045,12 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                             builder: (alertDialogContext) {
                                                                                               return WebViewAware(
                                                                                                 child: AlertDialog(
-                                                                                                  title: const Text('Se ejecuto correctamente!'),
-                                                                                                  content: const Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                                  title: Text('Se ejecuto correctamente!'),
+                                                                                                  content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
                                                                                                   actions: [
                                                                                                     TextButton(
                                                                                                       onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                      child: const Text('Ok'),
+                                                                                                      child: Text('Ok'),
                                                                                                     ),
                                                                                                   ],
                                                                                                 ),
@@ -3045,15 +3065,15 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                       safeSetState(() {});
                                                                                     },
                                                                                     text: 'Guardar',
-                                                                                    icon: const Icon(
+                                                                                    icon: Icon(
                                                                                       Icons.save,
                                                                                       size: 15.0,
                                                                                     ),
                                                                                     options: FFButtonOptions(
                                                                                       width: 250.0,
                                                                                       height: 40.0,
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                       color: FlutterFlowTheme.of(context).success,
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: 'Noto Sans JP',
@@ -3061,7 +3081,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                             letterSpacing: 0.0,
                                                                                           ),
                                                                                       elevation: 2.0,
-                                                                                      borderSide: const BorderSide(
+                                                                                      borderSide: BorderSide(
                                                                                         color: Colors.transparent,
                                                                                         width: 1.0,
                                                                                       ),
@@ -3076,7 +3096,7 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                           if (containerform9Formulario9Row?.linksolicitud != null &&
                                                                               containerform9Formulario9Row?.linksolicitud != '')
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                                                                               child: FFButtonWidget(
                                                                                 onPressed: () async {
                                                                                   context.pushNamed(
@@ -3108,8 +3128,8 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                                 text: 'Ver informe',
                                                                                 options: FFButtonOptions(
                                                                                   height: 40.0,
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: 'Noto Sans JP',
@@ -3129,10 +3149,10 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                     ],
                                                                   ),
                                                                 ]
-                                                                    .divide(const SizedBox(
+                                                                    .divide(SizedBox(
                                                                         height:
                                                                             8.0))
-                                                                    .around(const SizedBox(
+                                                                    .around(SizedBox(
                                                                         height:
                                                                             8.0)),
                                                               ),

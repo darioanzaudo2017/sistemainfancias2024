@@ -24,7 +24,7 @@ class Formulario3Widget extends StatefulWidget {
     required this.usuariosrow,
     this.formulario,
     required this.usuariorol,
-  }) : identrevista = identrevista ?? 0;
+  }) : this.identrevista = identrevista ?? 0;
 
   final IngresosRow? idingreso;
   final VistaExpedientesUltimoEstadoRow? rowexp;
@@ -79,7 +79,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<Formulario3Row>>(
         future: Formulario3Table().querySingleRow(
           queryFn: (q) => q.eqOrNull(
@@ -125,14 +125,14 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                   color: FlutterFlowTheme.of(context).primary,
                 ),
               ),
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Form(
                 key: _model.formKey,
                 autovalidateMode: AutovalidateMode.disabled,
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, -1.0),
+                  alignment: AlignmentDirectional(0.0, -1.0),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
@@ -140,7 +140,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Align(
-                            alignment: const AlignmentDirectional(1.0, -1.0),
+                            alignment: AlignmentDirectional(1.0, -1.0),
                             child: FlutterFlowIconButton(
                               borderRadius: 20.0,
                               borderWidth: 1.0,
@@ -156,13 +156,13 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               child: Container(
                                 height: 134.8,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   color: Color(0xFF39A9EF),
                                   boxShadow: [
                                     BoxShadow(
@@ -182,7 +182,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 16.0, 16.0, 16.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
@@ -196,10 +196,10 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   1.0, 1.0),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 16.0, 8.0, 0.0),
                                                 child: FFButtonWidget(
@@ -236,11 +236,11 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                                     width: 200.0,
                                                     height: 35.0,
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     iconPadding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
@@ -264,7 +264,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                                       width: 2.0,
                                                     ),
                                                     borderRadius:
-                                                        const BorderRadius.only(
+                                                        BorderRadius.only(
                                                       bottomLeft:
                                                           Radius.circular(8.0),
                                                       bottomRight:
@@ -279,10 +279,10 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                               ),
                                             ),
                                             Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   1.0, 1.0),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 16.0, 8.0, 0.0),
                                                 child: FFButtonWidget(
@@ -321,11 +321,11 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                                   options: FFButtonOptions(
                                                     height: 35.0,
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     iconPadding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
@@ -349,7 +349,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                                       width: 2.0,
                                                     ),
                                                     borderRadius:
-                                                        const BorderRadius.only(
+                                                        BorderRadius.only(
                                                       bottomLeft:
                                                           Radius.circular(8.0),
                                                       bottomRight:
@@ -367,7 +367,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 10.0, 0.0, 0.0),
                                         child: FutureBuilder<
                                             List<GrupofamiliarexpedientesRow>>(
@@ -411,7 +411,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                                     : null;
 
                                             return Container(
-                                              decoration: const BoxDecoration(),
+                                              decoration: BoxDecoration(),
                                               child: FFButtonWidget(
                                                 onPressed: () async {
                                                   var confirmDialogResponse =
@@ -422,23 +422,23 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                                               return WebViewAware(
                                                                 child:
                                                                     AlertDialog(
-                                                                  title: const Text(
+                                                                  title: Text(
                                                                       'Copiar Entrevistas del NNyA principal'),
-                                                                  content: const Text(
+                                                                  content: Text(
                                                                       'Estas a punto de copiar todas las entrevistas del NNyA a este expediente!'),
                                                                   actions: [
                                                                     TextButton(
                                                                       onPressed: () => Navigator.pop(
                                                                           alertDialogContext,
                                                                           false),
-                                                                      child: const Text(
+                                                                      child: Text(
                                                                           'Cancelar'),
                                                                     ),
                                                                     TextButton(
                                                                       onPressed: () => Navigator.pop(
                                                                           alertDialogContext,
                                                                           true),
-                                                                      child: const Text(
+                                                                      child: Text(
                                                                           'Confirmar'),
                                                                     ),
                                                                   ],
@@ -464,14 +464,14 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                                           (alertDialogContext) {
                                                         return WebViewAware(
                                                           child: AlertDialog(
-                                                            title: const Text('1'),
+                                                            title: Text('1'),
                                                             actions: [
                                                               TextButton(
                                                                 onPressed: () =>
                                                                     Navigator.pop(
                                                                         alertDialogContext),
                                                                 child:
-                                                                    const Text('Ok'),
+                                                                    Text('Ok'),
                                                               ),
                                                             ],
                                                           ),
@@ -501,13 +501,13 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                                             (alertDialogContext) {
                                                           return WebViewAware(
                                                             child: AlertDialog(
-                                                              title: const Text('2'),
+                                                              title: Text('2'),
                                                               actions: [
                                                                 TextButton(
                                                                   onPressed: () =>
                                                                       Navigator.pop(
                                                                           alertDialogContext),
-                                                                  child: const Text(
+                                                                  child: Text(
                                                                       'Ok'),
                                                                 ),
                                                               ],
@@ -641,16 +641,16 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                                             (alertDialogContext) {
                                                           return WebViewAware(
                                                             child: AlertDialog(
-                                                              title: const Text(
+                                                              title: Text(
                                                                   'Carga correcta'),
-                                                              content: const Text(
+                                                              content: Text(
                                                                   'La informacion se guardo correctamente!!'),
                                                               actions: [
                                                                 TextButton(
                                                                   onPressed: () =>
                                                                       Navigator.pop(
                                                                           alertDialogContext),
-                                                                  child: const Text(
+                                                                  child: Text(
                                                                       'Ok'),
                                                                 ),
                                                               ],
@@ -670,11 +670,11 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                                     'Cargar informacion de expediente principal',
                                                 options: FFButtonOptions(
                                                   height: 40.0,
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 0.0, 16.0, 0.0),
                                                   iconPadding:
-                                                      const EdgeInsetsDirectional
+                                                      EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
@@ -707,7 +707,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(0.0, -1.0),
+                            alignment: AlignmentDirectional(0.0, -1.0),
                             child: Text(
                               'Escucha del NNA',
                               style: FlutterFlowTheme.of(context)
@@ -721,7 +721,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(0.0, -1.0),
+                            alignment: AlignmentDirectional(0.0, -1.0),
                             child: Text(
                               '(art. 24 Ley 26061 y art. 27 Ley 9944)',
                               style: FlutterFlowTheme.of(context)
@@ -736,7 +736,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -758,7 +758,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                 ),
                                 FFButtonWidget(
                                   onPressed: () async {
-                                    final datePickedDate =
+                                    final _datePickedDate =
                                         await showDatePicker(
                                       context: context,
                                       initialDate: getCurrentTimestamp,
@@ -801,22 +801,26 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                       },
                                     );
 
-                                    if (datePickedDate != null) {
+                                    if (_datePickedDate != null) {
                                       safeSetState(() {
                                         _model.datePicked = DateTime(
-                                          datePickedDate.year,
-                                          datePickedDate.month,
-                                          datePickedDate.day,
+                                          _datePickedDate.year,
+                                          _datePickedDate.month,
+                                          _datePickedDate.day,
                                         );
+                                      });
+                                    } else if (_model.datePicked != null) {
+                                      safeSetState(() {
+                                        _model.datePicked = getCurrentTimestamp;
                                       });
                                     }
                                   },
                                   text: 'Fecha',
                                   options: FFButtonOptions(
                                     height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).primary,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -827,7 +831,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -838,7 +842,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model
@@ -906,7 +910,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model
@@ -977,7 +981,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController3 ??=
@@ -1053,7 +1057,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                 ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 8.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -1080,9 +1084,9 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                   'Datos de personas para ampliar informacion',
                               options: FFButtonOptions(
                                 height: 30.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -1093,7 +1097,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -1112,9 +1116,9 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 10.0, 0.0, 0.0),
                                     child: Text(
                                       'Espacio de expresion de NNyA: (escrito/Dibujo) ',
@@ -1151,9 +1155,9 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                   text: 'Adjutar Dibujo',
                                   options: FFButtonOptions(
                                     height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).primary,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -1179,9 +1183,9 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                             ),
                             child: Container(
                               width: 1.0,
-                              decoration: const BoxDecoration(),
+                              decoration: BoxDecoration(),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 10.0, 0.0, 0.0),
                                 child: Text(
                                   'A) REGISTRO DE ENTREVISTA',
@@ -1196,7 +1200,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 0.0, 10.0),
                             child: Text(
                               '1. Descripcion de la situacion',
@@ -1209,7 +1213,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller:
@@ -1279,7 +1283,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                           ),
                           Flexible(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 10.0),
                               child: Text(
                                 '2. Antecedentes en relación a la situación planteada (que otras situaciones \nviviste antes que se puedan relacionar con lo que está pasando ahora)',
@@ -1293,7 +1297,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController5 ??=
@@ -1367,7 +1371,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                   .secondaryBackground,
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 '3. Descripción de fortalezas/factores protectores',
@@ -1382,7 +1386,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'a. Redes o actores comunitarios con los que se vincula',
@@ -1395,7 +1399,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: FlutterFlowDropDown<String>(
                               multiSelectController:
@@ -1404,7 +1408,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                           .dropDownValue ??= List<String>.from(
                                 containerFormulario3Row?.redesDrop ?? [],
                               )),
-                              options: const [
+                              options: [
                                 'Centro de salud',
                                 'Escuela',
                                 'Equipo de salud mental',
@@ -1442,7 +1446,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                   FlutterFlowTheme.of(context).alternate,
                               borderWidth: 2.0,
                               borderRadius: 8.0,
-                              margin: const EdgeInsetsDirectional.fromSTEB(
+                              margin: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 4.0, 16.0, 4.0),
                               hidesUnderline: true,
                               isOverButton: true,
@@ -1453,7 +1457,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'b. Otras actividades en las que participa',
@@ -1466,7 +1470,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: FlutterFlowDropDown<String>(
                               multiSelectController:
@@ -1476,7 +1480,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                               List<String>.from(
                                 containerFormulario3Row?.actividadesDrop ?? [],
                               )),
-                              options: const [
+                              options: [
                                 'Apoyo escolar',
                                 'Talleres culturales o recreativos en ONG',
                                 'grupo juvenil Parroquia',
@@ -1511,7 +1515,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                   FlutterFlowTheme.of(context).alternate,
                               borderWidth: 2.0,
                               borderRadius: 8.0,
-                              margin: const EdgeInsetsDirectional.fromSTEB(
+                              margin: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 4.0, 16.0, 4.0),
                               hidesUnderline: true,
                               isOverButton: true,
@@ -1522,7 +1526,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'c. Otros intereses o actividades que les gustaría hacer',
@@ -1535,7 +1539,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: FlutterFlowDropDown<String>(
                               multiSelectController:
@@ -1545,7 +1549,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                               List<String>.from(
                                 containerFormulario3Row?.intereseDrop ?? [],
                               )),
-                              options: const [
+                              options: [
                                 'Deportivas',
                                 'Culturales',
                                 'Alimentarias',
@@ -1575,7 +1579,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                   FlutterFlowTheme.of(context).alternate,
                               borderWidth: 2.0,
                               borderRadius: 8.0,
-                              margin: const EdgeInsetsDirectional.fromSTEB(
+                              margin: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 4.0, 16.0, 4.0),
                               hidesUnderline: true,
                               isOverButton: true,
@@ -1593,7 +1597,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                   .secondaryBackground,
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 '4. Derechos que el NNYA identifica como vulnerados.',
@@ -1608,7 +1612,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 10.0, 0.0),
                             child: Text(
                               'Segerencia: (Sabes que son los Derechos ¿? (Son como reglas importantes para que todos seamos  trataros de manera justa y segura y todos podemos exigir que esas reglas se cumplan. (  dar ejemplos ) A veces los adultos u otros NnyA hacen cosas que te pueden dañarte y  hacer difícil que esas reglas se cumplan. ¿Te gustaría contarme si alguna vez has sentido  que algún derecho tuyo o fue respetado o que paso algo que no estaba bien?”) ',
@@ -1621,7 +1625,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller:
@@ -1696,7 +1700,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                   .secondaryBackground,
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'B) Valoraciones / sugerencias de  entrevistador/a',
@@ -1710,7 +1714,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController7 ??=
@@ -1785,7 +1789,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                   .secondaryBackground,
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   18.0, 0.0, 18.0, 0.0),
                               child: Text(
                                 'Se deja constancia que el derecho del/a niño/a o adolescente a ser oido y a participar activamente del procedimiento (art. 22,, 27, 31 y 46 ley 9944) Ha sido debidamente resguardado.',
@@ -1806,7 +1810,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                             children: [
                               if (!widget.editar!)
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 0.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
@@ -1861,15 +1865,15 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                         builder: (alertDialogContext) {
                                           return WebViewAware(
                                             child: AlertDialog(
-                                              title: const Text('Carga correcta'),
-                                              content: const Text(
+                                              title: Text('Carga correcta'),
+                                              content: Text(
                                                   'La informacion se guardo correctamente!!'),
                                               actions: [
                                                 TextButton(
                                                   onPressed: () =>
                                                       Navigator.pop(
                                                           alertDialogContext),
-                                                  child: const Text('Ok'),
+                                                  child: Text('Ok'),
                                                 ),
                                               ],
                                             ),
@@ -1879,17 +1883,17 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                       Navigator.pop(context);
                                     },
                                     text: 'Guardar',
-                                    icon: const Icon(
+                                    icon: Icon(
                                       Icons.save,
                                       size: 15.0,
                                     ),
                                     options: FFButtonOptions(
                                       width: 250.0,
                                       height: 40.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).success,
@@ -1901,7 +1905,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                             letterSpacing: 0.0,
                                           ),
                                       elevation: 2.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -1912,7 +1916,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                 ),
                               if (widget.editar ?? true)
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 0.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
@@ -1924,7 +1928,9 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                       await Formulario3Table().update(
                                         data: {
                                           'fecha': supaSerialize<DateTime>(
-                                              _model.datePicked ?? containerFormulario3Row
+                                              _model.datePicked != null
+                                                  ? _model.datePicked
+                                                  : containerFormulario3Row
                                                       ?.fecha),
                                           'profesionales': _model
                                               .textFieldprofesionalesTextController1
@@ -1970,15 +1976,15 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                         builder: (alertDialogContext) {
                                           return WebViewAware(
                                             child: AlertDialog(
-                                              title: const Text('Carga correcta'),
-                                              content: const Text(
+                                              title: Text('Carga correcta'),
+                                              content: Text(
                                                   'La informacion se guardo correctamente!!'),
                                               actions: [
                                                 TextButton(
                                                   onPressed: () =>
                                                       Navigator.pop(
                                                           alertDialogContext),
-                                                  child: const Text('Ok'),
+                                                  child: Text('Ok'),
                                                 ),
                                               ],
                                             ),
@@ -1987,18 +1993,18 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                       );
                                       Navigator.pop(context);
                                     },
-                                    text: 'Editar',
-                                    icon: const Icon(
+                                    text: 'Guardar',
+                                    icon: Icon(
                                       Icons.save,
                                       size: 15.0,
                                     ),
                                     options: FFButtonOptions(
                                       width: 250.0,
                                       height: 40.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).success,
@@ -2010,7 +2016,7 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                                             letterSpacing: 0.0,
                                           ),
                                       elevation: 2.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -2022,8 +2028,8 @@ class _Formulario3WidgetState extends State<Formulario3Widget> {
                             ],
                           ),
                         ]
-                            .divide(const SizedBox(height: 15.0))
-                            .around(const SizedBox(height: 15.0)),
+                            .divide(SizedBox(height: 15.0))
+                            .around(SizedBox(height: 15.0)),
                       ),
                     ),
                   ),

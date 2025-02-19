@@ -56,13 +56,13 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Container(
         width: 450.0,
         height: 353.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          boxShadow: const [
+          boxShadow: [
             BoxShadow(
               blurRadius: 5.0,
               color: Color(0x3B1D2429),
@@ -75,13 +75,13 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
           borderRadius: BorderRadius.circular(10.0),
         ),
         child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 20.0),
+          padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 20.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Align(
-                alignment: const AlignmentDirectional(1.0, -1.0),
+                alignment: AlignmentDirectional(1.0, -1.0),
                 child: FlutterFlowIconButton(
                   borderColor: Colors.transparent,
                   borderRadius: 20.0,
@@ -98,7 +98,7 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(80.0, 0.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(80.0, 0.0, 0.0, 0.0),
                 child: Text(
                   'Adjuntar documento',
                   style: FlutterFlowTheme.of(context).titleLarge.override(
@@ -132,7 +132,7 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(
+                    borderSide: BorderSide(
                       color: Color(0x00000000),
                       width: 1.0,
                     ),
@@ -166,7 +166,7 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
               FlutterFlowDropDown<String>(
                 controller: _model.dropDownValueController ??=
                     FormFieldController<String>(null),
-                options: const [
+                options: [
                   'Oficio judicial',
                   'Puesta en conocimiento',
                   'Salud',
@@ -175,7 +175,8 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                   'Otro',
                   'Adjunto Amplaicion de Informacion',
                   'Adjunto Informe Sintesis',
-                  'Adjunto Recepcion de la demanda'
+                  'Adjunto Recepcion de la demanda',
+                  'Dibujo entrevista'
                 ],
                 onChanged: (val) =>
                     safeSetState(() => _model.dropDownValue = val),
@@ -195,7 +196,7 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                 borderColor: FlutterFlowTheme.of(context).secondaryText,
                 borderWidth: 0.0,
                 borderRadius: 8.0,
-                margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                 hidesUnderline: true,
                 isOverButton: false,
                 isSearchable: false,
@@ -260,16 +261,16 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                       }
                     },
                     text: 'Subir documento',
-                    icon: const Icon(
+                    icon: Icon(
                       Icons.upload_file,
                       size: 15.0,
                     ),
                     options: FFButtonOptions(
                       height: 40.0,
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
@@ -284,9 +285,9 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                 ],
               ),
               Align(
-                alignment: const AlignmentDirectional(0.0, 1.0),
+                alignment: AlignmentDirectional(0.0, 1.0),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       await DocumentosadjuntosTable().insert({
@@ -302,12 +303,12 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                           return WebViewAware(
                             child: AlertDialog(
                               title:
-                                  const Text('Se cargo correctamente la informacion'),
+                                  Text('Se cargo correctamente la informacion'),
                               actions: [
                                 TextButton(
                                   onPressed: () =>
                                       Navigator.pop(alertDialogContext),
-                                  child: const Text('Ok'),
+                                  child: Text('Ok'),
                                 ),
                               ],
                             ),
@@ -321,9 +322,9 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                       width: 300.0,
                       height: 40.0,
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
@@ -335,7 +336,7 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                                 fontWeight: FontWeight.normal,
                               ),
                       elevation: 0.0,
-                      borderSide: const BorderSide(
+                      borderSide: BorderSide(
                         color: Colors.transparent,
                         width: 0.0,
                       ),
@@ -344,7 +345,7 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                   ),
                 ),
               ),
-            ].divide(const SizedBox(height: 10.0)).around(const SizedBox(height: 10.0)),
+            ].divide(SizedBox(height: 10.0)).around(SizedBox(height: 10.0)),
           ),
         ),
       ),

@@ -9,7 +9,7 @@ class ExpedienteTable extends SupabaseTable<ExpedienteRow> {
 }
 
 class ExpedienteRow extends SupabaseDataRow {
-  ExpedienteRow(super.data);
+  ExpedienteRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => ExpedienteTable();

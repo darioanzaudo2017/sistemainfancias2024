@@ -49,7 +49,7 @@ class _Respuestasform6WidgetState extends State<Respuestasform6Widget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Material(
         color: Colors.transparent,
         elevation: 2.0,
@@ -66,7 +66,7 @@ class _Respuestasform6WidgetState extends State<Respuestasform6Widget> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: EdgeInsets.all(10.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -85,7 +85,7 @@ class _Respuestasform6WidgetState extends State<Respuestasform6Widget> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(0.0, -1.0),
+                        alignment: AlignmentDirectional(0.0, -1.0),
                         child: wrapWithModel(
                           model: _model.formulario6reiteracionModel,
                           updateCallback: () => safeSetState(() {}),
@@ -105,7 +105,7 @@ class _Respuestasform6WidgetState extends State<Respuestasform6Widget> {
                       ),
                     ],
                   ),
-                ].divide(const SizedBox(height: 10.0)),
+                ].divide(SizedBox(height: 10.0)),
               ),
             ),
           ),

@@ -16,7 +16,7 @@ class AsesoramientoAnexoAWidget extends StatefulWidget {
     this.rowexpediente,
     bool? edit,
     this.rowseccion9,
-  }) : edit = edit ?? false;
+  }) : this.edit = edit ?? false;
 
   final IngresosRow? rowingreso;
   final VistaExpedientesUltimoEstadoRow? rowexpediente;
@@ -72,7 +72,7 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<AnexoAForm1Row>>(
         future: AnexoAForm1Table().querySingleRow(
           queryFn: (q) => q.eqOrNull(
@@ -109,7 +109,7 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
             ),
             child: Container(
               width: MediaQuery.sizeOf(context).width * 1.0,
-              constraints: const BoxConstraints(
+              constraints: BoxConstraints(
                 maxWidth: 600.0,
               ),
               decoration: BoxDecoration(
@@ -119,11 +119,11 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                   color: FlutterFlowTheme.of(context).primary,
                 ),
               ),
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Align(
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -134,9 +134,9 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                         children: [
                           Expanded(
                             child: Align(
-                              alignment: const AlignmentDirectional(0.0, -1.0),
+                              alignment: AlignmentDirectional(0.0, -1.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     120.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'FORMULARIO 1 ANEXO A \nDE ASESORAMIENTO / ORIENTACIÓN ESPECÍFICA\n',
@@ -154,7 +154,7 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(1.0, 0.0),
+                            alignment: AlignmentDirectional(1.0, 0.0),
                             child: FlutterFlowIconButton(
                               borderColor: Colors.transparent,
                               borderRadius: 20.0,
@@ -182,7 +182,7 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: TextFormField(
                                 controller: _model.textController1,
@@ -247,7 +247,7 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: TextFormField(
                                 controller: _model.textController2,
@@ -311,7 +311,7 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -332,7 +332,7 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                                   ),
                                   FFButtonWidget(
                                     onPressed: () async {
-                                      final datePickedDate =
+                                      final _datePickedDate =
                                           await showDatePicker(
                                         context: context,
                                         initialDate: getCurrentTimestamp,
@@ -379,13 +379,18 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                                         },
                                       );
 
-                                      if (datePickedDate != null) {
+                                      if (_datePickedDate != null) {
                                         safeSetState(() {
                                           _model.datePicked = DateTime(
-                                            datePickedDate.year,
-                                            datePickedDate.month,
-                                            datePickedDate.day,
+                                            _datePickedDate.year,
+                                            _datePickedDate.month,
+                                            _datePickedDate.day,
                                           );
+                                        });
+                                      } else if (_model.datePicked != null) {
+                                        safeSetState(() {
+                                          _model.datePicked =
+                                              getCurrentTimestamp;
                                         });
                                       }
                                     },
@@ -400,10 +405,10 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                                     ),
                                     options: FFButtonOptions(
                                       height: 40.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).primary,
@@ -415,7 +420,7 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                                             letterSpacing: 0.0,
                                           ),
                                       elevation: 3.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -426,7 +431,7 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: TextFormField(
                                 controller: _model.textController3 ??=
@@ -495,7 +500,7 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: TextFormField(
                                 controller: _model.textController4 ??=
@@ -564,7 +569,7 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: TextFormField(
                                 controller: _model.textController5 ??=
@@ -632,7 +637,7 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: TextFormField(
                                 controller: _model.textController6 ??=
@@ -699,7 +704,7 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: TextFormField(
                                 controller: _model.textController7 ??=
@@ -775,7 +780,9 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                                       await AnexoAForm1Table().update(
                                         data: {
                                           'fecha': supaSerialize<DateTime>(
-                                              _model.datePicked ?? containerAnexoAForm1Row
+                                              _model.datePicked != null
+                                                  ? _model.datePicked
+                                                  : containerAnexoAForm1Row
                                                       ?.fecha),
                                           'orgOProfRemitente':
                                               _model.textController3.text,
@@ -822,15 +829,15 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                                           builder: (alertDialogContext) {
                                             return WebViewAware(
                                               child: AlertDialog(
-                                                title: const Text('Carga correcta'),
-                                                content: const Text(
+                                                title: Text('Carga correcta'),
+                                                content: Text(
                                                     'La informacion se guardo correctamente y se genero un archivo el google drive!'),
                                                 actions: [
                                                   TextButton(
                                                     onPressed: () =>
                                                         Navigator.pop(
                                                             alertDialogContext),
-                                                    child: const Text('Ok'),
+                                                    child: Text('Ok'),
                                                   ),
                                                 ],
                                               ),
@@ -872,16 +879,16 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                                     safeSetState(() {});
                                   },
                                   text: 'Guardar',
-                                  icon: const Icon(
+                                  icon: Icon(
                                     Icons.save,
                                     size: 15.0,
                                   ),
                                   options: FFButtonOptions(
                                     width: 250.0,
                                     height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).success,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -892,7 +899,7 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 2.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -902,12 +909,12 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                                 ),
                               ],
                             ),
-                          ].divide(const SizedBox(height: 10.0)),
+                          ].divide(SizedBox(height: 10.0)),
                         ),
                       ),
                     ]
-                        .divide(const SizedBox(height: 10.0))
-                        .around(const SizedBox(height: 10.0)),
+                        .divide(SizedBox(height: 10.0))
+                        .around(SizedBox(height: 10.0)),
                   ),
                 ),
               ),

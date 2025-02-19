@@ -11,7 +11,7 @@ class GrupofamiliarexpedientesTable
 }
 
 class GrupofamiliarexpedientesRow extends SupabaseDataRow {
-  GrupofamiliarexpedientesRow(super.data);
+  GrupofamiliarexpedientesRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => GrupofamiliarexpedientesTable();

@@ -10,7 +10,7 @@ class PruebaarchivosTable extends SupabaseTable<PruebaarchivosRow> {
 }
 
 class PruebaarchivosRow extends SupabaseDataRow {
-  PruebaarchivosRow(super.data);
+  PruebaarchivosRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => PruebaarchivosTable();

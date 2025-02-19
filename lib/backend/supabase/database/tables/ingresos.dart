@@ -9,7 +9,7 @@ class IngresosTable extends SupabaseTable<IngresosRow> {
 }
 
 class IngresosRow extends SupabaseDataRow {
-  IngresosRow(super.data);
+  IngresosRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => IngresosTable();

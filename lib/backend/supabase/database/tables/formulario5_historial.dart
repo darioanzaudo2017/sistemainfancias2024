@@ -10,7 +10,7 @@ class Formulario5HistorialTable extends SupabaseTable<Formulario5HistorialRow> {
 }
 
 class Formulario5HistorialRow extends SupabaseDataRow {
-  Formulario5HistorialRow(super.data);
+  Formulario5HistorialRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => Formulario5HistorialTable();

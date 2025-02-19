@@ -17,7 +17,7 @@ class AnexoreunioninstitucionalWidget extends StatefulWidget {
     this.editar,
     int? idanexoreunion,
     required this.formulario,
-  }) : idanexoreunion = idanexoreunion ?? 0;
+  }) : this.idanexoreunion = idanexoreunion ?? 0;
 
   final IngresosRow? rowingreso;
   final VistaExpedientesUltimoEstadoRow? rowexp;
@@ -68,7 +68,7 @@ class _AnexoreunioninstitucionalWidgetState
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<Anexo4RequerimientoaccionesRow>>(
         future: (_model.requestCompleter ??=
                 Completer<List<Anexo4RequerimientoaccionesRow>>()
@@ -117,21 +117,21 @@ class _AnexoreunioninstitucionalWidgetState
                   color: FlutterFlowTheme.of(context).primary,
                 ),
               ),
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Form(
                 key: _model.formKey,
                 autovalidateMode: AutovalidateMode.disabled,
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Align(
-                            alignment: const AlignmentDirectional(1.0, -1.0),
+                            alignment: AlignmentDirectional(1.0, -1.0),
                             child: FlutterFlowIconButton(
                               borderColor: Colors.transparent,
                               borderRadius: 20.0,
@@ -153,9 +153,9 @@ class _AnexoreunioninstitucionalWidgetState
                             children: [
                               Flexible(
                                 child: Align(
-                                  alignment: const AlignmentDirectional(0.0, -1.0),
+                                  alignment: AlignmentDirectional(0.0, -1.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         25.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'ANEXO 4 REUNIÓN INTERINSTITUCIONAL.',
@@ -193,19 +193,19 @@ class _AnexoreunioninstitucionalWidgetState
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: EdgeInsets.all(8.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      '${valueOrDefault<String>(
+                                      '${'${valueOrDefault<String>(
                                         widget.rowexp?.nombres,
                                         '0',
                                       )}, ${valueOrDefault<String>(
                                         widget.rowexp?.apellidos,
                                         '0',
-                                      )}',
+                                      )}'}',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -255,7 +255,7 @@ class _AnexoreunioninstitucionalWidgetState
                               ),
                               FFButtonWidget(
                                 onPressed: () async {
-                                  final datePickedDate = await showDatePicker(
+                                  final _datePickedDate = await showDatePicker(
                                     context: context,
                                     initialDate: getCurrentTimestamp,
                                     firstDate: getCurrentTimestamp,
@@ -297,13 +297,17 @@ class _AnexoreunioninstitucionalWidgetState
                                     },
                                   );
 
-                                  if (datePickedDate != null) {
+                                  if (_datePickedDate != null) {
                                     safeSetState(() {
                                       _model.datePicked = DateTime(
-                                        datePickedDate.year,
-                                        datePickedDate.month,
-                                        datePickedDate.day,
+                                        _datePickedDate.year,
+                                        _datePickedDate.month,
+                                        _datePickedDate.day,
                                       );
+                                    });
+                                  } else if (_model.datePicked != null) {
+                                    safeSetState(() {
+                                      _model.datePicked = getCurrentTimestamp;
                                     });
                                   }
                                 },
@@ -314,9 +318,9 @@ class _AnexoreunioninstitucionalWidgetState
                                 ),
                                 options: FFButtonOptions(
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -333,7 +337,7 @@ class _AnexoreunioninstitucionalWidgetState
                             ],
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller:
@@ -404,7 +408,7 @@ class _AnexoreunioninstitucionalWidgetState
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller:
@@ -475,7 +479,7 @@ class _AnexoreunioninstitucionalWidgetState
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller:
@@ -546,7 +550,7 @@ class _AnexoreunioninstitucionalWidgetState
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller:
@@ -617,7 +621,7 @@ class _AnexoreunioninstitucionalWidgetState
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller:
@@ -728,15 +732,15 @@ class _AnexoreunioninstitucionalWidgetState
                                     builder: (alertDialogContext) {
                                       return WebViewAware(
                                         child: AlertDialog(
-                                          title: const Text(
+                                          title: Text(
                                               'Se cargo correctamente la informacion'),
-                                          content: const Text(
+                                          content: Text(
                                               'Se guardo la informacion y se creo un documento en google docs!'),
                                           actions: [
                                             TextButton(
                                               onPressed: () => Navigator.pop(
                                                   alertDialogContext),
-                                              child: const Text('Ok'),
+                                              child: Text('Ok'),
                                             ),
                                           ],
                                         ),
@@ -749,16 +753,16 @@ class _AnexoreunioninstitucionalWidgetState
                                   await _model.waitForRequestCompleted();
                                 },
                                 text: 'Guardar',
-                                icon: const Icon(
+                                icon: Icon(
                                   Icons.save,
                                   size: 15.0,
                                 ),
                                 options: FFButtonOptions(
                                   width: 250.0,
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).success,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -769,7 +773,7 @@ class _AnexoreunioninstitucionalWidgetState
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 2.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -780,8 +784,8 @@ class _AnexoreunioninstitucionalWidgetState
                             ],
                           ),
                         ]
-                            .divide(const SizedBox(height: 10.0))
-                            .around(const SizedBox(height: 10.0)),
+                            .divide(SizedBox(height: 10.0))
+                            .around(SizedBox(height: 10.0)),
                       ),
                     ),
                   ),

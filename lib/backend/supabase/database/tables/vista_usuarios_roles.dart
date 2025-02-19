@@ -10,7 +10,7 @@ class VistaUsuariosRolesTable extends SupabaseTable<VistaUsuariosRolesRow> {
 }
 
 class VistaUsuariosRolesRow extends SupabaseDataRow {
-  VistaUsuariosRolesRow(super.data);
+  VistaUsuariosRolesRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => VistaUsuariosRolesTable();

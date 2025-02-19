@@ -67,7 +67,7 @@ class _AnexoinstitucionsaludWidgetState
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<AnexoinstitucionesaludRow>>(
         future: AnexoinstitucionesaludTable().querySingleRow(
           queryFn: (q) => q.eqOrNull(
@@ -107,7 +107,7 @@ class _AnexoinstitucionsaludWidgetState
             child: Container(
               width: MediaQuery.sizeOf(context).width * 4.5,
               height: 524.0,
-              constraints: const BoxConstraints(
+              constraints: BoxConstraints(
                 maxWidth: 600.0,
               ),
               decoration: BoxDecoration(
@@ -117,14 +117,14 @@ class _AnexoinstitucionsaludWidgetState
                   color: FlutterFlowTheme.of(context).primary,
                 ),
               ),
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Form(
                 key: _model.formKey,
                 autovalidateMode: AutovalidateMode.disabled,
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -134,9 +134,9 @@ class _AnexoinstitucionsaludWidgetState
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Align(
-                              alignment: const AlignmentDirectional(0.0, -1.0),
+                              alignment: AlignmentDirectional(0.0, -1.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     25.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Solicitud de informacion Institucion de salud',
@@ -153,7 +153,7 @@ class _AnexoinstitucionsaludWidgetState
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(1.0, 0.0),
+                              alignment: AlignmentDirectional(1.0, 0.0),
                               child: FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
                                 borderRadius: 20.0,
@@ -194,7 +194,7 @@ class _AnexoinstitucionsaludWidgetState
                             ),
                             FFButtonWidget(
                               onPressed: () async {
-                                final datePickedDate = await showDatePicker(
+                                final _datePickedDate = await showDatePicker(
                                   context: context,
                                   initialDate: getCurrentTimestamp,
                                   firstDate: getCurrentTimestamp,
@@ -234,13 +234,17 @@ class _AnexoinstitucionsaludWidgetState
                                   },
                                 );
 
-                                if (datePickedDate != null) {
+                                if (_datePickedDate != null) {
                                   safeSetState(() {
                                     _model.datePicked = DateTime(
-                                      datePickedDate.year,
-                                      datePickedDate.month,
-                                      datePickedDate.day,
+                                      _datePickedDate.year,
+                                      _datePickedDate.month,
+                                      _datePickedDate.day,
                                     );
+                                  });
+                                } else if (_model.datePicked != null) {
+                                  safeSetState(() {
+                                    _model.datePicked = getCurrentTimestamp;
                                   });
                                 }
                               },
@@ -250,9 +254,9 @@ class _AnexoinstitucionsaludWidgetState
                               ),
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -269,7 +273,7 @@ class _AnexoinstitucionsaludWidgetState
                           ],
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: TextFormField(
                             controller: _model.textFieldmotivoTextController1,
@@ -334,7 +338,7 @@ class _AnexoinstitucionsaludWidgetState
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: TextFormField(
                             controller: _model.textFieldmotivoTextController2,
@@ -400,9 +404,9 @@ class _AnexoinstitucionsaludWidgetState
                         ),
                         Flexible(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
-                            child: SizedBox(
+                            child: Container(
                               width: 200.0,
                               child: TextFormField(
                                 controller:
@@ -476,12 +480,12 @@ class _AnexoinstitucionsaludWidgetState
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 0.0, 10.0, 0.0),
                           child: FlutterFlowDropDown<String>(
                             controller: _model.dropDownValueController ??=
                                 FormFieldController<String>(null),
-                            options: const [
+                            options: [
                               'Enero',
                               'febrero',
                               'Marzo',
@@ -518,7 +522,7 @@ class _AnexoinstitucionsaludWidgetState
                                 FlutterFlowTheme.of(context).secondaryText,
                             borderWidth: 0.0,
                             borderRadius: 8.0,
-                            margin: const EdgeInsetsDirectional.fromSTEB(
+                            margin: EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 12.0, 0.0),
                             hidesUnderline: true,
                             isOverButton: false,
@@ -542,14 +546,14 @@ class _AnexoinstitucionsaludWidgetState
                                     builder: (alertDialogContext) {
                                       return WebViewAware(
                                         child: AlertDialog(
-                                          title: const Text('Campo obligatorio'),
+                                          title: Text('Campo obligatorio'),
                                           content:
-                                              const Text('La fecha obligatoria!'),
+                                              Text('La fecha obligatoria!'),
                                           actions: [
                                             TextButton(
                                               onPressed: () => Navigator.pop(
                                                   alertDialogContext),
-                                              child: const Text('Ok'),
+                                              child: Text('Ok'),
                                             ),
                                           ],
                                         ),
@@ -619,15 +623,15 @@ class _AnexoinstitucionsaludWidgetState
                                       builder: (alertDialogContext) {
                                         return WebViewAware(
                                           child: AlertDialog(
-                                            title: const Text(
+                                            title: Text(
                                                 'Se cargo correctamente la informacion'),
-                                            content: const Text(
+                                            content: Text(
                                                 'Se guardo la informacion y se creo un documento en google docs!'),
                                             actions: [
                                               TextButton(
                                                 onPressed: () => Navigator.pop(
                                                     alertDialogContext),
-                                                child: const Text('Ok'),
+                                                child: Text('Ok'),
                                               ),
                                             ],
                                           ),
@@ -704,15 +708,15 @@ class _AnexoinstitucionsaludWidgetState
                                       builder: (alertDialogContext) {
                                         return WebViewAware(
                                           child: AlertDialog(
-                                            title: const Text(
+                                            title: Text(
                                                 'Se cargo correctamente la informacion'),
-                                            content: const Text(
+                                            content: Text(
                                                 'Se guardo la informacion y se creo un documento en google docs!'),
                                             actions: [
                                               TextButton(
                                                 onPressed: () => Navigator.pop(
                                                     alertDialogContext),
-                                                child: const Text('Ok'),
+                                                child: Text('Ok'),
                                               ),
                                             ],
                                           ),
@@ -726,16 +730,16 @@ class _AnexoinstitucionsaludWidgetState
                                 safeSetState(() {});
                               },
                               text: 'Guardar y generar Docs',
-                              icon: const Icon(
+                              icon: Icon(
                                 Icons.save,
                                 size: 15.0,
                               ),
                               options: FFButtonOptions(
                                 width: 250.0,
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).success,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -746,7 +750,7 @@ class _AnexoinstitucionsaludWidgetState
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 2.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -757,8 +761,8 @@ class _AnexoinstitucionsaludWidgetState
                           ],
                         ),
                       ]
-                          .divide(const SizedBox(height: 8.0))
-                          .around(const SizedBox(height: 8.0)),
+                          .divide(SizedBox(height: 8.0))
+                          .around(SizedBox(height: 8.0)),
                     ),
                   ),
                 ),

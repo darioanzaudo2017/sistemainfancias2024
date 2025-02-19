@@ -11,7 +11,7 @@ class Anexo4RequerimientoaccionesTable
 }
 
 class Anexo4RequerimientoaccionesRow extends SupabaseDataRow {
-  Anexo4RequerimientoaccionesRow(super.data);
+  Anexo4RequerimientoaccionesRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => Anexo4RequerimientoaccionesTable();

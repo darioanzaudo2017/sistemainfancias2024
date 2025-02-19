@@ -11,7 +11,7 @@ class VistaConteoEntrevistasTable
 }
 
 class VistaConteoEntrevistasRow extends SupabaseDataRow {
-  VistaConteoEntrevistasRow(super.data);
+  VistaConteoEntrevistasRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => VistaConteoEntrevistasTable();

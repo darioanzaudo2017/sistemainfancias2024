@@ -10,7 +10,7 @@ class AvisovisitaadultosTable extends SupabaseTable<AvisovisitaadultosRow> {
 }
 
 class AvisovisitaadultosRow extends SupabaseDataRow {
-  AvisovisitaadultosRow(super.data);
+  AvisovisitaadultosRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => AvisovisitaadultosTable();

@@ -10,7 +10,7 @@ class DocumentosadjuntosTable extends SupabaseTable<DocumentosadjuntosRow> {
 }
 
 class DocumentosadjuntosRow extends SupabaseDataRow {
-  DocumentosadjuntosRow(super.data);
+  DocumentosadjuntosRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => DocumentosadjuntosTable();

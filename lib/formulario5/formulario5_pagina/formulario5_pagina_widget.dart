@@ -132,7 +132,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                 borderRadius: 30.0,
                 borderWidth: 1.0,
                 buttonSize: 60.0,
-                icon: const Icon(
+                icon: Icon(
                   Icons.arrow_back_rounded,
                   color: Colors.white,
                   size: 30.0,
@@ -142,7 +142,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                 },
               ),
               title: Align(
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 child: Text(
                   ' Informe síntesis de Valoracion Integral y propuestas de MPI',
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
@@ -153,7 +153,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                       ),
                 ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: false,
               elevation: 2.0,
             ),
@@ -164,7 +164,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, -1.0),
+                    alignment: AlignmentDirectional(-1.0, -1.0),
                     child: Container(
                       width: MediaQuery.sizeOf(context).width * 0.2,
                       decoration: BoxDecoration(
@@ -179,13 +179,13 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: Container(
                                       width: double.infinity,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
-                                        boxShadow: const [
+                                        boxShadow: [
                                           BoxShadow(
                                             blurRadius: 7.0,
                                             color: Color(0x2F1D2429),
@@ -199,7 +199,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                             BorderRadius.circular(8.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 12.0, 16.0, 12.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -214,13 +214,13 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                   .override(
                                                     fontFamily:
                                                         'Plus Jakarta Sans',
-                                                    color: const Color(0xFF39D2C0),
+                                                    color: Color(0xFF39D2C0),
                                                     fontSize: 14.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                             ),
-                                            const Divider(
+                                            Divider(
                                               height: 16.0,
                                               thickness: 2.0,
                                               color: Color(0xFFF1F4F8),
@@ -280,7 +280,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                               listViewIndex];
                                                       return Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     5.0,
                                                                     0.0,
@@ -292,7 +292,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                           decoration:
                                                               BoxDecoration(
                                                             color: Colors.white,
-                                                            boxShadow: const [
+                                                            boxShadow: [
                                                               BoxShadow(
                                                                 blurRadius: 7.0,
                                                                 color: Color(
@@ -310,7 +310,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                           ),
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         12.0,
@@ -343,7 +343,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                       .override(
                                                                         fontFamily:
                                                                             'Plus Jakarta Sans',
-                                                                        color: const Color(
+                                                                        color: Color(
                                                                             0xFF39D2C0),
                                                                         fontSize:
                                                                             14.0,
@@ -353,7 +353,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                             FontWeight.w500,
                                                                       ),
                                                                 ),
-                                                                const Divider(
+                                                                Divider(
                                                                   height: 16.0,
                                                                   thickness:
                                                                       2.0,
@@ -373,7 +373,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                       .override(
                                                                         fontFamily:
                                                                             'Plus Jakarta Sans',
-                                                                        color: const Color(
+                                                                        color: Color(
                                                                             0xFF14181B),
                                                                         fontSize:
                                                                             16.0,
@@ -384,7 +384,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                       ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -399,7 +399,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                           fontFamily:
                                                                               'Plus Jakarta Sans',
                                                                           color:
-                                                                              const Color(0xFF57636C),
+                                                                              Color(0xFF57636C),
                                                                           fontSize:
                                                                               14.0,
                                                                           letterSpacing:
@@ -410,7 +410,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -430,7 +430,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                           fontFamily:
                                                                               'Plus Jakarta Sans',
                                                                           color:
-                                                                              const Color(0xFF57636C),
+                                                                              Color(0xFF57636C),
                                                                           fontSize:
                                                                               14.0,
                                                                           letterSpacing:
@@ -442,7 +442,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                 ),
                                                                 Align(
                                                                   alignment:
-                                                                      const AlignmentDirectional(
+                                                                      AlignmentDirectional(
                                                                           1.0,
                                                                           1.0),
                                                                   child:
@@ -491,12 +491,12 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                         FFButtonOptions(
                                                                       height:
                                                                           30.0,
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
                                                                           0.0),
-                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -523,7 +523,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                     ),
                                                                   ),
                                                                 ),
-                                                              ].divide(const SizedBox(
+                                                              ].divide(SizedBox(
                                                                   height: 5.0)),
                                                             ),
                                                           ),
@@ -540,13 +540,13 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: Container(
                                       width: double.infinity,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
-                                        boxShadow: const [
+                                        boxShadow: [
                                           BoxShadow(
                                             blurRadius: 7.0,
                                             color: Color(0x2F1D2429),
@@ -560,7 +560,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                             BorderRadius.circular(8.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 12.0, 16.0, 12.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -575,13 +575,13 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                   .override(
                                                     fontFamily:
                                                         'Plus Jakarta Sans',
-                                                    color: const Color(0xFF39D2C0),
+                                                    color: Color(0xFF39D2C0),
                                                     fontSize: 14.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                             ),
-                                            const Divider(
+                                            Divider(
                                               height: 16.0,
                                               thickness: 2.0,
                                               color: Color(0xFFF1F4F8),
@@ -641,7 +641,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                               listViewIndex];
                                                       return Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     5.0,
                                                                     0.0,
@@ -653,7 +653,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                           decoration:
                                                               BoxDecoration(
                                                             color: Colors.white,
-                                                            boxShadow: const [
+                                                            boxShadow: [
                                                               BoxShadow(
                                                                 blurRadius: 7.0,
                                                                 color: Color(
@@ -671,7 +671,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                           ),
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         12.0,
@@ -704,7 +704,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                       .override(
                                                                         fontFamily:
                                                                             'Plus Jakarta Sans',
-                                                                        color: const Color(
+                                                                        color: Color(
                                                                             0xFF39D2C0),
                                                                         fontSize:
                                                                             14.0,
@@ -714,7 +714,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                             FontWeight.w500,
                                                                       ),
                                                                 ),
-                                                                const Divider(
+                                                                Divider(
                                                                   height: 16.0,
                                                                   thickness:
                                                                       2.0,
@@ -734,7 +734,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                       .override(
                                                                         fontFamily:
                                                                             'Plus Jakarta Sans',
-                                                                        color: const Color(
+                                                                        color: Color(
                                                                             0xFF14181B),
                                                                         fontSize:
                                                                             16.0,
@@ -745,7 +745,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                       ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -760,7 +760,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                           fontFamily:
                                                                               'Plus Jakarta Sans',
                                                                           color:
-                                                                              const Color(0xFF57636C),
+                                                                              Color(0xFF57636C),
                                                                           fontSize:
                                                                               14.0,
                                                                           letterSpacing:
@@ -771,7 +771,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -791,7 +791,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                           fontFamily:
                                                                               'Plus Jakarta Sans',
                                                                           color:
-                                                                              const Color(0xFF57636C),
+                                                                              Color(0xFF57636C),
                                                                           fontSize:
                                                                               14.0,
                                                                           letterSpacing:
@@ -803,7 +803,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                 ),
                                                                 Align(
                                                                   alignment:
-                                                                      const AlignmentDirectional(
+                                                                      AlignmentDirectional(
                                                                           1.0,
                                                                           1.0),
                                                                   child:
@@ -852,12 +852,12 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                         FFButtonOptions(
                                                                       height:
                                                                           30.0,
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
                                                                           0.0),
-                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -884,7 +884,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                     ),
                                                                   ),
                                                                 ),
-                                                              ].divide(const SizedBox(
+                                                              ].divide(SizedBox(
                                                                   height: 5.0)),
                                                             ),
                                                           ),
@@ -901,8 +901,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                     ),
                                   ),
                                 ]
-                                    .divide(const SizedBox(height: 10.0))
-                                    .around(const SizedBox(height: 10.0)),
+                                    .divide(SizedBox(height: 10.0))
+                                    .around(SizedBox(height: 10.0)),
                               ),
                             ),
                           ],
@@ -912,7 +912,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                   ),
                   Expanded(
                     child: Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: FutureBuilder<List<Formulario5Row>>(
                         future: Formulario5Table().querySingleRow(
                           queryFn: (q) => q.eqOrNull(
@@ -959,7 +959,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                   color: FlutterFlowTheme.of(context).primary,
                                 ),
                               ),
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: SingleChildScrollView(
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -983,10 +983,10 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                           AutovalidateMode.disabled,
                                       child: Align(
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 0.0, 5.0, 0.0),
                                           child: SingleChildScrollView(
                                             child: Column(
@@ -1060,14 +1060,14 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                       options: FFButtonOptions(
                                                         height: 35.0,
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
                                                                     16.0,
                                                                     0.0),
                                                         iconPadding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1083,13 +1083,13 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                 .override(
                                                                   fontFamily:
                                                                       'Noto Sans JP',
-                                                                  color: const Color(
+                                                                  color: Color(
                                                                       0xFF39A9EF),
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
                                                         elevation: 3.0,
-                                                        borderSide: const BorderSide(
+                                                        borderSide: BorderSide(
                                                           color:
                                                               Color(0xFF39A9EF),
                                                         ),
@@ -1152,14 +1152,14 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                       options: FFButtonOptions(
                                                         height: 35.0,
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
                                                                     16.0,
                                                                     0.0),
                                                         iconPadding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1175,13 +1175,13 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                 .override(
                                                                   fontFamily:
                                                                       'Noto Sans JP',
-                                                                  color: const Color(
+                                                                  color: Color(
                                                                       0xFF39A9EF),
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
                                                         elevation: 3.0,
-                                                        borderSide: const BorderSide(
+                                                        borderSide: BorderSide(
                                                           color:
                                                               Color(0xFF39A9EF),
                                                         ),
@@ -1195,17 +1195,17 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                       context)
                                                                   .width >
                                                               1200.0)
-                                                          ? const SizedBox(
+                                                          ? SizedBox(
                                                               width: 10.0)
-                                                          : const SizedBox(
+                                                          : SizedBox(
                                                               height: 10.0))
                                                       .around((MediaQuery.sizeOf(
                                                                       context)
                                                                   .width >
                                                               1200.0)
-                                                          ? const SizedBox(
+                                                          ? SizedBox(
                                                               width: 10.0)
-                                                          : const SizedBox(
+                                                          : SizedBox(
                                                               height: 10.0)),
                                                 ),
                                                 FutureBuilder<
@@ -1252,9 +1252,9 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
 
                                                     return Container(
                                                       decoration:
-                                                          const BoxDecoration(),
+                                                          BoxDecoration(),
                                                       child: Padding(
-                                                        padding: const EdgeInsets.all(
+                                                        padding: EdgeInsets.all(
                                                             10.0),
                                                         child: Flex(
                                                           direction: (MediaQuery
@@ -1272,7 +1272,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                           children: [
                                                             Align(
                                                               alignment:
-                                                                  const AlignmentDirectional(
+                                                                  AlignmentDirectional(
                                                                       1.0, 0.0),
                                                               child:
                                                                   FFButtonWidget(
@@ -1287,16 +1287,16 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                                 (alertDialogContext) {
                                                                               return WebViewAware(
                                                                                 child: AlertDialog(
-                                                                                  title: const Text('Copiar informe sintesis'),
-                                                                                  content: const Text('Estas por copiar el informe sintesis del NNyA principal'),
+                                                                                  title: Text('Copiar informe sintesis'),
+                                                                                  content: Text('Estas por copiar el informe sintesis del NNyA principal'),
                                                                                   actions: [
                                                                                     TextButton(
                                                                                       onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                      child: const Text('Cancela'),
+                                                                                      child: Text('Cancela'),
                                                                                     ),
                                                                                     TextButton(
                                                                                       onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                      child: const Text('Confirmar'),
+                                                                                      child: Text('Confirmar'),
                                                                                     ),
                                                                                   ],
                                                                                 ),
@@ -1418,13 +1418,13 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                 options:
                                                                     FFButtonOptions(
                                                                   height: 40.0,
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
                                                                           0.0),
-                                                                  iconPadding: const EdgeInsetsDirectional
+                                                                  iconPadding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1455,7 +1455,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                             ),
                                                             Align(
                                                               alignment:
-                                                                  const AlignmentDirectional(
+                                                                  AlignmentDirectional(
                                                                       1.0, 0.0),
                                                               child:
                                                                   FFButtonWidget(
@@ -1470,16 +1470,16 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                                 (alertDialogContext) {
                                                                               return WebViewAware(
                                                                                 child: AlertDialog(
-                                                                                  title: const Text('Copiar lista de derechos vulnerados'),
-                                                                                  content: const Text('Estas por copiar lso derechos vulnerados registrados en el NNyA principal'),
+                                                                                  title: Text('Copiar lista de derechos vulnerados'),
+                                                                                  content: Text('Estas por copiar lso derechos vulnerados registrados en el NNyA principal'),
                                                                                   actions: [
                                                                                     TextButton(
                                                                                       onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                      child: const Text('Cancel'),
+                                                                                      child: Text('Cancel'),
                                                                                     ),
                                                                                     TextButton(
                                                                                       onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                      child: const Text('Confirm'),
+                                                                                      child: Text('Confirm'),
                                                                                     ),
                                                                                   ],
                                                                                 ),
@@ -1565,13 +1565,13 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                 options:
                                                                     FFButtonOptions(
                                                                   height: 40.0,
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
                                                                           0.0),
-                                                                  iconPadding: const EdgeInsetsDirectional
+                                                                  iconPadding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1605,20 +1605,20 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                               context)
                                                                           .width >
                                                                       1500.0)
-                                                                  ? const SizedBox(
+                                                                  ? SizedBox(
                                                                       width:
                                                                           10.0)
-                                                                  : const SizedBox(
+                                                                  : SizedBox(
                                                                       height:
                                                                           10.0))
                                                               .around((MediaQuery.sizeOf(
                                                                               context)
                                                                           .width >
                                                                       1500.0)
-                                                                  ? const SizedBox(
+                                                                  ? SizedBox(
                                                                       width:
                                                                           10.0)
-                                                                  : const SizedBox(
+                                                                  : SizedBox(
                                                                       height:
                                                                           10.0)),
                                                         ),
@@ -1628,10 +1628,10 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.0, -1.0),
                                                   child: Text(
-                                                    'Formulario 5 - Informe síntesis de Valoracion Integral y propuestas de MPI',
+                                                    'Informe síntesis de Valoracion Integral y propuestas de MPI',
                                                     textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -1649,7 +1649,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 0.0, 8.0, 0.0),
                                                   child: Row(
@@ -1680,7 +1680,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                       ),
                                                       FFButtonWidget(
                                                         onPressed: () async {
-                                                          final datePickedDate =
+                                                          final _datePickedDate =
                                                               await showDatePicker(
                                                             context: context,
                                                             initialDate:
@@ -1741,18 +1741,25 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                             },
                                                           );
 
-                                                          if (datePickedDate !=
+                                                          if (_datePickedDate !=
                                                               null) {
                                                             safeSetState(() {
                                                               _model.datePicked =
                                                                   DateTime(
-                                                                datePickedDate
+                                                                _datePickedDate
                                                                     .year,
-                                                                datePickedDate
+                                                                _datePickedDate
                                                                     .month,
-                                                                datePickedDate
+                                                                _datePickedDate
                                                                     .day,
                                                               );
+                                                            });
+                                                          } else if (_model
+                                                                  .datePicked !=
+                                                              null) {
+                                                            safeSetState(() {
+                                                              _model.datePicked =
+                                                                  getCurrentTimestamp;
                                                             });
                                                           }
                                                         },
@@ -1772,14 +1779,14 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                             FFButtonOptions(
                                                           height: 40.0,
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       24.0,
                                                                       0.0,
                                                                       24.0,
                                                                       0.0),
                                                           iconPadding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -1802,7 +1809,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                   ),
                                                           elevation: 3.0,
                                                           borderSide:
-                                                              const BorderSide(
+                                                              BorderSide(
                                                             color: Colors
                                                                 .transparent,
                                                             width: 1.0,
@@ -1817,7 +1824,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 0.0, 8.0, 0.0),
                                                   child: TextFormField(
@@ -1990,7 +1997,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                         children: [
                                                           Align(
                                                             alignment:
-                                                                const AlignmentDirectional(
+                                                                AlignmentDirectional(
                                                                     1.0, -1.0),
                                                             child:
                                                                 FFButtonWidget(
@@ -2062,14 +2069,14 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                               options:
                                                                   FFButtonOptions(
                                                                 height: 40.0,
-                                                                padding: const EdgeInsetsDirectional
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         24.0,
                                                                         0.0,
                                                                         24.0,
                                                                         0.0),
                                                                 iconPadding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -2091,7 +2098,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                     ),
                                                                 elevation: 3.0,
                                                                 borderSide:
-                                                                    const BorderSide(
+                                                                    BorderSide(
                                                                   color: Colors
                                                                       .transparent,
                                                                   width: 1.0,
@@ -2127,7 +2134,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                             true,
                                                                         child:
                                                                             Align(
-                                                                          alignment: const AlignmentDirectional(
+                                                                          alignment: AlignmentDirectional(
                                                                               0.0,
                                                                               0.0),
                                                                           child:
@@ -2149,7 +2156,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                             true,
                                                                         child:
                                                                             Align(
-                                                                          alignment: const AlignmentDirectional(
+                                                                          alignment: AlignmentDirectional(
                                                                               0.0,
                                                                               0.0),
                                                                           child:
@@ -2171,7 +2178,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                             true,
                                                                         child:
                                                                             Align(
-                                                                          alignment: const AlignmentDirectional(
+                                                                          alignment: AlignmentDirectional(
                                                                               0.0,
                                                                               0.0),
                                                                           child:
@@ -2193,7 +2200,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                             true,
                                                                         child:
                                                                             Align(
-                                                                          alignment: const AlignmentDirectional(
+                                                                          alignment: AlignmentDirectional(
                                                                               0.0,
                                                                               0.0),
                                                                           child:
@@ -2215,7 +2222,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                             true,
                                                                         child:
                                                                             Align(
-                                                                          alignment: const AlignmentDirectional(
+                                                                          alignment: AlignmentDirectional(
                                                                               0.0,
                                                                               0.0),
                                                                           child:
@@ -2239,7 +2246,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                             true,
                                                                         child:
                                                                             Align(
-                                                                          alignment: const AlignmentDirectional(
+                                                                          alignment: AlignmentDirectional(
                                                                               0.0,
                                                                               0.0),
                                                                           child:
@@ -2306,7 +2313,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                                 'Si',
                                                                         child:
                                                                             Align(
-                                                                          alignment: const AlignmentDirectional(
+                                                                          alignment: AlignmentDirectional(
                                                                               0.0,
                                                                               0.0),
                                                                           child:
@@ -2322,7 +2329,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                             ),
                                                                             child:
                                                                                 Align(
-                                                                              alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                              alignment: AlignmentDirectional(0.0, 0.0),
                                                                               child: Text(
                                                                                 valueOrDefault<String>(
                                                                                   listadederchosItem.principal,
@@ -2338,7 +2345,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                         ),
                                                                       ),
                                                                       Align(
-                                                                        alignment: const AlignmentDirectional(
+                                                                        alignment: AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                         child:
@@ -2357,7 +2364,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                         ),
                                                                       ),
                                                                       Align(
-                                                                        alignment: const AlignmentDirectional(
+                                                                        alignment: AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                         child:
@@ -2381,16 +2388,16 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                                   builder: (alertDialogContext) {
                                                                                     return WebViewAware(
                                                                                       child: AlertDialog(
-                                                                                        title: const Text('Borrar Derecho Vulnerado'),
-                                                                                        content: const Text('Estas por eliminar un derecho vulnerado. Estas seguro de hacerlo?'),
+                                                                                        title: Text('Borrar Derecho Vulnerado'),
+                                                                                        content: Text('Estas por eliminar un derecho vulnerado. Estas seguro de hacerlo?'),
                                                                                         actions: [
                                                                                           TextButton(
                                                                                             onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                            child: const Text('Cancelar'),
+                                                                                            child: Text('Cancelar'),
                                                                                           ),
                                                                                           TextButton(
                                                                                             onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                            child: const Text('Confirmar'),
+                                                                                            child: Text('Confirmar'),
                                                                                           ),
                                                                                         ],
                                                                                       ),
@@ -2412,7 +2419,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                         ),
                                                                       ),
                                                                       Align(
-                                                                        alignment: const AlignmentDirectional(
+                                                                        alignment: AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                         child:
@@ -2432,20 +2439,66 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                           ),
                                                                           child:
                                                                               Checkbox(
-                                                                            value: _model.checkboxValueMap[listadederchosItem] ??=
+                                                                            value: _model.checkboxderechoValueMap[listadederchosItem] ??=
                                                                                 listadederchosItem.validoinforme!,
                                                                             onChanged:
                                                                                 (newValue) async {
-                                                                              safeSetState(() => _model.checkboxValueMap[listadederchosItem] = newValue!);
+                                                                              safeSetState(() => _model.checkboxderechoValueMap[listadederchosItem] = newValue!);
                                                                               if (newValue!) {
                                                                                 await ListaDerechosVulneradosexpedienteTable().update(
                                                                                   data: {
-                                                                                    'validoinforme': _model.checkboxValueMap[listadederchosItem],
+                                                                                    'validoinforme': true,
                                                                                   },
                                                                                   matchingRows: (rows) => rows.eqOrNull(
                                                                                     'id',
                                                                                     listadederchosItem.id,
                                                                                   ),
+                                                                                );
+                                                                                safeSetState(() => _model.requestCompleter = null);
+                                                                                await _model.waitForRequestCompleted();
+                                                                                await showDialog(
+                                                                                  context: context,
+                                                                                  builder: (alertDialogContext) {
+                                                                                    return WebViewAware(
+                                                                                      child: AlertDialog(
+                                                                                        title: Text('Derecho valido para la siguiente etapa'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                            child: Text('Ok'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      ),
+                                                                                    );
+                                                                                  },
+                                                                                );
+                                                                              } else {
+                                                                                await ListaDerechosVulneradosexpedienteTable().update(
+                                                                                  data: {
+                                                                                    'validoinforme': false,
+                                                                                  },
+                                                                                  matchingRows: (rows) => rows.eqOrNull(
+                                                                                    'id',
+                                                                                    listadederchosItem.id,
+                                                                                  ),
+                                                                                );
+                                                                                safeSetState(() => _model.requestCompleter = null);
+                                                                                await _model.waitForRequestCompleted();
+                                                                                await showDialog(
+                                                                                  context: context,
+                                                                                  builder: (alertDialogContext) {
+                                                                                    return WebViewAware(
+                                                                                      child: AlertDialog(
+                                                                                        title: Text('Derecho NO! valido para la siguiente etapa'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                            child: Text('Ok'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      ),
+                                                                                    );
+                                                                                  },
                                                                                 );
                                                                               }
                                                                             },
@@ -2506,14 +2559,14 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                               },
                                                             ),
                                                           ),
-                                                        ].divide(const SizedBox(
+                                                        ].divide(SizedBox(
                                                             height: 10.0)),
                                                       ),
                                                     );
                                                   },
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 0.0, 8.0, 0.0),
                                                   child: TextFormField(
@@ -2617,7 +2670,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 0.0, 8.0, 0.0),
                                                   child: TextFormField(
@@ -2723,7 +2776,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 10.0),
                                                   child: Text(
@@ -2742,7 +2795,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 0.0, 8.0, 0.0),
                                                   child: TextFormField(
@@ -2859,7 +2912,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 0.0, 8.0, 0.0),
                                                   child: TextFormField(
@@ -2974,7 +3027,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 0.0, 8.0, 0.0),
                                                   child: FlutterFlowDropDown<
@@ -2989,7 +3042,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                               ?.actoresdrop ??
                                                           [],
                                                     )),
-                                                    options: const [
+                                                    options: [
                                                       'Centro de salud',
                                                       'Hospital',
                                                       'Escuela',
@@ -3045,7 +3098,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                     borderWidth: 2.0,
                                                     borderRadius: 8.0,
                                                     margin:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 4.0,
                                                                 16.0, 4.0),
                                                     hidesUnderline: true,
@@ -3059,7 +3112,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 0.0, 8.0, 0.0),
                                                   child: TextFormField(
@@ -3248,7 +3301,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                     listacriteriosIndex];
                                                             return Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           20.0,
                                                                           12.0,
@@ -3262,7 +3315,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                     BoxDecoration(
                                                                   color: Colors
                                                                       .white,
-                                                                  boxShadow: const [
+                                                                  boxShadow: [
                                                                     BoxShadow(
                                                                       blurRadius:
                                                                           5.0,
@@ -3290,7 +3343,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                 ),
                                                                 child: Padding(
                                                                   padding:
-                                                                      const EdgeInsets
+                                                                      EdgeInsets
                                                                           .all(
                                                                               8.0),
                                                                   child: Row(
@@ -3309,7 +3362,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                       Expanded(
                                                                         child:
                                                                             Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               12.0,
                                                                               0.0,
                                                                               0.0,
@@ -3319,7 +3372,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                             listacriteriosItem,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Plus Jakarta Sans',
-                                                                                  color: const Color(0xFF14181B),
+                                                                                  color: Color(0xFF14181B),
                                                                                   fontSize: 14.0,
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.w500,
@@ -3339,7 +3392,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                   },
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 0.0, 8.0, 0.0),
                                                   child: FlutterFlowDropDown<
@@ -3354,7 +3407,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                               ?.criteriopriorizaciondrop ??
                                                           [],
                                                     )),
-                                                    options: const [
+                                                    options: [
                                                       'No tiene criterios de priorizacion',
                                                       'Riesgo de vida.',
                                                       'Sospecha de violencia sexual contra NNYA.',
@@ -3418,7 +3471,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                     borderWidth: 2.0,
                                                     borderRadius: 8.0,
                                                     margin:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 4.0,
                                                                 16.0, 4.0),
                                                     hidesUnderline: true,
@@ -3452,7 +3505,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                 listacriteriosIndex];
                                                         return Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       20.0,
                                                                       12.0,
@@ -3466,7 +3519,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                 BoxDecoration(
                                                               color:
                                                                   Colors.white,
-                                                              boxShadow: const [
+                                                              boxShadow: [
                                                                 BoxShadow(
                                                                   blurRadius:
                                                                       5.0,
@@ -3494,7 +3547,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  const EdgeInsets
+                                                                  EdgeInsets
                                                                       .all(8.0),
                                                               child: Row(
                                                                 mainAxisSize:
@@ -3512,7 +3565,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           12.0,
                                                                           0.0,
                                                                           0.0,
@@ -3524,7 +3577,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                             .bodyMedium
                                                                             .override(
                                                                               fontFamily: 'Plus Jakarta Sans',
-                                                                              color: const Color(0xFF14181B),
+                                                                              color: Color(0xFF14181B),
                                                                               fontSize: 14.0,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w500,
@@ -3553,7 +3606,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 0.0, 8.0, 0.0),
                                                   child: TextFormField(
@@ -3669,7 +3722,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 0.0, 8.0, 0.0),
                                                   child: TextFormField(
@@ -3789,7 +3842,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       8.0,
@@ -3816,8 +3869,11 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                     await Formulario5Table()
                                                                         .insert({
                                                                       'fecha': supaSerialize<
-                                                                          DateTime>(_model
-                                                                              .datePicked ?? getCurrentTimestamp),
+                                                                          DateTime>(_model.datePicked !=
+                                                                              null
+                                                                          ? _model
+                                                                              .datePicked
+                                                                          : getCurrentTimestamp),
                                                                       'profesionales': _model
                                                                           .textFieldprofesionalesTextController
                                                                           .text,
@@ -3878,13 +3934,13 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                           child:
                                                                               AlertDialog(
                                                                             title:
-                                                                                const Text('Carga correcta'),
+                                                                                Text('Carga correcta'),
                                                                             content:
-                                                                                const Text('La informacion se guardo correctamente!!'),
+                                                                                Text('La informacion se guardo correctamente!!'),
                                                                             actions: [
                                                                               TextButton(
                                                                                 onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                child: const Text('Ok'),
+                                                                                child: Text('Ok'),
                                                                               ),
                                                                             ],
                                                                           ),
@@ -3899,8 +3955,11 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                     await Formulario5HistorialTable()
                                                                         .insert({
                                                                       'fecha': supaSerialize<
-                                                                          DateTime>(_model
-                                                                              .datePicked ?? getCurrentTimestamp),
+                                                                          DateTime>(_model.datePicked !=
+                                                                              null
+                                                                          ? _model
+                                                                              .datePicked
+                                                                          : getCurrentTimestamp),
                                                                       'profesionales': _model
                                                                           .textFieldprofesionalesTextController
                                                                           .text,
@@ -3951,7 +4010,10 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                         .update(
                                                                       data: {
                                                                         'fecha': supaSerialize<
-                                                                            DateTime>(_model.datePicked ?? containerFormulario5Row?.fecha),
+                                                                            DateTime>(_model.datePicked !=
+                                                                                null
+                                                                            ? _model.datePicked
+                                                                            : containerFormulario5Row?.fecha),
                                                                         'profesionales': _model
                                                                             .textFieldprofesionalesTextController
                                                                             .text,
@@ -4001,13 +4063,13 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                           child:
                                                                               AlertDialog(
                                                                             title:
-                                                                                const Text('Carga correcta'),
+                                                                                Text('Carga correcta'),
                                                                             content:
-                                                                                const Text('La informacion se guardo correctamente!!'),
+                                                                                Text('La informacion se guardo correctamente!!'),
                                                                             actions: [
                                                                               TextButton(
                                                                                 onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                child: const Text('Ok'),
+                                                                                child: Text('Ok'),
                                                                               ),
                                                                             ],
                                                                           ),
@@ -4022,8 +4084,11 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                     await Formulario5HistorialTable()
                                                                         .insert({
                                                                       'fecha': supaSerialize<
-                                                                          DateTime>(_model
-                                                                              .datePicked ?? getCurrentTimestamp),
+                                                                          DateTime>(_model.datePicked !=
+                                                                              null
+                                                                          ? _model
+                                                                              .datePicked
+                                                                          : getCurrentTimestamp),
                                                                       'profesionales': _model
                                                                           .textFieldprofesionalesTextController
                                                                           .text,
@@ -4066,44 +4131,9 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                   }),
                                                                 ]);
                                                               }
-
-                                                              context.pushNamed(
-                                                                'Definiciondemedidas',
-                                                                queryParameters:
-                                                                    {
-                                                                  'ingresorow':
-                                                                      serializeParam(
-                                                                    widget
-                                                                        .rowingreso,
-                                                                    ParamType
-                                                                        .SupabaseRow,
-                                                                  ),
-                                                                  'rowexp':
-                                                                      serializeParam(
-                                                                    widget
-                                                                        .rowexpediente,
-                                                                    ParamType
-                                                                        .SupabaseRow,
-                                                                  ),
-                                                                  'usuariorow':
-                                                                      serializeParam(
-                                                                    widget
-                                                                        .usuariorow,
-                                                                    ParamType
-                                                                        .SupabaseRow,
-                                                                  ),
-                                                                  'usuariosrol':
-                                                                      serializeParam(
-                                                                    widget
-                                                                        .usuariorol,
-                                                                    ParamType
-                                                                        .SupabaseRow,
-                                                                  ),
-                                                                }.withoutNulls,
-                                                              );
                                                             },
                                                             text: 'Guardar',
-                                                            icon: const Icon(
+                                                            icon: Icon(
                                                               Icons.save,
                                                               size: 15.0,
                                                             ),
@@ -4112,14 +4142,14 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                               width: 250.0,
                                                               height: 40.0,
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           0.0,
                                                                           24.0,
                                                                           0.0),
                                                               iconPadding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -4142,7 +4172,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                       ),
                                                               elevation: 2.0,
                                                               borderSide:
-                                                                  const BorderSide(
+                                                                  BorderSide(
                                                                 color: Colors
                                                                     .transparent,
                                                                 width: 1.0,
@@ -4162,9 +4192,9 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                 ),
                                               ]
                                                   .divide(
-                                                      const SizedBox(height: 12.0))
+                                                      SizedBox(height: 12.0))
                                                   .around(
-                                                      const SizedBox(height: 12.0)),
+                                                      SizedBox(height: 12.0)),
                                             ),
                                           ),
                                         ),
@@ -4180,7 +4210,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, -1.0),
+                    alignment: AlignmentDirectional(-1.0, -1.0),
                     child: FutureBuilder<List<VistaRecepciondelademandaRow>>(
                       future: VistaRecepciondelademandaTable().querySingleRow(
                         queryFn: (q) => q.eqOrNull(
@@ -4225,13 +4255,13 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
-                                      boxShadow: const [
+                                      boxShadow: [
                                         BoxShadow(
                                           blurRadius: 7.0,
                                           color: Color(0x2F1D2429),
@@ -4244,7 +4274,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 12.0, 16.0, 12.0),
                                       child: SingleChildScrollView(
                                         child: Column(
@@ -4260,13 +4290,13 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                   .override(
                                                     fontFamily:
                                                         'Plus Jakarta Sans',
-                                                    color: const Color(0xFF39D2C0),
+                                                    color: Color(0xFF39D2C0),
                                                     fontSize: 14.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                             ),
-                                            const Divider(
+                                            Divider(
                                               height: 16.0,
                                               thickness: 2.0,
                                               color: Color(0xFFF1F4F8),
@@ -4285,7 +4315,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                         fontFamily:
                                                             'Plus Jakarta Sans',
                                                         color:
-                                                            const Color(0xFF14181B),
+                                                            Color(0xFF14181B),
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -4293,7 +4323,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 0.0),
                                                   child: Text(
@@ -4309,7 +4339,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              const Color(0xFF57636C),
+                                                              Color(0xFF57636C),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -4318,7 +4348,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 0.0),
                                                   child: Text(
@@ -4330,7 +4360,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              const Color(0xFF57636C),
+                                                              Color(0xFF57636C),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -4360,7 +4390,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                         fontFamily:
                                                             'Plus Jakarta Sans',
                                                         color:
-                                                            const Color(0xFF14181B),
+                                                            Color(0xFF14181B),
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -4368,7 +4398,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 0.0),
                                                   child: Text(
@@ -4384,7 +4414,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              const Color(0xFF57636C),
+                                                              Color(0xFF57636C),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -4393,7 +4423,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 0.0),
                                                   child: Text(
@@ -4409,7 +4439,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              const Color(0xFF57636C),
+                                                              Color(0xFF57636C),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -4418,7 +4448,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 0.0),
                                                   child: Text(
@@ -4434,7 +4464,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              const Color(0xFF57636C),
+                                                              Color(0xFF57636C),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -4464,7 +4494,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                         fontFamily:
                                                             'Plus Jakarta Sans',
                                                         color:
-                                                            const Color(0xFF14181B),
+                                                            Color(0xFF14181B),
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -4472,7 +4502,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 0.0),
                                                   child: Text(
@@ -4488,7 +4518,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              const Color(0xFF57636C),
+                                                              Color(0xFF57636C),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -4497,7 +4527,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 0.0),
                                                   child: Text(
@@ -4513,7 +4543,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              const Color(0xFF57636C),
+                                                              Color(0xFF57636C),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -4543,7 +4573,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                         fontFamily:
                                                             'Plus Jakarta Sans',
                                                         color:
-                                                            const Color(0xFF14181B),
+                                                            Color(0xFF14181B),
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -4569,7 +4599,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                 listacriteriosIndex];
                                                         return Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       4.0,
@@ -4583,7 +4613,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                 .override(
                                                                   fontFamily:
                                                                       'Plus Jakarta Sans',
-                                                                  color: const Color(
+                                                                  color: Color(
                                                                       0xFF57636C),
                                                                   fontSize:
                                                                       14.0,
@@ -4621,7 +4651,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                         fontFamily:
                                                             'Plus Jakarta Sans',
                                                         color:
-                                                            const Color(0xFF14181B),
+                                                            Color(0xFF14181B),
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -4629,7 +4659,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 0.0),
                                                   child: Text(
@@ -4645,7 +4675,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              const Color(0xFF57636C),
+                                                              Color(0xFF57636C),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -4738,13 +4768,13 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                   listViewIndex];
                                           return Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 16.0),
                                             child: Container(
                                               width: double.infinity,
                                               decoration: BoxDecoration(
                                                 color: Colors.white,
-                                                boxShadow: const [
+                                                boxShadow: [
                                                   BoxShadow(
                                                     blurRadius: 7.0,
                                                     color: Color(0x2F1D2429),
@@ -4758,7 +4788,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                     BorderRadius.circular(8.0),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 8.0, 12.0, 8.0),
                                                 child: Row(
@@ -4768,7 +4798,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                     Expanded(
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     12.0,
                                                                     0.0,
@@ -4799,7 +4829,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                   .override(
                                                                     fontFamily:
                                                                         'Plus Jakarta Sans',
-                                                                    color: const Color(
+                                                                    color: Color(
                                                                         0xFF14181B),
                                                                     fontSize:
                                                                         16.0,
@@ -4816,11 +4846,11 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                     ),
                                                     FlutterFlowIconButton(
                                                       borderColor:
-                                                          const Color(0xFFE0E3E7),
+                                                          Color(0xFFE0E3E7),
                                                       borderRadius: 8.0,
                                                       borderWidth: 2.0,
                                                       buttonSize: 40.0,
-                                                      icon: const Icon(
+                                                      icon: Icon(
                                                         Icons.more_vert,
                                                         color:
                                                             Color(0xFF57636C),
@@ -4883,15 +4913,15 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                   ),
                                 ),
                               ]
-                                  .divide(const SizedBox(height: 10.0))
-                                  .around(const SizedBox(height: 10.0)),
+                                  .divide(SizedBox(height: 10.0))
+                                  .around(SizedBox(height: 10.0)),
                             ),
                           ),
                         );
                       },
                     ),
                   ),
-                ].divide(const SizedBox(width: 5.0)),
+                ].divide(SizedBox(width: 5.0)),
               ),
             ),
           ),

@@ -55,7 +55,7 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<GrupoConvivienteRow>>(
         future: GrupoConvivienteTable().queryRows(
           queryFn: (q) => q.eqOrNull(
@@ -100,14 +100,14 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                   color: FlutterFlowTheme.of(context).primary,
                 ),
               ),
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Form(
                 key: _model.formKey,
                 autovalidateMode: AutovalidateMode.disabled,
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, -1.0),
+                  alignment: AlignmentDirectional(0.0, -1.0),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
@@ -118,13 +118,13 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Align(
-                                alignment: const AlignmentDirectional(0.0, -1.0),
+                                alignment: AlignmentDirectional(0.0, -1.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       180.0, 0.0, 0.0, 0.0),
                                   child: Container(
                                     width: 280.0,
-                                    decoration: const BoxDecoration(),
+                                    decoration: BoxDecoration(),
                                     child: Text(
                                       valueOrDefault<String>(
                                         widget.titulo,
@@ -144,7 +144,7 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(1.0, 0.0),
+                                alignment: AlignmentDirectional(1.0, 0.0),
                                 child: FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
                                   borderRadius: 20.0,
@@ -163,7 +163,7 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                             ],
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(1.0, 0.0),
+                            alignment: AlignmentDirectional(1.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
                                 await showModalBottomSheet(
@@ -187,16 +187,16 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                 ).then((value) => safeSetState(() {}));
                               },
                               text: 'Agregar ',
-                              icon: const Icon(
+                              icon: Icon(
                                 Icons.people_outlined,
                                 size: 15.0,
                               ),
                               options: FFButtonOptions(
                                 width: 250.0,
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -207,7 +207,7 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -216,7 +216,7 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(-1.0, 0.0),
+                            alignment: AlignmentDirectional(-1.0, 0.0),
                             child: Text(
                               'Grupo Conviviente',
                               style: FlutterFlowTheme.of(context)
@@ -422,10 +422,10 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                         options: FFButtonOptions(
                                           height: 40.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 0.0, 24.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
@@ -438,7 +438,7 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                                     letterSpacing: 0.0,
                                                   ),
                                           elevation: 3.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -471,7 +471,7 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(-1.0, 0.0),
+                            alignment: AlignmentDirectional(-1.0, 0.0),
                             child: Text(
                               'Grupo no conviviente',
                               style: FlutterFlowTheme.of(context)
@@ -677,10 +677,10 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                         options: FFButtonOptions(
                                           height: 40.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 0.0, 24.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
@@ -693,7 +693,7 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                                     letterSpacing: 0.0,
                                                   ),
                                           elevation: 3.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -744,17 +744,17 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                       Navigator.pop(context, true);
                                     },
                                     text: 'Volver',
-                                    icon: const Icon(
+                                    icon: Icon(
                                       Icons.chevron_left_outlined,
                                       size: 15.0,
                                     ),
                                     options: FFButtonOptions(
                                       width: 250.0,
                                       height: 40.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).success,
@@ -766,7 +766,7 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                             letterSpacing: 0.0,
                                           ),
                                       elevation: 2.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -779,8 +779,8 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                             ],
                           ),
                         ]
-                            .divide(const SizedBox(height: 8.0))
-                            .around(const SizedBox(height: 8.0)),
+                            .divide(SizedBox(height: 8.0))
+                            .around(SizedBox(height: 8.0)),
                       ),
                     ),
                   ),

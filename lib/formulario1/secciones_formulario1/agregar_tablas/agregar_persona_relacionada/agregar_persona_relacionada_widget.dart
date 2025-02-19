@@ -68,7 +68,7 @@ class _AgregarPersonaRelacionadaWidgetState
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Material(
         color: Colors.transparent,
         elevation: 2.0,
@@ -77,7 +77,7 @@ class _AgregarPersonaRelacionadaWidgetState
         ),
         child: Container(
           width: MediaQuery.sizeOf(context).width * 1.0,
-          constraints: const BoxConstraints(
+          constraints: BoxConstraints(
             maxWidth: 600.0,
           ),
           decoration: BoxDecoration(
@@ -87,21 +87,21 @@ class _AgregarPersonaRelacionadaWidgetState
               color: FlutterFlowTheme.of(context).primary,
             ),
           ),
-          alignment: const AlignmentDirectional(0.0, 0.0),
+          alignment: AlignmentDirectional(0.0, 0.0),
           child: Form(
             key: _model.formKey,
             autovalidateMode: AutovalidateMode.disabled,
             child: Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(1.0, 0.0),
+                        alignment: AlignmentDirectional(1.0, 0.0),
                         child: FlutterFlowIconButton(
                           borderColor: Colors.transparent,
                           borderRadius: 20.0,
@@ -118,7 +118,7 @@ class _AgregarPersonaRelacionadaWidgetState
                         ),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, -1.0),
+                        alignment: AlignmentDirectional(0.0, -1.0),
                         child: Text(
                           '8. Persona relacionada',
                           style: FlutterFlowTheme.of(context)
@@ -133,7 +133,7 @@ class _AgregarPersonaRelacionadaWidgetState
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                         child: TextFormField(
                           controller: _model.textController1,
                           focusNode: _model.textFieldFocusNode1,
@@ -193,7 +193,7 @@ class _AgregarPersonaRelacionadaWidgetState
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                         child: TextFormField(
                           controller: _model.textController2,
                           focusNode: _model.textFieldFocusNode2,
@@ -256,7 +256,7 @@ class _AgregarPersonaRelacionadaWidgetState
                         children: [
                           Expanded(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: TextFormField(
                                 controller: _model.textController3,
@@ -323,7 +323,7 @@ class _AgregarPersonaRelacionadaWidgetState
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                         child: TextFormField(
                           controller: _model.textController4,
                           focusNode: _model.textFieldFocusNode4,
@@ -382,12 +382,12 @@ class _AgregarPersonaRelacionadaWidgetState
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             10.0, 0.0, 10.0, 0.0),
                         child: FlutterFlowDropDown<String>(
                           controller: _model.dropDownValueController ??=
                               FormFieldController<String>(null),
-                          options: const [
+                          options: [
                             'Madre',
                             'Padre',
                             'Hemana/os',
@@ -418,7 +418,7 @@ class _AgregarPersonaRelacionadaWidgetState
                           borderColor: FlutterFlowTheme.of(context).accent1,
                           borderWidth: 0.0,
                           borderRadius: 8.0,
-                          margin: const EdgeInsetsDirectional.fromSTEB(
+                          margin: EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 12.0, 0.0),
                           hidesUnderline: true,
                           isOverButton: false,
@@ -428,7 +428,7 @@ class _AgregarPersonaRelacionadaWidgetState
                       ),
                       if (_model.dropDownValue == 'Otros')
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: TextFormField(
                             controller: _model.textController5,
@@ -540,16 +540,16 @@ class _AgregarPersonaRelacionadaWidgetState
                                   Navigator.pop(context);
                                 },
                                 text: 'Guardar',
-                                icon: const Icon(
+                                icon: Icon(
                                   Icons.save,
                                   size: 15.0,
                                 ),
                                 options: FFButtonOptions(
                                   width: 250.0,
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).success,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -560,7 +560,7 @@ class _AgregarPersonaRelacionadaWidgetState
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 2.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -573,8 +573,8 @@ class _AgregarPersonaRelacionadaWidgetState
                         ],
                       ),
                     ]
-                        .divide(const SizedBox(height: 8.0))
-                        .around(const SizedBox(height: 8.0)),
+                        .divide(SizedBox(height: 8.0))
+                        .around(SizedBox(height: 8.0)),
                   ),
                 ),
               ),

@@ -40,7 +40,7 @@ class AnexosbotoneraWidget extends StatefulWidget {
     String? numampliacioninfo,
     this.editar,
     this.usuariorol,
-  }) : numampliacioninfo = numampliacioninfo ?? '0';
+  }) : this.numampliacioninfo = numampliacioninfo ?? '0';
 
   final IngresosRow? ingresorow;
   final VistaExpedientesUltimoEstadoRow? exorow;
@@ -136,10 +136,10 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
               borderRadius: BorderRadius.circular(10.0),
             ),
             child: Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: EdgeInsets.all(10.0),
               child: Container(
                 width: double.infinity,
-                color: const Color(0x00000000),
+                color: Color(0x00000000),
                 child: ExpandableNotifier(
                   controller: _model.expandableExpandableController,
                   child: ExpandablePanel(
@@ -159,14 +159,14 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Noto Sans JP',
-                                    color: const Color(0x8A000000),
+                                    color: Color(0x8A000000),
                                     letterSpacing: 0.0,
                                   ),
                         ),
                       ],
                     ),
                     expanded: Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: FutureBuilder<List<VistaConteoEntrevistasRow>>(
                         future: VistaConteoEntrevistasTable().querySingleRow(
                           queryFn: (q) => q.eqOrNull(
@@ -199,9 +199,9 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                   : null;
 
                           return Container(
-                            decoration: const BoxDecoration(),
+                            decoration: BoxDecoration(),
                             child: Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: EdgeInsets.all(8.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
@@ -215,7 +215,7 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                         ),
                                   ),
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: FutureBuilder<
                                         List<Anexo5requerimientoaccionesRow>>(
                                       future: Anexo5requerimientoaccionesTable()
@@ -248,7 +248,7 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                             snapshot.data!;
 
                                         return Container(
-                                          decoration: const BoxDecoration(),
+                                          decoration: BoxDecoration(),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -297,14 +297,14 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                   options: FFButtonOptions(
                                                     height: 40.0,
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
                                                                 16.0, 0.0),
                                                     iconPadding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: const Color(0xFFC5BFF8),
+                                                    color: Color(0xFFC5BFF8),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
@@ -354,7 +354,7 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                   ),
                                                   child: Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Text(
                                                       containerAnexo5requerimientoaccionesRowList
@@ -380,7 +380,7 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: FutureBuilder<
                                         List<AnexoinstitucioneeducacionRow>>(
                                       future: (_model.requestCompleter2 ??= Completer<
@@ -425,7 +425,7 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                 : null;
 
                                         return Container(
-                                          decoration: const BoxDecoration(),
+                                          decoration: BoxDecoration(),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -487,14 +487,14 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                   options: FFButtonOptions(
                                                     height: 40.0,
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
                                                                 16.0, 0.0),
                                                     iconPadding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: const Color(0xFFC5BFF8),
+                                                    color: Color(0xFFC5BFF8),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
@@ -553,7 +553,7 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: FutureBuilder<
                                         List<Anexo4RequerimientoaccionesRow>>(
                                       future: Anexo4RequerimientoaccionesTable()
@@ -586,7 +586,7 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                             snapshot.data!;
 
                                         return Container(
-                                          decoration: const BoxDecoration(),
+                                          decoration: BoxDecoration(),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -639,14 +639,14 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                   options: FFButtonOptions(
                                                     height: 40.0,
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
                                                                 16.0, 0.0),
                                                     iconPadding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: const Color(0xFFC5BFF8),
+                                                    color: Color(0xFFC5BFF8),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
@@ -697,7 +697,7 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                   ),
                                                   child: Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Text(
                                                       containerAnexo4RequerimientoaccionesRowList
@@ -723,7 +723,7 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: FutureBuilder<
                                         List<AnexoinstitucionesaludRow>>(
                                       future: (_model.requestCompleter1 ??=
@@ -769,7 +769,7 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                 : null;
 
                                         return Container(
-                                          decoration: const BoxDecoration(),
+                                          decoration: BoxDecoration(),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -831,14 +831,14 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                   options: FFButtonOptions(
                                                     height: 40.0,
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
                                                                 16.0, 0.0),
                                                     iconPadding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: const Color(0xFFC5BFF8),
+                                                    color: Color(0xFFC5BFF8),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
@@ -897,9 +897,9 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: Container(
-                                      decoration: const BoxDecoration(),
+                                      decoration: BoxDecoration(),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -949,14 +949,14 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                               text: 'Entrevista al NNyA',
                                               options: FFButtonOptions(
                                                 height: 40.0,
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 iconPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
-                                                color: const Color(0xFFC5BFF8),
+                                                color: Color(0xFFC5BFF8),
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
@@ -1000,7 +1000,7 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   valueOrDefault<String>(
@@ -1027,9 +1027,9 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: Container(
-                                      decoration: const BoxDecoration(),
+                                      decoration: BoxDecoration(),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -1080,14 +1080,14 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                               text: 'Entrevista a la Flia',
                                               options: FFButtonOptions(
                                                 height: 40.0,
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 iconPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
-                                                color: const Color(0xFFC5BFF8),
+                                                color: Color(0xFFC5BFF8),
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
@@ -1131,7 +1131,7 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   valueOrDefault<String>(
@@ -1158,9 +1158,9 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: Container(
-                                      decoration: const BoxDecoration(),
+                                      decoration: BoxDecoration(),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -1209,14 +1209,14 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                               text: 'Ampliacion de info',
                                               options: FFButtonOptions(
                                                 height: 40.0,
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 iconPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
-                                                color: const Color(0xFFC5BFF8),
+                                                color: Color(0xFFC5BFF8),
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
@@ -1260,7 +1260,7 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   valueOrDefault<String>(
@@ -1287,7 +1287,7 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
@@ -1315,7 +1315,7 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                         ).then((value) => safeSetState(() {}));
                                       },
                                       child: AnimatedContainer(
-                                        duration: const Duration(milliseconds: 200),
+                                        duration: Duration(milliseconds: 200),
                                         curve: Curves.easeInOut,
                                         width: double.infinity,
                                         height: 44.0,
@@ -1328,21 +1328,21 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                         ),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 8.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.center,
                                             children: [
-                                              const Icon(
+                                              Icon(
                                                 Icons.upload_file,
                                                 color: Color(0xFF15161E),
                                                 size: 24.0,
                                               ),
                                               Expanded(
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -1354,7 +1354,7 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              const Color(0xFF15161E),
+                                                              Color(0xFF15161E),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -1369,14 +1369,14 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                       ),
                                     ),
                                   ),
-                                ].divide(const SizedBox(height: 5.0)),
+                                ].divide(SizedBox(height: 5.0)),
                               ),
                             ),
                           );
                         },
                       ),
                     ),
-                    theme: const ExpandableThemeData(
+                    theme: ExpandableThemeData(
                       tapHeaderToExpand: true,
                       tapBodyToExpand: false,
                       tapBodyToCollapse: false,

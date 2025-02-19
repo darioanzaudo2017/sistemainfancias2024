@@ -11,7 +11,7 @@ class AnexoinstitucionesaludTable
 }
 
 class AnexoinstitucionesaludRow extends SupabaseDataRow {
-  AnexoinstitucionesaludRow(super.data);
+  AnexoinstitucionesaludRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => AnexoinstitucionesaludTable();

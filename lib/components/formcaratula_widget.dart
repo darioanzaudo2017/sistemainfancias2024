@@ -82,7 +82,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, -1.0),
+      alignment: AlignmentDirectional(0.0, -1.0),
       child: FutureBuilder<List<ExpedienteRow>>(
         future: ExpedienteTable().querySingleRow(
           queryFn: (q) => q.eqOrNull(
@@ -123,7 +123,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
             ),
             child: Container(
               width: MediaQuery.sizeOf(context).width * 1.0,
-              constraints: const BoxConstraints(
+              constraints: BoxConstraints(
                 maxWidth: 600.0,
               ),
               decoration: BoxDecoration(
@@ -133,11 +133,11 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                   color: FlutterFlowTheme.of(context).primary,
                 ),
               ),
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Align(
-                alignment: const AlignmentDirectional(0.0, -1.0),
+                alignment: AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -148,9 +148,9 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     180.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Formulario caratula',
@@ -182,11 +182,11 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                           ],
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Container(
                             width: 600.0,
-                            decoration: const BoxDecoration(),
-                            child: SizedBox(
+                            decoration: BoxDecoration(),
+                            child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               child: Form(
                                 key: _model.formKey2,
@@ -206,7 +206,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                           ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 8.0, 0.0),
                                       child: TextFormField(
                                         controller: _model
@@ -289,7 +289,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 8.0, 0.0),
                                       child: TextFormField(
                                         controller: _model
@@ -371,7 +371,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 8.0, 0.0),
                                       child: TextFormField(
                                         controller: _model
@@ -389,7 +389,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                         focusNode: _model.textFieldDNIFocusNode,
                                         onChanged: (_) => EasyDebounce.debounce(
                                           '_model.textFieldDNITextController',
-                                          const Duration(milliseconds: 2000),
+                                          Duration(milliseconds: 2000),
                                           () => safeSetState(() {}),
                                         ),
                                         autofocus: true,
@@ -469,7 +469,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 8.0, 0.0),
                                       child: TextFormField(
                                         controller: _model
@@ -482,7 +482,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                             _model.textFieldedadFocusNode,
                                         onChanged: (_) => EasyDebounce.debounce(
                                           '_model.textFieldedadTextController',
-                                          const Duration(milliseconds: 2000),
+                                          Duration(milliseconds: 2000),
                                           () => safeSetState(() {}),
                                         ),
                                         autofocus: true,
@@ -564,7 +564,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 8.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -591,7 +591,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                           ),
                                           FFButtonWidget(
                                             onPressed: () async {
-                                              final datePicked1Date =
+                                              final _datePicked1Date =
                                                   await showDatePicker(
                                                 context: context,
                                                 initialDate:
@@ -649,13 +649,19 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                                 },
                                               );
 
-                                              if (datePicked1Date != null) {
+                                              if (_datePicked1Date != null) {
                                                 safeSetState(() {
                                                   _model.datePicked1 = DateTime(
-                                                    datePicked1Date.year,
-                                                    datePicked1Date.month,
-                                                    datePicked1Date.day,
+                                                    _datePicked1Date.year,
+                                                    _datePicked1Date.month,
+                                                    _datePicked1Date.day,
                                                   );
+                                                });
+                                              } else if (_model.datePicked1 !=
+                                                  null) {
+                                                safeSetState(() {
+                                                  _model.datePicked1 =
+                                                      getCurrentTimestamp;
                                                 });
                                               }
                                             },
@@ -672,10 +678,10 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                             ),
                                             options: FFButtonOptions(
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -690,7 +696,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                               elevation: 3.0,
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Colors.transparent,
                                                 width: 1.0,
                                               ),
@@ -701,7 +707,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                         ],
                                       ),
                                     ),
-                                  ].divide(const SizedBox(height: 10.0)),
+                                  ].divide(SizedBox(height: 10.0)),
                                 ),
                               ),
                             ),
@@ -710,7 +716,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                         if (!_model.dniok)
                           Container(
                             width: 600.0,
-                            decoration: const BoxDecoration(),
+                            decoration: BoxDecoration(),
                             child: Form(
                               key: _model.formKey1,
                               autovalidateMode: AutovalidateMode.disabled,
@@ -719,13 +725,13 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Container(
-                                    decoration: const BoxDecoration(),
+                                    decoration: BoxDecoration(),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(1.0, -1.0),
+                                              AlignmentDirectional(1.0, -1.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
                                               await showModalBottomSheet(
@@ -769,10 +775,10 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                             text: 'Agregar Derecho Vulnerado',
                                             options: FFButtonOptions(
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -787,7 +793,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                               elevation: 3.0,
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Colors.transparent,
                                                 width: 1.0,
                                               ),
@@ -796,7 +802,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                             ),
                                           ),
                                         ),
-                                      ].divide(const SizedBox(height: 10.0)),
+                                      ].divide(SizedBox(height: 10.0)),
                                     ),
                                   ),
                                   FutureBuilder<
@@ -860,7 +866,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                                     softWrap: true,
                                                     child: Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: Text(
                                                         'Derecho',
@@ -886,7 +892,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                                     softWrap: true,
                                                     child: Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: Text(
                                                         'Subcategoria',
@@ -912,7 +918,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                                     softWrap: true,
                                                     child: Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: Text(
                                                         'Principal',
@@ -1027,7 +1033,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                     },
                                   ),
                                   Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Text(
                                       'Información de expediente',
                                       style: FlutterFlowTheme.of(context)
@@ -1120,7 +1126,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                           borderWidth: 0.0,
                                           borderRadius: 8.0,
                                           margin:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 12.0, 0.0),
                                           hidesUnderline: true,
                                           isOverButton: false,
@@ -1130,7 +1136,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                       },
                                     ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -1159,7 +1165,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                         ),
                                         FFButtonWidget(
                                           onPressed: () async {
-                                            final datePicked2Date =
+                                            final _datePicked2Date =
                                                 await showDatePicker(
                                               context: context,
                                               initialDate: getCurrentTimestamp,
@@ -1214,13 +1220,19 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                               },
                                             );
 
-                                            if (datePicked2Date != null) {
+                                            if (_datePicked2Date != null) {
                                               safeSetState(() {
                                                 _model.datePicked2 = DateTime(
-                                                  datePicked2Date.year,
-                                                  datePicked2Date.month,
-                                                  datePicked2Date.day,
+                                                  _datePicked2Date.year,
+                                                  _datePicked2Date.month,
+                                                  _datePicked2Date.day,
                                                 );
+                                              });
+                                            } else if (_model.datePicked2 !=
+                                                null) {
+                                              safeSetState(() {
+                                                _model.datePicked2 =
+                                                    getCurrentTimestamp;
                                               });
                                             }
                                           },
@@ -1237,10 +1249,10 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                           options: FFButtonOptions(
                                             height: 40.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
@@ -1254,7 +1266,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -1266,7 +1278,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 0.0, 0.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -1278,7 +1290,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                           'Demanda espontanea',
                                         ),
                                       ),
-                                      options: const [
+                                      options: [
                                         'Demanda espontanea',
                                         'Oficio Judicial',
                                         'Derivación de otra Institución/Organismo/Servicio'
@@ -1308,7 +1320,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                           .alternate,
                                       borderWidth: 2.0,
                                       borderRadius: 8.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
@@ -1328,7 +1340,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller: _model
@@ -1416,7 +1428,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller: _model
@@ -1502,7 +1514,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller: _model
@@ -1588,8 +1600,8 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                         ),
                                       ),
                                     ]
-                                        .divide(const SizedBox(height: 10.0))
-                                        .around(const SizedBox(height: 10.0)),
+                                        .divide(SizedBox(height: 10.0))
+                                        .around(SizedBox(height: 10.0)),
                                   ),
                                   Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -1603,7 +1615,9 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                               data: {
                                                 'fecha': supaSerialize<
                                                         DateTime>(
-                                                    _model.datePicked2 ?? containerExpedienteRow
+                                                    _model.datePicked2 != null
+                                                        ? _model.datePicked2
+                                                        : containerExpedienteRow
                                                             ?.fecha),
                                                 'nombres': functions.mayusculas(
                                                     _model
@@ -1627,7 +1641,9 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                                     .text,
                                                 'fechaNac': supaSerialize<
                                                         DateTime>(
-                                                    _model.datePicked1 ?? containerExpedienteRow
+                                                    _model.datePicked1 != null
+                                                        ? _model.datePicked1
+                                                        : containerExpedienteRow
                                                             ?.fechaNac),
                                                 'edad': int.tryParse(_model
                                                     .textFieldedadTextController
@@ -1678,16 +1694,16 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                               builder: (alertDialogContext) {
                                                 return WebViewAware(
                                                   child: AlertDialog(
-                                                    title: const Text(
+                                                    title: Text(
                                                         'Expediente Editado'),
-                                                    content: const Text(
+                                                    content: Text(
                                                         'Se edito correctamente el expediente!'),
                                                     actions: [
                                                       TextButton(
                                                         onPressed: () =>
                                                             Navigator.pop(
                                                                 alertDialogContext),
-                                                        child: const Text('Ok'),
+                                                        child: Text('Ok'),
                                                       ),
                                                     ],
                                                   ),
@@ -1699,7 +1715,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                             safeSetState(() {});
                                           },
                                           text: 'Guardar',
-                                          icon: const Icon(
+                                          icon: Icon(
                                             Icons.save,
                                             size: 15.0,
                                           ),
@@ -1707,10 +1723,10 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                             width: 250.0,
                                             height: 40.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .success,
@@ -1724,7 +1740,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 2.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -1735,13 +1751,13 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                         ),
                                     ],
                                   ),
-                                ].divide(const SizedBox(height: 10.0)),
+                                ].divide(SizedBox(height: 10.0)),
                               ),
                             ),
                           ),
                       ]
-                          .divide(const SizedBox(height: 8.0))
-                          .around(const SizedBox(height: 8.0)),
+                          .divide(SizedBox(height: 8.0))
+                          .around(SizedBox(height: 8.0)),
                     ),
                   ),
                 ),

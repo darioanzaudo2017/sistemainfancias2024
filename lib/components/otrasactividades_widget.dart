@@ -53,7 +53,7 @@ class _OtrasactividadesWidgetState extends State<OtrasactividadesWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<AccionesAccesoriasRow>>(
         future: AccionesAccesoriasTable().querySingleRow(
           queryFn: (q) => q.eqOrNull(
@@ -97,13 +97,13 @@ class _OtrasactividadesWidgetState extends State<OtrasactividadesWidget> {
                 borderRadius: BorderRadius.circular(10.0),
               ),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(1.0, 0.0),
+                        alignment: AlignmentDirectional(1.0, 0.0),
                         child: FlutterFlowIconButton(
                           borderColor: Colors.transparent,
                           borderRadius: 20.0,
@@ -132,7 +132,7 @@ class _OtrasactividadesWidgetState extends State<OtrasactividadesWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 15.0, 0.0),
                             child: Text(
                               valueOrDefault<String>(
@@ -154,7 +154,7 @@ class _OtrasactividadesWidgetState extends State<OtrasactividadesWidget> {
                           ),
                           FFButtonWidget(
                             onPressed: () async {
-                              final datePickedDate = await showDatePicker(
+                              final _datePickedDate = await showDatePicker(
                                 context: context,
                                 initialDate: getCurrentTimestamp,
                                 firstDate: DateTime(1900),
@@ -194,13 +194,17 @@ class _OtrasactividadesWidgetState extends State<OtrasactividadesWidget> {
                                 },
                               );
 
-                              if (datePickedDate != null) {
+                              if (_datePickedDate != null) {
                                 safeSetState(() {
                                   _model.datePicked = DateTime(
-                                    datePickedDate.year,
-                                    datePickedDate.month,
-                                    datePickedDate.day,
+                                    _datePickedDate.year,
+                                    _datePickedDate.month,
+                                    _datePickedDate.day,
                                   );
+                                });
+                              } else if (_model.datePicked != null) {
+                                safeSetState(() {
+                                  _model.datePicked = getCurrentTimestamp;
                                 });
                               }
                             },
@@ -215,9 +219,9 @@ class _OtrasactividadesWidgetState extends State<OtrasactividadesWidget> {
                             ),
                             options: FFButtonOptions(
                               height: 40.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -263,7 +267,7 @@ class _OtrasactividadesWidgetState extends State<OtrasactividadesWidget> {
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Color(0x00000000),
                               width: 1.0,
                             ),
@@ -311,14 +315,14 @@ class _OtrasactividadesWidgetState extends State<OtrasactividadesWidget> {
                               builder: (alertDialogContext) {
                                 return WebViewAware(
                                   child: AlertDialog(
-                                    title: const Text('Carga con exito'),
-                                    content: const Text(
+                                    title: Text('Carga con exito'),
+                                    content: Text(
                                         'La informacion de cargo con exito'),
                                     actions: [
                                       TextButton(
                                         onPressed: () =>
                                             Navigator.pop(alertDialogContext),
-                                        child: const Text('Ok'),
+                                        child: Text('Ok'),
                                       ),
                                     ],
                                   ),
@@ -329,7 +333,9 @@ class _OtrasactividadesWidgetState extends State<OtrasactividadesWidget> {
                             await AccionesAccesoriasTable().update(
                               data: {
                                 'fecha': supaSerialize<DateTime>(
-                                    _model.datePicked ?? containerAccionesAccesoriasRow
+                                    _model.datePicked != null
+                                        ? _model.datePicked
+                                        : containerAccionesAccesoriasRow
                                             ?.fecha),
                                 'Descripcion': _model.textController.text,
                                 'idexpediente': widget.expe?.id,
@@ -345,14 +351,14 @@ class _OtrasactividadesWidgetState extends State<OtrasactividadesWidget> {
                               builder: (alertDialogContext) {
                                 return WebViewAware(
                                   child: AlertDialog(
-                                    title: const Text('Carga con exito'),
-                                    content: const Text(
+                                    title: Text('Carga con exito'),
+                                    content: Text(
                                         'La informacion de edito con exito'),
                                     actions: [
                                       TextButton(
                                         onPressed: () =>
                                             Navigator.pop(alertDialogContext),
-                                        child: const Text('Ok'),
+                                        child: Text('Ok'),
                                       ),
                                     ],
                                   ),
@@ -364,9 +370,9 @@ class _OtrasactividadesWidgetState extends State<OtrasactividadesWidget> {
                         text: 'Guardar',
                         options: FFButtonOptions(
                           height: 40.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
@@ -380,8 +386,8 @@ class _OtrasactividadesWidgetState extends State<OtrasactividadesWidget> {
                         ),
                       ),
                     ]
-                        .divide(const SizedBox(height: 10.0))
-                        .around(const SizedBox(height: 10.0)),
+                        .divide(SizedBox(height: 10.0))
+                        .around(SizedBox(height: 10.0)),
                   ),
                 ),
               ),

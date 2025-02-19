@@ -11,7 +11,7 @@ class ImpresionesExpedientesTable
 }
 
 class ImpresionesExpedientesRow extends SupabaseDataRow {
-  ImpresionesExpedientesRow(super.data);
+  ImpresionesExpedientesRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => ImpresionesExpedientesTable();
