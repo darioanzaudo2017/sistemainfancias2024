@@ -21,6 +21,9 @@ class Respuestaform6pageWidget extends StatefulWidget {
   final VistaExpedientesUltimoEstadoRow? expedienterow;
   final int? idform6;
 
+  static String routeName = 'Respuestaform6page';
+  static String routePath = '/respuestaform6page';
+
   @override
   State<Respuestaform6pageWidget> createState() =>
       _Respuestaform6pageWidgetState();

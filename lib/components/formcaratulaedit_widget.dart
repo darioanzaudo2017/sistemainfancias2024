@@ -11,6 +11,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/random_data_util.dart' as random_data;
+import '/index.dart';
 import 'dart:async';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
@@ -1938,7 +1939,7 @@ class _FormcaratulaeditWidgetState extends State<FormcaratulaeditWidget> {
                                               );
 
                                               context.pushNamed(
-                                                'Ingresos',
+                                                IngresosWidget.routeName,
                                                 queryParameters: {
                                                   'idexp': serializeParam(
                                                     _model.crearexpnnya1?.id,

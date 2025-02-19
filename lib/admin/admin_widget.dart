@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
@@ -21,6 +22,9 @@ class AdminWidget extends StatefulWidget {
 
   final VistaUsuariosRolesRow? usuariosroles;
   final UsuariosRow? usuariorow;
+
+  static String routeName = 'Admin';
+  static String routePath = '/admin';
 
   @override
   State<AdminWidget> createState() => _AdminWidgetState();
@@ -1792,7 +1796,8 @@ class _AdminWidgetState extends State<AdminWidget>
                                                             );
 
                                                             context.pushNamed(
-                                                              'perfil',
+                                                              PerfilWidget
+                                                                  .routeName,
                                                               queryParameters: {
                                                                 'idingreso':
                                                                     serializeParam(

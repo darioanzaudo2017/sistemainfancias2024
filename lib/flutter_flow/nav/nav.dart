@@ -9,9 +9,10 @@ import '/backend/supabase/supabase.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
-import '/index.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+
+import '/index.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -88,14 +89,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               appStateNotifier.loggedIn ? HomePageWidget() : Auth2LoginWidget(),
         ),
         FFRoute(
-          name: 'HomePage',
-          path: '/homePage',
+          name: HomePageWidget.routeName,
+          path: HomePageWidget.routePath,
           requireAuth: true,
           builder: (context, params) => HomePageWidget(),
         ),
         FFRoute(
-          name: 'perfil',
-          path: '/perfil',
+          name: PerfilWidget.routeName,
+          path: PerfilWidget.routePath,
           builder: (context, params) => PerfilWidget(
             idingreso: params.getParam(
               'idingreso',
@@ -120,8 +121,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'Ingresos',
-          path: '/ingresos',
+          name: IngresosWidget.routeName,
+          path: IngresosWidget.routePath,
           requireAuth: true,
           builder: (context, params) => IngresosWidget(
             idexpediente: params.getParam<VistaExpedientesUltimoEstadoRow>(
@@ -151,8 +152,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'Entrevistas',
-          path: '/entrevistas',
+          name: EntrevistasWidget.routeName,
+          path: EntrevistasWidget.routePath,
           builder: (context, params) => EntrevistasWidget(
             ingresorow: params.getParam(
               'ingresorow',
@@ -173,8 +174,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'Definiciondemedidas',
-          path: '/definiciondemedidas',
+          name: DefiniciondemedidasWidget.routeName,
+          path: DefiniciondemedidasWidget.routePath,
           builder: (context, params) => DefiniciondemedidasWidget(
             ingresorow: params.getParam<IngresosRow>(
               'ingresorow',
@@ -195,38 +196,38 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'Actaacuerdo',
-          path: '/actaacuerdo',
+          name: ActaacuerdoWidget.routeName,
+          path: ActaacuerdoWidget.routePath,
           builder: (context, params) => ActaacuerdoWidget(),
         ),
         FFRoute(
-          name: 'auth_2_Create',
-          path: '/auth2Create',
+          name: Auth2CreateWidget.routeName,
+          path: Auth2CreateWidget.routePath,
           builder: (context, params) => Auth2CreateWidget(),
         ),
         FFRoute(
-          name: 'auth_2_Login',
-          path: '/auth2Login',
+          name: Auth2LoginWidget.routeName,
+          path: Auth2LoginWidget.routePath,
           builder: (context, params) => Auth2LoginWidget(),
         ),
         FFRoute(
-          name: 'auth_2_ForgotPassword',
-          path: '/auth2ForgotPassword',
+          name: Auth2ForgotPasswordWidget.routeName,
+          path: Auth2ForgotPasswordWidget.routePath,
           builder: (context, params) => Auth2ForgotPasswordWidget(),
         ),
         FFRoute(
-          name: 'auth_2_Profile',
-          path: '/auth2Profile',
+          name: Auth2ProfileWidget.routeName,
+          path: Auth2ProfileWidget.routePath,
           builder: (context, params) => Auth2ProfileWidget(),
         ),
         FFRoute(
-          name: 'auth_2_EditProfile',
-          path: '/auth2EditProfile',
+          name: Auth2EditProfileWidget.routeName,
+          path: Auth2EditProfileWidget.routePath,
           builder: (context, params) => Auth2EditProfileWidget(),
         ),
         FFRoute(
-          name: 'formulario5Pagina',
-          path: '/formulario5Pagina',
+          name: Formulario5PaginaWidget.routeName,
+          path: Formulario5PaginaWidget.routePath,
           builder: (context, params) => Formulario5PaginaWidget(
             idingreso: params.getParam(
               'idingreso',
@@ -255,8 +256,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'Senaf',
-          path: '/senaf',
+          name: SenafWidget.routeName,
+          path: SenafWidget.routePath,
           builder: (context, params) => SenafWidget(
             ingrow: params.getParam<IngresosRow>(
               'ingrow',
@@ -277,8 +278,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'Dashboard',
-          path: '/dashboard',
+          name: DashboardWidget.routeName,
+          path: DashboardWidget.routePath,
           builder: (context, params) => DashboardWidget(
             usuariorow: params.getParam<UsuariosRow>(
               'usuariorow',
@@ -287,8 +288,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'Imprimir',
-          path: '/imprimir',
+          name: ImprimirWidget.routeName,
+          path: ImprimirWidget.routePath,
           builder: (context, params) => ImprimirWidget(
             idexpediente: params.getParam(
               'idexpediente',
@@ -313,8 +314,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'Admin',
-          path: '/admin',
+          name: AdminWidget.routeName,
+          path: AdminWidget.routePath,
           builder: (context, params) => AdminWidget(
             usuariosroles: params.getParam<VistaUsuariosRolesRow>(
               'usuariosroles',
@@ -327,8 +328,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'caratula2',
-          path: '/caratula2',
+          name: Caratula2Widget.routeName,
+          path: Caratula2Widget.routePath,
           builder: (context, params) => Caratula2Widget(
             usuario: params.getParam<UsuariosRow>(
               'usuario',
@@ -341,8 +342,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'Respuestaform6page',
-          path: '/respuestaform6page',
+          name: Respuestaform6pageWidget.routeName,
+          path: Respuestaform6pageWidget.routePath,
           builder: (context, params) => Respuestaform6pageWidget(
             idingreso: params.getParam<IngresosRow>(
               'idingreso',
@@ -359,13 +360,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'pruebarls',
-          path: '/pruebarls',
+          name: PruebarlsWidget.routeName,
+          path: PruebarlsWidget.routePath,
           builder: (context, params) => PruebarlsWidget(),
         ),
         FFRoute(
-          name: 'informesenaf',
-          path: '/informesenaf',
+          name: InformesenafWidget.routeName,
+          path: InformesenafWidget.routePath,
           builder: (context, params) => InformesenafWidget(
             link: params.getParam(
               'link',
@@ -390,8 +391,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'SenafCopy',
-          path: '/senafCopy',
+          name: SenafCopyWidget.routeName,
+          path: SenafCopyWidget.routePath,
           builder: (context, params) => SenafCopyWidget(
             ingrow: params.getParam<IngresosRow>(
               'ingrow',

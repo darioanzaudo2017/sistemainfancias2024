@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -11,6 +12,9 @@ export 'auth2_login_model.dart';
 
 class Auth2LoginWidget extends StatefulWidget {
   const Auth2LoginWidget({super.key});
+
+  static String routeName = 'auth_2_Login';
+  static String routePath = '/auth2Login';
 
   @override
   State<Auth2LoginWidget> createState() => _Auth2LoginWidgetState();
@@ -380,8 +384,8 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                     return;
                                   }
 
-                                  context.goNamedAuth(
-                                      'HomePage', context.mounted);
+                                  context.goNamedAuth(HomePageWidget.routeName,
+                                      context.mounted);
                                 },
                                 text: 'Entrar',
                                 options: FFButtonOptions(
@@ -422,7 +426,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                      'auth_2_Create',
+                                      Auth2CreateWidget.routeName,
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
@@ -472,7 +476,8 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                   0.0, 16.0, 0.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
-                                  context.pushNamed('auth_2_ForgotPassword');
+                                  context.pushNamed(
+                                      Auth2ForgotPasswordWidget.routeName);
                                 },
                                 text: 'Olvidaste la Contraseña?',
                                 options: FFButtonOptions(

@@ -3,6 +3,7 @@ import '/backend/supabase/supabase.dart';
 import '/components/barrade_navegacion_widget.dart';
 import '/components/tarjetaencabezado_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'dart:async';
 import 'ingresos_widget.dart' show IngresosWidget;
 import 'package:flutter/material.dart';

@@ -504,7 +504,9 @@ class _AgregarPersonaRelacionadaWidgetState
                                   await Seccion8Table().insert({
                                     'nombre': _model.textController1.text,
                                     'apellido': _model.textController2.text,
-                                    'vinculo': _model.textController5.text,
+                                    'vinculo': _model.dropDownValue != 'Otros'
+                                        ? _model.dropDownValue
+                                        : _model.textController5.text,
                                     'telefono': double.tryParse(
                                         _model.textController3.text),
                                     'direccion': _model.textController4.text,
@@ -513,7 +515,9 @@ class _AgregarPersonaRelacionadaWidgetState
                                     'updated_at': supaSerialize<DateTime>(
                                         getCurrentTimestamp),
                                     'iduser': currentUserUid,
-                                    'Vinculo': _model.dropDownValue,
+                                    'Vinculo': _model.dropDownValue != 'Otros'
+                                        ? _model.dropDownValue
+                                        : _model.textController5.text,
                                   });
                                   await Formulario4Table().insert({
                                     'idIngreso': widget.rowingreso?.id,
@@ -522,7 +526,9 @@ class _AgregarPersonaRelacionadaWidgetState
                                         getCurrentTimestamp),
                                     'nomEnt': _model.textController1.text,
                                     'apeEnt': _model.textController2.text,
-                                    'relacion': _model.dropDownValue,
+                                    'relacion': _model.dropDownValue != 'Otros'
+                                        ? _model.dropDownValue
+                                        : _model.textController5.text,
                                     'dirEnt': _model.textController4.text,
                                     'telEnt': _model.textController3.text,
                                   });

@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -12,6 +13,9 @@ export 'auth2_profile_model.dart';
 
 class Auth2ProfileWidget extends StatefulWidget {
   const Auth2ProfileWidget({super.key});
+
+  static String routeName = 'auth_2_Profile';
+  static String routePath = '/auth2Profile';
 
   @override
   State<Auth2ProfileWidget> createState() => _Auth2ProfileWidgetState();
@@ -264,7 +268,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          context.pushNamed('auth_2_EditProfile');
+                          context.pushNamed(Auth2EditProfileWidget.routeName);
                         },
                         child: Container(
                           width: double.infinity,
@@ -420,7 +424,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                             GoRouter.of(context).clearRedirectLocation();
 
                             context.goNamedAuth(
-                                'auth_2_Login', context.mounted);
+                                Auth2LoginWidget.routeName, context.mounted);
                           },
                           text: 'Salir',
                           options: FFButtonOptions(

@@ -1151,7 +1151,10 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                                 _model.textController5.text,
                                             'telefono':
                                                 _model.textController6.text,
-                                            'vinculo': _model.dropDownValue,
+                                            'vinculo': _model.dropDownValue !=
+                                                    'Otros'
+                                                ? _model.dropDownValue
+                                                : _model.textController7.text,
                                             'reservaId':
                                                 _model.radioButtonresidenValue,
                                             'institucion':
@@ -1218,7 +1221,10 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                                   _model.textController5.text,
                                               'telefono':
                                                   _model.textController6.text,
-                                              'vinculo': _model.dropDownValue,
+                                              'vinculo': _model.dropDownValue !=
+                                                      'Otros'
+                                                  ? _model.dropDownValue
+                                                  : _model.textController7.text,
                                               'reservaId': _model
                                                   .radioButtonresidenValue,
                                               'institucion':

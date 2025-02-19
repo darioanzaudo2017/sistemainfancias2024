@@ -25,6 +25,9 @@ class InformesenafWidget extends StatefulWidget {
   final IngresosRow? ingreso;
   final UsuariosRow? usuariorow;
 
+  static String routeName = 'informesenaf';
+  static String routePath = '/informesenaf';
+
   @override
   State<InformesenafWidget> createState() => _InformesenafWidgetState();
 }

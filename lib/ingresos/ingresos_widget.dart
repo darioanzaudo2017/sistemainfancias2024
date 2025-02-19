@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
@@ -31,6 +32,9 @@ class IngresosWidget extends StatefulWidget {
   final SpdRow? spd;
   final String? idcarpeta;
   final VistaUsuariosRolesRow? usuariorol;
+
+  static String routeName = 'Ingresos';
+  static String routePath = '/ingresos';
 
   @override
   State<IngresosWidget> createState() => _IngresosWidgetState();
@@ -1294,7 +1298,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                   child: FFButtonWidget(
                                                                                                     onPressed: () async {
                                                                                                       context.pushNamed(
-                                                                                                        'perfil',
+                                                                                                        PerfilWidget.routeName,
                                                                                                         queryParameters: {
                                                                                                           'idingreso': serializeParam(
                                                                                                             containerVarItem.id,

@@ -1,6 +1,7 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/index.dart';
 import 'auth2_create_widget.dart' show Auth2CreateWidget;
 import 'package:flutter/material.dart';
 

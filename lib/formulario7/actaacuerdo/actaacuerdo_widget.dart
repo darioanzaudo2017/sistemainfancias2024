@@ -9,6 +9,9 @@ export 'actaacuerdo_model.dart';
 class ActaacuerdoWidget extends StatefulWidget {
   const ActaacuerdoWidget({super.key});
 
+  static String routeName = 'Actaacuerdo';
+  static String routePath = '/actaacuerdo';
+
   @override
   State<ActaacuerdoWidget> createState() => _ActaacuerdoWidgetState();
 }

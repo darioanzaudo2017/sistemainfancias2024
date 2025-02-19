@@ -59,19 +59,25 @@ class AgregarConvivienteModel
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
+  // State field(s) for TextFieldvinculo widget.
+  FocusNode? textFieldvinculoFocusNode;
+  TextEditingController? textFieldvinculoTextController;
+  final textFieldvinculoMask = MaskTextInputFormatter(mask: '##########');
+  String? Function(BuildContext, String?)?
+      textFieldvinculoTextControllerValidator;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode4;
-  TextEditingController? textController5;
-  final textFieldMask4 = MaskTextInputFormatter(mask: '##########');
-  String? Function(BuildContext, String?)? textController5Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode5;
   TextEditingController? textController6;
+  final textFieldMask4 = MaskTextInputFormatter(mask: '##########');
   String? Function(BuildContext, String?)? textController6Validator;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode6;
+  FocusNode? textFieldFocusNode5;
   TextEditingController? textController7;
   String? Function(BuildContext, String?)? textController7Validator;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode6;
+  TextEditingController? textController8;
+  String? Function(BuildContext, String?)? textController8Validator;
   // Stores action output result for [Backend Call - API (ExisteDNInnya)] action in Button widget.
   ApiCallResponse? chekdnigrupo;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
@@ -107,14 +113,17 @@ class AgregarConvivienteModel
     textFieldFocusNode3?.dispose();
     textController4?.dispose();
 
-    textFieldFocusNode4?.dispose();
-    textController5?.dispose();
+    textFieldvinculoFocusNode?.dispose();
+    textFieldvinculoTextController?.dispose();
 
-    textFieldFocusNode5?.dispose();
+    textFieldFocusNode4?.dispose();
     textController6?.dispose();
 
-    textFieldFocusNode6?.dispose();
+    textFieldFocusNode5?.dispose();
     textController7?.dispose();
+
+    textFieldFocusNode6?.dispose();
+    textController8?.dispose();
   }
 
   /// Additional helper methods.

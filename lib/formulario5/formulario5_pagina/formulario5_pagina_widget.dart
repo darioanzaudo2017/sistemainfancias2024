@@ -39,6 +39,9 @@ class Formulario5PaginaWidget extends StatefulWidget {
   final UsuariosRow? usuariorow;
   final VistaUsuariosRolesRow? usuariorol;
 
+  static String routeName = 'formulario5Pagina';
+  static String routePath = '/formulario5Pagina';
+
   @override
   State<Formulario5PaginaWidget> createState() =>
       _Formulario5PaginaWidgetState();

@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'dashboard_model.dart';
 export 'dashboard_model.dart';
@@ -15,6 +16,9 @@ class DashboardWidget extends StatefulWidget {
   });
 
   final UsuariosRow? usuariorow;
+
+  static String routeName = 'Dashboard';
+  static String routePath = '/dashboard';
 
   @override
   State<DashboardWidget> createState() => _DashboardWidgetState();
@@ -587,7 +591,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                               );
 
                                               context.pushNamed(
-                                                'perfil',
+                                                PerfilWidget.routeName,
                                                 queryParameters: {
                                                   'idingreso': serializeParam(
                                                     vistaSenafItem.idIngreso,

@@ -12,6 +12,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/formulario4/formulario4/formulario4_widget.dart';
+import '/index.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -32,6 +33,9 @@ class EntrevistasWidget extends StatefulWidget {
   final VistaExpedientesUltimoEstadoRow? rowexp;
   final UsuariosRow? usuariorow;
   final VistaUsuariosRolesRow? usuariorol;
+
+  static String routeName = 'Entrevistas';
+  static String routePath = '/entrevistas';
 
   @override
   State<EntrevistasWidget> createState() => _EntrevistasWidgetState();
@@ -82,7 +86,7 @@ class _EntrevistasWidgetState extends State<EntrevistasWidget> {
             ),
             onPressed: () async {
               context.pushNamed(
-                'perfil',
+                PerfilWidget.routeName,
                 queryParameters: {
                   'idingreso': serializeParam(
                     widget.ingresorow,
