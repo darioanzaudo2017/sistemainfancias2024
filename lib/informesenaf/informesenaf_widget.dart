@@ -17,6 +17,7 @@ class InformesenafWidget extends StatefulWidget {
     required this.exprow,
     required this.ingreso,
     required this.usuariorow,
+    required this.usuariorol,
   });
 
   final String? link;
@@ -24,6 +25,7 @@ class InformesenafWidget extends StatefulWidget {
   final VistaExpedientesUltimoEstadoRow? exprow;
   final IngresosRow? ingreso;
   final UsuariosRow? usuariorow;
+  final VistaUsuariosRolesRow? usuariorol;
 
   static String routeName = 'informesenaf';
   static String routePath = '/informesenaf';
@@ -83,16 +85,61 @@ class _InformesenafWidgetState extends State<InformesenafWidget> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
-                child: FlutterFlowWebView(
-                  content: widget.link!,
-                  bypass: false,
-                  width: MediaQuery.sizeOf(context).width * 0.9,
-                  height: MediaQuery.sizeOf(context).height * 0.8,
-                  verticalScroll: false,
-                  horizontalScroll: false,
-                ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Text(
+                        'Informe elevado a la coordinacion',
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Noto Sans JP',
+                              letterSpacing: 0.0,
+                            ),
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(0.0, -1.0),
+                        child: FlutterFlowWebView(
+                          content: widget.link!,
+                          bypass: false,
+                          width: MediaQuery.sizeOf(context).width * 0.5,
+                          height: MediaQuery.sizeOf(context).height * 0.8,
+                          verticalScroll: false,
+                          horizontalScroll: false,
+                        ),
+                      ),
+                    ]
+                        .divide(SizedBox(height: 10.0))
+                        .around(SizedBox(height: 10.0)),
+                  ),
+                  Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Text(
+                        'Informe elevado a la senaf',
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Noto Sans JP',
+                              letterSpacing: 0.0,
+                            ),
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(0.0, -1.0),
+                        child: FlutterFlowWebView(
+                          content: widget.link!,
+                          bypass: false,
+                          width: MediaQuery.sizeOf(context).width * 0.5,
+                          height: MediaQuery.sizeOf(context).height * 0.8,
+                          verticalScroll: false,
+                          horizontalScroll: false,
+                        ),
+                      ),
+                    ]
+                        .divide(SizedBox(height: 10.0))
+                        .around(SizedBox(height: 10.0)),
+                  ),
+                ].divide(SizedBox(width: 10.0)).around(SizedBox(width: 10.0)),
               ),
               Align(
                 alignment: AlignmentDirectional(0.0, 0.0),
@@ -155,7 +202,7 @@ class _InformesenafWidgetState extends State<InformesenafWidget> {
                   ),
                 ),
               ),
-            ],
+            ].divide(SizedBox(height: 10.0)),
           ),
         ),
       ),

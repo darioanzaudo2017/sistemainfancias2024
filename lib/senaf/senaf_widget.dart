@@ -3096,6 +3096,10 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                         widget.usuariorow,
                                                                                         ParamType.SupabaseRow,
                                                                                       ),
+                                                                                      'usuariorol': serializeParam(
+                                                                                        widget.usuariorol,
+                                                                                        ParamType.SupabaseRow,
+                                                                                      ),
                                                                                     }.withoutNulls,
                                                                                   );
                                                                                 },
