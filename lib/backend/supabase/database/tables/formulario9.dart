@@ -115,4 +115,18 @@ class Formulario9Row extends SupabaseDataRow {
       getField<String>('observacionesmedidaadoptada');
   set observacionesmedidaadoptada(String? value) =>
       setField<String>('observacionesmedidaadoptada', value);
+
+  String? get linksolicitudSENAF => getField<String>('linksolicitudSENAF');
+  set linksolicitudSENAF(String? value) =>
+      setField<String>('linksolicitudSENAF', value);
+
+  DateTime? get fechaSolicitudEquipo =>
+      getField<DateTime>('fechaSolicitudEquipo');
+  set fechaSolicitudEquipo(DateTime? value) =>
+      setField<DateTime>('fechaSolicitudEquipo', value);
+
+  DateTime? get fechaSolicitudaSenaf =>
+      getField<DateTime>('FechaSolicitudaSenaf');
+  set fechaSolicitudaSenaf(DateTime? value) =>
+      setField<DateTime>('FechaSolicitudaSenaf', value);
 }

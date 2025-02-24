@@ -388,6 +388,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'usuariorow',
               ParamType.SupabaseRow,
             ),
+            usuariorol: params.getParam<VistaUsuariosRolesRow>(
+              'usuariorol',
+              ParamType.SupabaseRow,
+            ),
           ),
         ),
         FFRoute(
