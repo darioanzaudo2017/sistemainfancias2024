@@ -60,17 +60,20 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
 
     _model.textFieldFocusNode4 ??= FocusNode();
 
+    _model.textController8 ??= TextEditingController();
     _model.textFieldFocusNode5 ??= FocusNode();
 
     _model.textFieldFocusNode6 ??= FocusNode();
+
+    _model.textFieldFocusNode7 ??= FocusNode();
 
     _model.textFielddomicilioescuelaFocusNode ??= FocusNode();
 
     _model.textFieldtelescuelaFocusNode ??= FocusNode();
 
-    _model.textFieldFocusNode7 ??= FocusNode();
-
     _model.textFieldFocusNode8 ??= FocusNode();
+
+    _model.textFieldFocusNode9 ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -268,6 +271,90 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                         .asValidator(context),
                                   ),
                                 ),
+                              ),
+                              FutureBuilder<List<BarriosRow>>(
+                                future: BarriosTable().queryRows(
+                                  queryFn: (q) => q,
+                                ),
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: SizedBox(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        child: CircularProgressIndicator(
+                                          valueColor:
+                                              AlwaysStoppedAnimation<Color>(
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                  List<BarriosRow>
+                                      dropDownbarrioBarriosRowList =
+                                      snapshot.data!;
+
+                                  return FlutterFlowDropDown<String>(
+                                    controller: _model
+                                            .dropDownbarrioValueController1 ??=
+                                        FormFieldController<String>(
+                                      _model.dropDownbarrioValue1 ??=
+                                          containerSeccion1Row?.barrio,
+                                    ),
+                                    options: dropDownbarrioBarriosRowList
+                                        .map((e) => e.barrio)
+                                        .withoutNulls
+                                        .toList(),
+                                    onChanged: (val) => safeSetState(() =>
+                                        _model.dropDownbarrioValue1 = val),
+                                    width: 200.0,
+                                    height: 40.0,
+                                    searchHintTextStyle:
+                                        FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
+                                              letterSpacing: 0.0,
+                                            ),
+                                    searchTextStyle:
+                                        FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
+                                              letterSpacing: 0.0,
+                                            ),
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Noto Sans JP',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    hintText: 'Barrio',
+                                    searchHintText: 'Buscar barrio',
+                                    icon: Icon(
+                                      Icons.keyboard_arrow_down_rounded,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      size: 24.0,
+                                    ),
+                                    fillColor: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    elevation: 2.0,
+                                    borderColor:
+                                        FlutterFlowTheme.of(context).alternate,
+                                    borderWidth: 0.0,
+                                    borderRadius: 8.0,
+                                    margin: EdgeInsetsDirectional.fromSTEB(
+                                        12.0, 0.0, 12.0, 0.0),
+                                    hidesUnderline: true,
+                                    isOverButton: false,
+                                    isSearchable: true,
+                                    isMultiSelect: false,
+                                  );
+                                },
                               ),
                               Expanded(
                                 child: Padding(
@@ -545,7 +632,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       labelText:
-                                          'Apellido y nombre del adulto responsable (Persona que tiene a cargo al NNA)',
+                                          'Apellido y nombre del adulto responsable',
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
@@ -678,7 +765,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                     ),
                                   ],
                                 ),
-                                if (_model.dropDownbarrioValue == 'Otro')
+                                if (_model.dropDownbarrioValue1 == 'Otro')
                                   Expanded(
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
@@ -762,90 +849,6 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                       ),
                                     ),
                                   ),
-                                FutureBuilder<List<BarriosRow>>(
-                                  future: BarriosTable().queryRows(
-                                    queryFn: (q) => q,
-                                  ),
-                                  builder: (context, snapshot) {
-                                    // Customize what your widget looks like when it's loading.
-                                    if (!snapshot.hasData) {
-                                      return Center(
-                                        child: SizedBox(
-                                          width: 50.0,
-                                          height: 50.0,
-                                          child: CircularProgressIndicator(
-                                            valueColor:
-                                                AlwaysStoppedAnimation<Color>(
-                                              FlutterFlowTheme.of(context)
-                                                  .primary,
-                                            ),
-                                          ),
-                                        ),
-                                      );
-                                    }
-                                    List<BarriosRow>
-                                        dropDownbarrioBarriosRowList =
-                                        snapshot.data!;
-
-                                    return FlutterFlowDropDown<String>(
-                                      controller: _model
-                                              .dropDownbarrioValueController ??=
-                                          FormFieldController<String>(
-                                        _model.dropDownbarrioValue ??=
-                                            containerSeccion1Row?.barrio,
-                                      ),
-                                      options: dropDownbarrioBarriosRowList
-                                          .map((e) => e.barrio)
-                                          .withoutNulls
-                                          .toList(),
-                                      onChanged: (val) => safeSetState(() =>
-                                          _model.dropDownbarrioValue = val),
-                                      width: 200.0,
-                                      height: 40.0,
-                                      searchHintTextStyle:
-                                          FlutterFlowTheme.of(context)
-                                              .labelMedium
-                                              .override(
-                                                fontFamily: 'Noto Sans JP',
-                                                letterSpacing: 0.0,
-                                              ),
-                                      searchTextStyle:
-                                          FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Noto Sans JP',
-                                                letterSpacing: 0.0,
-                                              ),
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Noto Sans JP',
-                                            letterSpacing: 0.0,
-                                          ),
-                                      hintText: 'Barrio',
-                                      searchHintText: 'Buscar barrio',
-                                      icon: Icon(
-                                        Icons.keyboard_arrow_down_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                        size: 24.0,
-                                      ),
-                                      fillColor: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      elevation: 2.0,
-                                      borderColor: FlutterFlowTheme.of(context)
-                                          .alternate,
-                                      borderWidth: 0.0,
-                                      borderRadius: 8.0,
-                                      margin: EdgeInsetsDirectional.fromSTEB(
-                                          12.0, 0.0, 12.0, 0.0),
-                                      hidesUnderline: true,
-                                      isOverButton: false,
-                                      isSearchable: true,
-                                      isMultiSelect: false,
-                                    );
-                                  },
-                                ),
                               ],
                             ),
                           ),
@@ -882,8 +885,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                     autofocus: true,
                                     obscureText: false,
                                     decoration: InputDecoration(
-                                      labelText:
-                                          'Centro de salud donde se atiende:',
+                                      labelText: 'Intituciones de salud:',
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
@@ -939,6 +941,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                           fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
+                                    maxLines: null,
                                     validator: _model.textController6Validator
                                         .asValidator(context),
                                   ),
@@ -1013,10 +1016,95 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                           fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
+                                    maxLines: null,
                                     validator: _model.textController7Validator
                                         .asValidator(context),
                                   ),
                                 ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              FutureBuilder<List<BarriosRow>>(
+                                future: BarriosTable().queryRows(
+                                  queryFn: (q) => q,
+                                ),
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: SizedBox(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        child: CircularProgressIndicator(
+                                          valueColor:
+                                              AlwaysStoppedAnimation<Color>(
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                  List<BarriosRow>
+                                      dropDownbarrioBarriosRowList =
+                                      snapshot.data!;
+
+                                  return FlutterFlowDropDown<String>(
+                                    multiSelectController: _model
+                                            .dropDownbarrioValueController2 ??=
+                                        FormListFieldController<String>(null),
+                                    options: ['Motora', 'Cognitiva', 'Visual'],
+                                    width: 200.0,
+                                    height: 40.0,
+                                    searchHintTextStyle:
+                                        FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
+                                              letterSpacing: 0.0,
+                                            ),
+                                    searchTextStyle:
+                                        FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
+                                              letterSpacing: 0.0,
+                                            ),
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Noto Sans JP',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    hintText: 'Discapacidad',
+                                    searchHintText: 'Buscar barrio',
+                                    icon: Icon(
+                                      Icons.keyboard_arrow_down_rounded,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      size: 24.0,
+                                    ),
+                                    fillColor: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    elevation: 2.0,
+                                    borderColor:
+                                        FlutterFlowTheme.of(context).alternate,
+                                    borderWidth: 0.0,
+                                    borderRadius: 8.0,
+                                    margin: EdgeInsetsDirectional.fromSTEB(
+                                        12.0, 0.0, 12.0, 0.0),
+                                    hidesUnderline: true,
+                                    isOverButton: false,
+                                    isSearchable: true,
+                                    isMultiSelect: true,
+                                    onMultiSelectChanged: (val) => safeSetState(
+                                        () =>
+                                            _model.dropDownbarrioValue2 = val),
+                                  );
+                                },
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
@@ -1083,20 +1171,162 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                             WrapCrossAlignment.start,
                                       ),
                                     ),
-                                  ],
+                                  ].divide(SizedBox(width: 10.0)),
                                 ),
                               ),
-                            ],
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    8.0, 0.0, 8.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          10.0, 0.0, 0.0, 0.0),
+                                      child: Text(
+                                        '¿Accede a prestaciones?',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 10.0, 0.0),
+                                      child: FlutterFlowRadioButton(
+                                        options: ['Si', 'No'].toList(),
+                                        onChanged: (val) => safeSetState(() {}),
+                                        controller: _model
+                                                .radioButtonprestacionesValueController ??=
+                                            FormFieldController<String>(
+                                                valueOrDefault<String>(
+                                          containerSeccion1Row?.cud,
+                                          'No',
+                                        )),
+                                        optionHeight: 40.0,
+                                        optionWidth: 70.0,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
+                                              letterSpacing: 0.0,
+                                            ),
+                                        selectedTextStyle:
+                                            FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Noto Sans JP',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                        buttonPosition:
+                                            RadioButtonPosition.right,
+                                        direction: Axis.horizontal,
+                                        radioButtonColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                        inactiveRadioButtonColor:
+                                            FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                        toggleable: false,
+                                        horizontalAlignment:
+                                            WrapAlignment.start,
+                                        verticalAlignment:
+                                            WrapCrossAlignment.start,
+                                      ),
+                                    ),
+                                  ].divide(SizedBox(width: 10.0)),
+                                ),
+                              ),
+                              Expanded(
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      8.0, 0.0, 8.0, 0.0),
+                                  child: TextFormField(
+                                    controller: _model.textController8,
+                                    focusNode: _model.textFieldFocusNode5,
+                                    autofocus: true,
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      labelText: 'Cuales prestaciones:',
+                                      labelStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans JP',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .alternate,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedErrorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Noto Sans JP',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    maxLines: null,
+                                    validator: _model.textController8Validator
+                                        .asValidator(context),
+                                  ),
+                                ),
+                              ),
+                            ]
+                                .divide(SizedBox(width: 10.0))
+                                .around(SizedBox(width: 10.0)),
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
-                              controller: _model.textController8 ??=
+                              controller: _model.textController9 ??=
                                   TextEditingController(
                                 text: containerSeccion1Row?.obraSoc,
                               ),
-                              focusNode: _model.textFieldFocusNode5,
+                              focusNode: _model.textFieldFocusNode6,
                               autofocus: true,
                               obscureText: false,
                               decoration: InputDecoration(
@@ -1149,7 +1379,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                     fontFamily: 'Noto Sans JP',
                                     letterSpacing: 0.0,
                                   ),
-                              validator: _model.textController8Validator
+                              validator: _model.textController9Validator
                                   .asValidator(context),
                             ),
                           ),
@@ -1178,11 +1408,11 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: TextFormField(
-                                    controller: _model.textController9 ??=
+                                    controller: _model.textController10 ??=
                                         TextEditingController(
                                       text: containerSeccion1Row?.escuela,
                                     ),
-                                    focusNode: _model.textFieldFocusNode6,
+                                    focusNode: _model.textFieldFocusNode7,
                                     autofocus: true,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -1243,7 +1473,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                           fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
-                                    validator: _model.textController9Validator
+                                    validator: _model.textController10Validator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -1258,7 +1488,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                     _model.dropDownSalaGradoValue ??=
                                         valueOrDefault<String>(
                                       containerSeccion1Row?.cursoEsc,
-                                      'Primer Grado',
+                                      '-',
                                     ),
                                   ),
                                   options: [
@@ -1277,7 +1507,10 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                     'Insituciones maternales',
                                     'Sala de 3 años',
                                     'Sala de 4 años',
-                                    'Sala de 5 años'
+                                    'Sala de 5 años',
+                                    'No corresponde',
+                                    'N/S',
+                                    '-'
                                   ],
                                   onChanged: (val) => safeSetState(() =>
                                       _model.dropDownSalaGradoValue = val),
@@ -1322,10 +1555,10 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                       _model.dropDownTurnoValue ??=
                                           valueOrDefault<String>(
                                         containerSeccion1Row?.turno,
-                                        'Mañana',
+                                        '-',
                                       ),
                                     ),
-                                    options: ['Mañana', 'Tarde ', 'Noche'],
+                                    options: ['Mañana', 'Tarde ', 'Noche', '-'],
                                     onChanged: (val) => safeSetState(
                                         () => _model.dropDownTurnoValue = val),
                                     width: 300.0,
@@ -1533,59 +1766,6 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 0.0, 0.0),
-                                  child: Text(
-                                    'Concurrencia escolar actual',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Noto Sans JP',
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 10.0, 0.0),
-                                  child: FlutterFlowRadioButton(
-                                    options: ['Si', 'No'].toList(),
-                                    onChanged: (val) => safeSetState(() {}),
-                                    controller: _model
-                                            .radioButtonescuelaValueController ??=
-                                        FormFieldController<String>(
-                                            valueOrDefault<String>(
-                                      containerSeccion1Row?.cocurrenciaEsc,
-                                      'No',
-                                    )),
-                                    optionHeight: 40.0,
-                                    optionWidth: 70.0,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Noto Sans JP',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    selectedTextStyle:
-                                        FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Noto Sans JP',
-                                              letterSpacing: 0.0,
-                                            ),
-                                    buttonPosition: RadioButtonPosition.right,
-                                    direction: Axis.horizontal,
-                                    radioButtonColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    inactiveRadioButtonColor:
-                                        FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                    toggleable: false,
-                                    horizontalAlignment: WrapAlignment.start,
-                                    verticalAlignment: WrapCrossAlignment.start,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -1651,8 +1831,70 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                               WrapCrossAlignment.start,
                                         ),
                                       ),
-                                    ],
+                                    ].divide(SizedBox(width: 10.0)),
                                   ),
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          10.0, 0.0, 0.0, 0.0),
+                                      child: Text(
+                                        'Concurrencia escolar actual',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 10.0, 0.0),
+                                      child: FlutterFlowRadioButton(
+                                        options: ['Si', 'No'].toList(),
+                                        onChanged: (val) => safeSetState(() {}),
+                                        controller: _model
+                                                .radioButtonescuelaValueController ??=
+                                            FormFieldController<String>(
+                                                valueOrDefault<String>(
+                                          containerSeccion1Row?.cocurrenciaEsc,
+                                          'No',
+                                        )),
+                                        optionHeight: 40.0,
+                                        optionWidth: 70.0,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
+                                              letterSpacing: 0.0,
+                                            ),
+                                        selectedTextStyle:
+                                            FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Noto Sans JP',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                        buttonPosition:
+                                            RadioButtonPosition.right,
+                                        direction: Axis.horizontal,
+                                        radioButtonColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                        inactiveRadioButtonColor:
+                                            FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                        toggleable: false,
+                                        horizontalAlignment:
+                                            WrapAlignment.start,
+                                        verticalAlignment:
+                                            WrapCrossAlignment.start,
+                                      ),
+                                    ),
+                                  ].divide(SizedBox(width: 10.0)),
                                 ),
                               ],
                             ),
@@ -1670,14 +1912,16 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                     _model.dropDownNivelAlcanzadoValue ??=
                                         valueOrDefault<String>(
                                       containerSeccion1Row?.nivelAlcanzado,
-                                      'Primaria Incompleta',
+                                      '-',
                                     ),
                                   ),
                                   options: [
                                     'Primaria Incompleta',
                                     'Primaria Completa',
                                     'Secundaria Incompleta',
-                                    'Secundaria Completa'
+                                    'Secundaria Completa',
+                                    '-',
+                                    'Nivel inicial completo'
                                   ],
                                   onChanged: (val) => safeSetState(() =>
                                       _model.dropDownNivelAlcanzadoValue = val),
@@ -1687,6 +1931,8 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Noto Sans JP',
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: 'Nivel Alcanzado',
@@ -1716,11 +1962,11 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: TextFormField(
-                                    controller: _model.textController12 ??=
+                                    controller: _model.textController13 ??=
                                         TextEditingController(
                                       text: containerSeccion1Row?.referente,
                                     ),
-                                    focusNode: _model.textFieldFocusNode7,
+                                    focusNode: _model.textFieldFocusNode8,
                                     autofocus: true,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -1780,7 +2026,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                           fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
-                                    validator: _model.textController12Validator
+                                    validator: _model.textController13Validator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -1811,69 +2057,78 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 0.0, 0.0),
-                                  child: Text(
-                                    'Trabaja el niño',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Noto Sans JP',
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 10.0, 0.0),
-                                  child: FlutterFlowRadioButton(
-                                    options: ['Si', 'No'].toList(),
-                                    onChanged: (val) => safeSetState(() {}),
-                                    controller: _model
-                                            .radioButtontrabjaninoValueController ??=
-                                        FormFieldController<String>(
-                                            valueOrDefault<String>(
-                                      containerSeccion1Row?.trabaja,
-                                      'No',
-                                    )),
-                                    optionHeight: 40.0,
-                                    optionWidth: 70.0,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Noto Sans JP',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    selectedTextStyle:
-                                        FlutterFlowTheme.of(context)
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          10.0, 0.0, 0.0, 0.0),
+                                      child: Text(
+                                        'Trabaja el niño',
+                                        style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Noto Sans JP',
                                               letterSpacing: 0.0,
                                             ),
-                                    buttonPosition: RadioButtonPosition.right,
-                                    direction: Axis.horizontal,
-                                    radioButtonColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    inactiveRadioButtonColor:
-                                        FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                    toggleable: false,
-                                    horizontalAlignment: WrapAlignment.start,
-                                    verticalAlignment: WrapCrossAlignment.start,
-                                  ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 10.0, 0.0),
+                                      child: FlutterFlowRadioButton(
+                                        options: ['Si', 'No'].toList(),
+                                        onChanged: (val) => safeSetState(() {}),
+                                        controller: _model
+                                                .radioButtontrabjaninoValueController ??=
+                                            FormFieldController<String>(
+                                                valueOrDefault<String>(
+                                          containerSeccion1Row?.trabaja,
+                                          'No',
+                                        )),
+                                        optionHeight: 40.0,
+                                        optionWidth: 70.0,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
+                                              letterSpacing: 0.0,
+                                            ),
+                                        selectedTextStyle:
+                                            FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Noto Sans JP',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                        buttonPosition:
+                                            RadioButtonPosition.right,
+                                        direction: Axis.horizontal,
+                                        radioButtonColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                        inactiveRadioButtonColor:
+                                            FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                        toggleable: false,
+                                        horizontalAlignment:
+                                            WrapAlignment.start,
+                                        verticalAlignment:
+                                            WrapCrossAlignment.start,
+                                      ),
+                                    ),
+                                  ].divide(SizedBox(width: 10.0)),
                                 ),
                                 Expanded(
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
-                                      controller: _model.textController13 ??=
+                                      controller: _model.textController14 ??=
                                           TextEditingController(
                                         text: containerSeccion1Row?.trabajoObs,
                                       ),
-                                      focusNode: _model.textFieldFocusNode8,
+                                      focusNode: _model.textFieldFocusNode9,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -1934,7 +2189,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                             letterSpacing: 0.0,
                                           ),
                                       validator: _model
-                                          .textController13Validator
+                                          .textController14Validator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -1982,9 +2237,9 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                 _model.textController7.text,
                                             'cud': _model.radioButtoncudValue,
                                             'obraSoc':
-                                                _model.textController8.text,
-                                            'escuela':
                                                 _model.textController9.text,
+                                            'escuela':
+                                                _model.textController10.text,
                                             'cursoEsc':
                                                 _model.dropDownSalaGradoValue,
                                             'domEsc': _model
@@ -1998,24 +2253,24 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                             'nivelAlcanzado': _model
                                                 .dropDownNivelAlcanzadoValue,
                                             'referente':
-                                                _model.textController12.text,
+                                                _model.textController13.text,
                                             'trabaja': _model
                                                 .radioButtontrabjaninoValue,
                                             'idIngreso': widget.idingreso?.id,
                                             'idExpediente': widget.rowexp?.id,
                                             'turno': _model.dropDownTurnoValue,
                                             'trabajoObs':
-                                                _model.textController13.text,
+                                                _model.textController14.text,
                                             'Matriculo':
                                                 _model.radioButtomatriculoValue,
                                             'iduser': currentUserUid,
                                             'TipoFamilia':
                                                 _model.droptipofliaValue,
                                             'barrio': _model
-                                                        .dropDownbarrioValue ==
+                                                        .dropDownbarrioValue1 ==
                                                     'Otro'
                                                 ? _model.textController5.text
-                                                : _model.dropDownbarrioValue,
+                                                : _model.dropDownbarrioValue1,
                                           });
                                           await IngresosTable().update(
                                             data: {
@@ -2080,9 +2335,9 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                   _model.textController7.text,
                                               'cud': _model.radioButtoncudValue,
                                               'obraSoc':
-                                                  _model.textController8.text,
-                                              'escuela':
                                                   _model.textController9.text,
+                                              'escuela':
+                                                  _model.textController10.text,
                                               'cursoEsc':
                                                   _model.dropDownSalaGradoValue,
                                               'domEsc': _model
@@ -2096,7 +2351,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                               'nivelAlcanzado': _model
                                                   .dropDownNivelAlcanzadoValue,
                                               'referente':
-                                                  _model.textController12.text,
+                                                  _model.textController13.text,
                                               'trabaja': _model
                                                   .radioButtontrabjaninoValue,
                                               'idIngreso':
@@ -2106,19 +2361,19 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                               'turno':
                                                   _model.dropDownTurnoValue,
                                               'trabajoObs':
-                                                  _model.textController13.text,
+                                                  _model.textController14.text,
                                               'Matriculo': _model
                                                   .radioButtomatriculoValue,
                                               'iduser': currentUserUid,
                                               'TipoFamilia':
                                                   _model.droptipofliaValue,
                                               'barrio':
-                                                  _model.dropDownbarrioValue ==
+                                                  _model.dropDownbarrioValue1 ==
                                                           'Otro'
                                                       ? _model
                                                           .textController5.text
                                                       : _model
-                                                          .dropDownbarrioValue,
+                                                          .dropDownbarrioValue1,
                                             },
                                             matchingRows: (rows) =>
                                                 rows.eqOrNull(

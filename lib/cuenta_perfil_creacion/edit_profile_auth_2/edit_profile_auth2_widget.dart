@@ -332,10 +332,8 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                           FormFieldController<String>(
                         _model.dropDownValue2 ??= formUsuariosRow?.spd,
                       ),
-                      options: dropDownSpdRowList
-                          .map((e) => e.nombrespd)
-                          .withoutNulls
-                          .toList(),
+                      options:
+                          dropDownSpdRowList.map((e) => e.nombrespd).toList(),
                       onChanged: (val) =>
                           safeSetState(() => _model.dropDownValue2 = val),
                       width: double.infinity,

@@ -290,7 +290,7 @@ class _DesplegablederechosprincipalWidgetState
                               });
                               Navigator.pop(context, true);
                             },
-                            text: 'Agregar derecho Vulnerado',
+                            text: 'Agregar Derecho Vulnerado',
                             options: FFButtonOptions(
                               width: 300.0,
                               height: 40.0,

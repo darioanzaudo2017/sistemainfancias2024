@@ -216,7 +216,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                               FormFieldController<String>(
                                                   valueOrDefault<String>(
                                             containerSeccion4Row?.paicor,
-                                            'No',
+                                            'Desconoce',
                                           )),
                                           optionHeight: 40.0,
                                           textStyle:
@@ -280,7 +280,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                             FormFieldController<String>(
                                                 valueOrDefault<String>(
                                           containerSeccion4Row?.auh,
-                                          'No',
+                                          'Desconoce',
                                         )),
                                         optionHeight: 40.0,
                                         textStyle: FlutterFlowTheme.of(context)
@@ -349,7 +349,8 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 116.0, 0.0),
                                         child: FlutterFlowRadioButton(
-                                          options: ['Si', 'No'].toList(),
+                                          options: ['Si', 'No', 'Desconoce']
+                                              .toList(),
                                           onChanged: (val) =>
                                               safeSetState(() {}),
                                           controller: _model
@@ -357,7 +358,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                               FormFieldController<String>(
                                                   valueOrDefault<String>(
                                             containerSeccion4Row?.pension,
-                                            'No',
+                                            'Desconoce',
                                           )),
                                           optionHeight: 40.0,
                                           textStyle:
@@ -421,7 +422,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                             FormFieldController<String>(
                                                 valueOrDefault<String>(
                                           containerSeccion4Row?.tarjeta,
-                                          'No',
+                                          'Desconoce',
                                         )),
                                         optionHeight: 40.0,
                                         textStyle: FlutterFlowTheme.of(context)

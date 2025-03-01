@@ -1,11 +1,9 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
-import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/index.dart';
 import 'caratula2_widget.dart' show Caratula2Widget;
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
@@ -67,7 +65,6 @@ class Caratula2Model extends FlutterFlowModel<Caratula2Widget> {
   ApiCallResponse? checkdnifuncionnnya;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
   List<NNyARow>? querynnyaexistente;
-  Completer<List<ListaDerechosVulneradosexpedienteRow>>? requestCompleter;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   NNyAExpGruRow? crearexpgrupo3;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
@@ -82,11 +79,6 @@ class Caratula2Model extends FlutterFlowModel<Caratula2Widget> {
   GrupofamiliarRow? grupofmiliar2;
   // Stores action output result for [Backend Call - API (carpeta del expediente)] action in Button widget.
   ApiCallResponse? apiResult42y2;
-  // Stores action output result for [Bottom Sheet - desplegablederechosprincipal] action in Button widget.
-  bool? agregarderecho;
-  // State field(s) for PaginatedDataTable widget.
-  final paginatedDataTableController =
-      FlutterFlowDataTableController<ListaDerechosVulneradosexpedienteRow>();
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
@@ -138,7 +130,6 @@ class Caratula2Model extends FlutterFlowModel<Caratula2Widget> {
     textFieldedadFocusNode?.dispose();
     textFieldedadTextController?.dispose();
 
-    paginatedDataTableController.dispose();
     textFieldespecificarFocusNode?.dispose();
     textFieldespecificarTextController?.dispose();
 
@@ -147,21 +138,5 @@ class Caratula2Model extends FlutterFlowModel<Caratula2Widget> {
 
     textFieldprofesionalFocusNode?.dispose();
     textFieldprofesionalTextController?.dispose();
-  }
-
-  /// Additional helper methods.
-  Future waitForRequestCompleted({
-    double minWait = 0,
-    double maxWait = double.infinity,
-  }) async {
-    final stopwatch = Stopwatch()..start();
-    while (true) {
-      await Future.delayed(Duration(milliseconds: 50));
-      final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = requestCompleter?.isCompleted ?? false;
-      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
-        break;
-      }
-    }
   }
 }

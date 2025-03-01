@@ -970,7 +970,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
-                                                                        5.0,
+                                                                        0.0,
                                                                         0.0,
                                                                         5.0),
                                                             child: Text(
@@ -1002,7 +1002,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
-                                                                        5.0,
+                                                                        0.0,
                                                                         0.0,
                                                                         5.0),
                                                             child: Text(
@@ -1035,11 +1035,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
-                                                                        5.0,
+                                                                        0.0,
                                                                         0.0,
                                                                         5.0),
                                                             child: Text(
-                                                              'Actualizacion: 19/02/2025',
+                                                              'Actualizacion: 24/02/2025',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium
@@ -2706,39 +2706,62 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                     MainAxisAlignment
                                                                         .spaceAround,
                                                                 children: [
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
+                                                                  Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    children: [
+                                                                      if (homePageUsuariosRow
+                                                                              ?.spd ==
+                                                                          listaexpedientes1Item
+                                                                              .spd)
+                                                                        Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              0.0,
+                                                                              20.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Icon(
+                                                                            Icons.done_rounded,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondary,
+                                                                            size:
+                                                                                24.0,
+                                                                          ),
+                                                                        ),
+                                                                      Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             5.0,
                                                                             0.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width:
-                                                                          10.0,
-                                                                      height:
-                                                                          40.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color:
-                                                                            () {
-                                                                          if (listaexpedientes1Item.ultimoEstado ==
-                                                                              'Abierto') {
-                                                                            return FlutterFlowTheme.of(context).secondary;
-                                                                          } else if (listaexpedientes1Item.ultimoEstado ==
-                                                                              'Cerrado') {
-                                                                            return FlutterFlowTheme.of(context).error;
-                                                                          } else {
-                                                                            return FlutterFlowTheme.of(context).primary;
-                                                                          }
-                                                                        }(),
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(15.0),
-                                                                        shape: BoxShape
-                                                                            .rectangle,
+                                                                        child:
+                                                                            Container(
+                                                                          width:
+                                                                              10.0,
+                                                                          height:
+                                                                              40.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                () {
+                                                                              if (listaexpedientes1Item.ultimoEstado == 'Abierto') {
+                                                                                return FlutterFlowTheme.of(context).secondary;
+                                                                              } else if (listaexpedientes1Item.ultimoEstado == 'Cerrado') {
+                                                                                return FlutterFlowTheme.of(context).error;
+                                                                              } else {
+                                                                                return FlutterFlowTheme.of(context).primary;
+                                                                              }
+                                                                            }(),
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(15.0),
+                                                                            shape:
+                                                                                BoxShape.rectangle,
+                                                                          ),
+                                                                        ),
                                                                       ),
-                                                                    ),
+                                                                    ],
                                                                   ),
                                                                   Flexible(
                                                                     child: Text(

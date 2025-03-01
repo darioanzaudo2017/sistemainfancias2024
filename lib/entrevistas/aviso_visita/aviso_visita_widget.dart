@@ -1,3 +1,4 @@
+import '/auth/supabase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -668,6 +669,13 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                                       );
                                     },
                                   );
+                                  _model.entrevista =
+                                      await Formulario3Table().insert({
+                                    'idIngreso': widget.rowingreso?.id,
+                                    'idExpediente': widget.rowexp?.id,
+                                    'iduser': currentUserUid,
+                                    'idconvocatoria': _model.formvisita?.id,
+                                  });
                                   if (containerAvisovisitaNNyARow?.linkdoc ==
                                           null ||
                                       containerAvisovisitaNNyARow?.linkdoc ==

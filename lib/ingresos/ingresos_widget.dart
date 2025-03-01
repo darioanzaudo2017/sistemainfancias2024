@@ -962,7 +962,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                         ),
                                                                                                                   ),
                                                                                                                   Text(
-                                                                                                                    'Fecha de Creación: ${dateTimeFormat(
+                                                                                                                    'Fecha de carga: ${dateTimeFormat(
                                                                                                                       "d/M/y",
                                                                                                                       containerVarItem.createdAt,
                                                                                                                       locale: FFLocalizations.of(context).languageCode,
@@ -1323,7 +1323,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                         }.withoutNulls,
                                                                                                       );
                                                                                                     },
-                                                                                                    text: 'Ver ingreso',
+                                                                                                    text: 'Iniciar carga',
                                                                                                     options: FFButtonOptions(
                                                                                                       width: 150.0,
                                                                                                       height: 50.0,

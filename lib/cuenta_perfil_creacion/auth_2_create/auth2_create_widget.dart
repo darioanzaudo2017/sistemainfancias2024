@@ -405,7 +405,6 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                             FormFieldController<String>(null),
                                     options: containerSpdRowList
                                         .map((e) => e.nombrespd)
-                                        .withoutNulls
                                         .toList(),
                                     onChanged: (val) => safeSetState(
                                         () => _model.dropDownValue = val),

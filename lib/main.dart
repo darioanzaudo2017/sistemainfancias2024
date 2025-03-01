@@ -91,6 +91,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       title: 'SistemaInfancias2024',
       localizationsDelegates: [
         FFLocalizationsDelegate(),
