@@ -237,6 +237,8 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                     ingresorow: widget.ingresorow,
                                     exorow: widget.rowexp!,
                                     usuariosrow: widget.usuariorow!,
+                                    editar: false,
+                                    usuariorol: widget.usuariosrol,
                                   ),
                                 ),
                               ].divide(SizedBox(height: 5.0)),

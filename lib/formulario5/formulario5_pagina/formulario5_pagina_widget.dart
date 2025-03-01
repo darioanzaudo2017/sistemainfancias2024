@@ -4710,6 +4710,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                     ingresorow: widget.rowingreso,
                                     exorow: widget.rowexpediente!,
                                     usuariosrow: widget.usuariorow!,
+                                    editar: false,
+                                    usuariorol: widget.usuariorol,
                                   ),
                                 ),
                                 Text(

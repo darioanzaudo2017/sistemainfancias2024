@@ -417,19 +417,52 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                               DataColumn2(
                                                 label: DefaultTextStyle.merge(
                                                   softWrap: true,
-                                                  child: Text(
-                                                    'Formulario',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .labelLarge
-                                                        .override(
-                                                          fontFamily:
-                                                              'Noto Sans JP',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                  child: Align(
+                                                    alignment:
+                                                        AlignmentDirectional(
+                                                            0.0, 0.0),
+                                                    child: Text(
+                                                      'Formulario',
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelLarge
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Noto Sans JP',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryBackground,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              DataColumn2(
+                                                label: DefaultTextStyle.merge(
+                                                  softWrap: true,
+                                                  child: Align(
+                                                    alignment:
+                                                        AlignmentDirectional(
+                                                            0.0, 0.0),
+                                                    child: Text(
+                                                      'Borrar',
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelLarge
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Noto Sans JP',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryBackground,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                    ),
                                                   ),
                                                 ),
                                               ),
@@ -523,20 +556,96 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                                     ),
                                                   ),
                                                 ),
-                                                Text(
-                                                  valueOrDefault<String>(
-                                                    listadederchosItem
-                                                        .formulario,
-                                                    '0',
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: Text(
+                                                    valueOrDefault<String>(
+                                                      listadederchosItem
+                                                          .formulario,
+                                                      '0',
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Noto Sans JP',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                   ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Noto Sans JP',
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                ),
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: FlutterFlowIconButton(
+                                                    borderRadius: 8.0,
+                                                    buttonSize: 40.0,
+                                                    icon: Icon(
+                                                      Icons.delete_rounded,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .error,
+                                                      size: 24.0,
+                                                    ),
+                                                    onPressed: () async {
+                                                      var confirmDialogResponse =
+                                                          await showDialog<
+                                                                  bool>(
+                                                                context:
+                                                                    context,
+                                                                builder:
+                                                                    (alertDialogContext) {
+                                                                  return WebViewAware(
+                                                                    child:
+                                                                        AlertDialog(
+                                                                      title: Text(
+                                                                          'Eliminar derecho vulnerado'),
+                                                                      content: Text(
+                                                                          'Desea eliminar el derecho registrado?'),
+                                                                      actions: [
+                                                                        TextButton(
+                                                                          onPressed: () => Navigator.pop(
+                                                                              alertDialogContext,
+                                                                              false),
+                                                                          child:
+                                                                              Text('Cancelar'),
+                                                                        ),
+                                                                        TextButton(
+                                                                          onPressed: () => Navigator.pop(
+                                                                              alertDialogContext,
+                                                                              true),
+                                                                          child:
+                                                                              Text('Confirmar'),
+                                                                        ),
+                                                                      ],
+                                                                    ),
+                                                                  );
+                                                                },
+                                                              ) ??
+                                                              false;
+                                                      if (confirmDialogResponse) {
+                                                        await ListaDerechosVulneradosexpedienteTable()
+                                                            .delete(
+                                                          matchingRows:
+                                                              (rows) =>
+                                                                  rows.eqOrNull(
+                                                            'id',
+                                                            listadederchosItem
+                                                                .id,
+                                                          ),
+                                                        );
+                                                        safeSetState(() => _model
+                                                                .requestCompleter =
+                                                            null);
+                                                        await _model
+                                                            .waitForRequestCompleted();
+                                                      }
+                                                    },
+                                                  ),
                                                 ),
                                               ]
                                                   .map((c) => DataCell(c))
@@ -583,14 +692,12 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
-                                      'Las siguientes son indicadores de “intervenciones prioritarias” en el abordaje que ingresa al SPD.\nEn caso de existencia conjunta de factores protectores y los indicadores mencionados las situaciones pueden dejar de ser de “intervenciones prioritarias”. Se entiende por factores protectores aquellos que pueden modificar y mejorar las condiciones familiares que evitan la posibilidad de dañar a los NNYA en el futuro.',
+                                      'Posibles criterios de priorizacion',
                                       style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
+                                          .titleMedium
                                           .override(
                                             fontFamily: 'Noto Sans JP',
-                                            fontSize: 16.0,
                                             letterSpacing: 0.0,
-                                            fontWeight: FontWeight.normal,
                                           ),
                                     ),
                                   ),

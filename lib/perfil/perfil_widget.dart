@@ -103,7 +103,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
             },
           ),
           title: Text(
-            'Perfil de ingreso',
+            'Etapas del proceso de intervencion',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Noto Sans JP',
                   color: Colors.white,
@@ -341,6 +341,8 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                   true,
                                                               ampliacion: true,
                                                               editar: false,
+                                                              usuariorol: widget
+                                                                  .usuariorol,
                                                             ),
                                                           ),
                                                         ),
@@ -1843,7 +1845,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                 width: 500.0,
                                                                                 decoration: BoxDecoration(),
                                                                                 child: Text(
-                                                                                  '2. Verificacion y ampliacion de informacion. Entrevistas ',
+                                                                                  '2. Verificacion y ampliacion de informacion.',
                                                                                   style: FlutterFlowTheme.of(context).headlineSmall.override(
                                                                                         fontFamily: 'Noto Sans JP',
                                                                                         color: FlutterFlowTheme.of(context).primary,
@@ -2009,7 +2011,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                     }.withoutNulls,
                                                                                   );
                                                                                 },
-                                                                                text: 'Entrevistas',
+                                                                                text: 'Ingresar',
                                                                                 options: FFButtonOptions(
                                                                                   width: 200.0,
                                                                                   height: 30.0,
@@ -2214,17 +2216,6 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                           ),
-                                                                          Text(
-                                                                            valueOrDefault<String>(
-                                                                              containeringresosIngresosRow.motivocierre,
-                                                                              'Caso abierto',
-                                                                            ),
-                                                                            style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                  fontFamily: 'Noto Sans JP',
-                                                                                  color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                  letterSpacing: 0.0,
-                                                                                ),
-                                                                          ),
                                                                           Container(
                                                                             decoration:
                                                                                 BoxDecoration(),
@@ -2394,7 +2385,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                           size: 24.0,
                                                                                         ),
                                                                                         Text(
-                                                                                          'Datos del solicitante',
+                                                                                          'Datos del o la  solicitante',
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                 fontFamily: 'Noto Sans JP',
                                                                                                 letterSpacing: 0.0,
@@ -2677,7 +2668,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                           size: 24.0,
                                                                                         ),
                                                                                         Text(
-                                                                                          'Datos socioeconomicos',
+                                                                                          'Situacion socio-economica',
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                 fontFamily: 'Noto Sans JP',
                                                                                                 letterSpacing: 0.0,
@@ -3101,7 +3092,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                           size: 24.0,
                                                                                         ),
                                                                                         Text(
-                                                                                          'Derechos',
+                                                                                          'Derechos vulnerados  y/o amenazados',
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                 fontFamily: 'Noto Sans JP',
                                                                                                 letterSpacing: 0.0,
@@ -3240,7 +3231,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                           size: 24.0,
                                                                                         ),
                                                                                         Text(
-                                                                                          'Ampliacion informacion',
+                                                                                          'Personas relacionadas',
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                 fontFamily: 'Noto Sans JP',
                                                                                                 letterSpacing: 0.0,
@@ -3322,13 +3313,51 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                           size: 24.0,
                                                                                         ),
                                                                                         Text(
-                                                                                          'Decision',
+                                                                                          'Apertura de expediente / Asesoramiento',
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                 fontFamily: 'Noto Sans JP',
                                                                                                 letterSpacing: 0.0,
                                                                                               ),
                                                                                         ),
                                                                                       ],
+                                                                                    ),
+                                                                                    FFButtonWidget(
+                                                                                      onPressed: () {
+                                                                                        print('Button pressed ...');
+                                                                                      },
+                                                                                      text: 'Apertura de expediente',
+                                                                                      options: FFButtonOptions(
+                                                                                        height: 40.0,
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                        color: FlutterFlowTheme.of(context).primary,
+                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                              fontFamily: 'Noto Sans JP',
+                                                                                              color: Colors.white,
+                                                                                              letterSpacing: 0.0,
+                                                                                            ),
+                                                                                        elevation: 0.0,
+                                                                                        borderRadius: BorderRadius.circular(8.0),
+                                                                                      ),
+                                                                                    ),
+                                                                                    FFButtonWidget(
+                                                                                      onPressed: () {
+                                                                                        print('Button pressed ...');
+                                                                                      },
+                                                                                      text: 'Asesoramiento',
+                                                                                      options: FFButtonOptions(
+                                                                                        height: 40.0,
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                        color: FlutterFlowTheme.of(context).primary,
+                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                              fontFamily: 'Noto Sans JP',
+                                                                                              color: Colors.white,
+                                                                                              letterSpacing: 0.0,
+                                                                                            ),
+                                                                                        elevation: 0.0,
+                                                                                        borderRadius: BorderRadius.circular(8.0),
+                                                                                      ),
                                                                                     ),
                                                                                     Row(
                                                                                       mainAxisSize: MainAxisSize.max,
@@ -3449,6 +3478,67 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                5.0,
+                                                                                0.0,
+                                                                                5.0,
+                                                                                0.0),
+                                                                            child:
+                                                                                Row(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                              children: [
+                                                                                Flexible(
+                                                                                  child: Text(
+                                                                                    'Caso de emergencia / Habiltar formulario 9',
+                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                          fontFamily: 'Noto Sans JP',
+                                                                                          fontSize: 18.0,
+                                                                                          letterSpacing: 0.0,
+                                                                                        ),
+                                                                                  ),
+                                                                                ),
+                                                                                FlutterFlowRadioButton(
+                                                                                  options: [
+                                                                                    'Si',
+                                                                                    'No'
+                                                                                  ].toList(),
+                                                                                  onChanged: (val) async {
+                                                                                    safeSetState(() {});
+                                                                                    await IngresosTable().update(
+                                                                                      data: {
+                                                                                        'emergencia': _model.radioButtonValue,
+                                                                                      },
+                                                                                      matchingRows: (rows) => rows.eqOrNull(
+                                                                                        'id',
+                                                                                        containeringresosIngresosRow.id,
+                                                                                      ),
+                                                                                    );
+                                                                                    safeSetState(() => _model.requestCompleter = null);
+                                                                                    await _model.waitForRequestCompleted();
+                                                                                  },
+                                                                                  controller: _model.radioButtonValueController ??= FormFieldController<String>(containeringresosIngresosRow.emergencia!),
+                                                                                  optionHeight: 32.0,
+                                                                                  textStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                        fontFamily: 'Noto Sans JP',
+                                                                                        letterSpacing: 0.0,
+                                                                                      ),
+                                                                                  selectedTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                        fontFamily: 'Noto Sans JP',
+                                                                                        letterSpacing: 0.0,
+                                                                                      ),
+                                                                                  buttonPosition: RadioButtonPosition.left,
+                                                                                  direction: Axis.horizontal,
+                                                                                  radioButtonColor: FlutterFlowTheme.of(context).primary,
+                                                                                  inactiveRadioButtonColor: FlutterFlowTheme.of(context).secondaryText,
+                                                                                  toggleable: false,
+                                                                                  horizontalAlignment: WrapAlignment.start,
+                                                                                  verticalAlignment: WrapCrossAlignment.start,
+                                                                                ),
+                                                                              ],
+                                                                            ),
+                                                                          ),
+                                                                          Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 10.0,
                                                                                 0.0,
@@ -3564,59 +3654,6 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   mainAxisAlignment: MainAxisAlignment.center,
                                                                                   children: [
-                                                                                    Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
-                                                                                      child: Row(
-                                                                                        mainAxisSize: MainAxisSize.max,
-                                                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                        children: [
-                                                                                          Flexible(
-                                                                                            child: Text(
-                                                                                              'Caso de emergencia / Habiltar formulario 9',
-                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                    fontFamily: 'Noto Sans JP',
-                                                                                                    fontSize: 18.0,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ),
-                                                                                          FlutterFlowRadioButton(
-                                                                                            options: ['Si', 'No'].toList(),
-                                                                                            onChanged: (val) async {
-                                                                                              safeSetState(() {});
-                                                                                              await IngresosTable().update(
-                                                                                                data: {
-                                                                                                  'emergencia': _model.radioButtonValue,
-                                                                                                },
-                                                                                                matchingRows: (rows) => rows.eqOrNull(
-                                                                                                  'id',
-                                                                                                  containeringresosIngresosRow.id,
-                                                                                                ),
-                                                                                              );
-                                                                                              safeSetState(() => _model.requestCompleter = null);
-                                                                                              await _model.waitForRequestCompleted();
-                                                                                            },
-                                                                                            controller: _model.radioButtonValueController ??= FormFieldController<String>(containeringresosIngresosRow.emergencia!),
-                                                                                            optionHeight: 32.0,
-                                                                                            textStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                  fontFamily: 'Noto Sans JP',
-                                                                                                  letterSpacing: 0.0,
-                                                                                                ),
-                                                                                            selectedTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  fontFamily: 'Noto Sans JP',
-                                                                                                  letterSpacing: 0.0,
-                                                                                                ),
-                                                                                            buttonPosition: RadioButtonPosition.left,
-                                                                                            direction: Axis.horizontal,
-                                                                                            radioButtonColor: FlutterFlowTheme.of(context).primary,
-                                                                                            inactiveRadioButtonColor: FlutterFlowTheme.of(context).secondaryText,
-                                                                                            toggleable: false,
-                                                                                            horizontalAlignment: WrapAlignment.start,
-                                                                                            verticalAlignment: WrapCrossAlignment.start,
-                                                                                          ),
-                                                                                        ],
-                                                                                      ),
-                                                                                    ),
                                                                                     if (containeringresosIngresosRow.emergencia != null && containeringresosIngresosRow.emergencia != '')
                                                                                       Padding(
                                                                                         padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),

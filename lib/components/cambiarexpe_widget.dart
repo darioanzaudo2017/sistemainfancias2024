@@ -120,10 +120,8 @@ class _CambiarexpeWidgetState extends State<CambiarexpeWidget> {
                         FormFieldController<String>(
                       _model.dropDownValue ??= widget.expe?.spd,
                     ),
-                    options: dropDownSpdRowList
-                        .map((e) => e.nombrespd)
-                        .withoutNulls
-                        .toList(),
+                    options:
+                        dropDownSpdRowList.map((e) => e.nombrespd).toList(),
                     onChanged: (val) =>
                         safeSetState(() => _model.dropDownValue = val),
                     width: 300.0,

@@ -1338,7 +1338,6 @@ class _FormcaratulaeditWidgetState extends State<FormcaratulaeditWidget> {
                                         ),
                                         options: dropDownSpdRowList
                                             .map((e) => e.nombrespd)
-                                            .withoutNulls
                                             .toList(),
                                         onChanged: (val) => safeSetState(
                                             () => _model.dropDownValue = val),

@@ -47,6 +47,8 @@ class AvisoVisitaModel extends FlutterFlowModel<AvisoVisitaWidget> {
   DateTime? datePicked2;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   AvisovisitaNNyARow? formvisita;
+  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
+  Formulario3Row? entrevista;
   // Stores action output result for [Backend Call - API (Aviso visita NNyA)] action in Button widget.
   ApiCallResponse? apiResulth1a;
   // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.

@@ -122,7 +122,7 @@ class _Seccion6WidgetState extends State<Seccion6Widget> {
                                 child: Align(
                                   alignment: AlignmentDirectional(0.0, -1.0),
                                   child: Text(
-                                    '6. Intervenciones realizadas anteriormente',
+                                    '6. Intervenciones realizadas',
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
@@ -408,6 +408,9 @@ class _Seccion6WidgetState extends State<Seccion6Widget> {
                                                 ),
                                           ),
                                         ),
+                                        fixedWidth:
+                                            MediaQuery.sizeOf(context).width *
+                                                0.6,
                                       ),
                                       DataColumn2(
                                         label: DefaultTextStyle.merge(

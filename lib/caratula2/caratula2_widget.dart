@@ -1,8 +1,6 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
-import '/components/desplegablederechosprincipal_widget.dart';
-import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -12,7 +10,6 @@ import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import '/index.dart';
-import 'dart:async';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
@@ -934,11 +931,6 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                               .text),
                                                         ),
                                                       );
-                                                      safeSetState(() => _model
-                                                              .requestCompleter =
-                                                          null);
-                                                      await _model
-                                                          .waitForRequestCompleted();
                                                       _model.crearexpgrupo3 =
                                                           await NNyAExpGruTable()
                                                               .insert({
@@ -1073,11 +1065,6 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                         'iduser':
                                                             currentUserUid,
                                                       });
-                                                      safeSetState(() => _model
-                                                              .requestCompleter =
-                                                          null);
-                                                      await _model
-                                                          .waitForRequestCompleted();
                                                       _model.crearexpgrupo2 =
                                                           await NNyAExpGruTable()
                                                               .insert({
@@ -1245,386 +1232,6 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                         children: [
                                           Container(
                                             decoration: BoxDecoration(),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Align(
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          1.0, -1.0),
-                                                  child: FFButtonWidget(
-                                                    onPressed: () async {
-                                                      await showModalBottomSheet(
-                                                        isScrollControlled:
-                                                            true,
-                                                        backgroundColor:
-                                                            Colors.transparent,
-                                                        enableDrag: false,
-                                                        context: context,
-                                                        builder: (context) {
-                                                          return WebViewAware(
-                                                            child:
-                                                                GestureDetector(
-                                                              onTap: () {
-                                                                FocusScope.of(
-                                                                        context)
-                                                                    .unfocus();
-                                                                FocusManager
-                                                                    .instance
-                                                                    .primaryFocus
-                                                                    ?.unfocus();
-                                                              },
-                                                              child: Padding(
-                                                                padding: MediaQuery
-                                                                    .viewInsetsOf(
-                                                                        context),
-                                                                child:
-                                                                    DesplegablederechosprincipalWidget(
-                                                                  idexp: _model
-                                                                      .crearexpnnya2
-                                                                      ?.id,
-                                                                  idingreso: 0,
-                                                                  form:
-                                                                      'Caratula',
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          );
-                                                        },
-                                                      ).then((value) =>
-                                                          safeSetState(() =>
-                                                              _model.agregarderecho =
-                                                                  value));
-
-                                                      if (_model
-                                                          .agregarderecho!) {
-                                                        safeSetState(() => _model
-                                                                .requestCompleter =
-                                                            null);
-                                                        await _model
-                                                            .waitForRequestCompleted();
-
-                                                        safeSetState(() {});
-                                                      }
-
-                                                      safeSetState(() {});
-                                                    },
-                                                    text:
-                                                        'Agregar Derecho Vulnerado',
-                                                    options: FFButtonOptions(
-                                                      height: 40.0,
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  24.0,
-                                                                  0.0,
-                                                                  24.0,
-                                                                  0.0),
-                                                      iconPadding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                      textStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Noto Sans JP',
-                                                                color: Colors
-                                                                    .white,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                      elevation: 3.0,
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            Colors.transparent,
-                                                        width: 1.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                  ),
-                                                ),
-                                                FutureBuilder<
-                                                    List<
-                                                        ListaDerechosVulneradosexpedienteRow>>(
-                                                  future: (_model
-                                                              .requestCompleter ??=
-                                                          Completer<
-                                                              List<
-                                                                  ListaDerechosVulneradosexpedienteRow>>()
-                                                            ..complete(
-                                                                ListaDerechosVulneradosexpedienteTable()
-                                                                    .queryRows(
-                                                              queryFn: (q) =>
-                                                                  q.eqOrNull(
-                                                                'idexp',
-                                                                _model
-                                                                    .crearexpnnya2
-                                                                    ?.id,
-                                                              ),
-                                                            )))
-                                                      .future,
-                                                  builder: (context, snapshot) {
-                                                    // Customize what your widget looks like when it's loading.
-                                                    if (!snapshot.hasData) {
-                                                      return Center(
-                                                        child: SizedBox(
-                                                          width: 50.0,
-                                                          height: 50.0,
-                                                          child:
-                                                              CircularProgressIndicator(
-                                                            valueColor:
-                                                                AlwaysStoppedAnimation<
-                                                                    Color>(
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .primary,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      );
-                                                    }
-                                                    List<ListaDerechosVulneradosexpedienteRow>
-                                                        containerderechosListaDerechosVulneradosexpedienteRowList =
-                                                        snapshot.data!;
-
-                                                    return Container(
-                                                      width: MediaQuery.sizeOf(
-                                                                  context)
-                                                              .width *
-                                                          1.0,
-                                                      height: 300.0,
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                      ),
-                                                      child: Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        children: [
-                                                          Expanded(
-                                                            child: Builder(
-                                                              builder:
-                                                                  (context) {
-                                                                final listadederchos =
-                                                                    containerderechosListaDerechosVulneradosexpedienteRowList
-                                                                        .toList();
-
-                                                                return FlutterFlowDataTable<
-                                                                    ListaDerechosVulneradosexpedienteRow>(
-                                                                  controller: _model
-                                                                      .paginatedDataTableController,
-                                                                  data:
-                                                                      listadederchos,
-                                                                  columnsBuilder:
-                                                                      (onSortChanged) =>
-                                                                          [
-                                                                    DataColumn2(
-                                                                      label: DefaultTextStyle
-                                                                          .merge(
-                                                                        softWrap:
-                                                                            true,
-                                                                        child:
-                                                                            Text(
-                                                                          'Derecho',
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .override(
-                                                                                fontFamily: 'Noto Sans JP',
-                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                letterSpacing: 0.0,
-                                                                              ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                    DataColumn2(
-                                                                      label: DefaultTextStyle
-                                                                          .merge(
-                                                                        softWrap:
-                                                                            true,
-                                                                        child:
-                                                                            Text(
-                                                                          'Sub categoria',
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .override(
-                                                                                fontFamily: 'Noto Sans JP',
-                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                letterSpacing: 0.0,
-                                                                              ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                    DataColumn2(
-                                                                      label: DefaultTextStyle
-                                                                          .merge(
-                                                                        softWrap:
-                                                                            true,
-                                                                        child:
-                                                                            Align(
-                                                                          alignment: AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Text(
-                                                                            'Principal',
-                                                                            style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                  fontFamily: 'Noto Sans JP',
-                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                  letterSpacing: 0.0,
-                                                                                ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ],
-                                                                  dataRowBuilder: (listadederchosItem,
-                                                                          listadederchosIndex,
-                                                                          selected,
-                                                                          onSelectChanged) =>
-                                                                      DataRow(
-                                                                    color:
-                                                                        WidgetStateProperty
-                                                                            .all(
-                                                                      listadederchosIndex %
-                                                                                  2 ==
-                                                                              0
-                                                                          ? FlutterFlowTheme.of(context)
-                                                                              .secondaryBackground
-                                                                          : FlutterFlowTheme.of(context)
-                                                                              .primaryBackground,
-                                                                    ),
-                                                                    cells: [
-                                                                      Text(
-                                                                        valueOrDefault<
-                                                                            String>(
-                                                                          listadederchosItem
-                                                                              .derecho,
-                                                                          '0',
-                                                                        ),
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: 'Noto Sans JP',
-                                                                              letterSpacing: 0.0,
-                                                                            ),
-                                                                      ),
-                                                                      Text(
-                                                                        valueOrDefault<
-                                                                            String>(
-                                                                          listadederchosItem
-                                                                              .subcategoria,
-                                                                          '0',
-                                                                        ),
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: 'Noto Sans JP',
-                                                                              letterSpacing: 0.0,
-                                                                            ),
-                                                                      ),
-                                                                      Visibility(
-                                                                        visible:
-                                                                            listadederchosItem.principal ==
-                                                                                'Si',
-                                                                        child:
-                                                                            Align(
-                                                                          alignment: AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Container(
-                                                                            width:
-                                                                                65.0,
-                                                                            height:
-                                                                                40.0,
-                                                                            decoration:
-                                                                                BoxDecoration(
-                                                                              color: FlutterFlowTheme.of(context).secondary,
-                                                                              borderRadius: BorderRadius.circular(15.0),
-                                                                            ),
-                                                                            child:
-                                                                                Align(
-                                                                              alignment: AlignmentDirectional(0.0, 0.0),
-                                                                              child: Text(
-                                                                                valueOrDefault<String>(
-                                                                                  listadederchosItem.principal,
-                                                                                  '0',
-                                                                                ),
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Noto Sans JP',
-                                                                                      letterSpacing: 0.0,
-                                                                                    ),
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ]
-                                                                        .map((c) =>
-                                                                            DataCell(c))
-                                                                        .toList(),
-                                                                  ),
-                                                                  paginated:
-                                                                      true,
-                                                                  selectable:
-                                                                      false,
-                                                                  hidePaginator:
-                                                                      false,
-                                                                  showFirstLastButtons:
-                                                                      false,
-                                                                  headingRowHeight:
-                                                                      56.0,
-                                                                  dataRowHeight:
-                                                                      48.0,
-                                                                  columnSpacing:
-                                                                      20.0,
-                                                                  headingRowColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primary,
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              8.0),
-                                                                  addHorizontalDivider:
-                                                                      true,
-                                                                  addTopAndBottomDivider:
-                                                                      false,
-                                                                  hideDefaultHorizontalDivider:
-                                                                      true,
-                                                                  horizontalDividerColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryBackground,
-                                                                  horizontalDividerThickness:
-                                                                      1.0,
-                                                                  addVerticalDivider:
-                                                                      false,
-                                                                );
-                                                              },
-                                                            ),
-                                                          ),
-                                                        ].divide(SizedBox(
-                                                            height: 10.0)),
-                                                      ),
-                                                    );
-                                                  },
-                                                ),
-                                              ].divide(SizedBox(height: 10.0)),
-                                            ),
                                           ),
                                           Align(
                                             alignment:
@@ -1680,7 +1287,6 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                 ),
                                                 options: dropDownSpdRowList
                                                     .map((e) => e.nombrespd)
-                                                    .withoutNulls
                                                     .toList(),
                                                 onChanged: (val) =>
                                                     safeSetState(() => _model
@@ -1741,155 +1347,213 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                               );
                                             },
                                           ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    8.0, 0.0, 8.0, 0.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceEvenly,
-                                              children: [
-                                                Flexible(
-                                                  child: Text(
-                                                    valueOrDefault<String>(
-                                                      dateTimeFormat(
-                                                        "d/M/y",
-                                                        _model.datePicked2,
-                                                        locale:
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .languageCode,
+                                          Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    -1.0, 0.0),
+                                                child: Text(
+                                                  'Fecha de recepcion de la solicitud de intervencion',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .titleMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Noto Sans JP',
+                                                        fontSize: 15.0,
+                                                        letterSpacing: 0.0,
                                                       ),
-                                                      'No tiene fecha seleccionada',
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Noto Sans JP',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                  ),
                                                 ),
-                                                FFButtonWidget(
-                                                  onPressed: () async {
-                                                    final _datePicked2Date =
-                                                        await showDatePicker(
-                                                      context: context,
-                                                      initialDate:
-                                                          getCurrentTimestamp,
-                                                      firstDate: DateTime(1900),
-                                                      lastDate: DateTime(2050),
-                                                      builder:
-                                                          (context, child) {
-                                                        return wrapInMaterialDatePickerTheme(
-                                                          context,
-                                                          child!,
-                                                          headerBackgroundColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .primary,
-                                                          headerForegroundColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .info,
-                                                          headerTextStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .headlineLarge
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Noto Sans JP',
-                                                                    fontSize:
-                                                                        32.0,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                  ),
-                                                          pickerBackgroundColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .secondaryBackground,
-                                                          pickerForegroundColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .primaryText,
-                                                          selectedDateTimeBackgroundColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .primary,
-                                                          selectedDateTimeForegroundColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .info,
-                                                          actionButtonForegroundColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .primaryText,
-                                                          iconSize: 24.0,
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        8.0, 0.0, 8.0, 0.0),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  children: [
+                                                    Icon(
+                                                      Icons.date_range_rounded,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      size: 24.0,
+                                                    ),
+                                                    Flexible(
+                                                      child: Text(
+                                                        valueOrDefault<String>(
+                                                          dateTimeFormat(
+                                                            "d/M/y",
+                                                            _model.datePicked2,
+                                                            locale: FFLocalizations
+                                                                    .of(context)
+                                                                .languageCode,
+                                                          ),
+                                                          'No tiene fecha seleccionada',
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Noto Sans JP',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                      ),
+                                                    ),
+                                                    FFButtonWidget(
+                                                      onPressed: () async {
+                                                        final _datePicked2Date =
+                                                            await showDatePicker(
+                                                          context: context,
+                                                          initialDate:
+                                                              getCurrentTimestamp,
+                                                          firstDate:
+                                                              DateTime(1900),
+                                                          lastDate:
+                                                              DateTime(2050),
+                                                          builder:
+                                                              (context, child) {
+                                                            return wrapInMaterialDatePickerTheme(
+                                                              context,
+                                                              child!,
+                                                              headerBackgroundColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                              headerForegroundColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .info,
+                                                              headerTextStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineLarge
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Noto Sans JP',
+                                                                        fontSize:
+                                                                            32.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w600,
+                                                                      ),
+                                                              pickerBackgroundColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryBackground,
+                                                              pickerForegroundColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                              selectedDateTimeBackgroundColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                              selectedDateTimeForegroundColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .info,
+                                                              actionButtonForegroundColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                              iconSize: 24.0,
+                                                            );
+                                                          },
                                                         );
-                                                      },
-                                                    );
 
-                                                    if (_datePicked2Date !=
-                                                        null) {
-                                                      safeSetState(() {
-                                                        _model.datePicked2 =
-                                                            DateTime(
-                                                          _datePicked2Date.year,
-                                                          _datePicked2Date
-                                                              .month,
-                                                          _datePicked2Date.day,
-                                                        );
-                                                      });
-                                                    } else if (_model
-                                                            .datePicked2 !=
-                                                        null) {
-                                                      safeSetState(() {
-                                                        _model.datePicked2 =
-                                                            getCurrentTimestamp;
-                                                      });
-                                                    }
-                                                  },
-                                                  text: 'Fecha',
-                                                  options: FFButtonOptions(
-                                                    height: 40.0,
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(24.0, 0.0,
-                                                                24.0, 0.0),
-                                                    iconPadding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 0.0),
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              'Noto Sans JP',
-                                                          color: Colors.white,
-                                                          letterSpacing: 0.0,
+                                                        if (_datePicked2Date !=
+                                                            null) {
+                                                          safeSetState(() {
+                                                            _model.datePicked2 =
+                                                                DateTime(
+                                                              _datePicked2Date
+                                                                  .year,
+                                                              _datePicked2Date
+                                                                  .month,
+                                                              _datePicked2Date
+                                                                  .day,
+                                                            );
+                                                          });
+                                                        } else if (_model
+                                                                .datePicked2 !=
+                                                            null) {
+                                                          safeSetState(() {
+                                                            _model.datePicked2 =
+                                                                getCurrentTimestamp;
+                                                          });
+                                                        }
+                                                      },
+                                                      text: 'Fecha',
+                                                      options: FFButtonOptions(
+                                                        height: 40.0,
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    24.0,
+                                                                    0.0,
+                                                                    24.0,
+                                                                    0.0),
+                                                        iconPadding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        textStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmall
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Noto Sans JP',
+                                                                  color: Colors
+                                                                      .white,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                        elevation: 3.0,
+                                                        borderSide: BorderSide(
+                                                          color: Colors
+                                                              .transparent,
+                                                          width: 1.0,
                                                         ),
-                                                    elevation: 3.0,
-                                                    borderSide: BorderSide(
-                                                      color: Colors.transparent,
-                                                      width: 1.0,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                      ),
                                                     ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
-                                                  ),
+                                                    Text(
+                                                      '(presionar el boton fecha para agregar fecha)',
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Noto Sans JP',
+                                                            fontSize: 10.0,
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                    ),
+                                                  ].divide(
+                                                      SizedBox(width: 10.0)),
                                                 ),
-                                              ],
-                                            ),
+                                              ),
+                                            ].divide(SizedBox(height: 5.0)),
                                           ),
                                           Padding(
                                             padding:
@@ -1978,6 +1642,9 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                         .override(
                                                           fontFamily:
                                                               'Noto Sans JP',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .tertiary,
                                                           letterSpacing: 0.0,
                                                         ),
                                                     hintText:
@@ -1988,6 +1655,9 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                         .override(
                                                           fontFamily:
                                                               'Noto Sans JP',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .tertiary,
                                                           letterSpacing: 0.0,
                                                         ),
                                                     enabledBorder:
@@ -2049,6 +1719,10 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                       .override(
                                                         fontFamily:
                                                             'Noto Sans JP',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .tertiary,
                                                         letterSpacing: 0.0,
                                                       ),
                                                   validator: _model
@@ -2076,6 +1750,9 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                         .override(
                                                           fontFamily:
                                                               'Noto Sans JP',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .tertiary,
                                                           letterSpacing: 0.0,
                                                         ),
                                                     hintStyle: FlutterFlowTheme
@@ -2172,6 +1849,9 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                         .override(
                                                           fontFamily:
                                                               'Noto Sans JP',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .tertiary,
                                                           letterSpacing: 0.0,
                                                         ),
                                                     hintStyle: FlutterFlowTheme

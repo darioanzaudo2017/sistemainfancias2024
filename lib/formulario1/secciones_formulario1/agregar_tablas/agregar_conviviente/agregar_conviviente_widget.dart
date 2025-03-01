@@ -798,12 +798,10 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                           fontFamily: 'Noto Sans JP',
                                           letterSpacing: 0.0,
                                         ),
+                                    maxLines: null,
                                     validator: _model
                                         .textFieldvinculoTextControllerValidator
                                         .asValidator(context),
-                                    inputFormatters: [
-                                      _model.textFieldvinculoMask
-                                    ],
                                   ),
                                 ),
                               ),

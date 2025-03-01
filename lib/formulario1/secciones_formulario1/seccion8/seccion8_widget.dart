@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/formulario1/secciones_formulario1/agregar_tablas/agregar_persona_relacionada/agregar_persona_relacionada_widget.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'seccion8_model.dart';
@@ -91,7 +92,7 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                '8. Ampliar información de personas relacionadas',
+                                '8. Personas relacionadas para ampliar información',
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
                                     .override(
@@ -124,12 +125,15 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
                         ],
                       ),
                       FutureBuilder<List<Seccion8Row>>(
-                        future: Seccion8Table().queryRows(
-                          queryFn: (q) => q.eqOrNull(
-                            'idIngreso',
-                            widget.idingreso?.id,
-                          ),
-                        ),
+                        future: (_model.requestCompleter ??=
+                                Completer<List<Seccion8Row>>()
+                                  ..complete(Seccion8Table().queryRows(
+                                    queryFn: (q) => q.eqOrNull(
+                                      'idIngreso',
+                                      widget.idingreso?.id,
+                                    ),
+                                  )))
+                            .future,
                         builder: (context, snapshot) {
                           // Customize what your widget looks like when it's loading.
                           if (!snapshot.hasData) {
@@ -249,6 +253,20 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
                                         ),
                                       ),
                                     ),
+                                    DataColumn2(
+                                      label: DefaultTextStyle.merge(
+                                        softWrap: true,
+                                        child: Text(
+                                          'Edit Header 6',
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelLarge
+                                              .override(
+                                                fontFamily: 'Noto Sans JP',
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
                                   ],
                                   dataRowBuilder: (listItem, listIndex,
                                           selected, onSelectChanged) =>
@@ -321,6 +339,65 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
                                               letterSpacing: 0.0,
                                             ),
                                       ),
+                                      FlutterFlowIconButton(
+                                        borderRadius: 8.0,
+                                        buttonSize: 40.0,
+                                        icon: Icon(
+                                          Icons.delete_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          size: 24.0,
+                                        ),
+                                        onPressed: () async {
+                                          var confirmDialogResponse =
+                                              await showDialog<bool>(
+                                                    context: context,
+                                                    builder:
+                                                        (alertDialogContext) {
+                                                      return WebViewAware(
+                                                        child: AlertDialog(
+                                                          title: Text(
+                                                              'Borrar persona vinculada'),
+                                                          content: Text(
+                                                              'Desea borrar la persona para ampliar '),
+                                                          actions: [
+                                                            TextButton(
+                                                              onPressed: () =>
+                                                                  Navigator.pop(
+                                                                      alertDialogContext,
+                                                                      false),
+                                                              child: Text(
+                                                                  'Cancelar'),
+                                                            ),
+                                                            TextButton(
+                                                              onPressed: () =>
+                                                                  Navigator.pop(
+                                                                      alertDialogContext,
+                                                                      true),
+                                                              child: Text(
+                                                                  'Confirmar'),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      );
+                                                    },
+                                                  ) ??
+                                                  false;
+                                          if (confirmDialogResponse) {
+                                            await Seccion8Table().delete(
+                                              matchingRows: (rows) =>
+                                                  rows.eqOrNull(
+                                                'idSec3',
+                                                listItem.idSec3,
+                                              ),
+                                            );
+                                            safeSetState(() =>
+                                                _model.requestCompleter = null);
+                                            await _model
+                                                .waitForRequestCompleted();
+                                          }
+                                        },
+                                      ),
                                     ].map((c) => DataCell(c)).toList(),
                                   ),
                                   paginated: true,
@@ -367,7 +444,7 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
                             },
                           ).then((value) => safeSetState(() {}));
                         },
-                        text: 'Ampliar información',
+                        text: 'Agregar persona',
                         icon: Icon(
                           Icons.add_box,
                           size: 15.0,

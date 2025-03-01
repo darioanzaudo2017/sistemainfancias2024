@@ -62,7 +62,6 @@ class AgregarConvivienteModel
   // State field(s) for TextFieldvinculo widget.
   FocusNode? textFieldvinculoFocusNode;
   TextEditingController? textFieldvinculoTextController;
-  final textFieldvinculoMask = MaskTextInputFormatter(mask: '##########');
   String? Function(BuildContext, String?)?
       textFieldvinculoTextControllerValidator;
   // State field(s) for TextField widget.

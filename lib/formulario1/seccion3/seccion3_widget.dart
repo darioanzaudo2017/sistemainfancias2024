@@ -331,6 +331,40 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                         ),
                                       ),
                                     ),
+                                    DataColumn2(
+                                      label: DefaultTextStyle.merge(
+                                        softWrap: true,
+                                        child: Text(
+                                          'DNI',
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelLarge
+                                              .override(
+                                                fontFamily: 'Noto Sans JP',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
+                                    DataColumn2(
+                                      label: DefaultTextStyle.merge(
+                                        softWrap: true,
+                                        child: Text(
+                                          'Telefono',
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelLarge
+                                              .override(
+                                                fontFamily: 'Noto Sans JP',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
                                   ],
                                   dataRowBuilder: (listItem, listIndex,
                                           selected, onSelectChanged) =>
@@ -445,6 +479,30 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                           borderRadius:
                                               BorderRadius.circular(8.0),
                                         ),
+                                      ),
+                                      Text(
+                                        valueOrDefault<String>(
+                                          listItem.dni.toString(),
+                                          'Sin dato',
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                      Text(
+                                        valueOrDefault<String>(
+                                          listItem.telefono,
+                                          'Sin dato',
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
                                     ].map((c) => DataCell(c)).toList(),
                                   ),
@@ -586,6 +644,40 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                         ),
                                       ),
                                     ),
+                                    DataColumn2(
+                                      label: DefaultTextStyle.merge(
+                                        softWrap: true,
+                                        child: Text(
+                                          'DNI',
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelLarge
+                                              .override(
+                                                fontFamily: 'Noto Sans JP',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
+                                    DataColumn2(
+                                      label: DefaultTextStyle.merge(
+                                        softWrap: true,
+                                        child: Text(
+                                          'Telefono',
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelLarge
+                                              .override(
+                                                fontFamily: 'Noto Sans JP',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
                                   ],
                                   dataRowBuilder: (listItem, listIndex,
                                           selected, onSelectChanged) =>
@@ -700,6 +792,30 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                           borderRadius:
                                               BorderRadius.circular(8.0),
                                         ),
+                                      ),
+                                      Text(
+                                        valueOrDefault<String>(
+                                          listItem.dni.toString(),
+                                          'Sin dato',
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                      Text(
+                                        valueOrDefault<String>(
+                                          listItem.telefono,
+                                          'Sin dato',
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Noto Sans JP',
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
                                     ].map((c) => DataCell(c)).toList(),
                                   ),
