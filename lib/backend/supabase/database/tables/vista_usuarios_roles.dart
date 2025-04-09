@@ -45,4 +45,10 @@ class VistaUsuariosRolesRow extends SupabaseDataRow {
 
   String? get rolNombre => getField<String>('rol_nombre');
   set rolNombre(String? value) => setField<String>('rol_nombre', value);
+
+  int? get zonaUsuario => getField<int>('zona_usuario');
+  set zonaUsuario(int? value) => setField<int>('zona_usuario', value);
+
+  String? get mail => getField<String>('mail');
+  set mail(String? value) => setField<String>('mail', value);
 }

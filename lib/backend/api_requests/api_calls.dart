@@ -68,18 +68,16 @@ class BuscarPersonaCall {
       ));
 }
 
-class BusquedaExpedienteCall {
+class BusquedaExpedienteLISTACall {
   static Future<ApiCallResponse> call({
-    String? busquedaExp = 'KIUJY',
-    String? iduser = '90cc0cdf-9afb-4484-9c6a-e50e7e53a402',
+    String? busquedaExp = 'RAMIREZ',
   }) async {
     final ffApiRequestBody = '''
 {
-  "search_query": "${busquedaExp}",
-  "user_id": "${iduser}"
+  "search_query": "${busquedaExp}"
 }''';
     return ApiManager.instance.makeApiCall(
-      callName: 'busqueda expediente',
+      callName: 'busqueda expediente LISTA',
       apiUrl:
           'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/rpc/search_expedientes2',
       callType: ApiCallType.POST,
@@ -111,51 +109,10 @@ class BusquedaExpedienteCall {
           .map((x) => castToType<int>(x))
           .withoutNulls
           .toList();
-  static List<String>? nombres(dynamic response) => (getJsonField(
+  static int? idexpediente(dynamic response) => castToType<int>(getJsonField(
         response,
-        r'''$[:].nombres''',
-        true,
-      ) as List?)
-          ?.withoutNulls
-          .map((x) => castToType<String>(x))
-          .withoutNulls
-          .toList();
-  static List<String>? apellidos(dynamic response) => (getJsonField(
-        response,
-        r'''$[:].apellidos''',
-        true,
-      ) as List?)
-          ?.withoutNulls
-          .map((x) => castToType<String>(x))
-          .withoutNulls
-          .toList();
-  static List<String>? expediente(dynamic response) => (getJsonField(
-        response,
-        r'''$[:].expediente''',
-        true,
-      ) as List?)
-          ?.withoutNulls
-          .map((x) => castToType<String>(x))
-          .withoutNulls
-          .toList();
-  static List<int>? dni(dynamic response) => (getJsonField(
-        response,
-        r'''$[:].dni''',
-        true,
-      ) as List?)
-          ?.withoutNulls
-          .map((x) => castToType<int>(x))
-          .withoutNulls
-          .toList();
-  static List<String>? fecha(dynamic response) => (getJsonField(
-        response,
-        r'''$[:].fecha''',
-        true,
-      ) as List?)
-          ?.withoutNulls
-          .map((x) => castToType<String>(x))
-          .withoutNulls
-          .toList();
+        r'''$[:].idexpediente''',
+      ));
 }
 
 class BusquedaExpedienteCopyCall {
@@ -382,6 +339,8 @@ class CrearCaratulaCall {
     String? carpeta = 'sdf',
     String? iddocumentoadjunto = 'sdf',
     String? idDocedit = 'sdf',
+    String? firma =
+        'https://liavirbwftopvrcjyprr.supabase.co/storage/v1/object/public/firma/firma/VisualStudioSetup.exe',
   }) async {
     final ffApiRequestBody = '''
 {
@@ -391,7 +350,8 @@ class CrearCaratulaCall {
   "idingreso": ${idigreso},
   "carpeta": "${carpeta}",
   "iddocumentoimprimir": "${iddocumentoadjunto}",
-  "iddocdrive": "${idDocedit}"
+  "iddocdrive": "${idDocedit}",
+  "firma": "${firma}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Crear Caratula',
@@ -520,7 +480,7 @@ class AvisoVisitaNNyACall {
     String? cpc = 'sdf',
     String? hora = 'sdf',
     int? idingreso = 5,
-    String? iddoc = 'sdf',
+    String? idampliacion = 'sdf',
     String? carpeta = 'ertertert',
   }) async {
     final ffApiRequestBody = '''
@@ -534,8 +494,8 @@ class AvisoVisitaNNyACall {
   "CPC": "${escapeStringForJson(cpc)}",
   "idingreso": ${idingreso},
   "carpeta": "${escapeStringForJson(carpeta)}",
-  "iddoc": "${escapeStringForJson(iddoc)}",
-"asd":"asdasdasdasd"
+  "idampliacion": "${escapeStringForJson(idampliacion)}",
+  "asd": "asdasdasdasd"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Aviso visita NNyA',
@@ -569,6 +529,7 @@ class ConcurrenciaVisitaAdultoCall {
     String? carpeta = 'ertertert',
     String? telefono = 'sd',
     int? dni = 5454545,
+    String? expediente = 'sdfsdf',
   }) async {
     final ffApiRequestBody = '''
 {
@@ -583,7 +544,8 @@ class ConcurrenciaVisitaAdultoCall {
   "carpeta": "${escapeStringForJson(carpeta)}",
   "telefono": "${escapeStringForJson(telefono)}",
   "iddoc": "${escapeStringForJson(iddoc)}",
-  "dni": ${dni}
+  "dni": ${dni},
+  "expediente": "${escapeStringForJson(expediente)}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Concurrencia visita adulto',
@@ -1019,7 +981,7 @@ class ANEXOREQUERIMIENTODEEJECUCIoNDEACCIONESCall {
 
 class EmailResendCall {
   static Future<ApiCallResponse> call({
-    String? mail = 'darioanzaudo@gmail.com',
+    List<String>? mailList,
     String? titulo = 'titulo prueba',
     String? mensaje = 'hola que tal',
     String? nOmbreyapellido = 'dario anzaudo',
@@ -1033,11 +995,13 @@ class EmailResendCall {
     header ??= FFAppConstants.header1resend;
     header2 ??= FFAppConstants.header2resend;
 
+    final mail = _serializeList(mailList);
+
     final ffApiRequestBody = '''
 {
   "from": "Subsecretaria de infancias <direcciongeneral@sistemasdeinfancias.com.ar>",
   "to": [
-    "${escapeStringForJson(mail)}"
+    "${mail}"
   ],
   "subject": "${escapeStringForJson(titulo)}",
   "html": "<p>Mensaje: ${escapeStringForJson(mensaje)}</p><p>Spd: ${escapeStringForJson(spd)}</p><p>Motivo: ${escapeStringForJson(motivo)}</p><p>Nombre: ${escapeStringForJson(nOmbreyapellido)}</p><p>DNI: ${escapeStringForJson(dni)}</p><p>Link: ${escapeStringForJson(link)}</p>"
@@ -1062,7 +1026,7 @@ class EmailResendCall {
 
 class ExisteDNInnyaCall {
   static Future<ApiCallResponse> call({
-    String? dni = '56535604',
+    String? dni = '31450209',
   }) async {
     final ffApiRequestBody = '''
 {
@@ -1143,6 +1107,78 @@ class MailresendwebhookCall {
       callType: ApiCallType.POST,
       headers: {},
       params: {},
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class CheckExpedienteCall {
+  static Future<ApiCallResponse> call({
+    int? dni = 31450209,
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "dni_param": ${dni}
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'check expediente ',
+      apiUrl: 'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/rpc/dni_existe',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
+        'Authorization':
+            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class InformeSenafVersionesCall {
+  static Future<ApiCallResponse> call({
+    String? fecha = '12/12/2025',
+    String? linkinforme = 'sdfsdf',
+    int? idexpediente = 2,
+    int? idingreso = 4,
+    int? idform9 = 6,
+    String? idDrive = 'wer',
+    String? estado = '1',
+    String? idcarpeta = 'ert',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "fecha": "${escapeStringForJson(fecha)}",
+  "Linkinforme": "${escapeStringForJson(linkinforme)}",
+  "idexpediente": ${idexpediente},
+  "idingreso": ${idingreso},
+  "idform9": ${idform9},
+  "iddrive": "${escapeStringForJson(idDrive)}",
+  "estado": "${escapeStringForJson(estado)}",
+"idcarpeta":"${escapeStringForJson(idcarpeta)}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'informe senaf versiones',
+      apiUrl: 'https://hook.us1.make.com/s757b4cp0vchwqx4x91zacrtg8o14k9f',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {},
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,

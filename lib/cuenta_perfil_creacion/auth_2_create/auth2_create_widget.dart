@@ -2,10 +2,12 @@ import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
+import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/flutter_flow/upload_data.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -620,6 +622,111 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                     ),
                                   ),
                                 ),
+                                Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      final selectedMedia =
+                                          await selectMediaWithSourceBottomSheet(
+                                        context: context,
+                                        storageFolderPath: 'firma',
+                                        allowPhoto: true,
+                                      );
+                                      if (selectedMedia != null &&
+                                          selectedMedia.every((m) =>
+                                              validateFileFormat(
+                                                  m.storagePath, context))) {
+                                        safeSetState(() =>
+                                            _model.isDataUploading = true);
+                                        var selectedUploadedFiles =
+                                            <FFUploadedFile>[];
+
+                                        var downloadUrls = <String>[];
+                                        try {
+                                          showUploadMessage(
+                                            context,
+                                            'Uploading file...',
+                                            showLoading: true,
+                                          );
+                                          selectedUploadedFiles = selectedMedia
+                                              .map((m) => FFUploadedFile(
+                                                    name: m.storagePath
+                                                        .split('/')
+                                                        .last,
+                                                    bytes: m.bytes,
+                                                    height:
+                                                        m.dimensions?.height,
+                                                    width: m.dimensions?.width,
+                                                    blurHash: m.blurHash,
+                                                  ))
+                                              .toList();
+
+                                          downloadUrls =
+                                              await uploadSupabaseStorageFiles(
+                                            bucketName: 'firma',
+                                            selectedFiles: selectedMedia,
+                                          );
+                                        } finally {
+                                          ScaffoldMessenger.of(context)
+                                              .hideCurrentSnackBar();
+                                          _model.isDataUploading = false;
+                                        }
+                                        if (selectedUploadedFiles.length ==
+                                                selectedMedia.length &&
+                                            downloadUrls.length ==
+                                                selectedMedia.length) {
+                                          safeSetState(() {
+                                            _model.uploadedLocalFile =
+                                                selectedUploadedFiles.first;
+                                            _model.uploadedFileUrl =
+                                                downloadUrls.first;
+                                          });
+                                          showUploadMessage(
+                                              context, 'Success!');
+                                        } else {
+                                          safeSetState(() {});
+                                          showUploadMessage(
+                                              context, 'Failed to upload data');
+                                          return;
+                                        }
+                                      }
+
+                                      await Navigator.push(
+                                        context,
+                                        PageTransition(
+                                          type: PageTransitionType.fade,
+                                          child: FlutterFlowExpandedImageView(
+                                            image: Image.network(
+                                              _model.uploadedFileUrl,
+                                              fit: BoxFit.contain,
+                                            ),
+                                            allowRotation: false,
+                                            tag: _model.uploadedFileUrl,
+                                            useHeroAnimation: true,
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                    child: Hero(
+                                      tag: _model.uploadedFileUrl,
+                                      transitionOnUserGestures: true,
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                        child: Image.network(
+                                          _model.uploadedFileUrl,
+                                          width: 200.0,
+                                          height: 200.0,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 16.0),
@@ -650,6 +757,13 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                         return;
                                       }
 
+                                      _model.spdzona =
+                                          await SpdTable().queryRows(
+                                        queryFn: (q) => q.eqOrNull(
+                                          'nombrespd',
+                                          _model.dropDownValue,
+                                        ),
+                                      );
                                       _model.createusuario =
                                           await UsuariosTable().insert({
                                         'id': currentUserUid,
@@ -657,6 +771,11 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                             .nombreCompletoTextController.text,
                                         'rol': 'Usuario',
                                         'SPD': _model.dropDownValue,
+                                        'mail': _model
+                                            .emailAddressTextController.text,
+                                        'zona_usuario':
+                                            _model.spdzona?.firstOrNull?.zona,
+                                        'firma': _model.uploadedFileUrl,
                                       });
                                       await UserRolTable().insert({
                                         'iduser': _model.createusuario?.id,

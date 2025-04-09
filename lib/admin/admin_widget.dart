@@ -849,6 +849,10 @@ class _AdminWidgetState extends State<AdminWidget>
                                                       builder: (context) {
                                                         final usuarios =
                                                             containerVistaUsuariosRolesRowList
+                                                                .sortedList(
+                                                                    keyOf: (e) =>
+                                                                        e.nombreCompleto!,
+                                                                    desc: false)
                                                                 .toList();
 
                                                         return FlutterFlowDataTable<
@@ -1122,7 +1126,7 @@ class _AdminWidgetState extends State<AdminWidget>
                                                           selectable: false,
                                                           hidePaginator: false,
                                                           showFirstLastButtons:
-                                                              false,
+                                                              true,
                                                           headingRowHeight:
                                                               56.0,
                                                           dataRowHeight: 48.0,
@@ -1138,13 +1142,13 @@ class _AdminWidgetState extends State<AdminWidget>
                                                           addHorizontalDivider:
                                                               true,
                                                           addTopAndBottomDivider:
-                                                              false,
+                                                              true,
                                                           hideDefaultHorizontalDivider:
                                                               true,
                                                           horizontalDividerColor:
                                                               FlutterFlowTheme.of(
                                                                       context)
-                                                                  .secondaryBackground,
+                                                                  .alternate,
                                                           horizontalDividerThickness:
                                                               1.0,
                                                           addVerticalDivider:

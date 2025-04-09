@@ -29,12 +29,14 @@ class DefiniciondemedidasWidget extends StatefulWidget {
     required this.rowexp,
     required this.usuariorow,
     required this.usuariosrol,
+    required this.spd,
   });
 
   final IngresosRow? ingresorow;
   final VistaExpedientesUltimoEstadoRow? rowexp;
   final UsuariosRow? usuariorow;
   final VistaUsuariosRolesRow? usuariosrol;
+  final SpdRow? spd;
 
   static String routeName = 'Definiciondemedidas';
   static String routePath = '/definiciondemedidas';
@@ -90,7 +92,31 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
               size: 30.0,
             ),
             onPressed: () async {
-              context.pop();
+              context.pushNamed(
+                PerfilWidget.routeName,
+                queryParameters: {
+                  'idingreso': serializeParam(
+                    widget.ingresorow?.id,
+                    ParamType.int,
+                  ),
+                  'rowexp': serializeParam(
+                    widget.rowexp,
+                    ParamType.SupabaseRow,
+                  ),
+                  'usuariorow': serializeParam(
+                    widget.usuariorow,
+                    ParamType.SupabaseRow,
+                  ),
+                  'spd': serializeParam(
+                    widget.spd,
+                    ParamType.SupabaseRow,
+                  ),
+                  'usuariorol': serializeParam(
+                    widget.usuariosrol,
+                    ParamType.SupabaseRow,
+                  ),
+                }.withoutNulls,
+              );
             },
           ),
           title: Text(
@@ -239,6 +265,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                     usuariosrow: widget.usuariorow!,
                                     editar: false,
                                     usuariorol: widget.usuariosrol,
+                                    spd: widget.spd!,
                                   ),
                                 ),
                               ].divide(SizedBox(height: 5.0)),

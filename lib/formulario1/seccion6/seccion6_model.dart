@@ -21,6 +21,8 @@ class Seccion6Model extends FlutterFlowModel<Seccion6Widget> {
   // State field(s) for PaginatedDataTable widget.
   final paginatedDataTableController =
       FlutterFlowDataTableController<Seccion6Row>();
+  // Stores action output result for [Bottom Sheet - Intervencionesrealizadas] action in IconButton widget.
+  bool? sedeitoseccion6;
 
   @override
   void initState(BuildContext context) {}

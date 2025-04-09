@@ -442,7 +442,15 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
                                 ),
                               );
                             },
-                          ).then((value) => safeSetState(() {}));
+                          ).then((value) => safeSetState(
+                              () => _model.creopersonaampliar = value));
+
+                          if (_model.creopersonaampliar!) {
+                            safeSetState(() => _model.requestCompleter = null);
+                            await _model.waitForRequestCompleted();
+                          }
+
+                          safeSetState(() {});
                         },
                         text: 'Agregar persona',
                         icon: Icon(

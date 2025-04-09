@@ -27,12 +27,6 @@ class PerfilModel extends FlutterFlowModel<PerfilWidget> {
   List<VistaExpedientesUltimoEstadoRow>? exp;
   // Model for tarjetaencabezado component.
   late TarjetaencabezadoModel tarjetaencabezadoModel;
-  // State field(s) for Checkbox widget.
-  bool? checkboxValue1;
-  // State field(s) for Checkbox widget.
-  bool? checkboxValue2;
-  // State field(s) for Checkbox widget.
-  bool? checkboxValue3;
   // Stores action output result for [Bottom Sheet - seccion1] action in Button widget.
   bool? seccio1true;
   Completer<List<IngresosRow>>? requestCompleter;
@@ -52,8 +46,14 @@ class PerfilModel extends FlutterFlowModel<PerfilWidget> {
   bool? seccion7true;
   // Stores action output result for [Bottom Sheet - seccion8] action in Button widget.
   bool? seccion8guardada;
-  // Stores action output result for [Bottom Sheet - seccion9] action in Button widget.
-  bool? seccion9true;
+  // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
+  List<Seccion9Row>? seccion9editar;
+  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
+  Seccion9Row? seccion9;
+  // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
+  List<Seccion9Row>? seccion9edit;
+  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
+  Seccion9Row? seccion9Copy;
   // State field(s) for RadioButton widget.
   FormFieldController<String>? radioButtonValueController;
 

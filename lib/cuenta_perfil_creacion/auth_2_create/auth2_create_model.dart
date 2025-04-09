@@ -31,6 +31,13 @@ class Auth2CreateModel extends FlutterFlowModel<Auth2CreateWidget> {
   late bool passwordConfirmVisibility;
   String? Function(BuildContext, String?)?
       passwordConfirmTextControllerValidator;
+  bool isDataUploading = false;
+  FFUploadedFile uploadedLocalFile =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl = '';
+
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<SpdRow>? spdzona;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   UsuariosRow? createusuario;
 

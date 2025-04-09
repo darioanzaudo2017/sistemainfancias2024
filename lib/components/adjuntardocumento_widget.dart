@@ -16,10 +16,12 @@ class AdjuntardocumentoWidget extends StatefulWidget {
     super.key,
     this.exprow,
     this.ingrow,
+    this.idampliacion,
   });
 
   final VistaExpedientesUltimoEstadoRow? exprow;
   final IngresosRow? ingrow;
+  final int? idampliacion;
 
   @override
   State<AdjuntardocumentoWidget> createState() =>
@@ -296,6 +298,7 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                         'documentopdf': _model.uploadedFileUrl,
                         'tipodocumento': _model.dropDownValue,
                         'Observaciones': _model.textController.text,
+                        'idampliacion': widget.idampliacion,
                       });
                       await showDialog(
                         context: context,

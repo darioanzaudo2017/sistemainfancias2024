@@ -73,4 +73,16 @@ class Seccion2Row extends SupabaseDataRow {
 
   String? get vinculoObs => getField<String>('vinculoObs');
   set vinculoObs(String? value) => setField<String>('vinculoObs', value);
+
+  String? get resevaindentidad => getField<String>('resevaindentidad');
+  set resevaindentidad(String? value) =>
+      setField<String>('resevaindentidad', value);
+
+  String? get referente => getField<String>('referente');
+  set referente(String? value) => setField<String>('referente', value);
+
+  String? get institucionCanalIngreso =>
+      getField<String>('institucionCanalIngreso');
+  set institucionCanalIngreso(String? value) =>
+      setField<String>('institucionCanalIngreso', value);
 }

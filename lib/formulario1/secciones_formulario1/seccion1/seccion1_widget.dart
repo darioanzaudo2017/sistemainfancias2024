@@ -1080,7 +1080,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                           letterSpacing: 0.0,
                                         ),
                                     hintText: 'Discapacidad',
-                                    searchHintText: 'Buscar barrio',
+                                    searchHintText: 'Seleccionar discapacidad',
                                     icon: Icon(
                                       Icons.keyboard_arrow_down_rounded,
                                       color: FlutterFlowTheme.of(context)
@@ -2206,8 +2206,17 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  if (widget.usuariorow?.spd ==
-                                      widget.rowexp?.spd)
+                                  if (() {
+                                    if (widget.usuariorol?.rolId == 3) {
+                                      return (widget.usuariorow?.spd ==
+                                          widget.rowexp?.spd);
+                                    } else if (widget.usuariorol?.rolId == 2) {
+                                      return (widget.usuariorow?.zonaUsuario ==
+                                          widget.rowexp?.zona);
+                                    } else {
+                                      return false;
+                                    }
+                                  }())
                                     FFButtonWidget(
                                       onPressed: () async {
                                         if (_model.formKey.currentState ==

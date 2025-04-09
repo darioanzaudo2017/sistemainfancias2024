@@ -3,6 +3,7 @@ import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_radio_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -21,10 +22,12 @@ class Caratula2Widget extends StatefulWidget {
     super.key,
     required this.usuario,
     required this.spd,
+    required this.usuriorol,
   });
 
   final UsuariosRow? usuario;
   final SpdRow? spd;
+  final VistaUsuariosRolesRow? usuriorol;
 
   static String routeName = 'caratula2';
   static String routePath = '/caratula2';
@@ -55,16 +58,9 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
     _model.textFieldedadTextController ??= TextEditingController();
     _model.textFieldedadFocusNode ??= FocusNode();
 
-    _model.textFieldespecificarTextController ??= TextEditingController();
-    _model.textFieldespecificarFocusNode ??= FocusNode();
-
-    _model.textFieldnumactuacionTextController ??= TextEditingController();
-    _model.textFieldnumactuacionFocusNode ??= FocusNode();
-
-    _model.textFieldprofesionalTextController ??= TextEditingController();
-    _model.textFieldprofesionalFocusNode ??= FocusNode();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {
+          _model.textFieldDNITextController?.text = '0';
+        }));
   }
 
   @override
@@ -419,112 +415,184 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(8.0, 0.0, 8.0, 0.0),
-                                              child: TextFormField(
-                                                controller: _model
-                                                    .textFieldDNITextController,
-                                                focusNode: _model
-                                                    .textFieldDNIFocusNode,
-                                                onChanged: (_) =>
-                                                    EasyDebounce.debounce(
-                                                  '_model.textFieldDNITextController',
-                                                  Duration(milliseconds: 2000),
-                                                  () => safeSetState(() {}),
-                                                ),
-                                                autofocus: true,
-                                                obscureText: false,
-                                                decoration: InputDecoration(
-                                                  labelText: 'DNI',
-                                                  labelStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Noto Sans JP',
-                                                            letterSpacing: 0.0,
-                                                          ),
-                                                  hintStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Noto Sans JP',
-                                                            letterSpacing: 0.0,
-                                                          ),
-                                                  enabledBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .alternate,
-                                                      width: 2.0,
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10.0),
-                                                  ),
-                                                  focusedBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                      width: 2.0,
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10.0),
-                                                  ),
-                                                  errorBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .error,
-                                                      width: 2.0,
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10.0),
-                                                  ),
-                                                  focusedErrorBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .error,
-                                                      width: 2.0,
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10.0),
-                                                  ),
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 10.0, 0.0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: [
+                                                  Text(
+                                                    'Tiene numero de DNI?',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily:
                                                               'Noto Sans JP',
                                                           letterSpacing: 0.0,
                                                         ),
-                                                maxLength: 8,
-                                                keyboardType:
-                                                    TextInputType.number,
-                                                validator: _model
-                                                    .textFieldDNITextControllerValidator
-                                                    .asValidator(context),
-                                                inputFormatters: [
-                                                  _model.textFieldDNIMask
+                                                  ),
+                                                  FlutterFlowRadioButton(
+                                                    options:
+                                                        ['Si', 'No'].toList(),
+                                                    onChanged: (val) =>
+                                                        safeSetState(() {}),
+                                                    controller: _model
+                                                            .radioButtonValueController ??=
+                                                        FormFieldController<
+                                                            String>(null),
+                                                    optionHeight: 32.0,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Noto Sans JP',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                    selectedTextStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  'Noto Sans JP',
+                                                              letterSpacing:
+                                                                  0.0,
+                                                            ),
+                                                    buttonPosition:
+                                                        RadioButtonPosition
+                                                            .left,
+                                                    direction: Axis.horizontal,
+                                                    radioButtonColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primary,
+                                                    inactiveRadioButtonColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .secondaryText,
+                                                    toggleable: false,
+                                                    horizontalAlignment:
+                                                        WrapAlignment.start,
+                                                    verticalAlignment:
+                                                        WrapCrossAlignment
+                                                            .start,
+                                                  ),
                                                 ],
                                               ),
                                             ),
+                                            if (_model.radioButtonValue == 'Si')
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        8.0, 0.0, 8.0, 0.0),
+                                                child: TextFormField(
+                                                  controller: _model
+                                                      .textFieldDNITextController,
+                                                  focusNode: _model
+                                                      .textFieldDNIFocusNode,
+                                                  onChanged: (_) =>
+                                                      EasyDebounce.debounce(
+                                                    '_model.textFieldDNITextController',
+                                                    Duration(
+                                                        milliseconds: 2000),
+                                                    () => safeSetState(() {}),
+                                                  ),
+                                                  autofocus: true,
+                                                  obscureText: false,
+                                                  decoration: InputDecoration(
+                                                    labelText: 'DNI',
+                                                    labelStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Noto Sans JP',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                    hintStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Noto Sans JP',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                    enabledBorder:
+                                                        OutlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .alternate,
+                                                        width: 2.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10.0),
+                                                    ),
+                                                    focusedBorder:
+                                                        OutlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        width: 2.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10.0),
+                                                    ),
+                                                    errorBorder:
+                                                        OutlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .error,
+                                                        width: 2.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10.0),
+                                                    ),
+                                                    focusedErrorBorder:
+                                                        OutlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .error,
+                                                        width: 2.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10.0),
+                                                    ),
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Noto Sans JP',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                  maxLength: 8,
+                                                  keyboardType:
+                                                      TextInputType.number,
+                                                  validator: _model
+                                                      .textFieldDNITextControllerValidator
+                                                      .asValidator(context),
+                                                  inputFormatters: [
+                                                    _model.textFieldDNIMask
+                                                  ],
+                                                ),
+                                              ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 0.0, 8.0, 0.0),
@@ -801,6 +869,381 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                             ),
                                             Align(
                                               alignment: AlignmentDirectional(
+                                                  0.0, 0.0),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Container(
+                                                    decoration: BoxDecoration(),
+                                                  ),
+                                                  Align(
+                                                    alignment:
+                                                        AlignmentDirectional(
+                                                            0.0, 0.0),
+                                                    child: Text(
+                                                      'Información de expediente',
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleLarge
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Noto Sans JP',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                    ),
+                                                  ),
+                                                  FutureBuilder<List<SpdRow>>(
+                                                    future:
+                                                        SpdTable().queryRows(
+                                                      queryFn: (q) => q,
+                                                    ),
+                                                    builder:
+                                                        (context, snapshot) {
+                                                      // Customize what your widget looks like when it's loading.
+                                                      if (!snapshot.hasData) {
+                                                        return Center(
+                                                          child: SizedBox(
+                                                            width: 50.0,
+                                                            height: 50.0,
+                                                            child:
+                                                                CircularProgressIndicator(
+                                                              valueColor:
+                                                                  AlwaysStoppedAnimation<
+                                                                      Color>(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        );
+                                                      }
+                                                      List<SpdRow>
+                                                          dropDownSpdRowList =
+                                                          snapshot.data!;
+
+                                                      return FlutterFlowDropDown<
+                                                          String>(
+                                                        controller: _model
+                                                                .dropDownValueController ??=
+                                                            FormFieldController<
+                                                                String>(
+                                                          _model.dropDownValue ??=
+                                                              widget
+                                                                  .usuario?.spd,
+                                                        ),
+                                                        options:
+                                                            dropDownSpdRowList
+                                                                .map((e) =>
+                                                                    e.nombrespd)
+                                                                .toList(),
+                                                        onChanged: (val) =>
+                                                            safeSetState(() =>
+                                                                _model.dropDownValue =
+                                                                    val),
+                                                        height: 40.0,
+                                                        searchHintTextStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Noto Sans JP',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                        searchTextStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Noto Sans JP',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                        textStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Noto Sans JP',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                        hintText: 'SPD',
+                                                        searchHintText:
+                                                            'Seleccionar SPD',
+                                                        icon: Icon(
+                                                          Icons
+                                                              .keyboard_arrow_down_rounded,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          size: 24.0,
+                                                        ),
+                                                        fillColor: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                        elevation: 2.0,
+                                                        borderColor:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        borderWidth: 0.0,
+                                                        borderRadius: 8.0,
+                                                        margin:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    12.0,
+                                                                    0.0,
+                                                                    12.0,
+                                                                    0.0),
+                                                        hidesUnderline: true,
+                                                        disabled: widget
+                                                                .usuriorol
+                                                                ?.rolId ==
+                                                            3,
+                                                        isOverButton: false,
+                                                        isSearchable: true,
+                                                        isMultiSelect: false,
+                                                      );
+                                                    },
+                                                  ),
+                                                  Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Align(
+                                                        alignment:
+                                                            AlignmentDirectional(
+                                                                -1.0, 0.0),
+                                                        child: Text(
+                                                          'Fecha de recepcion de la solicitud de intervencion',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .titleMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Noto Sans JP',
+                                                                fontSize: 15.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    8.0,
+                                                                    0.0,
+                                                                    8.0,
+                                                                    0.0),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Icon(
+                                                              Icons
+                                                                  .date_range_rounded,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryText,
+                                                              size: 24.0,
+                                                            ),
+                                                            Flexible(
+                                                              child: Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  dateTimeFormat(
+                                                                    "d/M/y",
+                                                                    _model
+                                                                        .datePicked2,
+                                                                    locale: FFLocalizations.of(
+                                                                            context)
+                                                                        .languageCode,
+                                                                  ),
+                                                                  'No tiene fecha seleccionada',
+                                                                ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Noto Sans JP',
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                            FFButtonWidget(
+                                                              onPressed:
+                                                                  () async {
+                                                                final _datePicked2Date =
+                                                                    await showDatePicker(
+                                                                  context:
+                                                                      context,
+                                                                  initialDate:
+                                                                      getCurrentTimestamp,
+                                                                  firstDate:
+                                                                      DateTime(
+                                                                          1900),
+                                                                  lastDate:
+                                                                      DateTime(
+                                                                          2050),
+                                                                  builder:
+                                                                      (context,
+                                                                          child) {
+                                                                    return wrapInMaterialDatePickerTheme(
+                                                                      context,
+                                                                      child!,
+                                                                      headerBackgroundColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .primary,
+                                                                      headerForegroundColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .info,
+                                                                      headerTextStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .headlineLarge
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Noto Sans JP',
+                                                                            fontSize:
+                                                                                32.0,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            fontWeight:
+                                                                                FontWeight.w600,
+                                                                          ),
+                                                                      pickerBackgroundColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .secondaryBackground,
+                                                                      pickerForegroundColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .primaryText,
+                                                                      selectedDateTimeBackgroundColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .primary,
+                                                                      selectedDateTimeForegroundColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .info,
+                                                                      actionButtonForegroundColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .primaryText,
+                                                                      iconSize:
+                                                                          24.0,
+                                                                    );
+                                                                  },
+                                                                );
+
+                                                                if (_datePicked2Date !=
+                                                                    null) {
+                                                                  safeSetState(
+                                                                      () {
+                                                                    _model.datePicked2 =
+                                                                        DateTime(
+                                                                      _datePicked2Date
+                                                                          .year,
+                                                                      _datePicked2Date
+                                                                          .month,
+                                                                      _datePicked2Date
+                                                                          .day,
+                                                                    );
+                                                                  });
+                                                                } else if (_model
+                                                                        .datePicked2 !=
+                                                                    null) {
+                                                                  safeSetState(
+                                                                      () {
+                                                                    _model.datePicked2 =
+                                                                        getCurrentTimestamp;
+                                                                  });
+                                                                }
+                                                              },
+                                                              text: 'Fecha',
+                                                              options:
+                                                                  FFButtonOptions(
+                                                                height: 40.0,
+                                                                padding: EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        24.0,
+                                                                        0.0,
+                                                                        24.0,
+                                                                        0.0),
+                                                                iconPadding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                                textStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Noto Sans JP',
+                                                                      color: Colors
+                                                                          .white,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                                elevation: 3.0,
+                                                                borderSide:
+                                                                    BorderSide(
+                                                                  color: Colors
+                                                                      .transparent,
+                                                                  width: 1.0,
+                                                                ),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            8.0),
+                                                              ),
+                                                            ),
+                                                            Text(
+                                                              '(presionar el boton fecha para agregar fecha)',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Noto Sans JP',
+                                                                    fontSize:
+                                                                        10.0,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                            ),
+                                                          ].divide(SizedBox(
+                                                              width: 10.0)),
+                                                        ),
+                                                      ),
+                                                    ].divide(
+                                                        SizedBox(height: 5.0)),
+                                                  ),
+                                                ].divide(
+                                                    SizedBox(height: 10.0)),
+                                              ),
+                                            ),
+                                            Align(
+                                              alignment: AlignmentDirectional(
                                                   1.0, 0.0),
                                               child: FFButtonWidget(
                                                 onPressed: () async {
@@ -857,6 +1300,29 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                   } else {
                                                     _model.dniok = true;
                                                     safeSetState(() {});
+                                                    await showDialog(
+                                                      context: context,
+                                                      builder:
+                                                          (alertDialogContext) {
+                                                        return WebViewAware(
+                                                          child: AlertDialog(
+                                                            title: Text(
+                                                                'El NNyA no tiene expediente'),
+                                                            content: Text(
+                                                                'Continuamos con la carga!!'),
+                                                            actions: [
+                                                              TextButton(
+                                                                onPressed: () =>
+                                                                    Navigator.pop(
+                                                                        alertDialogContext),
+                                                                child:
+                                                                    Text('Ok'),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        );
+                                                      },
+                                                    );
                                                     if (_model.formKey2
                                                                 .currentState ==
                                                             null ||
@@ -876,14 +1342,10 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                           .mayusculas(_model
                                                               .textFieldapellidoTextController
                                                               .text),
-                                                      'dni': _model
-                                                                      .textFieldDNITextController
+                                                      'dni': _model.textFieldDNITextController
                                                                       .text ==
                                                                   ''
-                                                          ? random_data
-                                                              .randomInteger(
-                                                                  9000000,
-                                                                  1000000000)
+                                                          ? 0
                                                           : int.tryParse(_model
                                                               .textFieldDNITextController
                                                               .text),
@@ -906,7 +1368,17 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                       'spd':
                                                           widget.usuario?.spd,
                                                       'estado': true,
+                                                      'zona': widget.spd?.zona,
                                                     });
+                                                    _model.spddrop =
+                                                        await SpdTable()
+                                                            .queryRows(
+                                                      queryFn: (q) =>
+                                                          q.eqOrNull(
+                                                        'nombrespd',
+                                                        _model.dropDownValue,
+                                                      ),
+                                                    );
                                                     _model.checkdnifuncionnnya =
                                                         await ExisteDNInnyaCall
                                                             .call(
@@ -958,39 +1430,18 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                             _model.crearexpnnya2
                                                                 ?.id,
                                                       });
-                                                      await NNyAExpGruTable()
-                                                          .update(
-                                                        data: {
-                                                          'idNNyA': _model
-                                                              .querynnyaexistente
-                                                              ?.firstOrNull
-                                                              ?.id,
-                                                        },
-                                                        matchingRows: (rows) =>
-                                                            rows.eqOrNull(
-                                                          'id',
-                                                          _model.crearexpgrupo3
-                                                              ?.id,
-                                                        ),
-                                                      );
-                                                      _model.apiResult42y20 =
-                                                          await CarpetaDelExpedienteCall
-                                                              .call(
-                                                        expediente: _model
-                                                            .crearexpnnya2
-                                                            ?.expediente,
-                                                        id: _model
-                                                            .crearexpnnya2?.id,
-                                                        fecha: _model
-                                                            .crearexpnnya2
-                                                            ?.fecha
-                                                            ?.toString(),
-                                                        nombresDNI:
-                                                            '${_model.crearexpnnya2?.nombres}, ${_model.crearexpnnya2?.apellidos}, DNI ${_model.crearexpnnya2?.dni?.toString()}',
-                                                        idcarpetaspd: widget
-                                                            .spd?.idcarpetaspd,
-                                                      );
-
+                                                      _model.expedientecreado =
+                                                          _model.crearexpnnya2
+                                                              ?.id;
+                                                      safeSetState(() {});
+                                                      _model.expedientecreado =
+                                                          _model.crearexpnnya2
+                                                              ?.id;
+                                                      safeSetState(() {});
+                                                      await Future.delayed(
+                                                          const Duration(
+                                                              milliseconds:
+                                                                  1500));
                                                       await ExpedienteTable()
                                                           .update(
                                                         data: {
@@ -999,7 +1450,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                                   .grupofmiliar3
                                                                   ?.id,
                                                           'expediente':
-                                                              '${widget.usuario?.spd}/${_model.crearexpnnya2?.id.toString()}/${dateTimeFormat(
+                                                              '${_model.dropDownValue}/${_model.crearexpnnya2?.id.toString()}/${dateTimeFormat(
                                                             "y",
                                                             getCurrentTimestamp,
                                                             locale: FFLocalizations
@@ -1010,6 +1461,17 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                               .querynnyaexistente
                                                               ?.firstOrNull
                                                               ?.id,
+                                                          'fecha': supaSerialize<
+                                                                  DateTime>(
+                                                              _model
+                                                                  .datePicked2),
+                                                          'spd': _model
+                                                              .dropDownValue,
+                                                          'estado': true,
+                                                          'zona': _model
+                                                              .spddrop
+                                                              ?.firstOrNull
+                                                              ?.zona,
                                                         },
                                                         matchingRows: (rows) =>
                                                             rows.eqOrNull(
@@ -1018,33 +1480,132 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                               ?.id,
                                                         ),
                                                       );
-                                                      await showDialog(
-                                                        context: context,
-                                                        builder:
-                                                            (alertDialogContext) {
-                                                          return WebViewAware(
-                                                            child: AlertDialog(
-                                                              title: Text(
-                                                                  'El NNyA no tiene expediente'),
-                                                              content: Text(
-                                                                  'Continuamos con la carga!!'),
-                                                              actions: [
-                                                                TextButton(
-                                                                  onPressed: () =>
-                                                                      Navigator.pop(
-                                                                          alertDialogContext),
-                                                                  child: Text(
-                                                                      'Ok'),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          );
-                                                        },
-                                                      );
-                                                      _model.expedientecreado =
+                                                      _model.vistaExpediente1 =
+                                                          await VistaExpedientesUltimoEstadoTable()
+                                                              .queryRows(
+                                                        queryFn: (q) =>
+                                                            q.eqOrNull(
+                                                          'id',
                                                           _model.crearexpnnya2
-                                                              ?.id;
-                                                      safeSetState(() {});
+                                                              ?.id,
+                                                        ),
+                                                      );
+                                                      _model.idcarptea1 =
+                                                          await ImpresionesExpedientesTable()
+                                                              .queryRows(
+                                                        queryFn: (q) =>
+                                                            q.eqOrNull(
+                                                          'id',
+                                                          _model.crearexpnnya2
+                                                              ?.id,
+                                                        ),
+                                                      );
+                                                      _model.spdseleccionado1 =
+                                                          await SpdTable()
+                                                              .queryRows(
+                                                        queryFn: (q) =>
+                                                            q.eqOrNull(
+                                                          'nombrespd',
+                                                          _model.dropDownValue,
+                                                        ),
+                                                      );
+                                                      _model.apiResult42y21 =
+                                                          await CarpetaDelExpedienteCall
+                                                              .call(
+                                                        expediente: _model
+                                                            .vistaExpediente1
+                                                            ?.firstOrNull
+                                                            ?.expediente,
+                                                        id: _model
+                                                            .crearexpnnya2?.id,
+                                                        fecha: _model
+                                                            .datePicked2
+                                                            ?.toString(),
+                                                        nombresDNI:
+                                                            '${_model.crearexpnnya2?.nombres}, ${_model.crearexpnnya2?.apellidos}, DNI ${_model.crearexpnnya2?.dni?.toString()}',
+                                                        idcarpetaspd: _model
+                                                            .spdseleccionado1
+                                                            ?.firstOrNull
+                                                            ?.idcarpetaspd,
+                                                      );
+
+                                                      if ((_model.apiResult42y21
+                                                              ?.succeeded ??
+                                                          true)) {
+                                                        await showDialog(
+                                                          context: context,
+                                                          builder:
+                                                              (alertDialogContext) {
+                                                            return WebViewAware(
+                                                              child:
+                                                                  AlertDialog(
+                                                                title: Text(
+                                                                    'Expediente Creado'),
+                                                                content: Text(
+                                                                    'Se creo correctamente el expediente!'),
+                                                                actions: [
+                                                                  TextButton(
+                                                                    onPressed: () =>
+                                                                        Navigator.pop(
+                                                                            alertDialogContext),
+                                                                    child: Text(
+                                                                        'Ok'),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            );
+                                                          },
+                                                        );
+
+                                                        context.pushNamed(
+                                                          IngresosWidget
+                                                              .routeName,
+                                                          queryParameters: {
+                                                            'idexp':
+                                                                serializeParam(
+                                                              _model
+                                                                  .crearexpnnya2
+                                                                  ?.id,
+                                                              ParamType.int,
+                                                            ),
+                                                            'idexpediente':
+                                                                serializeParam(
+                                                              _model
+                                                                  .vistaExpediente1
+                                                                  ?.firstOrNull,
+                                                              ParamType
+                                                                  .SupabaseRow,
+                                                            ),
+                                                            'usuariorow':
+                                                                serializeParam(
+                                                              widget.usuario,
+                                                              ParamType
+                                                                  .SupabaseRow,
+                                                            ),
+                                                            'idcarpeta':
+                                                                serializeParam(
+                                                              _model
+                                                                  .idcarptea1
+                                                                  ?.firstOrNull
+                                                                  ?.id
+                                                                  .toString(),
+                                                              ParamType.String,
+                                                            ),
+                                                            'spd':
+                                                                serializeParam(
+                                                              widget.spd,
+                                                              ParamType
+                                                                  .SupabaseRow,
+                                                            ),
+                                                            'usuariorol':
+                                                                serializeParam(
+                                                              widget.usuriorol,
+                                                              ParamType
+                                                                  .SupabaseRow,
+                                                            ),
+                                                          }.withoutNulls,
+                                                        );
+                                                      }
                                                     } else {
                                                       _model.crearNNyA2 =
                                                           await NNyATable()
@@ -1057,8 +1618,13 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                             .mayusculas(_model
                                                                 .textFieldapellidoTextController
                                                                 .text),
-                                                        'DNI': _model
-                                                            .crearexpnnya2?.dni,
+                                                        'DNI': _model.textFieldDNITextController
+                                                                        .text ==
+                                                                    ''
+                                                            ? 0
+                                                            : int.tryParse(_model
+                                                                .textFieldDNITextController
+                                                                .text),
                                                         'edad': int.tryParse(_model
                                                             .textFieldedadTextController
                                                             .text),
@@ -1103,11 +1669,85 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                               ?.id,
                                                         ),
                                                       );
+                                                      _model.expedientecreado =
+                                                          _model.crearexpnnya2
+                                                              ?.id;
+                                                      safeSetState(() {});
+                                                      await Future.delayed(
+                                                          const Duration(
+                                                              milliseconds:
+                                                                  1500));
+                                                      await ExpedienteTable()
+                                                          .update(
+                                                        data: {
+                                                          'idgrupofamiliar':
+                                                              _model
+                                                                  .grupofmiliar2
+                                                                  ?.id,
+                                                          'expediente':
+                                                              '${_model.dropDownValue}/${_model.crearexpnnya2?.id.toString()}/${dateTimeFormat(
+                                                            "y",
+                                                            getCurrentTimestamp,
+                                                            locale: FFLocalizations
+                                                                    .of(context)
+                                                                .languageCode,
+                                                          )}',
+                                                          'idNNyA': _model
+                                                              .crearNNyA2?.id,
+                                                          'fecha': supaSerialize<
+                                                                  DateTime>(
+                                                              _model
+                                                                  .datePicked2),
+                                                          'spd': _model
+                                                              .dropDownValue,
+                                                          'estado': true,
+                                                          'zona': _model
+                                                              .spddrop
+                                                              ?.firstOrNull
+                                                              ?.zona,
+                                                        },
+                                                        matchingRows: (rows) =>
+                                                            rows.eqOrNull(
+                                                          'id',
+                                                          _model.crearexpnnya2
+                                                              ?.id,
+                                                        ),
+                                                      );
+                                                      _model.vistaExpediente =
+                                                          await VistaExpedientesUltimoEstadoTable()
+                                                              .queryRows(
+                                                        queryFn: (q) =>
+                                                            q.eqOrNull(
+                                                          'id',
+                                                          _model.crearexpnnya2
+                                                              ?.id,
+                                                        ),
+                                                      );
+                                                      _model.idcarptea =
+                                                          await ImpresionesExpedientesTable()
+                                                              .queryRows(
+                                                        queryFn: (q) =>
+                                                            q.eqOrNull(
+                                                          'id',
+                                                          _model.crearexpnnya2
+                                                              ?.id,
+                                                        ),
+                                                      );
+                                                      _model.spdseleccionado =
+                                                          await SpdTable()
+                                                              .queryRows(
+                                                        queryFn: (q) =>
+                                                            q.eqOrNull(
+                                                          'nombrespd',
+                                                          _model.dropDownValue,
+                                                        ),
+                                                      );
                                                       _model.apiResult42y2 =
                                                           await CarpetaDelExpedienteCall
                                                               .call(
                                                         expediente: _model
-                                                            .crearexpnnya2
+                                                            .vistaExpediente
+                                                            ?.firstOrNull
                                                             ?.expediente,
                                                         id: _model
                                                             .crearexpnnya2?.id,
@@ -1117,62 +1757,89 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                             ?.toString(),
                                                         nombresDNI:
                                                             '${_model.crearexpnnya2?.nombres}, ${_model.crearexpnnya2?.apellidos}, DNI ${_model.crearexpnnya2?.dni?.toString()}',
-                                                        idcarpetaspd: widget
-                                                            .spd?.idcarpetaspd,
+                                                        idcarpetaspd: _model
+                                                            .spdseleccionado
+                                                            ?.firstOrNull
+                                                            ?.idcarpetaspd,
                                                       );
 
-                                                      await ExpedienteTable()
-                                                          .update(
-                                                        data: {
-                                                          'idgrupofamiliar':
+                                                      if ((_model.apiResult42y2
+                                                              ?.succeeded ??
+                                                          true)) {
+                                                        await showDialog(
+                                                          context: context,
+                                                          builder:
+                                                              (alertDialogContext) {
+                                                            return WebViewAware(
+                                                              child:
+                                                                  AlertDialog(
+                                                                title: Text(
+                                                                    'Expediente Creado'),
+                                                                content: Text(
+                                                                    'Se creo correctamente el expediente!'),
+                                                                actions: [
+                                                                  TextButton(
+                                                                    onPressed: () =>
+                                                                        Navigator.pop(
+                                                                            alertDialogContext),
+                                                                    child: Text(
+                                                                        'Ok'),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            );
+                                                          },
+                                                        );
+
+                                                        context.pushNamed(
+                                                          IngresosWidget
+                                                              .routeName,
+                                                          queryParameters: {
+                                                            'idexp':
+                                                                serializeParam(
                                                               _model
-                                                                  .grupofmiliar2
+                                                                  .crearexpnnya2
                                                                   ?.id,
-                                                          'expediente':
-                                                              '${widget.usuario?.spd}/${_model.crearexpnnya2?.id.toString()}/${dateTimeFormat(
-                                                            "y",
-                                                            getCurrentTimestamp,
-                                                            locale: FFLocalizations
-                                                                    .of(context)
-                                                                .languageCode,
-                                                          )}',
-                                                          'idNNyA': _model
-                                                              .crearNNyA2?.id,
-                                                        },
-                                                        matchingRows: (rows) =>
-                                                            rows.eqOrNull(
-                                                          'id',
-                                                          _model.crearexpnnya2
-                                                              ?.id,
-                                                        ),
-                                                      );
-                                                      await showDialog(
-                                                        context: context,
-                                                        builder:
-                                                            (alertDialogContext) {
-                                                          return WebViewAware(
-                                                            child: AlertDialog(
-                                                              title: Text(
-                                                                  'El NNyA no tiene expediente'),
-                                                              content: Text(
-                                                                  'Continuamos con la carga!!'),
-                                                              actions: [
-                                                                TextButton(
-                                                                  onPressed: () =>
-                                                                      Navigator.pop(
-                                                                          alertDialogContext),
-                                                                  child: Text(
-                                                                      'Ok'),
-                                                                ),
-                                                              ],
+                                                              ParamType.int,
                                                             ),
-                                                          );
-                                                        },
-                                                      );
-                                                      _model.expedientecreado =
-                                                          _model.crearexpnnya2
-                                                              ?.id;
-                                                      safeSetState(() {});
+                                                            'idexpediente':
+                                                                serializeParam(
+                                                              _model
+                                                                  .vistaExpediente
+                                                                  ?.firstOrNull,
+                                                              ParamType
+                                                                  .SupabaseRow,
+                                                            ),
+                                                            'usuariorow':
+                                                                serializeParam(
+                                                              widget.usuario,
+                                                              ParamType
+                                                                  .SupabaseRow,
+                                                            ),
+                                                            'idcarpeta':
+                                                                serializeParam(
+                                                              _model
+                                                                  .idcarptea
+                                                                  ?.firstOrNull
+                                                                  ?.id
+                                                                  .toString(),
+                                                              ParamType.String,
+                                                            ),
+                                                            'spd':
+                                                                serializeParam(
+                                                              widget.spd,
+                                                              ParamType
+                                                                  .SupabaseRow,
+                                                            ),
+                                                            'usuariorol':
+                                                                serializeParam(
+                                                              widget.usuriorol,
+                                                              ParamType
+                                                                  .SupabaseRow,
+                                                            ),
+                                                          }.withoutNulls,
+                                                        );
+                                                      }
                                                     }
                                                   }
 
@@ -1225,1009 +1892,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                     child: Form(
                                       key: _model.formKey1,
                                       autovalidateMode: AutovalidateMode.always,
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Container(
-                                            decoration: BoxDecoration(),
-                                          ),
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(0.0, 0.0),
-                                            child: Text(
-                                              'Información de expediente',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .titleLarge
-                                                  .override(
-                                                    fontFamily: 'Noto Sans JP',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    letterSpacing: 0.0,
-                                                  ),
-                                            ),
-                                          ),
-                                          FutureBuilder<List<SpdRow>>(
-                                            future: SpdTable().queryRows(
-                                              queryFn: (q) => q,
-                                            ),
-                                            builder: (context, snapshot) {
-                                              // Customize what your widget looks like when it's loading.
-                                              if (!snapshot.hasData) {
-                                                return Center(
-                                                  child: SizedBox(
-                                                    width: 50.0,
-                                                    height: 50.0,
-                                                    child:
-                                                        CircularProgressIndicator(
-                                                      valueColor:
-                                                          AlwaysStoppedAnimation<
-                                                              Color>(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primary,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                );
-                                              }
-                                              List<SpdRow> dropDownSpdRowList =
-                                                  snapshot.data!;
-
-                                              return FlutterFlowDropDown<
-                                                  String>(
-                                                controller: _model
-                                                        .dropDownValueController ??=
-                                                    FormFieldController<String>(
-                                                  _model.dropDownValue ??=
-                                                      widget.usuario?.spd,
-                                                ),
-                                                options: dropDownSpdRowList
-                                                    .map((e) => e.nombrespd)
-                                                    .toList(),
-                                                onChanged: (val) =>
-                                                    safeSetState(() => _model
-                                                        .dropDownValue = val),
-                                                height: 40.0,
-                                                searchHintTextStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Noto Sans JP',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                searchTextStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Noto Sans JP',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Noto Sans JP',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                hintText: 'SPD',
-                                                searchHintText: 'Buscar',
-                                                icon: Icon(
-                                                  Icons
-                                                      .keyboard_arrow_down_rounded,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryText,
-                                                  size: 24.0,
-                                                ),
-                                                fillColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                elevation: 2.0,
-                                                borderColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                borderWidth: 0.0,
-                                                borderRadius: 8.0,
-                                                margin: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        12.0, 0.0, 12.0, 0.0),
-                                                hidesUnderline: true,
-                                                disabled: currentUserEmail !=
-                                                    'darioanzaudo@gmail.com',
-                                                isOverButton: false,
-                                                isSearchable: true,
-                                                isMultiSelect: false,
-                                              );
-                                            },
-                                          ),
-                                          Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    -1.0, 0.0),
-                                                child: Text(
-                                                  'Fecha de recepcion de la solicitud de intervencion',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .titleMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Noto Sans JP',
-                                                        fontSize: 15.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        8.0, 0.0, 8.0, 0.0),
-                                                child: Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.start,
-                                                  children: [
-                                                    Icon(
-                                                      Icons.date_range_rounded,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryText,
-                                                      size: 24.0,
-                                                    ),
-                                                    Flexible(
-                                                      child: Text(
-                                                        valueOrDefault<String>(
-                                                          dateTimeFormat(
-                                                            "d/M/y",
-                                                            _model.datePicked2,
-                                                            locale: FFLocalizations
-                                                                    .of(context)
-                                                                .languageCode,
-                                                          ),
-                                                          'No tiene fecha seleccionada',
-                                                        ),
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Noto Sans JP',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                      ),
-                                                    ),
-                                                    FFButtonWidget(
-                                                      onPressed: () async {
-                                                        final _datePicked2Date =
-                                                            await showDatePicker(
-                                                          context: context,
-                                                          initialDate:
-                                                              getCurrentTimestamp,
-                                                          firstDate:
-                                                              DateTime(1900),
-                                                          lastDate:
-                                                              DateTime(2050),
-                                                          builder:
-                                                              (context, child) {
-                                                            return wrapInMaterialDatePickerTheme(
-                                                              context,
-                                                              child!,
-                                                              headerBackgroundColor:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primary,
-                                                              headerForegroundColor:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .info,
-                                                              headerTextStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .headlineLarge
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Noto Sans JP',
-                                                                        fontSize:
-                                                                            32.0,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                        fontWeight:
-                                                                            FontWeight.w600,
-                                                                      ),
-                                                              pickerBackgroundColor:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                              pickerForegroundColor:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                              selectedDateTimeBackgroundColor:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primary,
-                                                              selectedDateTimeForegroundColor:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .info,
-                                                              actionButtonForegroundColor:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                              iconSize: 24.0,
-                                                            );
-                                                          },
-                                                        );
-
-                                                        if (_datePicked2Date !=
-                                                            null) {
-                                                          safeSetState(() {
-                                                            _model.datePicked2 =
-                                                                DateTime(
-                                                              _datePicked2Date
-                                                                  .year,
-                                                              _datePicked2Date
-                                                                  .month,
-                                                              _datePicked2Date
-                                                                  .day,
-                                                            );
-                                                          });
-                                                        } else if (_model
-                                                                .datePicked2 !=
-                                                            null) {
-                                                          safeSetState(() {
-                                                            _model.datePicked2 =
-                                                                getCurrentTimestamp;
-                                                          });
-                                                        }
-                                                      },
-                                                      text: 'Fecha',
-                                                      options: FFButtonOptions(
-                                                        height: 40.0,
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    24.0,
-                                                                    0.0,
-                                                                    24.0,
-                                                                    0.0),
-                                                        iconPadding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        textStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Noto Sans JP',
-                                                                  color: Colors
-                                                                      .white,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                        elevation: 3.0,
-                                                        borderSide: BorderSide(
-                                                          color: Colors
-                                                              .transparent,
-                                                          width: 1.0,
-                                                        ),
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(8.0),
-                                                      ),
-                                                    ),
-                                                    Text(
-                                                      '(presionar el boton fecha para agregar fecha)',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Noto Sans JP',
-                                                            fontSize: 10.0,
-                                                            letterSpacing: 0.0,
-                                                          ),
-                                                    ),
-                                                  ].divide(
-                                                      SizedBox(width: 10.0)),
-                                                ),
-                                              ),
-                                            ].divide(SizedBox(height: 5.0)),
-                                          ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    8.0, 0.0, 0.0, 0.0),
-                                            child: FlutterFlowDropDown<String>(
-                                              controller: _model
-                                                      .dropDowncanaldeingresoValueController ??=
-                                                  FormFieldController<String>(
-                                                      null),
-                                              options: [
-                                                'Demanda espontanea',
-                                                'Oficio Judicial',
-                                                'Derivación de otra Institución/Organismo/Servicio'
-                                              ],
-                                              onChanged: (val) => safeSetState(
-                                                  () => _model
-                                                          .dropDowncanaldeingresoValue =
-                                                      val),
-                                              width: 300.0,
-                                              height: 56.0,
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Noto Sans JP',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                              hintText: ' CANAL DE INGRESO',
-                                              icon: Icon(
-                                                Icons
-                                                    .keyboard_arrow_down_rounded,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                size: 24.0,
-                                              ),
-                                              fillColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                              elevation: 2.0,
-                                              borderColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .alternate,
-                                              borderWidth: 2.0,
-                                              borderRadius: 8.0,
-                                              margin: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      16.0, 4.0, 16.0, 4.0),
-                                              hidesUnderline: true,
-                                              isOverButton: true,
-                                              isSearchable: false,
-                                              isMultiSelect: false,
-                                              labelText: '',
-                                              labelTextStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Noto Sans JP',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                          ),
-                                          Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        8.0, 0.0, 8.0, 0.0),
-                                                child: TextFormField(
-                                                  controller: _model
-                                                      .textFieldespecificarTextController,
-                                                  focusNode: _model
-                                                      .textFieldespecificarFocusNode,
-                                                  autofocus: true,
-                                                  obscureText: false,
-                                                  decoration: InputDecoration(
-                                                    labelText:
-                                                        'Especificar el solicitante',
-                                                    labelStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Noto Sans JP',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .tertiary,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                    hintText:
-                                                        'Especificar el solicitante',
-                                                    hintStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Noto Sans JP',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .tertiary,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                    enabledBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .alternate,
-                                                        width: 2.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              10.0),
-                                                    ),
-                                                    focusedBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        width: 2.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              10.0),
-                                                    ),
-                                                    errorBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .error,
-                                                        width: 2.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              10.0),
-                                                    ),
-                                                    focusedErrorBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .error,
-                                                        width: 2.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              10.0),
-                                                    ),
-                                                  ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Noto Sans JP',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .tertiary,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                  validator: _model
-                                                      .textFieldespecificarTextControllerValidator
-                                                      .asValidator(context),
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        8.0, 0.0, 8.0, 0.0),
-                                                child: TextFormField(
-                                                  controller: _model
-                                                      .textFieldnumactuacionTextController,
-                                                  focusNode: _model
-                                                      .textFieldnumactuacionFocusNode,
-                                                  autofocus: true,
-                                                  obscureText: false,
-                                                  decoration: InputDecoration(
-                                                    labelText:
-                                                        'N° Actuación del Organismo',
-                                                    labelStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Noto Sans JP',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .tertiary,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                    hintStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Noto Sans JP',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                    enabledBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .alternate,
-                                                        width: 2.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              10.0),
-                                                    ),
-                                                    focusedBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        width: 2.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              10.0),
-                                                    ),
-                                                    errorBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .error,
-                                                        width: 2.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              10.0),
-                                                    ),
-                                                    focusedErrorBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .error,
-                                                        width: 2.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              10.0),
-                                                    ),
-                                                  ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Noto Sans JP',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                  validator: _model
-                                                      .textFieldnumactuacionTextControllerValidator
-                                                      .asValidator(context),
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        8.0, 0.0, 8.0, 0.0),
-                                                child: TextFormField(
-                                                  controller: _model
-                                                      .textFieldprofesionalTextController,
-                                                  focusNode: _model
-                                                      .textFieldprofesionalFocusNode,
-                                                  autofocus: true,
-                                                  obscureText: false,
-                                                  decoration: InputDecoration(
-                                                    labelText:
-                                                        'Profesional referente del Organismo que deriva',
-                                                    labelStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Noto Sans JP',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .tertiary,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                    hintStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Noto Sans JP',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                    enabledBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .alternate,
-                                                        width: 2.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              10.0),
-                                                    ),
-                                                    focusedBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        width: 2.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              10.0),
-                                                    ),
-                                                    errorBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .error,
-                                                        width: 2.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              10.0),
-                                                    ),
-                                                    focusedErrorBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .error,
-                                                        width: 2.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              10.0),
-                                                    ),
-                                                  ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Noto Sans JP',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                  validator: _model
-                                                      .textFieldprofesionalTextControllerValidator
-                                                      .asValidator(context),
-                                                ),
-                                              ),
-                                            ]
-                                                .divide(SizedBox(height: 10.0))
-                                                .around(SizedBox(height: 10.0)),
-                                          ),
-                                          Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              FFButtonWidget(
-                                                onPressed: () async {
-                                                  if (_model.formKey1
-                                                              .currentState ==
-                                                          null ||
-                                                      !_model.formKey1
-                                                          .currentState!
-                                                          .validate()) {
-                                                    return;
-                                                  }
-                                                  if (_model.datePicked2 ==
-                                                      null) {
-                                                    final _datePicked2Date =
-                                                        await showDatePicker(
-                                                      context: context,
-                                                      initialDate:
-                                                          getCurrentTimestamp,
-                                                      firstDate:
-                                                          getCurrentTimestamp,
-                                                      lastDate: DateTime(2050),
-                                                      builder:
-                                                          (context, child) {
-                                                        return wrapInMaterialDatePickerTheme(
-                                                          context,
-                                                          child!,
-                                                          headerBackgroundColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .primary,
-                                                          headerForegroundColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .info,
-                                                          headerTextStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .headlineLarge
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Noto Sans JP',
-                                                                    fontSize:
-                                                                        32.0,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                  ),
-                                                          pickerBackgroundColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .secondaryBackground,
-                                                          pickerForegroundColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .primaryText,
-                                                          selectedDateTimeBackgroundColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .primary,
-                                                          selectedDateTimeForegroundColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .info,
-                                                          actionButtonForegroundColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .primaryText,
-                                                          iconSize: 24.0,
-                                                        );
-                                                      },
-                                                    );
-
-                                                    if (_datePicked2Date !=
-                                                        null) {
-                                                      safeSetState(() {
-                                                        _model.datePicked2 =
-                                                            DateTime(
-                                                          _datePicked2Date.year,
-                                                          _datePicked2Date
-                                                              .month,
-                                                          _datePicked2Date.day,
-                                                        );
-                                                      });
-                                                    } else if (_model
-                                                            .datePicked2 !=
-                                                        null) {
-                                                      safeSetState(() {
-                                                        _model.datePicked2 =
-                                                            getCurrentTimestamp;
-                                                      });
-                                                    }
-                                                    return;
-                                                  }
-                                                  if (_model
-                                                          .dropDowncanaldeingresoValue ==
-                                                      null) {
-                                                    await showDialog(
-                                                      context: context,
-                                                      builder:
-                                                          (alertDialogContext) {
-                                                        return WebViewAware(
-                                                          child: AlertDialog(
-                                                            title: Text(
-                                                                'Campo obligatorio'),
-                                                            content: Text(
-                                                                'El Canal de Ingreso de la demanda es obligatorio!!'),
-                                                            actions: [
-                                                              TextButton(
-                                                                onPressed: () =>
-                                                                    Navigator.pop(
-                                                                        alertDialogContext),
-                                                                child:
-                                                                    Text('Ok'),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                        );
-                                                      },
-                                                    );
-                                                    return;
-                                                  }
-                                                  await ExpedienteTable()
-                                                      .update(
-                                                    data: {
-                                                      'fecha': supaSerialize<
-                                                              DateTime>(
-                                                          _model.datePicked2),
-                                                      'nombres': functions
-                                                          .mayusculas(_model
-                                                              .textFieldnombresTextController
-                                                              .text),
-                                                      'apellidos': functions
-                                                          .mayusculas(_model
-                                                              .textFieldapellidoTextController
-                                                              .text),
-                                                      'expediente':
-                                                          '${widget.usuario?.spd}/${_model.crearexpnnya2?.id.toString()}/${dateTimeFormat(
-                                                        "y",
-                                                        getCurrentTimestamp,
-                                                        locale:
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .languageCode,
-                                                      )}',
-                                                      'spd':
-                                                          _model.dropDownValue,
-                                                      'canalIngr': _model
-                                                          .dropDowncanaldeingresoValue,
-                                                      'epecificar': _model
-                                                          .textFieldespecificarTextController
-                                                          .text,
-                                                      'actuacion': _model
-                                                          .textFieldnumactuacionTextController
-                                                          .text,
-                                                      'profesional': _model
-                                                          .textFieldprofesionalTextController
-                                                          .text,
-                                                      'fechaNac': supaSerialize<
-                                                              DateTime>(
-                                                          _model.datePicked1),
-                                                      'edad': int.tryParse(_model
-                                                          .textFieldedadTextController
-                                                          .text),
-                                                      'estado': true,
-                                                      'iduser': currentUserUid,
-                                                    },
-                                                    matchingRows: (rows) =>
-                                                        rows.eqOrNull(
-                                                      'id',
-                                                      _model.crearexpnnya2?.id,
-                                                    ),
-                                                  );
-                                                  await showDialog(
-                                                    context: context,
-                                                    builder:
-                                                        (alertDialogContext) {
-                                                      return WebViewAware(
-                                                        child: AlertDialog(
-                                                          title: Text(
-                                                              'Expediente Creado'),
-                                                          content: Text(
-                                                              'Se creo correctamente el expediente!'),
-                                                          actions: [
-                                                            TextButton(
-                                                              onPressed: () =>
-                                                                  Navigator.pop(
-                                                                      alertDialogContext),
-                                                              child: Text('Ok'),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      );
-                                                    },
-                                                  );
-                                                  _model.vistaExpediente =
-                                                      await VistaExpedientesUltimoEstadoTable()
-                                                          .queryRows(
-                                                    queryFn: (q) => q.eqOrNull(
-                                                      'id',
-                                                      _model.crearexpnnya2?.id,
-                                                    ),
-                                                  );
-                                                  _model.idcarptea =
-                                                      await ImpresionesExpedientesTable()
-                                                          .queryRows(
-                                                    queryFn: (q) => q.eqOrNull(
-                                                      'id',
-                                                      _model.crearexpnnya2?.id,
-                                                    ),
-                                                  );
-
-                                                  context.pushNamed(
-                                                    IngresosWidget.routeName,
-                                                    queryParameters: {
-                                                      'idexp': serializeParam(
-                                                        _model
-                                                            .crearexpnnya2?.id,
-                                                        ParamType.int,
-                                                      ),
-                                                      'idexpediente':
-                                                          serializeParam(
-                                                        _model.vistaExpediente
-                                                            ?.firstOrNull,
-                                                        ParamType.SupabaseRow,
-                                                      ),
-                                                      'usuariorow':
-                                                          serializeParam(
-                                                        widget.usuario,
-                                                        ParamType.SupabaseRow,
-                                                      ),
-                                                      'idcarpeta':
-                                                          serializeParam(
-                                                        _model
-                                                            .idcarptea
-                                                            ?.firstOrNull
-                                                            ?.idcarpeta,
-                                                        ParamType.String,
-                                                      ),
-                                                      'spd': serializeParam(
-                                                        widget.spd,
-                                                        ParamType.SupabaseRow,
-                                                      ),
-                                                    }.withoutNulls,
-                                                  );
-
-                                                  safeSetState(() {});
-                                                },
-                                                text: 'Guardar',
-                                                icon: Icon(
-                                                  Icons.save,
-                                                  size: 15.0,
-                                                ),
-                                                options: FFButtonOptions(
-                                                  width: 250.0,
-                                                  height: 40.0,
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          24.0, 0.0, 24.0, 0.0),
-                                                  iconPadding:
-                                                      EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 0.0),
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .success,
-                                                  textStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall
-                                                          .override(
-                                                            fontFamily:
-                                                                'Noto Sans JP',
-                                                            color: Colors.white,
-                                                            letterSpacing: 0.0,
-                                                          ),
-                                                  elevation: 2.0,
-                                                  borderSide: BorderSide(
-                                                    color: Colors.transparent,
-                                                    width: 1.0,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          20.0),
-                                                  hoverElevation: 4.0,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ].divide(SizedBox(height: 10.0)),
-                                      ),
+                                      child: Container(),
                                     ),
                                   ),
                               ]

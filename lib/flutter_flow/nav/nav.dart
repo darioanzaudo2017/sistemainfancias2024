@@ -152,28 +152,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: EntrevistasWidget.routeName,
-          path: EntrevistasWidget.routePath,
-          builder: (context, params) => EntrevistasWidget(
-            ingresorow: params.getParam(
-              'ingresorow',
-              ParamType.int,
-            ),
-            rowexp: params.getParam<VistaExpedientesUltimoEstadoRow>(
-              'rowexp',
-              ParamType.SupabaseRow,
-            ),
-            usuariorow: params.getParam<UsuariosRow>(
-              'usuariorow',
-              ParamType.SupabaseRow,
-            ),
-            usuariorol: params.getParam<VistaUsuariosRolesRow>(
-              'usuariorol',
-              ParamType.SupabaseRow,
-            ),
-          ),
-        ),
-        FFRoute(
           name: DefiniciondemedidasWidget.routeName,
           path: DefiniciondemedidasWidget.routePath,
           builder: (context, params) => DefiniciondemedidasWidget(
@@ -191,6 +169,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             ),
             usuariosrol: params.getParam<VistaUsuariosRolesRow>(
               'usuariosrol',
+              ParamType.SupabaseRow,
+            ),
+            spd: params.getParam<SpdRow>(
+              'spd',
               ParamType.SupabaseRow,
             ),
           ),
@@ -253,6 +235,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'usuariorol',
               ParamType.SupabaseRow,
             ),
+            spd: params.getParam<SpdRow>(
+              'spd',
+              ParamType.SupabaseRow,
+            ),
           ),
         ),
         FFRoute(
@@ -273,6 +259,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             ),
             usuariorol: params.getParam<VistaUsuariosRolesRow>(
               'usuariorol',
+              ParamType.SupabaseRow,
+            ),
+            spdrow: params.getParam<SpdRow>(
+              'spdrow',
               ParamType.SupabaseRow,
             ),
           ),
@@ -337,6 +327,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             ),
             spd: params.getParam<SpdRow>(
               'spd',
+              ParamType.SupabaseRow,
+            ),
+            usuriorol: params.getParam<VistaUsuariosRolesRow>(
+              'usuriorol',
               ParamType.SupabaseRow,
             ),
           ),
@@ -414,7 +408,42 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'usuariorol',
               ParamType.SupabaseRow,
             ),
+            spd: params.getParam<SpdRow>(
+              'spd',
+              ParamType.SupabaseRow,
+            ),
           ),
+        ),
+        FFRoute(
+          name: EntrevistasCopyWidget.routeName,
+          path: EntrevistasCopyWidget.routePath,
+          builder: (context, params) => EntrevistasCopyWidget(
+            ingresorow: params.getParam(
+              'ingresorow',
+              ParamType.int,
+            ),
+            rowexp: params.getParam<VistaExpedientesUltimoEstadoRow>(
+              'rowexp',
+              ParamType.SupabaseRow,
+            ),
+            usuariorow: params.getParam<UsuariosRow>(
+              'usuariorow',
+              ParamType.SupabaseRow,
+            ),
+            usuariorol: params.getParam<VistaUsuariosRolesRow>(
+              'usuariorol',
+              ParamType.SupabaseRow,
+            ),
+            spd: params.getParam<SpdRow>(
+              'spd',
+              ParamType.SupabaseRow,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: ExpedienterlsWidget.routeName,
+          path: ExpedienterlsWidget.routePath,
+          builder: (context, params) => ExpedienterlsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

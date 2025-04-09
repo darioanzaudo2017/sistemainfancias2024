@@ -31,7 +31,6 @@ class Seccion2Model extends FlutterFlowModel<Seccion2Widget> {
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode5;
   TextEditingController? textController5;
-  final textFieldMask5 = MaskTextInputFormatter(mask: '##########');
   String? Function(BuildContext, String?)? textController5Validator;
   // State field(s) for TextFieldsolicitante widget.
   FocusNode? textFieldsolicitanteFocusNode;

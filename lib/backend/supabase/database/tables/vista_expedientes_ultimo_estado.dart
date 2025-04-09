@@ -106,4 +106,7 @@ class VistaExpedientesUltimoEstadoRow extends SupabaseDataRow {
 
   int? get DNI => getField<int>('DNI');
   set DNI(int? value) => setField<int>('DNI', value);
+
+  int? get zona => getField<int>('Zona');
+  set zona(int? value) => setField<int>('Zona', value);
 }

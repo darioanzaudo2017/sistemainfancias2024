@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "SistemaInfancias2024" "\0"
+            VALUE "CompanyName", "prueba clonacion sistema de infancias" "\0"
             VALUE "FileDescription", "A new Flutter project." "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "SistemaInfancias2024" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2024 SistemaInfancias2024. All rights reserved." "\0"
-            VALUE "OriginalFilename", "sistema_infancias2024.exe" "\0"
-            VALUE "ProductName", "SistemaInfancias2024" "\0"
+            VALUE "InternalName", "prueba clonacion sistema de infancias" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2024 prueba clonacion sistema de infancias. All rights reserved." "\0"
+            VALUE "OriginalFilename", "prueba_clonacion_sistema_de_infancias.exe" "\0"
+            VALUE "ProductName", "prueba clonacion sistema de infancias" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

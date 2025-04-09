@@ -23,8 +23,8 @@ class IngresosRow extends SupabaseDataRow {
   bool? get form1 => getField<bool>('form1');
   set form1(bool? value) => setField<bool>('form1', value);
 
-  bool? get form2 => getField<bool>('Form2');
-  set form2(bool? value) => setField<bool>('Form2', value);
+  bool? get ampliacion => getField<bool>('Ampliacion');
+  set ampliacion(bool? value) => setField<bool>('Ampliacion', value);
 
   bool? get form3 => getField<bool>('Form3');
   set form3(bool? value) => setField<bool>('Form3', value);
@@ -84,8 +84,9 @@ class IngresosRow extends SupabaseDataRow {
   bool? get form1completo => getField<bool>('form1completo');
   set form1completo(bool? value) => setField<bool>('form1completo', value);
 
-  bool? get form2completo => getField<bool>('form2completo');
-  set form2completo(bool? value) => setField<bool>('form2completo', value);
+  bool? get ampliacioncompleto => getField<bool>('Ampliacioncompleto');
+  set ampliacioncompleto(bool? value) =>
+      setField<bool>('Ampliacioncompleto', value);
 
   bool? get form3completo => getField<bool>('form3completo');
   set form3completo(bool? value) => setField<bool>('form3completo', value);

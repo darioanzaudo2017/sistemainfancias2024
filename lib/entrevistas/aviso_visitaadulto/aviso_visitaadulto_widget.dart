@@ -1,6 +1,5 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -95,7 +94,6 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
             ),
             child: Container(
               width: MediaQuery.sizeOf(context).width * 4.5,
-              height: 633.0,
               constraints: BoxConstraints(
                 maxWidth: 600.0,
               ),
@@ -116,50 +114,9 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Align(
-                              alignment: AlignmentDirectional(0.0, -1.0),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    30.0, 0.0, 0.0, 0.0),
-                                child: Text(
-                                  'AVISO DE CONCURRENCIA AL DOMICILIO',
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .override(
-                                        fontFamily: 'Noto Sans JP',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                ),
-                              ),
-                            ),
-                            Align(
-                              alignment: AlignmentDirectional(1.0, 0.0),
-                              child: FlutterFlowIconButton(
-                                borderColor: Colors.transparent,
-                                borderRadius: 20.0,
-                                borderWidth: 1.0,
-                                buttonSize: 46.0,
-                                icon: Icon(
-                                  Icons.cancel_outlined,
-                                  color: FlutterFlowTheme.of(context).error,
-                                  size: 24.0,
-                                ),
-                                onPressed: () async {
-                                  Navigator.pop(context);
-                                },
-                              ),
-                            ),
-                          ],
-                        ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
@@ -479,7 +436,7 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                                     await AvisoVisitaAdultoCall.call(
                                   fechadoc: dateTimeFormat(
                                     "d/M/y",
-                                    _model.datePicked,
+                                    getCurrentTimestamp,
                                     locale: FFLocalizations.of(context)
                                         .languageCode,
                                   ),
@@ -494,6 +451,12 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                                   idingreso: widget.rowingreso?.id,
                                   iddoc: containerAvisovisitaadultosRow?.id
                                       .toString(),
+                                  fecha: dateTimeFormat(
+                                    "d/M/y",
+                                    _model.datePicked,
+                                    locale: FFLocalizations.of(context)
+                                        .languageCode,
+                                  ),
                                 );
 
                                 if ((_model.apiResultdnx?.succeeded ?? true)) {
@@ -553,6 +516,29 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                               ),
                             ),
                           ],
+                        ),
+                        FFButtonWidget(
+                          onPressed: () async {
+                            Navigator.pop(context);
+                          },
+                          text: 'Cerrar',
+                          options: FFButtonOptions(
+                            height: 40.0,
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                16.0, 0.0, 16.0, 0.0),
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color: FlutterFlowTheme.of(context).primary,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  fontFamily: 'Noto Sans JP',
+                                  color: Colors.white,
+                                  letterSpacing: 0.0,
+                                ),
+                            elevation: 0.0,
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
                         ),
                       ]
                           .divide(SizedBox(height: 10.0))

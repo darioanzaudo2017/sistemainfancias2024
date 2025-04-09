@@ -20,10 +20,10 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
   FocusNode? textFieldFocusNode;
   TextEditingController? textFieldTextController;
   String? Function(BuildContext, String?)? textFieldTextControllerValidator;
-  // Stores action output result for [Backend Call - API (busqueda expediente)] action in Button widget.
+  // Stores action output result for [Backend Call - API (busqueda expediente LISTA)] action in Button widget.
   ApiCallResponse? apiResultfvy;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
-  List<VistaExpedientesUltimoEstadoRow>? queryexp;
+  List<VistaExpedientesUltimoEstadoRow>? queryexpediente;
   // State field(s) for PaginatedDataTable widget.
   final paginatedDataTableController1 =
       FlutterFlowDataTableController<VistaExpedientesUltimoEstadoRow>();

@@ -72,10 +72,10 @@ class SenafModel extends FlutterFlowModel<SenafWidget> {
   TextEditingController? textFieldmotivorechazoTextController;
   String? Function(BuildContext, String?)?
       textFieldmotivorechazoTextControllerValidator;
+  Completer<List<Formulario9Row>>? requestCompleter2;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   Formulario9Row? form9;
   Completer<List<IngresosRow>>? requestCompleter1;
-  Completer<List<Formulario9Row>>? requestCompleter2;
   // Stores action output result for [Backend Call - API (Crear Caratula)] action in Button widget.
   ApiCallResponse? apiResultznwinfsenaf1;
   // Stores action output result for [Backend Call - API (Crear Caratula)] action in Button widget.
@@ -118,21 +118,6 @@ class SenafModel extends FlutterFlowModel<SenafWidget> {
       radioButtoninscriptoagotadoValueController?.value;
   String? get radioButtoninscriptopermanenciafamiliaValue =>
       radioButtoninscriptopermanenciafamiliaValueController?.value;
-  Future waitForRequestCompleted1({
-    double minWait = 0,
-    double maxWait = double.infinity,
-  }) async {
-    final stopwatch = Stopwatch()..start();
-    while (true) {
-      await Future.delayed(Duration(milliseconds: 50));
-      final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = requestCompleter1?.isCompleted ?? false;
-      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
-        break;
-      }
-    }
-  }
-
   Future waitForRequestCompleted2({
     double minWait = 0,
     double maxWait = double.infinity,
@@ -142,6 +127,21 @@ class SenafModel extends FlutterFlowModel<SenafWidget> {
       await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
       final requestComplete = requestCompleter2?.isCompleted ?? false;
+      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
+        break;
+      }
+    }
+  }
+
+  Future waitForRequestCompleted1({
+    double minWait = 0,
+    double maxWait = double.infinity,
+  }) async {
+    final stopwatch = Stopwatch()..start();
+    while (true) {
+      await Future.delayed(Duration(milliseconds: 50));
+      final timeElapsed = stopwatch.elapsedMilliseconds;
+      final requestComplete = requestCompleter1?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
         break;
       }

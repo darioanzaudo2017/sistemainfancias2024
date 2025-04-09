@@ -1798,11 +1798,12 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                 'Si') {
                                               await IngresosTable().update(
                                                 data: {
-                                                  'Form2': true,
                                                   'Form3': true,
                                                   'form1completo': true,
                                                   'form4': true,
                                                   'form9': true,
+                                                  'Ampliacion': true,
+                                                  'Ampliacioncompleto': true,
                                                 },
                                                 matchingRows: (rows) =>
                                                     rows.eqOrNull(
@@ -1813,10 +1814,11 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                             } else {
                                               await IngresosTable().update(
                                                 data: {
-                                                  'Form2': true,
                                                   'Form3': true,
                                                   'form1completo': true,
                                                   'form4': true,
+                                                  'Ampliacioncompleto': true,
+                                                  'Ampliacion': true,
                                                 },
                                                 matchingRows: (rows) =>
                                                     rows.eqOrNull(

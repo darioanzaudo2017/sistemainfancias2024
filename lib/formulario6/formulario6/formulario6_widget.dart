@@ -1,5 +1,4 @@
 import '/backend/supabase/supabase.dart';
-import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_radio_button.dart';
@@ -302,86 +301,6 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                           ),
                                         ),
                                       ],
-                                    ),
-                                    Container(
-                                      height: 200.0,
-                                      child: Align(
-                                        alignment:
-                                            AlignmentDirectional(0.0, 0.0),
-                                        child: FlutterFlowChoiceChips(
-                                          options: [
-                                            ChipData(
-                                                'Inclusión de NNA y /o familia en programas Educativos: (inserción, becas, apoyo escolar, docente integrador,etc), Culturales / Recreativos, Deportivos, Capacitaciones'),
-                                            ChipData(
-                                                'Inclusión/inserción laboral del adolescente y/o su familia'),
-                                            ChipData(
-                                                'Asistencia económica (asistencia directa de recursos materiales)'),
-                                            ChipData(
-                                                'Articulación con  Programas o acciones de  Instituciones  \nestatales y no estatales  \n(Documentación,  AUH, certificados,  prestaciones de  seguridad social,  articulaciones con  organismos del primer nivel de  \nintervención, etc).'),
-                                            ChipData(
-                                                'Tratamientos en  Salud dirigidos al  Niño/Adolesc.,o  \nfamilia; Médicos (internac.o  ambulatorio) Terapéuticos (  \npsicolog. O  psiquiátrico, A T ) \nConsumo  problemático de  sustancias. \nAbordaje de  Discapacidad.'),
-                                            ChipData(
-                                                'Asistencia integral  a la embarazada.')
-                                          ],
-                                          onChanged: (val) => safeSetState(() =>
-                                              _model.choiceChipsValue =
-                                                  val?.firstOrNull),
-                                          selectedChipStyle: ChipStyle(
-                                            backgroundColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primary,
-                                            textStyle: FlutterFlowTheme.of(
-                                                    context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Noto Sans JP',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .info,
-                                                  letterSpacing: 0.0,
-                                                ),
-                                            iconColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .info,
-                                            iconSize: 16.0,
-                                            elevation: 0.0,
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          unselectedChipStyle: ChipStyle(
-                                            backgroundColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .secondaryBackground,
-                                            textStyle: FlutterFlowTheme.of(
-                                                    context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Noto Sans JP',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryText,
-                                                  letterSpacing: 0.0,
-                                                ),
-                                            iconColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .secondaryText,
-                                            iconSize: 16.0,
-                                            elevation: 0.0,
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          chipSpacing: 8.0,
-                                          rowSpacing: 8.0,
-                                          multiselect: false,
-                                          alignment: WrapAlignment.start,
-                                          controller: _model
-                                                  .choiceChipsValueController ??=
-                                              FormFieldController<List<String>>(
-                                            [],
-                                          ),
-                                          wrapped: true,
-                                        ),
-                                      ),
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(

@@ -5,8 +5,8 @@ import '../base_auth_user_provider.dart';
 
 export '../base_auth_user_provider.dart';
 
-class SistemaInfancias2024SupabaseUser extends BaseAuthUser {
-  SistemaInfancias2024SupabaseUser(this.user);
+class PruebaClonacionSistemaDeInfanciasSupabaseUser extends BaseAuthUser {
+  PruebaClonacionSistemaDeInfanciasSupabaseUser(this.user);
   User? user;
   bool get loggedIn => user != null;
 
@@ -66,7 +66,7 @@ class SistemaInfancias2024SupabaseUser extends BaseAuthUser {
 /// [SupaFlow.client.auth.onAuthStateChange] does not yield any values until the
 /// user is already authenticated. So we add a default null user to the stream,
 /// if we need to interact with the [currentUser] before logging in.
-Stream<BaseAuthUser> sistemaInfancias2024SupabaseUserStream() {
+Stream<BaseAuthUser> pruebaClonacionSistemaDeInfanciasSupabaseUserStream() {
   final supabaseAuthStream = SupaFlow.client.auth.onAuthStateChange.debounce(
       (authState) => authState.event == AuthChangeEvent.tokenRefreshed
           ? TimerStream(authState, Duration(seconds: 1))
@@ -76,7 +76,8 @@ Stream<BaseAuthUser> sistemaInfancias2024SupabaseUserStream() {
           : supabaseAuthStream)
       .map<BaseAuthUser>(
     (authState) {
-      currentUser = SistemaInfancias2024SupabaseUser(authState?.session?.user);
+      currentUser = PruebaClonacionSistemaDeInfanciasSupabaseUser(
+          authState?.session?.user);
       return currentUser!;
     },
   );
