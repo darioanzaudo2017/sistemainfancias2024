@@ -391,8 +391,11 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                   controller:
                                       _model.textFieldDniTextController ??=
                                           TextEditingController(
-                                    text: containerGrupoConvivienteRow?.dni
-                                        .toString(),
+                                    text: valueOrDefault<String>(
+                                      containerGrupoConvivienteRow?.dni
+                                          .toString(),
+                                      '0',
+                                    ),
                                   ),
                                   focusNode: _model.textFieldDniFocusNode,
                                   autofocus: true,

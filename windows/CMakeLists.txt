@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
-project(sistema_infancias2024 LANGUAGES CXX)
+project(prueba_clonacion_sistema_de_infancias LANGUAGES CXX)
 
-set(BINARY_NAME "sistema_infancias2024")
+set(BINARY_NAME "prueba_clonacion_sistema_de_infancias")
 
 cmake_policy(SET CMP0063 NEW)
 

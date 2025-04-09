@@ -1,4 +1,5 @@
 import '/backend/supabase/supabase.dart';
+import '/components/intervencionesrealizadas_widget.dart';
 import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -6,6 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'seccion6_model.dart';
 export 'seccion6_model.dart';
 
@@ -331,6 +333,10 @@ class _Seccion6WidgetState extends State<Seccion6Widget> {
                                   widget.rowingreso?.id,
                                 ),
                               );
+                              safeSetState(() {
+                                _model.textController1?.clear();
+                                _model.textController2?.clear();
+                              });
                               safeSetState(
                                   () => _model.requestCompleter = null);
                               await _model.waitForRequestCompleted();
@@ -416,7 +422,7 @@ class _Seccion6WidgetState extends State<Seccion6Widget> {
                                         label: DefaultTextStyle.merge(
                                           softWrap: true,
                                           child: Text(
-                                            'eliminar',
+                                            'Editar/eliminar',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelLarge
                                                 .override(
@@ -468,34 +474,90 @@ class _Seccion6WidgetState extends State<Seccion6Widget> {
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
-                                        Align(
-                                          alignment:
-                                              AlignmentDirectional(0.0, 0.0),
-                                          child: FlutterFlowIconButton(
-                                            borderRadius: 8.0,
-                                            buttonSize: 40.0,
-                                            icon: Icon(
-                                              Icons.delete_rounded,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  0.0, 0.0),
+                                              child: FlutterFlowIconButton(
+                                                borderRadius: 8.0,
+                                                buttonSize: 40.0,
+                                                icon: Icon(
+                                                  Icons.delete_rounded,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
                                                       .error,
-                                              size: 24.0,
-                                            ),
-                                            onPressed: () async {
-                                              await Seccion6Table().delete(
-                                                matchingRows: (rows) =>
-                                                    rows.eqOrNull(
-                                                  'idSec6',
-                                                  listadointervencionesItem
-                                                      .idSec6,
+                                                  size: 24.0,
                                                 ),
-                                              );
-                                              safeSetState(() => _model
-                                                  .requestCompleter = null);
-                                              await _model
-                                                  .waitForRequestCompleted();
-                                            },
-                                          ),
+                                                onPressed: () async {
+                                                  await Seccion6Table().delete(
+                                                    matchingRows: (rows) =>
+                                                        rows.eqOrNull(
+                                                      'idSec6',
+                                                      listadointervencionesItem
+                                                          .idSec6,
+                                                    ),
+                                                  );
+                                                  safeSetState(() => _model
+                                                      .requestCompleter = null);
+                                                  await _model
+                                                      .waitForRequestCompleted();
+                                                },
+                                              ),
+                                            ),
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  0.0, 0.0),
+                                              child: FlutterFlowIconButton(
+                                                borderRadius: 8.0,
+                                                buttonSize: 40.0,
+                                                icon: Icon(
+                                                  Icons.edit_rounded,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  size: 24.0,
+                                                ),
+                                                onPressed: () async {
+                                                  await showModalBottomSheet(
+                                                    isScrollControlled: true,
+                                                    backgroundColor:
+                                                        Colors.transparent,
+                                                    enableDrag: false,
+                                                    context: context,
+                                                    builder: (context) {
+                                                      return WebViewAware(
+                                                        child: Padding(
+                                                          padding: MediaQuery
+                                                              .viewInsetsOf(
+                                                                  context),
+                                                          child:
+                                                              IntervencionesrealizadasWidget(
+                                                            intervencionesseccion6:
+                                                                listadointervencionesItem,
+                                                          ),
+                                                        ),
+                                                      );
+                                                    },
+                                                  ).then((value) =>
+                                                      safeSetState(() => _model
+                                                              .sedeitoseccion6 =
+                                                          value));
+
+                                                  if (_model.sedeitoseccion6!) {
+                                                    safeSetState(() => _model
+                                                            .requestCompleter =
+                                                        null);
+                                                    await _model
+                                                        .waitForRequestCompleted();
+                                                  }
+
+                                                  safeSetState(() {});
+                                                },
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ].map((c) => DataCell(c)).toList(),
                                     ),
@@ -504,7 +566,7 @@ class _Seccion6WidgetState extends State<Seccion6Widget> {
                                     hidePaginator: false,
                                     showFirstLastButtons: false,
                                     headingRowHeight: 56.0,
-                                    dataRowHeight: 48.0,
+                                    dataRowHeight: 80.0,
                                     columnSpacing: 20.0,
                                     headingRowColor:
                                         FlutterFlowTheme.of(context).primary,

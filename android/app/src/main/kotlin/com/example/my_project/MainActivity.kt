@@ -1,4 +1,4 @@
-package com.mycompany.sistemainfancias2024
+package com.mycompany.pruebaclonacionsistemadeinfancias
 
 import io.flutter.embedding.android.FlutterActivity
 

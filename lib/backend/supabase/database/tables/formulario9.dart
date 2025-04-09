@@ -129,4 +129,35 @@ class Formulario9Row extends SupabaseDataRow {
       getField<DateTime>('FechaSolicitudaSenaf');
   set fechaSolicitudaSenaf(DateTime? value) =>
       setField<DateTime>('FechaSolicitudaSenaf', value);
+
+  String? get estadoinforme => getField<String>('estadoinforme');
+  set estadoinforme(String? value) => setField<String>('estadoinforme', value);
+
+  bool? get spd => getField<bool>('spd');
+  set spd(bool? value) => setField<bool>('spd', value);
+
+  bool? get cordinacionzonal => getField<bool>('cordinacionzonal');
+  set cordinacionzonal(bool? value) =>
+      setField<bool>('cordinacionzonal', value);
+
+  bool? get cordinaciongenaral => getField<bool>('cordinaciongenaral');
+  set cordinaciongenaral(bool? value) =>
+      setField<bool>('cordinaciongenaral', value);
+
+  String? get solicitudVsSPD => getField<String>('solicitudVsSPD');
+  set solicitudVsSPD(String? value) =>
+      setField<String>('solicitudVsSPD', value);
+
+  String? get solicitudVsCoordinacionzonal =>
+      getField<String>('SolicitudVsCoordinacionzonal');
+  set solicitudVsCoordinacionzonal(String? value) =>
+      setField<String>('SolicitudVsCoordinacionzonal', value);
+
+  String? get solicitudVsCoordinacionGral =>
+      getField<String>('SolicitudVsCoordinacionGral');
+  set solicitudVsCoordinacionGral(String? value) =>
+      setField<String>('SolicitudVsCoordinacionGral', value);
+
+  String? get iddrive => getField<String>('iddrive');
+  set iddrive(String? value) => setField<String>('iddrive', value);
 }

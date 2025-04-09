@@ -8,8 +8,14 @@ class SeleccionarrolusuarioModel
   ///  State fields for stateful widgets in this component.
 
   // State field(s) for DropDown widget.
-  int? dropDownValue;
-  FormFieldController<int>? dropDownValueController;
+  int? dropDownValue1;
+  FormFieldController<int>? dropDownValueController1;
+  // State field(s) for DropDown widget.
+  String? dropDownValue2;
+  FormFieldController<String>? dropDownValueController2;
+  // State field(s) for DropDown widget.
+  int? dropDownValue3;
+  FormFieldController<int>? dropDownValueController3;
 
   @override
   void initState(BuildContext context) {}

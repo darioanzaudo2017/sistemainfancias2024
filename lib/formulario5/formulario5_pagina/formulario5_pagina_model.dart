@@ -4,6 +4,7 @@ import '/components/tarjetaencabezado_widget.dart';
 import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/index.dart';
 import 'dart:async';
 import 'formulario5_pagina_widget.dart' show Formulario5PaginaWidget;
 import 'package:flutter/material.dart';
@@ -132,6 +133,8 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
       textFieldPropuestasparamedidasdeProteccionIntegralTextController;
   String? Function(BuildContext, String?)?
       textFieldPropuestasparamedidasdeProteccionIntegralTextControllerValidator;
+  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
+  Formulario5Row? insertform5;
   // Model for anexosbotonera component.
   late AnexosbotoneraModel anexosbotoneraModel;
 

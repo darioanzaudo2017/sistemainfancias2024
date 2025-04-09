@@ -1,4 +1,3 @@
-import '/auth/supabase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -16,13 +15,15 @@ class AvisoVisitaWidget extends StatefulWidget {
     required this.rowingreso,
     required this.rowexp,
     this.editar,
-    this.idform3,
+    this.idampliacion,
+    this.idconvocatoriaNNyA,
   });
 
   final IngresosRow? rowingreso;
   final VistaExpedientesUltimoEstadoRow? rowexp;
   final bool? editar;
-  final int? idform3;
+  final int? idampliacion;
+  final int? idconvocatoriaNNyA;
 
   @override
   State<AvisoVisitaWidget> createState() => _AvisoVisitaWidgetState();
@@ -42,12 +43,8 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
     super.initState();
     _model = createModel(context, () => AvisoVisitaModel());
 
-    _model.textFieldmotivoTextController1 ??= TextEditingController();
-    _model.textFieldmotivoFocusNode1 ??= FocusNode();
-
-    _model.textFieldmotivoTextController2 ??=
-        TextEditingController(text: widget.rowexp?.spd);
-    _model.textFieldmotivoFocusNode2 ??= FocusNode();
+    _model.textFieldmotivoTextController ??= TextEditingController();
+    _model.textFieldmotivoFocusNode ??= FocusNode();
 
     _model.textFieldresenaTextController ??= TextEditingController();
     _model.textFieldresenaFocusNode ??= FocusNode();
@@ -69,8 +66,8 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
       child: FutureBuilder<List<AvisovisitaNNyARow>>(
         future: AvisovisitaNNyATable().querySingleRow(
           queryFn: (q) => q.eqOrNull(
-            'idIngreso',
-            widget.rowingreso?.id,
+            'id',
+            widget.idconvocatoriaNNyA,
           ),
         ),
         builder: (context, snapshot) {
@@ -173,8 +170,8 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: TextFormField(
-                            controller: _model.textFieldmotivoTextController1,
-                            focusNode: _model.textFieldmotivoFocusNode1,
+                            controller: _model.textFieldmotivoTextController,
+                            focusNode: _model.textFieldmotivoFocusNode,
                             autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -230,72 +227,7 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                                 ),
                             maxLines: 2,
                             validator: _model
-                                .textFieldmotivoTextController1Validator
-                                .asValidator(context),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              8.0, 0.0, 8.0, 0.0),
-                          child: TextFormField(
-                            controller: _model.textFieldmotivoTextController2,
-                            focusNode: _model.textFieldmotivoFocusNode2,
-                            autofocus: true,
-                            obscureText: false,
-                            decoration: InputDecoration(
-                              labelText: 'CPC',
-                              labelStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    fontFamily: 'Noto Sans JP',
-                                    letterSpacing: 0.0,
-                                  ),
-                              alignLabelWithHint: true,
-                              hintText: 'CPC',
-                              hintStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    fontFamily: 'Noto Sans JP',
-                                    letterSpacing: 0.0,
-                                  ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).alternate,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              errorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).error,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              focusedErrorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).error,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                            ),
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Noto Sans JP',
-                                  letterSpacing: 0.0,
-                                ),
-                            maxLines: 2,
-                            validator: _model
-                                .textFieldmotivoTextController2Validator
+                                .textFieldmotivoTextControllerValidator
                                 .asValidator(context),
                           ),
                         ),
@@ -635,149 +567,65 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                                   );
                                   return;
                                 }
-                                if (containerAvisovisitaNNyARow?.id == null) {
-                                  _model.formvisita =
-                                      await AvisovisitaNNyATable().insert({
-                                    'idIngreso': widget.rowingreso?.id,
+                                await AmpliaciondeinformacionTable().update(
+                                  data: {
                                     'fechadoc': supaSerialize<DateTime>(
                                         _model.datePicked1),
-                                    'domicilio': _model
-                                        .textFieldmotivoTextController1.text,
                                     'fecha': supaSerialize<DateTime>(
                                         _model.datePicked2),
-                                    'hora': _model
-                                        .textFieldresenaTextController.text,
-                                    'CPC': _model
-                                        .textFieldmotivoTextController2.text,
-                                  });
-                                  await showDialog(
-                                    context: context,
-                                    builder: (alertDialogContext) {
-                                      return WebViewAware(
-                                        child: AlertDialog(
-                                          title: Text('Carga correcta'),
-                                          content: Text(
-                                              'La informacion se guardo correctamente!!'),
-                                          actions: [
-                                            TextButton(
-                                              onPressed: () => Navigator.pop(
-                                                  alertDialogContext),
-                                              child: Text('Ok'),
-                                            ),
-                                          ],
-                                        ),
-                                      );
-                                    },
-                                  );
-                                  _model.entrevista =
-                                      await Formulario3Table().insert({
-                                    'idIngreso': widget.rowingreso?.id,
-                                    'idExpediente': widget.rowexp?.id,
-                                    'iduser': currentUserUid,
-                                    'idconvocatoria': _model.formvisita?.id,
-                                  });
-                                  if (containerAvisovisitaNNyARow?.linkdoc ==
-                                          null ||
-                                      containerAvisovisitaNNyARow?.linkdoc ==
-                                          '') {
-                                    _model.apiResulth1a =
-                                        await AvisoVisitaNNyACall.call(
-                                      fechadoc: dateTimeFormat(
-                                        "d/M/y",
-                                        _model.datePicked1,
-                                        locale: FFLocalizations.of(context)
-                                            .languageCode,
+                                  },
+                                  matchingRows: (rows) => rows.eqOrNull(
+                                    'idampliacion',
+                                    widget.idampliacion,
+                                  ),
+                                );
+                                await showDialog(
+                                  context: context,
+                                  builder: (alertDialogContext) {
+                                    return WebViewAware(
+                                      child: AlertDialog(
+                                        title: Text('Carga correcta'),
+                                        content: Text(
+                                            'La informacion se guardo correctamente!!'),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: Text('Ok'),
+                                          ),
+                                        ],
                                       ),
-                                      nombre: widget.rowexp?.nombres,
-                                      apellido: widget.rowexp?.apellidos,
-                                      domicilio: containerAvisovisitaNNyARow
-                                          ?.domicilio,
-                                      fecha: dateTimeFormat(
-                                        "d/M/y",
-                                        _model.datePicked2,
-                                        locale: FFLocalizations.of(context)
-                                            .languageCode,
-                                      ),
-                                      cpc: _model
-                                          .textFieldmotivoTextController2.text,
-                                      hora: _model
-                                          .textFieldresenaTextController.text,
-                                      idingreso: widget.rowingreso?.id,
-                                      carpeta: widget.rowingreso?.idcarpeta,
                                     );
-                                  }
-                                  Navigator.pop(context, true);
-                                } else {
-                                  await AvisovisitaNNyATable().update(
-                                    data: {
-                                      'idIngreso': widget.rowingreso?.id,
-                                      'fechadoc': supaSerialize<DateTime>(
-                                          _model.datePicked1),
-                                      'domicilio': _model
-                                          .textFieldmotivoTextController1.text,
-                                      'fecha': supaSerialize<DateTime>(
-                                          _model.datePicked2),
-                                      'hora': _model
-                                          .textFieldresenaTextController.text,
-                                      'CPC': _model
-                                          .textFieldmotivoTextController2.text,
-                                    },
-                                    matchingRows: (rows) => rows.eqOrNull(
-                                      'idIngreso',
-                                      widget.rowingreso?.id,
-                                    ),
-                                  );
-                                  await showDialog(
-                                    context: context,
-                                    builder: (alertDialogContext) {
-                                      return WebViewAware(
-                                        child: AlertDialog(
-                                          title: Text('Carga correcta'),
-                                          content: Text(
-                                              'La informacion se guardo correctamente!!'),
-                                          actions: [
-                                            TextButton(
-                                              onPressed: () => Navigator.pop(
-                                                  alertDialogContext),
-                                              child: Text('Ok'),
-                                            ),
-                                          ],
-                                        ),
-                                      );
-                                    },
-                                  );
-                                  if (!(containerAvisovisitaNNyARow?.linkdoc ==
-                                          null ||
-                                      containerAvisovisitaNNyARow?.linkdoc ==
-                                          '')) {
-                                    _model.apiResulth1aedit =
-                                        await AvisoVisitaNNyACall.call(
-                                      fechadoc: dateTimeFormat(
-                                        "d/M/y",
-                                        _model.datePicked1,
-                                        locale: FFLocalizations.of(context)
-                                            .languageCode,
-                                      ),
-                                      nombre: widget.rowexp?.nombres,
-                                      apellido: widget.rowexp?.apellidos,
-                                      domicilio: containerAvisovisitaNNyARow
-                                          ?.domicilio,
-                                      fecha: dateTimeFormat(
-                                        "d/M/y",
-                                        _model.datePicked2,
-                                        locale: FFLocalizations.of(context)
-                                            .languageCode,
-                                      ),
-                                      cpc: _model
-                                          .textFieldmotivoTextController2.text,
-                                      hora: _model
-                                          .textFieldresenaTextController.text,
-                                      idingreso: widget.rowingreso?.id,
-                                      carpeta: widget.rowingreso?.idcarpeta,
-                                    );
-                                  }
-                                  Navigator.pop(context, true);
-                                }
+                                  },
+                                );
+                                _model.apiResulth1aedit =
+                                    await AvisoVisitaNNyACall.call(
+                                  fechadoc: dateTimeFormat(
+                                    "d/M/y",
+                                    _model.datePicked1,
+                                    locale: FFLocalizations.of(context)
+                                        .languageCode,
+                                  ),
+                                  nombre: widget.rowexp?.nombres,
+                                  apellido: widget.rowexp?.apellidos,
+                                  domicilio:
+                                      containerAvisovisitaNNyARow?.domicilio,
+                                  fecha: dateTimeFormat(
+                                    "d/M/y",
+                                    _model.datePicked2,
+                                    locale: FFLocalizations.of(context)
+                                        .languageCode,
+                                  ),
+                                  cpc: widget.rowexp?.spd,
+                                  hora:
+                                      _model.textFieldresenaTextController.text,
+                                  idingreso: widget.rowingreso?.id,
+                                  carpeta: widget.rowingreso?.idcarpeta,
+                                  idampliacion:
+                                      widget.idampliacion?.toString(),
+                                );
+
+                                Navigator.pop(context, true);
 
                                 safeSetState(() {});
                               },

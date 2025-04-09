@@ -83,8 +83,7 @@ class _SeleccionarrolusuarioWidgetState
                   : null;
 
           return Container(
-            width: 400.0,
-            height: 180.61,
+            width: 548.7,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
               boxShadow: [
@@ -114,6 +113,16 @@ class _SeleccionarrolusuarioWidgetState
                           letterSpacing: 0.0,
                         ),
                   ),
+                  Align(
+                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    child: Text(
+                      'Seleccionar rol',
+                      style: FlutterFlowTheme.of(context).titleMedium.override(
+                            fontFamily: 'Noto Sans JP',
+                            letterSpacing: 0.0,
+                          ),
+                    ),
+                  ),
                   FutureBuilder<List<RolesRow>>(
                     future: RolesTable().queryRows(
                       queryFn: (q) => q,
@@ -136,9 +145,9 @@ class _SeleccionarrolusuarioWidgetState
                       List<RolesRow> dropDownRolesRowList = snapshot.data!;
 
                       return FlutterFlowDropDown<int>(
-                        controller: _model.dropDownValueController ??=
+                        controller: _model.dropDownValueController1 ??=
                             FormFieldController<int>(
-                          _model.dropDownValue ??= widget.usuariorow?.rolId,
+                          _model.dropDownValue1 ??= widget.usuariorow?.rolId,
                         ),
                         options: List<int>.from(
                             dropDownRolesRowList.map((e) => e.id).toList()),
@@ -147,7 +156,7 @@ class _SeleccionarrolusuarioWidgetState
                             .withoutNulls
                             .toList(),
                         onChanged: (val) =>
-                            safeSetState(() => _model.dropDownValue = val),
+                            safeSetState(() => _model.dropDownValue1 = val),
                         height: 40.0,
                         textStyle:
                             FlutterFlowTheme.of(context).bodyMedium.override(
@@ -175,6 +184,152 @@ class _SeleccionarrolusuarioWidgetState
                       );
                     },
                   ),
+                  if (_model.dropDownValue1 == 3)
+                    Align(
+                      alignment: AlignmentDirectional(-1.0, 0.0),
+                      child: Text(
+                        'Seleccionar SPD',
+                        style:
+                            FlutterFlowTheme.of(context).titleMedium.override(
+                                  fontFamily: 'Noto Sans JP',
+                                  letterSpacing: 0.0,
+                                ),
+                      ),
+                    ),
+                  if (_model.dropDownValue1 == 3)
+                    FutureBuilder<List<SpdRow>>(
+                      future: SpdTable().queryRows(
+                        queryFn: (q) => q,
+                      ),
+                      builder: (context, snapshot) {
+                        // Customize what your widget looks like when it's loading.
+                        if (!snapshot.hasData) {
+                          return Center(
+                            child: SizedBox(
+                              width: 50.0,
+                              height: 50.0,
+                              child: CircularProgressIndicator(
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  FlutterFlowTheme.of(context).primary,
+                                ),
+                              ),
+                            ),
+                          );
+                        }
+                        List<SpdRow> dropDownSpdRowList = snapshot.data!;
+
+                        return FlutterFlowDropDown<String>(
+                          controller: _model.dropDownValueController2 ??=
+                              FormFieldController<String>(
+                            _model.dropDownValue2 ??= widget.usuariorow?.spd,
+                          ),
+                          options: dropDownSpdRowList
+                              .map((e) => e.nombrespd)
+                              .toList(),
+                          onChanged: (val) =>
+                              safeSetState(() => _model.dropDownValue2 = val),
+                          height: 40.0,
+                          textStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Noto Sans JP',
+                                    letterSpacing: 0.0,
+                                  ),
+                          hintText: 'Seleccionar SPD',
+                          icon: Icon(
+                            Icons.keyboard_arrow_down_rounded,
+                            color: FlutterFlowTheme.of(context).secondaryText,
+                            size: 24.0,
+                          ),
+                          fillColor:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                          elevation: 2.0,
+                          borderColor: FlutterFlowTheme.of(context).alternate,
+                          borderWidth: 0.0,
+                          borderRadius: 8.0,
+                          margin: EdgeInsetsDirectional.fromSTEB(
+                              12.0, 0.0, 12.0, 0.0),
+                          hidesUnderline: true,
+                          isOverButton: false,
+                          isSearchable: false,
+                          isMultiSelect: false,
+                        );
+                      },
+                    ),
+                  if (_model.dropDownValue1 == 2)
+                    Align(
+                      alignment: AlignmentDirectional(-1.0, 0.0),
+                      child: Text(
+                        'Seleccionar Zona',
+                        style:
+                            FlutterFlowTheme.of(context).titleMedium.override(
+                                  fontFamily: 'Noto Sans JP',
+                                  letterSpacing: 0.0,
+                                ),
+                      ),
+                    ),
+                  if (_model.dropDownValue1 == 2)
+                    FutureBuilder<List<ZonasRow>>(
+                      future: ZonasTable().queryRows(
+                        queryFn: (q) => q,
+                      ),
+                      builder: (context, snapshot) {
+                        // Customize what your widget looks like when it's loading.
+                        if (!snapshot.hasData) {
+                          return Center(
+                            child: SizedBox(
+                              width: 50.0,
+                              height: 50.0,
+                              child: CircularProgressIndicator(
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  FlutterFlowTheme.of(context).primary,
+                                ),
+                              ),
+                            ),
+                          );
+                        }
+                        List<ZonasRow> dropDownZonasRowList = snapshot.data!;
+
+                        return FlutterFlowDropDown<int>(
+                          controller: _model.dropDownValueController3 ??=
+                              FormFieldController<int>(
+                            _model.dropDownValue3 ??=
+                                widget.usuariorow?.zonaUsuario,
+                          ),
+                          options: List<int>.from(
+                              dropDownZonasRowList.map((e) => e.id).toList()),
+                          optionLabels: dropDownZonasRowList
+                              .map((e) => e.zona)
+                              .withoutNulls
+                              .toList(),
+                          onChanged: (val) =>
+                              safeSetState(() => _model.dropDownValue3 = val),
+                          height: 40.0,
+                          textStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Noto Sans JP',
+                                    letterSpacing: 0.0,
+                                  ),
+                          hintText: 'Seleccionar zona',
+                          icon: Icon(
+                            Icons.keyboard_arrow_down_rounded,
+                            color: FlutterFlowTheme.of(context).secondaryText,
+                            size: 24.0,
+                          ),
+                          fillColor:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                          elevation: 2.0,
+                          borderColor: FlutterFlowTheme.of(context).alternate,
+                          borderWidth: 0.0,
+                          borderRadius: 8.0,
+                          margin: EdgeInsetsDirectional.fromSTEB(
+                              12.0, 0.0, 12.0, 0.0),
+                          hidesUnderline: true,
+                          isOverButton: false,
+                          isSearchable: false,
+                          isMultiSelect: false,
+                        );
+                      },
+                    ),
                   Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
@@ -182,33 +337,111 @@ class _SeleccionarrolusuarioWidgetState
                       onPressed: () async {
                         await UserRolTable().update(
                           data: {
-                            'idrol': _model.dropDownValue,
+                            'idrol': _model.dropDownValue1,
                           },
                           matchingRows: (rows) => rows.eqOrNull(
                             'iduser',
                             widget.usuariorow?.id,
                           ),
                         );
-                        await showDialog(
-                          context: context,
-                          builder: (alertDialogContext) {
-                            return WebViewAware(
-                              child: AlertDialog(
-                                title: Text('Rol actualizado'),
-                                content:
-                                    Text('EL rol se actualizo correctamente'),
-                                actions: [
-                                  TextButton(
-                                    onPressed: () =>
-                                        Navigator.pop(alertDialogContext),
-                                    child: Text('Ok'),
-                                  ),
-                                ],
+                        if (_model.dropDownValue1 == 1) {
+                          await UsuariosTable().update(
+                            data: {
+                              'SPD': 'Coordinacion',
+                              'zona_usuario': _model.dropDownValue3,
+                            },
+                            matchingRows: (rows) => rows.eqOrNull(
+                              'id',
+                              widget.usuariorow?.id,
+                            ),
+                          );
+                          await showDialog(
+                            context: context,
+                            builder: (alertDialogContext) {
+                              return WebViewAware(
+                                child: AlertDialog(
+                                  title: Text('Rol actualizado'),
+                                  content:
+                                      Text('EL rol se actualizo correctamente'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: Text('Ok'),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
+                          );
+                          Navigator.pop(context);
+                        } else {
+                          if (_model.dropDownValue1 == 2) {
+                            await UsuariosTable().update(
+                              data: {
+                                'SPD': 'Zona',
+                                'zona_usuario': _model.dropDownValue3,
+                              },
+                              matchingRows: (rows) => rows.eqOrNull(
+                                'id',
+                                widget.usuariorow?.id,
                               ),
                             );
-                          },
-                        );
-                        Navigator.pop(context);
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return WebViewAware(
+                                  child: AlertDialog(
+                                    title: Text('Rol actualizado'),
+                                    content: Text(
+                                        'EL rol se actualizo correctamente'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () =>
+                                            Navigator.pop(alertDialogContext),
+                                        child: Text('Ok'),
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              },
+                            );
+                            Navigator.pop(context);
+                          } else {
+                            if (_model.dropDownValue1 == 3) {
+                              await UsuariosTable().update(
+                                data: {
+                                  'SPD': _model.dropDownValue2,
+                                  'zona_usuario': _model.dropDownValue3,
+                                },
+                                matchingRows: (rows) => rows.eqOrNull(
+                                  'id',
+                                  widget.usuariorow?.id,
+                                ),
+                              );
+                              await showDialog(
+                                context: context,
+                                builder: (alertDialogContext) {
+                                  return WebViewAware(
+                                    child: AlertDialog(
+                                      title: Text('Rol actualizado'),
+                                      content: Text(
+                                          'EL rol se actualizo correctamente'),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(alertDialogContext),
+                                          child: Text('Ok'),
+                                        ),
+                                      ],
+                                    ),
+                                  );
+                                },
+                              );
+                              Navigator.pop(context);
+                            }
+                          }
+                        }
                       },
                       text: 'Guardar',
                       options: FFButtonOptions(
@@ -237,7 +470,7 @@ class _SeleccionarrolusuarioWidgetState
                       ),
                     ),
                   ),
-                ],
+                ].divide(SizedBox(height: 10.0)),
               ),
             ),
           );

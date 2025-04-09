@@ -24,13 +24,15 @@ class SenafWidget extends StatefulWidget {
     this.ingrow,
     this.expediente,
     required this.usuariorow,
-    this.usuariorol,
+    required this.usuariorol,
+    required this.spdrow,
   });
 
   final IngresosRow? ingrow;
   final VistaExpedientesUltimoEstadoRow? expediente;
   final UsuariosRow? usuariorow;
   final VistaUsuariosRolesRow? usuariorol;
+  final SpdRow? spdrow;
 
   static String routeName = 'Senaf';
   static String routePath = '/senaf';
@@ -924,6 +926,12 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                   serializeParam(
                                                                 widget
                                                                     .usuariorol,
+                                                                ParamType
+                                                                    .SupabaseRow,
+                                                              ),
+                                                              'spd':
+                                                                  serializeParam(
+                                                                widget.spdrow,
                                                                 ParamType
                                                                     .SupabaseRow,
                                                               ),
@@ -1845,10 +1853,10 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                                       ],
                                                                                                     ),
                                                                                                   ),
-                                                                                                  Column(
-                                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                                    children: [
-                                                                                                      if (widget.usuariorol?.rolId == 1)
+                                                                                                  if (widget.usuariorol?.rolId == 1)
+                                                                                                    Column(
+                                                                                                      mainAxisSize: MainAxisSize.max,
+                                                                                                      children: [
                                                                                                         Padding(
                                                                                                           padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                                                                                                           child: Row(
@@ -1966,7 +1974,6 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                                             ],
                                                                                                           ),
                                                                                                         ),
-                                                                                                      if (widget.usuariorol?.rolId == 1)
                                                                                                         Padding(
                                                                                                           padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                                                                                                           child: Row(
@@ -2084,8 +2091,8 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                                             ],
                                                                                                           ),
                                                                                                         ),
-                                                                                                    ].divide(SizedBox(height: 10.0)),
-                                                                                                  ),
+                                                                                                      ].divide(SizedBox(height: 10.0)),
+                                                                                                    ),
                                                                                                   Padding(
                                                                                                     padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                                                                                                     child: TextFormField(
@@ -2137,7 +2144,9 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                             fontFamily: 'Noto Sans JP',
                                                                                                             letterSpacing: 0.0,
+                                                                                                            lineHeight: 5.0,
                                                                                                           ),
+                                                                                                      maxLines: null,
                                                                                                       validator: _model.textFieldmotivosolicitudTextControllerValidator.asValidator(context),
                                                                                                     ),
                                                                                                   ),
@@ -2788,6 +2797,25 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                         mainAxisAlignment:
                                                                             MainAxisAlignment.spaceAround,
                                                                         children: [
+                                                                          FlutterFlowIconButton(
+                                                                            borderRadius:
+                                                                                8.0,
+                                                                            buttonSize:
+                                                                                40.0,
+                                                                            fillColor:
+                                                                                FlutterFlowTheme.of(context).primary,
+                                                                            icon:
+                                                                                Icon(
+                                                                              Icons.refresh_sharp,
+                                                                              color: FlutterFlowTheme.of(context).info,
+                                                                              size: 24.0,
+                                                                            ),
+                                                                            onPressed:
+                                                                                () async {
+                                                                              safeSetState(() => _model.requestCompleter2 = null);
+                                                                              await _model.waitForRequestCompleted2();
+                                                                            },
+                                                                          ),
                                                                           Align(
                                                                             alignment:
                                                                                 AlignmentDirectional(0.0, 0.0),
@@ -2879,6 +2907,9 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                           'reseñadelasitu': _model.textController3.text,
                                                                                           'motivosolicitud': _model.textFieldmotivosolicitudTextController.text,
                                                                                           'observacionesmedidaadoptada': _model.textFieldobservacionesdemedidaadoptadaTextController.text,
+                                                                                          'spd': true,
+                                                                                          'cordinacionzonal': false,
+                                                                                          'cordinaciongenaral': false,
                                                                                         });
                                                                                         await IngresosTable().update(
                                                                                           data: {
@@ -2914,8 +2945,6 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                         );
                                                                                         safeSetState(() => _model.requestCompleter1 = null);
                                                                                         await _model.waitForRequestCompleted1();
-                                                                                        safeSetState(() => _model.requestCompleter2 = null);
-                                                                                        await _model.waitForRequestCompleted2();
                                                                                         if (_model.form9?.causa == 'Solicitud de medida excepcional al organismo provincial de protección de derechos (SENAF)') {
                                                                                           _model.apiResultznwinfsenaf1 = await CrearCaratulaCall.call(
                                                                                             idexp: widget.expediente?.id,
@@ -2924,6 +2953,7 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                             idigreso: widget.ingrow?.id,
                                                                                             carpeta: containeringresoIngresosRow?.idcarpeta,
                                                                                             iddocumentoadjunto: buttonDocumentosadjuntosRow?.id.toString(),
+                                                                                            firma: widget.usuariorow?.firma,
                                                                                           );
 
                                                                                           if ((_model.apiResultznwinfsenaf1?.succeeded ?? true)) {
@@ -2949,6 +2979,9 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                         } else {
                                                                                           Navigator.pop(context);
                                                                                         }
+
+                                                                                        safeSetState(() => _model.requestCompleter2 = null);
+                                                                                        await _model.waitForRequestCompleted2();
                                                                                       } else {
                                                                                         await Formulario9Table().update(
                                                                                           data: {
@@ -3010,6 +3043,7 @@ class _SenafWidgetState extends State<SenafWidget> {
                                                                                           carpeta: containeringresoIngresosRow?.idcarpeta,
                                                                                           iddocumentoadjunto: buttonDocumentosadjuntosRow?.id.toString(),
                                                                                           idDocedit: buttonDocumentosadjuntosRow?.iddocdrive,
+                                                                                          firma: widget.usuariorow?.firma,
                                                                                         );
 
                                                                                         if ((_model.apiResultznwinfsenaf2?.succeeded ?? true)) {

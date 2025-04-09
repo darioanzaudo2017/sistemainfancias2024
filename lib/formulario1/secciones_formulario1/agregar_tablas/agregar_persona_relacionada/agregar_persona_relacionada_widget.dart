@@ -543,7 +543,7 @@ class _AgregarPersonaRelacionadaWidgetState
                                       widget.rowingreso?.id,
                                     ),
                                   );
-                                  Navigator.pop(context);
+                                  Navigator.pop(context, true);
                                 },
                                 text: 'Guardar',
                                 icon: Icon(

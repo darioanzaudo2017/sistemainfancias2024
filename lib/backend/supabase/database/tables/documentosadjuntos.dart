@@ -62,4 +62,7 @@ class DocumentosadjuntosRow extends SupabaseDataRow {
 
   bool? get adjunto => getField<bool>('adjunto');
   set adjunto(bool? value) => setField<bool>('adjunto', value);
+
+  int? get idampliacion => getField<int>('idampliacion');
+  set idampliacion(int? value) => setField<int>('idampliacion', value);
 }

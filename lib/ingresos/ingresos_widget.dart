@@ -151,6 +151,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                             child: BarradeNavegacionWidget(
                               idexp: widget.idexpediente?.id,
                               parameter10: false,
+                              urlcarpetadrive: widget.idcarpeta,
                               adjuntar: false,
                               imprimir: true,
                               carpeta: true,
@@ -581,8 +582,6 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                               .insert({
                                                                         'form1':
                                                                             true,
-                                                                        'Form2':
-                                                                            false,
                                                                         'Form3':
                                                                             false,
                                                                         'form4':
@@ -615,8 +614,6 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                             false,
                                                                         'form1completo':
                                                                             false,
-                                                                        'form2completo':
-                                                                            false,
                                                                         'form3completo':
                                                                             false,
                                                                         'form4completo':
@@ -647,6 +644,10 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                             supaSerialize<DateTime>(getCurrentTimestamp),
                                                                         'iduser':
                                                                             currentUserUid,
+                                                                        'Ampliacion':
+                                                                            false,
+                                                                        'Ampliacioncompleto':
+                                                                            false,
                                                                       });
                                                                       _model.apiResultz88 =
                                                                           await CrearCarpetaIngresoCall

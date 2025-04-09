@@ -38,4 +38,13 @@ class UsuariosRow extends SupabaseDataRow {
 
   int? get idgrupofamiliar => getField<int>('idgrupofamiliar');
   set idgrupofamiliar(int? value) => setField<int>('idgrupofamiliar', value);
+
+  int? get zonaUsuario => getField<int>('zona_usuario');
+  set zonaUsuario(int? value) => setField<int>('zona_usuario', value);
+
+  String? get mail => getField<String>('mail');
+  set mail(String? value) => setField<String>('mail', value);
+
+  String? get firma => getField<String>('firma');
+  set firma(String? value) => setField<String>('firma', value);
 }

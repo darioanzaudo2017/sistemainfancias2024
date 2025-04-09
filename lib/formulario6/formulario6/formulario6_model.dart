@@ -26,12 +26,6 @@ class Formulario6Model extends FlutterFlowModel<Formulario6Widget> {
   // State field(s) for DropDown widget.
   String? dropDownValue1;
   FormFieldController<String>? dropDownValueController1;
-  // State field(s) for ChoiceChips widget.
-  FormFieldController<List<String>>? choiceChipsValueController;
-  String? get choiceChipsValue =>
-      choiceChipsValueController?.value?.firstOrNull;
-  set choiceChipsValue(String? val) =>
-      choiceChipsValueController?.value = val != null ? [val] : [];
   DateTime? datePicked1;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;

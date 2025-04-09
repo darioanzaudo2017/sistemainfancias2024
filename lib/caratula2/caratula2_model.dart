@@ -46,6 +46,8 @@ class Caratula2Model extends FlutterFlowModel<Caratula2Widget> {
     return null;
   }
 
+  // State field(s) for RadioButton widget.
+  FormFieldController<String>? radioButtonValueController;
   // State field(s) for TextFieldDNI widget.
   FocusNode? textFieldDNIFocusNode;
   TextEditingController? textFieldDNITextController;
@@ -57,10 +59,16 @@ class Caratula2Model extends FlutterFlowModel<Caratula2Widget> {
   final textFieldedadMask = MaskTextInputFormatter(mask: '##');
   String? Function(BuildContext, String?)? textFieldedadTextControllerValidator;
   DateTime? datePicked1;
+  // State field(s) for DropDown widget.
+  String? dropDownValue;
+  FormFieldController<String>? dropDownValueController;
+  DateTime? datePicked2;
   // Stores action output result for [Backend Call - API (ExisteDNIexpediente)] action in Button widget.
   ApiCallResponse? checkdnifuncion;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   ExpedienteRow? crearexpnnya2;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<SpdRow>? spddrop;
   // Stores action output result for [Backend Call - API (ExisteDNInnya)] action in Button widget.
   ApiCallResponse? checkdnifuncionnnya;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
@@ -69,44 +77,30 @@ class Caratula2Model extends FlutterFlowModel<Caratula2Widget> {
   NNyAExpGruRow? crearexpgrupo3;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   GrupofamiliarRow? grupofmiliar3;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<VistaExpedientesUltimoEstadoRow>? vistaExpediente1;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<ImpresionesExpedientesRow>? idcarptea1;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<SpdRow>? spdseleccionado1;
   // Stores action output result for [Backend Call - API (carpeta del expediente)] action in Button widget.
-  ApiCallResponse? apiResult42y20;
+  ApiCallResponse? apiResult42y21;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   NNyARow? crearNNyA2;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   NNyAExpGruRow? crearexpgrupo2;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   GrupofamiliarRow? grupofmiliar2;
-  // Stores action output result for [Backend Call - API (carpeta del expediente)] action in Button widget.
-  ApiCallResponse? apiResult42y2;
-  // State field(s) for DropDown widget.
-  String? dropDownValue;
-  FormFieldController<String>? dropDownValueController;
-  DateTime? datePicked2;
-  // State field(s) for DropDowncanaldeingreso widget.
-  String? dropDowncanaldeingresoValue;
-  FormFieldController<String>? dropDowncanaldeingresoValueController;
-  // State field(s) for TextFieldespecificar widget.
-  FocusNode? textFieldespecificarFocusNode;
-  TextEditingController? textFieldespecificarTextController;
-  String? Function(BuildContext, String?)?
-      textFieldespecificarTextControllerValidator;
-  // State field(s) for TextFieldnumactuacion widget.
-  FocusNode? textFieldnumactuacionFocusNode;
-  TextEditingController? textFieldnumactuacionTextController;
-  String? Function(BuildContext, String?)?
-      textFieldnumactuacionTextControllerValidator;
-  // State field(s) for TextFieldprofesional widget.
-  FocusNode? textFieldprofesionalFocusNode;
-  TextEditingController? textFieldprofesionalTextController;
-  String? Function(BuildContext, String?)?
-      textFieldprofesionalTextControllerValidator;
   // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
-  List<ExpedienteRow>? creaexpprimeravez;
+  List<ExpedienteRow>? expedienteactualizado;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
   List<VistaExpedientesUltimoEstadoRow>? vistaExpediente;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
   List<ImpresionesExpedientesRow>? idcarptea;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<SpdRow>? spdseleccionado;
+  // Stores action output result for [Backend Call - API (carpeta del expediente)] action in Button widget.
+  ApiCallResponse? apiResult42y2;
 
   @override
   void initState(BuildContext context) {
@@ -129,14 +123,8 @@ class Caratula2Model extends FlutterFlowModel<Caratula2Widget> {
 
     textFieldedadFocusNode?.dispose();
     textFieldedadTextController?.dispose();
-
-    textFieldespecificarFocusNode?.dispose();
-    textFieldespecificarTextController?.dispose();
-
-    textFieldnumactuacionFocusNode?.dispose();
-    textFieldnumactuacionTextController?.dispose();
-
-    textFieldprofesionalFocusNode?.dispose();
-    textFieldprofesionalTextController?.dispose();
   }
+
+  /// Additional helper methods.
+  String? get radioButtonValue => radioButtonValueController?.value;
 }

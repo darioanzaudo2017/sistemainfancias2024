@@ -2,8 +2,6 @@
 export '/pages/home_page/home_page_widget.dart' show HomePageWidget;
 export '/perfil/perfil_widget.dart' show PerfilWidget;
 export '/ingresos/ingresos_widget.dart' show IngresosWidget;
-export '/entrevistas/entrevistas/entrevistas_widget.dart'
-    show EntrevistasWidget;
 export '/formulario6/definiciondemedidas/definiciondemedidas_widget.dart'
     show DefiniciondemedidasWidget;
 export '/formulario7/actaacuerdo/actaacuerdo_widget.dart'
@@ -30,3 +28,6 @@ export '/respuestaform6page/respuestaform6page_widget.dart'
 export '/pruebarls/pruebarls_widget.dart' show PruebarlsWidget;
 export '/informesenaf/informesenaf_widget.dart' show InformesenafWidget;
 export '/senaf_copy/senaf_copy_widget.dart' show SenafCopyWidget;
+export '/entrevistas/entrevistas_copy/entrevistas_copy_widget.dart'
+    show EntrevistasCopyWidget;
+export '/expedienterls/expedienterls_widget.dart' show ExpedienterlsWidget;

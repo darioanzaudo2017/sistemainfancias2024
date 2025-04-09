@@ -76,4 +76,7 @@ class ExpedienteRow extends SupabaseDataRow {
 
   int? get idNNyA => getField<int>('idNNyA');
   set idNNyA(int? value) => setField<int>('idNNyA', value);
+
+  int? get zona => getField<int>('zona');
+  set zona(int? value) => setField<int>('zona', value);
 }

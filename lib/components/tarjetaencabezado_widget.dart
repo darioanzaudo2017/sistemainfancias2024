@@ -133,7 +133,8 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
-                                      child: Text(
+                                      child: SelectionArea(
+                                          child: Text(
                                         'DNI: ${valueOrDefault<String>(
                                           widget.exprow!.dni! >= 90000000
                                               ? 'Sin dato'
@@ -151,7 +152,7 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
                                             ),
-                                      ),
+                                      )),
                                     ),
                                     Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -160,7 +161,8 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
-                                          child: Text(
+                                          child: SelectionArea(
+                                              child: Text(
                                             'Expediente: ${widget.exprow?.expediente}',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
@@ -174,7 +176,7 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
                                                 ),
-                                          ),
+                                          )),
                                         ),
                                       ],
                                     ),
@@ -254,8 +256,8 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
                                       FutureBuilder<List<VistaNnyaexpgruRow>>(
                                     future: VistaNnyaexpgruTable().queryRows(
                                       queryFn: (q) => q.eqOrNull(
-                                        'DNI_NNyA',
-                                        widget.exprow?.dni,
+                                        'id_NNyA',
+                                        widget.exprow?.idNNyA,
                                       ),
                                     ),
                                     builder: (context, snapshot) {

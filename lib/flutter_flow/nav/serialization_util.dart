@@ -218,8 +218,12 @@ dynamic deserializeParam<T>(
         switch (T) {
           case VistaTotalVulneradosRow:
             return VistaTotalVulneradosRow(data);
+          case ListadniexpedienteRow:
+            return ListadniexpedienteRow(data);
           case ImpresionesExpedientesRow:
             return ImpresionesExpedientesRow(data);
+          case LogExpedienteRow:
+            return LogExpedienteRow(data);
           case DerechovulneradoRow:
             return DerechovulneradoRow(data);
           case VistaRecepciondelademandaRow:
@@ -240,10 +244,10 @@ dynamic deserializeParam<T>(
             return UserRolRow(data);
           case HistorialingresoRow:
             return HistorialingresoRow(data);
+          case AmpliaciondeinformacionRow:
+            return AmpliaciondeinformacionRow(data);
           case VistaIngresosDiasRow:
             return VistaIngresosDiasRow(data);
-          case PaginaFormulario2y3Row:
-            return PaginaFormulario2y3Row(data);
           case GrupofamiliarRow:
             return GrupofamiliarRow(data);
           case SpdRow:
@@ -254,6 +258,8 @@ dynamic deserializeParam<T>(
             return Formulario5HistorialRow(data);
           case VistaExpedientesSenafRow:
             return VistaExpedientesSenafRow(data);
+          case VistaEstadisticasAdminRow:
+            return VistaEstadisticasAdminRow(data);
           case PruebarlsRow:
             return PruebarlsRow(data);
           case VistaNnyaexpgruRow:
@@ -282,30 +288,28 @@ dynamic deserializeParam<T>(
             return VistaUsuariosRolesRow(data);
           case Anexo1Form1Row:
             return Anexo1Form1Row(data);
+          case VistaEstadisticasZonaRow:
+            return VistaEstadisticasZonaRow(data);
           case GrupoConvivienteRow:
             return GrupoConvivienteRow(data);
           case ResuestasForm6Row:
             return ResuestasForm6Row(data);
           case NNyAExpGruRow:
             return NNyAExpGruRow(data);
+          case AmpliaciondeinformacionhistorialRow:
+            return AmpliaciondeinformacionhistorialRow(data);
           case Seccion1Row:
             return Seccion1Row(data);
-          case VistaConteoEntrevistasRow:
-            return VistaConteoEntrevistasRow(data);
           case ExpedienteRow:
             return ExpedienteRow(data);
           case Seccion2Row:
             return Seccion2Row(data);
-          case Formulario3Row:
-            return Formulario3Row(data);
           case AvisovisitaadultosRow:
             return AvisovisitaadultosRow(data);
           case Anexo4RequerimientoaccionesRow:
             return Anexo4RequerimientoaccionesRow(data);
           case AnexoinstitucionesaludRow:
             return AnexoinstitucionesaludRow(data);
-          case Formulario2Row:
-            return Formulario2Row(data);
           case VistaExpedientesUltimoEstadoRow:
             return VistaExpedientesUltimoEstadoRow(data);
           case BarriosRow:
@@ -334,10 +338,14 @@ dynamic deserializeParam<T>(
             return AnexoinstitucioneeducacionRow(data);
           case Formulario7Row:
             return Formulario7Row(data);
+          case ZonasRow:
+            return ZonasRow(data);
           case Seccion7Row:
             return Seccion7Row(data);
           case Formulario6Row:
             return Formulario6Row(data);
+          case VistaAmpliacionInformacionRow:
+            return VistaAmpliacionInformacionRow(data);
           case VistaExpedientesIngresosCountRow:
             return VistaExpedientesIngresosCountRow(data);
           default:

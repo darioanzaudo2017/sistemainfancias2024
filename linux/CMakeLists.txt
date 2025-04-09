@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
 project(runner LANGUAGES CXX)
 
-set(BINARY_NAME "SistemaInfancias2024")
-set(APPLICATION_ID "com.mycompany.sistemainfancias2024")
+set(BINARY_NAME "prueba clonacion sistema de infancias")
+set(APPLICATION_ID "com.mycompany.pruebaclonacionsistemadeinfancias")
 
 cmake_policy(SET CMP0063 NEW)
 

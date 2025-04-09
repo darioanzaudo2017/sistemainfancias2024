@@ -25,12 +25,14 @@ class SenafCopyWidget extends StatefulWidget {
     this.expediente,
     required this.usuariorow,
     this.usuariorol,
+    required this.spd,
   });
 
   final IngresosRow? ingrow;
   final VistaExpedientesUltimoEstadoRow? expediente;
   final UsuariosRow? usuariorow;
   final VistaUsuariosRolesRow? usuariorol;
+  final SpdRow? spd;
 
   static String routeName = 'SenafCopy';
   static String routePath = '/senafCopy';
@@ -950,6 +952,12 @@ class _SenafCopyWidgetState extends State<SenafCopyWidget> {
                                                                 serializeParam(
                                                               widget
                                                                   .usuariorol,
+                                                              ParamType
+                                                                  .SupabaseRow,
+                                                            ),
+                                                            'spd':
+                                                                serializeParam(
+                                                              widget.spd,
                                                               ParamType
                                                                   .SupabaseRow,
                                                             ),

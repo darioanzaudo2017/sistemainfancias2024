@@ -13,6 +13,8 @@ class Seccion8Model extends FlutterFlowModel<Seccion8Widget> {
   final paginatedDataTableController =
       FlutterFlowDataTableController<Seccion8Row>();
   Completer<List<Seccion8Row>>? requestCompleter;
+  // Stores action output result for [Bottom Sheet - agregarPersonaRelacionada] action in Button widget.
+  bool? creopersonaampliar;
 
   @override
   void initState(BuildContext context) {}
