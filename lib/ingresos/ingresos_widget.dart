@@ -11,7 +11,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'ingresos_model.dart';
 export 'ingresos_model.dart';
 
@@ -64,7 +64,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
   Widget build(BuildContext context) {
     return FutureBuilder<List<VistaIngresosDiasRow>>(
       future:
-          (_model.requestCompleter ??= Completer<List<VistaIngresosDiasRow>>()
+          (_model.requestCompleter2 ??= Completer<List<VistaIngresosDiasRow>>()
                 ..complete(VistaIngresosDiasTable().queryRows(
                   queryFn: (q) => q
                       .eqOrNull(
@@ -123,10 +123,22 @@ class _IngresosWidgetState extends State<IngresosWidget> {
               title: Text(
                 'Ingresos',
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
-                      fontFamily: 'Noto Sans JP',
+                      font: GoogleFonts.notoSansJp(
+                        fontWeight: FlutterFlowTheme.of(context)
+                            .headlineMedium
+                            .fontWeight,
+                        fontStyle: FlutterFlowTheme.of(context)
+                            .headlineMedium
+                            .fontStyle,
+                      ),
                       color: Colors.white,
                       fontSize: 22.0,
                       letterSpacing: 0.0,
+                      fontWeight: FlutterFlowTheme.of(context)
+                          .headlineMedium
+                          .fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).headlineMedium.fontStyle,
                     ),
               ),
               actions: [],
@@ -168,13 +180,18 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                               children: [
                                 FutureBuilder<
                                     List<VistaExpedientesUltimoEstadoRow>>(
-                                  future: VistaExpedientesUltimoEstadoTable()
-                                      .querySingleRow(
-                                    queryFn: (q) => q.eqOrNull(
-                                      'id',
-                                      widget.idexp,
-                                    ),
-                                  ),
+                                  future: (_model.requestCompleter1 ??= Completer<
+                                          List<
+                                              VistaExpedientesUltimoEstadoRow>>()
+                                        ..complete(
+                                            VistaExpedientesUltimoEstadoTable()
+                                                .querySingleRow(
+                                          queryFn: (q) => q.eqOrNull(
+                                            'id',
+                                            widget.idexp,
+                                          ),
+                                        )))
+                                      .future,
                                   builder: (context, snapshot) {
                                     // Customize what your widget looks like when it's loading.
                                     if (!snapshot.hasData) {
@@ -263,8 +280,8 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                               contactosref:
                                                                   false,
                                                               cambia: true,
-                                                              exprow: widget
-                                                                  .idexpediente!,
+                                                              exprow:
+                                                                  containerVistaExpedientesUltimoEstadoRow!,
                                                               usuariorow: widget
                                                                   .usuariorow!,
                                                             ),
@@ -280,10 +297,27 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Noto Sans JP',
+                                                                  font: GoogleFonts
+                                                                      .notoSansJp(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
                                                                 ),
                                                           ),
                                                           Flex(
@@ -316,32 +350,50 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                         context,
                                                                     builder:
                                                                         (context) {
-                                                                      return WebViewAware(
+                                                                      return GestureDetector(
+                                                                        onTap:
+                                                                            () {
+                                                                          FocusScope.of(context)
+                                                                              .unfocus();
+                                                                          FocusManager
+                                                                              .instance
+                                                                              .primaryFocus
+                                                                              ?.unfocus();
+                                                                        },
                                                                         child:
-                                                                            GestureDetector(
-                                                                          onTap:
-                                                                              () {
-                                                                            FocusScope.of(context).unfocus();
-                                                                            FocusManager.instance.primaryFocus?.unfocus();
-                                                                          },
+                                                                            Padding(
+                                                                          padding:
+                                                                              MediaQuery.viewInsetsOf(context),
                                                                           child:
-                                                                              Padding(
-                                                                            padding:
-                                                                                MediaQuery.viewInsetsOf(context),
-                                                                            child:
-                                                                                FormcaratulaWidget(
-                                                                              usuariorow: widget.usuariorow!,
-                                                                              idexp: widget.idexpediente?.id,
-                                                                              editar: true,
-                                                                              dniok: false,
-                                                                            ),
+                                                                              FormcaratulaWidget(
+                                                                            usuariorow:
+                                                                                widget.usuariorow!,
+                                                                            idexp:
+                                                                                widget.idexpediente?.id,
+                                                                            editar:
+                                                                                true,
+                                                                            dniok:
+                                                                                false,
                                                                           ),
                                                                         ),
                                                                       );
                                                                     },
                                                                   ).then((value) =>
-                                                                      safeSetState(
-                                                                          () {}));
+                                                                      safeSetState(() =>
+                                                                          _model.editocaratural =
+                                                                              value));
+
+                                                                  if (_model
+                                                                      .editocaratural!) {
+                                                                    safeSetState(() =>
+                                                                        _model.requestCompleter1 =
+                                                                            null);
+                                                                    await _model
+                                                                        .waitForRequestCompleted1();
+                                                                  }
+
+                                                                  safeSetState(
+                                                                      () {});
                                                                 },
                                                                 text:
                                                                     'Editar caratula',
@@ -367,12 +419,25 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Noto Sans JP',
+                                                                        font: GoogleFonts
+                                                                            .notoSansJp(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: Color(
                                                                             0xFF39A9EF),
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontStyle,
                                                                       ),
                                                                   elevation:
                                                                       3.0,
@@ -463,12 +528,19 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                               context)
                                                                           .titleSmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Noto Sans JP',
+                                                                            font:
+                                                                                GoogleFonts.notoSansJp(
+                                                                              fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                            ),
                                                                             color:
                                                                                 Color(0xFF39A9EF),
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).titleSmall.fontStyle,
                                                                           ),
                                                                       elevation:
                                                                           3.0,
@@ -531,10 +603,17 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                               context)
                                                                           .headlineSmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Noto Sans JP',
+                                                                            font:
+                                                                                GoogleFonts.notoSansJp(
+                                                                              fontWeight: FlutterFlowTheme.of(context).headlineSmall.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
+                                                                            ),
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).headlineSmall.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).headlineSmall.fontStyle,
                                                                           ),
                                                                     ),
                                                                     Text(
@@ -545,10 +624,17 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                               context)
                                                                           .headlineSmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Noto Sans JP',
+                                                                            font:
+                                                                                GoogleFonts.notoSansJp(
+                                                                              fontWeight: FlutterFlowTheme.of(context).headlineSmall.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
+                                                                            ),
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).headlineSmall.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).headlineSmall.fontStyle,
                                                                           ),
                                                                     ),
                                                                   ],
@@ -653,7 +739,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                           await CrearCarpetaIngresoCall
                                                                               .call(
                                                                         expediente:
-                                                                            containerVistaExpedientesUltimoEstadoRow?.expediente,
+                                                                            containerVistaExpedientesUltimoEstadoRow.expediente,
                                                                         idingreso: _model
                                                                             .crearingreso
                                                                             ?.id,
@@ -670,6 +756,8 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                             .caprtetaexp
                                                                             ?.firstOrNull
                                                                             ?.idcarpeta,
+                                                                        token:
+                                                                            currentJwtToken,
                                                                       );
 
                                                                       _model.apiResultgyy =
@@ -698,10 +786,10 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                         ),
                                                                       );
                                                                       safeSetState(() =>
-                                                                          _model.requestCompleter =
+                                                                          _model.requestCompleter2 =
                                                                               null);
                                                                       await _model
-                                                                          .waitForRequestCompleted();
+                                                                          .waitForRequestCompleted2();
 
                                                                       safeSetState(
                                                                           () {});
@@ -731,12 +819,19 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                               context)
                                                                           .titleSmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Noto Sans JP',
+                                                                            font:
+                                                                                GoogleFonts.notoSansJp(
+                                                                              fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                            ),
                                                                             color:
                                                                                 Colors.white,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).titleSmall.fontStyle,
                                                                           ),
                                                                       borderSide:
                                                                           BorderSide(
@@ -904,8 +999,13 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                             child: Text(
                                                                                                                               'Cerrado',
                                                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                                    fontFamily: 'Noto Sans JP',
+                                                                                                                                    font: GoogleFonts.notoSansJp(
+                                                                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                                                    ),
                                                                                                                                     letterSpacing: 0.0,
+                                                                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                                                   ),
                                                                                                                             ),
                                                                                                                           ),
@@ -928,8 +1028,13 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                             child: Text(
                                                                                                                               'Abierto',
                                                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                                    fontFamily: 'Noto Sans JP',
+                                                                                                                                    font: GoogleFonts.notoSansJp(
+                                                                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                                                    ),
                                                                                                                                     letterSpacing: 0.0,
+                                                                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                                                   ),
                                                                                                                             ),
                                                                                                                           ),
@@ -957,9 +1062,14 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                   Text(
                                                                                                                     'Datos del Ingreso',
                                                                                                                     style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                                          fontFamily: 'Noto Sans JP',
+                                                                                                                          font: GoogleFonts.notoSansJp(
+                                                                                                                            fontWeight: FlutterFlowTheme.of(context).titleMedium.fontWeight,
+                                                                                                                            fontStyle: FlutterFlowTheme.of(context).titleMedium.fontStyle,
+                                                                                                                          ),
                                                                                                                           color: FlutterFlowTheme.of(context).primaryText,
                                                                                                                           letterSpacing: 0.0,
+                                                                                                                          fontWeight: FlutterFlowTheme.of(context).titleMedium.fontWeight,
+                                                                                                                          fontStyle: FlutterFlowTheme.of(context).titleMedium.fontStyle,
                                                                                                                         ),
                                                                                                                   ),
                                                                                                                   Text(
@@ -969,15 +1079,25 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                       locale: FFLocalizations.of(context).languageCode,
                                                                                                                     )}',
                                                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                          fontFamily: 'Noto Sans JP',
+                                                                                                                          font: GoogleFonts.notoSansJp(
+                                                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                                          ),
                                                                                                                           letterSpacing: 0.0,
+                                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                                         ),
                                                                                                                   ),
                                                                                                                   Text(
                                                                                                                     'Dias: ${containerVarItem.diasCierre?.toString()}',
                                                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                          fontFamily: 'Noto Sans JP',
+                                                                                                                          font: GoogleFonts.notoSansJp(
+                                                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                                          ),
                                                                                                                           letterSpacing: 0.0,
+                                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                                         ),
                                                                                                                   ),
                                                                                                                   Text(
@@ -987,8 +1107,13 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                       locale: FFLocalizations.of(context).languageCode,
                                                                                                                     )}',
                                                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                          fontFamily: 'Noto Sans JP',
+                                                                                                                          font: GoogleFonts.notoSansJp(
+                                                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                                          ),
                                                                                                                           letterSpacing: 0.0,
+                                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                                         ),
                                                                                                                   ),
                                                                                                                 ].divide(SizedBox(height: 4.0)),
@@ -998,9 +1123,14 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                 child: Text(
                                                                                                                   'Estado de avance',
                                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                        fontFamily: 'Noto Sans JP',
+                                                                                                                        font: GoogleFonts.notoSansJp(
+                                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                                        ),
                                                                                                                         color: FlutterFlowTheme.of(context).secondary,
                                                                                                                         letterSpacing: 0.0,
+                                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                                       ),
                                                                                                                 ),
                                                                                                               ),
@@ -1024,11 +1154,15 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                             Text(
                                                                                                                               '1',
                                                                                                                               style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                                                                    fontFamily: 'Noto Sans JP',
+                                                                                                                                    font: GoogleFonts.notoSansJp(
+                                                                                                                                      fontWeight: FontWeight.w600,
+                                                                                                                                      fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
+                                                                                                                                    ),
                                                                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                                                                     fontSize: 18.0,
                                                                                                                                     letterSpacing: 0.0,
                                                                                                                                     fontWeight: FontWeight.w600,
+                                                                                                                                    fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
                                                                                                                                   ),
                                                                                                                             ),
                                                                                                                             Container(
@@ -1079,11 +1213,15 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                             Text(
                                                                                                                               '2',
                                                                                                                               style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                                                                    fontFamily: 'Noto Sans JP',
+                                                                                                                                    font: GoogleFonts.notoSansJp(
+                                                                                                                                      fontWeight: FontWeight.w600,
+                                                                                                                                      fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
+                                                                                                                                    ),
                                                                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                                                                     fontSize: 18.0,
                                                                                                                                     letterSpacing: 0.0,
                                                                                                                                     fontWeight: FontWeight.w600,
+                                                                                                                                    fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
                                                                                                                                   ),
                                                                                                                             ),
                                                                                                                             Container(
@@ -1132,11 +1270,15 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                             Text(
                                                                                                                               '3',
                                                                                                                               style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                                                                    fontFamily: 'Noto Sans JP',
+                                                                                                                                    font: GoogleFonts.notoSansJp(
+                                                                                                                                      fontWeight: FontWeight.w600,
+                                                                                                                                      fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
+                                                                                                                                    ),
                                                                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                                                                     fontSize: 18.0,
                                                                                                                                     letterSpacing: 0.0,
                                                                                                                                     fontWeight: FontWeight.w600,
+                                                                                                                                    fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
                                                                                                                                   ),
                                                                                                                             ),
                                                                                                                             Container(
@@ -1185,11 +1327,15 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                             Text(
                                                                                                                               '4',
                                                                                                                               style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                                                                    fontFamily: 'Noto Sans JP',
+                                                                                                                                    font: GoogleFonts.notoSansJp(
+                                                                                                                                      fontWeight: FontWeight.w600,
+                                                                                                                                      fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
+                                                                                                                                    ),
                                                                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                                                                     fontSize: 18.0,
                                                                                                                                     letterSpacing: 0.0,
                                                                                                                                     fontWeight: FontWeight.w600,
+                                                                                                                                    fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
                                                                                                                                   ),
                                                                                                                             ),
                                                                                                                             Container(
@@ -1239,11 +1385,15 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                             Text(
                                                                                                                               '5',
                                                                                                                               style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                                                                    fontFamily: 'Noto Sans JP',
+                                                                                                                                    font: GoogleFonts.notoSansJp(
+                                                                                                                                      fontWeight: FontWeight.w600,
+                                                                                                                                      fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
+                                                                                                                                    ),
                                                                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                                                                     fontSize: 18.0,
                                                                                                                                     letterSpacing: 0.0,
                                                                                                                                     fontWeight: FontWeight.w600,
+                                                                                                                                    fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
                                                                                                                                   ),
                                                                                                                             ),
                                                                                                                             Container(
@@ -1332,9 +1482,14 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                       iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                                       color: FlutterFlowTheme.of(context).primary,
                                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                            fontFamily: 'Noto Sans JP',
+                                                                                                            font: GoogleFonts.notoSansJp(
+                                                                                                              fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                            ),
                                                                                                             color: Colors.white,
                                                                                                             letterSpacing: 0.0,
+                                                                                                            fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
                                                                                                           ),
                                                                                                       elevation: 3.0,
                                                                                                       borderSide: BorderSide(

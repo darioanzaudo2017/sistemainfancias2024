@@ -16,8 +16,7 @@ class Caratula2Model extends FlutterFlowModel<Caratula2Widget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final formKey2 = GlobalKey<FormState>();
-  final formKey1 = GlobalKey<FormState>();
+  final formKey = GlobalKey<FormState>();
   // State field(s) for TextFieldapellido widget.
   FocusNode? textFieldapellidoFocusNode;
   TextEditingController? textFieldapellidoTextController;

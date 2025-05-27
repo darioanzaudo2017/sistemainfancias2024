@@ -85,4 +85,7 @@ class Seccion2Row extends SupabaseDataRow {
       getField<String>('institucionCanalIngreso');
   set institucionCanalIngreso(String? value) =>
       setField<String>('institucionCanalIngreso', value);
+
+  String? get viculoDrop => getField<String>('viculo_drop');
+  set viculoDrop(String? value) => setField<String>('viculo_drop', value);
 }

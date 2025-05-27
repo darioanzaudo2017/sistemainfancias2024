@@ -3,6 +3,7 @@ import '/backend/supabase/supabase.dart';
 import '/components/anexosbotonera_widget.dart';
 import '/components/barrade_navegacion_widget.dart';
 import '/components/tarjetaencabezado_widget.dart';
+import '/components/ultimaactualizacion_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/index.dart';
@@ -25,11 +26,13 @@ class PerfilModel extends FlutterFlowModel<PerfilWidget> {
   ApiCallResponse? apiResult42yCopy;
   // Stores action output result for [Backend Call - Query Rows] action in IconButton widget.
   List<VistaExpedientesUltimoEstadoRow>? exp;
+  // Model for ultimaactualizacion component.
+  late UltimaactualizacionModel ultimaactualizacionModel;
   // Model for tarjetaencabezado component.
   late TarjetaencabezadoModel tarjetaencabezadoModel;
   // Stores action output result for [Bottom Sheet - seccion1] action in Button widget.
   bool? seccio1true;
-  Completer<List<IngresosRow>>? requestCompleter;
+  Completer<List<IngresosRow>>? requestCompleter1;
   // Stores action output result for [Bottom Sheet - seccion2] action in Button widget.
   bool? seccion2true;
   // Stores action output result for [Bottom Sheet - seccion3] action in Button widget.
@@ -52,6 +55,9 @@ class PerfilModel extends FlutterFlowModel<PerfilWidget> {
   Seccion9Row? seccion9;
   // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
   List<Seccion9Row>? seccion9edit;
+  // Stores action output result for [Bottom Sheet - AsesoramientoAnexoA] action in Button widget.
+  bool? creoasesoramiento1;
+  Completer<List<AnexoAForm1Row>>? requestCompleter2;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   Seccion9Row? seccion9Copy;
   // State field(s) for RadioButton widget.
@@ -62,6 +68,8 @@ class PerfilModel extends FlutterFlowModel<PerfilWidget> {
     barradeNavegacionModel =
         createModel(context, () => BarradeNavegacionModel());
     anexosbotoneraModel = createModel(context, () => AnexosbotoneraModel());
+    ultimaactualizacionModel =
+        createModel(context, () => UltimaactualizacionModel());
     tarjetaencabezadoModel =
         createModel(context, () => TarjetaencabezadoModel());
   }
@@ -70,11 +78,12 @@ class PerfilModel extends FlutterFlowModel<PerfilWidget> {
   void dispose() {
     barradeNavegacionModel.dispose();
     anexosbotoneraModel.dispose();
+    ultimaactualizacionModel.dispose();
     tarjetaencabezadoModel.dispose();
   }
 
   /// Additional helper methods.
-  Future waitForRequestCompleted({
+  Future waitForRequestCompleted1({
     double minWait = 0,
     double maxWait = double.infinity,
   }) async {
@@ -82,7 +91,22 @@ class PerfilModel extends FlutterFlowModel<PerfilWidget> {
     while (true) {
       await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = requestCompleter?.isCompleted ?? false;
+      final requestComplete = requestCompleter1?.isCompleted ?? false;
+      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
+        break;
+      }
+    }
+  }
+
+  Future waitForRequestCompleted2({
+    double minWait = 0,
+    double maxWait = double.infinity,
+  }) async {
+    final stopwatch = Stopwatch()..start();
+    while (true) {
+      await Future.delayed(Duration(milliseconds: 50));
+      final timeElapsed = stopwatch.elapsedMilliseconds;
+      final requestComplete = requestCompleter2?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
         break;
       }

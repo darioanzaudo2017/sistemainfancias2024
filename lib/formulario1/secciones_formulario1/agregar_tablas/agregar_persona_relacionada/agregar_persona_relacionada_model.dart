@@ -3,6 +3,7 @@ import '/flutter_flow/form_field_controller.dart';
 import 'agregar_persona_relacionada_widget.dart'
     show AgregarPersonaRelacionadaWidget;
 import 'package:flutter/material.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class AgregarPersonaRelacionadaModel
     extends FlutterFlowModel<AgregarPersonaRelacionadaWidget> {
@@ -20,6 +21,7 @@ class AgregarPersonaRelacionadaModel
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode3;
   TextEditingController? textController3;
+  final textFieldMask3 = MaskTextInputFormatter(mask: '##########');
   String? Function(BuildContext, String?)? textController3Validator;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode4;

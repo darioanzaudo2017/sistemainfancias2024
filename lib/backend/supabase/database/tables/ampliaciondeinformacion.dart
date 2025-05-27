@@ -237,4 +237,7 @@ class AmpliaciondeinformacionRow extends SupabaseDataRow {
   String? get descripcionderechos => getField<String>('descripcionderechos');
   set descripcionderechos(String? value) =>
       setField<String>('descripcionderechos', value);
+
+  String? get etapa => getField<String>('etapa');
+  set etapa(String? value) => setField<String>('etapa', value);
 }

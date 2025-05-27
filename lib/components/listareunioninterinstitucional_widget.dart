@@ -8,7 +8,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'listareunioninterinstitucional_model.dart';
 export 'listareunioninterinstitucional_model.dart';
 
@@ -153,8 +153,21 @@ class _ListareunioninterinstitucionalWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .headlineSmall
                                 .override(
-                                  fontFamily: 'Noto Sans JP',
+                                  font: GoogleFonts.notoSansJp(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .headlineSmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .headlineSmall
+                                      .fontStyle,
                                 ),
                           ),
                         ],
@@ -170,16 +183,14 @@ class _ListareunioninterinstitucionalWidgetState
                             enableDrag: false,
                             context: context,
                             builder: (context) {
-                              return WebViewAware(
-                                child: Padding(
-                                  padding: MediaQuery.viewInsetsOf(context),
-                                  child: AnexoreunioninstitucionalWidget(
-                                    rowingreso: widget.idingres!,
-                                    rowexp: widget.idexprow!,
-                                    editar: false,
-                                    idanexoreunion: null,
-                                    formulario: widget.formulario!,
-                                  ),
+                              return Padding(
+                                padding: MediaQuery.viewInsetsOf(context),
+                                child: AnexoreunioninstitucionalWidget(
+                                  rowingreso: widget.idingres!,
+                                  rowexp: widget.idexprow!,
+                                  editar: false,
+                                  idanexoreunion: null,
+                                  formulario: widget.formulario!,
                                 ),
                               );
                             },
@@ -187,6 +198,8 @@ class _ListareunioninterinstitucionalWidgetState
                               () => _model.creonuevareunion = value));
 
                           if (_model.creonuevareunion!) {
+                            await Future.delayed(
+                                const Duration(milliseconds: 2500));
                             safeSetState(() => _model.requestCompleter = null);
                             await _model.waitForRequestCompleted();
                           }
@@ -203,9 +216,22 @@ class _ListareunioninterinstitucionalWidgetState
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Noto Sans JP',
+                                    font: GoogleFonts.notoSansJp(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontStyle,
+                                    ),
                                     color: Colors.white,
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontStyle,
                                   ),
                           elevation: 0.0,
                           borderRadius: BorderRadius.circular(8.0),
@@ -261,14 +287,35 @@ class _ListareunioninterinstitucionalWidgetState
                                                 optionsVarItem.fecha,
                                                 '0',
                                               ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge
-                                                      .override(
-                                                        fontFamily:
-                                                            'Noto Sans JP',
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyLarge
+                                                  .override(
+                                                    font:
+                                                        GoogleFonts.notoSansJp(
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyLarge
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyLarge
+                                                              .fontStyle,
+                                                    ),
+                                                    letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyLarge
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyLarge
+                                                            .fontStyle,
+                                                  ),
                                             ),
                                             Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -330,10 +377,31 @@ class _ListareunioninterinstitucionalWidgetState
                                                             .of(context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily:
-                                                              'Noto Sans JP',
+                                                          font: GoogleFonts
+                                                              .notoSansJp(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontStyle,
+                                                          ),
                                                           color: Colors.white,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .fontStyle,
                                                         ),
                                                     elevation: 0.0,
                                                     borderRadius:
@@ -384,22 +452,20 @@ class _ListareunioninterinstitucionalWidgetState
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return WebViewAware(
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child:
-                                                        AnexoreunioninstitucionalWidget(
-                                                      rowingreso:
-                                                          widget.idingres!,
-                                                      rowexp: widget.idexprow!,
-                                                      editar: true,
-                                                      idanexoreunion:
-                                                          optionsVarItem.id,
-                                                      formulario:
-                                                          widget.formulario!,
-                                                    ),
+                                                return Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child:
+                                                      AnexoreunioninstitucionalWidget(
+                                                    rowingreso:
+                                                        widget.idingres!,
+                                                    rowexp: widget.idexprow!,
+                                                    editar: true,
+                                                    idanexoreunion:
+                                                        optionsVarItem.id,
+                                                    formulario:
+                                                        widget.formulario!,
                                                   ),
                                                 );
                                               },

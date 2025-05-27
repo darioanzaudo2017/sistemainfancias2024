@@ -6,7 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'cambiarexpe_model.dart';
 export 'cambiarexpe_model.dart';
 
@@ -88,10 +88,19 @@ class _CambiarexpeWidgetState extends State<CambiarexpeWidget> {
               Text(
                 'Cambiar expediente de SPD',
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Noto Sans JP',
+                      font: GoogleFonts.notoSansJp(
+                        fontWeight:
+                            FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                      ),
                       color: FlutterFlowTheme.of(context).primary,
                       fontSize: 20.0,
                       letterSpacing: 0.0,
+                      fontWeight:
+                          FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                     ),
               ),
               FutureBuilder<List<SpdRow>>(
@@ -127,8 +136,20 @@ class _CambiarexpeWidgetState extends State<CambiarexpeWidget> {
                     width: 300.0,
                     height: 40.0,
                     textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Noto Sans JP',
+                          font: GoogleFonts.notoSansJp(
+                            fontWeight: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontWeight,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontStyle,
+                          ),
                           letterSpacing: 0.0,
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                         ),
                     hintText: 'SPD',
                     icon: Icon(
@@ -155,25 +176,23 @@ class _CambiarexpeWidgetState extends State<CambiarexpeWidget> {
                   var confirmDialogResponse = await showDialog<bool>(
                         context: context,
                         builder: (alertDialogContext) {
-                          return WebViewAware(
-                            child: AlertDialog(
-                              title: Text(
-                                  'Estas a punto de cambiar de SPD el expediente'),
-                              content: Text(
-                                  'Estas a punto de cambiar de SPD el expediente. Deseas continuar?'),
-                              actions: [
-                                TextButton(
-                                  onPressed: () =>
-                                      Navigator.pop(alertDialogContext, false),
-                                  child: Text('Cancelar'),
-                                ),
-                                TextButton(
-                                  onPressed: () =>
-                                      Navigator.pop(alertDialogContext, true),
-                                  child: Text('Confirmar'),
-                                ),
-                              ],
-                            ),
+                          return AlertDialog(
+                            title: Text(
+                                'Estas a punto de cambiar de SPD el expediente'),
+                            content: Text(
+                                'Estas a punto de cambiar de SPD el expediente. Deseas continuar?'),
+                            actions: [
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(alertDialogContext, false),
+                                child: Text('Cancelar'),
+                              ),
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(alertDialogContext, true),
+                                child: Text('Confirmar'),
+                              ),
+                            ],
                           );
                         },
                       ) ??
@@ -191,19 +210,17 @@ class _CambiarexpeWidgetState extends State<CambiarexpeWidget> {
                     await showDialog(
                       context: context,
                       builder: (alertDialogContext) {
-                        return WebViewAware(
-                          child: AlertDialog(
-                            title: Text('Se cambio el expediente'),
-                            content:
-                                Text('El expediente se cambio correctamente!'),
-                            actions: [
-                              TextButton(
-                                onPressed: () =>
-                                    Navigator.pop(alertDialogContext),
-                                child: Text('Ok'),
-                              ),
-                            ],
-                          ),
+                        return AlertDialog(
+                          title: Text('Se cambio el expediente'),
+                          content:
+                              Text('El expediente se cambio correctamente!'),
+                          actions: [
+                            TextButton(
+                              onPressed: () =>
+                                  Navigator.pop(alertDialogContext),
+                              child: Text('Ok'),
+                            ),
+                          ],
                         );
                       },
                     );
@@ -218,9 +235,19 @@ class _CambiarexpeWidgetState extends State<CambiarexpeWidget> {
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Noto Sans JP',
+                        font: GoogleFonts.notoSansJp(
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .titleSmall
+                              .fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                        ),
                         color: Colors.white,
                         letterSpacing: 0.0,
+                        fontWeight:
+                            FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).titleSmall.fontStyle,
                       ),
                   elevation: 0.0,
                   borderRadius: BorderRadius.circular(8.0),

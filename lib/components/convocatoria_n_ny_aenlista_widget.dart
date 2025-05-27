@@ -6,7 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'convocatoria_n_ny_aenlista_model.dart';
 export 'convocatoria_n_ny_aenlista_model.dart';
 
@@ -72,9 +72,18 @@ class _ConvocatoriaNNyAenlistaWidgetState
             Text(
               'Asistio a la entrevista NNyA: ',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Noto Sans JP',
+                    font: GoogleFonts.notoSansJp(
+                      fontWeight:
+                          FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                    ),
                     color: Color(0x8A000000),
                     letterSpacing: 0.0,
+                    fontWeight:
+                        FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                   ),
             ),
             Flexible(
@@ -96,9 +105,19 @@ class _ConvocatoriaNNyAenlistaWidgetState
                 selectedChipStyle: ChipStyle(
                   backgroundColor: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Noto Sans JP',
+                        font: GoogleFonts.notoSansJp(
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
                         color: FlutterFlowTheme.of(context).info,
                         letterSpacing: 0.0,
+                        fontWeight:
+                            FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                       ),
                   iconColor: FlutterFlowTheme.of(context).info,
                   iconSize: 16.0,
@@ -109,9 +128,19 @@ class _ConvocatoriaNNyAenlistaWidgetState
                   backgroundColor:
                       FlutterFlowTheme.of(context).secondaryBackground,
                   textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Noto Sans JP',
+                        font: GoogleFonts.notoSansJp(
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
                         color: FlutterFlowTheme.of(context).secondaryText,
                         letterSpacing: 0.0,
+                        fontWeight:
+                            FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                       ),
                   iconColor: FlutterFlowTheme.of(context).secondaryText,
                   iconSize: 16.0,
@@ -144,15 +173,13 @@ class _ConvocatoriaNNyAenlistaWidgetState
                         enableDrag: false,
                         context: context,
                         builder: (context) {
-                          return WebViewAware(
-                            child: Padding(
-                              padding: MediaQuery.viewInsetsOf(context),
-                              child: AvisoVisitaWidget(
-                                rowingreso: widget.ingresorow!,
-                                rowexp: widget.exprow!,
-                                editar: true,
-                                idampliacion: widget.idampliacion,
-                              ),
+                          return Padding(
+                            padding: MediaQuery.viewInsetsOf(context),
+                            child: AvisoVisitaWidget(
+                              rowingreso: widget.ingresorow!,
+                              rowexp: widget.exprow!,
+                              editar: true,
+                              idampliacion: widget.idampliacion,
                             ),
                           );
                         },
@@ -168,9 +195,22 @@ class _ConvocatoriaNNyAenlistaWidgetState
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily: 'Noto Sans JP',
+                                font: GoogleFonts.notoSansJp(
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontStyle,
+                                ),
                                 color: Colors.white,
                                 letterSpacing: 0.0,
+                                fontWeight: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .fontWeight,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .fontStyle,
                               ),
                       elevation: 0.0,
                       borderRadius: BorderRadius.circular(8.0),

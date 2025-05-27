@@ -4,6 +4,10 @@ import 'seccion1_widget.dart' show Seccion1Widget;
 import 'package:flutter/material.dart';
 
 class Seccion1Model extends FlutterFlowModel<Seccion1Widget> {
+  ///  Local state fields for this component.
+
+  bool editarseccion1 = true;
+
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();
@@ -13,8 +17,8 @@ class Seccion1Model extends FlutterFlowModel<Seccion1Widget> {
   String? Function(BuildContext, String?)?
       textFieldlunacimientoTextControllerValidator;
   // State field(s) for DropDownbarrio widget.
-  String? dropDownbarrioValue1;
-  FormFieldController<String>? dropDownbarrioValueController1;
+  String? dropDownbarrioValue;
+  FormFieldController<String>? dropDownbarrioValueController;
   // State field(s) for TextFielddomicilio widget.
   FocusNode? textFielddomicilioFocusNode;
   TextEditingController? textFielddomicilioTextController;
@@ -58,9 +62,9 @@ class Seccion1Model extends FlutterFlowModel<Seccion1Widget> {
   FocusNode? textFieldFocusNode4;
   TextEditingController? textController7;
   String? Function(BuildContext, String?)? textController7Validator;
-  // State field(s) for DropDownbarrio widget.
-  List<String>? dropDownbarrioValue2;
-  FormFieldController<List<String>>? dropDownbarrioValueController2;
+  // State field(s) for DropDowndiscapacidad widget.
+  List<String>? dropDowndiscapacidadValue;
+  FormFieldController<List<String>>? dropDowndiscapacidadValueController;
   // State field(s) for RadioButtoncud widget.
   FormFieldController<String>? radioButtoncudValueController;
   // State field(s) for RadioButtonprestaciones widget.

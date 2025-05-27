@@ -6,6 +6,10 @@ import 'package:flutter/material.dart';
 
 class AmpliacionactividadModel
     extends FlutterFlowModel<AmpliacionactividadWidget> {
+  ///  Local state fields for this component.
+
+  bool edit = false;
+
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();

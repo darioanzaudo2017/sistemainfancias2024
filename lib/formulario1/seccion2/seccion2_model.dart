@@ -5,6 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class Seccion2Model extends FlutterFlowModel<Seccion2Widget> {
+  ///  Local state fields for this component.
+
+  bool editarseccion2 = true;
+
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();

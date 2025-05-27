@@ -11,6 +11,8 @@ class Seccion7Model extends FlutterFlowModel<Seccion7Widget> {
 
   bool derchosvulcompleto = false;
 
+  bool editarderechos = true;
+
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();
@@ -20,6 +22,12 @@ class Seccion7Model extends FlutterFlowModel<Seccion7Widget> {
   // State field(s) for PaginatedDataTable widget.
   final paginatedDataTableController =
       FlutterFlowDataTableController<ListaDerechosVulneradosexpedienteRow>();
+  // State field(s) for ChoiceChips widget.
+  FormFieldController<List<String>>? choiceChipsValueController;
+  String? get choiceChipsValue =>
+      choiceChipsValueController?.value?.firstOrNull;
+  set choiceChipsValue(String? val) =>
+      choiceChipsValueController?.value = val != null ? [val] : [];
   // State field(s) for DropDownpriorizacion widget.
   List<String>? dropDownpriorizacionValue;
   FormFieldController<List<String>>? dropDownpriorizacionValueController;

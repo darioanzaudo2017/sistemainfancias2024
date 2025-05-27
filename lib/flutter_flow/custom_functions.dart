@@ -16,3 +16,16 @@ String? mayusculas(String? texto) {
   // uppercase from texto
   return texto?.toUpperCase();
 }
+
+String? listahtmlsenaf(List<String>? links) {
+  // return list html from links
+  if (links == null || links.isEmpty) return null;
+
+  StringBuffer htmlList = StringBuffer('<ul>');
+  for (var link in links) {
+    htmlList.write('<li><a href="$link">$link</a></li>');
+  }
+  htmlList.write('</ul>');
+
+  return htmlList.toString();
+}

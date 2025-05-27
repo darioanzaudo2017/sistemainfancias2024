@@ -17,6 +17,8 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
   String nombrepagina =
       ' Informe síntesis de Valoracion Integral y propuestas de MPI';
 
+  bool editarform5 = true;
+
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();
@@ -49,7 +51,7 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
   bool? agregarderecho;
   Completer<List<ListaDerechosVulneradosexpedienteRow>>? requestCompleter;
   // State field(s) for PaginatedDataTable widget.
-  final paginatedDataTableController =
+  final paginatedDataTableController1 =
       FlutterFlowDataTableController<ListaDerechosVulneradosexpedienteRow>();
   // State field(s) for Checkboxderecho widget.
   Map<ListaDerechosVulneradosexpedienteRow, bool> checkboxderechoValueMap = {};
@@ -93,7 +95,7 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
   String? Function(BuildContext, String?)?
       textFieldantecedentesTextControllerValidator;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
+  FocusNode? textFieldFocusNode;
   TextEditingController? textController5;
   String? Function(BuildContext, String?)? textController5Validator;
   String? _textController5Validator(BuildContext context, String? val) {
@@ -105,20 +107,27 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
   }
 
   // State field(s) for DropDownactores widget.
-  List<String>? dropDownactoresValue;
-  FormFieldController<List<String>>? dropDownactoresValueController;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController6;
-  String? Function(BuildContext, String?)? textController6Validator;
-  String? _textController6Validator(BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'Campo obligatorio';
-    }
-
-    return null;
-  }
-
+  String? dropDownactoresValue;
+  FormFieldController<String>? dropDownactoresValueController;
+  // State field(s) for TextFieldnombreespacio widget.
+  FocusNode? textFieldnombreespacioFocusNode;
+  TextEditingController? textFieldnombreespacioTextController;
+  String? Function(BuildContext, String?)?
+      textFieldnombreespacioTextControllerValidator;
+  // State field(s) for TextFieldreferente widget.
+  FocusNode? textFieldreferenteFocusNode;
+  TextEditingController? textFieldreferenteTextController;
+  String? Function(BuildContext, String?)?
+      textFieldreferenteTextControllerValidator;
+  // State field(s) for PaginatedDataTable widget.
+  final paginatedDataTableController2 =
+      FlutterFlowDataTableController<ArticulacionComunitariaRow>();
+  // State field(s) for ChoiceChips widget.
+  FormFieldController<List<String>>? choiceChipsValueController;
+  String? get choiceChipsValue =>
+      choiceChipsValueController?.value?.firstOrNull;
+  set choiceChipsValue(String? val) =>
+      choiceChipsValueController?.value = val != null ? [val] : [];
   // State field(s) for DropDownpriorizacion widget.
   List<String>? dropDownpriorizacionValue;
   FormFieldController<List<String>>? dropDownpriorizacionValueController;
@@ -149,7 +158,6 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
     textFieldresponsablesTextControllerValidator =
         _textFieldresponsablesTextControllerValidator;
     textController5Validator = _textController5Validator;
-    textController6Validator = _textController6Validator;
     anexosbotoneraModel = createModel(context, () => AnexosbotoneraModel());
   }
 
@@ -159,7 +167,7 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
     textFieldprofesionalesFocusNode?.dispose();
     textFieldprofesionalesTextController?.dispose();
 
-    paginatedDataTableController.dispose();
+    paginatedDataTableController1.dispose();
     textFieldinddevulneracionFocusNode?.dispose();
     textFieldinddevulneracionTextController?.dispose();
 
@@ -169,12 +177,16 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
     textFieldantecedentesFocusNode?.dispose();
     textFieldantecedentesTextController?.dispose();
 
-    textFieldFocusNode1?.dispose();
+    textFieldFocusNode?.dispose();
     textController5?.dispose();
 
-    textFieldFocusNode2?.dispose();
-    textController6?.dispose();
+    textFieldnombreespacioFocusNode?.dispose();
+    textFieldnombreespacioTextController?.dispose();
 
+    textFieldreferenteFocusNode?.dispose();
+    textFieldreferenteTextController?.dispose();
+
+    paginatedDataTableController2.dispose();
     textFieldvaloracionIntegralFocusNode?.dispose();
     textFieldvaloracionIntegralTextController?.dispose();
 

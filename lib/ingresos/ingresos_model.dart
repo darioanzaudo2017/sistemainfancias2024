@@ -15,6 +15,9 @@ class IngresosModel extends FlutterFlowModel<IngresosWidget> {
   late BarradeNavegacionModel barradeNavegacionModel;
   // Model for tarjetaencabezado component.
   late TarjetaencabezadoModel tarjetaencabezadoModel;
+  // Stores action output result for [Bottom Sheet - formcaratula] action in Button widget.
+  bool? editocaratural;
+  Completer<List<VistaExpedientesUltimoEstadoRow>>? requestCompleter1;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
   List<ImpresionesExpedientesRow>? caprtetaexp;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
@@ -23,7 +26,7 @@ class IngresosModel extends FlutterFlowModel<IngresosWidget> {
   ApiCallResponse? apiResultz88;
   // Stores action output result for [Backend Call - API (crearlistadocumentosadjuntos)] action in Button widget.
   ApiCallResponse? apiResultgyy;
-  Completer<List<VistaIngresosDiasRow>>? requestCompleter;
+  Completer<List<VistaIngresosDiasRow>>? requestCompleter2;
 
   @override
   void initState(BuildContext context) {
@@ -40,7 +43,7 @@ class IngresosModel extends FlutterFlowModel<IngresosWidget> {
   }
 
   /// Additional helper methods.
-  Future waitForRequestCompleted({
+  Future waitForRequestCompleted1({
     double minWait = 0,
     double maxWait = double.infinity,
   }) async {
@@ -48,7 +51,22 @@ class IngresosModel extends FlutterFlowModel<IngresosWidget> {
     while (true) {
       await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = requestCompleter?.isCompleted ?? false;
+      final requestComplete = requestCompleter1?.isCompleted ?? false;
+      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
+        break;
+      }
+    }
+  }
+
+  Future waitForRequestCompleted2({
+    double minWait = 0,
+    double maxWait = double.infinity,
+  }) async {
+    final stopwatch = Stopwatch()..start();
+    while (true) {
+      await Future.delayed(Duration(milliseconds: 50));
+      final timeElapsed = stopwatch.elapsedMilliseconds;
+      final requestComplete = requestCompleter2?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
         break;
       }

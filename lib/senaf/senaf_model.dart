@@ -1,6 +1,5 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
-import '/components/tarjetaencabezado_widget.dart';
 import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
@@ -10,6 +9,10 @@ import 'senaf_widget.dart' show SenafWidget;
 import 'package:flutter/material.dart';
 
 class SenafModel extends FlutterFlowModel<SenafWidget> {
+  ///  Local state fields for this page.
+
+  bool editarformcese = true;
+
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();
@@ -18,11 +21,17 @@ class SenafModel extends FlutterFlowModel<SenafWidget> {
   // State field(s) for PaginatedDataTable widget.
   final paginatedDataTableController =
       FlutterFlowDataTableController<GrupoConvivienteRow>();
-  // Model for tarjetaencabezado component.
-  late TarjetaencabezadoModel tarjetaencabezadoModel;
+  // State field(s) for TabBar widget.
+  TabController? tabBarController;
+  int get tabBarCurrentIndex =>
+      tabBarController != null ? tabBarController!.index : 0;
+  int get tabBarPreviousIndex =>
+      tabBarController != null ? tabBarController!.previousIndex : 0;
+
   // State field(s) for DropDowncausa widget.
   String? dropDowncausaValue;
   FormFieldController<String>? dropDowncausaValueController;
+  DateTime? datePicked1;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
   TextEditingController? textController1;
@@ -46,7 +55,6 @@ class SenafModel extends FlutterFlowModel<SenafWidget> {
   String? Function(BuildContext, String?)? textController4Validator;
   // State field(s) for Checkboxsolicitud widget.
   bool? checkboxsolicitudValue;
-  DateTime? datePicked1;
   DateTime? datePicked2;
   DateTime? datePicked3;
   // State field(s) for TextFieldmotivosolicitud widget.
@@ -72,25 +80,55 @@ class SenafModel extends FlutterFlowModel<SenafWidget> {
   TextEditingController? textFieldmotivorechazoTextController;
   String? Function(BuildContext, String?)?
       textFieldmotivorechazoTextControllerValidator;
-  Completer<List<Formulario9Row>>? requestCompleter2;
+  Completer<List<Formulario9Row>>? requestCompleter3;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   Formulario9Row? form9;
   Completer<List<IngresosRow>>? requestCompleter1;
-  // Stores action output result for [Backend Call - API (Crear Caratula)] action in Button widget.
-  ApiCallResponse? apiResultznwinfsenaf1;
-  // Stores action output result for [Backend Call - API (Crear Caratula)] action in Button widget.
-  ApiCallResponse? apiResultznwinfsenaf2;
+  Completer<List<VistaHistorialMovimientosSolicitudsenafRow>>?
+      requestCompleter2;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<VistaRecepciondelademandaRow>? recepciondemanda;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<ListaDerechosVulneradosexpedienteRow>? derechos;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<Formulario6Row>? medidas;
+  // Stores action output result for [Backend Call - API (crearwordsolicitud)] action in Button widget.
+  ApiCallResponse? apiResultznwinfsenaf1Copy;
+  // Stores action output result for [Bottom Sheet - Comentariosolicitudsenaf] action in Button widget.
+  bool? comentarioCopy5;
+  // Stores action output result for [Bottom Sheet - Comentariosolicitudsenaf] action in Button widget.
+  bool? comentarioCopy3;
+  // Stores action output result for [Bottom Sheet - Comentariosolicitudsenaf] action in Button widget.
+  bool? comentarioCopy;
+  // Stores action output result for [Bottom Sheet - Comentariosolicitudsenaf] action in Button widget.
+  bool? comentarioCopy2;
+  // Stores action output result for [Bottom Sheet - Comentariosolicitudsenaf] action in Button widget.
+  bool? comentario;
+  // Stores action output result for [Bottom Sheet - adjuntardocumento] action in Button widget.
+  bool? adjunto;
+  Completer<List<DocumentosadjuntosRow>>? requestCompleter5;
+  // State field(s) for Checkbox widget.
+  Map<DocumentosadjuntosRow, bool> checkboxValueMap = {};
+  List<DocumentosadjuntosRow> get checkboxCheckedItems =>
+      checkboxValueMap.entries.where((e) => e.value).map((e) => e.key).toList();
+
+  DateTime? datePicked6;
+  // State field(s) for DropDown widget.
+  String? dropDownValue;
+  FormFieldController<String>? dropDownValueController;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode4;
+  TextEditingController? textController8;
+  String? Function(BuildContext, String?)? textController8Validator;
+  Completer<List<SeguimientosolicitudRow>>? requestCompleter4;
 
   @override
-  void initState(BuildContext context) {
-    tarjetaencabezadoModel =
-        createModel(context, () => TarjetaencabezadoModel());
-  }
+  void initState(BuildContext context) {}
 
   @override
   void dispose() {
     paginatedDataTableController.dispose();
-    tarjetaencabezadoModel.dispose();
+    tabBarController?.dispose();
     textFieldFocusNode1?.dispose();
     textController1?.dispose();
 
@@ -111,6 +149,9 @@ class SenafModel extends FlutterFlowModel<SenafWidget> {
 
     textFieldmotivorechazoFocusNode?.dispose();
     textFieldmotivorechazoTextController?.dispose();
+
+    textFieldFocusNode4?.dispose();
+    textController8?.dispose();
   }
 
   /// Additional helper methods.
@@ -118,7 +159,7 @@ class SenafModel extends FlutterFlowModel<SenafWidget> {
       radioButtoninscriptoagotadoValueController?.value;
   String? get radioButtoninscriptopermanenciafamiliaValue =>
       radioButtoninscriptopermanenciafamiliaValueController?.value;
-  Future waitForRequestCompleted2({
+  Future waitForRequestCompleted3({
     double minWait = 0,
     double maxWait = double.infinity,
   }) async {
@@ -126,7 +167,7 @@ class SenafModel extends FlutterFlowModel<SenafWidget> {
     while (true) {
       await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = requestCompleter2?.isCompleted ?? false;
+      final requestComplete = requestCompleter3?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
         break;
       }
@@ -142,6 +183,51 @@ class SenafModel extends FlutterFlowModel<SenafWidget> {
       await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
       final requestComplete = requestCompleter1?.isCompleted ?? false;
+      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
+        break;
+      }
+    }
+  }
+
+  Future waitForRequestCompleted2({
+    double minWait = 0,
+    double maxWait = double.infinity,
+  }) async {
+    final stopwatch = Stopwatch()..start();
+    while (true) {
+      await Future.delayed(Duration(milliseconds: 50));
+      final timeElapsed = stopwatch.elapsedMilliseconds;
+      final requestComplete = requestCompleter2?.isCompleted ?? false;
+      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
+        break;
+      }
+    }
+  }
+
+  Future waitForRequestCompleted5({
+    double minWait = 0,
+    double maxWait = double.infinity,
+  }) async {
+    final stopwatch = Stopwatch()..start();
+    while (true) {
+      await Future.delayed(Duration(milliseconds: 50));
+      final timeElapsed = stopwatch.elapsedMilliseconds;
+      final requestComplete = requestCompleter5?.isCompleted ?? false;
+      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
+        break;
+      }
+    }
+  }
+
+  Future waitForRequestCompleted4({
+    double minWait = 0,
+    double maxWait = double.infinity,
+  }) async {
+    final stopwatch = Stopwatch()..start();
+    while (true) {
+      await Future.delayed(Duration(milliseconds: 50));
+      final timeElapsed = stopwatch.elapsedMilliseconds;
+      final requestComplete = requestCompleter4?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
         break;
       }

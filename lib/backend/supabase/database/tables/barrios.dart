@@ -22,4 +22,10 @@ class BarriosRow extends SupabaseDataRow {
 
   String? get barrio => getField<String>('Barrio');
   set barrio(String? value) => setField<String>('Barrio', value);
+
+  String? get xField => getField<String>('x');
+  set xField(String? value) => setField<String>('x', value);
+
+  String? get yField => getField<String>('y');
+  set yField(String? value) => setField<String>('y', value);
 }

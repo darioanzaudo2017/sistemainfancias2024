@@ -109,4 +109,13 @@ class VistaExpedientesUltimoEstadoRow extends SupabaseDataRow {
 
   int? get zona => getField<int>('Zona');
   set zona(int? value) => setField<int>('Zona', value);
+
+  int? get dniNnya => getField<int>('dni_nnya');
+  set dniNnya(int? value) => setField<int>('dni_nnya', value);
+
+  String? get edadCalculada => getField<String>('edad_calculada');
+  set edadCalculada(String? value) => setField<String>('edad_calculada', value);
+
+  String? get motivocierre => getField<String>('Motivocierre');
+  set motivocierre(String? value) => setField<String>('Motivocierre', value);
 }

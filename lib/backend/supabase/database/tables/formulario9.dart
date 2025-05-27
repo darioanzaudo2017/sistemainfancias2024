@@ -160,4 +160,10 @@ class Formulario9Row extends SupabaseDataRow {
 
   String? get iddrive => getField<String>('iddrive');
   set iddrive(String? value) => setField<String>('iddrive', value);
+
+  String? get responsable => getField<String>('responsable');
+  set responsable(String? value) => setField<String>('responsable', value);
+
+  String? get estadointerno => getField<String>('estadointerno');
+  set estadointerno(String? value) => setField<String>('estadointerno', value);
 }

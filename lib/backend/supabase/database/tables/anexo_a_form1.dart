@@ -57,4 +57,7 @@ class AnexoAForm1Row extends SupabaseDataRow {
 
   int? get idgrupofamiliar => getField<int>('idgrupofamiliar');
   set idgrupofamiliar(int? value) => setField<int>('idgrupofamiliar', value);
+
+  String? get domicilio => getField<String>('domicilio');
+  set domicilio(String? value) => setField<String>('domicilio', value);
 }

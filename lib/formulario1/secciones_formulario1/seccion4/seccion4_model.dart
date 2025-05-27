@@ -5,6 +5,10 @@ import 'seccion4_widget.dart' show Seccion4Widget;
 import 'package:flutter/material.dart';
 
 class Seccion4Model extends FlutterFlowModel<Seccion4Widget> {
+  ///  Local state fields for this component.
+
+  bool editarotrsdatos = true;
+
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();

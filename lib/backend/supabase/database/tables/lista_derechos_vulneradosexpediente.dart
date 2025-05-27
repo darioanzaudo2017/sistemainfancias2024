@@ -57,4 +57,7 @@ class ListaDerechosVulneradosexpedienteRow extends SupabaseDataRow {
 
   bool? get validoinforme => getField<bool>('validoinforme');
   set validoinforme(bool? value) => setField<bool>('validoinforme', value);
+
+  String? get observaciones => getField<String>('observaciones');
+  set observaciones(String? value) => setField<String>('observaciones', value);
 }

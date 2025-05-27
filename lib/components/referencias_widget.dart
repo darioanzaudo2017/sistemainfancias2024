@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'referencias_model.dart';
 export 'referencias_model.dart';
 
@@ -46,7 +47,7 @@ class _ReferenciasWidgetState extends State<ReferenciasWidget> {
           borderRadius: BorderRadius.circular(10.0),
         ),
         child: Container(
-          width: 754.0,
+          width: 576.68,
           height: 40.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -56,27 +57,8 @@ class _ReferenciasWidgetState extends State<ReferenciasWidget> {
             padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Container(
-                      width: 10.0,
-                      height: 30.0,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).primary,
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                    ),
-                    Text(
-                      'Expediente abierto sin ingresos',
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Noto Sans JP',
-                            letterSpacing: 0.0,
-                          ),
-                    ),
-                  ].divide(SizedBox(width: 10.0)),
-                ),
                 Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -89,10 +71,23 @@ class _ReferenciasWidgetState extends State<ReferenciasWidget> {
                       ),
                     ),
                     Text(
-                      'Expediente con ingreso abierto',
+                      'Expediente en proceso',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Noto Sans JP',
+                            font: GoogleFonts.notoSansJp(
+                              fontWeight: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .fontWeight,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .fontStyle,
+                            ),
                             letterSpacing: 0.0,
+                            fontWeight: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontWeight,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontStyle,
                           ),
                     ),
                   ].divide(SizedBox(width: 10.0)),
@@ -109,10 +104,56 @@ class _ReferenciasWidgetState extends State<ReferenciasWidget> {
                       ),
                     ),
                     Text(
-                      'Expediente con ingreso cerrado',
+                      'Expediente cesado',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Noto Sans JP',
+                            font: GoogleFonts.notoSansJp(
+                              fontWeight: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .fontWeight,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .fontStyle,
+                            ),
                             letterSpacing: 0.0,
+                            fontWeight: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontWeight,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontStyle,
+                          ),
+                    ),
+                  ].divide(SizedBox(width: 10.0)),
+                ),
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Container(
+                      width: 10.0,
+                      height: 30.0,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).primary,
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+                    ),
+                    Text(
+                      'Expte asesoramiento',
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            font: GoogleFonts.notoSansJp(
+                              fontWeight: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .fontWeight,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .fontStyle,
+                            ),
+                            letterSpacing: 0.0,
+                            fontWeight: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontWeight,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontStyle,
                           ),
                     ),
                   ].divide(SizedBox(width: 10.0)),

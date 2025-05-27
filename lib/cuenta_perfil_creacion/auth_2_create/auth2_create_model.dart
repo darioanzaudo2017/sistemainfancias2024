@@ -18,8 +18,11 @@ class Auth2CreateModel extends FlutterFlowModel<Auth2CreateWidget> {
   TextEditingController? emailAddressTextController;
   String? Function(BuildContext, String?)? emailAddressTextControllerValidator;
   // State field(s) for DropDown widget.
-  String? dropDownValue;
-  FormFieldController<String>? dropDownValueController;
+  String? dropDownValue1;
+  FormFieldController<String>? dropDownValueController1;
+  // State field(s) for DropDown widget.
+  int? dropDownValue2;
+  FormFieldController<int>? dropDownValueController2;
   // State field(s) for password widget.
   FocusNode? passwordFocusNode;
   TextEditingController? passwordTextController;
@@ -31,11 +34,6 @@ class Auth2CreateModel extends FlutterFlowModel<Auth2CreateWidget> {
   late bool passwordConfirmVisibility;
   String? Function(BuildContext, String?)?
       passwordConfirmTextControllerValidator;
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
-
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
   List<SpdRow>? spdzona;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.

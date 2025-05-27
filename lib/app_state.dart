@@ -37,35 +37,6 @@ class FFAppState extends ChangeNotifier {
 
   late SharedPreferences prefs;
 
-  List<ApiexpedienteStruct> _listaexpediente = [];
-  List<ApiexpedienteStruct> get listaexpediente => _listaexpediente;
-  set listaexpediente(List<ApiexpedienteStruct> value) {
-    _listaexpediente = value;
-  }
-
-  void addToListaexpediente(ApiexpedienteStruct value) {
-    listaexpediente.add(value);
-  }
-
-  void removeFromListaexpediente(ApiexpedienteStruct value) {
-    listaexpediente.remove(value);
-  }
-
-  void removeAtIndexFromListaexpediente(int index) {
-    listaexpediente.removeAt(index);
-  }
-
-  void updateListaexpedienteAtIndex(
-    int index,
-    ApiexpedienteStruct Function(ApiexpedienteStruct) updateFn,
-  ) {
-    listaexpediente[index] = updateFn(_listaexpediente[index]);
-  }
-
-  void insertAtIndexInListaexpediente(int index, ApiexpedienteStruct value) {
-    listaexpediente.insert(index, value);
-  }
-
   List<DatospersonasStruct> _listaprueba = [
     DatospersonasStruct.fromSerializableMap(jsonDecode(
         '{\"nombre\":\"sdfsdfsdf\",\"apellido\":\"sdfsdfsdf\",\"vinculo\":\"sdfsdf\",\"fecha_nacimiento\":\"Hello World\"}')),
@@ -201,6 +172,130 @@ class FFAppState extends ChangeNotifier {
   set content(String value) {
     _content = value;
     prefs.setString('ff_content', value);
+  }
+
+  List<Apiexpediente6Struct> _listaexpapi = [];
+  List<Apiexpediente6Struct> get listaexpapi => _listaexpapi;
+  set listaexpapi(List<Apiexpediente6Struct> value) {
+    _listaexpapi = value;
+  }
+
+  void addToListaexpapi(Apiexpediente6Struct value) {
+    listaexpapi.add(value);
+  }
+
+  void removeFromListaexpapi(Apiexpediente6Struct value) {
+    listaexpapi.remove(value);
+  }
+
+  void removeAtIndexFromListaexpapi(int index) {
+    listaexpapi.removeAt(index);
+  }
+
+  void updateListaexpapiAtIndex(
+    int index,
+    Apiexpediente6Struct Function(Apiexpediente6Struct) updateFn,
+  ) {
+    listaexpapi[index] = updateFn(_listaexpapi[index]);
+  }
+
+  void insertAtIndexInListaexpapi(int index, Apiexpediente6Struct value) {
+    listaexpapi.insert(index, value);
+  }
+
+  List<String> _listalinksenaf = [];
+  List<String> get listalinksenaf => _listalinksenaf;
+  set listalinksenaf(List<String> value) {
+    _listalinksenaf = value;
+  }
+
+  void addToListalinksenaf(String value) {
+    listalinksenaf.add(value);
+  }
+
+  void removeFromListalinksenaf(String value) {
+    listalinksenaf.remove(value);
+  }
+
+  void removeAtIndexFromListalinksenaf(int index) {
+    listalinksenaf.removeAt(index);
+  }
+
+  void updateListalinksenafAtIndex(
+    int index,
+    String Function(String) updateFn,
+  ) {
+    listalinksenaf[index] = updateFn(_listalinksenaf[index]);
+  }
+
+  void insertAtIndexInListalinksenaf(int index, String value) {
+    listalinksenaf.insert(index, value);
+  }
+
+  List<String> _listaemails = [];
+  List<String> get listaemails => _listaemails;
+  set listaemails(List<String> value) {
+    _listaemails = value;
+  }
+
+  void addToListaemails(String value) {
+    listaemails.add(value);
+  }
+
+  void removeFromListaemails(String value) {
+    listaemails.remove(value);
+  }
+
+  void removeAtIndexFromListaemails(int index) {
+    listaemails.removeAt(index);
+  }
+
+  void updateListaemailsAtIndex(
+    int index,
+    String Function(String) updateFn,
+  ) {
+    listaemails[index] = updateFn(_listaemails[index]);
+  }
+
+  void insertAtIndexInListaemails(int index, String value) {
+    listaemails.insert(index, value);
+  }
+
+  List<GrupoconvivienteStruct> _grupoconvivientelist = [];
+  List<GrupoconvivienteStruct> get grupoconvivientelist =>
+      _grupoconvivientelist;
+  set grupoconvivientelist(List<GrupoconvivienteStruct> value) {
+    _grupoconvivientelist = value;
+  }
+
+  void addToGrupoconvivientelist(GrupoconvivienteStruct value) {
+    grupoconvivientelist.add(value);
+  }
+
+  void removeFromGrupoconvivientelist(GrupoconvivienteStruct value) {
+    grupoconvivientelist.remove(value);
+  }
+
+  void removeAtIndexFromGrupoconvivientelist(int index) {
+    grupoconvivientelist.removeAt(index);
+  }
+
+  void updateGrupoconvivientelistAtIndex(
+    int index,
+    GrupoconvivienteStruct Function(GrupoconvivienteStruct) updateFn,
+  ) {
+    grupoconvivientelist[index] = updateFn(_grupoconvivientelist[index]);
+  }
+
+  void insertAtIndexInGrupoconvivientelist(
+      int index, GrupoconvivienteStruct value) {
+    grupoconvivientelist.insert(index, value);
+  }
+
+  int _idrol = 0;
+  int get idrol => _idrol;
+  set idrol(int value) {
+    _idrol = value;
   }
 }
 
