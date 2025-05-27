@@ -7,6 +7,8 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'edit_profile_auth2_model.dart';
 export 'edit_profile_auth2_model.dart';
 
@@ -94,8 +96,20 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                 child: Text(
                   widget.title,
                   style: FlutterFlowTheme.of(context).displaySmall.override(
-                        fontFamily: 'Noto Sans JP',
+                        font: GoogleFonts.notoSansJp(
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .displaySmall
+                              .fontWeight,
+                          fontStyle: FlutterFlowTheme.of(context)
+                              .displaySmall
+                              .fontStyle,
+                        ),
                         letterSpacing: 0.0,
+                        fontWeight: FlutterFlowTheme.of(context)
+                            .displaySmall
+                            .fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).displaySmall.fontStyle,
                       ),
                 ),
               ),
@@ -104,8 +118,18 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                 child: Text(
                   'Edita tu Perfil para que podamos brindarte una Mejor Experiencia',
                   style: FlutterFlowTheme.of(context).labelLarge.override(
-                        fontFamily: 'Noto Sans JP',
+                        font: GoogleFonts.notoSansJp(
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .labelLarge
+                              .fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                        ),
                         letterSpacing: 0.0,
+                        fontWeight:
+                            FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).labelLarge.fontStyle,
                       ),
                 ),
               ),
@@ -183,8 +207,21 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                       color: FlutterFlowTheme.of(context).primaryBackground,
                       textStyle:
                           FlutterFlowTheme.of(context).bodyMedium.override(
-                                fontFamily: 'Noto Sans JP',
+                                font: GoogleFonts.notoSansJp(
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
+                                ),
                                 letterSpacing: 0.0,
+                                fontWeight: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .fontWeight,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .fontStyle,
                               ),
                       elevation: 1.0,
                       borderSide: BorderSide(
@@ -214,21 +251,60 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                     labelText: 'Nombre Completo',
                     labelStyle:
                         FlutterFlowTheme.of(context).labelMedium.override(
-                              fontFamily: 'Noto Sans JP',
+                              font: GoogleFonts.notoSansJp(
+                                fontWeight: FlutterFlowTheme.of(context)
+                                    .labelMedium
+                                    .fontWeight,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .labelMedium
+                                    .fontStyle,
+                              ),
                               letterSpacing: 0.0,
+                              fontWeight: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .fontWeight,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .fontStyle,
                             ),
                     hintText: 'Nombre Completo',
                     hintStyle:
                         FlutterFlowTheme.of(context).labelMedium.override(
-                              fontFamily: 'Noto Sans JP',
+                              font: GoogleFonts.notoSansJp(
+                                fontWeight: FlutterFlowTheme.of(context)
+                                    .labelMedium
+                                    .fontWeight,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .labelMedium
+                                    .fontStyle,
+                              ),
                               letterSpacing: 0.0,
+                              fontWeight: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .fontWeight,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .fontStyle,
                             ),
-                    errorStyle:
-                        FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Noto Sans JP',
-                              color: FlutterFlowTheme.of(context).error,
-                              letterSpacing: 0.0,
-                            ),
+                    errorStyle: FlutterFlowTheme.of(context)
+                        .bodyMedium
+                        .override(
+                          font: GoogleFonts.notoSansJp(
+                            fontWeight: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontWeight,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontStyle,
+                          ),
+                          color: FlutterFlowTheme.of(context).error,
+                          letterSpacing: 0.0,
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: FlutterFlowTheme.of(context).alternate,
@@ -263,12 +339,32 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                         EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 12.0),
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Noto Sans JP',
+                        font: GoogleFonts.notoSansJp(
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
                         letterSpacing: 0.0,
+                        fontWeight:
+                            FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                       ),
                   cursorColor: FlutterFlowTheme.of(context).primary,
                   validator: _model.yourNameTextControllerValidator
                       .asValidator(context),
+                  inputFormatters: [
+                    if (!isAndroid && !isiOS)
+                      TextInputFormatter.withFunction((oldValue, newValue) {
+                        return TextEditingValue(
+                          selection: newValue.selection,
+                          text: newValue.text
+                              .toCapitalization(TextCapitalization.words),
+                        );
+                      }),
+                  ],
                 ),
               ),
               Padding(
@@ -284,8 +380,18 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                   width: double.infinity,
                   height: 44.0,
                   textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Noto Sans JP',
+                        font: GoogleFonts.notoSansJp(
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
                         letterSpacing: 0.0,
+                        fontWeight:
+                            FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                       ),
                   hintText: 'Tu Rol',
                   icon: Icon(
@@ -340,8 +446,21 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                       height: 44.0,
                       textStyle:
                           FlutterFlowTheme.of(context).bodyMedium.override(
-                                fontFamily: 'Noto Sans JP',
+                                font: GoogleFonts.notoSansJp(
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
+                                ),
                                 letterSpacing: 0.0,
+                                fontWeight: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .fontWeight,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .fontStyle,
                               ),
                       hintText: 'Tu Rol',
                       icon: Icon(
@@ -393,9 +512,22 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  fontFamily: 'Noto Sans JP',
+                                  font: GoogleFonts.notoSansJp(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontStyle,
+                                  ),
                                   color: FlutterFlowTheme.of(context).info,
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontStyle,
                                 ),
                           ),
                           duration: Duration(milliseconds: 4000),
@@ -415,8 +547,21 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily: 'Noto Sans JP',
+                                font: GoogleFonts.notoSansJp(
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontStyle,
+                                ),
                                 letterSpacing: 0.0,
+                                fontWeight: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .fontWeight,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .fontStyle,
                               ),
                       elevation: 3.0,
                       borderSide: BorderSide(

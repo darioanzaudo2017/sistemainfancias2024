@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'tarjetaencabezado_model.dart';
 export 'tarjetaencabezado_model.dart';
 
@@ -56,333 +57,539 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: AlignmentDirectional(-1.0, 0.0),
+    return Card(
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      color: FlutterFlowTheme.of(context).primaryBackground,
+      elevation: 2.0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12.0),
+      ),
       child: Padding(
-        padding: EdgeInsets.all(8.0),
-        child: Material(
-          color: Colors.transparent,
-          elevation: 5.0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(12.0),
-              bottomRight: Radius.circular(12.0),
-              topLeft: Radius.circular(12.0),
-              topRight: Radius.circular(12.0),
-            ),
-          ),
+        padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
+        child: Container(
+          width: double.infinity,
           child: Container(
-            decoration: BoxDecoration(
-              color: Color(0xFF39A9EF),
-              boxShadow: [
-                BoxShadow(
-                  blurRadius: 4.0,
-                  color: Color(0x19000000),
-                  offset: Offset(
-                    0.0,
-                    2.0,
-                  ),
-                )
-              ],
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(12.0),
-                bottomRight: Radius.circular(12.0),
-                topLeft: Radius.circular(12.0),
-                topRight: Radius.circular(12.0),
-              ),
-            ),
-            child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Align(
-                    alignment: AlignmentDirectional(0.0, -1.0),
-                    child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
-                      child: Flex(
-                        direction: (MediaQuery.sizeOf(context).width > 800.0)
-                            ? Axis.horizontal
-                            : Axis.vertical,
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Expanded(
-                            child: Align(
-                              alignment: AlignmentDirectional(0.0, -1.0),
-                              child: Padding(
-                                padding: EdgeInsets.all(12.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'NNyA: ${widget.exprow?.nombres} , ${widget.exprow?.apellidos}',
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineSmall
-                                          .override(
-                                            fontFamily: 'Outfit',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            fontSize: 24.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 4.0, 0.0, 0.0),
-                                      child: SelectionArea(
-                                          child: Text(
-                                        'DNI: ${valueOrDefault<String>(
-                                          widget.exprow!.dni! >= 90000000
-                                              ? 'Sin dato'
-                                              : widget.exprow?.dni?.toString(),
-                                          '0',
-                                        )}',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodySmall
-                                            .override(
-                                              fontFamily: 'Plus Jakarta Sans',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                              fontSize: 12.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w600,
-                                            ),
-                                      )),
-                                    ),
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 4.0, 0.0, 0.0),
-                                          child: SelectionArea(
-                                              child: Text(
-                                            'Expediente: ${widget.exprow?.expediente}',
-                                            style: FlutterFlowTheme.of(context)
-                                                .labelMedium
-                                                .override(
-                                                  fontFamily:
-                                                      'Plus Jakarta Sans',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
-                                                  fontSize: 14.0,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
-                                          )),
+            width: double.infinity,
+            child: Stack(
+              children: [
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Align(
+                          alignment: AlignmentDirectional(0.0, -1.0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    8.0, 0.0, 8.0, 0.0),
+                                child: Text(
+                                  'NNyA: ${widget.exprow?.nombres} , ${widget.exprow?.apellidos}',
+                                  style: FlutterFlowTheme.of(context)
+                                      .headlineMedium
+                                      .override(
+                                        font: GoogleFonts.notoSansJp(
+                                          fontWeight: FontWeight.bold,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineMedium
+                                                  .fontStyle,
                                         ),
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 4.0, 0.0, 0.0),
-                                          child: Text(
-                                            'SPD: ${widget.exprow?.spd}',
-                                            style: FlutterFlowTheme.of(context)
-                                                .labelMedium
-                                                .override(
-                                                  fontFamily:
-                                                      'Plus Jakarta Sans',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
-                                                  fontSize: 14.0,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 4.0, 0.0, 0.0),
-                                          child: Text(
-                                            'Edad: ${widget.exprow?.edad?.toString()}',
-                                            style: FlutterFlowTheme.of(context)
-                                                .labelMedium
-                                                .override(
-                                                  fontFamily:
-                                                      'Plus Jakarta Sans',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
-                                                  fontSize: 14.0,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ].divide(SizedBox(height: 5.0)),
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.bold,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .headlineMedium
+                                            .fontStyle,
+                                      ),
                                 ),
                               ),
-                            ),
-                          ),
-                          Visibility(
-                            visible:
-                                (MediaQuery.sizeOf(context).width > 800.0) &&
-                                    responsiveVisibility(
-                                      context: context,
-                                      phone: false,
-                                      tablet: false,
-                                    ),
-                            child: Container(
-                              width: 280.0,
-                              height: 250.0,
-                              decoration: BoxDecoration(),
-                              child: Align(
-                                alignment: AlignmentDirectional(0.0, -1.0),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 5.0, 0.0, 5.0),
-                                  child:
-                                      FutureBuilder<List<VistaNnyaexpgruRow>>(
-                                    future: VistaNnyaexpgruTable().queryRows(
-                                      queryFn: (q) => q.eqOrNull(
-                                        'id_NNyA',
-                                        widget.exprow?.idNNyA,
-                                      ),
-                                    ),
-                                    builder: (context, snapshot) {
-                                      // Customize what your widget looks like when it's loading.
-                                      if (!snapshot.hasData) {
-                                        return Center(
-                                          child: SizedBox(
-                                            width: 50.0,
-                                            height: 50.0,
-                                            child: CircularProgressIndicator(
-                                              valueColor:
-                                                  AlwaysStoppedAnimation<Color>(
-                                                FlutterFlowTheme.of(context)
-                                                    .primary,
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    8.0, 0.0, 8.0, 0.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Text(
+                                          'DNI:',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.notoSansJp(
+                                                  fontWeight: FontWeight.w600,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w600,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
                                               ),
-                                            ),
+                                        ),
+                                        Text(
+                                          valueOrDefault<String>(
+                                            widget.exprow?.DNI?.toString(),
+                                            'Sin dato',
                                           ),
-                                        );
-                                      }
-                                      List<VistaNnyaexpgruRow>
-                                          listViewVistaNnyaexpgruRowList =
-                                          snapshot.data!;
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.notoSansJp(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      ].divide(SizedBox(width: 8.0)),
+                                    ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Text(
+                                          'Expediente:',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.notoSansJp(
+                                                  fontWeight: FontWeight.w600,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w600,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                        Text(
+                                          valueOrDefault<String>(
+                                            widget.exprow?.expediente,
+                                            'Sin dato',
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.notoSansJp(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      ].divide(SizedBox(width: 8.0)),
+                                    ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Text(
+                                          'SPD:',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.notoSansJp(
+                                                  fontWeight: FontWeight.w600,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w600,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                        Text(
+                                          valueOrDefault<String>(
+                                            widget.exprow?.spd,
+                                            'Sin dato',
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.notoSansJp(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      ].divide(SizedBox(width: 8.0)),
+                                    ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Text(
+                                          'Edad:',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.notoSansJp(
+                                                  fontWeight: FontWeight.w600,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w600,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                        Text(
+                                          valueOrDefault<String>(
+                                            widget.exprow?.edadCalculada,
+                                            'Sin dato',
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.notoSansJp(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      ].divide(SizedBox(width: 8.0)),
+                                    ),
+                                  ].divide(SizedBox(height: 8.0)),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Align(
+                          alignment: AlignmentDirectional(0.0, -1.0),
+                          child: Container(
+                            width: 300.0,
+                            decoration: BoxDecoration(),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 5.0, 0.0, 5.0),
+                              child: FutureBuilder<List<VistaNnyaexpgruRow>>(
+                                future: VistaNnyaexpgruTable().queryRows(
+                                  queryFn: (q) => q.eqOrNull(
+                                    'id_NNyA',
+                                    widget.exprow?.idNNyA,
+                                  ),
+                                ),
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: SizedBox(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        child: CircularProgressIndicator(
+                                          valueColor:
+                                              AlwaysStoppedAnimation<Color>(
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                  List<VistaNnyaexpgruRow>
+                                      listViewVistaNnyaexpgruRowList =
+                                      snapshot.data!;
 
-                                      return ListView.builder(
-                                        padding: EdgeInsets.zero,
-                                        shrinkWrap: true,
-                                        scrollDirection: Axis.vertical,
-                                        itemCount:
-                                            listViewVistaNnyaexpgruRowList
-                                                .length,
-                                        itemBuilder: (context, listViewIndex) {
-                                          final listViewVistaNnyaexpgruRow =
-                                              listViewVistaNnyaexpgruRowList[
-                                                  listViewIndex];
-                                          return Padding(
+                                  return ListView.builder(
+                                    padding: EdgeInsets.zero,
+                                    shrinkWrap: true,
+                                    scrollDirection: Axis.vertical,
+                                    itemCount:
+                                        listViewVistaNnyaexpgruRowList.length,
+                                    itemBuilder: (context, listViewIndex) {
+                                      final listViewVistaNnyaexpgruRow =
+                                          listViewVistaNnyaexpgruRowList[
+                                              listViewIndex];
+                                      return Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 0.0, 10.0, 5.0),
+                                        child: Container(
+                                          width: double.infinity,
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            boxShadow: [
+                                              BoxShadow(
+                                                blurRadius: 7.0,
+                                                color: Color(0x2F1D2429),
+                                                offset: Offset(
+                                                  0.0,
+                                                  3.0,
+                                                ),
+                                              )
+                                            ],
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    10.0, 0.0, 10.0, 5.0),
-                                            child: Container(
-                                              width: double.infinity,
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                    blurRadius: 7.0,
-                                                    color: Color(0x2F1D2429),
-                                                    offset: Offset(
-                                                      0.0,
-                                                      3.0,
-                                                    ),
-                                                  )
-                                                ],
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                              child: Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        12.0, 5.0, 12.0, 5.0),
-                                                child: Flex(
-                                                  direction: (MediaQuery.sizeOf(
-                                                                  context)
+                                                    12.0, 5.0, 12.0, 5.0),
+                                            child: Flex(
+                                              direction:
+                                                  (MediaQuery.sizeOf(context)
                                                               .width >
                                                           800.0)
                                                       ? Axis.horizontal
                                                       : Axis.vertical,
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Expanded(
-                                                      child: Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    12.0,
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Expanded(
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(12.0, 0.0,
+                                                                8.0, 0.0),
+                                                    child: Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        Text(
+                                                          valueOrDefault<
+                                                              String>(
+                                                            listViewVistaNnyaexpgruRow
+                                                                .expedienteExpediente,
+                                                            '0',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyLarge
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .plusJakartaSans(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge
+                                                                      .fontStyle,
+                                                                ),
+                                                                color: Color(
+                                                                    0xFF14181B),
+                                                                fontSize: 12.0,
+                                                                letterSpacing:
                                                                     0.0,
-                                                                    8.0,
-                                                                    0.0),
-                                                        child: Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .center,
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .start,
-                                                          children: [
-                                                            Text(
-                                                              valueOrDefault<
-                                                                  String>(
-                                                                listViewVistaNnyaexpgruRow
-                                                                    .expedienteExpediente,
-                                                                '0',
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLarge
+                                                                    .fontStyle,
                                                               ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyLarge
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Plus Jakarta Sans',
-                                                                    color: Color(
-                                                                        0xFF14181B),
-                                                                    fontSize:
-                                                                        12.0,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w500,
-                                                                  ),
+                                                        ),
+                                                        Text(
+                                                          valueOrDefault<
+                                                              String>(
+                                                            listViewVistaNnyaexpgruRow
+                                                                .detalleNNyAExpGru,
+                                                            '0',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyLarge
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .plusJakartaSans(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge
+                                                                      .fontStyle,
+                                                                ),
+                                                                color: Color(
+                                                                    0xFF14181B),
+                                                                fontSize: 10.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLarge
+                                                                    .fontStyle,
+                                                              ),
+                                                        ),
+                                                        FutureBuilder<
+                                                            List<
+                                                                ExpedienteRow>>(
+                                                          future:
+                                                              ExpedienteTable()
+                                                                  .querySingleRow(
+                                                            queryFn: (q) =>
+                                                                q.eqOrNull(
+                                                              'id',
+                                                              listViewVistaNnyaexpgruRow
+                                                                  .idExpediente,
                                                             ),
-                                                            Text(
-                                                              valueOrDefault<
-                                                                  String>(
-                                                                listViewVistaNnyaexpgruRow
-                                                                    .detalleNNyAExpGru,
-                                                                '0',
-                                                              ),
+                                                          ),
+                                                          builder: (context,
+                                                              snapshot) {
+                                                            // Customize what your widget looks like when it's loading.
+                                                            if (!snapshot
+                                                                .hasData) {
+                                                              return Center(
+                                                                child: SizedBox(
+                                                                  width: 50.0,
+                                                                  height: 50.0,
+                                                                  child:
+                                                                      CircularProgressIndicator(
+                                                                    valueColor:
+                                                                        AlwaysStoppedAnimation<
+                                                                            Color>(
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              );
+                                                            }
+                                                            List<ExpedienteRow>
+                                                                textExpedienteRowList =
+                                                                snapshot.data!;
+
+                                                            final textExpedienteRow =
+                                                                textExpedienteRowList
+                                                                        .isNotEmpty
+                                                                    ? textExpedienteRowList
+                                                                        .first
+                                                                    : null;
+
+                                                            return Text(
+                                                              '${textExpedienteRow?.nombres},${textExpedienteRow?.apellidos}',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyLarge
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Plus Jakarta Sans',
+                                                                    font: GoogleFonts
+                                                                        .plusJakartaSans(
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w500,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyLarge
+                                                                          .fontStyle,
+                                                                    ),
                                                                     color: Color(
                                                                         0xFF14181B),
                                                                     fontSize:
@@ -392,166 +599,97 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .w500,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge
+                                                                        .fontStyle,
                                                                   ),
-                                                            ),
-                                                            FutureBuilder<
-                                                                List<
-                                                                    ExpedienteRow>>(
-                                                              future: ExpedienteTable()
-                                                                  .querySingleRow(
-                                                                queryFn: (q) =>
-                                                                    q.eqOrNull(
-                                                                  'id',
-                                                                  listViewVistaNnyaexpgruRow
-                                                                      .idExpediente,
-                                                                ),
-                                                              ),
-                                                              builder: (context,
-                                                                  snapshot) {
-                                                                // Customize what your widget looks like when it's loading.
-                                                                if (!snapshot
-                                                                    .hasData) {
-                                                                  return Center(
-                                                                    child:
-                                                                        SizedBox(
-                                                                      width:
-                                                                          50.0,
-                                                                      height:
-                                                                          50.0,
-                                                                      child:
-                                                                          CircularProgressIndicator(
-                                                                        valueColor:
-                                                                            AlwaysStoppedAnimation<Color>(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .primary,
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  );
-                                                                }
-                                                                List<ExpedienteRow>
-                                                                    textExpedienteRowList =
-                                                                    snapshot
-                                                                        .data!;
-
-                                                                final textExpedienteRow =
-                                                                    textExpedienteRowList
-                                                                            .isNotEmpty
-                                                                        ? textExpedienteRowList
-                                                                            .first
-                                                                        : null;
-
-                                                                return Text(
-                                                                  '${textExpedienteRow?.nombres},${textExpedienteRow?.apellidos}',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyLarge
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Plus Jakarta Sans',
-                                                                        color: Color(
-                                                                            0xFF14181B),
-                                                                        fontSize:
-                                                                            10.0,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                        fontWeight:
-                                                                            FontWeight.w500,
-                                                                      ),
-                                                                );
-                                                              },
-                                                            ),
-                                                          ],
+                                                            );
+                                                          },
                                                         ),
-                                                      ),
+                                                      ],
                                                     ),
-                                                    Visibility(
-                                                      visible:
-                                                          listViewVistaNnyaexpgruRow
-                                                                  .idExpediente !=
-                                                              widget
-                                                                  .exprow?.id,
-                                                      child:
-                                                          FlutterFlowIconButton(
-                                                        borderColor:
-                                                            Color(0xFFE0E3E7),
-                                                        borderRadius: 8.0,
-                                                        borderWidth: 2.0,
-                                                        buttonSize: 40.0,
-                                                        fillColor:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondary,
-                                                        icon: Icon(
-                                                          Icons.navigate_next,
-                                                          color:
-                                                              Color(0xFF57636C),
-                                                          size: 20.0,
-                                                        ),
-                                                        onPressed: () async {
-                                                          _model.queryexp =
-                                                              await VistaExpedientesUltimoEstadoTable()
-                                                                  .queryRows(
-                                                            queryFn: (q) =>
-                                                                q.eqOrNull(
-                                                              'id',
-                                                              listViewVistaNnyaexpgruRow
-                                                                  .idExpediente,
-                                                            ),
-                                                          );
-
-                                                          context.pushNamed(
-                                                            IngresosWidget
-                                                                .routeName,
-                                                            queryParameters: {
-                                                              'idexpediente':
-                                                                  serializeParam(
-                                                                _model.queryexp
-                                                                    ?.firstOrNull,
-                                                                ParamType
-                                                                    .SupabaseRow,
-                                                              ),
-                                                              'idexp':
-                                                                  serializeParam(
-                                                                listViewVistaNnyaexpgruRow
-                                                                    .idExpediente,
-                                                                ParamType.int,
-                                                              ),
-                                                              'usuariorow':
-                                                                  serializeParam(
-                                                                widget
-                                                                    .usuariorow,
-                                                                ParamType
-                                                                    .SupabaseRow,
-                                                              ),
-                                                            }.withoutNulls,
-                                                          );
-
-                                                          safeSetState(() {});
-                                                        },
-                                                      ),
-                                                    ),
-                                                  ],
+                                                  ),
                                                 ),
-                                              ),
+                                                Visibility(
+                                                  visible:
+                                                      listViewVistaNnyaexpgruRow
+                                                              .idExpediente !=
+                                                          widget.exprow?.id,
+                                                  child: FlutterFlowIconButton(
+                                                    borderColor:
+                                                        Color(0xFFE0E3E7),
+                                                    borderRadius: 8.0,
+                                                    borderWidth: 2.0,
+                                                    buttonSize: 40.0,
+                                                    fillColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .secondary,
+                                                    icon: Icon(
+                                                      Icons.navigate_next,
+                                                      color: Color(0xFF57636C),
+                                                      size: 20.0,
+                                                    ),
+                                                    onPressed: () async {
+                                                      _model.queryexp =
+                                                          await VistaExpedientesUltimoEstadoTable()
+                                                              .queryRows(
+                                                        queryFn: (q) =>
+                                                            q.eqOrNull(
+                                                          'id',
+                                                          listViewVistaNnyaexpgruRow
+                                                              .idExpediente,
+                                                        ),
+                                                      );
+
+                                                      context.pushNamed(
+                                                        IngresosWidget
+                                                            .routeName,
+                                                        queryParameters: {
+                                                          'idexpediente':
+                                                              serializeParam(
+                                                            _model.queryexp
+                                                                ?.firstOrNull,
+                                                            ParamType
+                                                                .SupabaseRow,
+                                                          ),
+                                                          'idexp':
+                                                              serializeParam(
+                                                            listViewVistaNnyaexpgruRow
+                                                                .idExpediente,
+                                                            ParamType.int,
+                                                          ),
+                                                          'usuariorow':
+                                                              serializeParam(
+                                                            widget.usuariorow,
+                                                            ParamType
+                                                                .SupabaseRow,
+                                                          ),
+                                                        }.withoutNulls,
+                                                      );
+
+                                                      safeSetState(() {});
+                                                    },
+                                                  ),
+                                                ),
+                                              ],
                                             ),
-                                          );
-                                        },
+                                          ),
+                                        ),
                                       );
                                     },
-                                  ),
-                                ),
+                                  );
+                                },
                               ),
                             ),
                           ),
-                        ].divide((MediaQuery.sizeOf(context).width > 800.0)
-                            ? SizedBox(width: 10.0)
-                            : SizedBox(height: 10.0)),
-                      ),
+                        ),
+                      ],
                     ),
-                  ),
-                ],
-              ),
+                  ].divide(SizedBox(height: 16.0)),
+                ),
+              ],
             ),
           ),
         ),

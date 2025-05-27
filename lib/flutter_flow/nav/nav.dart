@@ -366,52 +366,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'link',
               ParamType.String,
             ),
-            form9row: params.getParam<Formulario9Row>(
-              'form9row',
-              ParamType.SupabaseRow,
-            ),
-            exprow: params.getParam<VistaExpedientesUltimoEstadoRow>(
-              'exprow',
-              ParamType.SupabaseRow,
-            ),
-            ingreso: params.getParam<IngresosRow>(
-              'ingreso',
-              ParamType.SupabaseRow,
-            ),
-            usuariorow: params.getParam<UsuariosRow>(
-              'usuariorow',
-              ParamType.SupabaseRow,
-            ),
-            usuariorol: params.getParam<VistaUsuariosRolesRow>(
-              'usuariorol',
-              ParamType.SupabaseRow,
-            ),
-          ),
-        ),
-        FFRoute(
-          name: SenafCopyWidget.routeName,
-          path: SenafCopyWidget.routePath,
-          builder: (context, params) => SenafCopyWidget(
-            ingrow: params.getParam<IngresosRow>(
-              'ingrow',
-              ParamType.SupabaseRow,
-            ),
-            expediente: params.getParam<VistaExpedientesUltimoEstadoRow>(
-              'expediente',
-              ParamType.SupabaseRow,
-            ),
-            usuariorow: params.getParam<UsuariosRow>(
-              'usuariorow',
-              ParamType.SupabaseRow,
-            ),
-            usuariorol: params.getParam<VistaUsuariosRolesRow>(
-              'usuariorol',
-              ParamType.SupabaseRow,
-            ),
-            spd: params.getParam<SpdRow>(
-              'spd',
-              ParamType.SupabaseRow,
-            ),
           ),
         ),
         FFRoute(

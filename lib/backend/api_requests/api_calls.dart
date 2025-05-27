@@ -9,68 +9,11 @@ export 'api_manager.dart' show ApiCallResponse;
 
 const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
-class BuscarPersonaCall {
-  static Future<ApiCallResponse> call({
-    String? buscar = 'KIUJY',
-  }) async {
-    final ffApiRequestBody = '''
-{
-  "search_query": "${buscar}"
-}''';
-    return ApiManager.instance.makeApiCall(
-      callName: 'buscar persona',
-      apiUrl:
-          'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/rpc/search_expedientes',
-      callType: ApiCallType.POST,
-      headers: {
-        'Content-Type': 'application/json',
-        'apikey':
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
-        'Authorization':
-            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
-      },
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
-
-  static int? id(dynamic response) => castToType<int>(getJsonField(
-        response,
-        r'''$[:].id''',
-      ));
-  static String? expediente(dynamic response) =>
-      castToType<String>(getJsonField(
-        response,
-        r'''$[:].expediente''',
-      ));
-  static String? fecha(dynamic response) => castToType<String>(getJsonField(
-        response,
-        r'''$[:].fecha''',
-      ));
-  static String? nombres(dynamic response) => castToType<String>(getJsonField(
-        response,
-        r'''$[:].nombres''',
-      ));
-  static String? apellidos(dynamic response) => castToType<String>(getJsonField(
-        response,
-        r'''$[:].apellidos''',
-      ));
-  static int? dni(dynamic response) => castToType<int>(getJsonField(
-        response,
-        r'''$[:].dni''',
-      ));
-}
-
 class BusquedaExpedienteLISTACall {
   static Future<ApiCallResponse> call({
-    String? busquedaExp = 'RAMIREZ',
+    String? busquedaExp = 'vico',
+    String? token =
+        'eyJhbGciOiJIUzI1NiIsImtpZCI6Ik1jUzFaOUhyblIvelF4SmkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2xpYXZpcmJ3ZnRvcHZyY2p5cHJyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiI4YmUwZTU0Zi1iNWMxLTRkNjItYWM3Zi1hNWVlNjIyOGFmZmMiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzQ3MDc0NDQ3LCJpYXQiOjE3NDcwNzA4NDcsImVtYWlsIjoiZGFyaW9hbnphdWRvQGdtYWlsLmNvbSIsInBob25lIjoiIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwiLCJwcm92aWRlcnMiOlsiZW1haWwiXX0sInVzZXJfbWV0YWRhdGEiOnsiZW1haWwiOiJkYXJpb2FuemF1ZG9AZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwaG9uZV92ZXJpZmllZCI6ZmFsc2UsInN1YiI6IjhiZTBlNTRmLWI1YzEtNGQ2Mi1hYzdmLWE1ZWU2MjI4YWZmYyJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzQ3MDcwODQ3fV0sInNlc3Npb25faWQiOiI2MjU1MzNiZi1jYjJmLTQxZjgtYTU5OS0zMTQwZWFkYWFiY2EiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.88zr4vr664bwi41dyxkhfkG7tiSGjmFYv0ZddBHOuNo',
   }) async {
     final ffApiRequestBody = '''
 {
@@ -79,14 +22,13 @@ class BusquedaExpedienteLISTACall {
     return ApiManager.instance.makeApiCall(
       callName: 'busqueda expediente LISTA',
       apiUrl:
-          'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/rpc/search_expedientes2',
+          'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/rpc/search_expedientes',
       callType: ApiCallType.POST,
       headers: {
         'Content-Type': 'application/json',
         'apikey':
             'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
-        'Authorization':
-            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
+        'Authorization': 'Bearer ${token}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -115,99 +57,9 @@ class BusquedaExpedienteLISTACall {
       ));
 }
 
-class BusquedaExpedienteCopyCall {
-  static Future<ApiCallResponse> call({
-    String? busquedaExp = 'dar',
-    String? iduser = '8be0e54f-b5c1-4d62-ac7f-a5ee6228affc',
-  }) async {
-    final ffApiRequestBody = '''
-{
-  "search_query": "${busquedaExp}",
-  "user_id": "${iduser}"
-}''';
-    return ApiManager.instance.makeApiCall(
-      callName: 'busqueda expediente Copy',
-      apiUrl:
-          'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/rpc/search_expedientes3',
-      callType: ApiCallType.POST,
-      headers: {
-        'Content-Type': 'application/json',
-        'apikey':
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
-        'Authorization':
-            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
-      },
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
-
-  static List<int>? id(dynamic response) => (getJsonField(
-        response,
-        r'''$[:].id''',
-        true,
-      ) as List?)
-          ?.withoutNulls
-          .map((x) => castToType<int>(x))
-          .withoutNulls
-          .toList();
-  static List<String>? nombres(dynamic response) => (getJsonField(
-        response,
-        r'''$[:].nombres''',
-        true,
-      ) as List?)
-          ?.withoutNulls
-          .map((x) => castToType<String>(x))
-          .withoutNulls
-          .toList();
-  static List<String>? apellidos(dynamic response) => (getJsonField(
-        response,
-        r'''$[:].apellidos''',
-        true,
-      ) as List?)
-          ?.withoutNulls
-          .map((x) => castToType<String>(x))
-          .withoutNulls
-          .toList();
-  static List<String>? expediente(dynamic response) => (getJsonField(
-        response,
-        r'''$[:].expediente''',
-        true,
-      ) as List?)
-          ?.withoutNulls
-          .map((x) => castToType<String>(x))
-          .withoutNulls
-          .toList();
-  static List<int>? dni(dynamic response) => (getJsonField(
-        response,
-        r'''$[:].dni''',
-        true,
-      ) as List?)
-          ?.withoutNulls
-          .map((x) => castToType<int>(x))
-          .withoutNulls
-          .toList();
-  static List<String>? fecha(dynamic response) => (getJsonField(
-        response,
-        r'''$[:].fecha''',
-        true,
-      ) as List?)
-          ?.withoutNulls
-          .map((x) => castToType<String>(x))
-          .withoutNulls
-          .toList();
-}
-
 class GrupoconvivienteCall {
   static Future<ApiCallResponse> call({
-    int? idingresovar = 54,
+    int? idingresovar = 218,
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'grupoconviviente',
@@ -304,13 +156,15 @@ class CrearCarpetaIngresoCall {
     int? idingreso = 1,
     String? fecha = '12/12/12',
     String? carpeta = 'carpeta',
+    String? token = 'sdfsdf',
   }) async {
     final ffApiRequestBody = '''
 {
   "expediente": "${expediente}",
   "idingreso": ${idingreso},
   "fecha": "${fecha}",
-  "carpeta": "${carpeta}"
+  "carpeta": "${carpeta}",
+  "token": "${token}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'crear carpeta ingreso',
@@ -341,6 +195,7 @@ class CrearCaratulaCall {
     String? idDocedit = 'sdf',
     String? firma =
         'https://liavirbwftopvrcjyprr.supabase.co/storage/v1/object/public/firma/firma/VisualStudioSetup.exe',
+    String? token = 'sdfsdf',
   }) async {
     final ffApiRequestBody = '''
 {
@@ -351,7 +206,8 @@ class CrearCaratulaCall {
   "carpeta": "${carpeta}",
   "iddocumentoimprimir": "${iddocumentoadjunto}",
   "iddocdrive": "${idDocedit}",
-  "firma": "${firma}"
+  "firma": "${firma}",
+  "token": "${token}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Crear Caratula',
@@ -413,14 +269,16 @@ class CarpetaDelExpedienteCall {
     String? fecha = 'asd',
     String? nombresDNI = 'asdasd',
     String? idcarpetaspd = 'sdfsdfsdf',
+    String? token = 'sdfdsf',
   }) async {
     final ffApiRequestBody = '''
 {
   "expediente": "${expediente}",
   "fecha": "${fecha}",
   "id": ${id},
-"idcarpetaspd":"${idcarpetaspd}",
-  "nombres": "${nombresDNI}"
+  "idcarpetaspd": "${idcarpetaspd}",
+  "nombres": "${nombresDNI}",
+  "token": "${token}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'carpeta del expediente',
@@ -792,8 +650,10 @@ class AnexoSolicitudSaludCall {
     String? mes = 'asd',
     String? ano = 'asd',
     String? expediente = 'sad',
-    int? idingreso = 3,
+    int? idsolicitudsalud = 3,
     String? carpeta = 'dfg',
+    String? spd = 'villa el libertador',
+    String? institucion = 'asd',
   }) async {
     final ffApiRequestBody = '''
 {
@@ -806,8 +666,10 @@ class AnexoSolicitudSaludCall {
   "mes": "${escapeStringForJson(mes)}",
   "año": "${escapeStringForJson(ano)}",
   "expediente": "${escapeStringForJson(expediente)}",
-  "idingreso": ${idingreso},
-  "carpeta": "${escapeStringForJson(carpeta)}"
+  "idsolicitud": ${idsolicitudsalud},
+  "carpeta": "${escapeStringForJson(carpeta)}",
+  "SPD": "${escapeStringForJson(spd)}",
+  "institucion": "${escapeStringForJson(institucion)}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'anexo solicitud salud',
@@ -886,7 +748,7 @@ class AnexoSolicitaInformacinAInstitucinEducativaCall {
     String? mes = 'asd',
     String? ano = 'asd',
     String? expediente = 'sad',
-    int? idingreso = 3,
+    int? idsolicitud = 3,
     String? carpeta = 'dfg',
     String? spd = 'sdf',
     String? fechadecomienzo = 'dfgdfg',
@@ -902,7 +764,7 @@ class AnexoSolicitaInformacinAInstitucinEducativaCall {
   "mes": "${escapeStringForJson(mes)}",
   "año": "${escapeStringForJson(ano)}",
   "expediente": "${escapeStringForJson(expediente)}",
-  "idingreso": ${idingreso},
+  "idsolicitud": ${idsolicitud},
   "carpeta": "${escapeStringForJson(carpeta)}",
   "spd": "${escapeStringForJson(spd)}",
   "fechacomienzo": "${escapeStringForJson(fechadecomienzo)}"
@@ -1188,6 +1050,188 @@ class InformeSenafVersionesCall {
       alwaysAllowBody: false,
     );
   }
+}
+
+class ResendSupabaseCall {
+  static Future<ApiCallResponse> call({
+    String? mail = 'darioanzaudo@gmail.com',
+    String? links = 'asd',
+    String? mensaje = 'asdasd',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "from": "Subsecretaría <onboarding@sistemasdeinfancias.com.ar>",
+  "to": [
+    "${escapeStringForJson(mail)}"
+  ],
+  "subject": "Nueva solicitud 2",
+  "html": "<p>${escapeStringForJson(mensaje)}. documentos:${escapeStringForJson(links)} </p>"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'resend supabase',
+      apiUrl:
+          'https://liavirbwftopvrcjyprr.supabase.co/functions/v1/hyper-service',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization':
+            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
+        'Content-Type': 'application/json',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class CopiarampliaciohistorialCall {
+  static Future<ApiCallResponse> call({
+    int? idingresoOriginal = 216,
+    int? nuevoIdexpe,
+    int? nuevoIdingreso,
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "idingreso_original": ${idingresoOriginal},
+  "nuevo_idexpe": ${nuevoIdexpe},
+  "nuevo_idingreso": ${nuevoIdingreso}
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'copiarampliaciohistorial',
+      apiUrl:
+          'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/rpc/duplicar_ampliaciones',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
+        'Authorization':
+            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class CrearwordsolicitudCall {
+  static Future<ApiCallResponse> call({
+    String? spd = 'sdf',
+    String? telefonospd = 'sdf',
+    String? mail = 'sdf',
+    String? nNaAprincipal = 'sdf',
+    List<String>? nNyAList,
+    String? rnp = 'sdf',
+    String? dni = 'sdf',
+    String? historiaclinica = 'sdf',
+    String? cud = 'sdf',
+    String? obrasocial = 'sdf',
+    String? escuela = 'sdf',
+    String? grado = 'sdf',
+    String? turno = 'sdf',
+    String? domescuela = 'sdf',
+    String? telescuela = 'sdf',
+    String? concurrencia = 'sdf',
+    String? nivelalcanzado = 'sdf',
+    String? referenteesc = 'sdf',
+    String? trabaja = 'sdf',
+    String? tipotrabajo = 'sdf',
+    String? grupoconviviente = 'sdf',
+    String? tipofamilia = 'sdf',
+    String? resenasituacion = 'sdf',
+    List<String>? derechosList,
+    List<String>? medidasform6List,
+    String? fundamentacion = 'sdf',
+    List<String>? indicadoresriesgoList,
+    String? agotado = 'sdf',
+    String? riesgofam = 'sdf',
+    String? firmas = 'sdf',
+    String? token = 'sdfsdf',
+  }) async {
+    final nNyA = _serializeList(nNyAList);
+    final derechos = _serializeList(derechosList);
+    final medidasform6 = _serializeList(medidasform6List);
+    final indicadoresriesgo = _serializeList(indicadoresriesgoList);
+
+    final ffApiRequestBody = '''
+{
+  "spd": "${escapeStringForJson(spd)}",
+  "telefonospd": "${escapeStringForJson(telefonospd)}",
+  "mail": "${escapeStringForJson(mail)}",
+  "NNaAprincipal": "${escapeStringForJson(nNaAprincipal)}",
+  "NNyA": [
+    ${nNyA}
+  ],
+  "rnp": "${escapeStringForJson(rnp)}",
+  "dni": "${escapeStringForJson(dni)}",
+  "historiaclinica": "${escapeStringForJson(historiaclinica)}",
+  "cud": "${escapeStringForJson(cud)}",
+  "obrasocial": "${escapeStringForJson(obrasocial)}",
+  "escuela": "${escapeStringForJson(escuela)}",
+  "grado": "${escapeStringForJson(grado)}",
+  "turno": "${escapeStringForJson(turno)}",
+  "domescuela": "${escapeStringForJson(domescuela)}",
+  "telescuela": "${escapeStringForJson(telescuela)}",
+  "concurrencia": "${escapeStringForJson(concurrencia)}",
+  "nivelalcanzado": "${escapeStringForJson(nivelalcanzado)}",
+  "referenteesc": "${escapeStringForJson(referenteesc)}",
+  "trabaja": "${escapeStringForJson(trabaja)}",
+  "tipotrabajo": "${escapeStringForJson(tipotrabajo)}",
+  "grupoconviviente": "${escapeStringForJson(grupoconviviente)}",
+  "tipofamilia": "${escapeStringForJson(tipofamilia)}",
+  "resenasituacion": "${escapeStringForJson(resenasituacion)}",
+  "derechos": [
+    ${derechos}
+  ],
+  "medidasform6": [
+    ${medidasform6}
+  ],
+  "fundamentacion": "${escapeStringForJson(fundamentacion)}",
+  "indicadoresriesgo": [
+    ${indicadoresriesgo}
+  ],
+  "Agotado": "${escapeStringForJson(agotado)}",
+  "riesgofam": "${escapeStringForJson(riesgofam)}",
+  "firmas": "${escapeStringForJson(firmas)}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'crearwordsolicitud',
+      apiUrl:
+          'https://liavirbwftopvrcjyprr.supabase.co/functions/v1/smooth-function',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer ${token}',
+        'Content-Type': 'application/json',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static String? url(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.url''',
+      ));
 }
 
 class ApiPagingParams {

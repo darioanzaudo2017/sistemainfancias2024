@@ -30,8 +30,8 @@ class AmpliaciondeinformacionhistorialRow extends SupabaseDataRow {
   set modalidaddeampliacion(String? value) =>
       setField<String>('modalidaddeampliacion', value);
 
-  String? get destinatarios => getField<String>('destinatarios');
-  set destinatarios(String? value) => setField<String>('destinatarios', value);
+  String? get observaciones => getField<String>('Observaciones');
+  set observaciones(String? value) => setField<String>('Observaciones', value);
 
   String? get asistio => getField<String>('asistio');
   set asistio(String? value) => setField<String>('asistio', value);

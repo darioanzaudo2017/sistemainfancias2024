@@ -6,6 +6,7 @@ import '/formulario6/formulario6elevacion/formulario6elevacion_widget.dart';
 import '/formulario6/formulario6reiteracion/formulario6reiteracion_widget.dart';
 import '/formulario6/formulario6respuesta/formulario6respuesta_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'respuestaform6page_model.dart';
 export 'respuestaform6page_model.dart';
 
@@ -81,10 +82,20 @@ class _Respuestaform6pageWidgetState extends State<Respuestaform6pageWidget> {
             child: Text(
               'Respuestas de medidas',
               style: FlutterFlowTheme.of(context).headlineMedium.override(
-                    fontFamily: 'Noto Sans JP',
+                    font: GoogleFonts.notoSansJp(
+                      fontWeight: FlutterFlowTheme.of(context)
+                          .headlineMedium
+                          .fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).headlineMedium.fontStyle,
+                    ),
                     color: Colors.white,
                     fontSize: 22.0,
                     letterSpacing: 0.0,
+                    fontWeight:
+                        FlutterFlowTheme.of(context).headlineMedium.fontWeight,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).headlineMedium.fontStyle,
                   ),
             ),
           ),

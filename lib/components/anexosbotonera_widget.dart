@@ -14,7 +14,7 @@ import 'dart:async';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'anexosbotonera_model.dart';
 export 'anexosbotonera_model.dart';
 
@@ -140,9 +140,22 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                     header: Text(
                       'Anexos',
                       style: FlutterFlowTheme.of(context).titleLarge.override(
-                            fontFamily: 'Noto Sans JP',
+                            font: GoogleFonts.notoSansJp(
+                              fontWeight: FlutterFlowTheme.of(context)
+                                  .titleLarge
+                                  .fontWeight,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .titleLarge
+                                  .fontStyle,
+                            ),
                             color: Colors.black,
                             letterSpacing: 0.0,
+                            fontWeight: FlutterFlowTheme.of(context)
+                                .titleLarge
+                                .fontWeight,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .titleLarge
+                                .fontStyle,
                           ),
                     ),
                     collapsed: Column(
@@ -152,9 +165,22 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                           '',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Noto Sans JP',
+                                    font: GoogleFonts.notoSansJp(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
                                     color: Color(0x8A000000),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
                                   ),
                         ),
                       ],
@@ -173,8 +199,21 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
-                                      fontFamily: 'Noto Sans JP',
+                                      font: GoogleFonts.notoSansJp(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleMedium
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .fontStyle,
                                     ),
                               ),
                               Align(
@@ -230,20 +269,18 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                         enableDrag: false,
                                                         context: context,
                                                         builder: (context) {
-                                                          return WebViewAware(
-                                                            child: Padding(
-                                                              padding: MediaQuery
-                                                                  .viewInsetsOf(
-                                                                      context),
-                                                              child:
-                                                                  Anexo5requerimientoaccionesWidget(
-                                                                rowingreso: widget
-                                                                    .ingresorow!,
-                                                                rowexp: widget
-                                                                    .exorow!,
-                                                                usuario: widget
-                                                                    .usuariosrow!,
-                                                              ),
+                                                          return Padding(
+                                                            padding: MediaQuery
+                                                                .viewInsetsOf(
+                                                                    context),
+                                                            child:
+                                                                Anexo5requerimientoaccionesWidget(
+                                                              rowingreso: widget
+                                                                  .ingresorow!,
+                                                              rowexp: widget
+                                                                  .exorow!,
+                                                              usuario: widget
+                                                                  .usuariosrow!,
                                                             ),
                                                           );
                                                         },
@@ -265,12 +302,33 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily:
-                                                              'Noto Sans JP',
+                                                          font: GoogleFonts
+                                                              .notoSansJp(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontStyle,
+                                                          ),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .fontStyle,
                                                         ),
                                                 elevation: 0.0,
                                                 borderRadius:
@@ -314,10 +372,31 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily:
-                                                            'Noto Sans JP',
+                                                        font: GoogleFonts
+                                                            .notoSansJp(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
                                                 ),
                                               ),
@@ -374,27 +453,29 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
 
                                     return Container(
                                       decoration: BoxDecoration(),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Flexible(
-                                            child: FFButtonWidget(
-                                              onPressed: !widget
-                                                      .anexoeducacion!
-                                                  ? null
-                                                  : () async {
-                                                      await showModalBottomSheet(
-                                                        isScrollControlled:
-                                                            true,
-                                                        backgroundColor:
-                                                            Colors.transparent,
-                                                        enableDrag: false,
-                                                        context: context,
-                                                        builder: (context) {
-                                                          return WebViewAware(
-                                                            child: Padding(
+                                      child: Visibility(
+                                        visible: currentUserEmail == '1',
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Flexible(
+                                              child: FFButtonWidget(
+                                                onPressed: !widget
+                                                        .anexoeducacion!
+                                                    ? null
+                                                    : () async {
+                                                        await showModalBottomSheet(
+                                                          isScrollControlled:
+                                                              true,
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          enableDrag: false,
+                                                          context: context,
+                                                          builder: (context) {
+                                                            return Padding(
                                                               padding: MediaQuery
                                                                   .viewInsetsOf(
                                                                       context),
@@ -405,88 +486,112 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                                 rowexp: widget
                                                                     .exorow!,
                                                               ),
-                                                            ),
-                                                          );
-                                                        },
-                                                      ).then((value) =>
+                                                            );
+                                                          },
+                                                        ).then((value) =>
+                                                            safeSetState(() =>
+                                                                _model.creosolicitudeducacion =
+                                                                    value));
+
+                                                        await Future.delayed(
+                                                            const Duration(
+                                                                milliseconds:
+                                                                    2000));
+                                                        if (_model
+                                                            .creosolicitudeducacion!) {
                                                           safeSetState(() =>
-                                                              _model.creosolicitudeducacion =
-                                                                  value));
+                                                              _model.requestCompleter2 =
+                                                                  null);
+                                                          await _model
+                                                              .waitForRequestCompleted2();
+                                                        }
 
-                                                      await Future.delayed(
-                                                          const Duration(
-                                                              milliseconds:
-                                                                  2000));
-                                                      if (_model
-                                                          .creosolicitudeducacion!) {
-                                                        safeSetState(() => _model
-                                                                .requestCompleter2 =
-                                                            null);
-                                                        await _model
-                                                            .waitForRequestCompleted2();
-                                                      }
-
-                                                      safeSetState(() {});
-                                                    },
-                                              text:
-                                                  'Solicitud informacion a educacion',
-                                              options: FFButtonOptions(
-                                                height: 40.0,
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        16.0, 0.0, 16.0, 0.0),
-                                                iconPadding:
-                                                    EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color: Color(0xFFC5BFF8),
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              'Noto Sans JP',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          letterSpacing: 0.0,
+                                                        safeSetState(() {});
+                                                      },
+                                                text:
+                                                    'Solicitud informacion a educacion',
+                                                options: FFButtonOptions(
+                                                  height: 40.0,
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          16.0, 0.0, 16.0, 0.0),
+                                                  iconPadding:
+                                                      EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  color: Color(0xFFC5BFF8),
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        font: GoogleFonts
+                                                            .notoSansJp(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .fontStyle,
                                                         ),
-                                                elevation: 0.0,
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                                disabledColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .alternate,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmall
+                                                                .fontStyle,
+                                                      ),
+                                                  elevation: 0.0,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                  disabledColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .alternate,
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                          if (containereducacionAnexoinstitucioneeducacionRow
-                                                      ?.linkdoc !=
-                                                  null &&
-                                              containereducacionAnexoinstitucioneeducacionRow
-                                                      ?.linkdoc !=
-                                                  '')
-                                            FlutterFlowIconButton(
-                                              borderColor: Colors.transparent,
-                                              borderRadius: 8.0,
-                                              buttonSize: 40.0,
-                                              fillColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              icon: FaIcon(
-                                                FontAwesomeIcons.googleDrive,
-                                                color:
+                                            if (containereducacionAnexoinstitucioneeducacionRow
+                                                        ?.linkdoc !=
+                                                    null &&
+                                                containereducacionAnexoinstitucioneeducacionRow
+                                                        ?.linkdoc !=
+                                                    '')
+                                              FlutterFlowIconButton(
+                                                borderColor: Colors.transparent,
+                                                borderRadius: 8.0,
+                                                buttonSize: 40.0,
+                                                fillColor:
                                                     FlutterFlowTheme.of(context)
-                                                        .info,
-                                                size: 24.0,
+                                                        .primary,
+                                                icon: FaIcon(
+                                                  FontAwesomeIcons.googleDrive,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .info,
+                                                  size: 24.0,
+                                                ),
+                                                onPressed: () async {
+                                                  await launchURL(
+                                                      containereducacionAnexoinstitucioneeducacionRow!
+                                                          .linkdoc!);
+                                                },
                                               ),
-                                              onPressed: () async {
-                                                await launchURL(
-                                                    containereducacionAnexoinstitucioneeducacionRow!
-                                                        .linkdoc!);
-                                              },
-                                            ),
-                                        ],
+                                          ],
+                                        ),
                                       ),
                                     );
                                   },
@@ -544,23 +649,21 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                         enableDrag: false,
                                                         context: context,
                                                         builder: (context) {
-                                                          return WebViewAware(
-                                                            child: Padding(
-                                                              padding: MediaQuery
-                                                                  .viewInsetsOf(
-                                                                      context),
-                                                              child:
-                                                                  ListareunioninterinstitucionalWidget(
-                                                                idingreso: widget
-                                                                    .idingreso,
-                                                                idingres: widget
-                                                                    .ingresorow!,
-                                                                idexprow: widget
-                                                                    .exorow!,
-                                                                formulario:
-                                                                    widget
-                                                                        .etapa!,
-                                                              ),
+                                                          return Padding(
+                                                            padding: MediaQuery
+                                                                .viewInsetsOf(
+                                                                    context),
+                                                            child:
+                                                                ListareunioninterinstitucionalWidget(
+                                                              idingreso: widget
+                                                                  .idingreso,
+                                                              idingres: widget
+                                                                  .ingresorow!,
+                                                              idexprow: widget
+                                                                  .exorow!,
+                                                              formulario:
+                                                                  widget
+                                                                      .etapa!,
                                                             ),
                                                           );
                                                         },
@@ -583,13 +686,34 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily:
-                                                              'Noto Sans JP',
+                                                          font: GoogleFonts
+                                                              .notoSansJp(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontStyle,
+                                                          ),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
                                                           fontSize: 12.0,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .fontStyle,
                                                         ),
                                                 elevation: 0.0,
                                                 borderRadius:
@@ -633,10 +757,31 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily:
-                                                            'Noto Sans JP',
+                                                        font: GoogleFonts
+                                                            .notoSansJp(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
                                                 ),
                                               ),
@@ -694,26 +839,28 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
 
                                     return Container(
                                       decoration: BoxDecoration(),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Flexible(
-                                            child: FFButtonWidget(
-                                              onPressed: !widget.anexosalud!
-                                                  ? null
-                                                  : () async {
-                                                      await showModalBottomSheet(
-                                                        isScrollControlled:
-                                                            true,
-                                                        backgroundColor:
-                                                            Colors.transparent,
-                                                        enableDrag: false,
-                                                        context: context,
-                                                        builder: (context) {
-                                                          return WebViewAware(
-                                                            child: Padding(
+                                      child: Visibility(
+                                        visible: currentUserEmail == '1',
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Flexible(
+                                              child: FFButtonWidget(
+                                                onPressed: !widget.anexosalud!
+                                                    ? null
+                                                    : () async {
+                                                        await showModalBottomSheet(
+                                                          isScrollControlled:
+                                                              true,
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          enableDrag: false,
+                                                          context: context,
+                                                          builder: (context) {
+                                                            return Padding(
                                                               padding: MediaQuery
                                                                   .viewInsetsOf(
                                                                       context),
@@ -724,88 +871,112 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                                 rowexp: widget
                                                                     .exorow!,
                                                               ),
-                                                            ),
-                                                          );
-                                                        },
-                                                      ).then((value) =>
+                                                            );
+                                                          },
+                                                        ).then((value) =>
+                                                            safeSetState(() =>
+                                                                _model.creosolicitudsalud =
+                                                                    value));
+
+                                                        await Future.delayed(
+                                                            const Duration(
+                                                                milliseconds:
+                                                                    2000));
+                                                        if (_model
+                                                            .creosolicitudsalud!) {
                                                           safeSetState(() =>
-                                                              _model.creosolicitudsalud =
-                                                                  value));
+                                                              _model.requestCompleter1 =
+                                                                  null);
+                                                          await _model
+                                                              .waitForRequestCompleted1();
+                                                        }
 
-                                                      await Future.delayed(
-                                                          const Duration(
-                                                              milliseconds:
-                                                                  2000));
-                                                      if (_model
-                                                          .creosolicitudsalud!) {
-                                                        safeSetState(() => _model
-                                                                .requestCompleter1 =
-                                                            null);
-                                                        await _model
-                                                            .waitForRequestCompleted1();
-                                                      }
-
-                                                      safeSetState(() {});
-                                                    },
-                                              text:
-                                                  'Solicitud de informacion a Salud',
-                                              options: FFButtonOptions(
-                                                height: 40.0,
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        16.0, 0.0, 16.0, 0.0),
-                                                iconPadding:
-                                                    EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color: Color(0xFFC5BFF8),
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              'Noto Sans JP',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          letterSpacing: 0.0,
+                                                        safeSetState(() {});
+                                                      },
+                                                text:
+                                                    'Solicitud de informacion a Salud',
+                                                options: FFButtonOptions(
+                                                  height: 40.0,
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          16.0, 0.0, 16.0, 0.0),
+                                                  iconPadding:
+                                                      EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  color: Color(0xFFC5BFF8),
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        font: GoogleFonts
+                                                            .notoSansJp(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .fontStyle,
                                                         ),
-                                                elevation: 0.0,
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                                disabledColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .alternate,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmall
+                                                                .fontStyle,
+                                                      ),
+                                                  elevation: 0.0,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                  disabledColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .alternate,
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                          if (containersaludAnexoinstitucionesaludRow
-                                                      ?.linkdoc !=
-                                                  null &&
-                                              containersaludAnexoinstitucionesaludRow
-                                                      ?.linkdoc !=
-                                                  '')
-                                            FlutterFlowIconButton(
-                                              borderColor: Colors.transparent,
-                                              borderRadius: 8.0,
-                                              buttonSize: 40.0,
-                                              fillColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              icon: FaIcon(
-                                                FontAwesomeIcons.googleDrive,
-                                                color:
+                                            if (containersaludAnexoinstitucionesaludRow
+                                                        ?.linkdoc !=
+                                                    null &&
+                                                containersaludAnexoinstitucionesaludRow
+                                                        ?.linkdoc !=
+                                                    '')
+                                              FlutterFlowIconButton(
+                                                borderColor: Colors.transparent,
+                                                borderRadius: 8.0,
+                                                buttonSize: 40.0,
+                                                fillColor:
                                                     FlutterFlowTheme.of(context)
-                                                        .info,
-                                                size: 24.0,
+                                                        .primary,
+                                                icon: FaIcon(
+                                                  FontAwesomeIcons.googleDrive,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .info,
+                                                  size: 24.0,
+                                                ),
+                                                onPressed: () async {
+                                                  await launchURL(
+                                                      containersaludAnexoinstitucionesaludRow!
+                                                          .linkdoc!);
+                                                },
                                               ),
-                                              onPressed: () async {
-                                                await launchURL(
-                                                    containersaludAnexoinstitucionesaludRow!
-                                                        .linkdoc!);
-                                              },
-                                            ),
-                                        ],
+                                          ],
+                                        ),
                                       ),
                                     );
                                   },
@@ -918,12 +1089,33 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily:
-                                                              'Noto Sans JP',
+                                                          font: GoogleFonts
+                                                              .notoSansJp(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontStyle,
+                                                          ),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .fontStyle,
                                                         ),
                                                 elevation: 0.0,
                                                 borderRadius:
@@ -967,10 +1159,31 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily:
-                                                            'Noto Sans JP',
+                                                        font: GoogleFonts
+                                                            .notoSansJp(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
                                                 ),
                                               ),
@@ -996,14 +1209,12 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                       enableDrag: false,
                                       context: context,
                                       builder: (context) {
-                                        return WebViewAware(
-                                          child: Padding(
-                                            padding: MediaQuery.viewInsetsOf(
-                                                context),
-                                            child: AdjuntardocumentoWidget(
-                                              exprow: widget.exorow,
-                                              ingrow: widget.ingresorow,
-                                            ),
+                                        return Padding(
+                                          padding:
+                                              MediaQuery.viewInsetsOf(context),
+                                          child: AdjuntardocumentoWidget(
+                                            exprow: widget.exorow,
+                                            ingrow: widget.ingresorow,
                                           ),
                                         );
                                       },
@@ -1044,14 +1255,27 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily:
-                                                              'Plus Jakarta Sans',
+                                                          font: GoogleFonts
+                                                              .plusJakartaSans(
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           color:
                                                               Color(0xFF15161E),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                               ),
                                             ),

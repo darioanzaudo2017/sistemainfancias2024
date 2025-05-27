@@ -1,3 +1,4 @@
+import '/auth/supabase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -7,7 +8,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'imprimir_model.dart';
 export 'imprimir_model.dart';
 
@@ -84,10 +85,19 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
           title: Text(
             'Impresiones',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  fontFamily: 'Noto Sans JP',
+                  font: GoogleFonts.notoSansJp(
+                    fontWeight:
+                        FlutterFlowTheme.of(context).headlineMedium.fontWeight,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).headlineMedium.fontStyle,
+                  ),
                   color: Colors.white,
                   fontSize: 22.0,
                   letterSpacing: 0.0,
+                  fontWeight:
+                      FlutterFlowTheme.of(context).headlineMedium.fontWeight,
+                  fontStyle:
+                      FlutterFlowTheme.of(context).headlineMedium.fontStyle,
                 ),
           ),
           actions: [],
@@ -211,8 +221,25 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Noto Sans JP',
+                                          font: GoogleFonts.notoSansJp(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
                                         ),
                                   ),
                                   Padding(
@@ -289,10 +316,27 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                     context)
                                                                 .titleMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Noto Sans JP',
+                                                                  font: GoogleFonts
+                                                                      .notoSansJp(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleMedium
+                                                                      .fontStyle,
                                                                 ),
                                                       ),
                                                       FFButtonWidget(
@@ -327,12 +371,29 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                       context)
                                                                   .titleSmall
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Noto Sans JP',
+                                                                    font: GoogleFonts
+                                                                        .notoSansJp(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmall
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmall
+                                                                          .fontStyle,
+                                                                    ),
                                                                     color: Colors
                                                                         .white,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall
+                                                                        .fontStyle,
                                                                   ),
                                                           elevation: 0.0,
                                                           borderRadius:
@@ -363,10 +424,27 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                     context)
                                                                 .titleMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Noto Sans JP',
+                                                                  font: GoogleFonts
+                                                                      .notoSansJp(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleMedium
+                                                                      .fontStyle,
                                                                 ),
                                                       ),
                                                       if (!containerIngresosRow!
@@ -434,12 +512,27 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                         context)
                                                                     .titleSmall
                                                                     .override(
-                                                                      fontFamily:
-                                                                          'Noto Sans JP',
+                                                                      font: GoogleFonts
+                                                                          .notoSansJp(
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontStyle,
+                                                                      ),
                                                                       color: Colors
                                                                           .white,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmall
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmall
+                                                                          .fontStyle,
                                                                     ),
                                                             elevation: 0.0,
                                                             borderRadius:
@@ -474,14 +567,35 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                           children: [
                                             Text(
                                               'Refrescar base de datos',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Noto Sans JP',
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    font:
+                                                        GoogleFonts.notoSansJp(
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
+                                                    letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                  ),
                                             ),
                                             FFButtonWidget(
                                               onPressed: () async {
@@ -511,10 +625,31 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily:
-                                                              'Noto Sans JP',
+                                                          font: GoogleFonts
+                                                              .notoSansJp(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontStyle,
+                                                          ),
                                                           color: Colors.white,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .fontStyle,
                                                         ),
                                                 elevation: 0.0,
                                                 borderRadius:
@@ -608,8 +743,11 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                               context)
                                                                           .bodyLarge
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Plus Jakarta Sans',
+                                                                            font:
+                                                                                GoogleFonts.plusJakartaSans(
+                                                                              fontWeight: FontWeight.w500,
+                                                                              fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                            ),
                                                                             color:
                                                                                 Color(0xFF14181B),
                                                                             fontSize:
@@ -618,6 +756,8 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.w500,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -640,8 +780,11 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Plus Jakarta Sans',
+                                                                            font:
+                                                                                GoogleFonts.plusJakartaSans(
+                                                                              fontWeight: FontWeight.w500,
+                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                            ),
                                                                             color:
                                                                                 Color(0xFF57636C),
                                                                             fontSize:
@@ -650,6 +793,8 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.w500,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -671,8 +816,11 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Plus Jakarta Sans',
+                                                                            font:
+                                                                                GoogleFonts.plusJakartaSans(
+                                                                              fontWeight: FontWeight.w500,
+                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                            ),
                                                                             color:
                                                                                 Color(0xFF57636C),
                                                                             fontSize:
@@ -681,6 +829,8 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.w500,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -761,10 +911,21 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          fontFamily:
-                                                                              'Noto Sans JP',
+                                                                          font:
+                                                                              GoogleFonts.notoSansJp(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
                                                                         ),
                                                                   ),
                                                                 ].divide(SizedBox(
@@ -808,6 +969,8 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                           iddocumentoadjunto: containerVarItem
                                                                               .id
                                                                               .toString(),
+                                                                          token:
+                                                                              currentJwtToken,
                                                                         );
 
                                                                         if ((_model.apiResultznw?.succeeded ??
@@ -819,17 +982,15 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                 context,
                                                                             builder:
                                                                                 (alertDialogContext) {
-                                                                              return WebViewAware(
-                                                                                child: AlertDialog(
-                                                                                  title: Text('Se ejecuto correctamente!'),
-                                                                                  content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
-                                                                                  actions: [
-                                                                                    TextButton(
-                                                                                      onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                      child: Text('Ok'),
-                                                                                    ),
-                                                                                  ],
-                                                                                ),
+                                                                              return AlertDialog(
+                                                                                title: Text('Se ejecuto correctamente!'),
+                                                                                content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                actions: [
+                                                                                  TextButton(
+                                                                                    onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                    child: Text('Ok'),
+                                                                                  ),
+                                                                                ],
                                                                               );
                                                                             },
                                                                           );
@@ -855,6 +1016,8 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                 containerIngresosRow?.idcarpeta,
                                                                             iddocumentoadjunto:
                                                                                 containerVarItem.id.toString(),
+                                                                            token:
+                                                                                currentJwtToken,
                                                                           );
 
                                                                           if ((_model.apiResultznwrecepcion?.succeeded ??
@@ -863,17 +1026,15 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                             await showDialog(
                                                                               context: context,
                                                                               builder: (alertDialogContext) {
-                                                                                return WebViewAware(
-                                                                                  child: AlertDialog(
-                                                                                    title: Text('Se ejecuto correctamente!'),
-                                                                                    content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
-                                                                                    actions: [
-                                                                                      TextButton(
-                                                                                        onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                        child: Text('Ok'),
-                                                                                      ),
-                                                                                    ],
-                                                                                  ),
+                                                                                return AlertDialog(
+                                                                                  title: Text('Se ejecuto correctamente!'),
+                                                                                  content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                  actions: [
+                                                                                    TextButton(
+                                                                                      onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                      child: Text('Ok'),
+                                                                                    ),
+                                                                                  ],
                                                                                 );
                                                                               },
                                                                             );
@@ -892,6 +1053,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                               idigreso: widget.idigreso,
                                                                               carpeta: containerIngresosRow?.idcarpeta,
                                                                               iddocumentoadjunto: containerVarItem.id.toString(),
+                                                                              token: currentJwtToken,
                                                                             );
 
                                                                             if ((_model.apiResultznwinfsintesiscreate?.succeeded ??
@@ -900,17 +1062,15 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                               await showDialog(
                                                                                 context: context,
                                                                                 builder: (alertDialogContext) {
-                                                                                  return WebViewAware(
-                                                                                    child: AlertDialog(
-                                                                                      title: Text('Se ejecuto correctamente!'),
-                                                                                      content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
-                                                                                      actions: [
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                          child: Text('Ok'),
-                                                                                        ),
-                                                                                      ],
-                                                                                    ),
+                                                                                  return AlertDialog(
+                                                                                    title: Text('Se ejecuto correctamente!'),
+                                                                                    content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                    actions: [
+                                                                                      TextButton(
+                                                                                        onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                        child: Text('Ok'),
+                                                                                      ),
+                                                                                    ],
                                                                                   );
                                                                                 },
                                                                               );
@@ -927,6 +1087,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                 idigreso: widget.idigreso,
                                                                                 carpeta: containerIngresosRow?.idcarpeta,
                                                                                 iddocumentoadjunto: containerVarItem.id.toString(),
+                                                                                token: currentJwtToken,
                                                                               );
 
                                                                               if ((_model.apiResultznwinfmedidas?.succeeded ?? true)) {
@@ -934,17 +1095,15 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                 await showDialog(
                                                                                   context: context,
                                                                                   builder: (alertDialogContext) {
-                                                                                    return WebViewAware(
-                                                                                      child: AlertDialog(
-                                                                                        title: Text('Se ejecuto correctamente!'),
-                                                                                        content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
-                                                                                        actions: [
-                                                                                          TextButton(
-                                                                                            onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                            child: Text('Ok'),
-                                                                                          ),
-                                                                                        ],
-                                                                                      ),
+                                                                                    return AlertDialog(
+                                                                                      title: Text('Se ejecuto correctamente!'),
+                                                                                      content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                      actions: [
+                                                                                        TextButton(
+                                                                                          onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                          child: Text('Ok'),
+                                                                                        ),
+                                                                                      ],
                                                                                     );
                                                                                   },
                                                                                 );
@@ -960,6 +1119,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                   idigreso: widget.idigreso,
                                                                                   carpeta: containerIngresosRow?.idcarpeta,
                                                                                   iddocumentoadjunto: containerVarItem.id.toString(),
+                                                                                  token: currentJwtToken,
                                                                                 );
 
                                                                                 if ((_model.apiResultznwinfsenaf?.succeeded ?? true)) {
@@ -967,17 +1127,15 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                   await showDialog(
                                                                                     context: context,
                                                                                     builder: (alertDialogContext) {
-                                                                                      return WebViewAware(
-                                                                                        child: AlertDialog(
-                                                                                          title: Text('Se ejecuto correctamente!'),
-                                                                                          content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
-                                                                                          actions: [
-                                                                                            TextButton(
-                                                                                              onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                              child: Text('Ok'),
-                                                                                            ),
-                                                                                          ],
-                                                                                        ),
+                                                                                      return AlertDialog(
+                                                                                        title: Text('Se ejecuto correctamente!'),
+                                                                                        content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                            child: Text('Ok'),
+                                                                                          ),
+                                                                                        ],
                                                                                       );
                                                                                     },
                                                                                   );
@@ -986,17 +1144,15 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                   await showDialog(
                                                                                     context: context,
                                                                                     builder: (alertDialogContext) {
-                                                                                      return WebViewAware(
-                                                                                        child: AlertDialog(
-                                                                                          title: Text('Se enviara un mail a la cordinacion!'),
-                                                                                          content: Text('Se envio el mail!!'),
-                                                                                          actions: [
-                                                                                            TextButton(
-                                                                                              onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                              child: Text('Ok'),
-                                                                                            ),
-                                                                                          ],
-                                                                                        ),
+                                                                                      return AlertDialog(
+                                                                                        title: Text('Se enviara un mail a la cordinacion!'),
+                                                                                        content: Text('Se envio el mail!!'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                            child: Text('Ok'),
+                                                                                          ),
+                                                                                        ],
                                                                                       );
                                                                                     },
                                                                                   );
@@ -1033,12 +1189,19 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                               context)
                                                                           .titleSmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Noto Sans JP',
+                                                                            font:
+                                                                                GoogleFonts.notoSansJp(
+                                                                              fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                            ),
                                                                             color:
                                                                                 Colors.white,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).titleSmall.fontStyle,
                                                                           ),
                                                                       elevation:
                                                                           0.0,
@@ -1077,6 +1240,8 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                               .toString(),
                                                                           idDocedit:
                                                                               containerVarItem.iddocdrive,
+                                                                          token:
+                                                                              currentJwtToken,
                                                                         );
 
                                                                         if ((_model.apiResultznwCopy?.succeeded ??
@@ -1088,17 +1253,15 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                 context,
                                                                             builder:
                                                                                 (alertDialogContext) {
-                                                                              return WebViewAware(
-                                                                                child: AlertDialog(
-                                                                                  title: Text('Se ejecuto correctamente!'),
-                                                                                  content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
-                                                                                  actions: [
-                                                                                    TextButton(
-                                                                                      onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                      child: Text('Ok'),
-                                                                                    ),
-                                                                                  ],
-                                                                                ),
+                                                                              return AlertDialog(
+                                                                                title: Text('Se ejecuto correctamente!'),
+                                                                                content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                actions: [
+                                                                                  TextButton(
+                                                                                    onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                    child: Text('Ok'),
+                                                                                  ),
+                                                                                ],
                                                                               );
                                                                             },
                                                                           );
@@ -1126,6 +1289,8 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                 containerVarItem.id.toString(),
                                                                             idDocedit:
                                                                                 containerVarItem.iddocdrive,
+                                                                            token:
+                                                                                currentJwtToken,
                                                                           );
 
                                                                           if ((_model.apiResultznwCopyrecepcion?.succeeded ??
@@ -1134,17 +1299,15 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                             await showDialog(
                                                                               context: context,
                                                                               builder: (alertDialogContext) {
-                                                                                return WebViewAware(
-                                                                                  child: AlertDialog(
-                                                                                    title: Text('Se ejecuto correctamente!'),
-                                                                                    content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
-                                                                                    actions: [
-                                                                                      TextButton(
-                                                                                        onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                        child: Text('Ok'),
-                                                                                      ),
-                                                                                    ],
-                                                                                  ),
+                                                                                return AlertDialog(
+                                                                                  title: Text('Se ejecuto correctamente!'),
+                                                                                  content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                  actions: [
+                                                                                    TextButton(
+                                                                                      onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                      child: Text('Ok'),
+                                                                                    ),
+                                                                                  ],
                                                                                 );
                                                                               },
                                                                             );
@@ -1164,6 +1327,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                               carpeta: containerIngresosRow?.idcarpeta,
                                                                               iddocumentoadjunto: containerVarItem.id.toString(),
                                                                               idDocedit: containerVarItem.iddocdrive,
+                                                                              token: currentJwtToken,
                                                                             );
 
                                                                             if ((_model.apiResultznwCopyinfsintesis?.succeeded ??
@@ -1172,17 +1336,15 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                               await showDialog(
                                                                                 context: context,
                                                                                 builder: (alertDialogContext) {
-                                                                                  return WebViewAware(
-                                                                                    child: AlertDialog(
-                                                                                      title: Text('Se ejecuto correctamente!'),
-                                                                                      content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
-                                                                                      actions: [
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                          child: Text('Ok'),
-                                                                                        ),
-                                                                                      ],
-                                                                                    ),
+                                                                                  return AlertDialog(
+                                                                                    title: Text('Se ejecuto correctamente!'),
+                                                                                    content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                    actions: [
+                                                                                      TextButton(
+                                                                                        onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                        child: Text('Ok'),
+                                                                                      ),
+                                                                                    ],
                                                                                   );
                                                                                 },
                                                                               );
@@ -1200,6 +1362,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                 carpeta: containerIngresosRow?.idcarpeta,
                                                                                 iddocumentoadjunto: containerVarItem.id.toString(),
                                                                                 idDocedit: containerVarItem.iddocdrive,
+                                                                                token: currentJwtToken,
                                                                               );
 
                                                                               if ((_model.apiResultznwinfmedidas?.succeeded ?? true)) {
@@ -1207,17 +1370,15 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                 await showDialog(
                                                                                   context: context,
                                                                                   builder: (alertDialogContext) {
-                                                                                    return WebViewAware(
-                                                                                      child: AlertDialog(
-                                                                                        title: Text('Se ejecuto correctamente!'),
-                                                                                        content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
-                                                                                        actions: [
-                                                                                          TextButton(
-                                                                                            onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                            child: Text('Ok'),
-                                                                                          ),
-                                                                                        ],
-                                                                                      ),
+                                                                                    return AlertDialog(
+                                                                                      title: Text('Se ejecuto correctamente!'),
+                                                                                      content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                      actions: [
+                                                                                        TextButton(
+                                                                                          onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                          child: Text('Ok'),
+                                                                                        ),
+                                                                                      ],
                                                                                     );
                                                                                   },
                                                                                 );
@@ -1234,6 +1395,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                   carpeta: containerIngresosRow?.idcarpeta,
                                                                                   iddocumentoadjunto: containerVarItem.id.toString(),
                                                                                   idDocedit: containerVarItem.iddocdrive,
+                                                                                  token: currentJwtToken,
                                                                                 );
 
                                                                                 if ((_model.apiResultznwCopyFormularioSolicituddemedidaexcepcional?.succeeded ?? true)) {
@@ -1241,17 +1403,15 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                   await showDialog(
                                                                                     context: context,
                                                                                     builder: (alertDialogContext) {
-                                                                                      return WebViewAware(
-                                                                                        child: AlertDialog(
-                                                                                          title: Text('Se ejecuto correctamente!'),
-                                                                                          content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
-                                                                                          actions: [
-                                                                                            TextButton(
-                                                                                              onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                              child: Text('Ok'),
-                                                                                            ),
-                                                                                          ],
-                                                                                        ),
+                                                                                      return AlertDialog(
+                                                                                        title: Text('Se ejecuto correctamente!'),
+                                                                                        content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                            child: Text('Ok'),
+                                                                                          ),
+                                                                                        ],
                                                                                       );
                                                                                     },
                                                                                   );
@@ -1260,17 +1420,15 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                   await showDialog(
                                                                                     context: context,
                                                                                     builder: (alertDialogContext) {
-                                                                                      return WebViewAware(
-                                                                                        child: AlertDialog(
-                                                                                          title: Text('Se enviara una mail a la coordinacion'),
-                                                                                          content: Text('Se envio un mail!!!'),
-                                                                                          actions: [
-                                                                                            TextButton(
-                                                                                              onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                              child: Text('Ok'),
-                                                                                            ),
-                                                                                          ],
-                                                                                        ),
+                                                                                      return AlertDialog(
+                                                                                        title: Text('Se enviara una mail a la coordinacion'),
+                                                                                        content: Text('Se envio un mail!!!'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                            child: Text('Ok'),
+                                                                                          ),
+                                                                                        ],
                                                                                       );
                                                                                     },
                                                                                   );
@@ -1307,12 +1465,19 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                               context)
                                                                           .titleSmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Noto Sans JP',
+                                                                            font:
+                                                                                GoogleFonts.notoSansJp(
+                                                                              fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                            ),
                                                                             color:
                                                                                 Colors.white,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).titleSmall.fontStyle,
                                                                           ),
                                                                       elevation:
                                                                           0.0,

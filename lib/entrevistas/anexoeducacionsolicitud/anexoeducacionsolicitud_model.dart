@@ -1,4 +1,5 @@
 import '/backend/api_requests/api_calls.dart';
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'anexoeducacionsolicitud_widget.dart' show AnexoeducacionsolicitudWidget;
 import 'package:flutter/material.dart';
@@ -15,10 +16,10 @@ class AnexoeducacionsolicitudModel
   String? Function(BuildContext, String?)?
       textFieldmotivoTextControllerValidator;
   DateTime? datePicked2;
+  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
+  AnexoinstitucioneeducacionRow? creasolicitudeducacion;
   // Stores action output result for [Backend Call - API (ANEXO  SOLICITA INFORMACIN A INSTITUCIN EDUCATIVA)] action in Button widget.
   ApiCallResponse? apiResults9dedujcacio;
-  // Stores action output result for [Backend Call - API (ANEXO  SOLICITA INFORMACIN A INSTITUCIN EDUCATIVA)] action in Button widget.
-  ApiCallResponse? apiResults9dedujcacio23;
 
   @override
   void initState(BuildContext context) {}

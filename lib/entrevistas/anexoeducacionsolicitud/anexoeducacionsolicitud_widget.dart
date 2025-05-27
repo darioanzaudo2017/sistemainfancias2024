@@ -5,7 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'anexoeducacionsolicitud_model.dart';
 export 'anexoeducacionsolicitud_model.dart';
 
@@ -153,11 +153,21 @@ class _AnexoeducacionsolicitudWidgetState
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          fontFamily: 'Noto Sans JP',
+                                          font: GoogleFonts.notoSansJp(
+                                            fontWeight: FontWeight.w600,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontStyle,
+                                          ),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontStyle,
                                         ),
                                   ),
                                 ),
@@ -250,14 +260,31 @@ class _AnexoeducacionsolicitudWidgetState
                                                                       .of(context)
                                                                   .bodyLarge
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Inter',
+                                                                    font: GoogleFonts
+                                                                        .inter(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyLarge
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyLarge
+                                                                          .fontStyle,
+                                                                    ),
                                                                     color: Color(
                                                                         0xFF101518),
                                                                     fontSize:
                                                                         16.0,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge
+                                                                        .fontStyle,
                                                                   ),
                                                             ),
                                                           ),
@@ -282,8 +309,17 @@ class _AnexoeducacionsolicitudWidgetState
                                                                   .of(context)
                                                               .bodySmall
                                                               .override(
-                                                                fontFamily:
-                                                                    'Inter',
+                                                                font:
+                                                                    GoogleFonts
+                                                                        .inter(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .normal,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodySmall
+                                                                      .fontStyle,
+                                                                ),
                                                                 color: Color(
                                                                     0xFF06D5CD),
                                                                 fontSize: 12.0,
@@ -292,6 +328,10 @@ class _AnexoeducacionsolicitudWidgetState
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .normal,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodySmall
+                                                                    .fontStyle,
                                                               ),
                                                         ),
                                                       ),
@@ -313,8 +353,17 @@ class _AnexoeducacionsolicitudWidgetState
                                                                   .of(context)
                                                               .labelSmall
                                                               .override(
-                                                                fontFamily:
-                                                                    'Inter',
+                                                                font:
+                                                                    GoogleFonts
+                                                                        .inter(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .normal,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmall
+                                                                      .fontStyle,
+                                                                ),
                                                                 color: Color(
                                                                     0xFF57636C),
                                                                 fontSize: 12.0,
@@ -323,6 +372,10 @@ class _AnexoeducacionsolicitudWidgetState
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .normal,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmall
+                                                                    .fontStyle,
                                                               ),
                                                         ),
                                                       ),
@@ -358,8 +411,21 @@ class _AnexoeducacionsolicitudWidgetState
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Noto Sans JP',
+                                    font: GoogleFonts.notoSansJp(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
                                   ),
                             ),
                             FFButtonWidget(
@@ -377,15 +443,25 @@ class _AnexoeducacionsolicitudWidgetState
                                           FlutterFlowTheme.of(context).primary,
                                       headerForegroundColor:
                                           FlutterFlowTheme.of(context).info,
-                                      headerTextStyle:
-                                          FlutterFlowTheme.of(context)
-                                              .headlineLarge
-                                              .override(
-                                                fontFamily: 'Noto Sans JP',
-                                                fontSize: 32.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w600,
-                                              ),
+                                      headerTextStyle: FlutterFlowTheme.of(
+                                              context)
+                                          .headlineLarge
+                                          .override(
+                                            font: GoogleFonts.notoSansJp(
+                                              fontWeight: FontWeight.w600,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineLarge
+                                                      .fontStyle,
+                                            ),
+                                            fontSize: 32.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w600,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineLarge
+                                                    .fontStyle,
+                                          ),
                                       pickerBackgroundColor:
                                           FlutterFlowTheme.of(context)
                                               .secondaryBackground,
@@ -432,9 +508,22 @@ class _AnexoeducacionsolicitudWidgetState
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Noto Sans JP',
+                                      font: GoogleFonts.notoSansJp(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontStyle,
+                                      ),
                                       color: Colors.white,
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontStyle,
                                     ),
                                 elevation: 0.0,
                                 borderRadius: BorderRadius.circular(8.0),
@@ -459,16 +548,42 @@ class _AnexoeducacionsolicitudWidgetState
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Noto Sans JP',
+                                    font: GoogleFonts.notoSansJp(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
                                   ),
                               alignLabelWithHint: true,
                               hintText: 'Nombre de establecimiento',
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Noto Sans JP',
+                                    font: GoogleFonts.notoSansJp(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -502,8 +617,21 @@ class _AnexoeducacionsolicitudWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Noto Sans JP',
+                                  font: GoogleFonts.notoSansJp(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
                                 ),
                             maxLines: 2,
                             validator: _model
@@ -528,8 +656,21 @@ class _AnexoeducacionsolicitudWidgetState
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Noto Sans JP',
+                                    font: GoogleFonts.notoSansJp(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
                                   ),
                             ),
                             FFButtonWidget(
@@ -547,15 +688,25 @@ class _AnexoeducacionsolicitudWidgetState
                                           FlutterFlowTheme.of(context).primary,
                                       headerForegroundColor:
                                           FlutterFlowTheme.of(context).info,
-                                      headerTextStyle:
-                                          FlutterFlowTheme.of(context)
-                                              .headlineLarge
-                                              .override(
-                                                fontFamily: 'Noto Sans JP',
-                                                fontSize: 32.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w600,
-                                              ),
+                                      headerTextStyle: FlutterFlowTheme.of(
+                                              context)
+                                          .headlineLarge
+                                          .override(
+                                            font: GoogleFonts.notoSansJp(
+                                              fontWeight: FontWeight.w600,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineLarge
+                                                      .fontStyle,
+                                            ),
+                                            fontSize: 32.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w600,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineLarge
+                                                    .fontStyle,
+                                          ),
                                       pickerBackgroundColor:
                                           FlutterFlowTheme.of(context)
                                               .secondaryBackground,
@@ -602,9 +753,22 @@ class _AnexoeducacionsolicitudWidgetState
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Noto Sans JP',
+                                      font: GoogleFonts.notoSansJp(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontStyle,
+                                      ),
                                       color: Colors.white,
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontStyle,
                                     ),
                                 elevation: 0.0,
                                 borderRadius: BorderRadius.circular(8.0),
@@ -626,165 +790,85 @@ class _AnexoeducacionsolicitudWidgetState
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {
-                                      return WebViewAware(
-                                        child: AlertDialog(
-                                          title: Text('Campo obligatorio'),
-                                          content:
-                                              Text('La fecha obligatoria!'),
-                                          actions: [
-                                            TextButton(
-                                              onPressed: () => Navigator.pop(
-                                                  alertDialogContext),
-                                              child: Text('Ok'),
-                                            ),
-                                          ],
-                                        ),
+                                      return AlertDialog(
+                                        title: Text('Campo obligatorio'),
+                                        content: Text('La fecha obligatoria!'),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: Text('Ok'),
+                                          ),
+                                        ],
                                       );
                                     },
                                   );
                                   return;
                                 }
-                                if (containerAnexoinstitucioneeducacionRow
-                                        ?.id ==
-                                    null) {
-                                  await AnexoinstitucioneeducacionTable()
-                                      .insert({
-                                    'spd': widget.rowexp?.spd,
-                                    'fecha': _model.datePicked1?.toString(),
-                                    'idingreso': widget.rowingreso?.id,
-                                    'expediente': widget.rowexp?.expediente,
-                                    'updated_at': supaSerialize<DateTime>(
-                                        getCurrentTimestamp),
-                                    'fechacomienzo': dateTimeFormat(
-                                      "d/M/y",
-                                      _model.datePicked2,
-                                      locale: FFLocalizations.of(context)
-                                          .languageCode,
-                                    ),
-                                    'numestablecimiento': _model
-                                        .textFieldmotivoTextController.text,
-                                  });
-                                  _model.apiResults9dedujcacio =
-                                      await AnexoSolicitaInformacinAInstitucinEducativaCall
-                                          .call(
-                                    fecha: dateTimeFormat(
-                                      "d/M/y",
-                                      _model.datePicked1,
-                                      locale: FFLocalizations.of(context)
-                                          .languageCode,
-                                    ),
-                                    nombreyapellido:
-                                        '${widget.rowexp?.nombres}, ${widget.rowexp?.apellidos}',
-                                    dni: widget.rowexp?.dni,
-                                    numestablecimiento: _model
-                                        .textFieldmotivoTextController.text,
-                                    idingreso: widget.rowingreso?.id,
-                                    expediente: widget.rowexp?.expediente,
-                                    carpeta: widget.rowingreso?.idcarpeta,
-                                    spd: widget.rowexp?.spd,
-                                    fechadecomienzo:
-                                        _model.datePicked2?.toString(),
-                                  );
+                                _model.creasolicitudeducacion =
+                                    await AnexoinstitucioneeducacionTable()
+                                        .insert({
+                                  'spd': widget.rowexp?.spd,
+                                  'fecha': _model.datePicked1?.toString(),
+                                  'idingreso': widget.rowingreso?.id,
+                                  'expediente': widget.rowexp?.expediente,
+                                  'updated_at': supaSerialize<DateTime>(
+                                      getCurrentTimestamp),
+                                  'fechacomienzo': dateTimeFormat(
+                                    "d/M/y",
+                                    _model.datePicked2,
+                                    locale: FFLocalizations.of(context)
+                                        .languageCode,
+                                  ),
+                                  'numestablecimiento':
+                                      _model.textFieldmotivoTextController.text,
+                                });
+                                _model.apiResults9dedujcacio =
+                                    await AnexoSolicitaInformacinAInstitucinEducativaCall
+                                        .call(
+                                  fecha: dateTimeFormat(
+                                    "d/M/y",
+                                    _model.datePicked1,
+                                    locale: FFLocalizations.of(context)
+                                        .languageCode,
+                                  ),
+                                  nombreyapellido:
+                                      '${widget.rowexp?.nombres}, ${widget.rowexp?.apellidos}',
+                                  dni: widget.rowexp?.dni,
+                                  numestablecimiento:
+                                      _model.textFieldmotivoTextController.text,
+                                  idsolicitud:
+                                      _model.creasolicitudeducacion?.id,
+                                  expediente: widget.rowexp?.expediente,
+                                  carpeta: widget.rowingreso?.idcarpeta,
+                                  spd: widget.rowexp?.spd,
+                                  fechadecomienzo:
+                                      _model.datePicked2?.toString(),
+                                );
 
-                                  if ((_model
-                                          .apiResults9dedujcacio?.succeeded ??
-                                      true)) {
-                                    await Future.delayed(
-                                        const Duration(milliseconds: 1000));
-                                    await showDialog(
-                                      context: context,
-                                      builder: (alertDialogContext) {
-                                        return WebViewAware(
-                                          child: AlertDialog(
-                                            title: Text(
-                                                'Se cargo correctamente la informacion'),
-                                            content: Text(
-                                                'Se guardo la informacion y se creo un documento en google docs!'),
-                                            actions: [
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext),
-                                                child: Text('Ok'),
-                                              ),
-                                            ],
+                                if ((_model.apiResults9dedujcacio?.succeeded ??
+                                    true)) {
+                                  await Future.delayed(
+                                      const Duration(milliseconds: 1000));
+                                  await showDialog(
+                                    context: context,
+                                    builder: (alertDialogContext) {
+                                      return AlertDialog(
+                                        title: Text(
+                                            'Se cargo correctamente la informacion'),
+                                        content: Text(
+                                            'Se guardo la informacion y se creo un documento en google docs!'),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: Text('Ok'),
                                           ),
-                                        );
-                                      },
-                                    );
-                                    Navigator.pop(context, true);
-                                  }
-                                } else {
-                                  await AnexoinstitucioneeducacionTable()
-                                      .update(
-                                    data: {
-                                      'spd': widget.rowexp?.spd,
-                                      'fecha': _model.datePicked1 != null
-                                          ? _model.datePicked1?.toString()
-                                          : containerAnexoinstitucioneeducacionRow
-                                              ?.fecha,
-                                      'idingreso': widget.rowingreso?.id,
-                                      'expediente': widget.rowexp?.expediente,
-                                      'updated_at': supaSerialize<DateTime>(
-                                          getCurrentTimestamp),
-                                      'fechacomienzo': _model.datePicked1 !=
-                                              null
-                                          ? _model.datePicked2?.toString()
-                                          : containerAnexoinstitucioneeducacionRow
-                                              ?.fechacomienzo,
-                                      'numestablecimiento': _model
-                                          .textFieldmotivoTextController.text,
+                                        ],
+                                      );
                                     },
-                                    matchingRows: (rows) => rows,
                                   );
-                                  _model.apiResults9dedujcacio23 =
-                                      await AnexoSolicitaInformacinAInstitucinEducativaCall
-                                          .call(
-                                    fecha: dateTimeFormat(
-                                      "d/M/y",
-                                      _model.datePicked1,
-                                      locale: FFLocalizations.of(context)
-                                          .languageCode,
-                                    ),
-                                    nombreyapellido:
-                                        '${widget.rowexp?.nombres}, ${widget.rowexp?.apellidos}',
-                                    dni: widget.rowexp?.dni,
-                                    numestablecimiento: _model
-                                        .textFieldmotivoTextController.text,
-                                    idingreso: widget.rowingreso?.id,
-                                    expediente: widget.rowexp?.expediente,
-                                    carpeta: widget.rowingreso?.idcarpeta,
-                                    spd: widget.rowexp?.spd,
-                                    fechadecomienzo:
-                                        _model.datePicked2?.toString(),
-                                  );
-
-                                  if ((_model
-                                          .apiResults9dedujcacio23?.succeeded ??
-                                      true)) {
-                                    await Future.delayed(
-                                        const Duration(milliseconds: 1000));
-                                    await showDialog(
-                                      context: context,
-                                      builder: (alertDialogContext) {
-                                        return WebViewAware(
-                                          child: AlertDialog(
-                                            title: Text(
-                                                'Se cargo correctamente la informacion'),
-                                            content: Text(
-                                                'Se guardo la informacion y se creo un documento en google docs!'),
-                                            actions: [
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext),
-                                                child: Text('Ok'),
-                                              ),
-                                            ],
-                                          ),
-                                        );
-                                      },
-                                    );
-                                    Navigator.pop(context, true);
-                                  }
+                                  Navigator.pop(context, true);
                                 }
 
                                 safeSetState(() {});
@@ -805,9 +889,22 @@ class _AnexoeducacionsolicitudWidgetState
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Noto Sans JP',
+                                      font: GoogleFonts.notoSansJp(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontStyle,
+                                      ),
                                       color: Colors.white,
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontStyle,
                                     ),
                                 elevation: 2.0,
                                 borderSide: BorderSide(

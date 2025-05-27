@@ -72,4 +72,7 @@ class GrupoConvivienteRow extends SupabaseDataRow {
 
   int? get idnnya => getField<int>('idnnya');
   set idnnya(int? value) => setField<int>('idnnya', value);
+
+  String? get vinculoObs => getField<String>('vinculo_obs');
+  set vinculoObs(String? value) => setField<String>('vinculo_obs', value);
 }

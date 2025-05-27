@@ -33,12 +33,10 @@ class AnexoinstitucionsaludModel
   FormFieldController<String>? dropDownValueController;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
   List<VistaRecepciondelademandaRow>? recepciondelademanda;
+  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
+  AnexoinstitucionesaludRow? crearsolicitudsalud;
   // Stores action output result for [Backend Call - API (anexo solicitud salud)] action in Button widget.
   ApiCallResponse? apiResults9d;
-  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
-  List<VistaRecepciondelademandaRow>? recepciondelademandaedit;
-  // Stores action output result for [Backend Call - API (anexo solicitud salud)] action in Button widget.
-  ApiCallResponse? apiResults9dedit;
 
   @override
   void initState(BuildContext context) {}

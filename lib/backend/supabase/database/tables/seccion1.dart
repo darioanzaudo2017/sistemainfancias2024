@@ -105,4 +105,16 @@ class Seccion1Row extends SupabaseDataRow {
 
   String? get barrio => getField<String>('barrio');
   set barrio(String? value) => setField<String>('barrio', value);
+
+  List<String> get discapacidad => getListField<String>('discapacidad');
+  set discapacidad(List<String>? value) =>
+      setListField<String>('discapacidad', value);
+
+  String? get accedeprestaciones => getField<String>('accedeprestaciones');
+  set accedeprestaciones(String? value) =>
+      setField<String>('accedeprestaciones', value);
+
+  String? get cualesPrestaciones => getField<String>('cualesPrestaciones');
+  set cualesPrestaciones(String? value) =>
+      setField<String>('cualesPrestaciones', value);
 }

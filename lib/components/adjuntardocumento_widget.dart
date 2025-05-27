@@ -7,7 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'adjuntardocumento_model.dart';
 export 'adjuntardocumento_model.dart';
 
@@ -104,9 +104,19 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                 child: Text(
                   'Adjuntar documento',
                   style: FlutterFlowTheme.of(context).titleLarge.override(
-                        fontFamily: 'Noto Sans JP',
+                        font: GoogleFonts.notoSansJp(
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .titleLarge
+                              .fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                        ),
                         color: FlutterFlowTheme.of(context).primary,
                         letterSpacing: 0.0,
+                        fontWeight:
+                            FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).titleLarge.fontStyle,
                       ),
                 ),
               ),
@@ -118,13 +128,35 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                 decoration: InputDecoration(
                   isDense: true,
                   labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Noto Sans JP',
+                        font: GoogleFonts.notoSansJp(
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .labelMedium
+                              .fontWeight,
+                          fontStyle: FlutterFlowTheme.of(context)
+                              .labelMedium
+                              .fontStyle,
+                        ),
                         letterSpacing: 0.0,
+                        fontWeight:
+                            FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).labelMedium.fontStyle,
                       ),
                   hintText: 'Observaciones',
                   hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Noto Sans JP',
+                        font: GoogleFonts.notoSansJp(
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .labelMedium
+                              .fontWeight,
+                          fontStyle: FlutterFlowTheme.of(context)
+                              .labelMedium
+                              .fontStyle,
+                        ),
                         letterSpacing: 0.0,
+                        fontWeight:
+                            FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).labelMedium.fontStyle,
                       ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
@@ -158,8 +190,17 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                   fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Noto Sans JP',
+                      font: GoogleFonts.notoSansJp(
+                        fontWeight:
+                            FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                      ),
                       letterSpacing: 0.0,
+                      fontWeight:
+                          FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                     ),
                 maxLines: null,
                 cursorColor: FlutterFlowTheme.of(context).primaryText,
@@ -175,17 +216,27 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                   'Educacion',
                   'Sala Cuna',
                   'Otro',
-                  'Adjunto Amplaicion de Informacion',
+                  'Adjunto Ampliacion de Informacion',
                   'Adjunto Informe Sintesis',
                   'Adjunto Recepcion de la demanda',
-                  'Dibujo entrevista'
+                  'Apliacion de informacion solicitud a senaf',
+                  'Formulario Solicitud de medida excepcional pdf firmado'
                 ],
                 onChanged: (val) =>
                     safeSetState(() => _model.dropDownValue = val),
                 height: 40.0,
                 textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Noto Sans JP',
+                      font: GoogleFonts.notoSansJp(
+                        fontWeight:
+                            FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                      ),
                       letterSpacing: 0.0,
+                      fontWeight:
+                          FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                     ),
                 hintText: 'tipo de documento',
                 icon: Icon(
@@ -276,9 +327,22 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily: 'Noto Sans JP',
+                                font: GoogleFonts.notoSansJp(
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontStyle,
+                                ),
                                 color: Colors.white,
                                 letterSpacing: 0.0,
+                                fontWeight: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .fontWeight,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .fontStyle,
                               ),
                       elevation: 0.0,
                       borderRadius: BorderRadius.circular(8.0),
@@ -303,18 +367,16 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                       await showDialog(
                         context: context,
                         builder: (alertDialogContext) {
-                          return WebViewAware(
-                            child: AlertDialog(
-                              title:
-                                  Text('Se cargo correctamente la informacion'),
-                              actions: [
-                                TextButton(
-                                  onPressed: () =>
-                                      Navigator.pop(alertDialogContext),
-                                  child: Text('Ok'),
-                                ),
-                              ],
-                            ),
+                          return AlertDialog(
+                            title:
+                                Text('Se cargo correctamente la informacion'),
+                            actions: [
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(alertDialogContext),
+                                child: Text('Ok'),
+                              ),
+                            ],
                           );
                         },
                       );
@@ -331,12 +393,20 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily: 'Lexend Deca',
+                                font: GoogleFonts.lexendDeca(
+                                  fontWeight: FontWeight.normal,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontStyle,
+                                ),
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
                                 fontSize: 16.0,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.normal,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .fontStyle,
                               ),
                       elevation: 0.0,
                       borderSide: BorderSide(

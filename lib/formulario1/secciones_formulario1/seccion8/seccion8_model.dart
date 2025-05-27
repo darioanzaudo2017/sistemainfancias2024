@@ -6,6 +6,10 @@ import 'seccion8_widget.dart' show Seccion8Widget;
 import 'package:flutter/material.dart';
 
 class Seccion8Model extends FlutterFlowModel<Seccion8Widget> {
+  ///  Local state fields for this component.
+
+  bool editarpersonarelacionadas = true;
+
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();

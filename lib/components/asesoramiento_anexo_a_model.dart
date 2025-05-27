@@ -43,6 +43,8 @@ class AsesoramientoAnexoAModel
   ApiCallResponse? apiResulto6s;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   AnexoAForm1Row? anexoasesoramiento;
+  // Stores action output result for [Backend Call - API (anexoformasesoramiento)] action in Button widget.
+  ApiCallResponse? apiResulto6scopy;
 
   @override
   void initState(BuildContext context) {}

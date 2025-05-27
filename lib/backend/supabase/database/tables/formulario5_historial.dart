@@ -82,4 +82,9 @@ class Formulario5HistorialRow extends SupabaseDataRow {
 
   int? get idgrupofamiliar => getField<int>('idgrupofamiliar');
   set idgrupofamiliar(int? value) => setField<int>('idgrupofamiliar', value);
+
+  String? get tienCriteriosForm5Hist =>
+      getField<String>('tien_criterios_form5_hist');
+  set tienCriteriosForm5Hist(String? value) =>
+      setField<String>('tien_criterios_form5_hist', value);
 }

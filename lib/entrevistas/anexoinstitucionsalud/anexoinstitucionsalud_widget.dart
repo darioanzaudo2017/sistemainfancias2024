@@ -7,7 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'anexoinstitucionsalud_model.dart';
 export 'anexoinstitucionsalud_model.dart';
 
@@ -143,11 +143,20 @@ class _AnexoinstitucionsaludWidgetState
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        fontFamily: 'Noto Sans JP',
+                                        font: GoogleFonts.notoSansJp(
+                                          fontWeight: FontWeight.w600,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontStyle,
+                                        ),
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .fontStyle,
                                       ),
                                 ),
                               ),
@@ -188,8 +197,21 @@ class _AnexoinstitucionsaludWidgetState
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Noto Sans JP',
+                                    font: GoogleFonts.notoSansJp(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
                                   ),
                             ),
                             FFButtonWidget(
@@ -207,15 +229,25 @@ class _AnexoinstitucionsaludWidgetState
                                           FlutterFlowTheme.of(context).primary,
                                       headerForegroundColor:
                                           FlutterFlowTheme.of(context).info,
-                                      headerTextStyle:
-                                          FlutterFlowTheme.of(context)
-                                              .headlineLarge
-                                              .override(
-                                                fontFamily: 'Noto Sans JP',
-                                                fontSize: 32.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w600,
-                                              ),
+                                      headerTextStyle: FlutterFlowTheme.of(
+                                              context)
+                                          .headlineLarge
+                                          .override(
+                                            font: GoogleFonts.notoSansJp(
+                                              fontWeight: FontWeight.w600,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineLarge
+                                                      .fontStyle,
+                                            ),
+                                            fontSize: 32.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w600,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineLarge
+                                                    .fontStyle,
+                                          ),
                                       pickerBackgroundColor:
                                           FlutterFlowTheme.of(context)
                                               .secondaryBackground,
@@ -262,9 +294,22 @@ class _AnexoinstitucionsaludWidgetState
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Noto Sans JP',
+                                      font: GoogleFonts.notoSansJp(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontStyle,
+                                      ),
                                       color: Colors.white,
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontStyle,
                                     ),
                                 elevation: 0.0,
                                 borderRadius: BorderRadius.circular(8.0),
@@ -285,16 +330,42 @@ class _AnexoinstitucionsaludWidgetState
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Noto Sans JP',
+                                    font: GoogleFonts.notoSansJp(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
                                   ),
                               alignLabelWithHint: true,
                               hintText: 'Institucion de salud numero/nombre',
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Noto Sans JP',
+                                    font: GoogleFonts.notoSansJp(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -328,8 +399,21 @@ class _AnexoinstitucionsaludWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Noto Sans JP',
+                                  font: GoogleFonts.notoSansJp(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
                                 ),
                             maxLines: 2,
                             validator: _model
@@ -350,16 +434,42 @@ class _AnexoinstitucionsaludWidgetState
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Noto Sans JP',
+                                    font: GoogleFonts.notoSansJp(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
                                   ),
                               alignLabelWithHint: true,
                               hintText: 'CPC',
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Noto Sans JP',
+                                    font: GoogleFonts.notoSansJp(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -393,8 +503,21 @@ class _AnexoinstitucionsaludWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Noto Sans JP',
+                                  font: GoogleFonts.notoSansJp(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
                                 ),
                             maxLines: 2,
                             validator: _model
@@ -422,16 +545,46 @@ class _AnexoinstitucionsaludWidgetState
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Noto Sans JP',
+                                        font: GoogleFonts.notoSansJp(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .fontStyle,
                                       ),
                                   alignLabelWithHint: true,
                                   hintText: 'Año',
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Noto Sans JP',
+                                        font: GoogleFonts.notoSansJp(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .fontStyle,
                                       ),
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
@@ -467,8 +620,21 @@ class _AnexoinstitucionsaludWidgetState
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Noto Sans JP',
+                                      font: GoogleFonts.notoSansJp(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
                                     ),
                                 maxLength: 4,
                                 validator: _model
@@ -506,8 +672,21 @@ class _AnexoinstitucionsaludWidgetState
                             textStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Noto Sans JP',
+                                  font: GoogleFonts.notoSansJp(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
                                 ),
                             hintText: 'Seleccionar mes',
                             icon: Icon(
@@ -544,187 +723,97 @@ class _AnexoinstitucionsaludWidgetState
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {
-                                      return WebViewAware(
-                                        child: AlertDialog(
-                                          title: Text('Campo obligatorio'),
-                                          content:
-                                              Text('La fecha obligatoria!'),
-                                          actions: [
-                                            TextButton(
-                                              onPressed: () => Navigator.pop(
-                                                  alertDialogContext),
-                                              child: Text('Ok'),
-                                            ),
-                                          ],
-                                        ),
+                                      return AlertDialog(
+                                        title: Text('Campo obligatorio'),
+                                        content: Text('La fecha obligatoria!'),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: Text('Ok'),
+                                          ),
+                                        ],
                                       );
                                     },
                                   );
                                   return;
                                 }
-                                if (containerAnexoinstitucionesaludRow?.id ==
-                                    null) {
-                                  _model.recepciondelademanda =
-                                      await VistaRecepciondelademandaTable()
-                                          .queryRows(
-                                    queryFn: (q) => q.eqOrNull(
-                                      'idIngreso_ingresos',
-                                      widget.rowingreso?.id,
-                                    ),
-                                  );
-                                  await AnexoinstitucionesaludTable().insert({
-                                    'spd': widget.rowexp?.spd,
-                                    'fecha': dateTimeFormat(
-                                      "d/M/y",
-                                      _model.datePicked,
-                                      locale: FFLocalizations.of(context)
-                                          .languageCode,
-                                    ),
-                                    'mes': _model.dropDownValue,
-                                    'Año': _model
-                                        .textFieldresenaTextController.text,
-                                    'historiaclinica': _model
-                                        .recepciondelademanda
-                                        ?.firstOrNull
-                                        ?.historiaclinicaSeccion1,
-                                    'idingreso': widget.rowingreso?.id,
-                                    'expediente': widget.rowexp?.expediente,
-                                  });
-                                  _model.apiResults9d =
-                                      await AnexoSolicitudSaludCall.call(
-                                    fecha: dateTimeFormat(
-                                      "d/M/y",
-                                      _model.datePicked,
-                                      locale: FFLocalizations.of(context)
-                                          .languageCode,
-                                    ),
-                                    nombreyapellido:
-                                        '${widget.rowexp?.nombres}, ${widget.rowexp?.apellidos}',
-                                    dni: widget.rowexp?.dni,
-                                    barrio: 'kjh',
-                                    domicilio: _model.recepciondelademanda
-                                        ?.firstOrNull?.domicilioSeccion1,
-                                    historiaclinica: _model.recepciondelademanda
-                                        ?.firstOrNull?.historiaclinicaSeccion1,
-                                    mes: _model.dropDownValue,
-                                    ano: _model
-                                        .textFieldresenaTextController.text,
-                                    expediente: widget.rowexp?.expediente,
-                                    idingreso: widget.rowingreso?.id,
-                                    carpeta: widget.rowingreso?.idcarpeta,
-                                  );
+                                _model.recepciondelademanda =
+                                    await VistaRecepciondelademandaTable()
+                                        .queryRows(
+                                  queryFn: (q) => q.eqOrNull(
+                                    'idIngreso_ingresos',
+                                    widget.rowingreso?.id,
+                                  ),
+                                );
+                                _model.crearsolicitudsalud =
+                                    await AnexoinstitucionesaludTable().insert({
+                                  'spd': widget.rowexp?.spd,
+                                  'fecha': dateTimeFormat(
+                                    "d/M/y",
+                                    _model.datePicked,
+                                    locale: FFLocalizations.of(context)
+                                        .languageCode,
+                                  ),
+                                  'mes': _model.dropDownValue,
+                                  'Año':
+                                      _model.textFieldresenaTextController.text,
+                                  'historiaclinica': _model.recepciondelademanda
+                                      ?.firstOrNull?.historiaclinicaSeccion1,
+                                  'idingreso': widget.rowingreso?.id,
+                                  'expediente': widget.rowexp?.expediente,
+                                });
+                                _model.apiResults9d =
+                                    await AnexoSolicitudSaludCall.call(
+                                  fecha: dateTimeFormat(
+                                    "d/M/y",
+                                    _model.datePicked,
+                                    locale: FFLocalizations.of(context)
+                                        .languageCode,
+                                  ),
+                                  nombreyapellido:
+                                      '${widget.rowexp?.nombres}, ${widget.rowexp?.apellidos}',
+                                  dni: widget.rowexp?.dni,
+                                  barrio: 'kjh',
+                                  domicilio: _model.recepciondelademanda
+                                      ?.firstOrNull?.domicilioSeccion1,
+                                  historiaclinica: _model.recepciondelademanda
+                                      ?.firstOrNull?.historiaclinicaSeccion1,
+                                  mes: _model.dropDownValue,
+                                  ano:
+                                      _model.textFieldresenaTextController.text,
+                                  expediente: widget.rowexp?.expediente,
+                                  idsolicitudsalud:
+                                      _model.crearsolicitudsalud?.id,
+                                  carpeta: widget.rowingreso?.idcarpeta,
+                                  spd: _model
+                                      .textFieldmotivoTextController2.text,
+                                  institucion: _model
+                                      .textFieldmotivoTextController1.text,
+                                );
 
-                                  if ((_model.apiResults9d?.succeeded ??
-                                      true)) {
-                                    await Future.delayed(
-                                        const Duration(milliseconds: 1000));
-                                    await showDialog(
-                                      context: context,
-                                      builder: (alertDialogContext) {
-                                        return WebViewAware(
-                                          child: AlertDialog(
-                                            title: Text(
-                                                'Se cargo correctamente la informacion'),
-                                            content: Text(
-                                                'Se guardo la informacion y se creo un documento en google docs!'),
-                                            actions: [
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext),
-                                                child: Text('Ok'),
-                                              ),
-                                            ],
+                                if ((_model.apiResults9d?.succeeded ?? true)) {
+                                  await Future.delayed(
+                                      const Duration(milliseconds: 1000));
+                                  await showDialog(
+                                    context: context,
+                                    builder: (alertDialogContext) {
+                                      return AlertDialog(
+                                        title: Text(
+                                            'Se cargo correctamente la informacion'),
+                                        content: Text(
+                                            'Se guardo la informacion y se creo un documento en google docs!'),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: Text('Ok'),
                                           ),
-                                        );
-                                      },
-                                    );
-                                    Navigator.pop(context, true);
-                                  }
-                                } else {
-                                  _model.recepciondelademandaedit =
-                                      await VistaRecepciondelademandaTable()
-                                          .queryRows(
-                                    queryFn: (q) => q.eqOrNull(
-                                      'idIngreso_ingresos',
-                                      widget.rowingreso?.id,
-                                    ),
-                                  );
-                                  await AnexoinstitucionesaludTable().update(
-                                    data: {
-                                      'spd': widget.rowexp?.spd,
-                                      'fecha': dateTimeFormat(
-                                        "d/M/y",
-                                        _model.datePicked,
-                                        locale: FFLocalizations.of(context)
-                                            .languageCode,
-                                      ),
-                                      'mes': _model.dropDownValue,
-                                      'Año': _model
-                                          .textFieldresenaTextController.text,
-                                      'historiaclinica': _model
-                                          .recepciondelademandaedit
-                                          ?.firstOrNull
-                                          ?.historiaclinicaSeccion1,
-                                      'idingreso': widget.rowingreso?.id,
-                                      'expediente': widget.rowexp?.expediente,
+                                        ],
+                                      );
                                     },
-                                    matchingRows: (rows) => rows.eqOrNull(
-                                      'idingreso',
-                                      widget.rowingreso?.id,
-                                    ),
                                   );
-                                  _model.apiResults9dedit =
-                                      await AnexoSolicitudSaludCall.call(
-                                    fecha: dateTimeFormat(
-                                      "d/M/y",
-                                      _model.datePicked,
-                                      locale: FFLocalizations.of(context)
-                                          .languageCode,
-                                    ),
-                                    nombreyapellido:
-                                        '${widget.rowexp?.nombres}, ${widget.rowexp?.apellidos}',
-                                    dni: widget.rowexp?.dni,
-                                    barrio: 'kjh',
-                                    domicilio: _model.recepciondelademandaedit
-                                        ?.firstOrNull?.domicilioSeccion1,
-                                    historiaclinica: _model
-                                        .recepciondelademandaedit
-                                        ?.firstOrNull
-                                        ?.historiaclinicaSeccion1,
-                                    mes: _model.dropDownValue,
-                                    ano: _model
-                                        .textFieldresenaTextController.text,
-                                    expediente: widget.rowexp?.expediente,
-                                    idingreso: widget.rowingreso?.id,
-                                    carpeta: widget.rowingreso?.idcarpeta,
-                                  );
-
-                                  if ((_model.apiResults9d?.succeeded ??
-                                      true)) {
-                                    await Future.delayed(
-                                        const Duration(milliseconds: 1000));
-                                    await showDialog(
-                                      context: context,
-                                      builder: (alertDialogContext) {
-                                        return WebViewAware(
-                                          child: AlertDialog(
-                                            title: Text(
-                                                'Se cargo correctamente la informacion'),
-                                            content: Text(
-                                                'Se guardo la informacion y se creo un documento en google docs!'),
-                                            actions: [
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext),
-                                                child: Text('Ok'),
-                                              ),
-                                            ],
-                                          ),
-                                        );
-                                      },
-                                    );
-                                    Navigator.pop(context, true);
-                                  }
+                                  Navigator.pop(context, true);
                                 }
 
                                 safeSetState(() {});
@@ -745,9 +834,22 @@ class _AnexoinstitucionsaludWidgetState
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Noto Sans JP',
+                                      font: GoogleFonts.notoSansJp(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontStyle,
+                                      ),
                                       color: Colors.white,
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontStyle,
                                     ),
                                 elevation: 2.0,
                                 borderSide: BorderSide(

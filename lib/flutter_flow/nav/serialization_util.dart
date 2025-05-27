@@ -230,6 +230,8 @@ dynamic deserializeParam<T>(
             return VistaRecepciondelademandaRow(data);
           case AnexoAForm1Row:
             return AnexoAForm1Row(data);
+          case VistaIngresosExpedienteRow:
+            return VistaIngresosExpedienteRow(data);
           case VistaEstadisticasRow:
             return VistaEstadisticasRow(data);
           case AvisovisitaNNyARow:
@@ -238,8 +240,6 @@ dynamic deserializeParam<T>(
             return NNyARow(data);
           case VistaExpedientesIngresos24hsRow:
             return VistaExpedientesIngresos24hsRow(data);
-          case FormularioSenafRow:
-            return FormularioSenafRow(data);
           case UserRolRow:
             return UserRolRow(data);
           case HistorialingresoRow:
@@ -256,6 +256,8 @@ dynamic deserializeParam<T>(
             return AnexosForm1Row(data);
           case Formulario5HistorialRow:
             return Formulario5HistorialRow(data);
+          case ArticulacionComunitariaRow:
+            return ArticulacionComunitariaRow(data);
           case VistaExpedientesSenafRow:
             return VistaExpedientesSenafRow(data);
           case VistaEstadisticasAdminRow:
@@ -272,6 +274,8 @@ dynamic deserializeParam<T>(
             return Seccion8Row(data);
           case Formulario9Row:
             return Formulario9Row(data);
+          case HistorialmovimientossolicitudsenafRow:
+            return HistorialmovimientossolicitudsenafRow(data);
           case GrupofamiliarexpedientesRow:
             return GrupofamiliarexpedientesRow(data);
           case Seccion9Row:
@@ -290,10 +294,14 @@ dynamic deserializeParam<T>(
             return Anexo1Form1Row(data);
           case VistaEstadisticasZonaRow:
             return VistaEstadisticasZonaRow(data);
+          case SeguimientosolicitudRow:
+            return SeguimientosolicitudRow(data);
           case GrupoConvivienteRow:
             return GrupoConvivienteRow(data);
           case ResuestasForm6Row:
             return ResuestasForm6Row(data);
+          case VistaHistorialMovimientosSolicitudsenafRow:
+            return VistaHistorialMovimientosSolicitudsenafRow(data);
           case NNyAExpGruRow:
             return NNyAExpGruRow(data);
           case AmpliaciondeinformacionhistorialRow:

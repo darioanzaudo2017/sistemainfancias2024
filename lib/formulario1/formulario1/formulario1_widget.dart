@@ -17,7 +17,7 @@ import '/formulario1/secciones_formulario1/seccion8/seccion8_widget.dart';
 import '/formulario1/secciones_formulario1/seccion9/seccion9_widget.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'formulario1_model.dart';
 export 'formulario1_model.dart';
 
@@ -144,11 +144,21 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          fontFamily: 'Noto Sans JP',
+                                          font: GoogleFonts.notoSansJp(
+                                            fontWeight: FontWeight.w600,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontStyle,
+                                          ),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontStyle,
                                         ),
                                   ),
                                 ),
@@ -179,9 +189,22 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                               style: FlutterFlowTheme.of(context)
                                   .titleLarge
                                   .override(
-                                    fontFamily: 'Noto Sans JP',
+                                    font: GoogleFonts.notoSansJp(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontStyle,
+                                    ),
                                     color: FlutterFlowTheme.of(context).primary,
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .fontStyle,
                                   ),
                             ),
                           ),
@@ -198,9 +221,26 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Noto Sans JP',
+                                          font: GoogleFonts.notoSansJp(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
                                           fontSize: 16.0,
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
                                         ),
                                   ),
                                 ),
@@ -226,21 +266,19 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return WebViewAware(
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child: Seccion1Widget(
-                                                      idingreso:
-                                                          widget.idingreso,
-                                                      rowexp: widget.rowexp,
-                                                      editar: false,
-                                                      usuariorow:
-                                                          widget.usuariorow!,
-                                                      usuariorol:
-                                                          widget.usuariosrol!,
-                                                    ),
+                                                return Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child: Seccion1Widget(
+                                                    idingreso:
+                                                        widget.idingreso,
+                                                    rowexp: widget.rowexp,
+                                                    editar: false,
+                                                    usuariorow:
+                                                        widget.usuariorow!,
+                                                    usuariorol:
+                                                        widget.usuariosrol!,
                                                   ),
                                                 );
                                               },
@@ -272,15 +310,35 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                     .primary
                                                 : FlutterFlowTheme.of(context)
                                                     .secondary,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily:
-                                                          'Noto Sans JP',
-                                                      color: Colors.white,
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                            textStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .titleSmall
+                                                .override(
+                                                  font: GoogleFonts.notoSansJp(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontStyle,
+                                                  ),
+                                                  color: Colors.white,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontStyle,
+                                                ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
@@ -305,21 +363,19 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return WebViewAware(
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child: Seccion1Widget(
-                                                      idingreso:
-                                                          widget.idingreso,
-                                                      rowexp: widget.rowexp,
-                                                      editar: true,
-                                                      usuariorow:
-                                                          widget.usuariorow!,
-                                                      usuariorol:
-                                                          widget.usuariosrol!,
-                                                    ),
+                                                return Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child: Seccion1Widget(
+                                                    idingreso:
+                                                        widget.idingreso,
+                                                    rowexp: widget.rowexp,
+                                                    editar: true,
+                                                    usuariorow:
+                                                        widget.usuariorow!,
+                                                    usuariorol:
+                                                        widget.usuariosrol!,
                                                   ),
                                                 );
                                               },
@@ -342,15 +398,35 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                     .primary
                                                 : FlutterFlowTheme.of(context)
                                                     .secondary,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily:
-                                                          'Noto Sans JP',
-                                                      color: Colors.white,
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                            textStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .titleSmall
+                                                .override(
+                                                  font: GoogleFonts.notoSansJp(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontStyle,
+                                                  ),
+                                                  color: Colors.white,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontStyle,
+                                                ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
@@ -386,9 +462,26 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Noto Sans JP',
+                                            font: GoogleFonts.notoSansJp(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                     ),
                                   ),
@@ -409,19 +502,17 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return WebViewAware(
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child: Seccion2Widget(
-                                                      rowingreso:
-                                                          widget.idingreso!,
-                                                      rowexp: widget.rowexp!,
-                                                      editar: false,
-                                                      usuariorow:
-                                                          widget.usuariosrol!,
-                                                    ),
+                                                return Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child: Seccion2Widget(
+                                                    rowingreso:
+                                                        widget.idingreso!,
+                                                    rowexp: widget.rowexp!,
+                                                    editar: false,
+                                                    usuariorow:
+                                                        widget.usuariosrol!,
                                                   ),
                                                 );
                                               },
@@ -453,15 +544,35 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                     .primary
                                                 : FlutterFlowTheme.of(context)
                                                     .secondary,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily:
-                                                          'Noto Sans JP',
-                                                      color: Colors.white,
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                            textStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .titleSmall
+                                                .override(
+                                                  font: GoogleFonts.notoSansJp(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontStyle,
+                                                  ),
+                                                  color: Colors.white,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontStyle,
+                                                ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
@@ -486,19 +597,17 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return WebViewAware(
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child: Seccion2Widget(
-                                                      rowingreso:
-                                                          widget.idingreso!,
-                                                      rowexp: widget.rowexp!,
-                                                      editar: true,
-                                                      usuariorow:
-                                                          widget.usuariosrol!,
-                                                    ),
+                                                return Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child: Seccion2Widget(
+                                                    rowingreso:
+                                                        widget.idingreso!,
+                                                    rowexp: widget.rowexp!,
+                                                    editar: true,
+                                                    usuariorow:
+                                                        widget.usuariosrol!,
                                                   ),
                                                 );
                                               },
@@ -521,15 +630,35 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                     .primary
                                                 : FlutterFlowTheme.of(context)
                                                     .secondary,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily:
-                                                          'Noto Sans JP',
-                                                      color: Colors.white,
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                            textStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .titleSmall
+                                                .override(
+                                                  font: GoogleFonts.notoSansJp(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontStyle,
+                                                  ),
+                                                  color: Colors.white,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontStyle,
+                                                ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
@@ -565,9 +694,26 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Noto Sans JP',
+                                            font: GoogleFonts.notoSansJp(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                     ),
                                   ),
@@ -589,17 +735,15 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return WebViewAware(
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child: Seccion5Widget(
-                                                      rowingreso:
-                                                          widget.idingreso!,
-                                                      rowexp: widget.rowexp!,
-                                                      editar: true,
-                                                    ),
+                                                return Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child: Seccion5Widget(
+                                                    rowingreso:
+                                                        widget.idingreso!,
+                                                    rowexp: widget.rowexp!,
+                                                    editar: true,
                                                   ),
                                                 );
                                               },
@@ -622,15 +766,35 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                     .primary
                                                 : FlutterFlowTheme.of(context)
                                                     .secondary,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily:
-                                                          'Noto Sans JP',
-                                                      color: Colors.white,
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                            textStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .titleSmall
+                                                .override(
+                                                  font: GoogleFonts.notoSansJp(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontStyle,
+                                                  ),
+                                                  color: Colors.white,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontStyle,
+                                                ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
@@ -654,17 +818,15 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return WebViewAware(
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child: Seccion5Widget(
-                                                      rowingreso:
-                                                          widget.idingreso!,
-                                                      rowexp: widget.rowexp!,
-                                                      editar: false,
-                                                    ),
+                                                return Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child: Seccion5Widget(
+                                                    rowingreso:
+                                                        widget.idingreso!,
+                                                    rowexp: widget.rowexp!,
+                                                    editar: false,
                                                   ),
                                                 );
                                               },
@@ -696,15 +858,35 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                     .primary
                                                 : FlutterFlowTheme.of(context)
                                                     .secondary,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily:
-                                                          'Noto Sans JP',
-                                                      color: Colors.white,
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                            textStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .titleSmall
+                                                .override(
+                                                  font: GoogleFonts.notoSansJp(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontStyle,
+                                                  ),
+                                                  color: Colors.white,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontStyle,
+                                                ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
@@ -740,9 +922,26 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Noto Sans JP',
+                                            font: GoogleFonts.notoSansJp(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                     ),
                                   ),
@@ -764,17 +963,15 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return WebViewAware(
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child: Seccion4Widget(
-                                                      rowingreso:
-                                                          widget.idingreso!,
-                                                      rowexp: widget.rowexp!,
-                                                      edit: true,
-                                                    ),
+                                                return Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child: Seccion4Widget(
+                                                    rowingreso:
+                                                        widget.idingreso!,
+                                                    rowexp: widget.rowexp!,
+                                                    edit: true,
                                                   ),
                                                 );
                                               },
@@ -797,15 +994,35 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                     .primary
                                                 : FlutterFlowTheme.of(context)
                                                     .secondary,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily:
-                                                          'Noto Sans JP',
-                                                      color: Colors.white,
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                            textStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .titleSmall
+                                                .override(
+                                                  font: GoogleFonts.notoSansJp(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontStyle,
+                                                  ),
+                                                  color: Colors.white,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontStyle,
+                                                ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
@@ -829,17 +1046,15 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return WebViewAware(
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child: Seccion4Widget(
-                                                      rowingreso:
-                                                          widget.idingreso!,
-                                                      rowexp: widget.rowexp!,
-                                                      edit: false,
-                                                    ),
+                                                return Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child: Seccion4Widget(
+                                                    rowingreso:
+                                                        widget.idingreso!,
+                                                    rowexp: widget.rowexp!,
+                                                    edit: false,
                                                   ),
                                                 );
                                               },
@@ -871,15 +1086,35 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                     .primary
                                                 : FlutterFlowTheme.of(context)
                                                     .secondary,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily:
-                                                          'Noto Sans JP',
-                                                      color: Colors.white,
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                            textStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .titleSmall
+                                                .override(
+                                                  font: GoogleFonts.notoSansJp(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontStyle,
+                                                  ),
+                                                  color: Colors.white,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontStyle,
+                                                ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
@@ -919,9 +1154,26 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Noto Sans JP',
+                                            font: GoogleFonts.notoSansJp(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                     ),
                                   ),
@@ -943,17 +1195,15 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return WebViewAware(
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child: Seccion6Widget(
-                                                      rowingreso:
-                                                          widget.idingreso,
-                                                      rowexp: widget.rowexp,
-                                                      edit: true,
-                                                    ),
+                                                return Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child: Seccion6Widget(
+                                                    rowingreso:
+                                                        widget.idingreso,
+                                                    rowexp: widget.rowexp,
+                                                    edit: true,
                                                   ),
                                                 );
                                               },
@@ -976,15 +1226,35 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                     .primary
                                                 : FlutterFlowTheme.of(context)
                                                     .secondary,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily:
-                                                          'Noto Sans JP',
-                                                      color: Colors.white,
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                            textStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .titleSmall
+                                                .override(
+                                                  font: GoogleFonts.notoSansJp(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontStyle,
+                                                  ),
+                                                  color: Colors.white,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontStyle,
+                                                ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
@@ -1008,17 +1278,15 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return WebViewAware(
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child: Seccion6Widget(
-                                                      rowingreso:
-                                                          widget.idingreso,
-                                                      rowexp: widget.rowexp,
-                                                      edit: false,
-                                                    ),
+                                                return Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child: Seccion6Widget(
+                                                    rowingreso:
+                                                        widget.idingreso,
+                                                    rowexp: widget.rowexp,
+                                                    edit: false,
                                                   ),
                                                 );
                                               },
@@ -1050,15 +1318,35 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                     .primary
                                                 : FlutterFlowTheme.of(context)
                                                     .secondary,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily:
-                                                          'Noto Sans JP',
-                                                      color: Colors.white,
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                            textStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .titleSmall
+                                                .override(
+                                                  font: GoogleFonts.notoSansJp(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontStyle,
+                                                  ),
+                                                  color: Colors.white,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontStyle,
+                                                ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
@@ -1094,9 +1382,26 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Noto Sans JP',
+                                            font: GoogleFonts.notoSansJp(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                     ),
                                   ),
@@ -1117,19 +1422,17 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return WebViewAware(
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child: Seccion3Widget(
-                                                      idingreso:
-                                                          widget.idingreso!,
-                                                      idexp: widget.rowexp!,
-                                                      editar: false,
-                                                      titulo:
-                                                          'Grupo conviente y No conviviente',
-                                                    ),
+                                                return Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child: Seccion3Widget(
+                                                    idingreso:
+                                                        widget.idingreso!,
+                                                    idexp: widget.rowexp!,
+                                                    editar: false,
+                                                    titulo:
+                                                        'Grupo conviente y No conviviente',
                                                   ),
                                                 );
                                               },
@@ -1161,15 +1464,35 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                     .primary
                                                 : FlutterFlowTheme.of(context)
                                                     .secondary,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily:
-                                                          'Noto Sans JP',
-                                                      color: Colors.white,
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                            textStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .titleSmall
+                                                .override(
+                                                  font: GoogleFonts.notoSansJp(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontStyle,
+                                                  ),
+                                                  color: Colors.white,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontStyle,
+                                                ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
@@ -1194,19 +1517,17 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return WebViewAware(
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child: Seccion3Widget(
-                                                      idingreso:
-                                                          widget.idingreso!,
-                                                      idexp: widget.rowexp!,
-                                                      editar: false,
-                                                      titulo:
-                                                          '3. Grupo conviente',
-                                                    ),
+                                                return Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child: Seccion3Widget(
+                                                    idingreso:
+                                                        widget.idingreso!,
+                                                    idexp: widget.rowexp!,
+                                                    editar: false,
+                                                    titulo:
+                                                        '3. Grupo conviente',
                                                   ),
                                                 );
                                               },
@@ -1229,15 +1550,35 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                     .primary
                                                 : FlutterFlowTheme.of(context)
                                                     .secondary,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily:
-                                                          'Noto Sans JP',
-                                                      color: Colors.white,
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                            textStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .titleSmall
+                                                .override(
+                                                  font: GoogleFonts.notoSansJp(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontStyle,
+                                                  ),
+                                                  color: Colors.white,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontStyle,
+                                                ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
@@ -1273,9 +1614,26 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Noto Sans JP',
+                                            font: GoogleFonts.notoSansJp(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                     ),
                                   ),
@@ -1297,17 +1655,15 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return WebViewAware(
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child: Seccion7Widget(
-                                                      rowingreso:
-                                                          widget.idingreso!,
-                                                      rowexp: widget.rowexp!,
-                                                      editar: true,
-                                                    ),
+                                                return Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child: Seccion7Widget(
+                                                    rowingreso:
+                                                        widget.idingreso!,
+                                                    rowexp: widget.rowexp!,
+                                                    editar: true,
                                                   ),
                                                 );
                                               },
@@ -1330,15 +1686,35 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                     .primary
                                                 : FlutterFlowTheme.of(context)
                                                     .secondary,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily:
-                                                          'Noto Sans JP',
-                                                      color: Colors.white,
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                            textStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .titleSmall
+                                                .override(
+                                                  font: GoogleFonts.notoSansJp(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontStyle,
+                                                  ),
+                                                  color: Colors.white,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontStyle,
+                                                ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
@@ -1362,17 +1738,15 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return WebViewAware(
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child: Seccion7Widget(
-                                                      rowingreso:
-                                                          widget.idingreso!,
-                                                      rowexp: widget.rowexp!,
-                                                      editar: false,
-                                                    ),
+                                                return Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child: Seccion7Widget(
+                                                    rowingreso:
+                                                        widget.idingreso!,
+                                                    rowexp: widget.rowexp!,
+                                                    editar: false,
                                                   ),
                                                 );
                                               },
@@ -1404,15 +1778,35 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                     .primary
                                                 : FlutterFlowTheme.of(context)
                                                     .secondary,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily:
-                                                          'Noto Sans JP',
-                                                      color: Colors.white,
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                            textStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .titleSmall
+                                                .override(
+                                                  font: GoogleFonts.notoSansJp(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontStyle,
+                                                  ),
+                                                  color: Colors.white,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontStyle,
+                                                ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
@@ -1448,9 +1842,26 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Noto Sans JP',
+                                            font: GoogleFonts.notoSansJp(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                     ),
                                   ),
@@ -1466,15 +1877,12 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                         enableDrag: false,
                                         context: context,
                                         builder: (context) {
-                                          return WebViewAware(
-                                            child: Padding(
-                                              padding: MediaQuery.viewInsetsOf(
-                                                  context),
-                                              child: Seccion8Widget(
-                                                idingreso:
-                                                    containerIngresosRow,
-                                                idexp: widget.rowexp!,
-                                              ),
+                                          return Padding(
+                                            padding: MediaQuery.viewInsetsOf(
+                                                context),
+                                            child: Seccion8Widget(
+                                              idingreso: containerIngresosRow,
+                                              idexp: widget.rowexp!,
                                             ),
                                           );
                                         },
@@ -1493,9 +1901,26 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Noto Sans JP',
+                                            font: GoogleFonts.notoSansJp(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .fontStyle,
+                                            ),
                                             color: Colors.white,
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontStyle,
                                           ),
                                       elevation: 3.0,
                                       borderSide: BorderSide(
@@ -1529,9 +1954,26 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Noto Sans JP',
+                                            font: GoogleFonts.notoSansJp(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                     ),
                                   ),
@@ -1553,17 +1995,15 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return WebViewAware(
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child: Seccion9Widget(
-                                                      rowingreso:
-                                                          widget.idingreso!,
-                                                      rowexp: widget.rowexp!,
-                                                      editar: true,
-                                                    ),
+                                                return Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child: Seccion9Widget(
+                                                    rowingreso:
+                                                        widget.idingreso!,
+                                                    rowexp: widget.rowexp!,
+                                                    editar: true,
                                                   ),
                                                 );
                                               },
@@ -1586,15 +2026,35 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                     .primary
                                                 : FlutterFlowTheme.of(context)
                                                     .secondary,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily:
-                                                          'Noto Sans JP',
-                                                      color: Colors.white,
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                            textStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .titleSmall
+                                                .override(
+                                                  font: GoogleFonts.notoSansJp(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontStyle,
+                                                  ),
+                                                  color: Colors.white,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontStyle,
+                                                ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
@@ -1618,17 +2078,15 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return WebViewAware(
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child: Seccion9Widget(
-                                                      rowingreso:
-                                                          widget.idingreso!,
-                                                      rowexp: widget.rowexp!,
-                                                      editar: false,
-                                                    ),
+                                                return Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child: Seccion9Widget(
+                                                    rowingreso:
+                                                        widget.idingreso!,
+                                                    rowexp: widget.rowexp!,
+                                                    editar: false,
                                                   ),
                                                 );
                                               },
@@ -1660,15 +2118,35 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                     .primary
                                                 : FlutterFlowTheme.of(context)
                                                     .secondary,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily:
-                                                          'Noto Sans JP',
-                                                      color: Colors.white,
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                            textStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .titleSmall
+                                                .override(
+                                                  font: GoogleFonts.notoSansJp(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontStyle,
+                                                  ),
+                                                  color: Colors.white,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontStyle,
+                                                ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
@@ -1720,9 +2198,30 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Noto Sans JP',
+                                                  font: GoogleFonts.notoSansJp(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                  ),
                                                   fontSize: 18.0,
                                                   letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
                                                 ),
                                           ),
                                           FlutterFlowRadioButton(
@@ -1751,22 +2250,62 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                     containerIngresosRow
                                                         .emergencia!),
                                             optionHeight: 32.0,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .override(
-                                                      fontFamily:
-                                                          'Noto Sans JP',
-                                                      letterSpacing: 0.0,
-                                                    ),
-                                            selectedTextStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily:
-                                                          'Noto Sans JP',
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                            textStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .labelMedium
+                                                .override(
+                                                  font: GoogleFonts.notoSansJp(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontStyle,
+                                                  ),
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontStyle,
+                                                ),
+                                            selectedTextStyle: FlutterFlowTheme
+                                                    .of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  font: GoogleFonts.notoSansJp(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                  ),
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
                                             buttonPosition:
                                                 RadioButtonPosition.left,
                                             direction: Axis.horizontal,
@@ -1831,21 +2370,19 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                             await showDialog(
                                               context: context,
                                               builder: (alertDialogContext) {
-                                                return WebViewAware(
-                                                  child: AlertDialog(
-                                                    title: Text(
-                                                        'Ok para avanzar!!'),
-                                                    content: Text(
-                                                        'Se completaron los requisitos minimos para avanzar!!'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: Text('Ok'),
-                                                      ),
-                                                    ],
-                                                  ),
+                                                return AlertDialog(
+                                                  title:
+                                                      Text('Ok para avanzar!!'),
+                                                  content: Text(
+                                                      'Se completaron los requisitos minimos para avanzar!!'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: Text('Ok'),
+                                                    ),
+                                                  ],
                                                 );
                                               },
                                             );
@@ -1867,15 +2404,35 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .success,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily:
-                                                          'Noto Sans JP',
-                                                      color: Colors.white,
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                            textStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .titleSmall
+                                                .override(
+                                                  font: GoogleFonts.notoSansJp(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontStyle,
+                                                  ),
+                                                  color: Colors.white,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontStyle,
+                                                ),
                                             elevation: 2.0,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
@@ -1915,16 +2472,13 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                             enableDrag: false,
                                             context: context,
                                             builder: (context) {
-                                              return WebViewAware(
-                                                child: Padding(
-                                                  padding:
-                                                      MediaQuery.viewInsetsOf(
-                                                          context),
-                                                  child:
-                                                      AdjuntardocumentoWidget(
-                                                    exprow: widget.rowexp,
-                                                    ingrow: widget.idingreso,
-                                                  ),
+                                              return Padding(
+                                                padding:
+                                                    MediaQuery.viewInsetsOf(
+                                                        context),
+                                                child: AdjuntardocumentoWidget(
+                                                  exprow: widget.rowexp,
+                                                  ingrow: widget.idingreso,
                                                 ),
                                               );
                                             },
@@ -1955,14 +2509,33 @@ class _Formulario1WidgetState extends State<Formulario1Widget> {
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
-                                          textStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmall
-                                                  .override(
-                                                    fontFamily: 'Noto Sans JP',
-                                                    color: Colors.white,
-                                                    letterSpacing: 0.0,
-                                                  ),
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .titleSmall
+                                              .override(
+                                                font: GoogleFonts.notoSansJp(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontStyle,
+                                                ),
+                                                color: Colors.white,
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .fontStyle,
+                                              ),
                                           elevation: 0.0,
                                           borderRadius:
                                               BorderRadius.circular(8.0),

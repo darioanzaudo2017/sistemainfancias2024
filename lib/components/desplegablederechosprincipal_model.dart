@@ -20,12 +20,19 @@ class DesplegablederechosprincipalModel
   FormFieldController<String>? dropDownValueController2;
   // State field(s) for RadioButton widget.
   FormFieldController<String>? radioButtonValueController;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode;
+  TextEditingController? textController;
+  String? Function(BuildContext, String?)? textControllerValidator;
 
   @override
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {}
+  void dispose() {
+    textFieldFocusNode?.dispose();
+    textController?.dispose();
+  }
 
   /// Additional helper methods.
   Future waitForRequestCompleted({

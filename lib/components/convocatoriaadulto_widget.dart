@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'convocatoriaadulto_model.dart';
 export 'convocatoriaadulto_model.dart';
 
@@ -72,9 +73,18 @@ class _ConvocatoriaadultoWidgetState extends State<ConvocatoriaadultoWidget> {
             Text(
               'Asistio a la entrevista adulto: ',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Noto Sans JP',
+                    font: GoogleFonts.notoSansJp(
+                      fontWeight:
+                          FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                    ),
                     color: Color(0x8A000000),
                     letterSpacing: 0.0,
+                    fontWeight:
+                        FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                   ),
             ),
             Flexible(
@@ -96,9 +106,19 @@ class _ConvocatoriaadultoWidgetState extends State<ConvocatoriaadultoWidget> {
                 selectedChipStyle: ChipStyle(
                   backgroundColor: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Noto Sans JP',
+                        font: GoogleFonts.notoSansJp(
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
                         color: FlutterFlowTheme.of(context).info,
                         letterSpacing: 0.0,
+                        fontWeight:
+                            FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                       ),
                   iconColor: FlutterFlowTheme.of(context).info,
                   iconSize: 16.0,
@@ -109,9 +129,19 @@ class _ConvocatoriaadultoWidgetState extends State<ConvocatoriaadultoWidget> {
                   backgroundColor:
                       FlutterFlowTheme.of(context).secondaryBackground,
                   textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Noto Sans JP',
+                        font: GoogleFonts.notoSansJp(
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
                         color: FlutterFlowTheme.of(context).secondaryText,
                         letterSpacing: 0.0,
+                        fontWeight:
+                            FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                       ),
                   iconColor: FlutterFlowTheme.of(context).secondaryText,
                   iconSize: 16.0,

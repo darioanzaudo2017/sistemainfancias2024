@@ -81,4 +81,8 @@ class Formulario5Row extends SupabaseDataRow {
 
   int? get idgrupofamiliar => getField<int>('idgrupofamiliar');
   set idgrupofamiliar(int? value) => setField<int>('idgrupofamiliar', value);
+
+  String? get tieneCriteriosForm5 => getField<String>('tiene_criterios_form5');
+  set tieneCriteriosForm5(String? value) =>
+      setField<String>('tiene_criterios_form5', value);
 }

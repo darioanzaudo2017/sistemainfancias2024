@@ -15,6 +15,8 @@ class DefiniciondemedidasModel
 
   int? contador;
 
+  bool editarformmedida = true;
+
   ///  State fields for stateful widgets in this page.
 
   // Model for barradeNavegacion component.
@@ -38,6 +40,11 @@ class DefiniciondemedidasModel
   // Stores action output result for [Bottom Sheet - formulario6] action in Button widget.
   String? form6edit;
   Completer<List<Formulario7Row>>? requestCompleter2;
+  bool isDataUploading = false;
+  FFUploadedFile uploadedLocalFile =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl = '';
+
   // Stores action output result for [Bottom Sheet - formulario7] action in Button widget.
   bool? creoacta;
 

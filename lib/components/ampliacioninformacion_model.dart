@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'ampliacioninformacion_widget.dart' show AmpliacioninformacionWidget;
+import 'dart:async';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
@@ -22,10 +23,6 @@ class AmpliacioninformacionModel
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();
-  // State field(s) for DropDown widget.
-  String? dropDownValue;
-  FormFieldController<String>? dropDownValueController;
-  DateTime? datePicked1;
   // State field(s) for TextFieldprofesional widget.
   FocusNode? textFieldprofesionalFocusNode;
   TextEditingController? textFieldprofesionalTextController;
@@ -51,7 +48,7 @@ class AmpliacioninformacionModel
   TextEditingController? textFieldDNITextController2;
   final textFieldDNIMask2 = MaskTextInputFormatter(mask: '###');
   String? Function(BuildContext, String?)? textFieldDNITextController2Validator;
-  DateTime? datePicked2;
+  DateTime? datePicked;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
   TextEditingController? textController6;
@@ -88,6 +85,11 @@ class AmpliacioninformacionModel
   FocusNode? textFieldFocusNode6;
   TextEditingController? textController12;
   String? Function(BuildContext, String?)? textController12Validator;
+  bool isDataUploading = false;
+  FFUploadedFile uploadedLocalFile =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl = '';
+
   // State field(s) for TextFieldobjetivo widget.
   FocusNode? textFieldobjetivoFocusNode2;
   TextEditingController? textFieldobjetivoTextController2;
@@ -161,6 +163,7 @@ class AmpliacioninformacionModel
   FocusNode? textFieldFocusNode11;
   TextEditingController? textController23;
   String? Function(BuildContext, String?)? textController23Validator;
+  Completer<List<AmpliaciondeinformacionRow>>? requestCompleter;
 
   @override
   void initState(BuildContext context) {}
@@ -245,4 +248,18 @@ class AmpliacioninformacionModel
   /// Additional helper methods.
   String? get radioButtonespaciosValue =>
       radioButtonespaciosValueController?.value;
+  Future waitForRequestCompleted({
+    double minWait = 0,
+    double maxWait = double.infinity,
+  }) async {
+    final stopwatch = Stopwatch()..start();
+    while (true) {
+      await Future.delayed(Duration(milliseconds: 50));
+      final timeElapsed = stopwatch.elapsedMilliseconds;
+      final requestComplete = requestCompleter?.isCompleted ?? false;
+      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
+        break;
+      }
+    }
+  }
 }

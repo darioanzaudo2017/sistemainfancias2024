@@ -1,15 +1,17 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/seguimientosenafcoordinacion_widget.dart';
 import '/components/seleccionarrolusuario_widget.dart';
 import '/flutter_flow/flutter_flow_data_table.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/index.dart';
+import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'admin_model.dart';
 export 'admin_model.dart';
 
@@ -46,6 +48,7 @@ class _AdminWidgetState extends State<AdminWidget>
       length: 3,
       initialIndex: 0,
     )..addListener(() => safeSetState(() {}));
+
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -115,10 +118,23 @@ class _AdminWidgetState extends State<AdminWidget>
                 child: Text(
                   'Admin',
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
-                        fontFamily: 'Noto Sans JP',
+                        font: GoogleFonts.notoSansJp(
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .headlineMedium
+                              .fontWeight,
+                          fontStyle: FlutterFlowTheme.of(context)
+                              .headlineMedium
+                              .fontStyle,
+                        ),
                         color: Colors.white,
                         fontSize: 22.0,
                         letterSpacing: 0.0,
+                        fontWeight: FlutterFlowTheme.of(context)
+                            .headlineMedium
+                            .fontWeight,
+                        fontStyle: FlutterFlowTheme.of(context)
+                            .headlineMedium
+                            .fontStyle,
                       ),
                 ),
               ),
@@ -184,14 +200,27 @@ class _AdminWidgetState extends State<AdminWidget>
                                                             context)
                                                         .bodyLarge
                                                         .override(
-                                                          fontFamily:
-                                                              'Plus Jakarta Sans',
+                                                          font: GoogleFonts
+                                                              .plusJakartaSans(
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLarge
+                                                                    .fontStyle,
+                                                          ),
                                                           color:
                                                               Color(0xFF15161E),
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                   Padding(
@@ -205,14 +234,28 @@ class _AdminWidgetState extends State<AdminWidget>
                                                               .of(context)
                                                           .labelMedium
                                                           .override(
-                                                            fontFamily:
-                                                                'Plus Jakarta Sans',
+                                                            font: GoogleFonts
+                                                                .plusJakartaSans(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
+                                                            ),
                                                             color: Color(
                                                                 0xFF606A85),
                                                             fontSize: 14.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w500,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontStyle,
                                                           ),
                                                     ),
                                                   ),
@@ -326,14 +369,27 @@ class _AdminWidgetState extends State<AdminWidget>
                                                               .of(context)
                                                           .headlineMedium
                                                           .override(
-                                                            fontFamily:
-                                                                'Outfit',
+                                                            font: GoogleFonts
+                                                                .outfit(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .normal,
+                                                              fontStyle: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .headlineMedium
+                                                                  .fontStyle,
+                                                            ),
                                                             color: Colors.white,
                                                             fontSize: 22.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight
                                                                     .normal,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineMedium
+                                                                    .fontStyle,
                                                           ),
                                                     ),
                                                   ),
@@ -358,14 +414,31 @@ class _AdminWidgetState extends State<AdminWidget>
                                                                   context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Noto Sans JP',
+                                                                font: GoogleFonts
+                                                                    .notoSansJp(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryBackground,
                                                                 fontSize: 22.0,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
                                                               ),
                                                     ),
                                                   ),
@@ -441,12 +514,24 @@ class _AdminWidgetState extends State<AdminWidget>
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily:
-                                                      'Plus Jakarta Sans',
+                                                  font: GoogleFonts
+                                                      .plusJakartaSans(
+                                                    fontWeight: FontWeight.w500,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                  ),
                                                   color: Colors.white,
                                                   fontSize: 22.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
                                                 ),
                                           ),
                                         ),
@@ -470,16 +555,50 @@ class _AdminWidgetState extends State<AdminWidget>
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .titleMedium
                                           .override(
-                                            fontFamily: 'Noto Sans JP',
+                                            font: GoogleFonts.notoSansJp(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontStyle,
                                           ),
-                                      unselectedLabelStyle:
-                                          FlutterFlowTheme.of(context)
-                                              .titleMedium
-                                              .override(
-                                                fontFamily: 'Noto Sans JP',
-                                                letterSpacing: 0.0,
-                                              ),
+                                      unselectedLabelStyle: FlutterFlowTheme.of(
+                                              context)
+                                          .titleMedium
+                                          .override(
+                                            font: GoogleFonts.notoSansJp(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontStyle,
+                                          ),
                                       indicatorColor:
                                           FlutterFlowTheme.of(context).primary,
                                       tabs: [
@@ -569,13 +688,30 @@ class _AdminWidgetState extends State<AdminWidget>
                                                                       .of(context)
                                                                   .labelLarge
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Noto Sans JP',
+                                                                    font: GoogleFonts
+                                                                        .notoSansJp(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLarge
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLarge
+                                                                          .fontStyle,
+                                                                    ),
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryBackground,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelLarge
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelLarge
+                                                                        .fontStyle,
                                                                   ),
                                                             ),
                                                           ),
@@ -591,13 +727,30 @@ class _AdminWidgetState extends State<AdminWidget>
                                                                       .of(context)
                                                                   .labelLarge
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Noto Sans JP',
+                                                                    font: GoogleFonts
+                                                                        .notoSansJp(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLarge
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLarge
+                                                                          .fontStyle,
+                                                                    ),
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryBackground,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelLarge
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelLarge
+                                                                        .fontStyle,
                                                                   ),
                                                             ),
                                                           ),
@@ -613,13 +766,30 @@ class _AdminWidgetState extends State<AdminWidget>
                                                                       .of(context)
                                                                   .labelLarge
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Noto Sans JP',
+                                                                    font: GoogleFonts
+                                                                        .notoSansJp(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLarge
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLarge
+                                                                          .fontStyle,
+                                                                    ),
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryBackground,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelLarge
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelLarge
+                                                                        .fontStyle,
                                                                   ),
                                                             ),
                                                           ),
@@ -635,13 +805,30 @@ class _AdminWidgetState extends State<AdminWidget>
                                                                       .of(context)
                                                                   .labelLarge
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Noto Sans JP',
+                                                                    font: GoogleFonts
+                                                                        .notoSansJp(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLarge
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLarge
+                                                                          .fontStyle,
+                                                                    ),
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryBackground,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelLarge
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelLarge
+                                                                        .fontStyle,
                                                                   ),
                                                             ),
                                                           ),
@@ -678,10 +865,27 @@ class _AdminWidgetState extends State<AdminWidget>
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Noto Sans JP',
+                                                                  font: GoogleFonts
+                                                                      .notoSansJp(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
                                                                 ),
                                                           ),
                                                           Text(
@@ -696,10 +900,27 @@ class _AdminWidgetState extends State<AdminWidget>
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Noto Sans JP',
+                                                                  font: GoogleFonts
+                                                                      .notoSansJp(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
                                                                 ),
                                                           ),
                                                           Text(
@@ -714,10 +935,27 @@ class _AdminWidgetState extends State<AdminWidget>
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Noto Sans JP',
+                                                                  font: GoogleFonts
+                                                                      .notoSansJp(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
                                                                 ),
                                                           ),
                                                           Text(
@@ -732,10 +970,27 @@ class _AdminWidgetState extends State<AdminWidget>
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Noto Sans JP',
+                                                                  font: GoogleFonts
+                                                                      .notoSansJp(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
                                                                 ),
                                                           ),
                                                         ]
@@ -805,7 +1060,7 @@ class _AdminWidgetState extends State<AdminWidget>
                                               );
                                             }
                                             List<VistaUsuariosRolesRow>
-                                                containerVistaUsuariosRolesRowList =
+                                                containerusuariosyrolesVistaUsuariosRolesRowList =
                                                 snapshot.data!;
 
                                             return Container(
@@ -814,359 +1069,524 @@ class _AdminWidgetState extends State<AdminWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
                                               ),
-                                              child:
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  FlutterFlowDropDown<String>(
+                                                    controller: _model
+                                                            .dropDownValueController ??=
+                                                        FormFieldController<
+                                                            String>(null),
+                                                    options:
+                                                        containerusuariosyrolesVistaUsuariosRolesRowList
+                                                            .map((e) => e
+                                                                .nombreCompleto)
+                                                            .withoutNulls
+                                                            .toList(),
+                                                    onChanged: (val) =>
+                                                        safeSetState(() => _model
+                                                                .dropDownValue =
+                                                            val),
+                                                    width: 200.0,
+                                                    height: 40.0,
+                                                    textStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              font: GoogleFonts
+                                                                  .notoSansJp(
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                            ),
+                                                    hintText: 'Select...',
+                                                    icon: Icon(
+                                                      Icons
+                                                          .keyboard_arrow_down_rounded,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryText,
+                                                      size: 24.0,
+                                                    ),
+                                                    fillColor: FlutterFlowTheme
+                                                            .of(context)
+                                                        .secondaryBackground,
+                                                    elevation: 2.0,
+                                                    borderColor:
+                                                        Colors.transparent,
+                                                    borderWidth: 0.0,
+                                                    borderRadius: 8.0,
+                                                    margin:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(12.0, 0.0,
+                                                                12.0, 0.0),
+                                                    hidesUnderline: true,
+                                                    isOverButton: false,
+                                                    isSearchable: false,
+                                                    isMultiSelect: false,
+                                                  ),
                                                   FutureBuilder<List<RolesRow>>(
-                                                future: RolesTable().queryRows(
-                                                  queryFn: (q) => q,
-                                                ),
-                                                builder: (context, snapshot) {
-                                                  // Customize what your widget looks like when it's loading.
-                                                  if (!snapshot.hasData) {
-                                                    return Center(
-                                                      child: SizedBox(
-                                                        width: 50.0,
-                                                        height: 50.0,
-                                                        child:
-                                                            CircularProgressIndicator(
-                                                          valueColor:
-                                                              AlwaysStoppedAnimation<
-                                                                  Color>(
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
+                                                    future:
+                                                        RolesTable().queryRows(
+                                                      queryFn: (q) => q,
+                                                    ),
+                                                    builder:
+                                                        (context, snapshot) {
+                                                      // Customize what your widget looks like when it's loading.
+                                                      if (!snapshot.hasData) {
+                                                        return Center(
+                                                          child: SizedBox(
+                                                            width: 50.0,
+                                                            height: 50.0,
+                                                            child:
+                                                                CircularProgressIndicator(
+                                                              valueColor:
+                                                                  AlwaysStoppedAnimation<
+                                                                      Color>(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                              ),
+                                                            ),
                                                           ),
-                                                        ),
-                                                      ),
-                                                    );
-                                                  }
-                                                  List<RolesRow>
-                                                      containerRolesRowList =
-                                                      snapshot.data!;
+                                                        );
+                                                      }
+                                                      List<RolesRow>
+                                                          containerRolesRowList =
+                                                          snapshot.data!;
 
-                                                  return Container(
-                                                    height: 200.0,
-                                                    child: Builder(
-                                                      builder: (context) {
-                                                        final usuarios =
-                                                            containerVistaUsuariosRolesRowList
-                                                                .sortedList(
-                                                                    keyOf: (e) =>
-                                                                        e.nombreCompleto!,
-                                                                    desc: false)
-                                                                .toList();
+                                                      return Container(
+                                                        height: 200.0,
+                                                        decoration:
+                                                            BoxDecoration(),
+                                                        child: Builder(
+                                                          builder: (context) {
+                                                            final usuarios =
+                                                                containerusuariosyrolesVistaUsuariosRolesRowList
+                                                                    .where((e) =>
+                                                                        e.nombreCompleto ==
+                                                                        _model
+                                                                            .dropDownValue)
+                                                                    .toList();
 
-                                                        return FlutterFlowDataTable<
-                                                            VistaUsuariosRolesRow>(
-                                                          controller: _model
-                                                              .paginatedDataTableController2,
-                                                          data: usuarios,
-                                                          columnsBuilder:
-                                                              (onSortChanged) =>
-                                                                  [
-                                                            DataColumn2(
-                                                              label:
-                                                                  DefaultTextStyle
-                                                                      .merge(
-                                                                softWrap: true,
-                                                                child: Text(
-                                                                  'Nombre',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Noto Sans JP',
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            DataColumn2(
-                                                              label:
-                                                                  DefaultTextStyle
-                                                                      .merge(
-                                                                softWrap: true,
-                                                                child: Text(
-                                                                  'SPD',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Noto Sans JP',
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            DataColumn2(
-                                                              label:
-                                                                  DefaultTextStyle
-                                                                      .merge(
-                                                                softWrap: true,
-                                                                child: Text(
-                                                                  'ROL',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Noto Sans JP',
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            DataColumn2(
-                                                              label:
-                                                                  DefaultTextStyle
-                                                                      .merge(
-                                                                softWrap: true,
-                                                                child: Text(
-                                                                  'Casos cerrados',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Noto Sans JP',
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            DataColumn2(
-                                                              label:
-                                                                  DefaultTextStyle
-                                                                      .merge(
-                                                                softWrap: true,
-                                                                child: Text(
-                                                                  'Edit Header 5',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Noto Sans JP',
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                          dataRowBuilder: (usuariosItem,
-                                                                  usuariosIndex,
-                                                                  selected,
-                                                                  onSelectChanged) =>
-                                                              DataRow(
-                                                            color:
-                                                                WidgetStateProperty
-                                                                    .all(
-                                                              usuariosIndex %
-                                                                          2 ==
-                                                                      0
-                                                                  ? FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground
-                                                                  : FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBackground,
-                                                            ),
-                                                            cells: [
-                                                              Text(
-                                                                valueOrDefault<
-                                                                    String>(
-                                                                  usuariosItem
-                                                                      .nombreCompleto,
-                                                                  'Sin dato',
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Noto Sans JP',
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                    ),
-                                                              ),
-                                                              Text(
-                                                                valueOrDefault<
-                                                                    String>(
-                                                                  usuariosItem
-                                                                      .spd,
-                                                                  'Sin dato',
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Noto Sans JP',
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                    ),
-                                                              ),
-                                                              Text(
-                                                                valueOrDefault<
-                                                                    String>(
-                                                                  usuariosItem
-                                                                      .rolNombre,
-                                                                  'Sin dato',
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Noto Sans JP',
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                    ),
-                                                              ),
-                                                              Container(),
-                                                              FFButtonWidget(
-                                                                onPressed:
-                                                                    () async {
-                                                                  await showModalBottomSheet(
-                                                                    isScrollControlled:
+                                                            return FlutterFlowDataTable<
+                                                                VistaUsuariosRolesRow>(
+                                                              controller: _model
+                                                                  .paginatedDataTableController2,
+                                                              data: usuarios,
+                                                              columnsBuilder:
+                                                                  (onSortChanged) =>
+                                                                      [
+                                                                DataColumn2(
+                                                                  label:
+                                                                      DefaultTextStyle
+                                                                          .merge(
+                                                                    softWrap:
                                                                         true,
-                                                                    backgroundColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    enableDrag:
-                                                                        false,
-                                                                    context:
-                                                                        context,
-                                                                    builder:
-                                                                        (context) {
-                                                                      return WebViewAware(
-                                                                        child:
-                                                                            GestureDetector(
-                                                                          onTap:
-                                                                              () {
-                                                                            FocusScope.of(context).unfocus();
-                                                                            FocusManager.instance.primaryFocus?.unfocus();
-                                                                          },
-                                                                          child:
-                                                                              Padding(
-                                                                            padding:
-                                                                                MediaQuery.viewInsetsOf(context),
-                                                                            child:
-                                                                                SeleccionarrolusuarioWidget(
-                                                                              idusuario: usuariosItem.id!,
-                                                                              usuariorow: usuariosItem,
+                                                                    child: Text(
+                                                                      'Nombre',
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLarge
+                                                                          .override(
+                                                                            font:
+                                                                                GoogleFonts.notoSansJp(
+                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
                                                                             ),
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).labelLarge.fontStyle,
                                                                           ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                DataColumn2(
+                                                                  label:
+                                                                      DefaultTextStyle
+                                                                          .merge(
+                                                                    softWrap:
+                                                                        true,
+                                                                    child: Text(
+                                                                      'SPD',
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLarge
+                                                                          .override(
+                                                                            font:
+                                                                                GoogleFonts.notoSansJp(
+                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                            ),
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                          ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                DataColumn2(
+                                                                  label:
+                                                                      DefaultTextStyle
+                                                                          .merge(
+                                                                    softWrap:
+                                                                        true,
+                                                                    child: Text(
+                                                                      'ROL',
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLarge
+                                                                          .override(
+                                                                            font:
+                                                                                GoogleFonts.notoSansJp(
+                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                            ),
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                          ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                DataColumn2(
+                                                                  label:
+                                                                      DefaultTextStyle
+                                                                          .merge(
+                                                                    softWrap:
+                                                                        true,
+                                                                    child: Text(
+                                                                      'Casos cerrados',
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLarge
+                                                                          .override(
+                                                                            font:
+                                                                                GoogleFonts.notoSansJp(
+                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                            ),
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                          ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                DataColumn2(
+                                                                  label:
+                                                                      DefaultTextStyle
+                                                                          .merge(
+                                                                    softWrap:
+                                                                        true,
+                                                                    child: Text(
+                                                                      'Edit Header 5',
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLarge
+                                                                          .override(
+                                                                            font:
+                                                                                GoogleFonts.notoSansJp(
+                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                            ),
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                          ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                              dataRowBuilder:
+                                                                  (usuariosItem,
+                                                                          usuariosIndex,
+                                                                          selected,
+                                                                          onSelectChanged) =>
+                                                                      DataRow(
+                                                                color:
+                                                                    WidgetStateProperty
+                                                                        .all(
+                                                                  usuariosIndex %
+                                                                              2 ==
+                                                                          0
+                                                                      ? FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryBackground
+                                                                      : FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryBackground,
+                                                                ),
+                                                                cells: [
+                                                                  Text(
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      usuariosItem
+                                                                          .nombreCompleto,
+                                                                      'Sin dato',
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          font:
+                                                                              GoogleFonts.notoSansJp(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
                                                                         ),
-                                                                      );
+                                                                  ),
+                                                                  Text(
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      usuariosItem
+                                                                          .spd,
+                                                                      'Sin dato',
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          font:
+                                                                              GoogleFonts.notoSansJp(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
+                                                                  ),
+                                                                  Text(
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      usuariosItem
+                                                                          .rolNombre,
+                                                                      'Sin dato',
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          font:
+                                                                              GoogleFonts.notoSansJp(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
+                                                                  ),
+                                                                  Container(),
+                                                                  FFButtonWidget(
+                                                                    onPressed:
+                                                                        () async {
+                                                                      await showModalBottomSheet(
+                                                                        isScrollControlled:
+                                                                            true,
+                                                                        backgroundColor:
+                                                                            Colors.transparent,
+                                                                        enableDrag:
+                                                                            false,
+                                                                        context:
+                                                                            context,
+                                                                        builder:
+                                                                            (context) {
+                                                                          return GestureDetector(
+                                                                            onTap:
+                                                                                () {
+                                                                              FocusScope.of(context).unfocus();
+                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                            },
+                                                                            child:
+                                                                                Padding(
+                                                                              padding: MediaQuery.viewInsetsOf(context),
+                                                                              child: SeleccionarrolusuarioWidget(
+                                                                                idusuario: usuariosItem.id!,
+                                                                                usuariorow: usuariosItem,
+                                                                              ),
+                                                                            ),
+                                                                          );
+                                                                        },
+                                                                      ).then((value) =>
+                                                                          safeSetState(
+                                                                              () {}));
                                                                     },
-                                                                  ).then((value) =>
-                                                                      safeSetState(
-                                                                          () {}));
-                                                                },
-                                                                text:
-                                                                    'Editar rol',
-                                                                options:
-                                                                    FFButtonOptions(
-                                                                  height: 40.0,
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
+                                                                    text:
+                                                                        'Editar rol',
+                                                                    options:
+                                                                        FFButtonOptions(
+                                                                      height:
+                                                                          40.0,
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
                                                                           0.0),
-                                                                  iconPadding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
+                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  color: FlutterFlowTheme.of(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
+                                                                      textStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmall
+                                                                          .override(
+                                                                            font:
+                                                                                GoogleFonts.notoSansJp(
+                                                                              fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                            ),
+                                                                            color:
+                                                                                Colors.white,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                          ),
+                                                                      elevation:
+                                                                          0.0,
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              8.0),
+                                                                    ),
+                                                                  ),
+                                                                ]
+                                                                    .map((c) =>
+                                                                        DataCell(
+                                                                            c))
+                                                                    .toList(),
+                                                              ),
+                                                              paginated: true,
+                                                              selectable: false,
+                                                              hidePaginator:
+                                                                  false,
+                                                              showFirstLastButtons:
+                                                                  true,
+                                                              headingRowHeight:
+                                                                  56.0,
+                                                              dataRowHeight:
+                                                                  48.0,
+                                                              columnSpacing:
+                                                                  20.0,
+                                                              headingRowColor:
+                                                                  FlutterFlowTheme.of(
                                                                           context)
                                                                       .primary,
-                                                                  textStyle: FlutterFlowTheme.of(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8.0),
+                                                              addHorizontalDivider:
+                                                                  true,
+                                                              addTopAndBottomDivider:
+                                                                  true,
+                                                              hideDefaultHorizontalDivider:
+                                                                  true,
+                                                              horizontalDividerColor:
+                                                                  FlutterFlowTheme.of(
                                                                           context)
-                                                                      .titleSmall
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Noto Sans JP',
-                                                                        color: Colors
-                                                                            .white,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
-                                                                  elevation:
-                                                                      0.0,
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              8.0),
-                                                                ),
-                                                              ),
-                                                            ]
-                                                                .map((c) =>
-                                                                    DataCell(c))
-                                                                .toList(),
-                                                          ),
-                                                          paginated: true,
-                                                          selectable: false,
-                                                          hidePaginator: false,
-                                                          showFirstLastButtons:
-                                                              true,
-                                                          headingRowHeight:
-                                                              56.0,
-                                                          dataRowHeight: 48.0,
-                                                          columnSpacing: 20.0,
-                                                          headingRowColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .primary,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      8.0),
-                                                          addHorizontalDivider:
-                                                              true,
-                                                          addTopAndBottomDivider:
-                                                              true,
-                                                          hideDefaultHorizontalDivider:
-                                                              true,
-                                                          horizontalDividerColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .alternate,
-                                                          horizontalDividerThickness:
-                                                              1.0,
-                                                          addVerticalDivider:
-                                                              false,
-                                                        );
-                                                      },
-                                                    ),
-                                                  );
-                                                },
+                                                                      .alternate,
+                                                              horizontalDividerThickness:
+                                                                  1.0,
+                                                              addVerticalDivider:
+                                                                  false,
+                                                            );
+                                                          },
+                                                        ),
+                                                      );
+                                                    },
+                                                  ),
+                                                ]
+                                                    .divide(
+                                                        SizedBox(height: 10.0))
+                                                    .around(
+                                                        SizedBox(height: 10.0)),
                                               ),
                                             );
                                           },
                                         ),
                                         FutureBuilder<
-                                            List<VistaExpedientesSenafRow>>(
-                                          future: VistaExpedientesSenafTable()
+                                            List<VistaIngresosExpedienteRow>>(
+                                          future: VistaIngresosExpedienteTable()
                                               .queryRows(
-                                            queryFn: (q) => q,
+                                            queryFn: (q) => q.eqOrNull(
+                                              'Motivocierre',
+                                              'Solicitud de medida excepcional al organismo provincial de protección de derechos (SENAF)',
+                                            ),
                                           ),
                                           builder: (context, snapshot) {
                                             // Customize what your widget looks like when it's loading.
@@ -1188,8 +1608,8 @@ class _AdminWidgetState extends State<AdminWidget>
                                                 ),
                                               );
                                             }
-                                            List<VistaExpedientesSenafRow>
-                                                containerVistaExpedientesSenafRowList =
+                                            List<VistaIngresosExpedienteRow>
+                                                containerVistaIngresosExpedienteRowList =
                                                 snapshot.data!;
 
                                             return Container(
@@ -1207,17 +1627,55 @@ class _AdminWidgetState extends State<AdminWidget>
                                               ),
                                               child: Builder(
                                                 builder: (context) {
-                                                  final vistaSenaf =
-                                                      containerVistaExpedientesSenafRowList
+                                                  final expdientesenaf =
+                                                      containerVistaIngresosExpedienteRowList
                                                           .toList();
 
                                                   return FlutterFlowDataTable<
-                                                      VistaExpedientesSenafRow>(
+                                                      VistaIngresosExpedienteRow>(
                                                     controller: _model
                                                         .paginatedDataTableController3,
-                                                    data: vistaSenaf,
+                                                    data: expdientesenaf,
                                                     columnsBuilder:
                                                         (onSortChanged) => [
+                                                      DataColumn2(
+                                                        label: DefaultTextStyle
+                                                            .merge(
+                                                          softWrap: true,
+                                                          child: Text(
+                                                            'Nombre y apellido',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .labelLarge
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .notoSansJp(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelLarge
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelLarge
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryBackground,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLarge
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLarge
+                                                                      .fontStyle,
+                                                                ),
+                                                          ),
+                                                        ),
+                                                      ),
                                                       DataColumn2(
                                                         label: DefaultTextStyle
                                                             .merge(
@@ -1228,13 +1686,30 @@ class _AdminWidgetState extends State<AdminWidget>
                                                                     .of(context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Noto Sans JP',
+                                                                  font: GoogleFonts
+                                                                      .notoSansJp(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelLarge
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelLarge
+                                                                        .fontStyle,
+                                                                  ),
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryBackground,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLarge
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLarge
+                                                                      .fontStyle,
                                                                 ),
                                                           ),
                                                         ),
@@ -1244,243 +1719,49 @@ class _AdminWidgetState extends State<AdminWidget>
                                                             .merge(
                                                           softWrap: true,
                                                           child: Text(
-                                                            'Nombre',
+                                                            'Edit Header 3',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Noto Sans JP',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
+                                                                  font: GoogleFonts
+                                                                      .notoSansJp(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelLarge
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelLarge
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
-                                                                ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      DataColumn2(
-                                                        label: DefaultTextStyle
-                                                            .merge(
-                                                          softWrap: true,
-                                                          child: Text(
-                                                            'Apellido',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelLarge
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Noto Sans JP',
-                                                                  color: FlutterFlowTheme.of(
+                                                                  fontWeight: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .secondaryBackground,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      DataColumn2(
-                                                        label: DefaultTextStyle
-                                                            .merge(
-                                                          softWrap: true,
-                                                          child: Text(
-                                                            'DNI',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelLarge
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Noto Sans JP',
-                                                                  color: FlutterFlowTheme.of(
+                                                                      .labelLarge
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .secondaryBackground,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      DataColumn2(
-                                                        label: DefaultTextStyle
-                                                            .merge(
-                                                          softWrap: true,
-                                                          child: Text(
-                                                            'Fec solicitud',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelLarge
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Noto Sans JP',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      DataColumn2(
-                                                        label: DefaultTextStyle
-                                                            .merge(
-                                                          softWrap: true,
-                                                          child: Text(
-                                                            'fec reiteracion',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelLarge
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Noto Sans JP',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      DataColumn2(
-                                                        label: DefaultTextStyle
-                                                            .merge(
-                                                          softWrap: true,
-                                                          child: Text(
-                                                            'fec adoptada',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelLarge
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Noto Sans JP',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      DataColumn2(
-                                                        label: DefaultTextStyle
-                                                            .merge(
-                                                          softWrap: true,
-                                                          child: Text(
-                                                            'Fec rechazada',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelLarge
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Noto Sans JP',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      DataColumn2(
-                                                        label: DefaultTextStyle
-                                                            .merge(
-                                                          softWrap: true,
-                                                          child: Text(
-                                                            'Motivo de rechazo',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelLarge
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Noto Sans JP',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      DataColumn2(
-                                                        label: DefaultTextStyle
-                                                            .merge(
-                                                          softWrap: true,
-                                                          child: Text(
-                                                            'Dias dif',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelLarge
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Noto Sans JP',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      DataColumn2(
-                                                        label: DefaultTextStyle
-                                                            .merge(
-                                                          softWrap: true,
-                                                          child: Text(
-                                                            'semaforo',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelLarge
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Noto Sans JP',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      DataColumn2(
-                                                        label: DefaultTextStyle
-                                                            .merge(
-                                                          softWrap: true,
-                                                          child: Text(
-                                                            'Acciones',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelLarge
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Noto Sans JP',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  letterSpacing:
-                                                                      0.0,
+                                                                      .labelLarge
+                                                                      .fontStyle,
                                                                 ),
                                                           ),
                                                         ),
                                                       ),
                                                     ],
                                                     dataRowBuilder:
-                                                        (vistaSenafItem,
-                                                                vistaSenafIndex,
+                                                        (expdientesenafItem,
+                                                                expdientesenafIndex,
                                                                 selected,
                                                                 onSelectChanged) =>
                                                             DataRow(
                                                       color:
                                                           WidgetStateProperty
                                                               .all(
-                                                        vistaSenafIndex % 2 == 0
+                                                        expdientesenafIndex %
+                                                                    2 ==
+                                                                0
                                                             ? FlutterFlowTheme
                                                                     .of(context)
                                                                 .secondaryBackground
@@ -1489,392 +1770,141 @@ class _AdminWidgetState extends State<AdminWidget>
                                                                 .primaryBackground,
                                                       ),
                                                       cells: [
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          children: [
-                                                            if (vistaSenafItem
-                                                                    .medidaRechazada ??
-                                                                true)
-                                                              Icon(
-                                                                Icons.lock,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .error,
-                                                                size: 24.0,
-                                                              ),
-                                                            if (vistaSenafItem
-                                                                    .medidaAdoptada ??
-                                                                true)
-                                                              Icon(
-                                                                Icons.lock,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .success,
-                                                                size: 24.0,
-                                                              ),
-                                                            if (vistaSenafItem.solicitudMedida! &&
-                                                                vistaSenafItem
-                                                                    .evaluacionMedida! &&
-                                                                !vistaSenafItem
-                                                                    .medidaRechazada! &&
-                                                                !vistaSenafItem
-                                                                    .medidaAdoptada!)
-                                                              Icon(
-                                                                Icons.lock_open,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondary,
-                                                                size: 24.0,
-                                                              ),
-                                                            if (vistaSenafItem
-                                                                    .solicitudMedida! &&
-                                                                !vistaSenafItem
-                                                                    .evaluacionMedida! &&
-                                                                !vistaSenafItem
-                                                                    .medidaRechazada! &&
-                                                                !vistaSenafItem
-                                                                    .medidaAdoptada!)
-                                                              Icon(
-                                                                Icons.lock_open,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .tertiary,
-                                                                size: 24.0,
-                                                              ),
-                                                            Flexible(
-                                                              child: Text(
-                                                                valueOrDefault<
-                                                                    String>(
-                                                                  vistaSenafItem
-                                                                      .spd,
-                                                                  'Sin dato',
+                                                        Text(
+                                                          '${expdientesenafItem.nombres}, ${expdientesenafItem.apellidos}',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .notoSansJp(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
                                                                 ),
-                                                                style: FlutterFlowTheme.of(
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Noto Sans JP',
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                    ),
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
                                                               ),
-                                                            ),
-                                                          ],
                                                         ),
                                                         Text(
                                                           valueOrDefault<
                                                               String>(
-                                                            vistaSenafItem
-                                                                .nombres,
+                                                            expdientesenafItem
+                                                                .spd,
                                                             'Sin dato',
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Noto Sans JP',
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                        ),
-                                                        Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            vistaSenafItem
-                                                                .apellidos,
-                                                            'Sin dato',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Noto Sans JP',
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                        ),
-                                                        Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            vistaSenafItem.dni
-                                                                ?.toString(),
-                                                            'Sin dato',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Noto Sans JP',
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                        ),
-                                                        Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            dateTimeFormat(
-                                                              "d/M/y",
-                                                              vistaSenafItem
-                                                                  .fechasolicitud,
-                                                              locale: FFLocalizations
-                                                                      .of(context)
-                                                                  .languageCode,
-                                                            ),
-                                                            'Sin dato',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Noto Sans JP',
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                        ),
-                                                        Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            dateTimeFormat(
-                                                              "d/M/y",
-                                                              vistaSenafItem
-                                                                  .reiteracionFecha,
-                                                              locale: FFLocalizations
-                                                                      .of(context)
-                                                                  .languageCode,
-                                                            ),
-                                                            'Sin dato',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Noto Sans JP',
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                        ),
-                                                        Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            dateTimeFormat(
-                                                              "d/M/y",
-                                                              vistaSenafItem
-                                                                  .fecMedidaAdoptada,
-                                                              locale: FFLocalizations
-                                                                      .of(context)
-                                                                  .languageCode,
-                                                            ),
-                                                            'Sin dato',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Noto Sans JP',
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                        ),
-                                                        Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            dateTimeFormat(
-                                                              "d/M/y",
-                                                              vistaSenafItem
-                                                                  .fechaMedidaRechazada,
-                                                              locale: FFLocalizations
-                                                                      .of(context)
-                                                                  .languageCode,
-                                                            ),
-                                                            'Sin dato',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Noto Sans JP',
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                        ),
-                                                        Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            vistaSenafItem
-                                                                .motivoRechazo,
-                                                            'Sin dato',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Noto Sans JP',
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                        ),
-                                                        Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            vistaSenafItem
-                                                                .diasDiferencia
-                                                                ?.toString(),
-                                                            'Sin dato',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Noto Sans JP',
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                        ),
-                                                        Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Container(
-                                                            width: 30.0,
-                                                            height: 30.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: () {
-                                                                if (vistaSenafItem
-                                                                        .diasDiferencia! <=
-                                                                    5) {
-                                                                  return FlutterFlowTheme.of(
+                                                                font: GoogleFonts
+                                                                    .notoSansJp(
+                                                                  fontWeight: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .primary;
-                                                                } else if (vistaSenafItem
-                                                                        .diasDiferencia! <=
-                                                                    10) {
-                                                                  return FlutterFlowTheme.of(
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .warning;
-                                                                } else if (vistaSenafItem
-                                                                        .diasDiferencia! <=
-                                                                    20) {
-                                                                  return FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .tertiary;
-                                                                } else if (vistaSenafItem
-                                                                        .diasDiferencia! <=
-                                                                    30) {
-                                                                  return FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .accent1;
-                                                                } else {
-                                                                  return FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .error;
-                                                                }
-                                                              }(),
-                                                              shape: BoxShape
-                                                                  .circle,
-                                                            ),
-                                                          ),
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
                                                         ),
-                                                        FFButtonWidget(
+                                                        FlutterFlowIconButton(
+                                                          borderRadius: 8.0,
+                                                          buttonSize: 40.0,
+                                                          fillColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primary,
+                                                          icon: Icon(
+                                                            Icons.edit,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .info,
+                                                            size: 24.0,
+                                                          ),
                                                           onPressed: () async {
-                                                            _model.vistaexpe =
-                                                                await VistaExpedientesUltimoEstadoTable()
+                                                            _model.rowform9 =
+                                                                await Formulario9Table()
                                                                     .queryRows(
                                                               queryFn: (q) =>
                                                                   q.eqOrNull(
-                                                                'id',
-                                                                vistaSenafItem
-                                                                    .idExpediente,
+                                                                'idIngreso',
+                                                                expdientesenafItem
+                                                                    .ingresoId,
                                                               ),
                                                             );
-
-                                                            context.pushNamed(
-                                                              PerfilWidget
-                                                                  .routeName,
-                                                              queryParameters: {
-                                                                'idingreso':
-                                                                    serializeParam(
-                                                                  vistaSenafItem
-                                                                      .idIngreso,
-                                                                  ParamType.int,
-                                                                ),
-                                                                'rowexp':
-                                                                    serializeParam(
-                                                                  _model
-                                                                      .vistaexpe
-                                                                      ?.firstOrNull,
-                                                                  ParamType
-                                                                      .SupabaseRow,
-                                                                ),
-                                                                'usuariorow':
-                                                                    serializeParam(
-                                                                  widget
-                                                                      .usuariorow,
-                                                                  ParamType
-                                                                      .SupabaseRow,
-                                                                ),
-                                                                'usuariorol':
-                                                                    serializeParam(
-                                                                  widget
-                                                                      .usuariosroles,
-                                                                  ParamType
-                                                                      .SupabaseRow,
-                                                                ),
-                                                              }.withoutNulls,
-                                                            );
+                                                            await showModalBottomSheet(
+                                                              isScrollControlled:
+                                                                  true,
+                                                              backgroundColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              enableDrag: false,
+                                                              context: context,
+                                                              builder:
+                                                                  (context) {
+                                                                return GestureDetector(
+                                                                  onTap: () {
+                                                                    FocusScope.of(
+                                                                            context)
+                                                                        .unfocus();
+                                                                    FocusManager
+                                                                        .instance
+                                                                        .primaryFocus
+                                                                        ?.unfocus();
+                                                                  },
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: MediaQuery
+                                                                        .viewInsetsOf(
+                                                                            context),
+                                                                    child:
+                                                                        SeguimientosenafcoordinacionWidget(
+                                                                      idform9: _model
+                                                                          .rowform9
+                                                                          ?.firstOrNull
+                                                                          ?.idForm9,
+                                                                      idingreso:
+                                                                          expdientesenafItem
+                                                                              .ingresoId,
+                                                                      idespediente:
+                                                                          expdientesenafItem
+                                                                              .expedienteId,
+                                                                    ),
+                                                                  ),
+                                                                );
+                                                              },
+                                                            ).then((value) =>
+                                                                safeSetState(
+                                                                    () {}));
 
                                                             safeSetState(() {});
                                                           },
-                                                          text: 'ver',
-                                                          options:
-                                                              FFButtonOptions(
-                                                            height: 40.0,
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        16.0,
-                                                                        0.0,
-                                                                        16.0,
-                                                                        0.0),
-                                                            iconPadding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primary,
-                                                            textStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Noto Sans JP',
-                                                                      color: Colors
-                                                                          .white,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                    ),
-                                                            elevation: 0.0,
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
-                                                          ),
                                                         ),
                                                       ]
                                                           .map((c) =>
@@ -1884,9 +1914,9 @@ class _AdminWidgetState extends State<AdminWidget>
                                                     paginated: true,
                                                     selectable: false,
                                                     hidePaginator: false,
-                                                    showFirstLastButtons: true,
-                                                    headingRowHeight: 70.0,
-                                                    dataRowHeight: 80.0,
+                                                    showFirstLastButtons: false,
+                                                    headingRowHeight: 56.0,
+                                                    dataRowHeight: 48.0,
                                                     columnSpacing: 20.0,
                                                     headingRowColor:
                                                         FlutterFlowTheme.of(
@@ -1894,25 +1924,19 @@ class _AdminWidgetState extends State<AdminWidget>
                                                             .primary,
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            10.0),
+                                                            8.0),
                                                     addHorizontalDivider: true,
                                                     addTopAndBottomDivider:
-                                                        true,
+                                                        false,
                                                     hideDefaultHorizontalDivider:
                                                         true,
                                                     horizontalDividerColor:
                                                         FlutterFlowTheme.of(
                                                                 context)
-                                                            .primary,
+                                                            .secondaryBackground,
                                                     horizontalDividerThickness:
                                                         1.0,
-                                                    addVerticalDivider: true,
-                                                    verticalDividerColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primary,
-                                                    verticalDividerThickness:
-                                                        1.0,
+                                                    addVerticalDivider: false,
                                                   );
                                                 },
                                               ),
