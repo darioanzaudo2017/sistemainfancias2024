@@ -9,6 +9,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'seccion1_model.dart';
 export 'seccion1_model.dart';
 
@@ -48,6 +49,8 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
 
     _model.textFieldlunacimientoFocusNode ??= FocusNode();
 
+    _model.textFieldbarrioFocusNode ??= FocusNode();
+
     _model.textFielddomicilioFocusNode ??= FocusNode();
 
     _model.textFieldtelefonoFocusNode ??= FocusNode();
@@ -64,15 +67,13 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
 
     _model.textFieldFocusNode6 ??= FocusNode();
 
-    _model.textFieldFocusNode7 ??= FocusNode();
-
     _model.textFielddomicilioescuelaFocusNode ??= FocusNode();
 
     _model.textFieldtelescuelaFocusNode ??= FocusNode();
 
-    _model.textFieldFocusNode8 ??= FocusNode();
+    _model.textFieldFocusNode7 ??= FocusNode();
 
-    _model.textFieldFocusNode9 ??= FocusNode();
+    _model.textFieldFocusNode8 ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -86,39 +87,38 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Align(
-          alignment: AlignmentDirectional(0.0, 0.0),
-          child: FutureBuilder<List<Seccion1Row>>(
-            future: Seccion1Table().querySingleRow(
-              queryFn: (q) => q.eqOrNull(
-                'idIngreso',
-                widget.idingreso?.id,
+    return FutureBuilder<List<Seccion1Row>>(
+      future: Seccion1Table().querySingleRow(
+        queryFn: (q) => q.eqOrNull(
+          'idIngreso',
+          widget.idingreso?.id,
+        ),
+      ),
+      builder: (context, snapshot) {
+        // Customize what your widget looks like when it's loading.
+        if (!snapshot.hasData) {
+          return Center(
+            child: SizedBox(
+              width: 50.0,
+              height: 50.0,
+              child: CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(
+                  FlutterFlowTheme.of(context).primary,
+                ),
               ),
             ),
-            builder: (context, snapshot) {
-              // Customize what your widget looks like when it's loading.
-              if (!snapshot.hasData) {
-                return Center(
-                  child: SizedBox(
-                    width: 50.0,
-                    height: 50.0,
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        FlutterFlowTheme.of(context).primary,
-                      ),
-                    ),
-                  ),
-                );
-              }
-              List<Seccion1Row> containerSeccion1RowList = snapshot.data!;
+          );
+        }
+        List<Seccion1Row> stackSeccion1RowList = snapshot.data!;
 
-              final containerSeccion1Row = containerSeccion1RowList.isNotEmpty
-                  ? containerSeccion1RowList.first
-                  : null;
+        final stackSeccion1Row =
+            stackSeccion1RowList.isNotEmpty ? stackSeccion1RowList.first : null;
 
-              return Material(
+        return Stack(
+          children: [
+            Align(
+              alignment: AlignmentDirectional(0.0, 0.0),
+              child: Material(
                 color: Colors.transparent,
                 elevation: 2.0,
                 shape: RoundedRectangleBorder(
@@ -127,10 +127,8 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                 child: Container(
                   width: MediaQuery.sizeOf(context).width * 0.9,
                   decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).alternate,
                     borderRadius: BorderRadius.circular(20.0),
-                    border: Border.all(
-                      color: FlutterFlowTheme.of(context).primary,
-                    ),
                   ),
                   alignment: AlignmentDirectional(0.0, 0.0),
                   child: Form(
@@ -238,7 +236,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                     controller: _model
                                                             .textFieldlunacimientoTextController ??=
                                                         TextEditingController(
-                                                      text: containerSeccion1Row
+                                                      text: stackSeccion1Row
                                                           ?.lugarNac,
                                                     ),
                                                     focusNode: _model
@@ -392,7 +390,9 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                               FutureBuilder<List<BarriosRow>>(
                                                 future:
                                                     BarriosTable().queryRows(
-                                                  queryFn: (q) => q,
+                                                  queryFn: (q) => q.order(
+                                                      'Barrio',
+                                                      ascending: true),
                                                 ),
                                                 builder: (context, snapshot) {
                                                   // Customize what your widget looks like when it's loading.
@@ -425,7 +425,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                         FormFieldController<
                                                             String>(
                                                       _model.dropDownbarrioValue ??=
-                                                          containerSeccion1Row
+                                                          stackSeccion1Row
                                                               ?.barrio,
                                                     ),
                                                     options:
@@ -560,6 +560,173 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                   );
                                                 },
                                               ),
+                                              if (_model.dropDownbarrioValue ==
+                                                  'Otro')
+                                                Expanded(
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(8.0, 0.0,
+                                                                8.0, 0.0),
+                                                    child: TextFormField(
+                                                      controller: _model
+                                                              .textFieldbarrioTextController ??=
+                                                          TextEditingController(
+                                                        text: stackSeccion1Row
+                                                            ?.barrioOtro,
+                                                      ),
+                                                      focusNode: _model
+                                                          .textFieldbarrioFocusNode,
+                                                      autofocus: true,
+                                                      obscureText: false,
+                                                      decoration:
+                                                          InputDecoration(
+                                                        labelText: 'Barrio',
+                                                        labelStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .notoSansJp(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                        hintText: 'Barrio',
+                                                        hintStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .notoSansJp(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                        enabledBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .alternate,
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      10.0),
+                                                        ),
+                                                        focusedBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      10.0),
+                                                        ),
+                                                        errorBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .error,
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      10.0),
+                                                        ),
+                                                        focusedErrorBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .error,
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      10.0),
+                                                        ),
+                                                      ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .notoSansJp(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                      validator: _model
+                                                          .textFieldbarrioTextControllerValidator
+                                                          .asValidator(context),
+                                                    ),
+                                                  ),
+                                                ),
                                               Expanded(
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
@@ -569,7 +736,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                     controller: _model
                                                             .textFielddomicilioTextController ??=
                                                         TextEditingController(
-                                                      text: containerSeccion1Row
+                                                      text: stackSeccion1Row
                                                           ?.domicilio,
                                                     ),
                                                     focusNode: _model
@@ -725,7 +892,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                     controller: _model
                                                             .textFieldtelefonoTextController ??=
                                                         TextEditingController(
-                                                      text: containerSeccion1Row
+                                                      text: stackSeccion1Row
                                                           ?.telefono
                                                           ?.toString(),
                                                     ),
@@ -890,7 +1057,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                         FormFieldController<
                                                             String>(
                                                       _model.dropGeneroValue ??=
-                                                          containerSeccion1Row
+                                                          stackSeccion1Row
                                                               ?.genero,
                                                     ),
                                                     options: [
@@ -976,7 +1143,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                         FormFieldController<
                                                             String>(
                                                       _model.droptipofliaValue ??=
-                                                          containerSeccion1Row
+                                                          stackSeccion1Row
                                                               ?.tipoFamilia,
                                                     ),
                                                     options: [
@@ -1088,9 +1255,9 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                           8.0, 0.0, 8.0, 0.0),
                                                   child: TextFormField(
                                                     controller: _model
-                                                            .textController4 ??=
+                                                            .textController5 ??=
                                                         TextEditingController(
-                                                      text: containerSeccion1Row
+                                                      text: stackSeccion1Row
                                                           ?.adultoRes,
                                                     ),
                                                     focusNode: _model
@@ -1233,7 +1400,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                                   .fontStyle,
                                                         ),
                                                     validator: _model
-                                                        .textController4Validator
+                                                        .textController5Validator
                                                         .asValidator(context),
                                                   ),
                                                 ),
@@ -1305,20 +1472,22 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                                   0.0),
                                                       child:
                                                           FlutterFlowRadioButton(
-                                                        options: ['Si', 'No']
-                                                            .toList(),
+                                                        options: [
+                                                          'Si',
+                                                          'No',
+                                                          'Ns / Nc'
+                                                        ].toList(),
                                                         onChanged: (val) =>
                                                             safeSetState(() {}),
                                                         controller: _model
                                                                 .radioButtonrnpValueController ??=
                                                             FormFieldController<
-                                                                    String>(
-                                                                valueOrDefault<
-                                                                    String>(
-                                                          containerSeccion1Row
-                                                              ?.rnp,
-                                                          'No',
-                                                        )),
+                                                                String>(widget
+                                                                        .rowexp
+                                                                        ?.DNI !=
+                                                                    0
+                                                                ? 'Si'
+                                                                : 'Ns / Nc'),
                                                         optionHeight: 40.0,
                                                         optionWidth: 70.0,
                                                         textStyle:
@@ -1398,179 +1567,6 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                     ),
                                                   ],
                                                 ),
-                                                if (_model
-                                                        .dropDownbarrioValue ==
-                                                    'Otro')
-                                                  Expanded(
-                                                    child: Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  8.0,
-                                                                  0.0,
-                                                                  8.0,
-                                                                  0.0),
-                                                      child: TextFormField(
-                                                        controller: _model
-                                                                .textController5 ??=
-                                                            TextEditingController(
-                                                          text:
-                                                              containerSeccion1Row
-                                                                  ?.barrio,
-                                                        ),
-                                                        focusNode: _model
-                                                            .textFieldFocusNode2,
-                                                        autofocus: true,
-                                                        obscureText: false,
-                                                        decoration:
-                                                            InputDecoration(
-                                                          labelText: 'Barrio',
-                                                          labelStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMedium
-                                                                  .override(
-                                                                    font: GoogleFonts
-                                                                        .notoSansJp(
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelMedium
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelMedium
-                                                                          .fontStyle,
-                                                                    ),
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                          hintText: 'Barrio',
-                                                          hintStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMedium
-                                                                  .override(
-                                                                    font: GoogleFonts
-                                                                        .notoSansJp(
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelMedium
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelMedium
-                                                                          .fontStyle,
-                                                                    ),
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                          enabledBorder:
-                                                              OutlineInputBorder(
-                                                            borderSide:
-                                                                BorderSide(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .alternate,
-                                                              width: 2.0,
-                                                            ),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        10.0),
-                                                          ),
-                                                          focusedBorder:
-                                                              OutlineInputBorder(
-                                                            borderSide:
-                                                                BorderSide(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primary,
-                                                              width: 2.0,
-                                                            ),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        10.0),
-                                                          ),
-                                                          errorBorder:
-                                                              OutlineInputBorder(
-                                                            borderSide:
-                                                                BorderSide(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .error,
-                                                              width: 2.0,
-                                                            ),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        10.0),
-                                                          ),
-                                                          focusedErrorBorder:
-                                                              OutlineInputBorder(
-                                                            borderSide:
-                                                                BorderSide(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .error,
-                                                              width: 2.0,
-                                                            ),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        10.0),
-                                                          ),
-                                                        ),
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font: GoogleFonts
-                                                                      .notoSansJp(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                        validator: _model
-                                                            .textController5Validator
-                                                            .asValidator(
-                                                                context),
-                                                      ),
-                                                    ),
-                                                  ),
                                               ],
                                             ),
                                           ),
@@ -1654,11 +1650,11 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                 controller:
                                                     _model.textController6 ??=
                                                         TextEditingController(
-                                                  text: containerSeccion1Row
-                                                      ?.centro,
+                                                  text:
+                                                      stackSeccion1Row?.centro,
                                                 ),
                                                 focusNode:
-                                                    _model.textFieldFocusNode3,
+                                                    _model.textFieldFocusNode2,
                                                 autofocus: true,
                                                 obscureText: false,
                                                 decoration: InputDecoration(
@@ -1821,11 +1817,11 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                 controller:
                                                     _model.textController7 ??=
                                                         TextEditingController(
-                                                  text: containerSeccion1Row
+                                                  text: stackSeccion1Row
                                                       ?.historiaCli,
                                                 ),
                                                 focusNode:
-                                                    _model.textFieldFocusNode4,
+                                                    _model.textFieldFocusNode3,
                                                 autofocus: true,
                                                 obscureText: false,
                                                 decoration: InputDecoration(
@@ -2021,14 +2017,14 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                         String>(_model
                                                             .dropDowndiscapacidadValue ??=
                                                         List<String>.from(
-                                                  containerSeccion1Row
+                                                  stackSeccion1Row
                                                           ?.discapacidad ??
                                                       [],
                                                 )),
                                                 options: [
-                                                  'Motora',
-                                                  'Cognitiva',
-                                                  'Visual'
+                                                  'Fisica Motora',
+                                                  'Sensorial',
+                                                  'Cognitiva'
                                                 ],
                                                 width: 200.0,
                                                 height: 40.0,
@@ -2215,7 +2211,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                                 String>(
                                                             valueOrDefault<
                                                                 String>(
-                                                      containerSeccion1Row?.cud,
+                                                      stackSeccion1Row?.cud,
                                                       'No',
                                                     )),
                                                     optionHeight: 40.0,
@@ -2363,7 +2359,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                                 String>(
                                                             valueOrDefault<
                                                                 String>(
-                                                      containerSeccion1Row
+                                                      stackSeccion1Row
                                                           ?.accedeprestaciones,
                                                       'No',
                                                     )),
@@ -2450,31 +2446,46 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                               ].divide(SizedBox(width: 10.0)),
                                             ),
                                           ),
-                                          Expanded(
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(8.0, 0.0, 8.0, 0.0),
-                                              child: TextFormField(
-                                                controller:
-                                                    _model.textController8 ??=
-                                                        TextEditingController(
-                                                  text: containerSeccion1Row
-                                                      ?.cualesPrestaciones,
-                                                ),
-                                                focusNode:
-                                                    _model.textFieldFocusNode5,
-                                                autofocus: true,
-                                                obscureText: false,
-                                                decoration: InputDecoration(
-                                                  labelText:
-                                                      'Cuales prestaciones:',
-                                                  labelStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMedium
-                                                          .override(
-                                                            font: GoogleFonts
-                                                                .notoSansJp(
+                                          if (_model
+                                                  .radioButtonprestacionesValue ==
+                                              'Si')
+                                            Expanded(
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        8.0, 0.0, 8.0, 0.0),
+                                                child: TextFormField(
+                                                  controller:
+                                                      _model.textController8 ??=
+                                                          TextEditingController(
+                                                    text: stackSeccion1Row
+                                                        ?.cualesPrestaciones,
+                                                  ),
+                                                  focusNode: _model
+                                                      .textFieldFocusNode4,
+                                                  autofocus: true,
+                                                  obscureText: false,
+                                                  decoration: InputDecoration(
+                                                    labelText:
+                                                        'Cuales prestaciones:',
+                                                    labelStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .override(
+                                                              font: GoogleFonts
+                                                                  .notoSansJp(
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                              letterSpacing:
+                                                                  0.0,
                                                               fontWeight:
                                                                   FlutterFlowTheme.of(
                                                                           context)
@@ -2486,25 +2497,24 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                                       .labelMedium
                                                                       .fontStyle,
                                                             ),
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FlutterFlowTheme.of(
+                                                    hintStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .override(
+                                                              font: GoogleFonts
+                                                                  .notoSansJp(
+                                                                fontWeight: FlutterFlowTheme.of(
                                                                         context)
                                                                     .labelMedium
                                                                     .fontWeight,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
+                                                                fontStyle: FlutterFlowTheme.of(
                                                                         context)
                                                                     .labelMedium
                                                                     .fontStyle,
-                                                          ),
-                                                  hintStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMedium
-                                                          .override(
-                                                            font: GoogleFonts
-                                                                .notoSansJp(
+                                                              ),
+                                                              letterSpacing:
+                                                                  0.0,
                                                               fontWeight:
                                                                   FlutterFlowTheme.of(
                                                                           context)
@@ -2516,89 +2526,65 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                                       .labelMedium
                                                                       .fontStyle,
                                                             ),
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .fontWeight,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .fontStyle,
-                                                          ),
-                                                  enabledBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .alternate,
-                                                      width: 2.0,
+                                                    enabledBorder:
+                                                        OutlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .alternate,
+                                                        width: 2.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10.0),
                                                     ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10.0),
-                                                  ),
-                                                  focusedBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                      width: 2.0,
+                                                    focusedBorder:
+                                                        OutlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        width: 2.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10.0),
                                                     ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10.0),
-                                                  ),
-                                                  errorBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .error,
-                                                      width: 2.0,
+                                                    errorBorder:
+                                                        OutlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .error,
+                                                        width: 2.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10.0),
                                                     ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10.0),
-                                                  ),
-                                                  focusedErrorBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .error,
-                                                      width: 2.0,
+                                                    focusedErrorBorder:
+                                                        OutlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .error,
+                                                        width: 2.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10.0),
                                                     ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10.0),
                                                   ),
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          font: GoogleFonts
-                                                              .notoSansJp(
-                                                            fontWeight:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                          ),
-                                                          letterSpacing: 0.0,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font: GoogleFonts
+                                                            .notoSansJp(
                                                           fontWeight:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -2610,13 +2596,25 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                                   .bodyMedium
                                                                   .fontStyle,
                                                         ),
-                                                maxLines: null,
-                                                validator: _model
-                                                    .textController8Validator
-                                                    .asValidator(context),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                  maxLines: null,
+                                                  validator: _model
+                                                      .textController8Validator
+                                                      .asValidator(context),
+                                                ),
                                               ),
                                             ),
-                                          ),
                                         ]
                                             .divide(SizedBox(width: 10.0))
                                             .around(SizedBox(width: 10.0)),
@@ -2627,9 +2625,9 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                         child: TextFormField(
                                           controller: _model.textController9 ??=
                                               TextEditingController(
-                                            text: containerSeccion1Row?.obraSoc,
+                                            text: stackSeccion1Row?.obraSoc,
                                           ),
-                                          focusNode: _model.textFieldFocusNode6,
+                                          focusNode: _model.textFieldFocusNode5,
                                           autofocus: true,
                                           obscureText: false,
                                           decoration: InputDecoration(
@@ -2832,6 +2830,289 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    10.0, 0.0, 0.0, 0.0),
+                                            child: Text(
+                                              'Concurrencia escolar actual',
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    font:
+                                                        GoogleFonts.notoSansJp(
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
+                                                    letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                  ),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 10.0, 0.0),
+                                            child: FlutterFlowRadioButton(
+                                              options: ['Si', 'No'].toList(),
+                                              onChanged: (val) =>
+                                                  safeSetState(() {}),
+                                              controller: _model
+                                                      .radioButtonconcurreescuelaValueController ??=
+                                                  FormFieldController<String>(
+                                                      valueOrDefault<String>(
+                                                stackSeccion1Row
+                                                    ?.cocurrenciaEsc,
+                                                'No',
+                                              )),
+                                              optionHeight: 40.0,
+                                              optionWidth: 70.0,
+                                              textStyle: FlutterFlowTheme.of(
+                                                      context)
+                                                  .labelMedium
+                                                  .override(
+                                                    font:
+                                                        GoogleFonts.notoSansJp(
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .fontStyle,
+                                                    ),
+                                                    letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontStyle,
+                                                  ),
+                                              selectedTextStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font: GoogleFonts
+                                                            .notoSansJp(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                              buttonPosition:
+                                                  RadioButtonPosition.right,
+                                              direction: Axis.horizontal,
+                                              radioButtonColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              inactiveRadioButtonColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                              toggleable: false,
+                                              horizontalAlignment:
+                                                  WrapAlignment.start,
+                                              verticalAlignment:
+                                                  WrapCrossAlignment.start,
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    8.0, 0.0, 8.0, 0.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          10.0, 0.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    'Se matriculo este año',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .notoSansJp(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 10.0, 0.0),
+                                                  child: FlutterFlowRadioButton(
+                                                    options:
+                                                        ['Si', 'No'].toList(),
+                                                    onChanged: (val) =>
+                                                        safeSetState(() {}),
+                                                    controller: _model
+                                                            .radioButtomatriculoValueController ??=
+                                                        FormFieldController<
+                                                                String>(
+                                                            valueOrDefault<
+                                                                String>(
+                                                      stackSeccion1Row
+                                                          ?.matriculo,
+                                                      'No',
+                                                    )),
+                                                    optionHeight: 40.0,
+                                                    optionWidth: 70.0,
+                                                    textStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .override(
+                                                              font: GoogleFonts
+                                                                  .notoSansJp(
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
+                                                            ),
+                                                    selectedTextStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              font: GoogleFonts
+                                                                  .notoSansJp(
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                            ),
+                                                    buttonPosition:
+                                                        RadioButtonPosition
+                                                            .right,
+                                                    direction: Axis.horizontal,
+                                                    radioButtonColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primary,
+                                                    inactiveRadioButtonColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .secondaryText,
+                                                    toggleable: false,
+                                                    horizontalAlignment:
+                                                        WrapAlignment.start,
+                                                    verticalAlignment:
+                                                        WrapCrossAlignment
+                                                            .start,
+                                                  ),
+                                                ),
+                                              ].divide(SizedBox(width: 10.0)),
+                                            ),
+                                          ),
+                                        ].divide(SizedBox(width: 10.0)),
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
                                           Expanded(
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
@@ -2840,11 +3121,11 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                 controller:
                                                     _model.textController10 ??=
                                                         TextEditingController(
-                                                  text: containerSeccion1Row
-                                                      ?.escuela,
+                                                  text:
+                                                      stackSeccion1Row?.escuela,
                                                 ),
                                                 focusNode:
-                                                    _model.textFieldFocusNode7,
+                                                    _model.textFieldFocusNode6,
                                                 autofocus: true,
                                                 obscureText: false,
                                                 decoration: InputDecoration(
@@ -3008,8 +3289,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                   FormFieldController<String>(
                                                 _model.dropDownSalaGradoValue ??=
                                                     valueOrDefault<String>(
-                                                  containerSeccion1Row
-                                                      ?.cursoEsc,
+                                                  stackSeccion1Row?.cursoEsc,
                                                   '-',
                                                 ),
                                               ),
@@ -3094,6 +3374,36 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                               isOverButton: true,
                                               isSearchable: false,
                                               isMultiSelect: false,
+                                              labelText: 'Sala/Grado/Año',
+                                              labelTextStyle: FlutterFlowTheme
+                                                      .of(context)
+                                                  .labelMedium
+                                                  .override(
+                                                    font:
+                                                        GoogleFonts.notoSansJp(
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .fontStyle,
+                                                    ),
+                                                    letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontStyle,
+                                                  ),
                                             ),
                                           ),
                                           Expanded(
@@ -3107,7 +3417,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                     FormFieldController<String>(
                                                   _model.dropDownTurnoValue ??=
                                                       valueOrDefault<String>(
-                                                    containerSeccion1Row?.turno,
+                                                    stackSeccion1Row?.turno,
                                                     '-',
                                                   ),
                                                 ),
@@ -3177,6 +3487,36 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                 isOverButton: true,
                                                 isSearchable: false,
                                                 isMultiSelect: false,
+                                                labelText: 'Turno',
+                                                labelTextStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .notoSansJp(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontStyle,
+                                                          ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontStyle,
+                                                        ),
                                               ),
                                             ),
                                           ),
@@ -3193,8 +3533,8 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                 controller: _model
                                                         .textFielddomicilioescuelaTextController ??=
                                                     TextEditingController(
-                                                  text: containerSeccion1Row
-                                                      ?.domEsc,
+                                                  text:
+                                                      stackSeccion1Row?.domEsc,
                                                 ),
                                                 focusNode: _model
                                                     .textFielddomicilioescuelaFocusNode,
@@ -3361,8 +3701,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                 controller: _model
                                                         .textFieldtelescuelaTextController ??=
                                                     TextEditingController(
-                                                  text: containerSeccion1Row
-                                                      ?.telEsc
+                                                  text: stackSeccion1Row?.telEsc
                                                       ?.toString(),
                                                 ),
                                                 focusNode: _model
@@ -3521,171 +3860,43 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                           ),
                                         ],
                                       ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            8.0, 0.0, 8.0, 0.0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          if (_model
+                                                  .radioButtonconcurreescuelaValue ==
+                                              'No')
                                             Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 0.0, 8.0, 0.0),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(10.0, 0.0,
-                                                                0.0, 0.0),
-                                                    child: Text(
-                                                      'Se matriculo este año',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .notoSansJp(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
-                                                    ),
+                                              child:
+                                                  FlutterFlowDropDown<String>(
+                                                controller: _model
+                                                        .dropDownNivelAlcanzadoValueController ??=
+                                                    FormFieldController<String>(
+                                                  _model.dropDownNivelAlcanzadoValue ??=
+                                                      valueOrDefault<String>(
+                                                    stackSeccion1Row
+                                                        ?.nivelAlcanzado,
+                                                    '-',
                                                   ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                10.0, 0.0),
-                                                    child:
-                                                        FlutterFlowRadioButton(
-                                                      options:
-                                                          ['Si', 'No'].toList(),
-                                                      onChanged: (val) =>
-                                                          safeSetState(() {}),
-                                                      controller: _model
-                                                              .radioButtomatriculoValueController ??=
-                                                          FormFieldController<
-                                                                  String>(
-                                                              valueOrDefault<
-                                                                  String>(
-                                                        containerSeccion1Row
-                                                            ?.matriculo,
-                                                        'No',
-                                                      )),
-                                                      optionHeight: 40.0,
-                                                      optionWidth: 70.0,
-                                                      textStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelMedium
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .notoSansJp(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .fontStyle,
-                                                              ),
-                                                      selectedTextStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .notoSansJp(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
-                                                      buttonPosition:
-                                                          RadioButtonPosition
-                                                              .right,
-                                                      direction:
-                                                          Axis.horizontal,
-                                                      radioButtonColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                      inactiveRadioButtonColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryText,
-                                                      toggleable: false,
-                                                      horizontalAlignment:
-                                                          WrapAlignment.start,
-                                                      verticalAlignment:
-                                                          WrapCrossAlignment
-                                                              .start,
-                                                    ),
-                                                  ),
-                                                ].divide(SizedBox(width: 10.0)),
-                                              ),
-                                            ),
-                                            Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          10.0, 0.0, 0.0, 0.0),
-                                                  child: Text(
-                                                    'Concurrencia escolar actual',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
+                                                ),
+                                                options: [
+                                                  'Primaria Incompleta',
+                                                  'Primaria Completa',
+                                                  'Secundaria Incompleta',
+                                                  'Secundaria Completa',
+                                                  '-',
+                                                  'Nivel inicial completo'
+                                                ],
+                                                onChanged: (val) =>
+                                                    safeSetState(() => _model
+                                                            .dropDownNivelAlcanzadoValue =
+                                                        val),
+                                                width: 300.0,
+                                                height: 56.0,
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
                                                           font: GoogleFonts
@@ -3701,6 +3912,9 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                                     .bodyMedium
                                                                     .fontStyle,
                                                           ),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .error,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FlutterFlowTheme.of(
@@ -3713,203 +3927,63 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                                   .bodyMedium
                                                                   .fontStyle,
                                                         ),
-                                                  ),
+                                                hintText: 'Nivel Alcanzado',
+                                                icon: Icon(
+                                                  Icons
+                                                      .keyboard_arrow_down_rounded,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryText,
+                                                  size: 24.0,
                                                 ),
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 10.0, 0.0),
-                                                  child: FlutterFlowRadioButton(
-                                                    options:
-                                                        ['Si', 'No'].toList(),
-                                                    onChanged: (val) =>
-                                                        safeSetState(() {}),
-                                                    controller: _model
-                                                            .radioButtonescuelaValueController ??=
-                                                        FormFieldController<
-                                                                String>(
-                                                            valueOrDefault<
-                                                                String>(
-                                                      containerSeccion1Row
-                                                          ?.cocurrenciaEsc,
-                                                      'No',
-                                                    )),
-                                                    optionHeight: 40.0,
-                                                    optionWidth: 70.0,
-                                                    textStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelMedium
-                                                            .override(
-                                                              font: GoogleFonts
-                                                                  .notoSansJp(
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .fontStyle,
-                                                              ),
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              fontWeight:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontWeight,
-                                                              fontStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontStyle,
-                                                            ),
-                                                    selectedTextStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              font: GoogleFonts
-                                                                  .notoSansJp(
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              fontWeight:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                              fontStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                            ),
-                                                    buttonPosition:
-                                                        RadioButtonPosition
-                                                            .right,
-                                                    direction: Axis.horizontal,
-                                                    radioButtonColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primary,
-                                                    inactiveRadioButtonColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .secondaryText,
-                                                    toggleable: false,
-                                                    horizontalAlignment:
-                                                        WrapAlignment.start,
-                                                    verticalAlignment:
-                                                        WrapCrossAlignment
-                                                            .start,
-                                                  ),
-                                                ),
-                                              ].divide(SizedBox(width: 10.0)),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    8.0, 0.0, 8.0, 0.0),
-                                            child: FlutterFlowDropDown<String>(
-                                              controller: _model
-                                                      .dropDownNivelAlcanzadoValueController ??=
-                                                  FormFieldController<String>(
-                                                _model.dropDownNivelAlcanzadoValue ??=
-                                                    valueOrDefault<String>(
-                                                  containerSeccion1Row
-                                                      ?.nivelAlcanzado,
-                                                  '-',
-                                                ),
-                                              ),
-                                              options: [
-                                                'Primaria Incompleta',
-                                                'Primaria Completa',
-                                                'Secundaria Incompleta',
-                                                'Secundaria Completa',
-                                                '-',
-                                                'Nivel inicial completo'
-                                              ],
-                                              onChanged: (val) => safeSetState(
-                                                  () => _model
-                                                          .dropDownNivelAlcanzadoValue =
-                                                      val),
-                                              width: 300.0,
-                                              height: 56.0,
-                                              textStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    font:
-                                                        GoogleFonts.notoSansJp(
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontStyle,
-                                                    ),
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .error,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
-                                              hintText: 'Nivel Alcanzado',
-                                              icon: Icon(
-                                                Icons
-                                                    .keyboard_arrow_down_rounded,
-                                                color:
+                                                fillColor:
                                                     FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                size: 24.0,
+                                                        .secondaryBackground,
+                                                elevation: 2.0,
+                                                borderColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .alternate,
+                                                borderWidth: 2.0,
+                                                borderRadius: 8.0,
+                                                margin: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 4.0, 16.0, 4.0),
+                                                hidesUnderline: true,
+                                                isOverButton: true,
+                                                isSearchable: false,
+                                                isMultiSelect: false,
+                                                labelText: 'Nivel Alcanzado',
+                                                labelTextStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .notoSansJp(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontStyle,
+                                                          ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontStyle,
+                                                        ),
                                               ),
-                                              fillColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                              elevation: 2.0,
-                                              borderColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .alternate,
-                                              borderWidth: 2.0,
-                                              borderRadius: 8.0,
-                                              margin: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      16.0, 4.0, 16.0, 4.0),
-                                              hidesUnderline: true,
-                                              isOverButton: true,
-                                              isSearchable: false,
-                                              isMultiSelect: false,
                                             ),
-                                          ),
                                           Expanded(
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
@@ -3918,11 +3992,11 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                 controller:
                                                     _model.textController13 ??=
                                                         TextEditingController(
-                                                  text: containerSeccion1Row
+                                                  text: stackSeccion1Row
                                                       ?.referente,
                                                 ),
                                                 focusNode:
-                                                    _model.textFieldFocusNode8,
+                                                    _model.textFieldFocusNode7,
                                                 autofocus: true,
                                                 obscureText: false,
                                                 decoration: InputDecoration(
@@ -4161,7 +4235,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                       .fromSTEB(
                                                           10.0, 0.0, 0.0, 0.0),
                                                   child: Text(
-                                                    'Trabaja el niño',
+                                                    'NNyA trabaja?',
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -4208,8 +4282,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                                 String>(
                                                             valueOrDefault<
                                                                 String>(
-                                                      containerSeccion1Row
-                                                          ?.trabaja,
+                                                      stackSeccion1Row?.trabaja,
                                                       'No',
                                                     )),
                                                     optionHeight: 40.0,
@@ -4306,11 +4379,11 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                     controller: _model
                                                             .textController14 ??=
                                                         TextEditingController(
-                                                      text: containerSeccion1Row
+                                                      text: stackSeccion1Row
                                                           ?.trabajoObs,
                                                     ),
                                                     focusNode: _model
-                                                        .textFieldFocusNode9,
+                                                        .textFieldFocusNode8,
                                                     autofocus: false,
                                                     obscureText: false,
                                                     decoration: InputDecoration(
@@ -4504,7 +4577,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                     'genero':
                                                         _model.dropGeneroValue,
                                                     'adultoRes': _model
-                                                        .textController4.text,
+                                                        .textController5.text,
                                                     'rnp': _model
                                                         .radioButtonrnpValue,
                                                     'centro': _model
@@ -4526,7 +4599,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                         .textFieldtelescuelaTextController
                                                         .text),
                                                     'cocurrenciaEsc': _model
-                                                        .radioButtonescuelaValue,
+                                                        .radioButtonconcurreescuelaValue,
                                                     'nivelAlcanzado': _model
                                                         .dropDownNivelAlcanzadoValue,
                                                     'referente': _model
@@ -4546,21 +4619,18 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                     'iduser': currentUserUid,
                                                     'TipoFamilia': _model
                                                         .droptipofliaValue,
-                                                    'barrio':
-                                                        _model.dropDownbarrioValue ==
-                                                                'Otro'
-                                                            ? _model
-                                                                .textController5
-                                                                .text
-                                                            : _model
-                                                                .dropDownbarrioValue,
+                                                    'barrio': _model
+                                                        .dropDownbarrioValue,
                                                     'discapacidad':
-                                                        containerSeccion1Row
+                                                        stackSeccion1Row
                                                             ?.discapacidad,
                                                     'accedeprestaciones': _model
                                                         .radioButtonprestacionesValue,
                                                     'cualesPrestaciones': _model
                                                         .textController8.text,
+                                                    'Barrio_Otro': _model
+                                                        .textFieldbarrioTextController
+                                                        .text,
                                                   });
                                                   await IngresosTable().update(
                                                     data: {
@@ -4580,19 +4650,21 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                     context: context,
                                                     builder:
                                                         (alertDialogContext) {
-                                                      return AlertDialog(
-                                                        title: Text(
-                                                            'Carga correcta'),
-                                                        content: Text(
-                                                            'La informacion se guardo correctamente!!'),
-                                                        actions: [
-                                                          TextButton(
-                                                            onPressed: () =>
-                                                                Navigator.pop(
-                                                                    alertDialogContext),
-                                                            child: Text('Ok'),
-                                                          ),
-                                                        ],
+                                                      return WebViewAware(
+                                                        child: AlertDialog(
+                                                          title: Text(
+                                                              'Carga correcta'),
+                                                          content: Text(
+                                                              'La informacion se guardo correctamente!!'),
+                                                          actions: [
+                                                            TextButton(
+                                                              onPressed: () =>
+                                                                  Navigator.pop(
+                                                                      alertDialogContext),
+                                                              child: Text('Ok'),
+                                                            ),
+                                                          ],
+                                                        ),
                                                       );
                                                     },
                                                   );
@@ -4622,7 +4694,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                       'genero': _model
                                                           .dropGeneroValue,
                                                       'adultoRes': _model
-                                                          .textController4.text,
+                                                          .textController5.text,
                                                       'rnp': _model
                                                           .radioButtonrnpValue,
                                                       'centro': _model
@@ -4646,7 +4718,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                               .textFieldtelescuelaTextController
                                                               .text),
                                                       'cocurrenciaEsc': _model
-                                                          .radioButtonescuelaValue,
+                                                          .radioButtonconcurreescuelaValue,
                                                       'nivelAlcanzado': _model
                                                           .dropDownNivelAlcanzadoValue,
                                                       'referente': _model
@@ -4669,13 +4741,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                       'TipoFamilia': _model
                                                           .droptipofliaValue,
                                                       'barrio': _model
-                                                                  .dropDownbarrioValue ==
-                                                              'Otro'
-                                                          ? _model
-                                                              .textController5
-                                                              .text
-                                                          : _model
-                                                              .dropDownbarrioValue,
+                                                          .dropDownbarrioValue,
                                                       'discapacidad': _model
                                                           .dropDowndiscapacidadValue,
                                                       'accedeprestaciones': _model
@@ -4683,12 +4749,14 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                       'cualesPrestaciones':
                                                           _model.textController8
                                                               .text,
+                                                      'Barrio_Otro': _model
+                                                          .textFieldbarrioTextController
+                                                          .text,
                                                     },
                                                     matchingRows: (rows) =>
                                                         rows.eqOrNull(
                                                       'idSec1',
-                                                      containerSeccion1Row
-                                                          ?.idSec1,
+                                                      stackSeccion1Row?.idSec1,
                                                     ),
                                                   );
                                                   await IngresosTable().update(
@@ -4708,19 +4776,21 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                     context: context,
                                                     builder:
                                                         (alertDialogContext) {
-                                                      return AlertDialog(
-                                                        title: Text(
-                                                            'Carga correcta'),
-                                                        content: Text(
-                                                            'La informacion se guardo correctamente!!'),
-                                                        actions: [
-                                                          TextButton(
-                                                            onPressed: () =>
-                                                                Navigator.pop(
-                                                                    alertDialogContext),
-                                                            child: Text('Ok'),
-                                                          ),
-                                                        ],
+                                                      return WebViewAware(
+                                                        child: AlertDialog(
+                                                          title: Text(
+                                                              'Carga correcta'),
+                                                          content: Text(
+                                                              'La informacion se guardo correctamente!!'),
+                                                          actions: [
+                                                            TextButton(
+                                                              onPressed: () =>
+                                                                  Navigator.pop(
+                                                                      alertDialogContext),
+                                                              child: Text('Ok'),
+                                                            ),
+                                                          ],
+                                                        ),
                                                       );
                                                     },
                                                   );
@@ -4811,98 +4881,103 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                     ),
                   ),
                 ),
-              );
-            },
-          ),
-        ),
-        if (_model.editarseccion1)
-          Container(
-            width: MediaQuery.sizeOf(context).width * 1.0,
-            height: MediaQuery.sizeOf(context).height * 1.0,
-            decoration: BoxDecoration(
-              color: Color(0x3BE0E3E7),
-            ),
-            child: Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Align(
-                    alignment: AlignmentDirectional(1.0, -1.0),
-                    child: Material(
-                      color: Colors.transparent,
-                      elevation: 5.0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      child: Container(
-                        width: 80.0,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: FlutterFlowIconButton(
-                                borderRadius: 8.0,
-                                buttonSize: 40.0,
-                                icon: Icon(
-                                  Icons.cancel_outlined,
-                                  color: FlutterFlowTheme.of(context).error,
-                                  size: 24.0,
-                                ),
-                                onPressed: () async {
-                                  Navigator.pop(context);
-                                },
-                              ),
-                            ),
-                            if (() {
-                              if ((widget.usuariorol?.rolId == 3) &&
-                                  (widget.usuariorol?.spd ==
-                                      widget.rowexp?.spd)) {
-                                return true;
-                              } else if (widget.usuariorol?.rolId == 2) {
-                                return true;
-                              } else if (widget.usuariorol?.rolId == 1) {
-                                return false;
-                              } else {
-                                return false;
-                              }
-                            }())
-                              Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
-                                child: FlutterFlowIconButton(
-                                  borderRadius: 8.0,
-                                  buttonSize: 40.0,
-                                  fillColor:
-                                      FlutterFlowTheme.of(context).primary,
-                                  icon: Icon(
-                                    Icons.edit_rounded,
-                                    color: FlutterFlowTheme.of(context).info,
-                                    size: 24.0,
-                                  ),
-                                  onPressed: () async {
-                                    _model.editarseccion1 = false;
-                                    safeSetState(() {});
-                                  },
-                                ),
-                              ),
-                          ]
-                              .divide(SizedBox(height: 10.0))
-                              .around(SizedBox(height: 10.0)),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
               ),
             ),
-          ),
-      ],
+            if ((_model.editarseccion1 == true) &&
+                (stackSeccion1Row?.idSec1 != null))
+              Container(
+                width: MediaQuery.sizeOf(context).width * 1.0,
+                height: MediaQuery.sizeOf(context).height * 1.0,
+                decoration: BoxDecoration(
+                  color: Color(0x3BE0E3E7),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.all(15.0),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Align(
+                          alignment: AlignmentDirectional(1.0, -1.0),
+                          child: Material(
+                            color: Colors.transparent,
+                            elevation: 5.0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            child: Container(
+                              width: 80.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Align(
+                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    child: FlutterFlowIconButton(
+                                      borderRadius: 8.0,
+                                      buttonSize: 40.0,
+                                      icon: Icon(
+                                        Icons.cancel_outlined,
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        size: 24.0,
+                                      ),
+                                      onPressed: () async {
+                                        Navigator.pop(context);
+                                      },
+                                    ),
+                                  ),
+                                  if (() {
+                                    if ((widget.usuariorol?.rolId == 3) &&
+                                        (widget.usuariorol?.spd ==
+                                            widget.rowexp?.spd)) {
+                                      return true;
+                                    } else if (widget.usuariorol?.rolId == 2) {
+                                      return true;
+                                    } else if (widget.usuariorol?.rolId == 1) {
+                                      return false;
+                                    } else {
+                                      return false;
+                                    }
+                                  }())
+                                    Align(
+                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      child: FlutterFlowIconButton(
+                                        borderRadius: 8.0,
+                                        buttonSize: 40.0,
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        icon: Icon(
+                                          Icons.edit_rounded,
+                                          color:
+                                              FlutterFlowTheme.of(context).info,
+                                          size: 24.0,
+                                        ),
+                                        onPressed: () async {
+                                          _model.editarseccion1 = false;
+                                          safeSetState(() {});
+                                        },
+                                      ),
+                                    ),
+                                ]
+                                    .divide(SizedBox(height: 10.0))
+                                    .around(SizedBox(height: 10.0)),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+          ],
+        );
+      },
     );
   }
 }

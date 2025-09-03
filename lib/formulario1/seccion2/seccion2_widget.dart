@@ -9,6 +9,8 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'seccion2_model.dart';
 export 'seccion2_model.dart';
 
@@ -50,6 +52,8 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
 
     _model.textFieldFocusNode3 ??= FocusNode();
 
+    _model.textFieldMask3 = MaskTextInputFormatter(mask: '##########');
+
     _model.textFieldFocusNode4 ??= FocusNode();
 
     _model.textFieldFocusNode5 ??= FocusNode();
@@ -66,6 +70,8 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
 
     _model.textFieldFocusNode10 ??= FocusNode();
 
+    _model.textFieldMask10 = MaskTextInputFormatter(mask: '##########');
+
     _model.textFieldFocusNode11 ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -80,39 +86,38 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Align(
-          alignment: AlignmentDirectional(0.0, 0.0),
-          child: FutureBuilder<List<Seccion2Row>>(
-            future: Seccion2Table().querySingleRow(
-              queryFn: (q) => q.eqOrNull(
-                'idIngreso',
-                widget.rowingreso?.id,
+    return FutureBuilder<List<Seccion2Row>>(
+      future: Seccion2Table().querySingleRow(
+        queryFn: (q) => q.eqOrNull(
+          'idIngreso',
+          widget.rowingreso?.id,
+        ),
+      ),
+      builder: (context, snapshot) {
+        // Customize what your widget looks like when it's loading.
+        if (!snapshot.hasData) {
+          return Center(
+            child: SizedBox(
+              width: 50.0,
+              height: 50.0,
+              child: CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(
+                  FlutterFlowTheme.of(context).primary,
+                ),
               ),
             ),
-            builder: (context, snapshot) {
-              // Customize what your widget looks like when it's loading.
-              if (!snapshot.hasData) {
-                return Center(
-                  child: SizedBox(
-                    width: 50.0,
-                    height: 50.0,
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        FlutterFlowTheme.of(context).primary,
-                      ),
-                    ),
-                  ),
-                );
-              }
-              List<Seccion2Row> containerSeccion2RowList = snapshot.data!;
+          );
+        }
+        List<Seccion2Row> stackSeccion2RowList = snapshot.data!;
 
-              final containerSeccion2Row = containerSeccion2RowList.isNotEmpty
-                  ? containerSeccion2RowList.first
-                  : null;
+        final stackSeccion2Row =
+            stackSeccion2RowList.isNotEmpty ? stackSeccion2RowList.first : null;
 
-              return Material(
+        return Stack(
+          children: [
+            Align(
+              alignment: AlignmentDirectional(0.0, 0.0),
+              child: Material(
                 color: Colors.transparent,
                 elevation: 2.0,
                 shape: RoundedRectangleBorder(
@@ -259,7 +264,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                                       .dropDowncanaldeingresoValueController ??=
                                                   FormFieldController<String>(
                                                 _model.dropDowncanaldeingresoValue ??=
-                                                    containerSeccion2Row
+                                                    stackSeccion2Row
                                                         ?.institucionCanalIngreso,
                                               ),
                                               options: [
@@ -274,7 +279,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                                   () => _model
                                                           .dropDowncanaldeingresoValue =
                                                       val),
-                                              width: 300.0,
+                                              width: 391.4,
                                               height: 56.0,
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
@@ -295,7 +300,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                                     ),
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .tertiary,
+                                                        .primaryText,
                                                     letterSpacing: 0.0,
                                                     fontWeight:
                                                         FlutterFlowTheme.of(
@@ -374,7 +379,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                                 controller:
                                                     _model.textController1 ??=
                                                         TextEditingController(
-                                                  text: containerSeccion2Row
+                                                  text: stackSeccion2Row
                                                       ?.institucion,
                                                 ),
                                                 focusNode:
@@ -544,7 +549,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                                 controller:
                                                     _model.textController2 ??=
                                                         TextEditingController(
-                                                  text: containerSeccion2Row
+                                                  text: stackSeccion2Row
                                                       ?.direccionInst,
                                                 ),
                                                 focusNode:
@@ -714,7 +719,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                                 controller:
                                                     _model.textController3 ??=
                                                         TextEditingController(
-                                                  text: containerSeccion2Row
+                                                  text: stackSeccion2Row
                                                       ?.telefonoInst,
                                                 ),
                                                 focusNode:
@@ -882,7 +887,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                                 controller:
                                                     _model.textController4 ??=
                                                         TextEditingController(
-                                                  text: containerSeccion2Row
+                                                  text: stackSeccion2Row
                                                       ?.correoInst,
                                                 ),
                                                 focusNode:
@@ -1053,7 +1058,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                                 controller:
                                                     _model.textController5 ??=
                                                         TextEditingController(
-                                                  text: containerSeccion2Row
+                                                  text: stackSeccion2Row
                                                       ?.referente,
                                                 ),
                                                 focusNode:
@@ -1082,7 +1087,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .tertiary,
+                                                                .primaryText,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FlutterFlowTheme.of(
@@ -1198,7 +1203,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                                           ),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .tertiary,
+                                                              .primaryText,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FlutterFlowTheme.of(
@@ -1287,7 +1292,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                                 controller: _model
                                                         .textFieldsolicitanteTextController ??=
                                                     TextEditingController(
-                                                  text: containerSeccion2Row
+                                                  text: stackSeccion2Row
                                                       ?.idSolicitante,
                                                 ),
                                                 focusNode: _model
@@ -1455,8 +1460,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                                 controller:
                                                     _model.textController7 ??=
                                                         TextEditingController(
-                                                  text: containerSeccion2Row
-                                                      ?.edad
+                                                  text: stackSeccion2Row?.edad
                                                       ?.toString(),
                                                 ),
                                                 focusNode:
@@ -1621,8 +1625,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                                 controller:
                                                     _model.textController8 ??=
                                                         TextEditingController(
-                                                  text: containerSeccion2Row
-                                                      ?.dni
+                                                  text: stackSeccion2Row?.dni
                                                       ?.toString(),
                                                 ),
                                                 focusNode:
@@ -1787,8 +1790,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                         child: TextFormField(
                                           controller: _model.textController9 ??=
                                               TextEditingController(
-                                            text:
-                                                containerSeccion2Row?.direccion,
+                                            text: stackSeccion2Row?.direccion,
                                           ),
                                           focusNode: _model.textFieldFocusNode8,
                                           autofocus: true,
@@ -1930,8 +1932,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                           controller:
                                               _model.textController10 ??=
                                                   TextEditingController(
-                                            text: containerSeccion2Row
-                                                ?.referencias,
+                                            text: stackSeccion2Row?.referencias,
                                           ),
                                           focusNode: _model.textFieldFocusNode9,
                                           autofocus: true,
@@ -2076,8 +2077,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                           controller:
                                               _model.textController11 ??=
                                                   TextEditingController(
-                                            text:
-                                                containerSeccion2Row?.telefono,
+                                            text: stackSeccion2Row?.telefono,
                                           ),
                                           focusNode:
                                               _model.textFieldFocusNode10,
@@ -2228,8 +2228,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                                       .dropDownValueController ??=
                                                   FormFieldController<String>(
                                                 _model.dropDownValue ??=
-                                                    containerSeccion2Row
-                                                        ?.vinculo,
+                                                    stackSeccion2Row?.vinculo,
                                               ),
                                               options: [
                                                 'Madre',
@@ -2310,7 +2309,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                                   controller: _model
                                                           .textController12 ??=
                                                       TextEditingController(
-                                                    text: containerSeccion2Row
+                                                    text: stackSeccion2Row
                                                         ?.vinculoObs,
                                                   ),
                                                   focusNode: _model
@@ -2510,7 +2509,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                                           ),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .error,
+                                                              .primaryText,
                                                           fontSize: 20.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -2538,8 +2537,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                                         .radioButtonresidenValueController ??=
                                                     FormFieldController<String>(
                                                         valueOrDefault<String>(
-                                                  containerSeccion2Row
-                                                      ?.reservaId,
+                                                  stackSeccion2Row?.reservaId,
                                                   'No',
                                                 )),
                                                 optionHeight: 40.0,
@@ -2713,19 +2711,21 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                                     context: context,
                                                     builder:
                                                         (alertDialogContext) {
-                                                      return AlertDialog(
-                                                        title: Text(
-                                                            'Carga correcta'),
-                                                        content: Text(
-                                                            'La informacion se guardo correctamente!!'),
-                                                        actions: [
-                                                          TextButton(
-                                                            onPressed: () =>
-                                                                Navigator.pop(
-                                                                    alertDialogContext),
-                                                            child: Text('Ok'),
-                                                          ),
-                                                        ],
+                                                      return WebViewAware(
+                                                        child: AlertDialog(
+                                                          title: Text(
+                                                              'Carga correcta'),
+                                                          content: Text(
+                                                              'La informacion se guardo correctamente!!'),
+                                                          actions: [
+                                                            TextButton(
+                                                              onPressed: () =>
+                                                                  Navigator.pop(
+                                                                      alertDialogContext),
+                                                              child: Text('Ok'),
+                                                            ),
+                                                          ],
+                                                        ),
                                                       );
                                                     },
                                                   );
@@ -2770,7 +2770,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                                           _model
                                                               .dropDowncanaldeingresoValue,
                                                       'referente':
-                                                          containerSeccion2Row
+                                                          stackSeccion2Row
                                                               ?.referente,
                                                       'resevaindentidad': _model
                                                           .radioButtonresidenValue,
@@ -2798,19 +2798,21 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                                     context: context,
                                                     builder:
                                                         (alertDialogContext) {
-                                                      return AlertDialog(
-                                                        title: Text(
-                                                            'Carga correcta'),
-                                                        content: Text(
-                                                            'La informacion se guardo correctamente!!'),
-                                                        actions: [
-                                                          TextButton(
-                                                            onPressed: () =>
-                                                                Navigator.pop(
-                                                                    alertDialogContext),
-                                                            child: Text('Ok'),
-                                                          ),
-                                                        ],
+                                                      return WebViewAware(
+                                                        child: AlertDialog(
+                                                          title: Text(
+                                                              'Carga correcta'),
+                                                          content: Text(
+                                                              'La informacion se guardo correctamente!!'),
+                                                          actions: [
+                                                            TextButton(
+                                                              onPressed: () =>
+                                                                  Navigator.pop(
+                                                                      alertDialogContext),
+                                                              child: Text('Ok'),
+                                                            ),
+                                                          ],
+                                                        ),
                                                       );
                                                     },
                                                   );
@@ -2892,84 +2894,86 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                     ),
                   ),
                 ),
-              );
-            },
-          ),
-        ),
-        if (_model.editarseccion2)
-          Container(
-            width: MediaQuery.sizeOf(context).width * 1.0,
-            height: MediaQuery.sizeOf(context).height * 1.0,
-            decoration: BoxDecoration(
-              color: Color(0x3BE0E3E7),
-            ),
-            child: Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Align(
-                    alignment: AlignmentDirectional(1.0, -1.0),
-                    child: Material(
-                      color: Colors.transparent,
-                      elevation: 5.0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      child: Container(
-                        width: 80.0,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: FlutterFlowIconButton(
-                                borderRadius: 8.0,
-                                buttonSize: 40.0,
-                                icon: Icon(
-                                  Icons.cancel_outlined,
-                                  color: FlutterFlowTheme.of(context).error,
-                                  size: 24.0,
-                                ),
-                                onPressed: () async {
-                                  Navigator.pop(context);
-                                },
-                              ),
-                            ),
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: FlutterFlowIconButton(
-                                borderRadius: 8.0,
-                                buttonSize: 40.0,
-                                fillColor: FlutterFlowTheme.of(context).primary,
-                                icon: Icon(
-                                  Icons.edit_rounded,
-                                  color: FlutterFlowTheme.of(context).info,
-                                  size: 24.0,
-                                ),
-                                onPressed: () async {
-                                  _model.editarseccion2 = false;
-                                  safeSetState(() {});
-                                },
-                              ),
-                            ),
-                          ]
-                              .divide(SizedBox(height: 10.0))
-                              .around(SizedBox(height: 10.0)),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
               ),
             ),
-          ),
-      ],
+            if ((_model.editarseccion2 == true) &&
+                (stackSeccion2Row?.idSec2 != null))
+              Container(
+                width: MediaQuery.sizeOf(context).width * 1.0,
+                height: MediaQuery.sizeOf(context).height * 1.0,
+                decoration: BoxDecoration(
+                  color: Color(0x3BE0E3E7),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.all(15.0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Align(
+                        alignment: AlignmentDirectional(1.0, -1.0),
+                        child: Material(
+                          color: Colors.transparent,
+                          elevation: 5.0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          child: Container(
+                            width: 80.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: FlutterFlowIconButton(
+                                    borderRadius: 8.0,
+                                    buttonSize: 40.0,
+                                    icon: Icon(
+                                      Icons.cancel_outlined,
+                                      color: FlutterFlowTheme.of(context).error,
+                                      size: 24.0,
+                                    ),
+                                    onPressed: () async {
+                                      Navigator.pop(context);
+                                    },
+                                  ),
+                                ),
+                                Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: FlutterFlowIconButton(
+                                    borderRadius: 8.0,
+                                    buttonSize: 40.0,
+                                    fillColor:
+                                        FlutterFlowTheme.of(context).primary,
+                                    icon: Icon(
+                                      Icons.edit_rounded,
+                                      color: FlutterFlowTheme.of(context).info,
+                                      size: 24.0,
+                                    ),
+                                    onPressed: () async {
+                                      _model.editarseccion2 = false;
+                                      safeSetState(() {});
+                                    },
+                                  ),
+                                ),
+                              ]
+                                  .divide(SizedBox(height: 10.0))
+                                  .around(SizedBox(height: 10.0)),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+          ],
+        );
+      },
     );
   }
 }

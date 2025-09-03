@@ -69,4 +69,7 @@ class Anexo4RequerimientoaccionesRow extends SupabaseDataRow {
 
   String? get formulario => getField<String>('formulario');
   set formulario(String? value) => setField<String>('formulario', value);
+
+  String? get linkadjunto => getField<String>('linkadjunto');
+  set linkadjunto(String? value) => setField<String>('linkadjunto', value);
 }

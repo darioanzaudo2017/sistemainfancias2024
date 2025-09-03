@@ -4,8 +4,10 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'asesoramiento_anexo_a_model.dart';
 export 'asesoramiento_anexo_a_model.dart';
 
@@ -16,12 +18,18 @@ class AsesoramientoAnexoAWidget extends StatefulWidget {
     this.rowexpediente,
     bool? edit,
     this.rowseccion9,
+    this.usuariorow,
+    this.spd,
+    this.usuariorol,
   }) : this.edit = edit ?? false;
 
   final IngresosRow? rowingreso;
   final VistaExpedientesUltimoEstadoRow? rowexpediente;
   final bool edit;
   final Seccion9Row? rowseccion9;
+  final UsuariosRow? usuariorow;
+  final SpdRow? spd;
+  final VistaUsuariosRolesRow? usuariorol;
 
   @override
   State<AsesoramientoAnexoAWidget> createState() =>
@@ -1178,28 +1186,60 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                                         carpeta: widget.rowingreso?.idcarpeta,
                                       );
 
+                                      await AnexoAForm1Table().update(
+                                        data: {
+                                          'linkdoc':
+                                              AnexoformasesoramientoCall.url(
+                                            (_model.apiResulto6s?.jsonBody ??
+                                                ''),
+                                          ),
+                                        },
+                                        matchingRows: (rows) => rows.eqOrNull(
+                                          'id',
+                                          _model.anexoupdate?.firstOrNull?.id,
+                                        ),
+                                      );
+                                      await Seccion9Table().update(
+                                        data: {
+                                          'Link_asesoramiento':
+                                              AnexoformasesoramientoCall.url(
+                                            (_model.apiResulto6s?.jsonBody ??
+                                                ''),
+                                          ),
+                                        },
+                                        matchingRows: (rows) => rows.eqOrNull(
+                                          'idSec9',
+                                          widget.rowseccion9?.idSec9,
+                                        ),
+                                      );
                                       if ((_model.apiResulto6s?.succeeded ??
                                           true)) {
                                         await Future.delayed(
-                                            const Duration(milliseconds: 2000));
+                                          Duration(
+                                            milliseconds: 2000,
+                                          ),
+                                        );
                                         await showDialog(
                                           context: context,
                                           builder: (alertDialogContext) {
-                                            return AlertDialog(
-                                              title: Text('Carga correcta'),
-                                              content: Text(
-                                                  'La informacion se guardo correctamente y se genero un archivo el google drive!'),
-                                              actions: [
-                                                TextButton(
-                                                  onPressed: () =>
-                                                      Navigator.pop(
-                                                          alertDialogContext),
-                                                  child: Text('Ok'),
-                                                ),
-                                              ],
+                                            return WebViewAware(
+                                              child: AlertDialog(
+                                                title: Text('Carga correcta'),
+                                                content: Text(
+                                                    'La informacion se guardo correctamente y se genero un archivo el google drive!'),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext),
+                                                    child: Text('Ok'),
+                                                  ),
+                                                ],
+                                              ),
                                             );
                                           },
                                         );
+                                        Navigator.pop(context, true);
                                       }
                                     } else {
                                       _model.anexoasesoramiento =
@@ -1232,7 +1272,7 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                                           widget.rowseccion9?.idSec9,
                                         ),
                                       );
-                                      _model.apiResulto6scopy =
+                                      _model.apiResulto6sinsert =
                                           await AnexoformasesoramientoCall.call(
                                         idingreso: widget.rowingreso?.id,
                                         expediente:
@@ -1253,27 +1293,96 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                                         carpeta: widget.rowingreso?.idcarpeta,
                                       );
 
-                                      if ((_model.apiResulto6scopy?.succeeded ??
+                                      await AnexoAForm1Table().update(
+                                        data: {
+                                          'linkdoc':
+                                              AnexoformasesoramientoCall.url(
+                                            (_model.apiResulto6sinsert
+                                                    ?.jsonBody ??
+                                                ''),
+                                          ),
+                                        },
+                                        matchingRows: (rows) => rows.eqOrNull(
+                                          'id',
+                                          _model.anexoasesoramiento?.id,
+                                        ),
+                                      );
+                                      await Seccion9Table().update(
+                                        data: {
+                                          'Link_asesoramiento': _model
+                                              .actualizaranexo
+                                              ?.firstOrNull
+                                              ?.linkdoc,
+                                        },
+                                        matchingRows: (rows) => rows.eqOrNull(
+                                          'idSec9',
+                                          _model.anexoasesoramiento?.id,
+                                        ),
+                                      );
+                                      await IngresosTable().update(
+                                        data: {
+                                          'form9': true,
+                                          'form9completo': true,
+                                          'Estado': 'Cerrado',
+                                        },
+                                        matchingRows: (rows) => rows.eqOrNull(
+                                          'id',
+                                          widget.rowingreso?.id,
+                                        ),
+                                      );
+                                      if ((_model
+                                              .apiResulto6sinsert?.succeeded ??
                                           true)) {
                                         await Future.delayed(
-                                            const Duration(milliseconds: 2000));
+                                          Duration(
+                                            milliseconds: 2000,
+                                          ),
+                                        );
                                         await showDialog(
                                           context: context,
                                           builder: (alertDialogContext) {
-                                            return AlertDialog(
-                                              title: Text('Carga correcta'),
-                                              content: Text(
-                                                  'La informacion se guardo correctamente y se genero un archivo el google drive!'),
-                                              actions: [
-                                                TextButton(
-                                                  onPressed: () =>
-                                                      Navigator.pop(
-                                                          alertDialogContext),
-                                                  child: Text('Ok'),
-                                                ),
-                                              ],
+                                            return WebViewAware(
+                                              child: AlertDialog(
+                                                title: Text('Carga correcta'),
+                                                content: Text(
+                                                    'La informacion se guardo correctamente y se genero un archivo el google drive!'),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext),
+                                                    child: Text('Ok'),
+                                                  ),
+                                                ],
+                                              ),
                                             );
                                           },
+                                        );
+
+                                        context.pushNamed(
+                                          IngresosWidget.routeName,
+                                          queryParameters: {
+                                            'idexpediente': serializeParam(
+                                              widget.rowexpediente,
+                                              ParamType.SupabaseRow,
+                                            ),
+                                            'idexp': serializeParam(
+                                              widget.rowexpediente?.id,
+                                              ParamType.int,
+                                            ),
+                                            'usuariorow': serializeParam(
+                                              widget.usuariorow,
+                                              ParamType.SupabaseRow,
+                                            ),
+                                            'spd': serializeParam(
+                                              widget.spd,
+                                              ParamType.SupabaseRow,
+                                            ),
+                                            'usuariorol': serializeParam(
+                                              widget.usuariorol,
+                                              ParamType.SupabaseRow,
+                                            ),
+                                          }.withoutNulls,
                                         );
                                       }
                                     }

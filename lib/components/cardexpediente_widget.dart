@@ -291,7 +291,6 @@ class _CardexpedienteWidgetState extends State<CardexpedienteWidget> {
                   text: 'Ver Expediente',
                   icon: Icon(
                     Icons.visibility,
-                    color: FlutterFlowTheme.of(context).info,
                     size: 15.0,
                   ),
                   options: FFButtonOptions(
@@ -300,6 +299,7 @@ class _CardexpedienteWidgetState extends State<CardexpedienteWidget> {
                     padding: EdgeInsets.all(8.0),
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    iconColor: FlutterFlowTheme.of(context).info,
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                           font: GoogleFonts.notoSansJp(

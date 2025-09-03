@@ -58,4 +58,7 @@ class AnexoinstitucioneeducacionRow extends SupabaseDataRow {
 
   int? get idgrupofamiliar => getField<int>('idgrupofamiliar');
   set idgrupofamiliar(int? value) => setField<int>('idgrupofamiliar', value);
+
+  String? get cpc => getField<String>('cpc');
+  set cpc(String? value) => setField<String>('cpc', value);
 }

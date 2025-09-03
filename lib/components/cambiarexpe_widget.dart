@@ -1,3 +1,5 @@
+import '/auth/supabase_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -7,6 +9,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'cambiarexpe_model.dart';
 export 'cambiarexpe_model.dart';
 
@@ -15,10 +18,12 @@ class CambiarexpeWidget extends StatefulWidget {
     super.key,
     this.expe,
     this.ingreso,
+    required this.usuariorol,
   });
 
   final VistaExpedientesUltimoEstadoRow? expe;
   final IngresosRow? ingreso;
+  final VistaUsuariosRolesRow? usuariorol;
 
   @override
   State<CambiarexpeWidget> createState() => _CambiarexpeWidgetState();
@@ -176,23 +181,25 @@ class _CambiarexpeWidgetState extends State<CambiarexpeWidget> {
                   var confirmDialogResponse = await showDialog<bool>(
                         context: context,
                         builder: (alertDialogContext) {
-                          return AlertDialog(
-                            title: Text(
-                                'Estas a punto de cambiar de SPD el expediente'),
-                            content: Text(
-                                'Estas a punto de cambiar de SPD el expediente. Deseas continuar?'),
-                            actions: [
-                              TextButton(
-                                onPressed: () =>
-                                    Navigator.pop(alertDialogContext, false),
-                                child: Text('Cancelar'),
-                              ),
-                              TextButton(
-                                onPressed: () =>
-                                    Navigator.pop(alertDialogContext, true),
-                                child: Text('Confirmar'),
-                              ),
-                            ],
+                          return WebViewAware(
+                            child: AlertDialog(
+                              title: Text(
+                                  'Estas a punto de cambiar de SPD el expediente'),
+                              content: Text(
+                                  'Estas a punto de cambiar de SPD el expediente. Deseas continuar?'),
+                              actions: [
+                                TextButton(
+                                  onPressed: () =>
+                                      Navigator.pop(alertDialogContext, false),
+                                  child: Text('Cancelar'),
+                                ),
+                                TextButton(
+                                  onPressed: () =>
+                                      Navigator.pop(alertDialogContext, true),
+                                  child: Text('Confirmar'),
+                                ),
+                              ],
+                            ),
                           );
                         },
                       ) ??
@@ -200,32 +207,51 @@ class _CambiarexpeWidgetState extends State<CambiarexpeWidget> {
                   if (confirmDialogResponse) {
                     await ExpedienteTable().update(
                       data: {
-                        'spd': _model.dropDownValue,
+                        'expediente':
+                            '${_model.dropDownValue}/${widget.expe?.id?.toString()}/${dateTimeFormat(
+                          "M",
+                          getCurrentTimestamp,
+                          locale: FFLocalizations.of(context).languageCode,
+                        )}/${dateTimeFormat(
+                          "y",
+                          getCurrentTimestamp,
+                          locale: FFLocalizations.of(context).languageCode,
+                        )}',
                       },
                       matchingRows: (rows) => rows.eqOrNull(
                         'id',
                         widget.expe?.id,
                       ),
                     );
+                    await CambiospdCall.call(
+                      idexp: widget.expe?.id,
+                      spd: _model.dropDownValue,
+                      token: currentJwtToken,
+                    );
+
                     await showDialog(
                       context: context,
                       builder: (alertDialogContext) {
-                        return AlertDialog(
-                          title: Text('Se cambio el expediente'),
-                          content:
-                              Text('El expediente se cambio correctamente!'),
-                          actions: [
-                            TextButton(
-                              onPressed: () =>
-                                  Navigator.pop(alertDialogContext),
-                              child: Text('Ok'),
-                            ),
-                          ],
+                        return WebViewAware(
+                          child: AlertDialog(
+                            title: Text('Se cambio el expediente'),
+                            content:
+                                Text('El expediente se cambio correctamente!'),
+                            actions: [
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(alertDialogContext),
+                                child: Text('Ok'),
+                              ),
+                            ],
+                          ),
                         );
                       },
                     );
                     Navigator.pop(context);
                   }
+
+                  safeSetState(() {});
                 },
                 text: 'Cambiar Expediente',
                 options: FFButtonOptions(

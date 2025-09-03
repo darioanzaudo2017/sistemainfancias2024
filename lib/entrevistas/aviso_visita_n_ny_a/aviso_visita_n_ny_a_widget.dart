@@ -6,17 +6,20 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'aviso_visita_model.dart';
-export 'aviso_visita_model.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
+import 'aviso_visita_n_ny_a_model.dart';
+export 'aviso_visita_n_ny_a_model.dart';
 
-class AvisoVisitaWidget extends StatefulWidget {
-  const AvisoVisitaWidget({
+class AvisoVisitaNNyAWidget extends StatefulWidget {
+  const AvisoVisitaNNyAWidget({
     super.key,
     required this.rowingreso,
     required this.rowexp,
     this.editar,
     this.idampliacion,
     this.idconvocatoriaNNyA,
+    required this.spdrow,
   });
 
   final IngresosRow? rowingreso;
@@ -24,13 +27,14 @@ class AvisoVisitaWidget extends StatefulWidget {
   final bool? editar;
   final int? idampliacion;
   final int? idconvocatoriaNNyA;
+  final SpdRow? spdrow;
 
   @override
-  State<AvisoVisitaWidget> createState() => _AvisoVisitaWidgetState();
+  State<AvisoVisitaNNyAWidget> createState() => _AvisoVisitaNNyAWidgetState();
 }
 
-class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
-  late AvisoVisitaModel _model;
+class _AvisoVisitaNNyAWidgetState extends State<AvisoVisitaNNyAWidget> {
+  late AvisoVisitaNNyAModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -41,14 +45,27 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => AvisoVisitaModel());
+    _model = createModel(context, () => AvisoVisitaNNyAModel());
 
-    _model.textFieldmotivoTextController ??= TextEditingController();
-    _model.textFieldmotivoFocusNode ??= FocusNode();
+    _model.textFieldmotivoTextController1 ??=
+        TextEditingController(text: widget.rowexp?.nombre);
+    _model.textFieldmotivoFocusNode1 ??= FocusNode();
+
+    _model.textFieldmotivoTextController2 ??=
+        TextEditingController(text: widget.rowexp?.apellido);
+    _model.textFieldmotivoFocusNode2 ??= FocusNode();
+
+    _model.textFieldmotivoTextController3 ??=
+        TextEditingController(text: widget.rowexp?.DNI?.toString());
+    _model.textFieldmotivoFocusNode3 ??= FocusNode();
+
+    _model.textFieldmotivoTextController4 ??= TextEditingController();
+    _model.textFieldmotivoFocusNode4 ??= FocusNode();
 
     _model.textFieldresenaTextController ??= TextEditingController();
     _model.textFieldresenaFocusNode ??= FocusNode();
 
+    _model.textFieldresenaMask = MaskTextInputFormatter(mask: '##:## hs');
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -101,7 +118,7 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
             ),
             child: Container(
               width: MediaQuery.sizeOf(context).width * 5.0,
-              height: 500.0,
+              height: 735.02,
               constraints: BoxConstraints(
                 maxWidth: 600.0,
               ),
@@ -179,12 +196,324 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: TextFormField(
-                            controller: _model.textFieldmotivoTextController,
-                            focusNode: _model.textFieldmotivoFocusNode,
+                            controller: _model.textFieldmotivoTextController1,
+                            focusNode: _model.textFieldmotivoFocusNode1,
                             autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelText: 'Domicilio',
+                              labelText: 'Nombres',
+                              labelStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    font: GoogleFonts.notoSansJp(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
+                                  ),
+                              alignLabelWithHint: true,
+                              hintText: 'Nombres',
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    font: GoogleFonts.notoSansJp(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
+                                  ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).alternate,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              errorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).error,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              focusedErrorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).error,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  font: GoogleFonts.notoSansJp(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
+                                  letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
+                                ),
+                            maxLines: 2,
+                            validator: _model
+                                .textFieldmotivoTextController1Validator
+                                .asValidator(context),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              8.0, 0.0, 8.0, 0.0),
+                          child: TextFormField(
+                            controller: _model.textFieldmotivoTextController2,
+                            focusNode: _model.textFieldmotivoFocusNode2,
+                            autofocus: true,
+                            obscureText: false,
+                            decoration: InputDecoration(
+                              labelText: 'Apellidos',
+                              labelStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    font: GoogleFonts.notoSansJp(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
+                                  ),
+                              alignLabelWithHint: true,
+                              hintText: 'Apellidos',
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    font: GoogleFonts.notoSansJp(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
+                                  ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).alternate,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              errorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).error,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              focusedErrorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).error,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  font: GoogleFonts.notoSansJp(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
+                                  letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
+                                ),
+                            maxLines: 2,
+                            validator: _model
+                                .textFieldmotivoTextController2Validator
+                                .asValidator(context),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              8.0, 0.0, 8.0, 0.0),
+                          child: TextFormField(
+                            controller: _model.textFieldmotivoTextController3,
+                            focusNode: _model.textFieldmotivoFocusNode3,
+                            autofocus: true,
+                            obscureText: false,
+                            decoration: InputDecoration(
+                              labelText: 'DNI',
+                              labelStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    font: GoogleFonts.notoSansJp(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
+                                  ),
+                              alignLabelWithHint: true,
+                              hintText: 'DNI',
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    font: GoogleFonts.notoSansJp(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
+                                  ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).alternate,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              errorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).error,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              focusedErrorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).error,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  font: GoogleFonts.notoSansJp(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
+                                  letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
+                                ),
+                            maxLines: 2,
+                            validator: _model
+                                .textFieldmotivoTextController3Validator
+                                .asValidator(context),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              8.0, 0.0, 8.0, 0.0),
+                          child: TextFormField(
+                            controller: _model.textFieldmotivoTextController4,
+                            focusNode: _model.textFieldmotivoFocusNode4,
+                            autofocus: true,
+                            obscureText: false,
+                            decoration: InputDecoration(
+                              labelText: 'Domicilio del NNyA',
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
@@ -275,7 +604,7 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                                 ),
                             maxLines: 2,
                             validator: _model
-                                .textFieldmotivoTextControllerValidator
+                                .textFieldmotivoTextController4Validator
                                 .asValidator(context),
                           ),
                         ),
@@ -423,7 +752,7 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                                 final _datePicked1Date = await showDatePicker(
                                   context: context,
                                   initialDate: getCurrentTimestamp,
-                                  firstDate: getCurrentTimestamp,
+                                  firstDate: DateTime(1900),
                                   lastDate: DateTime(2050),
                                   builder: (context, child) {
                                     return wrapInMaterialDatePickerTheme(
@@ -686,16 +1015,19 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {
-                                      return AlertDialog(
-                                        title: Text('Campo obligatorio'),
-                                        content: Text('La fecha obligatoria!'),
-                                        actions: [
-                                          TextButton(
-                                            onPressed: () => Navigator.pop(
-                                                alertDialogContext),
-                                            child: Text('Ok'),
-                                          ),
-                                        ],
+                                      return WebViewAware(
+                                        child: AlertDialog(
+                                          title: Text('Campo obligatorio'),
+                                          content:
+                                              Text('La fecha obligatoria!'),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: Text('Ok'),
+                                            ),
+                                          ],
+                                        ),
                                       );
                                     },
                                   );
@@ -705,62 +1037,38 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {
-                                      return AlertDialog(
-                                        title: Text('Campo obligatorio'),
-                                        content: Text('La fecha obligatoria!'),
-                                        actions: [
-                                          TextButton(
-                                            onPressed: () => Navigator.pop(
-                                                alertDialogContext),
-                                            child: Text('Ok'),
-                                          ),
-                                        ],
+                                      return WebViewAware(
+                                        child: AlertDialog(
+                                          title: Text('Campo obligatorio'),
+                                          content:
+                                              Text('La fecha obligatoria!'),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: Text('Ok'),
+                                            ),
+                                          ],
+                                        ),
                                       );
                                     },
                                   );
                                   return;
                                 }
-                                await AmpliaciondeinformacionTable().update(
-                                  data: {
-                                    'fechadoc': supaSerialize<DateTime>(
-                                        _model.datePicked1),
-                                    'fecha': supaSerialize<DateTime>(
-                                        _model.datePicked2),
-                                  },
-                                  matchingRows: (rows) => rows.eqOrNull(
-                                    'idampliacion',
-                                    widget.idampliacion,
-                                  ),
-                                );
-                                await showDialog(
-                                  context: context,
-                                  builder: (alertDialogContext) {
-                                    return AlertDialog(
-                                      title: Text('Carga correcta'),
-                                      content: Text(
-                                          'La informacion se guardo correctamente!!'),
-                                      actions: [
-                                        TextButton(
-                                          onPressed: () =>
-                                              Navigator.pop(alertDialogContext),
-                                          child: Text('Ok'),
-                                        ),
-                                      ],
-                                    );
-                                  },
-                                );
-                                _model.apiResulth1aedit =
-                                    await AvisoVisitaNNyACall.call(
+                                _model.apiResulth1aavisoentreNNyA =
+                                    await AvisoConvocatoriaAlNNyACall.call(
                                   fechadoc: dateTimeFormat(
                                     "d/M/y",
                                     _model.datePicked1,
                                     locale: FFLocalizations.of(context)
                                         .languageCode,
                                   ),
-                                  nombre: widget.rowexp?.nombres,
-                                  apellido: widget.rowexp?.apellidos,
-                                  domicilio:
-                                      containerAvisovisitaNNyARow?.domicilio,
+                                  nombre: _model
+                                      .textFieldmotivoTextController1.text,
+                                  apellido: _model
+                                      .textFieldmotivoTextController2.text,
+                                  domicilio: _model
+                                      .textFieldmotivoTextController4.text,
                                   fecha: dateTimeFormat(
                                     "d/M/y",
                                     _model.datePicked2,
@@ -771,12 +1079,49 @@ class _AvisoVisitaWidgetState extends State<AvisoVisitaWidget> {
                                   hora:
                                       _model.textFieldresenaTextController.text,
                                   idingreso: widget.rowingreso?.id,
-                                  carpeta: widget.rowingreso?.idcarpeta,
+                                  direccionCPC: widget.spdrow?.direccion,
                                   idampliacion:
                                       widget.idampliacion?.toString(),
+                                  telefonoCPC: widget.spdrow?.telefono,
                                 );
 
-                                Navigator.pop(context, true);
+                                await AmpliaciondeinformacionTable().update(
+                                  data: {
+                                    'fechadoc': supaSerialize<DateTime>(
+                                        _model.datePicked1),
+                                    'fecha': supaSerialize<DateTime>(
+                                        _model.datePicked2),
+                                    'linkconcurrenciaNNyA':
+                                        AvisoConvocatoriaAlNNyACall.url(
+                                      (_model.apiResulth1aavisoentreNNyA
+                                              ?.jsonBody ??
+                                          ''),
+                                    ),
+                                  },
+                                  matchingRows: (rows) => rows.eqOrNull(
+                                    'idampliacion',
+                                    widget.idampliacion,
+                                  ),
+                                );
+                                await showDialog(
+                                  context: context,
+                                  builder: (alertDialogContext) {
+                                    return WebViewAware(
+                                      child: AlertDialog(
+                                        title: Text('Carga correcta'),
+                                        content: Text(
+                                            'La informacion se guardo correctamente!!'),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: Text('Ok'),
+                                          ),
+                                        ],
+                                      ),
+                                    );
+                                  },
+                                );
 
                                 safeSetState(() {});
                               },

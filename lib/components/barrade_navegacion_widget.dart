@@ -6,6 +6,7 @@ import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'barrade_navegacion_model.dart';
 export 'barrade_navegacion_model.dart';
 
@@ -341,11 +342,13 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                     enableDrag: false,
                     context: context,
                     builder: (context) {
-                      return Padding(
-                        padding: MediaQuery.viewInsetsOf(context),
-                        child: AdjuntardocumentoWidget(
-                          exprow: widget.exprow,
-                          ingrow: widget.ingresorow,
+                      return WebViewAware(
+                        child: Padding(
+                          padding: MediaQuery.viewInsetsOf(context),
+                          child: AdjuntardocumentoWidget(
+                            exprow: widget.exprow,
+                            ingrow: widget.ingresorow,
+                          ),
                         ),
                       );
                     },
@@ -402,194 +405,6 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                     ),
                   ),
                 ),
-              ),
-            ),
-          if (widget.imprimir ?? true)
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-              child: InkWell(
-                splashColor: Colors.transparent,
-                focusColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                onTap: () async {
-                  context.pushNamed(
-                    ImprimirWidget.routeName,
-                    queryParameters: {
-                      'idexpediente': serializeParam(
-                        widget.idexp,
-                        ParamType.int,
-                      ),
-                      'idigreso': serializeParam(
-                        widget.idingreso,
-                        ParamType.int,
-                      ),
-                      'exp': serializeParam(
-                        widget.expediente,
-                        ParamType.String,
-                      ),
-                      'fechaexp': serializeParam(
-                        widget.fechaExp,
-                        ParamType.DateTime,
-                      ),
-                      'exprow': serializeParam(
-                        widget.exprow,
-                        ParamType.SupabaseRow,
-                      ),
-                    }.withoutNulls,
-                  );
-                },
-                child: AnimatedContainer(
-                  duration: Duration(milliseconds: 200),
-                  curve: Curves.easeInOut,
-                  width: double.infinity,
-                  height: 44.0,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).accent1,
-                    borderRadius: BorderRadius.circular(12.0),
-                    shape: BoxShape.rectangle,
-                  ),
-                  child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.print_sharp,
-                          color: Color(0xFF15161E),
-                          size: 24.0,
-                        ),
-                        Expanded(
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                12.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              'Imprimir expediente',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.plusJakartaSans(
-                                      fontWeight: FontWeight.w500,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    color: Color(0xFF15161E),
-                                    fontSize: 14.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          if (widget.carpeta ?? true)
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-              child: FutureBuilder<List<ImpresionesExpedientesRow>>(
-                future: ImpresionesExpedientesTable().querySingleRow(
-                  queryFn: (q) => q.eqOrNull(
-                    'idexpediente',
-                    widget.exprow?.id,
-                  ),
-                ),
-                builder: (context, snapshot) {
-                  // Customize what your widget looks like when it's loading.
-                  if (!snapshot.hasData) {
-                    return Center(
-                      child: SizedBox(
-                        width: 50.0,
-                        height: 50.0,
-                        child: CircularProgressIndicator(
-                          valueColor: AlwaysStoppedAnimation<Color>(
-                            FlutterFlowTheme.of(context).primary,
-                          ),
-                        ),
-                      ),
-                    );
-                  }
-                  List<ImpresionesExpedientesRow>
-                      contentView1ImpresionesExpedientesRowList =
-                      snapshot.data!;
-
-                  final contentView1ImpresionesExpedientesRow =
-                      contentView1ImpresionesExpedientesRowList.isNotEmpty
-                          ? contentView1ImpresionesExpedientesRowList.first
-                          : null;
-
-                  return InkWell(
-                    splashColor: Colors.transparent,
-                    focusColor: Colors.transparent,
-                    hoverColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    onTap: () async {
-                      await launchURL(
-                          contentView1ImpresionesExpedientesRow!.linkcarpeta!);
-                    },
-                    child: AnimatedContainer(
-                      duration: Duration(milliseconds: 200),
-                      curve: Curves.easeInOut,
-                      width: double.infinity,
-                      height: 44.0,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).accent1,
-                        borderRadius: BorderRadius.circular(12.0),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            FaIcon(
-                              FontAwesomeIcons.googleDrive,
-                              color: Color(0xFF15161E),
-                              size: 24.0,
-                            ),
-                            Expanded(
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 0.0, 0.0),
-                                child: Text(
-                                  'Carpeta drive',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.plusJakartaSans(
-                                          fontWeight: FontWeight.w500,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        color: Color(0xFF15161E),
-                                        fontSize: 14.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w500,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  );
-                },
               ),
             ),
         ].divide(SizedBox(height: 10.0)),

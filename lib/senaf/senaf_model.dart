@@ -94,6 +94,8 @@ class SenafModel extends FlutterFlowModel<SenafWidget> {
   List<Formulario6Row>? medidas;
   // Stores action output result for [Backend Call - API (crearwordsolicitud)] action in Button widget.
   ApiCallResponse? apiResultznwinfsenaf1Copy;
+  // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
+  List<Formulario9Row>? linksolici;
   // Stores action output result for [Bottom Sheet - Comentariosolicitudsenaf] action in Button widget.
   bool? comentarioCopy5;
   // Stores action output result for [Bottom Sheet - Comentariosolicitudsenaf] action in Button widget.
@@ -104,14 +106,8 @@ class SenafModel extends FlutterFlowModel<SenafWidget> {
   bool? comentarioCopy2;
   // Stores action output result for [Bottom Sheet - Comentariosolicitudsenaf] action in Button widget.
   bool? comentario;
-  // Stores action output result for [Bottom Sheet - adjuntardocumento] action in Button widget.
-  bool? adjunto;
-  Completer<List<DocumentosadjuntosRow>>? requestCompleter5;
-  // State field(s) for Checkbox widget.
-  Map<DocumentosadjuntosRow, bool> checkboxValueMap = {};
-  List<DocumentosadjuntosRow> get checkboxCheckedItems =>
-      checkboxValueMap.entries.where((e) => e.value).map((e) => e.key).toList();
-
+  // Stores action output result for [Bottom Sheet - adjuntasolicitudsenaffirmada] action in Button widget.
+  bool? solicitudfirmada;
   DateTime? datePicked6;
   // State field(s) for DropDown widget.
   String? dropDownValue;
@@ -198,21 +194,6 @@ class SenafModel extends FlutterFlowModel<SenafWidget> {
       await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
       final requestComplete = requestCompleter2?.isCompleted ?? false;
-      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
-        break;
-      }
-    }
-  }
-
-  Future waitForRequestCompleted5({
-    double minWait = 0,
-    double maxWait = double.infinity,
-  }) async {
-    final stopwatch = Stopwatch()..start();
-    while (true) {
-      await Future.delayed(Duration(milliseconds: 50));
-      final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = requestCompleter5?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
         break;
       }

@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'seccion5_model.dart';
 export 'seccion5_model.dart';
 
@@ -55,39 +56,38 @@ class _Seccion5WidgetState extends State<Seccion5Widget> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Align(
-          alignment: AlignmentDirectional(0.0, 0.0),
-          child: FutureBuilder<List<Seccion5Row>>(
-            future: Seccion5Table().querySingleRow(
-              queryFn: (q) => q.eqOrNull(
-                'idIngreso',
-                widget.rowingreso?.id,
+    return FutureBuilder<List<Seccion5Row>>(
+      future: Seccion5Table().querySingleRow(
+        queryFn: (q) => q.eqOrNull(
+          'idIngreso',
+          widget.rowingreso?.id,
+        ),
+      ),
+      builder: (context, snapshot) {
+        // Customize what your widget looks like when it's loading.
+        if (!snapshot.hasData) {
+          return Center(
+            child: SizedBox(
+              width: 50.0,
+              height: 50.0,
+              child: CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(
+                  FlutterFlowTheme.of(context).primary,
+                ),
               ),
             ),
-            builder: (context, snapshot) {
-              // Customize what your widget looks like when it's loading.
-              if (!snapshot.hasData) {
-                return Center(
-                  child: SizedBox(
-                    width: 50.0,
-                    height: 50.0,
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        FlutterFlowTheme.of(context).primary,
-                      ),
-                    ),
-                  ),
-                );
-              }
-              List<Seccion5Row> containerSeccion5RowList = snapshot.data!;
+          );
+        }
+        List<Seccion5Row> stackSeccion5RowList = snapshot.data!;
 
-              final containerSeccion5Row = containerSeccion5RowList.isNotEmpty
-                  ? containerSeccion5RowList.first
-                  : null;
+        final stackSeccion5Row =
+            stackSeccion5RowList.isNotEmpty ? stackSeccion5RowList.first : null;
 
-              return Material(
+        return Stack(
+          children: [
+            Align(
+              alignment: AlignmentDirectional(0.0, 0.0),
+              child: Material(
                 color: Colors.transparent,
                 elevation: 2.0,
                 shape: RoundedRectangleBorder(
@@ -95,6 +95,7 @@ class _Seccion5WidgetState extends State<Seccion5Widget> {
                 ),
                 child: Container(
                   width: MediaQuery.sizeOf(context).width * 0.8,
+                  height: 750.0,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                     borderRadius: BorderRadius.circular(20.0),
@@ -113,7 +114,7 @@ class _Seccion5WidgetState extends State<Seccion5Widget> {
                             EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                         child: SingleChildScrollView(
                           child: Column(
-                            mainAxisSize: MainAxisSize.max,
+                            mainAxisSize: MainAxisSize.min,
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               Row(
@@ -179,7 +180,7 @@ class _Seccion5WidgetState extends State<Seccion5Widget> {
                                   controller:
                                       _model.textFieldmotivoTextController ??=
                                           TextEditingController(
-                                    text: containerSeccion5Row?.motivo,
+                                    text: stackSeccion5Row?.motivo,
                                   ),
                                   focusNode: _model.textFieldmotivoFocusNode,
                                   autofocus: true,
@@ -300,7 +301,7 @@ class _Seccion5WidgetState extends State<Seccion5Widget> {
                                   controller:
                                       _model.textFieldresenaTextController ??=
                                           TextEditingController(
-                                    text: containerSeccion5Row?.resena,
+                                    text: stackSeccion5Row?.resena,
                                   ),
                                   focusNode: _model.textFieldresenaFocusNode,
                                   autofocus: true,
@@ -408,7 +409,7 @@ class _Seccion5WidgetState extends State<Seccion5Widget> {
                                             .bodyMedium
                                             .fontStyle,
                                       ),
-                                  maxLines: 15,
+                                  maxLines: 20,
                                   validator: _model
                                       .textFieldresenaTextControllerValidator
                                       .asValidator(context),
@@ -462,18 +463,21 @@ class _Seccion5WidgetState extends State<Seccion5Widget> {
                                             await showDialog(
                                               context: context,
                                               builder: (alertDialogContext) {
-                                                return AlertDialog(
-                                                  title: Text('Carga correcta'),
-                                                  content: Text(
-                                                      'La informacion se guardo correctamente!!'),
-                                                  actions: [
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext),
-                                                      child: Text('Ok'),
-                                                    ),
-                                                  ],
+                                                return WebViewAware(
+                                                  child: AlertDialog(
+                                                    title:
+                                                        Text('Carga correcta'),
+                                                    content: Text(
+                                                        'La informacion se guardo correctamente!!'),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext),
+                                                        child: Text('Ok'),
+                                                      ),
+                                                    ],
+                                                  ),
                                                 );
                                               },
                                             );
@@ -511,18 +515,21 @@ class _Seccion5WidgetState extends State<Seccion5Widget> {
                                             await showDialog(
                                               context: context,
                                               builder: (alertDialogContext) {
-                                                return AlertDialog(
-                                                  title: Text('Carga correcta'),
-                                                  content: Text(
-                                                      'La informacion se edito correctamente!!'),
-                                                  actions: [
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext),
-                                                      child: Text('Ok'),
-                                                    ),
-                                                  ],
+                                                return WebViewAware(
+                                                  child: AlertDialog(
+                                                    title:
+                                                        Text('Carga correcta'),
+                                                    content: Text(
+                                                        'La informacion se edito correctamente!!'),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext),
+                                                        child: Text('Ok'),
+                                                      ),
+                                                    ],
+                                                  ),
                                                 );
                                               },
                                             );
@@ -661,16 +668,18 @@ class _Seccion5WidgetState extends State<Seccion5Widget> {
                                           await showDialog(
                                             context: context,
                                             builder: (alertDialogContext) {
-                                              return AlertDialog(
-                                                title: Text('3'),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext),
-                                                    child: Text('Ok'),
-                                                  ),
-                                                ],
+                                              return WebViewAware(
+                                                child: AlertDialog(
+                                                  title: Text('3'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: Text('Ok'),
+                                                    ),
+                                                  ],
+                                                ),
                                               );
                                             },
                                           );
@@ -691,18 +700,20 @@ class _Seccion5WidgetState extends State<Seccion5Widget> {
                                           await showDialog(
                                             context: context,
                                             builder: (alertDialogContext) {
-                                              return AlertDialog(
-                                                title: Text('Carga correcta'),
-                                                content: Text(
-                                                    'La informacion se guardo correctamente!!'),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext),
-                                                    child: Text('Ok'),
-                                                  ),
-                                                ],
+                                              return WebViewAware(
+                                                child: AlertDialog(
+                                                  title: Text('Carga correcta'),
+                                                  content: Text(
+                                                      'La informacion se guardo correctamente!!'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: Text('Ok'),
+                                                    ),
+                                                  ],
+                                                ),
                                               );
                                             },
                                           );
@@ -767,84 +778,86 @@ class _Seccion5WidgetState extends State<Seccion5Widget> {
                     ),
                   ),
                 ),
-              );
-            },
-          ),
-        ),
-        if (_model.editarmotivo)
-          Container(
-            width: MediaQuery.sizeOf(context).width * 1.0,
-            height: MediaQuery.sizeOf(context).height * 1.0,
-            decoration: BoxDecoration(
-              color: Color(0x3BE0E3E7),
-            ),
-            child: Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Align(
-                    alignment: AlignmentDirectional(1.0, -1.0),
-                    child: Material(
-                      color: Colors.transparent,
-                      elevation: 5.0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      child: Container(
-                        width: 80.0,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: FlutterFlowIconButton(
-                                borderRadius: 8.0,
-                                buttonSize: 40.0,
-                                icon: Icon(
-                                  Icons.cancel_outlined,
-                                  color: FlutterFlowTheme.of(context).error,
-                                  size: 24.0,
-                                ),
-                                onPressed: () async {
-                                  Navigator.pop(context);
-                                },
-                              ),
-                            ),
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: FlutterFlowIconButton(
-                                borderRadius: 8.0,
-                                buttonSize: 40.0,
-                                fillColor: FlutterFlowTheme.of(context).primary,
-                                icon: Icon(
-                                  Icons.edit_rounded,
-                                  color: FlutterFlowTheme.of(context).info,
-                                  size: 24.0,
-                                ),
-                                onPressed: () async {
-                                  _model.editarmotivo = false;
-                                  safeSetState(() {});
-                                },
-                              ),
-                            ),
-                          ]
-                              .divide(SizedBox(height: 10.0))
-                              .around(SizedBox(height: 10.0)),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
               ),
             ),
-          ),
-      ],
+            if ((_model.editarmotivo == true) &&
+                (stackSeccion5Row?.idSec5 != null))
+              Container(
+                width: MediaQuery.sizeOf(context).width * 1.0,
+                height: MediaQuery.sizeOf(context).height * 1.0,
+                decoration: BoxDecoration(
+                  color: Color(0x3BE0E3E7),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.all(15.0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Align(
+                        alignment: AlignmentDirectional(1.0, -1.0),
+                        child: Material(
+                          color: Colors.transparent,
+                          elevation: 5.0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          child: Container(
+                            width: 80.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: FlutterFlowIconButton(
+                                    borderRadius: 8.0,
+                                    buttonSize: 40.0,
+                                    icon: Icon(
+                                      Icons.cancel_outlined,
+                                      color: FlutterFlowTheme.of(context).error,
+                                      size: 24.0,
+                                    ),
+                                    onPressed: () async {
+                                      Navigator.pop(context);
+                                    },
+                                  ),
+                                ),
+                                Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: FlutterFlowIconButton(
+                                    borderRadius: 8.0,
+                                    buttonSize: 40.0,
+                                    fillColor:
+                                        FlutterFlowTheme.of(context).primary,
+                                    icon: Icon(
+                                      Icons.edit_rounded,
+                                      color: FlutterFlowTheme.of(context).info,
+                                      size: 24.0,
+                                    ),
+                                    onPressed: () async {
+                                      _model.editarmotivo = false;
+                                      safeSetState(() {});
+                                    },
+                                  ),
+                                ),
+                              ]
+                                  .divide(SizedBox(height: 10.0))
+                                  .around(SizedBox(height: 10.0)),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+          ],
+        );
+      },
     );
   }
 }

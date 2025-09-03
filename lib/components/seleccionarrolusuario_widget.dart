@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'seleccionarrolusuario_model.dart';
 export 'seleccionarrolusuario_model.dart';
 
@@ -449,17 +450,19 @@ class _SeleccionarrolusuarioWidgetState
                           await showDialog(
                             context: context,
                             builder: (alertDialogContext) {
-                              return AlertDialog(
-                                title: Text('Rol actualizado'),
-                                content:
-                                    Text('EL rol se actualizo correctamente'),
-                                actions: [
-                                  TextButton(
-                                    onPressed: () =>
-                                        Navigator.pop(alertDialogContext),
-                                    child: Text('Ok'),
-                                  ),
-                                ],
+                              return WebViewAware(
+                                child: AlertDialog(
+                                  title: Text('Rol actualizado'),
+                                  content:
+                                      Text('EL rol se actualizo correctamente'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: Text('Ok'),
+                                    ),
+                                  ],
+                                ),
                               );
                             },
                           );
@@ -479,17 +482,19 @@ class _SeleccionarrolusuarioWidgetState
                             await showDialog(
                               context: context,
                               builder: (alertDialogContext) {
-                                return AlertDialog(
-                                  title: Text('Rol actualizado'),
-                                  content:
-                                      Text('EL rol se actualizo correctamente'),
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () =>
-                                          Navigator.pop(alertDialogContext),
-                                      child: Text('Ok'),
-                                    ),
-                                  ],
+                                return WebViewAware(
+                                  child: AlertDialog(
+                                    title: Text('Rol actualizado'),
+                                    content: Text(
+                                        'EL rol se actualizo correctamente'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () =>
+                                            Navigator.pop(alertDialogContext),
+                                        child: Text('Ok'),
+                                      ),
+                                    ],
+                                  ),
                                 );
                               },
                             );
@@ -509,17 +514,19 @@ class _SeleccionarrolusuarioWidgetState
                               await showDialog(
                                 context: context,
                                 builder: (alertDialogContext) {
-                                  return AlertDialog(
-                                    title: Text('Rol actualizado'),
-                                    content: Text(
-                                        'EL rol se actualizo correctamente'),
-                                    actions: [
-                                      TextButton(
-                                        onPressed: () =>
-                                            Navigator.pop(alertDialogContext),
-                                        child: Text('Ok'),
-                                      ),
-                                    ],
+                                  return WebViewAware(
+                                    child: AlertDialog(
+                                      title: Text('Rol actualizado'),
+                                      content: Text(
+                                          'EL rol se actualizo correctamente'),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(alertDialogContext),
+                                          child: Text('Ok'),
+                                        ),
+                                      ],
+                                    ),
                                   );
                                 },
                               );

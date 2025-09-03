@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/formulario1/secciones_formulario1/agregar_tablas/agregar_conviviente/agregar_conviviente_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'seccion3_model.dart';
 export 'seccion3_model.dart';
 
@@ -17,12 +18,16 @@ class Seccion3Widget extends StatefulWidget {
     required this.idexp,
     this.editar,
     this.titulo,
+    required this.userrol,
+    required this.idseccion1,
   });
 
   final IngresosRow? idingreso;
   final VistaExpedientesUltimoEstadoRow? idexp;
   final bool? editar;
   final String? titulo;
+  final VistaUsuariosRolesRow? userrol;
+  final int? idseccion1;
 
   @override
   State<Seccion3Widget> createState() => _Seccion3WidgetState();
@@ -190,13 +195,16 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                       enableDrag: false,
                                       context: context,
                                       builder: (context) {
-                                        return Padding(
-                                          padding:
-                                              MediaQuery.viewInsetsOf(context),
-                                          child: AgregarConvivienteWidget(
-                                            rowingreso: widget.idingreso!,
-                                            idexp: widget.idexp!,
-                                            editar: false,
+                                        return WebViewAware(
+                                          child: Padding(
+                                            padding: MediaQuery.viewInsetsOf(
+                                                context),
+                                            child: AgregarConvivienteWidget(
+                                              rowingreso: widget.idingreso!,
+                                              idexp: widget.idexp!,
+                                              editar: false,
+                                              idseccion1: widget.idseccion1!,
+                                            ),
                                           ),
                                         );
                                       },
@@ -247,6 +255,414 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                 ),
+                              ),
+                              FutureBuilder<List<GrupofamiliarexpedientesRow>>(
+                                future: GrupofamiliarexpedientesTable()
+                                    .querySingleRow(
+                                  queryFn: (q) => q.eqOrNull(
+                                    'idexpediente',
+                                    widget.idexp?.id,
+                                  ),
+                                ),
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: SizedBox(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        child: CircularProgressIndicator(
+                                          valueColor:
+                                              AlwaysStoppedAnimation<Color>(
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                  List<GrupofamiliarexpedientesRow>
+                                      containerGrupofamiliarexpedientesRowList =
+                                      snapshot.data!;
+
+                                  final containerGrupofamiliarexpedientesRow =
+                                      containerGrupofamiliarexpedientesRowList
+                                              .isNotEmpty
+                                          ? containerGrupofamiliarexpedientesRowList
+                                              .first
+                                          : null;
+
+                                  return Container(
+                                    decoration: BoxDecoration(),
+                                    child: Visibility(
+                                      visible:
+                                          containerGrupofamiliarexpedientesRow
+                                                  ?.idexpediente !=
+                                              containerGrupofamiliarexpedientesRow
+                                                  ?.expedienteprincipal,
+                                      child: Padding(
+                                        padding: EdgeInsets.all(10.0),
+                                        child: Flex(
+                                          direction: (MediaQuery.sizeOf(context)
+                                                      .width >
+                                                  1500.0)
+                                              ? Axis.horizontal
+                                              : Axis.vertical,
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          children: [
+                                            Visibility(
+                                              visible:
+                                                  containerGrupofamiliarexpedientesRow
+                                                          ?.idexpediente !=
+                                                      containerGrupofamiliarexpedientesRow
+                                                          ?.expedienteprincipal,
+                                              child: Align(
+                                                alignment: AlignmentDirectional(
+                                                    1.0, 0.0),
+                                                child: FFButtonWidget(
+                                                  onPressed: () async {
+                                                    var confirmDialogResponse =
+                                                        await showDialog<bool>(
+                                                              context: context,
+                                                              builder:
+                                                                  (alertDialogContext) {
+                                                                return WebViewAware(
+                                                                  child:
+                                                                      AlertDialog(
+                                                                    title: Text(
+                                                                        'Copiar lista de Grupo Conviviente y no conviviente'),
+                                                                    content: Text(
+                                                                        'Estas por copiar Grupo Conviviente y no conviviente registrados en el NNyA principal'),
+                                                                    actions: [
+                                                                      TextButton(
+                                                                        onPressed: () => Navigator.pop(
+                                                                            alertDialogContext,
+                                                                            false),
+                                                                        child: Text(
+                                                                            'Cancel'),
+                                                                      ),
+                                                                      TextButton(
+                                                                        onPressed: () => Navigator.pop(
+                                                                            alertDialogContext,
+                                                                            true),
+                                                                        child: Text(
+                                                                            'Confirm'),
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                                );
+                                                              },
+                                                            ) ??
+                                                            false;
+                                                    if (confirmDialogResponse) {
+                                                      _model.expedienteprincipal1 =
+                                                          await VistaExpedientesUltimoEstadoTable()
+                                                              .queryRows(
+                                                        queryFn: (q) =>
+                                                            q.eqOrNull(
+                                                          'idexpediente',
+                                                          containerGrupofamiliarexpedientesRow
+                                                              ?.expedienteprincipal,
+                                                        ),
+                                                      );
+                                                      _model.formgrupoconviviente =
+                                                          await GrupoConvivienteTable()
+                                                              .queryRows(
+                                                        queryFn: (q) => q
+                                                            .eqOrNull(
+                                                              'idingreso',
+                                                              _model
+                                                                  .expedienteprincipal1
+                                                                  ?.firstOrNull
+                                                                  ?.idIngreso,
+                                                            )
+                                                            .neqOrNull(
+                                                              'idnnya',
+                                                              widget.idexp
+                                                                  ?.idNNyA,
+                                                            ),
+                                                      );
+                                                      _model.contador = 0;
+                                                      safeSetState(() {});
+                                                      _model.insertnnyaprincipal =
+                                                          await GrupoConvivienteTable()
+                                                              .insert({
+                                                        'nombre': _model
+                                                            .expedienteprincipal1
+                                                            ?.firstOrNull
+                                                            ?.nombres,
+                                                        'apellido': _model
+                                                            .expedienteprincipal1
+                                                            ?.firstOrNull
+                                                            ?.apellidos,
+                                                        'dni': _model
+                                                            .expedienteprincipal1
+                                                            ?.firstOrNull
+                                                            ?.dni,
+                                                        'fecha_nacimiento':
+                                                            supaSerialize<
+                                                                    DateTime>(
+                                                                _model
+                                                                    .expedienteprincipal1
+                                                                    ?.firstOrNull
+                                                                    ?.fechaNac),
+                                                        'idingreso': widget
+                                                            .idingreso?.id,
+                                                        'idexpe':
+                                                            widget.idexp?.id,
+                                                        'conviviente': 'Si',
+                                                        'updated_at': supaSerialize<
+                                                                DateTime>(
+                                                            getCurrentTimestamp),
+                                                        'edad': _model
+                                                            .expedienteprincipal1
+                                                            ?.firstOrNull
+                                                            ?.edad,
+                                                        'idexppropio':
+                                                            widget.idexp?.id,
+                                                      });
+                                                      while (_model.contador! <=
+                                                          _model
+                                                              .formgrupoconviviente!
+                                                              .length) {
+                                                        _model.grupoconviviente =
+                                                            await GrupoConvivienteTable()
+                                                                .insert({
+                                                          'nombre': _model
+                                                              .formgrupoconviviente
+                                                              ?.elementAtOrNull(
+                                                                  _model
+                                                                      .contador!)
+                                                              ?.nombre,
+                                                          'apellido': _model
+                                                              .formgrupoconviviente
+                                                              ?.elementAtOrNull(
+                                                                  _model
+                                                                      .contador!)
+                                                              ?.apellido,
+                                                          'vinculo': _model
+                                                              .formgrupoconviviente
+                                                              ?.elementAtOrNull(
+                                                                  _model
+                                                                      .contador!)
+                                                              ?.vinculo,
+                                                          'dni': _model
+                                                              .formgrupoconviviente
+                                                              ?.elementAtOrNull(
+                                                                  _model
+                                                                      .contador!)
+                                                              ?.dni,
+                                                          'fecha_nacimiento': supaSerialize<DateTime>(_model
+                                                              .formgrupoconviviente
+                                                              ?.elementAtOrNull(
+                                                                  _model
+                                                                      .contador!)
+                                                              ?.fechaNacimiento),
+                                                          'edad': _model
+                                                              .formgrupoconviviente
+                                                              ?.elementAtOrNull(
+                                                                  _model
+                                                                      .contador!)
+                                                              ?.edad,
+                                                          'telefono': _model
+                                                              .formgrupoconviviente
+                                                              ?.elementAtOrNull(
+                                                                  _model
+                                                                      .contador!)
+                                                              ?.telefono,
+                                                          'direccion': _model
+                                                              .formgrupoconviviente
+                                                              ?.elementAtOrNull(
+                                                                  _model
+                                                                      .contador!)
+                                                              ?.direccion,
+                                                          'observaciones': _model
+                                                              .formgrupoconviviente
+                                                              ?.elementAtOrNull(
+                                                                  _model
+                                                                      .contador!)
+                                                              ?.observaciones,
+                                                          'idingreso': widget
+                                                              .idingreso?.id,
+                                                          'idexpe':
+                                                              widget.idexp?.id,
+                                                          'conviviente': _model
+                                                              .formgrupoconviviente
+                                                              ?.elementAtOrNull(
+                                                                  _model
+                                                                      .contador!)
+                                                              ?.conviviente,
+                                                          'updated_at':
+                                                              supaSerialize<
+                                                                      DateTime>(
+                                                                  getCurrentTimestamp),
+                                                          'idusers': widget
+                                                              .userrol?.idusers,
+                                                          'idnnya': _model
+                                                              .formgrupoconviviente
+                                                              ?.elementAtOrNull(
+                                                                  _model
+                                                                      .contador!)
+                                                              ?.idnnya,
+                                                          'vinculo_obs': _model
+                                                              .formgrupoconviviente
+                                                              ?.elementAtOrNull(
+                                                                  _model
+                                                                      .contador!)
+                                                              ?.vinculoObs,
+                                                          'idexppropio': _model
+                                                              .formgrupoconviviente
+                                                              ?.elementAtOrNull(
+                                                                  _model
+                                                                      .contador!)
+                                                              ?.idexppropio,
+                                                        });
+                                                        await NNyAExpGruTable()
+                                                            .insert({
+                                                          'idNNyA': _model
+                                                              .grupoconviviente
+                                                              ?.idnnya,
+                                                          'idExp':
+                                                              widget.idexp?.id,
+                                                          'detalle':
+                                                              'Grupo Conviviente',
+                                                        });
+                                                        await GrupoConvivienteTable()
+                                                            .update(
+                                                          data: {
+                                                            'idnnyaGrupo': _model
+                                                                .grupoconviviente
+                                                                ?.id,
+                                                          },
+                                                          matchingRows:
+                                                              (rows) =>
+                                                                  rows.eqOrNull(
+                                                            'id',
+                                                            _model
+                                                                .grupoconviviente
+                                                                ?.id,
+                                                          ),
+                                                        );
+                                                        await IngresosTable()
+                                                            .update(
+                                                          data: {
+                                                            'form1seccion3':
+                                                                true,
+                                                          },
+                                                          matchingRows:
+                                                              (rows) =>
+                                                                  rows.eqOrNull(
+                                                            'id',
+                                                            widget
+                                                                .idingreso?.id,
+                                                          ),
+                                                        );
+                                                        await showDialog(
+                                                          context: context,
+                                                          builder:
+                                                              (alertDialogContext) {
+                                                            return WebViewAware(
+                                                              child:
+                                                                  AlertDialog(
+                                                                title: Text(
+                                                                    'Se guardo correctamente'),
+                                                                content: Text(
+                                                                    'Se gardo correctamente la informacion'),
+                                                                actions: [
+                                                                  TextButton(
+                                                                    onPressed: () =>
+                                                                        Navigator.pop(
+                                                                            alertDialogContext),
+                                                                    child: Text(
+                                                                        'Ok'),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            );
+                                                          },
+                                                        );
+                                                        _model.contador =
+                                                            _model.contador! +
+                                                                1;
+                                                        safeSetState(() {});
+                                                      }
+                                                    }
+
+                                                    safeSetState(() {});
+                                                  },
+                                                  text:
+                                                      'Cargar grupoconviviente y no conviviente de expediente principal',
+                                                  options: FFButtonOptions(
+                                                    height: 40.0,
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
+                                                    iconPadding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 0.0),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .notoSansJp(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontStyle,
+                                                          ),
+                                                          color: Colors.white,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .fontStyle,
+                                                        ),
+                                                    elevation: 0.0,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            25.0),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ]
+                                              .divide(
+                                                  (MediaQuery.sizeOf(context)
+                                                              .width >
+                                                          1500.0)
+                                                      ? SizedBox(width: 10.0)
+                                                      : SizedBox(height: 10.0))
+                                              .around(
+                                                  (MediaQuery.sizeOf(context)
+                                                              .width >
+                                                          1500.0)
+                                                      ? SizedBox(width: 10.0)
+                                                      : SizedBox(height: 10.0)),
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                },
                               ),
                               Align(
                                 alignment: AlignmentDirectional(-1.0, 0.0),
@@ -725,20 +1141,24 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                                 enableDrag: false,
                                                 context: context,
                                                 builder: (context) {
-                                                  return Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child:
-                                                        AgregarConvivienteWidget(
-                                                      rowingreso:
-                                                          widget.idingreso!,
-                                                      idexp: widget.idexp!,
-                                                      editar: true,
-                                                      idgrupoconviviente:
-                                                          listItem.id,
-                                                      idnnya:
-                                                          listItem.idnnyaGrupo,
+                                                  return WebViewAware(
+                                                    child: Padding(
+                                                      padding: MediaQuery
+                                                          .viewInsetsOf(
+                                                              context),
+                                                      child:
+                                                          AgregarConvivienteWidget(
+                                                        rowingreso:
+                                                            widget.idingreso!,
+                                                        idexp: widget.idexp!,
+                                                        editar: true,
+                                                        idgrupoconviviente:
+                                                            listItem.id,
+                                                        idnnya: listItem
+                                                            .idnnyaGrupo,
+                                                        idseccion1:
+                                                            widget.idseccion1!,
+                                                      ),
                                                     ),
                                                   );
                                                 },
@@ -1362,20 +1782,24 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                                 enableDrag: false,
                                                 context: context,
                                                 builder: (context) {
-                                                  return Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child:
-                                                        AgregarConvivienteWidget(
-                                                      rowingreso:
-                                                          widget.idingreso!,
-                                                      idexp: widget.idexp!,
-                                                      editar: true,
-                                                      idgrupoconviviente:
-                                                          listItem.id,
-                                                      idnnya:
-                                                          listItem.idnnyaGrupo,
+                                                  return WebViewAware(
+                                                    child: Padding(
+                                                      padding: MediaQuery
+                                                          .viewInsetsOf(
+                                                              context),
+                                                      child:
+                                                          AgregarConvivienteWidget(
+                                                        rowingreso:
+                                                            widget.idingreso!,
+                                                        idexp: widget.idexp!,
+                                                        editar: true,
+                                                        idgrupoconviviente:
+                                                            listItem.id,
+                                                        idnnya: listItem
+                                                            .idnnyaGrupo,
+                                                        idseccion1:
+                                                            widget.idseccion1!,
+                                                      ),
                                                     ),
                                                   );
                                                 },
@@ -1611,79 +2035,6 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
             },
           ),
         ),
-        if (_model.editarseccion3)
-          Container(
-            width: MediaQuery.sizeOf(context).width * 1.0,
-            height: MediaQuery.sizeOf(context).height * 1.0,
-            decoration: BoxDecoration(
-              color: Color(0x3BE0E3E7),
-            ),
-            child: Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Align(
-                    alignment: AlignmentDirectional(1.0, -1.0),
-                    child: Material(
-                      color: Colors.transparent,
-                      elevation: 5.0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      child: Container(
-                        width: 80.0,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: FlutterFlowIconButton(
-                                borderRadius: 8.0,
-                                buttonSize: 40.0,
-                                icon: Icon(
-                                  Icons.cancel_outlined,
-                                  color: FlutterFlowTheme.of(context).error,
-                                  size: 24.0,
-                                ),
-                                onPressed: () async {
-                                  Navigator.pop(context);
-                                },
-                              ),
-                            ),
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: FlutterFlowIconButton(
-                                borderRadius: 8.0,
-                                buttonSize: 40.0,
-                                fillColor: FlutterFlowTheme.of(context).primary,
-                                icon: Icon(
-                                  Icons.edit_rounded,
-                                  color: FlutterFlowTheme.of(context).info,
-                                  size: 24.0,
-                                ),
-                                onPressed: () async {
-                                  _model.editarseccion3 = false;
-                                  safeSetState(() {});
-                                },
-                              ),
-                            ),
-                          ]
-                              .divide(SizedBox(height: 10.0))
-                              .around(SizedBox(height: 10.0)),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
       ],
     );
   }

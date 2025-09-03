@@ -8,6 +8,8 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'anexoinstitucionsalud_model.dart';
 export 'anexoinstitucionsalud_model.dart';
 
@@ -54,6 +56,7 @@ class _AnexoinstitucionsaludWidgetState
 
     _model.textFieldresenaFocusNode ??= FocusNode();
 
+    _model.textFieldresenaMask = MaskTextInputFormatter(mask: '####');
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -219,7 +222,7 @@ class _AnexoinstitucionsaludWidgetState
                                 final _datePickedDate = await showDatePicker(
                                   context: context,
                                   initialDate: getCurrentTimestamp,
-                                  firstDate: getCurrentTimestamp,
+                                  firstDate: DateTime(1900),
                                   lastDate: DateTime(2050),
                                   builder: (context, child) {
                                     return wrapInMaterialDatePickerTheme(
@@ -430,7 +433,7 @@ class _AnexoinstitucionsaludWidgetState
                             autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelText: 'CPC',
+                              labelText: 'SPD',
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
@@ -451,7 +454,7 @@ class _AnexoinstitucionsaludWidgetState
                                         .fontStyle,
                                   ),
                               alignLabelWithHint: true,
-                              hintText: 'CPC',
+                              hintText: 'SPD',
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
@@ -723,16 +726,19 @@ class _AnexoinstitucionsaludWidgetState
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {
-                                      return AlertDialog(
-                                        title: Text('Campo obligatorio'),
-                                        content: Text('La fecha obligatoria!'),
-                                        actions: [
-                                          TextButton(
-                                            onPressed: () => Navigator.pop(
-                                                alertDialogContext),
-                                            child: Text('Ok'),
-                                          ),
-                                        ],
+                                      return WebViewAware(
+                                        child: AlertDialog(
+                                          title: Text('Campo obligatorio'),
+                                          content:
+                                              Text('La fecha obligatoria!'),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: Text('Ok'),
+                                            ),
+                                          ],
+                                        ),
                                       );
                                     },
                                   );
@@ -763,7 +769,7 @@ class _AnexoinstitucionsaludWidgetState
                                   'idingreso': widget.rowingreso?.id,
                                   'expediente': widget.rowexp?.expediente,
                                 });
-                                _model.apiResults9d =
+                                _model.apiResults9dsalud =
                                     await AnexoSolicitudSaludCall.call(
                                   fecha: dateTimeFormat(
                                     "d/M/y",
@@ -774,7 +780,8 @@ class _AnexoinstitucionsaludWidgetState
                                   nombreyapellido:
                                       '${widget.rowexp?.nombres}, ${widget.rowexp?.apellidos}',
                                   dni: widget.rowexp?.dni,
-                                  barrio: 'kjh',
+                                  barrio: _model.recepciondelademanda
+                                      ?.firstOrNull?.barrio,
                                   domicilio: _model.recepciondelademanda
                                       ?.firstOrNull?.domicilioSeccion1,
                                   historiaclinica: _model.recepciondelademanda
@@ -783,33 +790,48 @@ class _AnexoinstitucionsaludWidgetState
                                   ano:
                                       _model.textFieldresenaTextController.text,
                                   expediente: widget.rowexp?.expediente,
-                                  idsolicitudsalud:
-                                      _model.crearsolicitudsalud?.id,
-                                  carpeta: widget.rowingreso?.idcarpeta,
                                   spd: _model
                                       .textFieldmotivoTextController2.text,
                                   institucion: _model
                                       .textFieldmotivoTextController1.text,
                                 );
 
-                                if ((_model.apiResults9d?.succeeded ?? true)) {
+                                if ((_model.apiResults9dsalud?.succeeded ??
+                                    true)) {
                                   await Future.delayed(
-                                      const Duration(milliseconds: 1000));
+                                    Duration(
+                                      milliseconds: 1000,
+                                    ),
+                                  );
+                                  await AnexoinstitucionesaludTable().update(
+                                    data: {
+                                      'linkdoc': AnexoSolicitudSaludCall.url(
+                                        (_model.apiResults9dsalud?.jsonBody ??
+                                            ''),
+                                      ),
+                                    },
+                                    matchingRows: (rows) => rows.eqOrNull(
+                                      'id',
+                                      _model.crearsolicitudsalud?.id,
+                                    ),
+                                  );
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {
-                                      return AlertDialog(
-                                        title: Text(
-                                            'Se cargo correctamente la informacion'),
-                                        content: Text(
-                                            'Se guardo la informacion y se creo un documento en google docs!'),
-                                        actions: [
-                                          TextButton(
-                                            onPressed: () => Navigator.pop(
-                                                alertDialogContext),
-                                            child: Text('Ok'),
-                                          ),
-                                        ],
+                                      return WebViewAware(
+                                        child: AlertDialog(
+                                          title: Text(
+                                              'Se cargo correctamente la informacion'),
+                                          content: Text(
+                                              'Se guardo la informacion y se creo un documento en google docs!'),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: Text('Ok'),
+                                            ),
+                                          ],
+                                        ),
                                       );
                                     },
                                   );

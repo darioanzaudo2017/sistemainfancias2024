@@ -25,7 +25,7 @@ class AnexoinstitucionsaludModel
   // State field(s) for TextFieldresena widget.
   FocusNode? textFieldresenaFocusNode;
   TextEditingController? textFieldresenaTextController;
-  final textFieldresenaMask = MaskTextInputFormatter(mask: '####');
+  late MaskTextInputFormatter textFieldresenaMask;
   String? Function(BuildContext, String?)?
       textFieldresenaTextControllerValidator;
   // State field(s) for DropDown widget.
@@ -36,7 +36,7 @@ class AnexoinstitucionsaludModel
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   AnexoinstitucionesaludRow? crearsolicitudsalud;
   // Stores action output result for [Backend Call - API (anexo solicitud salud)] action in Button widget.
-  ApiCallResponse? apiResults9d;
+  ApiCallResponse? apiResults9dsalud;
 
   @override
   void initState(BuildContext context) {}

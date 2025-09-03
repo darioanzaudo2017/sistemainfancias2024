@@ -2,6 +2,7 @@ import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/index.dart';
 import 'admin_widget.dart' show AdminWidget;
 import 'package:flutter/material.dart';
 
@@ -29,6 +30,10 @@ class AdminModel extends FlutterFlowModel<AdminWidget> {
       FlutterFlowDataTableController<VistaIngresosExpedienteRow>();
   // Stores action output result for [Backend Call - Query Rows] action in IconButton widget.
   List<Formulario9Row>? rowform9;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<VistaExpedientesUltimoEstadoRow>? vistaexpe;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<SpdRow>? spdrow;
 
   @override
   void initState(BuildContext context) {}

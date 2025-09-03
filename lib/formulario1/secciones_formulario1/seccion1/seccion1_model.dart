@@ -19,6 +19,11 @@ class Seccion1Model extends FlutterFlowModel<Seccion1Widget> {
   // State field(s) for DropDownbarrio widget.
   String? dropDownbarrioValue;
   FormFieldController<String>? dropDownbarrioValueController;
+  // State field(s) for TextFieldbarrio widget.
+  FocusNode? textFieldbarrioFocusNode;
+  TextEditingController? textFieldbarrioTextController;
+  String? Function(BuildContext, String?)?
+      textFieldbarrioTextControllerValidator;
   // State field(s) for TextFielddomicilio widget.
   FocusNode? textFielddomicilioFocusNode;
   TextEditingController? textFielddomicilioTextController;
@@ -46,20 +51,16 @@ class Seccion1Model extends FlutterFlowModel<Seccion1Widget> {
   FormFieldController<String>? droptipofliaValueController;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
-  TextEditingController? textController4;
-  String? Function(BuildContext, String?)? textController4Validator;
+  TextEditingController? textController5;
+  String? Function(BuildContext, String?)? textController5Validator;
   // State field(s) for RadioButtonrnp widget.
   FormFieldController<String>? radioButtonrnpValueController;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode2;
-  TextEditingController? textController5;
-  String? Function(BuildContext, String?)? textController5Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
   TextEditingController? textController6;
   String? Function(BuildContext, String?)? textController6Validator;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode4;
+  FocusNode? textFieldFocusNode3;
   TextEditingController? textController7;
   String? Function(BuildContext, String?)? textController7Validator;
   // State field(s) for DropDowndiscapacidad widget.
@@ -70,15 +71,19 @@ class Seccion1Model extends FlutterFlowModel<Seccion1Widget> {
   // State field(s) for RadioButtonprestaciones widget.
   FormFieldController<String>? radioButtonprestacionesValueController;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode5;
+  FocusNode? textFieldFocusNode4;
   TextEditingController? textController8;
   String? Function(BuildContext, String?)? textController8Validator;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode6;
+  FocusNode? textFieldFocusNode5;
   TextEditingController? textController9;
   String? Function(BuildContext, String?)? textController9Validator;
+  // State field(s) for RadioButtonconcurreescuela widget.
+  FormFieldController<String>? radioButtonconcurreescuelaValueController;
+  // State field(s) for RadioButtomatriculo widget.
+  FormFieldController<String>? radioButtomatriculoValueController;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode7;
+  FocusNode? textFieldFocusNode6;
   TextEditingController? textController10;
   String? Function(BuildContext, String?)? textController10Validator;
   // State field(s) for DropDownSalaGrado widget.
@@ -97,21 +102,17 @@ class Seccion1Model extends FlutterFlowModel<Seccion1Widget> {
   TextEditingController? textFieldtelescuelaTextController;
   String? Function(BuildContext, String?)?
       textFieldtelescuelaTextControllerValidator;
-  // State field(s) for RadioButtomatriculo widget.
-  FormFieldController<String>? radioButtomatriculoValueController;
-  // State field(s) for RadioButtonescuela widget.
-  FormFieldController<String>? radioButtonescuelaValueController;
   // State field(s) for DropDownNivelAlcanzado widget.
   String? dropDownNivelAlcanzadoValue;
   FormFieldController<String>? dropDownNivelAlcanzadoValueController;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode8;
+  FocusNode? textFieldFocusNode7;
   TextEditingController? textController13;
   String? Function(BuildContext, String?)? textController13Validator;
   // State field(s) for RadioButtontrabjanino widget.
   FormFieldController<String>? radioButtontrabjaninoValueController;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode9;
+  FocusNode? textFieldFocusNode8;
   TextEditingController? textController14;
   String? Function(BuildContext, String?)? textController14Validator;
 
@@ -126,6 +127,9 @@ class Seccion1Model extends FlutterFlowModel<Seccion1Widget> {
     textFieldlunacimientoFocusNode?.dispose();
     textFieldlunacimientoTextController?.dispose();
 
+    textFieldbarrioFocusNode?.dispose();
+    textFieldbarrioTextController?.dispose();
+
     textFielddomicilioFocusNode?.dispose();
     textFielddomicilioTextController?.dispose();
 
@@ -133,24 +137,21 @@ class Seccion1Model extends FlutterFlowModel<Seccion1Widget> {
     textFieldtelefonoTextController?.dispose();
 
     textFieldFocusNode1?.dispose();
-    textController4?.dispose();
-
-    textFieldFocusNode2?.dispose();
     textController5?.dispose();
 
-    textFieldFocusNode3?.dispose();
+    textFieldFocusNode2?.dispose();
     textController6?.dispose();
 
-    textFieldFocusNode4?.dispose();
+    textFieldFocusNode3?.dispose();
     textController7?.dispose();
 
-    textFieldFocusNode5?.dispose();
+    textFieldFocusNode4?.dispose();
     textController8?.dispose();
 
-    textFieldFocusNode6?.dispose();
+    textFieldFocusNode5?.dispose();
     textController9?.dispose();
 
-    textFieldFocusNode7?.dispose();
+    textFieldFocusNode6?.dispose();
     textController10?.dispose();
 
     textFielddomicilioescuelaFocusNode?.dispose();
@@ -159,10 +160,10 @@ class Seccion1Model extends FlutterFlowModel<Seccion1Widget> {
     textFieldtelescuelaFocusNode?.dispose();
     textFieldtelescuelaTextController?.dispose();
 
-    textFieldFocusNode8?.dispose();
+    textFieldFocusNode7?.dispose();
     textController13?.dispose();
 
-    textFieldFocusNode9?.dispose();
+    textFieldFocusNode8?.dispose();
     textController14?.dispose();
   }
 
@@ -171,10 +172,10 @@ class Seccion1Model extends FlutterFlowModel<Seccion1Widget> {
   String? get radioButtoncudValue => radioButtoncudValueController?.value;
   String? get radioButtonprestacionesValue =>
       radioButtonprestacionesValueController?.value;
+  String? get radioButtonconcurreescuelaValue =>
+      radioButtonconcurreescuelaValueController?.value;
   String? get radioButtomatriculoValue =>
       radioButtomatriculoValueController?.value;
-  String? get radioButtonescuelaValue =>
-      radioButtonescuelaValueController?.value;
   String? get radioButtontrabjaninoValue =>
       radioButtontrabjaninoValueController?.value;
 }

@@ -47,12 +47,12 @@ class FormcaratulaModel extends FlutterFlowModel<FormcaratulaWidget> {
   // State field(s) for TextFieldDNI widget.
   FocusNode? textFieldDNIFocusNode;
   TextEditingController? textFieldDNITextController;
-  final textFieldDNIMask = MaskTextInputFormatter(mask: '########');
+  late MaskTextInputFormatter textFieldDNIMask;
   String? Function(BuildContext, String?)? textFieldDNITextControllerValidator;
   // State field(s) for TextFieldedad widget.
   FocusNode? textFieldedadFocusNode;
   TextEditingController? textFieldedadTextController;
-  final textFieldedadMask = MaskTextInputFormatter(mask: '########');
+  late MaskTextInputFormatter textFieldedadMask;
   String? Function(BuildContext, String?)? textFieldedadTextControllerValidator;
   DateTime? datePicked1;
   // State field(s) for DropDown widget.

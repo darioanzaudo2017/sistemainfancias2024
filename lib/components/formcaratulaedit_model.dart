@@ -50,26 +50,26 @@ class FormcaratulaeditModel extends FlutterFlowModel<FormcaratulaeditWidget> {
   // State field(s) for TextFieldDNI widget.
   FocusNode? textFieldDNIFocusNode;
   TextEditingController? textFieldDNITextController;
-  final textFieldDNIMask = MaskTextInputFormatter(mask: '########');
+  late MaskTextInputFormatter textFieldDNIMask;
   String? Function(BuildContext, String?)? textFieldDNITextControllerValidator;
   // State field(s) for TextFieldedad widget.
   FocusNode? textFieldedadFocusNode;
   TextEditingController? textFieldedadTextController;
-  final textFieldedadMask = MaskTextInputFormatter(mask: '########');
+  late MaskTextInputFormatter textFieldedadMask;
   String? Function(BuildContext, String?)? textFieldedadTextControllerValidator;
   DateTime? datePicked1;
   // Stores action output result for [Custom Action - checkDNI] action in Button widget.
   bool? accionexitosa;
+  // Stores action output result for [Backend Call - API (carpeta del expediente)] action in Button widget.
+  ApiCallResponse? apiResult42y;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  ExpedienteRow? crearexpnnya1;
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  NNyAExpGruRow? crearexpgrupo;
+  GrupofamiliarRow? grupofmiliar;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   NNyARow? crearNNyA;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  GrupofamiliarRow? grupofmiliar;
-  // Stores action output result for [Backend Call - API (carpeta del expediente)] action in Button widget.
-  ApiCallResponse? apiResult42y;
+  NNyAExpGruRow? crearexpgrupo;
+  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
+  ExpedienteRow? crearexpnnya1;
   // Stores action output result for [Bottom Sheet - desplegablederechosprincipal] action in Button widget.
   bool? agregarderecho;
   Completer<List<ListaDerechosVulneradosexpedienteRow>>? requestCompleter;

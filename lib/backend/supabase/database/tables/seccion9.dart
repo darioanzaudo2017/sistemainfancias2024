@@ -52,4 +52,8 @@ class Seccion9Row extends SupabaseDataRow {
 
   int? get idgrupofamiliar => getField<int>('idgrupofamiliar');
   set idgrupofamiliar(int? value) => setField<int>('idgrupofamiliar', value);
+
+  String? get linkAsesoramiento => getField<String>('Link_asesoramiento');
+  set linkAsesoramiento(String? value) =>
+      setField<String>('Link_asesoramiento', value);
 }

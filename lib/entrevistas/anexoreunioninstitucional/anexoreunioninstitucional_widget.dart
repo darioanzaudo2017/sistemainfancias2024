@@ -1,10 +1,13 @@
+import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'anexoreunioninstitucional_model.dart';
 export 'anexoreunioninstitucional_model.dart';
 
@@ -16,6 +19,7 @@ class AnexoreunioninstitucionalWidget extends StatefulWidget {
     this.editar,
     int? idanexoreunion,
     required this.formulario,
+    required this.spd,
   }) : this.idanexoreunion = idanexoreunion ?? 0;
 
   final IngresosRow? rowingreso;
@@ -23,6 +27,7 @@ class AnexoreunioninstitucionalWidget extends StatefulWidget {
   final bool? editar;
   final int idanexoreunion;
   final String? formulario;
+  final SpdRow? spd;
 
   @override
   State<AnexoreunioninstitucionalWidget> createState() =>
@@ -272,6 +277,104 @@ class _AnexoreunioninstitucionalWidgetState
                               ),
                             ),
                           ),
+                          Align(
+                            alignment: AlignmentDirectional(1.0, 0.0),
+                            child: FFButtonWidget(
+                              onPressed: () async {
+                                final selectedFiles = await selectFiles(
+                                  storageFolderPath: 'documentos',
+                                  multiFile: false,
+                                );
+                                if (selectedFiles != null) {
+                                  safeSetState(() => _model
+                                          .isDataUploading_uploadData9zvreunion =
+                                      true);
+                                  var selectedUploadedFiles =
+                                      <FFUploadedFile>[];
+
+                                  var downloadUrls = <String>[];
+                                  try {
+                                    showUploadMessage(
+                                      context,
+                                      'Uploading file...',
+                                      showLoading: true,
+                                    );
+                                    selectedUploadedFiles = selectedFiles
+                                        .map((m) => FFUploadedFile(
+                                              name:
+                                                  m.storagePath.split('/').last,
+                                              bytes: m.bytes,
+                                            ))
+                                        .toList();
+
+                                    downloadUrls =
+                                        await uploadSupabaseStorageFiles(
+                                      bucketName: 'acta',
+                                      selectedFiles: selectedFiles,
+                                    );
+                                  } finally {
+                                    ScaffoldMessenger.of(context)
+                                        .hideCurrentSnackBar();
+                                    _model.isDataUploading_uploadData9zvreunion =
+                                        false;
+                                  }
+                                  if (selectedUploadedFiles.length ==
+                                          selectedFiles.length &&
+                                      downloadUrls.length ==
+                                          selectedFiles.length) {
+                                    safeSetState(() {
+                                      _model.uploadedLocalFile_uploadData9zvreunion =
+                                          selectedUploadedFiles.first;
+                                      _model.uploadedFileUrl_uploadData9zvreunion =
+                                          downloadUrls.first;
+                                    });
+                                    showUploadMessage(
+                                      context,
+                                      'Success!',
+                                    );
+                                  } else {
+                                    safeSetState(() {});
+                                    showUploadMessage(
+                                      context,
+                                      'Failed to upload file',
+                                    );
+                                    return;
+                                  }
+                                }
+                              },
+                              text: 'Adjuntar documento ',
+                              options: FFButtonOptions(
+                                height: 40.0,
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 0.0, 16.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context).primary,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      font: GoogleFonts.notoSansJp(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontStyle,
+                                      ),
+                                      color: Colors.white,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontStyle,
+                                    ),
+                                elevation: 0.0,
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                            ),
+                          ),
                           Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -311,7 +414,7 @@ class _AnexoreunioninstitucionalWidgetState
                                   final _datePickedDate = await showDatePicker(
                                     context: context,
                                     initialDate: getCurrentTimestamp,
-                                    firstDate: getCurrentTimestamp,
+                                    firstDate: DateTime(1900),
                                     lastDate: DateTime(2050),
                                     builder: (context, child) {
                                       return wrapInMaterialDatePickerTheme(
@@ -975,8 +1078,9 @@ class _AnexoreunioninstitucionalWidgetState
                                           .validate()) {
                                     return;
                                   }
-                                  await Anexo4RequerimientoaccionesTable()
-                                      .insert({
+                                  _model.crearreunioninter =
+                                      await Anexo4RequerimientoaccionesTable()
+                                          .insert({
                                     'spd': widget.rowexp?.spd,
                                     'fecha': dateTimeFormat(
                                       "d/M/y",
@@ -999,26 +1103,75 @@ class _AnexoreunioninstitucionalWidgetState
                                     'profesionalespresentes': _model
                                         .textFieldmotivoTextController3.text,
                                     'formulario': widget.formulario,
+                                    'linkadjunto': _model
+                                        .uploadedFileUrl_uploadData9zvreunion,
                                   });
+                                  _model.documentoword =
+                                      await AnexoReuninInterinstitucionalCall
+                                          .call(
+                                    fecha: dateTimeFormat(
+                                      "d/M/y",
+                                      _model.datePicked,
+                                      locale: FFLocalizations.of(context)
+                                          .languageCode,
+                                    ),
+                                    nombreyapellido:
+                                        '${widget.rowexp?.nombre} ${widget.rowexp?.apellido}',
+                                    dni: widget.rowexp?.DNI,
+                                    institucion: _model
+                                        .textFieldmotivoTextController1.text,
+                                    objetivos: _model
+                                        .textFieldmotivoTextController2.text,
+                                    reunion: _model
+                                        .textFieldmotivoTextController4.text,
+                                    puntosacuerdos: _model
+                                        .textFieldmotivoTextController5.text,
+                                    expediente: widget.rowexp?.expediente,
+                                    idingreso: widget.rowingreso?.id,
+                                    carpeta: widget.rowingreso?.idcarpeta,
+                                    profesionales: _model
+                                        .textFieldmotivoTextController3.text,
+                                    idreunion: _model.crearreunioninter?.id,
+                                    url: _model
+                                        .uploadedFileUrl_uploadData9zvreunion,
+                                  );
+
+                                  await Anexo4RequerimientoaccionesTable()
+                                      .update(
+                                    data: {
+                                      'linkdoc':
+                                          AnexoReuninInterinstitucionalCall.url(
+                                        (_model.documentoword?.jsonBody ?? ''),
+                                      ),
+                                    },
+                                    matchingRows: (rows) => rows.eqOrNull(
+                                      'id',
+                                      _model.crearreunioninter?.id,
+                                    ),
+                                  );
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {
-                                      return AlertDialog(
-                                        title: Text(
-                                            'Se cargo correctamente la informacion'),
-                                        content: Text(
-                                            'Se guardo la informacion y se creo un documento en google docs!'),
-                                        actions: [
-                                          TextButton(
-                                            onPressed: () => Navigator.pop(
-                                                alertDialogContext),
-                                            child: Text('Ok'),
-                                          ),
-                                        ],
+                                      return WebViewAware(
+                                        child: AlertDialog(
+                                          title: Text(
+                                              'Se cargo correctamente la informacion'),
+                                          content: Text(
+                                              'Se guardo la informacion y se creo un documento en google docs!'),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: Text('Ok'),
+                                            ),
+                                          ],
+                                        ),
                                       );
                                     },
                                   );
                                   Navigator.pop(context, true);
+
+                                  safeSetState(() {});
                                 },
                                 text: 'Guardar',
                                 icon: Icon(

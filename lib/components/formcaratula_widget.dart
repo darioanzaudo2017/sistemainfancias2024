@@ -11,6 +11,8 @@ import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'formcaratula_model.dart';
 export 'formcaratula_model.dart';
 
@@ -21,12 +23,14 @@ class FormcaratulaWidget extends StatefulWidget {
     this.editar,
     this.dniok,
     required this.usuariorow,
+    required this.usuariorol,
   });
 
   final int? idexp;
   final bool? editar;
   final bool? dniok;
   final UsuariosRow? usuariorow;
+  final VistaUsuariosRolesRow? usuariorol;
 
   @override
   State<FormcaratulaWidget> createState() => _FormcaratulaWidgetState();
@@ -58,8 +62,11 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
 
     _model.textFieldDNIFocusNode ??= FocusNode();
 
+    _model.textFieldDNIMask = MaskTextInputFormatter(mask: '########');
+
     _model.textFieldedadFocusNode ??= FocusNode();
 
+    _model.textFieldedadMask = MaskTextInputFormatter(mask: '########');
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -810,16 +817,17 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
-                                            valueOrDefault<String>(
-                                              dateTimeFormat(
-                                                "d/M/y",
-                                                _model.datePicked1,
-                                                locale:
-                                                    FFLocalizations.of(context)
+                                            containerExpedienteRow?.fechaNac !=
+                                                    null
+                                                ? dateTimeFormat(
+                                                    "d/M/y",
+                                                    containerExpedienteRow!
+                                                        .fechaNac!,
+                                                    locale: FFLocalizations.of(
+                                                            context)
                                                         .languageCode,
-                                              ),
-                                              'No tiene fecha de Nac',
-                                            ),
+                                                  )
+                                                : 'No tiene fecha de naciemiento',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -1047,151 +1055,141 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                           ),
                                     ),
                                   ),
-                                  if (currentUserEmail ==
-                                      'darioanzaudo@gmail.com')
-                                    FutureBuilder<List<SpdRow>>(
-                                      future: SpdTable().queryRows(
-                                        queryFn: (q) => q,
-                                      ),
-                                      builder: (context, snapshot) {
-                                        // Customize what your widget looks like when it's loading.
-                                        if (!snapshot.hasData) {
-                                          return Center(
-                                            child: SizedBox(
-                                              width: 50.0,
-                                              height: 50.0,
-                                              child: CircularProgressIndicator(
-                                                valueColor:
-                                                    AlwaysStoppedAnimation<
-                                                        Color>(
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                                ),
+                                  FutureBuilder<List<SpdRow>>(
+                                    future: SpdTable().queryRows(
+                                      queryFn: (q) => q,
+                                    ),
+                                    builder: (context, snapshot) {
+                                      // Customize what your widget looks like when it's loading.
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: SizedBox(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            child: CircularProgressIndicator(
+                                              valueColor:
+                                                  AlwaysStoppedAnimation<Color>(
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
                                               ),
                                             ),
-                                          );
-                                        }
-                                        List<SpdRow> dropDownSpdRowList =
-                                            snapshot.data!;
-
-                                        return FlutterFlowDropDown<String>(
-                                          controller:
-                                              _model.dropDownValueController ??=
-                                                  FormFieldController<String>(
-                                            _model.dropDownValue ??=
-                                                widget.usuariorow?.spd,
                                           ),
-                                          options: dropDownSpdRowList
-                                              .map((e) => e.nombrespd)
-                                              .toList(),
-                                          onChanged: (val) => safeSetState(
-                                              () => _model.dropDownValue = val),
-                                          height: 40.0,
-                                          searchHintTextStyle: FlutterFlowTheme
-                                                  .of(context)
-                                              .labelMedium
-                                              .override(
-                                                font: GoogleFonts.notoSansJp(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMedium
-                                                          .fontStyle,
-                                                ),
-                                                letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontStyle,
-                                              ),
-                                          searchTextStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .bodyMedium
-                                              .override(
-                                                font: GoogleFonts.notoSansJp(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
-                                                ),
-                                                letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                          textStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .bodyMedium
-                                              .override(
-                                                font: GoogleFonts.notoSansJp(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
-                                                ),
-                                                letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                          hintText: 'SPD',
-                                          searchHintText: 'Buscar',
-                                          icon: Icon(
-                                            Icons.keyboard_arrow_down_rounded,
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
-                                            size: 24.0,
-                                          ),
-                                          fillColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .secondaryBackground,
-                                          elevation: 2.0,
-                                          borderColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .secondaryText,
-                                          borderWidth: 0.0,
-                                          borderRadius: 8.0,
-                                          margin:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  12.0, 0.0, 12.0, 0.0),
-                                          hidesUnderline: true,
-                                          isOverButton: false,
-                                          isSearchable: true,
-                                          isMultiSelect: false,
                                         );
-                                      },
-                                    ),
+                                      }
+                                      List<SpdRow> dropDownSpdRowList =
+                                          snapshot.data!;
+
+                                      return FlutterFlowDropDown<String>(
+                                        controller:
+                                            _model.dropDownValueController ??=
+                                                FormFieldController<String>(
+                                          _model.dropDownValue ??=
+                                              widget.usuariorow?.spd,
+                                        ),
+                                        options: dropDownSpdRowList
+                                            .map((e) => e.nombrespd)
+                                            .toList(),
+                                        onChanged: (val) => safeSetState(
+                                            () => _model.dropDownValue = val),
+                                        height: 40.0,
+                                        searchHintTextStyle: FlutterFlowTheme
+                                                .of(context)
+                                            .labelMedium
+                                            .override(
+                                              font: GoogleFonts.notoSansJp(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
+                                        searchTextStyle: FlutterFlowTheme.of(
+                                                context)
+                                            .bodyMedium
+                                            .override(
+                                              font: GoogleFonts.notoSansJp(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              font: GoogleFonts.notoSansJp(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                        hintText: 'SPD',
+                                        searchHintText: 'Buscar',
+                                        icon: Icon(
+                                          Icons.keyboard_arrow_down_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          size: 24.0,
+                                        ),
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        elevation: 2.0,
+                                        borderColor:
+                                            FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                        borderWidth: 0.0,
+                                        borderRadius: 8.0,
+                                        margin: EdgeInsetsDirectional.fromSTEB(
+                                            12.0, 0.0, 12.0, 0.0),
+                                        hidesUnderline: true,
+                                        disabled:
+                                            widget.usuariorol?.rolId == 3,
+                                        isOverButton: false,
+                                        isSearchable: true,
+                                        isMultiSelect: false,
+                                      );
+                                    },
+                                  ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
@@ -1411,7 +1409,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                                     functions.mayusculas(_model
                                                         .textFieldapellidoTextController
                                                         .text),
-                                                'spd': widget.usuariorow?.spd,
+                                                'spd': _model.dropDownValue,
                                                 'fechaNac': supaSerialize<
                                                         DateTime>(
                                                     _model.datePicked1 != null
@@ -1465,19 +1463,21 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                             await showDialog(
                                               context: context,
                                               builder: (alertDialogContext) {
-                                                return AlertDialog(
-                                                  title: Text(
-                                                      'Expediente Editado'),
-                                                  content: Text(
-                                                      'Se edito correctamente el expediente!'),
-                                                  actions: [
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext),
-                                                      child: Text('Ok'),
-                                                    ),
-                                                  ],
+                                                return WebViewAware(
+                                                  child: AlertDialog(
+                                                    title: Text(
+                                                        'Expediente Editado'),
+                                                    content: Text(
+                                                        'Se edito correctamente el expediente!'),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext),
+                                                        child: Text('Ok'),
+                                                      ),
+                                                    ],
+                                                  ),
                                                 );
                                               },
                                             );

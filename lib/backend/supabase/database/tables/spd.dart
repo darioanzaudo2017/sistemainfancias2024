@@ -43,4 +43,7 @@ class SpdRow extends SupabaseDataRow {
 
   int? get zona => getField<int>('Zona');
   set zona(int? value) => setField<int>('Zona', value);
+
+  String? get direccion => getField<String>('direccion');
+  set direccion(String? value) => setField<String>('direccion', value);
 }

@@ -1,4 +1,3 @@
-import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:async';
@@ -13,8 +12,6 @@ class ListareunioninterinstitucionalModel
   // Stores action output result for [Bottom Sheet - Anexoreunioninstitucional] action in Button widget.
   bool? creonuevareunion;
   Completer<List<Anexo4RequerimientoaccionesRow>>? requestCompleter;
-  // Stores action output result for [Backend Call - API (ANEXO  REUNIN INTERINSTITUCIONAL)] action in Button widget.
-  ApiCallResponse? apiResultzqa;
 
   @override
   void initState(BuildContext context) {}

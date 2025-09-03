@@ -9,13 +9,16 @@ class AnexoeducacionsolicitudModel
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();
-  DateTime? datePicked1;
+  DateTime? datePicked;
+  // State field(s) for TextFieldcpc widget.
+  FocusNode? textFieldcpcFocusNode;
+  TextEditingController? textFieldcpcTextController;
+  String? Function(BuildContext, String?)? textFieldcpcTextControllerValidator;
   // State field(s) for TextFieldmotivo widget.
   FocusNode? textFieldmotivoFocusNode;
   TextEditingController? textFieldmotivoTextController;
   String? Function(BuildContext, String?)?
       textFieldmotivoTextControllerValidator;
-  DateTime? datePicked2;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   AnexoinstitucioneeducacionRow? creasolicitudeducacion;
   // Stores action output result for [Backend Call - API (ANEXO  SOLICITA INFORMACIN A INSTITUCIN EDUCATIVA)] action in Button widget.
@@ -26,6 +29,9 @@ class AnexoeducacionsolicitudModel
 
   @override
   void dispose() {
+    textFieldcpcFocusNode?.dispose();
+    textFieldcpcTextController?.dispose();
+
     textFieldmotivoFocusNode?.dispose();
     textFieldmotivoTextController?.dispose();
   }

@@ -1,3 +1,4 @@
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'cambiarexpe_widget.dart' show CambiarexpeWidget;
@@ -9,6 +10,8 @@ class CambiarexpeModel extends FlutterFlowModel<CambiarexpeWidget> {
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
+  // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
+  List<ExpedienteRow>? expedienteactualizado;
 
   @override
   void initState(BuildContext context) {}

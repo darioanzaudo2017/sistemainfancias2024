@@ -13,7 +13,7 @@ class EntrevistasCopyModel extends FlutterFlowModel<EntrevistasCopyWidget> {
   String nombrepagina =
       'Verificacion y ampliacion de informacion. Entrevistas ';
 
-  int? contador;
+  int? contador = 0;
 
   ///  State fields for stateful widgets in this page.
 
@@ -27,6 +27,12 @@ class EntrevistasCopyModel extends FlutterFlowModel<EntrevistasCopyWidget> {
   // State field(s) for PaginatedDataTable widget.
   final paginatedDataTableController =
       FlutterFlowDataTableController<VistaAmpliacionInformacionRow>();
+  // Stores action output result for [Bottom Sheet - ampliacioninformacion] action in Button widget.
+  int? editoentrevistas;
+  // Stores action output result for [Bottom Sheet - ampliacionactividadplanificacion] action in Button widget.
+  bool? editarplanificacion;
+  // Stores action output result for [Backend Call - Query Rows] action in IconButton widget.
+  List<AmplaicionSeccion8Row>? listaentrevistados;
 
   @override
   void initState(BuildContext context) {

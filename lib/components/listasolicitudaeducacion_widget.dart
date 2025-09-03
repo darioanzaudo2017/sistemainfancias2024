@@ -1,9 +1,11 @@
 import '/backend/supabase/supabase.dart';
+import '/entrevistas/anexoeducacionsolicitud/anexoeducacionsolicitud_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'listasolicitudaeducacion_model.dart';
 export 'listasolicitudaeducacion_model.dart';
 
@@ -13,9 +15,17 @@ class ListasolicitudaeducacionWidget extends StatefulWidget {
   const ListasolicitudaeducacionWidget({
     super.key,
     this.idingreso,
+    this.ingresorow,
+    this.rowexp,
+    required this.idampliacion,
+    required this.spd,
   });
 
   final int? idingreso;
+  final IngresosRow? ingresorow;
+  final VistaExpedientesUltimoEstadoRow? rowexp;
+  final VistaAmpliacionInformacionRow? idampliacion;
+  final SpdRow? spd;
 
   @override
   State<ListasolicitudaeducacionWidget> createState() =>
@@ -79,14 +89,64 @@ class _ListasolicitudaeducacionWidgetState
                 ),
               ),
             ),
+            FFButtonWidget(
+              onPressed: () async {
+                await showModalBottomSheet(
+                  isScrollControlled: true,
+                  backgroundColor: Colors.transparent,
+                  enableDrag: false,
+                  context: context,
+                  builder: (context) {
+                    return WebViewAware(
+                      child: Padding(
+                        padding: MediaQuery.viewInsetsOf(context),
+                        child: AnexoeducacionsolicitudWidget(
+                          rowingreso: widget.ingresorow!,
+                          rowexp: widget.rowexp!,
+                          editar: false,
+                          idanexosalud: 0,
+                          idampliacion: widget.idampliacion!,
+                          spd: widget.spd!,
+                        ),
+                      ),
+                    );
+                  },
+                ).then((value) => safeSetState(() {}));
+              },
+              text: 'Solicitud informacion Educacion',
+              options: FFButtonOptions(
+                height: 40.0,
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                color: FlutterFlowTheme.of(context).primary,
+                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                      font: GoogleFonts.notoSansJp(
+                        fontWeight:
+                            FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                      ),
+                      color: Colors.white,
+                      letterSpacing: 0.0,
+                      fontWeight:
+                          FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                    ),
+                elevation: 0.0,
+                borderRadius: BorderRadius.circular(8.0),
+              ),
+            ),
             Align(
               alignment: AlignmentDirectional(0.0, 0.0),
               child: FutureBuilder<List<AnexoinstitucioneeducacionRow>>(
                 future: AnexoinstitucioneeducacionTable().queryRows(
-                  queryFn: (q) => q.eqOrNull(
-                    'idingreso',
-                    widget.idingreso,
-                  ),
+                  queryFn: (q) => q
+                      .eqOrNull(
+                        'idingreso',
+                        widget.idingreso,
+                      )
+                      .order('fecha'),
                 ),
                 builder: (context, snapshot) {
                   // Customize what your widget looks like when it's loading.
@@ -223,96 +283,156 @@ class _ListasolicitudaeducacionWidgetState
                                         ),
                                       ],
                                     ),
-                                    Text(
-                                      '15/05/2023',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyLarge
-                                          .override(
-                                            font: GoogleFonts.notoSansJp(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge
-                                                      .fontStyle,
-                                            ),
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
-                                            letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyLarge
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyLarge
-                                                    .fontStyle,
-                                          ),
-                                    ),
                                   ],
                                 ),
-                                if (listViewAnexoinstitucioneeducacionRow
-                                            .linkdoc !=
-                                        null &&
-                                    listViewAnexoinstitucioneeducacionRow
-                                            .linkdoc !=
-                                        '')
-                                  FFButtonWidget(
-                                    onPressed: () async {
-                                      await launchURL(
-                                          listViewAnexoinstitucioneeducacionRow
-                                              .linkdoc!);
-                                    },
-                                    text: 'Abrir Documento',
-                                    icon: Icon(
-                                      Icons.description,
-                                      color: FlutterFlowTheme.of(context).info,
-                                      size: 15.0,
-                                    ),
-                                    options: FFButtonOptions(
-                                      width: double.infinity,
-                                      height: 48.0,
-                                      padding: EdgeInsets.all(8.0),
-                                      iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            font: GoogleFonts.notoSansJp(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .fontStyle,
-                                            ),
-                                            color: FlutterFlowTheme.of(context)
-                                                .info,
-                                            letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .fontStyle,
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    if (listViewAnexoinstitucioneeducacionRow
+                                                .linkdoc !=
+                                            null &&
+                                        listViewAnexoinstitucioneeducacionRow
+                                                .linkdoc !=
+                                            '')
+                                      Expanded(
+                                        child: FFButtonWidget(
+                                          onPressed: () async {
+                                            await launchURL(
+                                                'https://view.officeapps.live.com/op/embed.aspx?src=${listViewAnexoinstitucioneeducacionRow.linkdoc}');
+                                          },
+                                          text: 'Abrir Documento',
+                                          icon: Icon(
+                                            Icons.description,
+                                            size: 15.0,
                                           ),
-                                      elevation: 0.0,
-                                      borderSide: BorderSide(
-                                        color: Colors.transparent,
-                                        width: 1.0,
+                                          options: FFButtonOptions(
+                                            width: double.infinity,
+                                            height: 48.0,
+                                            padding: EdgeInsets.all(8.0),
+                                            iconPadding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            iconColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .info,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            textStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .titleSmall
+                                                .override(
+                                                  font: GoogleFonts.notoSansJp(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontStyle,
+                                                  ),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .info,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontStyle,
+                                                ),
+                                            elevation: 0.0,
+                                            borderSide: BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                        ),
                                       ),
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                  ),
+                                    if (listViewAnexoinstitucioneeducacionRow
+                                                .linkdoc !=
+                                            null &&
+                                        listViewAnexoinstitucioneeducacionRow
+                                                .linkdoc !=
+                                            '')
+                                      Expanded(
+                                        child: FFButtonWidget(
+                                          onPressed: () async {
+                                            await launchURL(
+                                                listViewAnexoinstitucioneeducacionRow
+                                                    .linkdoc!);
+                                          },
+                                          text: 'Descargar Documento',
+                                          icon: Icon(
+                                            Icons.download_rounded,
+                                            size: 15.0,
+                                          ),
+                                          options: FFButtonOptions(
+                                            width: double.infinity,
+                                            height: 48.0,
+                                            padding: EdgeInsets.all(8.0),
+                                            iconPadding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            iconColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .info,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            textStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .titleSmall
+                                                .override(
+                                                  font: GoogleFonts.notoSansJp(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontStyle,
+                                                  ),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .info,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontStyle,
+                                                ),
+                                            elevation: 0.0,
+                                            borderSide: BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                        ),
+                                      ),
+                                  ]
+                                      .divide(SizedBox(width: 10.0))
+                                      .around(SizedBox(width: 10.0)),
+                                ),
                               ].divide(SizedBox(height: 12.0)),
                             ),
                           ),

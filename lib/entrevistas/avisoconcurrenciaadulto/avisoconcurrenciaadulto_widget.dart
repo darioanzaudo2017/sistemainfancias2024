@@ -1,3 +1,4 @@
+import '/auth/supabase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -5,8 +6,11 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'avisoconcurrenciaadulto_model.dart';
 export 'avisoconcurrenciaadulto_model.dart';
 
@@ -18,13 +22,15 @@ class AvisoconcurrenciaadultoWidget extends StatefulWidget {
     this.editar,
     this.idampliacion,
     this.idavisoconcurrencia,
+    required this.spd,
   });
 
   final IngresosRow? rowingreso;
   final VistaExpedientesUltimoEstadoRow? rowexp;
   final bool? editar;
-  final AmpliaciondeinformacionRow? idampliacion;
+  final int? idampliacion;
   final int? idavisoconcurrencia;
+  final SpdRow? spd;
 
   @override
   State<AvisoconcurrenciaadultoWidget> createState() =>
@@ -46,12 +52,32 @@ class _AvisoconcurrenciaadultoWidgetState
     super.initState();
     _model = createModel(context, () => AvisoconcurrenciaadultoModel());
 
+    _model.textFieldapellidoTextController ??= TextEditingController();
+    _model.textFieldapellidoFocusNode ??= FocusNode();
+
+    _model.textFieldnombreTextController ??= TextEditingController();
+    _model.textFieldnombreFocusNode ??= FocusNode();
+
+    _model.textFieldDNITextController ??= TextEditingController();
+    _model.textFieldDNIFocusNode ??= FocusNode();
+
+    _model.textFieldDNIMask = MaskTextInputFormatter(mask: '########');
+    _model.textController4 ??= TextEditingController();
+    _model.textFieldFocusNode1 ??= FocusNode();
+
+    _model.textController5 ??= TextEditingController();
+    _model.textFieldFocusNode2 ??= FocusNode();
+
     _model.textFieldresenaTextController ??= TextEditingController();
     _model.textFieldresenaFocusNode ??= FocusNode();
 
-    _model.textFieldtelacontactarTextController ??= TextEditingController();
+    _model.textFieldresenaMask = MaskTextInputFormatter(mask: '##:## hs');
+    _model.textFieldtelacontactarTextController ??=
+        TextEditingController(text: widget.spd?.telefono);
     _model.textFieldtelacontactarFocusNode ??= FocusNode();
 
+    _model.textFieldtelacontactarMask =
+        MaskTextInputFormatter(mask: '##########');
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -109,7 +135,7 @@ class _AvisoconcurrenciaadultoWidgetState
               ),
               child: Container(
                 width: MediaQuery.sizeOf(context).width * 4.5,
-                height: 500.0,
+                height: 773.75,
                 constraints: BoxConstraints(
                   maxWidth: 900.0,
                 ),
@@ -125,7 +151,7 @@ class _AvisoconcurrenciaadultoWidgetState
                   key: _model.formKey,
                   autovalidateMode: AutovalidateMode.disabled,
                   child: Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, -1.0),
                     child: Padding(
                       padding:
                           EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
@@ -144,7 +170,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         250.0, 0.0, 0.0, 0.0),
                                     child: Text(
-                                      'Aviso de concurrencia adulto',
+                                      'Aviso Convocatoria y visita de adultos',
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall
                                           .override(
@@ -182,6 +208,645 @@ class _AvisoconcurrenciaadultoWidgetState
                                     onPressed: () async {
                                       Navigator.pop(context);
                                     },
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Expanded(
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        8.0, 0.0, 8.0, 0.0),
+                                    child: TextFormField(
+                                      controller: _model
+                                          .textFieldapellidoTextController,
+                                      focusNode:
+                                          _model.textFieldapellidoFocusNode,
+                                      autofocus: true,
+                                      obscureText: false,
+                                      decoration: InputDecoration(
+                                        labelText: 'Apellidos',
+                                        labelStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              font: GoogleFonts.notoSansJp(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
+                                        hintStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              font: GoogleFonts.notoSansJp(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .alternate,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        focusedErrorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.notoSansJp(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                      maxLines: null,
+                                      validator: _model
+                                          .textFieldapellidoTextControllerValidator
+                                          .asValidator(context),
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        8.0, 0.0, 8.0, 0.0),
+                                    child: TextFormField(
+                                      controller:
+                                          _model.textFieldnombreTextController,
+                                      focusNode:
+                                          _model.textFieldnombreFocusNode,
+                                      autofocus: true,
+                                      obscureText: false,
+                                      decoration: InputDecoration(
+                                        labelText: 'Nombres',
+                                        labelStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              font: GoogleFonts.notoSansJp(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
+                                        hintStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              font: GoogleFonts.notoSansJp(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .alternate,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        focusedErrorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.notoSansJp(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                      maxLines: null,
+                                      validator: _model
+                                          .textFieldnombreTextControllerValidator
+                                          .asValidator(context),
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        8.0, 0.0, 8.0, 0.0),
+                                    child: TextFormField(
+                                      controller:
+                                          _model.textFieldDNITextController,
+                                      focusNode: _model.textFieldDNIFocusNode,
+                                      onChanged: (_) => EasyDebounce.debounce(
+                                        '_model.textFieldDNITextController',
+                                        Duration(milliseconds: 2000),
+                                        () => safeSetState(() {}),
+                                      ),
+                                      autofocus: true,
+                                      obscureText: false,
+                                      decoration: InputDecoration(
+                                        labelText: 'DNI',
+                                        labelStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              font: GoogleFonts.notoSansJp(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
+                                        hintStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              font: GoogleFonts.notoSansJp(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .alternate,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        focusedErrorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.notoSansJp(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                      maxLength: 8,
+                                      validator: _model
+                                          .textFieldDNITextControllerValidator
+                                          .asValidator(context),
+                                      inputFormatters: [
+                                        _model.textFieldDNIMask
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        8.0, 0.0, 8.0, 0.0),
+                                    child: TextFormField(
+                                      controller: _model.textController4,
+                                      focusNode: _model.textFieldFocusNode1,
+                                      autofocus: true,
+                                      obscureText: false,
+                                      decoration: InputDecoration(
+                                        labelText: 'Teléfono',
+                                        labelStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              font: GoogleFonts.notoSansJp(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
+                                        hintStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              font: GoogleFonts.notoSansJp(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .alternate,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        focusedErrorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.notoSansJp(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                      validator: _model.textController4Validator
+                                          .asValidator(context),
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        8.0, 0.0, 8.0, 0.0),
+                                    child: TextFormField(
+                                      controller: _model.textController5,
+                                      focusNode: _model.textFieldFocusNode2,
+                                      autofocus: true,
+                                      obscureText: false,
+                                      decoration: InputDecoration(
+                                        labelText: 'Dirección del NNyA',
+                                        labelStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              font: GoogleFonts.notoSansJp(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
+                                        hintStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              font: GoogleFonts.notoSansJp(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .alternate,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        focusedErrorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.notoSansJp(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                      validator: _model.textController5Validator
+                                          .asValidator(context),
+                                    ),
                                   ),
                                 ),
                               ],
@@ -496,7 +1161,7 @@ class _AvisoconcurrenciaadultoWidgetState
                                               await showDatePicker(
                                             context: context,
                                             initialDate: getCurrentTimestamp,
-                                            firstDate: getCurrentTimestamp,
+                                            firstDate: DateTime(1900),
                                             lastDate: DateTime(2050),
                                             builder: (context, child) {
                                               return wrapInMaterialDatePickerTheme(
@@ -796,17 +1461,20 @@ class _AvisoconcurrenciaadultoWidgetState
                                       await showDialog(
                                         context: context,
                                         builder: (alertDialogContext) {
-                                          return AlertDialog(
-                                            title: Text('Campo obligatorio'),
-                                            content:
-                                                Text('La fecha obligatoria!'),
-                                            actions: [
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext),
-                                                child: Text('Ok'),
-                                              ),
-                                            ],
+                                          return WebViewAware(
+                                            child: AlertDialog(
+                                              title: Text('Campo obligatorio'),
+                                              content:
+                                                  Text('La fecha obligatoria!'),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () =>
+                                                      Navigator.pop(
+                                                          alertDialogContext),
+                                                  child: Text('Ok'),
+                                                ),
+                                              ],
+                                            ),
                                           );
                                         },
                                       );
@@ -816,47 +1484,46 @@ class _AvisoconcurrenciaadultoWidgetState
                                       await showDialog(
                                         context: context,
                                         builder: (alertDialogContext) {
-                                          return AlertDialog(
-                                            title: Text('Campo obligatorio'),
-                                            content:
-                                                Text('La fecha obligatoria!'),
-                                            actions: [
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext),
-                                                child: Text('Ok'),
-                                              ),
-                                            ],
+                                          return WebViewAware(
+                                            child: AlertDialog(
+                                              title: Text('Campo obligatorio'),
+                                              content:
+                                                  Text('La fecha obligatoria!'),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () =>
+                                                      Navigator.pop(
+                                                          alertDialogContext),
+                                                  child: Text('Ok'),
+                                                ),
+                                              ],
+                                            ),
                                           );
                                         },
                                       );
                                       return;
                                     }
-                                    await AvisovisitaadultosTable().update(
-                                      data: {
-                                        'domicilio': '',
-                                        'fecha': supaSerialize<DateTime>(
-                                            _model.datePicked1),
-                                        'hora': _model
-                                            .textFieldresenaTextController.text,
-                                        'CPC': widget.rowexp?.spd,
-                                        'dni': widget.idampliacion?.dnient,
-                                        'nombres': widget.idampliacion?.noment,
-                                        'fechadoc': supaSerialize<DateTime>(
-                                            _model.datePicked2),
-                                        'iddoc': widget
-                                            .idampliacion?.idampliacion
-                                            .toString(),
-                                        'apellidos':
-                                            widget.idampliacion?.apeent,
-                                      },
-                                      matchingRows: (rows) => rows.eqOrNull(
-                                        'id',
-                                        widget.idavisoconcurrencia,
-                                      ),
-                                    );
-                                    _model.apiResultm56 =
-                                        await ConcurrenciaVisitaAdultoCall.call(
+                                    _model.convocatororia =
+                                        await AvisovisitaadultosTable().insert({
+                                      'domicilio': _model.textController5.text,
+                                      'fecha': supaSerialize<DateTime>(
+                                          _model.datePicked1),
+                                      'hora': _model
+                                          .textFieldresenaTextController.text,
+                                      'CPC': widget.rowexp?.spd,
+                                      'dni': int.tryParse(_model
+                                          .textFieldDNITextController.text),
+                                      'nombres': _model
+                                          .textFieldnombreTextController.text,
+                                      'fechadoc': supaSerialize<DateTime>(
+                                          _model.datePicked2),
+                                      'apellidos': _model
+                                          .textFieldapellidoTextController.text,
+                                      'idIngreso': widget.rowingreso?.id,
+                                      'iduser': currentUserUid,
+                                    });
+                                    _model.apiResultm56convocatoria =
+                                        await ConvocatoriaVisitaAdultoCall.call(
                                       fechadoc: dateTimeFormat(
                                         "d/M/y",
                                         _model.datePicked1,
@@ -870,59 +1537,111 @@ class _AvisoconcurrenciaadultoWidgetState
                                             .languageCode,
                                       ),
                                       cpc: widget.rowexp?.spd,
-                                      idingreso: widget.rowingreso?.id,
-                                      carpeta: widget.rowingreso?.idcarpeta,
                                       telefono: _model
                                           .textFieldtelacontactarTextController
                                           .text,
-                                      iddoc: widget.idampliacion?.idampliacion
-                                          .toString(),
-                                      nombre:
-                                          containeravisoadultosAvisovisitaadultosRow
-                                              ?.nombres,
-                                      apellido:
-                                          containeravisoadultosAvisovisitaadultosRow
-                                              ?.apellidos,
-                                      domicilio:
-                                          containeravisoadultosAvisovisitaadultosRow
-                                              ?.domicilio,
-                                      dni:
-                                          containeravisoadultosAvisovisitaadultosRow
-                                              ?.dni,
-                                      expediente: widget.rowexp?.expediente,
+                                      nombre: _model
+                                          .textFieldnombreTextController.text,
+                                      apellido: _model
+                                          .textFieldapellidoTextController.text,
+                                      domicilio: _model.textController5.text,
+                                      dni: int.tryParse(_model
+                                          .textFieldDNITextController.text),
+                                      hora: _model
+                                          .textFieldresenaTextController.text,
+                                      domiciliospd: widget.spd?.direccion,
                                     );
 
-                                    await AmpliaciondeinformacionTable().update(
-                                      data: {
-                                        'fechadoc': supaSerialize<DateTime>(
-                                            _model.datePicked1),
-                                        'fecha': supaSerialize<DateTime>(
-                                            _model.datePicked2),
-                                      },
-                                      matchingRows: (rows) => rows.eqOrNull(
-                                        'idampliacion',
-                                        widget.idampliacion?.idampliacion,
+                                    _model.docvisita =
+                                        await AvisoVisitaAdultoCall.call(
+                                      nombre: _model
+                                          .textFieldnombreTextController.text,
+                                      apellido: _model
+                                          .textFieldapellidoTextController.text,
+                                      cpc: widget.rowexp?.spd,
+                                      telefono: _model
+                                          .textFieldtelacontactarTextController
+                                          .text,
+                                      expediente: widget.rowexp?.expediente,
+                                      fecha: dateTimeFormat(
+                                        "d/M/y",
+                                        _model.datePicked1,
+                                        locale: FFLocalizations.of(context)
+                                            .languageCode,
                                       ),
+                                      domicilio: widget.spd?.direccion,
                                     );
-                                    if ((_model.apiResultm56?.succeeded ??
+
+                                    if ((_model.apiResultm56convocatoria
+                                            ?.succeeded ??
                                         true)) {
-                                      await Future.delayed(
-                                          const Duration(milliseconds: 2000));
+                                      await AmpliaciondeinformacionTable()
+                                          .update(
+                                        data: {
+                                          'linkconcurrenciaadulto':
+                                              ConvocatoriaVisitaAdultoCall.url(
+                                            (_model.apiResultm56convocatoria
+                                                    ?.jsonBody ??
+                                                ''),
+                                          ),
+                                          'linkvisitaadulto':
+                                              AvisoVisitaAdultoCall.url(
+                                            (_model.docvisita?.jsonBody ?? ''),
+                                          ),
+                                          'noment': _model
+                                              .textFieldnombreTextController
+                                              .text,
+                                          'apeent': _model
+                                              .textFieldapellidoTextController
+                                              .text,
+                                          'dnient': int.tryParse(_model
+                                              .textFieldDNITextController.text),
+                                        },
+                                        matchingRows: (rows) => rows.eqOrNull(
+                                          'idampliacion',
+                                          widget.idampliacion,
+                                        ),
+                                      );
+                                      await AvisovisitaadultosTable().update(
+                                        data: {
+                                          'linkdocConcurrencia':
+                                              ConvocatoriaVisitaAdultoCall.url(
+                                            (_model.apiResultm56convocatoria
+                                                    ?.jsonBody ??
+                                                ''),
+                                          ),
+                                          'nombres': '',
+                                          'apellidos': '',
+                                          'dni': widget.rowexp?.DNI,
+                                          'linkAviso':
+                                              AvisoVisitaAdultoCall.url(
+                                            (_model.docvisita?.jsonBody ?? ''),
+                                          ),
+                                          'idampliacion': widget.idampliacion,
+                                        },
+                                        matchingRows: (rows) => rows.eqOrNull(
+                                          'id',
+                                          _model.convocatororia?.id,
+                                        ),
+                                      );
                                       await showDialog(
                                         context: context,
                                         builder: (alertDialogContext) {
-                                          return AlertDialog(
-                                            title:
-                                                Text('Se creo el documento!'),
-                                            content: Text(
-                                                'Se creo el aviso de visita de entrevista a adulto!!'),
-                                            actions: [
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext),
-                                                child: Text('Ok'),
-                                              ),
-                                            ],
+                                          return WebViewAware(
+                                            child: AlertDialog(
+                                              title:
+                                                  Text('Se creo el documento!'),
+                                              content: Text(
+                                                  'Se creo el aviso de visita de entrevista a adulto!!'),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () =>
+                                                      Navigator.pop(
+                                                          alertDialogContext),
+                                                  child: Text('Ok'),
+                                                ),
+                                              ],
+                                            ),
                                           );
                                         },
                                       );

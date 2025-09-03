@@ -12,6 +12,7 @@ import '/flutter_flow/form_field_controller.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'seccion7_model.dart';
 export 'seccion7_model.dart';
 
@@ -57,39 +58,38 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Align(
-          alignment: AlignmentDirectional(0.0, 0.0),
-          child: FutureBuilder<List<Seccion7Row>>(
-            future: Seccion7Table().querySingleRow(
-              queryFn: (q) => q.eqOrNull(
-                'idIngreso',
-                widget.rowingreso?.id,
+    return FutureBuilder<List<Seccion7Row>>(
+      future: Seccion7Table().querySingleRow(
+        queryFn: (q) => q.eqOrNull(
+          'idIngreso',
+          widget.rowingreso?.id,
+        ),
+      ),
+      builder: (context, snapshot) {
+        // Customize what your widget looks like when it's loading.
+        if (!snapshot.hasData) {
+          return Center(
+            child: SizedBox(
+              width: 50.0,
+              height: 50.0,
+              child: CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(
+                  FlutterFlowTheme.of(context).primary,
+                ),
               ),
             ),
-            builder: (context, snapshot) {
-              // Customize what your widget looks like when it's loading.
-              if (!snapshot.hasData) {
-                return Center(
-                  child: SizedBox(
-                    width: 50.0,
-                    height: 50.0,
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        FlutterFlowTheme.of(context).primary,
-                      ),
-                    ),
-                  ),
-                );
-              }
-              List<Seccion7Row> containerSeccion7RowList = snapshot.data!;
+          );
+        }
+        List<Seccion7Row> stackSeccion7RowList = snapshot.data!;
 
-              final containerSeccion7Row = containerSeccion7RowList.isNotEmpty
-                  ? containerSeccion7RowList.first
-                  : null;
+        final stackSeccion7Row =
+            stackSeccion7RowList.isNotEmpty ? stackSeccion7RowList.first : null;
 
-              return Material(
+        return Stack(
+          children: [
+            Align(
+              alignment: AlignmentDirectional(0.0, 0.0),
+              child: Material(
                 color: Colors.transparent,
                 elevation: 2.0,
                 shape: RoundedRectangleBorder(
@@ -297,14 +297,16 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                       enableDrag: false,
                                       context: context,
                                       builder: (context) {
-                                        return Padding(
-                                          padding:
-                                              MediaQuery.viewInsetsOf(context),
-                                          child:
-                                              DesplegablederechosprincipalWidget(
-                                            idexp: widget.rowexp?.id,
-                                            idingreso: widget.rowingreso?.id,
-                                            form: 'Recepcion de la demanda',
+                                        return WebViewAware(
+                                          child: Padding(
+                                            padding: MediaQuery.viewInsetsOf(
+                                                context),
+                                            child:
+                                                DesplegablederechosprincipalWidget(
+                                              idexp: widget.rowexp?.id,
+                                              idingreso: widget.rowingreso?.id,
+                                              form: 'Recepcion de la demanda',
+                                            ),
                                           ),
                                         );
                                       },
@@ -687,6 +689,45 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                                       ),
                                                     ),
                                                   ),
+                                                  DataColumn2(
+                                                    label:
+                                                        DefaultTextStyle.merge(
+                                                      softWrap: true,
+                                                      child: Text(
+                                                        'Indicador',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelLarge
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .notoSansJp(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelLarge
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelLarge
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryBackground,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLarge
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLarge
+                                                                      .fontStyle,
+                                                                ),
+                                                      ),
+                                                    ),
+                                                  ),
                                                 ],
                                                 dataRowBuilder:
                                                     (listadederchosItem,
@@ -899,25 +940,24 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                                                         context,
                                                                     builder:
                                                                         (alertDialogContext) {
-                                                                      return AlertDialog(
-                                                                        title: Text(
-                                                                            'Eliminar derecho vulnerado'),
-                                                                        content:
-                                                                            Text('Desea eliminar el derecho registrado?'),
-                                                                        actions: [
-                                                                          TextButton(
-                                                                            onPressed: () =>
-                                                                                Navigator.pop(alertDialogContext, false),
-                                                                            child:
-                                                                                Text('Cancelar'),
-                                                                          ),
-                                                                          TextButton(
-                                                                            onPressed: () =>
-                                                                                Navigator.pop(alertDialogContext, true),
-                                                                            child:
-                                                                                Text('Confirmar'),
-                                                                          ),
-                                                                        ],
+                                                                      return WebViewAware(
+                                                                        child:
+                                                                            AlertDialog(
+                                                                          title:
+                                                                              Text('Eliminar derecho vulnerado'),
+                                                                          content:
+                                                                              Text('Desea eliminar el derecho registrado?'),
+                                                                          actions: [
+                                                                            TextButton(
+                                                                              onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                              child: Text('Cancelar'),
+                                                                            ),
+                                                                            TextButton(
+                                                                              onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                              child: Text('Confirmar'),
+                                                                            ),
+                                                                          ],
+                                                                        ),
                                                                       );
                                                                     },
                                                                   ) ??
@@ -946,6 +986,40 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                                       valueOrDefault<String>(
                                                         listadederchosItem
                                                             .observaciones,
+                                                        'Sin dato',
+                                                      ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .notoSansJp(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                    ),
+                                                    Text(
+                                                      valueOrDefault<String>(
+                                                        listadederchosItem
+                                                            .indicadorVulneracion,
                                                         'Sin dato',
                                                       ),
                                                       style:
@@ -1175,7 +1249,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                             FormFieldController<List<String>>(
                                       [
                                         valueOrDefault<String>(
-                                          containerSeccion7Row?.tieneCriterios,
+                                          stackSeccion7Row?.tieneCriterios,
                                           'No',
                                         )
                                       ],
@@ -1200,10 +1274,9 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                                 String>(_model
                                                     .dropDownpriorizacionValue ??=
                                                 List<String>.from(
-                                          containerSeccion7Row?.criterios ?? [],
+                                          stackSeccion7Row?.criterios ?? [],
                                         )),
                                         options: [
-                                          'No tiene criterios de priorizacion',
                                           'Riesgo de vida.',
                                           'Sospecha de violencia sexual contra NNYA.',
                                           'Evidencia física relacionada a la vulneración de la integridad  personal.',
@@ -1321,7 +1394,11 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                       builder: (context) {
                                         final listacriterios = _model
                                                 .dropDownpriorizacionValue
-                                                ?.toList() ??
+                                                ?.where((e) =>
+                                                    e !=
+                                                    '[\"No tiene criterios de priorizacion\"]')
+                                                .toList()
+                                                .toList() ??
                                             [];
 
                                         return ListView.builder(
@@ -1339,7 +1416,10 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                                   .fromSTEB(
                                                       20.0, 12.0, 20.0, 0.0),
                                               child: Container(
-                                                width: double.infinity,
+                                                width:
+                                                    MediaQuery.sizeOf(context)
+                                                            .width *
+                                                        0.9,
                                                 height: 40.0,
                                                 decoration: BoxDecoration(
                                                   color: Colors.white,
@@ -1448,25 +1528,8 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                           }
                                           if (!widget.editar!) {
                                             await Seccion7Table().insert({
-                                              'Criterios': () {
-                                                if (_model.dropDownpriorizacionValue !=
-                                                        null &&
-                                                    (_model.dropDownpriorizacionValue)!
-                                                        .isNotEmpty) {
-                                                  return _model
-                                                      .dropDownpriorizacionValue;
-                                                } else if (_model
-                                                        .choiceChipsValue ==
-                                                    'No') {
-                                                  return [
-                                                    'No tiene criterios de priorizacion'
-                                                  ];
-                                                } else {
-                                                  return [
-                                                    'No tiene criterios de priorizacion'
-                                                  ];
-                                                }
-                                              }(),
+                                              'Criterios': _model
+                                                  .dropDownpriorizacionValue,
                                               'idIngreso':
                                                   widget.rowingreso?.id,
                                               'idExpediente':
@@ -1492,18 +1555,21 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                             await showDialog(
                                               context: context,
                                               builder: (alertDialogContext) {
-                                                return AlertDialog(
-                                                  title: Text('Carga correcta'),
-                                                  content: Text(
-                                                      'La informacion se guardo correctamente!!'),
-                                                  actions: [
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext),
-                                                      child: Text('Ok'),
-                                                    ),
-                                                  ],
+                                                return WebViewAware(
+                                                  child: AlertDialog(
+                                                    title:
+                                                        Text('Carga correcta'),
+                                                    content: Text(
+                                                        'La informacion se guardo correctamente!!'),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext),
+                                                        child: Text('Ok'),
+                                                      ),
+                                                    ],
+                                                  ),
                                                 );
                                               },
                                             );
@@ -1539,18 +1605,21 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                             await showDialog(
                                               context: context,
                                               builder: (alertDialogContext) {
-                                                return AlertDialog(
-                                                  title: Text('Carga correcta'),
-                                                  content: Text(
-                                                      'La informacion se guardo correctamente!!'),
-                                                  actions: [
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext),
-                                                      child: Text('Ok'),
-                                                    ),
-                                                  ],
+                                                return WebViewAware(
+                                                  child: AlertDialog(
+                                                    title:
+                                                        Text('Carga correcta'),
+                                                    content: Text(
+                                                        'La informacion se guardo correctamente!!'),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext),
+                                                        child: Text('Ok'),
+                                                      ),
+                                                    ],
+                                                  ),
                                                 );
                                               },
                                             );
@@ -1622,84 +1691,86 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                     ),
                   ),
                 ),
-              );
-            },
-          ),
-        ),
-        if (_model.editarderechos)
-          Container(
-            width: MediaQuery.sizeOf(context).width * 1.0,
-            height: MediaQuery.sizeOf(context).height * 1.0,
-            decoration: BoxDecoration(
-              color: Color(0x3BE0E3E7),
-            ),
-            child: Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Align(
-                    alignment: AlignmentDirectional(1.0, -1.0),
-                    child: Material(
-                      color: Colors.transparent,
-                      elevation: 5.0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      child: Container(
-                        width: 80.0,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: FlutterFlowIconButton(
-                                borderRadius: 8.0,
-                                buttonSize: 40.0,
-                                icon: Icon(
-                                  Icons.cancel_outlined,
-                                  color: FlutterFlowTheme.of(context).error,
-                                  size: 24.0,
-                                ),
-                                onPressed: () async {
-                                  Navigator.pop(context);
-                                },
-                              ),
-                            ),
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: FlutterFlowIconButton(
-                                borderRadius: 8.0,
-                                buttonSize: 40.0,
-                                fillColor: FlutterFlowTheme.of(context).primary,
-                                icon: Icon(
-                                  Icons.edit_rounded,
-                                  color: FlutterFlowTheme.of(context).info,
-                                  size: 24.0,
-                                ),
-                                onPressed: () async {
-                                  _model.editarderechos = false;
-                                  safeSetState(() {});
-                                },
-                              ),
-                            ),
-                          ]
-                              .divide(SizedBox(height: 10.0))
-                              .around(SizedBox(height: 10.0)),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
               ),
             ),
-          ),
-      ],
+            if ((_model.derchosvulcompleto == true) &&
+                (stackSeccion7Row?.idSec7 != null))
+              Container(
+                width: MediaQuery.sizeOf(context).width * 1.0,
+                height: MediaQuery.sizeOf(context).height * 1.0,
+                decoration: BoxDecoration(
+                  color: Color(0x3BE0E3E7),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.all(15.0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Align(
+                        alignment: AlignmentDirectional(1.0, -1.0),
+                        child: Material(
+                          color: Colors.transparent,
+                          elevation: 5.0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          child: Container(
+                            width: 80.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: FlutterFlowIconButton(
+                                    borderRadius: 8.0,
+                                    buttonSize: 40.0,
+                                    icon: Icon(
+                                      Icons.cancel_outlined,
+                                      color: FlutterFlowTheme.of(context).error,
+                                      size: 24.0,
+                                    ),
+                                    onPressed: () async {
+                                      Navigator.pop(context);
+                                    },
+                                  ),
+                                ),
+                                Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: FlutterFlowIconButton(
+                                    borderRadius: 8.0,
+                                    buttonSize: 40.0,
+                                    fillColor:
+                                        FlutterFlowTheme.of(context).primary,
+                                    icon: Icon(
+                                      Icons.edit_rounded,
+                                      color: FlutterFlowTheme.of(context).info,
+                                      size: 24.0,
+                                    ),
+                                    onPressed: () async {
+                                      _model.editarderechos = false;
+                                      safeSetState(() {});
+                                    },
+                                  ),
+                                ),
+                              ]
+                                  .divide(SizedBox(height: 10.0))
+                                  .around(SizedBox(height: 10.0)),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+          ],
+        );
+      },
     );
   }
 }

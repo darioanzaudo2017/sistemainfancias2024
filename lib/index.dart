@@ -23,10 +23,16 @@ export '/dashboard/dashboard_widget.dart' show DashboardWidget;
 export '/imprimir/imprimir_widget.dart' show ImprimirWidget;
 export '/admin/admin_widget.dart' show AdminWidget;
 export '/caratula2/caratula2_widget.dart' show Caratula2Widget;
-export '/respuestaform6page/respuestaform6page_widget.dart'
+export '/formulario6/respuestaform6page/respuestaform6page_widget.dart'
     show Respuestaform6pageWidget;
 export '/pruebarls/pruebarls_widget.dart' show PruebarlsWidget;
 export '/informesenaf/informesenaf_widget.dart' show InformesenafWidget;
 export '/entrevistas/entrevistas_copy/entrevistas_copy_widget.dart'
     show EntrevistasCopyWidget;
 export '/expedienterls/expedienterls_widget.dart' show ExpedienterlsWidget;
+export '/cuenta_perfil_creacion/auth_2_forgot_password_copy/auth2_forgot_password_copy_widget.dart'
+    show Auth2ForgotPasswordCopyWidget;
+export '/pages/homestitch/homestitch_widget.dart' show HomestitchWidget;
+export '/adminzona/adminzona_widget.dart' show AdminzonaWidget;
+export '/cuenta_perfil_creacion/auth_2_create_copy/auth2_create_copy_widget.dart'
+    show Auth2CreateCopyWidget;

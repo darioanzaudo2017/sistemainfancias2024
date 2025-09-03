@@ -6,7 +6,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -14,7 +13,12 @@ import 'auth2_create_model.dart';
 export 'auth2_create_model.dart';
 
 class Auth2CreateWidget extends StatefulWidget {
-  const Auth2CreateWidget({super.key});
+  const Auth2CreateWidget({
+    super.key,
+    this.idrol,
+  });
+
+  final int? idrol;
 
   static String routeName = 'auth_2_Create';
   static String routePath = '/auth2Create';
@@ -229,7 +233,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Empecemos',
+                                  'Crear Cuenta',
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .displaySmall
@@ -257,7 +261,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 24.0),
                                   child: Text(
-                                    'Crea tu Cuenta ingresando tu Email y Contraseña',
+                                    'Crea una Cuenta ingresando un Email, Contraseña Nombre completo del Usuario y selecciona el spd',
                                     textAlign: TextAlign.start,
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -968,10 +972,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                         'iduser': _model.createusuario?.id,
                                         'idrol': 3,
                                       });
-
-                                      context.goNamedAuth(
-                                          HomePageWidget.routeName,
-                                          context.mounted);
+                                      context.safePop();
 
                                       safeSetState(() {});
                                     },
@@ -1016,100 +1017,6 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                         width: 1.0,
                                       ),
                                       borderRadius: BorderRadius.circular(12.0),
-                                    ),
-                                  ),
-                                ),
-
-                                // You will have to add an action on this rich text to go to your login page.
-                                Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 12.0, 0.0, 12.0),
-                                    child: InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        context.pushNamed(
-                                          Auth2LoginWidget.routeName,
-                                          extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
-                                              hasTransition: true,
-                                              transitionType:
-                                                  PageTransitionType.fade,
-                                              duration:
-                                                  Duration(milliseconds: 200),
-                                            ),
-                                          },
-                                        );
-                                      },
-                                      child: RichText(
-                                        textScaler:
-                                            MediaQuery.of(context).textScaler,
-                                        text: TextSpan(
-                                          children: [
-                                            TextSpan(
-                                              text: 'Si ya tenes una Cuenta ',
-                                              style: TextStyle(),
-                                            ),
-                                            TextSpan(
-                                              text: 'Click Aquí',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    font:
-                                                        GoogleFonts.notoSansJp(
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontStyle,
-                                                    ),
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w600,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
-                                            )
-                                          ],
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                font: GoogleFonts.notoSansJp(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
-                                                ),
-                                                letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                        ),
-                                      ),
                                     ),
                                   ),
                                 ),

@@ -9,6 +9,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'seccion6_model.dart';
 export 'seccion6_model.dart';
 
@@ -190,6 +191,41 @@ class _Seccion6WidgetState extends State<Seccion6Widget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 10.0),
+                                          child: Text(
+                                            'Registrar acciones realizadas previamente por la institucion que demanda la intervencion',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  font: GoogleFonts.notoSansJp(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                  ),
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 8.0, 15.0),
                                           child: Container(
                                             width: 580.0,
@@ -198,7 +234,7 @@ class _Seccion6WidgetState extends State<Seccion6Widget> {
                                                   _model.textController1,
                                               focusNode:
                                                   _model.textFieldFocusNode1,
-                                              autofocus: true,
+                                              autofocus: false,
                                               obscureText: false,
                                               decoration: InputDecoration(
                                                 labelText: 'Organismo',
@@ -357,7 +393,7 @@ class _Seccion6WidgetState extends State<Seccion6Widget> {
                                                     _model.textController2,
                                                 focusNode:
                                                     _model.textFieldFocusNode2,
-                                                autofocus: true,
+                                                autofocus: false,
                                                 obscureText: false,
                                                 decoration: InputDecoration(
                                                   labelText: 'Acciones',
@@ -525,7 +561,7 @@ class _Seccion6WidgetState extends State<Seccion6Widget> {
                                                     _model.textController3,
                                                 focusNode:
                                                     _model.textFieldFocusNode3,
-                                                autofocus: true,
+                                                autofocus: false,
                                                 obscureText: false,
                                                 decoration: InputDecoration(
                                                   labelText: 'Resultados',
@@ -1145,14 +1181,16 @@ class _Seccion6WidgetState extends State<Seccion6Widget> {
                                                         enableDrag: false,
                                                         context: context,
                                                         builder: (context) {
-                                                          return Padding(
-                                                            padding: MediaQuery
-                                                                .viewInsetsOf(
-                                                                    context),
-                                                            child:
-                                                                IntervencionesrealizadasWidget(
-                                                              intervencionesseccion6:
-                                                                  listadointervencionesItem,
+                                                          return WebViewAware(
+                                                            child: Padding(
+                                                              padding: MediaQuery
+                                                                  .viewInsetsOf(
+                                                                      context),
+                                                              child:
+                                                                  IntervencionesrealizadasWidget(
+                                                                intervencionesseccion6:
+                                                                    listadointervencionesItem,
+                                                              ),
                                                             ),
                                                           );
                                                         },

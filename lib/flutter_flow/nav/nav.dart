@@ -185,7 +185,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: Auth2CreateWidget.routeName,
           path: Auth2CreateWidget.routePath,
-          builder: (context, params) => Auth2CreateWidget(),
+          builder: (context, params) => Auth2CreateWidget(
+            idrol: params.getParam(
+              'idrol',
+              ParamType.int,
+            ),
+          ),
         ),
         FFRoute(
           name: Auth2LoginWidget.routeName,
@@ -398,6 +403,40 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: ExpedienterlsWidget.routeName,
           path: ExpedienterlsWidget.routePath,
           builder: (context, params) => ExpedienterlsWidget(),
+        ),
+        FFRoute(
+          name: Auth2ForgotPasswordCopyWidget.routeName,
+          path: Auth2ForgotPasswordCopyWidget.routePath,
+          builder: (context, params) => Auth2ForgotPasswordCopyWidget(),
+        ),
+        FFRoute(
+          name: HomestitchWidget.routeName,
+          path: HomestitchWidget.routePath,
+          builder: (context, params) => HomestitchWidget(),
+        ),
+        FFRoute(
+          name: AdminzonaWidget.routeName,
+          path: AdminzonaWidget.routePath,
+          builder: (context, params) => AdminzonaWidget(
+            usuariosroles: params.getParam<VistaUsuariosRolesRow>(
+              'usuariosroles',
+              ParamType.SupabaseRow,
+            ),
+            usuariorow: params.getParam<UsuariosRow>(
+              'usuariorow',
+              ParamType.SupabaseRow,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: Auth2CreateCopyWidget.routeName,
+          path: Auth2CreateCopyWidget.routePath,
+          builder: (context, params) => Auth2CreateCopyWidget(
+            idrol: params.getParam(
+              'idrol',
+              ParamType.int,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

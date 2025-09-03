@@ -12,7 +12,6 @@ class Seccion8Model extends FlutterFlowModel<Seccion8Widget> {
 
   ///  State fields for stateful widgets in this component.
 
-  final formKey = GlobalKey<FormState>();
   // State field(s) for PaginatedDataTable widget.
   final paginatedDataTableController =
       FlutterFlowDataTableController<Seccion8Row>();

@@ -60,4 +60,8 @@ class ListaDerechosVulneradosexpedienteRow extends SupabaseDataRow {
 
   String? get observaciones => getField<String>('observaciones');
   set observaciones(String? value) => setField<String>('observaciones', value);
+
+  String? get indicadorVulneracion => getField<String>('indicador_vulneracion');
+  set indicadorVulneracion(String? value) =>
+      setField<String>('indicador_vulneracion', value);
 }

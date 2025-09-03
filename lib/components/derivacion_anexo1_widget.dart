@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'derivacion_anexo1_model.dart';
 export 'derivacion_anexo1_model.dart';
 
@@ -1070,23 +1071,28 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                                               .apiResultj9jcrear?.succeeded ??
                                           true)) {
                                         await Future.delayed(
-                                            const Duration(milliseconds: 2000));
+                                          Duration(
+                                            milliseconds: 2000,
+                                          ),
+                                        );
                                         await showDialog(
                                           context: context,
                                           builder: (alertDialogContext) {
-                                            return AlertDialog(
-                                              title: Text(
-                                                  'Se guardo correctamente la informacion!'),
-                                              content: Text(
-                                                  'Se creo un documento con la informacion de derivacion en drive!'),
-                                              actions: [
-                                                TextButton(
-                                                  onPressed: () =>
-                                                      Navigator.pop(
-                                                          alertDialogContext),
-                                                  child: Text('Ok'),
-                                                ),
-                                              ],
+                                            return WebViewAware(
+                                              child: AlertDialog(
+                                                title: Text(
+                                                    'Se guardo correctamente la informacion!'),
+                                                content: Text(
+                                                    'Se creo un documento con la informacion de derivacion en drive!'),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext),
+                                                    child: Text('Ok'),
+                                                  ),
+                                                ],
+                                              ),
                                             );
                                           },
                                         );
@@ -1147,23 +1153,28 @@ class _DerivacionAnexo1WidgetState extends State<DerivacionAnexo1Widget> {
                                       if ((_model.apiResultj9j?.succeeded ??
                                           true)) {
                                         await Future.delayed(
-                                            const Duration(milliseconds: 2000));
+                                          Duration(
+                                            milliseconds: 2000,
+                                          ),
+                                        );
                                         await showDialog(
                                           context: context,
                                           builder: (alertDialogContext) {
-                                            return AlertDialog(
-                                              title: Text(
-                                                  'Se guardo correctamente la informacion!'),
-                                              content: Text(
-                                                  'Se creo un documento con la informacion de derivacion en drive!'),
-                                              actions: [
-                                                TextButton(
-                                                  onPressed: () =>
-                                                      Navigator.pop(
-                                                          alertDialogContext),
-                                                  child: Text('Ok'),
-                                                ),
-                                              ],
+                                            return WebViewAware(
+                                              child: AlertDialog(
+                                                title: Text(
+                                                    'Se guardo correctamente la informacion!'),
+                                                content: Text(
+                                                    'Se creo un documento con la informacion de derivacion en drive!'),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext),
+                                                    child: Text('Ok'),
+                                                  ),
+                                                ],
+                                              ),
                                             );
                                           },
                                         );

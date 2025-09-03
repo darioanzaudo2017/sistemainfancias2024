@@ -10,6 +10,8 @@ class AmpliacionactividadModel
 
   bool edit = false;
 
+  bool estrategia = false;
+
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();

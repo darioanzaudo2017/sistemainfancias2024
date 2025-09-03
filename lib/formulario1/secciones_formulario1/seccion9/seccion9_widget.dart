@@ -10,6 +10,7 @@ import '/flutter_flow/form_field_controller.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'seccion9_model.dart';
 export 'seccion9_model.dart';
 
@@ -251,17 +252,20 @@ class _Seccion9WidgetState extends State<Seccion9Widget> {
                                       await showDialog(
                                         context: context,
                                         builder: (alertDialogContext) {
-                                          return AlertDialog(
-                                            title: Text('Carga correcta'),
-                                            content: Text(
-                                                'La informacion se guardo correctamente!!'),
-                                            actions: [
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext),
-                                                child: Text('Ok'),
-                                              ),
-                                            ],
+                                          return WebViewAware(
+                                            child: AlertDialog(
+                                              title: Text('Carga correcta'),
+                                              content: Text(
+                                                  'La informacion se guardo correctamente!!'),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () =>
+                                                      Navigator.pop(
+                                                          alertDialogContext),
+                                                  child: Text('Ok'),
+                                                ),
+                                              ],
+                                            ),
                                           );
                                         },
                                       );
@@ -321,17 +325,20 @@ class _Seccion9WidgetState extends State<Seccion9Widget> {
                                       await showDialog(
                                         context: context,
                                         builder: (alertDialogContext) {
-                                          return AlertDialog(
-                                            title: Text('Carga correcta'),
-                                            content: Text(
-                                                'La informacion se guardo correctamente!!'),
-                                            actions: [
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext),
-                                                child: Text('Ok'),
-                                              ),
-                                            ],
+                                          return WebViewAware(
+                                            child: AlertDialog(
+                                              title: Text('Carga correcta'),
+                                              content: Text(
+                                                  'La informacion se guardo correctamente!!'),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () =>
+                                                      Navigator.pop(
+                                                          alertDialogContext),
+                                                  child: Text('Ok'),
+                                                ),
+                                              ],
+                                            ),
                                           );
                                         },
                                       );
@@ -457,17 +464,20 @@ class _Seccion9WidgetState extends State<Seccion9Widget> {
                                             enableDrag: false,
                                             context: context,
                                             builder: (context) {
-                                              return Padding(
-                                                padding:
-                                                    MediaQuery.viewInsetsOf(
-                                                        context),
-                                                child:
-                                                    AsesoramientoAnexoAWidget(
-                                                  rowingreso:
-                                                      widget.rowingreso,
-                                                  rowexpediente: widget.rowexp,
-                                                  rowseccion9:
-                                                      containerSeccion9Row,
+                                              return WebViewAware(
+                                                child: Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child:
+                                                      AsesoramientoAnexoAWidget(
+                                                    rowingreso:
+                                                        widget.rowingreso,
+                                                    rowexpediente:
+                                                        widget.rowexp,
+                                                    rowseccion9:
+                                                        containerSeccion9Row,
+                                                  ),
                                                 ),
                                               );
                                             },

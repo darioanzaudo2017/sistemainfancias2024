@@ -17,6 +17,8 @@ import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'formcaratulaedit_model.dart';
 export 'formcaratulaedit_model.dart';
 
@@ -64,7 +66,11 @@ class _FormcaratulaeditWidgetState extends State<FormcaratulaeditWidget> {
 
     _model.textFieldDNIFocusNode ??= FocusNode();
 
+    _model.textFieldDNIMask = MaskTextInputFormatter(mask: '########');
+
     _model.textFieldedadFocusNode ??= FocusNode();
+
+    _model.textFieldedadMask = MaskTextInputFormatter(mask: '########');
 
     _model.textFieldespecificarFocusNode ??= FocusNode();
 
@@ -1123,19 +1129,21 @@ class _FormcaratulaeditWidgetState extends State<FormcaratulaeditWidget> {
                                             await showDialog(
                                               context: context,
                                               builder: (alertDialogContext) {
-                                                return AlertDialog(
-                                                  title: Text(
-                                                      'El dni esta duplicado'),
-                                                  content: Text(
-                                                      'El dni esta duplicado'),
-                                                  actions: [
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext),
-                                                      child: Text('Ok'),
-                                                    ),
-                                                  ],
+                                                return WebViewAware(
+                                                  child: AlertDialog(
+                                                    title: Text(
+                                                        'El dni esta duplicado'),
+                                                    content: Text(
+                                                        'El dni esta duplicado'),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext),
+                                                        child: Text('Ok'),
+                                                      ),
+                                                    ],
+                                                  ),
                                                 );
                                               },
                                             );
@@ -1149,19 +1157,21 @@ class _FormcaratulaeditWidgetState extends State<FormcaratulaeditWidget> {
                                             await showDialog(
                                               context: context,
                                               builder: (alertDialogContext) {
-                                                return AlertDialog(
-                                                  title: Text(
-                                                      'El NNyA no tiene expediente'),
-                                                  content: Text(
-                                                      'Continuamos con la carga!!'),
-                                                  actions: [
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext),
-                                                      child: Text('Ok'),
-                                                    ),
-                                                  ],
+                                                return WebViewAware(
+                                                  child: AlertDialog(
+                                                    title: Text(
+                                                        'El NNyA no tiene expediente'),
+                                                    content: Text(
+                                                        'Continuamos con la carga!!'),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext),
+                                                        child: Text('Ok'),
+                                                      ),
+                                                    ],
+                                                  ),
                                                 );
                                               },
                                             );
@@ -1251,16 +1261,18 @@ class _FormcaratulaeditWidgetState extends State<FormcaratulaeditWidget> {
                                                 enableDrag: false,
                                                 context: context,
                                                 builder: (context) {
-                                                  return Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child:
-                                                        DesplegablederechosprincipalWidget(
-                                                      idexp: _model
-                                                          .crearexpnnya1?.id,
-                                                      idingreso: 0,
-                                                      form: 'Caratula',
+                                                  return WebViewAware(
+                                                    child: Padding(
+                                                      padding: MediaQuery
+                                                          .viewInsetsOf(
+                                                              context),
+                                                      child:
+                                                          DesplegablederechosprincipalWidget(
+                                                        idexp: _model
+                                                            .crearexpnnya1?.id,
+                                                        idingreso: 0,
+                                                        form: 'Caratula',
+                                                      ),
                                                     ),
                                                   );
                                                 },
@@ -2648,19 +2660,21 @@ class _FormcaratulaeditWidgetState extends State<FormcaratulaeditWidget> {
                                               await showDialog(
                                                 context: context,
                                                 builder: (alertDialogContext) {
-                                                  return AlertDialog(
-                                                    title: Text(
-                                                        'Expediente Creado'),
-                                                    content: Text(
-                                                        'Se creo correctamente el expediente!'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: Text('Ok'),
-                                                      ),
-                                                    ],
+                                                  return WebViewAware(
+                                                    child: AlertDialog(
+                                                      title: Text(
+                                                          'Expediente Creado'),
+                                                      content: Text(
+                                                          'Se creo correctamente el expediente!'),
+                                                      actions: [
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext),
+                                                          child: Text('Ok'),
+                                                        ),
+                                                      ],
+                                                    ),
                                                   );
                                                 },
                                               );
@@ -2747,19 +2761,21 @@ class _FormcaratulaeditWidgetState extends State<FormcaratulaeditWidget> {
                                               await showDialog(
                                                 context: context,
                                                 builder: (alertDialogContext) {
-                                                  return AlertDialog(
-                                                    title: Text(
-                                                        'Expediente Editado'),
-                                                    content: Text(
-                                                        'Se edito correctamente el expediente!'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: Text('Ok'),
-                                                      ),
-                                                    ],
+                                                  return WebViewAware(
+                                                    child: AlertDialog(
+                                                      title: Text(
+                                                          'Expediente Editado'),
+                                                      content: Text(
+                                                          'Se edito correctamente el expediente!'),
+                                                      actions: [
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext),
+                                                          child: Text('Ok'),
+                                                        ),
+                                                      ],
+                                                    ),
                                                   );
                                                 },
                                               );
