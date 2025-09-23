@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'reiteracion_anexo_b1_model.dart';
 export 'reiteracion_anexo_b1_model.dart';
 
@@ -992,28 +993,30 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                           await showDialog<bool>(
                                                 context: context,
                                                 builder: (alertDialogContext) {
-                                                  return AlertDialog(
-                                                    title: Text(
-                                                        'Crear google docs'),
-                                                    content: Text(
-                                                        'Desea crear un archivo de google docs para imprimir?'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext,
-                                                                false),
-                                                        child: Text('Cancel'),
-                                                      ),
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext,
-                                                                true),
-                                                        child:
-                                                            Text('Confirmar'),
-                                                      ),
-                                                    ],
+                                                  return WebViewAware(
+                                                    child: AlertDialog(
+                                                      title: Text(
+                                                          'Crear google docs'),
+                                                      content: Text(
+                                                          'Desea crear un archivo de google docs para imprimir?'),
+                                                      actions: [
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext,
+                                                                  false),
+                                                          child: Text('Cancel'),
+                                                        ),
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext,
+                                                                  true),
+                                                          child:
+                                                              Text('Confirmar'),
+                                                        ),
+                                                      ],
+                                                    ),
                                                   );
                                                 },
                                               ) ??
@@ -1054,24 +1057,29 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
 
                                         if ((_model.apiResulth8b?.succeeded ??
                                             true)) {
-                                          await Future.delayed(const Duration(
-                                              milliseconds: 2000));
+                                          await Future.delayed(
+                                            Duration(
+                                              milliseconds: 2000,
+                                            ),
+                                          );
                                           await showDialog(
                                             context: context,
                                             builder: (alertDialogContext) {
-                                              return AlertDialog(
-                                                title: Text(
-                                                    'Se cargo correctamente la informacion'),
-                                                content: Text(
-                                                    'Se cargo la informacion de reiteracion y se creo un documento en google drive!!'),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext),
-                                                    child: Text('Ok'),
-                                                  ),
-                                                ],
+                                              return WebViewAware(
+                                                child: AlertDialog(
+                                                  title: Text(
+                                                      'Se cargo correctamente la informacion'),
+                                                  content: Text(
+                                                      'Se cargo la informacion de reiteracion y se creo un documento en google drive!!'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: Text('Ok'),
+                                                    ),
+                                                  ],
+                                                ),
                                               );
                                             },
                                           );
@@ -1114,28 +1122,30 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                           await showDialog<bool>(
                                                 context: context,
                                                 builder: (alertDialogContext) {
-                                                  return AlertDialog(
-                                                    title: Text(
-                                                        'Crear google docs'),
-                                                    content: Text(
-                                                        'Desea crear un archivo de google docs para imprimir?'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext,
-                                                                false),
-                                                        child: Text('Cancel'),
-                                                      ),
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext,
-                                                                true),
-                                                        child:
-                                                            Text('Confirmar'),
-                                                      ),
-                                                    ],
+                                                  return WebViewAware(
+                                                    child: AlertDialog(
+                                                      title: Text(
+                                                          'Crear google docs'),
+                                                      content: Text(
+                                                          'Desea crear un archivo de google docs para imprimir?'),
+                                                      actions: [
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext,
+                                                                  false),
+                                                          child: Text('Cancel'),
+                                                        ),
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext,
+                                                                  true),
+                                                          child:
+                                                              Text('Confirmar'),
+                                                        ),
+                                                      ],
+                                                    ),
                                                   );
                                                 },
                                               ) ??
@@ -1177,24 +1187,29 @@ class _ReiteracionAnexoB1WidgetState extends State<ReiteracionAnexoB1Widget> {
                                         if ((_model
                                                 .apiResulth8bcrear?.succeeded ??
                                             true)) {
-                                          await Future.delayed(const Duration(
-                                              milliseconds: 2000));
+                                          await Future.delayed(
+                                            Duration(
+                                              milliseconds: 2000,
+                                            ),
+                                          );
                                           await showDialog(
                                             context: context,
                                             builder: (alertDialogContext) {
-                                              return AlertDialog(
-                                                title: Text(
-                                                    'Se cargo correctamente la informacion'),
-                                                content: Text(
-                                                    'Se cargo la informacion de reiteracion y se creo un documento en google drive!!'),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext),
-                                                    child: Text('Ok'),
-                                                  ),
-                                                ],
+                                              return WebViewAware(
+                                                child: AlertDialog(
+                                                  title: Text(
+                                                      'Se cargo correctamente la informacion'),
+                                                  content: Text(
+                                                      'Se cargo la informacion de reiteracion y se creo un documento en google drive!!'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: Text('Ok'),
+                                                    ),
+                                                  ],
+                                                ),
                                               );
                                             },
                                           );

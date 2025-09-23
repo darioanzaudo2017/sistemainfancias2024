@@ -12,6 +12,12 @@ class Seccion2Model extends FlutterFlowModel<Seccion2Widget> {
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();
+  // State field(s) for ChoiceChips widget.
+  FormFieldController<List<String>>? choiceChipsValueController;
+  String? get choiceChipsValue =>
+      choiceChipsValueController?.value?.firstOrNull;
+  set choiceChipsValue(String? val) =>
+      choiceChipsValueController?.value = val != null ? [val] : [];
   // State field(s) for DropDowncanaldeingreso widget.
   String? dropDowncanaldeingresoValue;
   FormFieldController<String>? dropDowncanaldeingresoValueController;
@@ -26,7 +32,7 @@ class Seccion2Model extends FlutterFlowModel<Seccion2Widget> {
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode3;
   TextEditingController? textController3;
-  final textFieldMask3 = MaskTextInputFormatter(mask: '##########');
+  late MaskTextInputFormatter textFieldMask3;
   String? Function(BuildContext, String?)? textController3Validator;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode4;
@@ -60,7 +66,7 @@ class Seccion2Model extends FlutterFlowModel<Seccion2Widget> {
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode10;
   TextEditingController? textController11;
-  final textFieldMask10 = MaskTextInputFormatter(mask: '##########');
+  late MaskTextInputFormatter textFieldMask10;
   String? Function(BuildContext, String?)? textController11Validator;
   // State field(s) for DropDown widget.
   String? dropDownValue;

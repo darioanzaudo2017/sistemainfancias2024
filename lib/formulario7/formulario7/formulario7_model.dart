@@ -1,9 +1,23 @@
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
+import 'dart:async';
 import 'formulario7_widget.dart' show Formulario7Widget;
 import 'package:flutter/material.dart';
 
 class Formulario7Model extends FlutterFlowModel<Formulario7Widget> {
+  ///  Local state fields for this component.
+
+  List<String> lsitapersonas = [];
+  void addToLsitapersonas(String item) => lsitapersonas.add(item);
+  void removeFromLsitapersonas(String item) => lsitapersonas.remove(item);
+  void removeAtIndexFromLsitapersonas(int index) =>
+      lsitapersonas.removeAt(index);
+  void insertAtIndexInLsitapersonas(int index, String item) =>
+      lsitapersonas.insert(index, item);
+  void updateLsitapersonasAtIndex(int index, Function(String) updateFn) =>
+      lsitapersonas[index] = updateFn(lsitapersonas[index]);
+
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();
@@ -31,6 +45,7 @@ class Formulario7Model extends FlutterFlowModel<Formulario7Widget> {
   FocusNode? textFieldFocusNode6;
   TextEditingController? textController6;
   String? Function(BuildContext, String?)? textController6Validator;
+  Completer<List<ListaPersonasActaRow>>? requestCompleter;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode7;
   TextEditingController? textController7;
@@ -43,6 +58,7 @@ class Formulario7Model extends FlutterFlowModel<Formulario7Widget> {
   FocusNode? textFieldFocusNode9;
   TextEditingController? textController9;
   String? Function(BuildContext, String?)? textController9Validator;
+  DateTime? datePicked;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode10;
   TextEditingController? textController10;
@@ -141,5 +157,21 @@ class Formulario7Model extends FlutterFlowModel<Formulario7Widget> {
 
     textFieldFocusNode18?.dispose();
     textController18?.dispose();
+  }
+
+  /// Additional helper methods.
+  Future waitForRequestCompleted({
+    double minWait = 0,
+    double maxWait = double.infinity,
+  }) async {
+    final stopwatch = Stopwatch()..start();
+    while (true) {
+      await Future.delayed(Duration(milliseconds: 50));
+      final timeElapsed = stopwatch.elapsedMilliseconds;
+      final requestComplete = requestCompleter?.isCompleted ?? false;
+      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
+        break;
+      }
+    }
   }
 }

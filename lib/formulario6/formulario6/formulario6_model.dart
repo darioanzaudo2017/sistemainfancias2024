@@ -20,6 +20,8 @@ class Formulario6Model extends FlutterFlowModel<Formulario6Widget> {
   void updateIdderechosAtIndex(int index, Function(int) updateFn) =>
       idderechos[index] = updateFn(idderechos[index]);
 
+  bool editarform6 = true;
+
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();

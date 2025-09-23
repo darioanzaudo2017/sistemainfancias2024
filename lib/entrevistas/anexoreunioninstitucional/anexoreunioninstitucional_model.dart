@@ -1,3 +1,5 @@
+import '/backend/api_requests/api_calls.dart';
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'anexoreunioninstitucional_widget.dart'
     show AnexoreunioninstitucionalWidget;
@@ -8,6 +10,11 @@ class AnexoreunioninstitucionalModel
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();
+  bool isDataUploading_uploadData9zvreunion = false;
+  FFUploadedFile uploadedLocalFile_uploadData9zvreunion =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl_uploadData9zvreunion = '';
+
   DateTime? datePicked;
   // State field(s) for TextFieldmotivo widget.
   FocusNode? textFieldmotivoFocusNode1;
@@ -34,6 +41,10 @@ class AnexoreunioninstitucionalModel
   TextEditingController? textFieldmotivoTextController5;
   String? Function(BuildContext, String?)?
       textFieldmotivoTextController5Validator;
+  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
+  Anexo4RequerimientoaccionesRow? crearreunioninter;
+  // Stores action output result for [Backend Call - API (ANEXO  REUNIN INTERINSTITUCIONAL)] action in Button widget.
+  ApiCallResponse? documentoword;
 
   @override
   void initState(BuildContext context) {}

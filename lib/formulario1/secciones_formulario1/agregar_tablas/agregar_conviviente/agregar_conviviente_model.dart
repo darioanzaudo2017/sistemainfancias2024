@@ -16,6 +16,8 @@ class AgregarConvivienteModel
 
   int? dni;
 
+  int? anos;
+
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();
@@ -48,13 +50,14 @@ class AgregarConvivienteModel
   // State field(s) for TextFieldDni widget.
   FocusNode? textFieldDniFocusNode;
   TextEditingController? textFieldDniTextController;
-  final textFieldDniMask = MaskTextInputFormatter(mask: '########');
+  late MaskTextInputFormatter textFieldDniMask;
   String? Function(BuildContext, String?)? textFieldDniTextControllerValidator;
   DateTime? datePicked;
+  // Stores action output result for [Custom Action - anos] action in Button widget.
+  int? anosgc;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode3;
   TextEditingController? textController4;
-  final textFieldMask3 = MaskTextInputFormatter(mask: '###');
   String? Function(BuildContext, String?)? textController4Validator;
   // State field(s) for DropDown widget.
   String? dropDownValue;
@@ -67,8 +70,14 @@ class AgregarConvivienteModel
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode4;
   TextEditingController? textController6;
-  final textFieldMask4 = MaskTextInputFormatter(mask: '##########');
+  late MaskTextInputFormatter textFieldMask4;
   String? Function(BuildContext, String?)? textController6Validator;
+  // State field(s) for ChoiceChips widget.
+  FormFieldController<List<String>>? choiceChipsValueController;
+  String? get choiceChipsValue =>
+      choiceChipsValueController?.value?.firstOrNull;
+  set choiceChipsValue(String? val) =>
+      choiceChipsValueController?.value = val != null ? [val] : [];
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode5;
   TextEditingController? textController7;

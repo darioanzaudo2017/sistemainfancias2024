@@ -20,8 +20,6 @@ class Formulario1Model extends FlutterFlowModel<Formulario1Widget> {
   bool? seccion4true;
   // Stores action output result for [Bottom Sheet - seccion6] action in Button widget.
   bool? seccion6true;
-  // Stores action output result for [Bottom Sheet - seccion3] action in Button widget.
-  bool? seccion3true;
   // Stores action output result for [Bottom Sheet - seccion7] action in Button widget.
   bool? seccion7true;
   // Stores action output result for [Bottom Sheet - seccion9] action in Button widget.

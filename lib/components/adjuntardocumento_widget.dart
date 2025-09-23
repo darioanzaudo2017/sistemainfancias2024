@@ -1,3 +1,4 @@
+import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -8,6 +9,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'adjuntardocumento_model.dart';
 export 'adjuntardocumento_model.dart';
 
@@ -220,7 +222,7 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                   'Adjunto Informe Sintesis',
                   'Adjunto Recepcion de la demanda',
                   'Apliacion de informacion solicitud a senaf',
-                  'Formulario Solicitud de medida excepcional pdf firmado'
+                  ''
                 ],
                 onChanged: (val) =>
                     safeSetState(() => _model.dropDownValue = val),
@@ -266,7 +268,8 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                         multiFile: false,
                       );
                       if (selectedFiles != null) {
-                        safeSetState(() => _model.isDataUploading = true);
+                        safeSetState(
+                            () => _model.isDataUploading_uploadData9zv = true);
                         var selectedUploadedFiles = <FFUploadedFile>[];
 
                         var downloadUrls = <String>[];
@@ -289,15 +292,16 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                           );
                         } finally {
                           ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                          _model.isDataUploading = false;
+                          _model.isDataUploading_uploadData9zv = false;
                         }
                         if (selectedUploadedFiles.length ==
                                 selectedFiles.length &&
                             downloadUrls.length == selectedFiles.length) {
                           safeSetState(() {
-                            _model.uploadedLocalFile =
+                            _model.uploadedLocalFile_uploadData9zv =
                                 selectedUploadedFiles.first;
-                            _model.uploadedFileUrl = downloadUrls.first;
+                            _model.uploadedFileUrl_uploadData9zv =
+                                downloadUrls.first;
                           });
                           showUploadMessage(
                             context,
@@ -359,24 +363,29 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                       await DocumentosadjuntosTable().insert({
                         'idexpdoc': widget.exprow?.id?.toDouble(),
                         'idingresodoc': widget.ingrow?.id,
-                        'documentopdf': _model.uploadedFileUrl,
+                        'documentopdf': _model.uploadedFileUrl_uploadData9zv,
                         'tipodocumento': _model.dropDownValue,
                         'Observaciones': _model.textController.text,
                         'idampliacion': widget.idampliacion,
+                        'updated_at':
+                            supaSerialize<DateTime>(getCurrentTimestamp),
+                        'iduser': currentUserUid,
                       });
                       await showDialog(
                         context: context,
                         builder: (alertDialogContext) {
-                          return AlertDialog(
-                            title:
-                                Text('Se cargo correctamente la informacion'),
-                            actions: [
-                              TextButton(
-                                onPressed: () =>
-                                    Navigator.pop(alertDialogContext),
-                                child: Text('Ok'),
-                              ),
-                            ],
+                          return WebViewAware(
+                            child: AlertDialog(
+                              title:
+                                  Text('Se cargo correctamente la informacion'),
+                              actions: [
+                                TextButton(
+                                  onPressed: () =>
+                                      Navigator.pop(alertDialogContext),
+                                  child: Text('Ok'),
+                                ),
+                              ],
+                            ),
                           );
                         },
                       );

@@ -75,4 +75,7 @@ class AvisovisitaadultosRow extends SupabaseDataRow {
 
   int? get idgrupofamiliar => getField<int>('idgrupofamiliar');
   set idgrupofamiliar(int? value) => setField<int>('idgrupofamiliar', value);
+
+  int? get idampliacion => getField<int>('idampliacion');
+  set idampliacion(int? value) => setField<int>('idampliacion', value);
 }

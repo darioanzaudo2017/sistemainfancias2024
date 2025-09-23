@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'otrasactividades_model.dart';
 export 'otrasactividades_model.dart';
 
@@ -401,17 +402,19 @@ class _OtrasactividadesWidgetState extends State<OtrasactividadesWidget> {
                             await showDialog(
                               context: context,
                               builder: (alertDialogContext) {
-                                return AlertDialog(
-                                  title: Text('Carga con exito'),
-                                  content:
-                                      Text('La informacion de cargo con exito'),
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () =>
-                                          Navigator.pop(alertDialogContext),
-                                      child: Text('Ok'),
-                                    ),
-                                  ],
+                                return WebViewAware(
+                                  child: AlertDialog(
+                                    title: Text('Carga con exito'),
+                                    content: Text(
+                                        'La informacion de cargo con exito'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () =>
+                                            Navigator.pop(alertDialogContext),
+                                        child: Text('Ok'),
+                                      ),
+                                    ],
+                                  ),
                                 );
                               },
                             );
@@ -435,17 +438,19 @@ class _OtrasactividadesWidgetState extends State<OtrasactividadesWidget> {
                             await showDialog(
                               context: context,
                               builder: (alertDialogContext) {
-                                return AlertDialog(
-                                  title: Text('Carga con exito'),
-                                  content:
-                                      Text('La informacion de edito con exito'),
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () =>
-                                          Navigator.pop(alertDialogContext),
-                                      child: Text('Ok'),
-                                    ),
-                                  ],
+                                return WebViewAware(
+                                  child: AlertDialog(
+                                    title: Text('Carga con exito'),
+                                    content: Text(
+                                        'La informacion de edito con exito'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () =>
+                                            Navigator.pop(alertDialogContext),
+                                        child: Text('Ok'),
+                                      ),
+                                    ],
+                                  ),
                                 );
                               },
                             );

@@ -1,4 +1,3 @@
-import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/entrevistas/anexoreunioninstitucional/anexoreunioninstitucional_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -9,6 +8,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'listareunioninterinstitucional_model.dart';
 export 'listareunioninterinstitucional_model.dart';
 
@@ -19,12 +19,14 @@ class ListareunioninterinstitucionalWidget extends StatefulWidget {
     required this.idingres,
     required this.idexprow,
     required this.formulario,
+    required this.spd,
   });
 
   final int? idingreso;
   final IngresosRow? idingres;
   final VistaExpedientesUltimoEstadoRow? idexprow;
   final String? formulario;
+  final SpdRow? spd;
 
   @override
   State<ListareunioninterinstitucionalWidget> createState() =>
@@ -183,14 +185,17 @@ class _ListareunioninterinstitucionalWidgetState
                             enableDrag: false,
                             context: context,
                             builder: (context) {
-                              return Padding(
-                                padding: MediaQuery.viewInsetsOf(context),
-                                child: AnexoreunioninstitucionalWidget(
-                                  rowingreso: widget.idingres!,
-                                  rowexp: widget.idexprow!,
-                                  editar: false,
-                                  idanexoreunion: null,
-                                  formulario: widget.formulario!,
+                              return WebViewAware(
+                                child: Padding(
+                                  padding: MediaQuery.viewInsetsOf(context),
+                                  child: AnexoreunioninstitucionalWidget(
+                                    rowingreso: widget.idingres!,
+                                    rowexp: widget.idexprow!,
+                                    editar: false,
+                                    idanexoreunion: null,
+                                    formulario: widget.formulario!,
+                                    spd: widget.spd!,
+                                  ),
                                 ),
                               );
                             },
@@ -199,7 +204,10 @@ class _ListareunioninterinstitucionalWidgetState
 
                           if (_model.creonuevareunion!) {
                             await Future.delayed(
-                                const Duration(milliseconds: 2500));
+                              Duration(
+                                milliseconds: 2500,
+                              ),
+                            );
                             safeSetState(() => _model.requestCompleter = null);
                             await _model.waitForRequestCompleted();
                           }
@@ -281,6 +289,8 @@ class _ListareunioninterinstitucionalWidgetState
                                       children: [
                                         Column(
                                           mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               valueOrDefault<String>(
@@ -317,98 +327,44 @@ class _ListareunioninterinstitucionalWidgetState
                                                             .fontStyle,
                                                   ),
                                             ),
+                                            Text(
+                                              valueOrDefault<String>(
+                                                optionsVarItem.institucion,
+                                                '0',
+                                              ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyLarge
+                                                  .override(
+                                                    font:
+                                                        GoogleFonts.notoSansJp(
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyLarge
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyLarge
+                                                              .fontStyle,
+                                                    ),
+                                                    letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyLarge
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyLarge
+                                                            .fontStyle,
+                                                  ),
+                                            ),
                                             Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
-                                                FFButtonWidget(
-                                                  onPressed: () async {
-                                                    _model.apiResultzqa =
-                                                        await AnexoReuninInterinstitucionalCall
-                                                            .call(
-                                                      fecha:
-                                                          optionsVarItem.fecha,
-                                                      nombreyapellido:
-                                                          '${widget.idexprow?.nombres}, ${widget.idexprow?.apellidos}',
-                                                      dni:
-                                                          widget.idexprow?.dni,
-                                                      institucion:
-                                                          optionsVarItem
-                                                              .institucion,
-                                                      objetivos: optionsVarItem
-                                                          .objetivos,
-                                                      puntosacuerdos:
-                                                          optionsVarItem
-                                                              .puntosacuerdos,
-                                                      expediente: widget
-                                                          .idexprow?.expediente,
-                                                      idingreso:
-                                                          widget.idingreso,
-                                                      carpeta: widget
-                                                          .idingres?.idcarpeta,
-                                                      reunion: optionsVarItem
-                                                          .reunion,
-                                                      idreunion:
-                                                          optionsVarItem.id,
-                                                    );
-
-                                                    safeSetState(() => _model
-                                                            .requestCompleter =
-                                                        null);
-                                                    await _model
-                                                        .waitForRequestCompleted();
-
-                                                    safeSetState(() {});
-                                                  },
-                                                  text: 'Generar pdf',
-                                                  options: FFButtonOptions(
-                                                    height: 40.0,
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 0.0,
-                                                                16.0, 0.0),
-                                                    iconPadding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 0.0),
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          font: GoogleFonts
-                                                              .notoSansJp(
-                                                            fontWeight:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .fontWeight,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .fontStyle,
-                                                          ),
-                                                          color: Colors.white,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmall
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmall
-                                                                  .fontStyle,
-                                                        ),
-                                                    elevation: 0.0,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
-                                                  ),
-                                                ),
                                                 if (optionsVarItem.linkdoc !=
                                                         null &&
                                                     optionsVarItem.linkdoc !=
@@ -416,23 +372,65 @@ class _ListareunioninterinstitucionalWidgetState
                                                   FlutterFlowIconButton(
                                                     borderRadius: 8.0,
                                                     buttonSize: 40.0,
-                                                    fillColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primary,
-                                                    icon: FaIcon(
-                                                      FontAwesomeIcons
-                                                          .googleDrive,
+                                                    icon: Icon(
+                                                      Icons
+                                                          .document_scanner_outlined,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .info,
+                                                              .primary,
                                                       size: 24.0,
                                                     ),
                                                     onPressed: () async {
                                                       await launchURL(
                                                           optionsVarItem
                                                               .linkdoc!);
+                                                      await launchURL(
+                                                          'https://view.officeapps.live.com/op/embed.aspx?src=${optionsVarItem.linkdoc}');
+                                                    },
+                                                  ),
+                                                if (optionsVarItem.linkdoc !=
+                                                        null &&
+                                                    optionsVarItem.linkdoc !=
+                                                        '')
+                                                  FlutterFlowIconButton(
+                                                    borderRadius: 8.0,
+                                                    buttonSize: 40.0,
+                                                    icon: FaIcon(
+                                                      FontAwesomeIcons.fileWord,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      size: 24.0,
+                                                    ),
+                                                    onPressed: () async {
+                                                      await launchURL(
+                                                          optionsVarItem
+                                                              .linkdoc!);
+                                                    },
+                                                  ),
+                                                if (optionsVarItem
+                                                            .linkadjunto !=
+                                                        null &&
+                                                    optionsVarItem
+                                                            .linkadjunto !=
+                                                        '')
+                                                  FlutterFlowIconButton(
+                                                    borderRadius: 8.0,
+                                                    buttonSize: 40.0,
+                                                    icon: Icon(
+                                                      Icons.attach_file,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      size: 24.0,
+                                                    ),
+                                                    onPressed: () async {
+                                                      await launchURL(
+                                                          optionsVarItem
+                                                              .linkadjunto!);
                                                     },
                                                   ),
                                               ].divide(SizedBox(width: 10.0)),
@@ -452,20 +450,23 @@ class _ListareunioninterinstitucionalWidgetState
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return Padding(
-                                                  padding:
-                                                      MediaQuery.viewInsetsOf(
-                                                          context),
-                                                  child:
-                                                      AnexoreunioninstitucionalWidget(
-                                                    rowingreso:
-                                                        widget.idingres!,
-                                                    rowexp: widget.idexprow!,
-                                                    editar: true,
-                                                    idanexoreunion:
-                                                        optionsVarItem.id,
-                                                    formulario:
-                                                        widget.formulario!,
+                                                return WebViewAware(
+                                                  child: Padding(
+                                                    padding:
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
+                                                    child:
+                                                        AnexoreunioninstitucionalWidget(
+                                                      rowingreso:
+                                                          widget.idingres!,
+                                                      rowexp: widget.idexprow!,
+                                                      editar: true,
+                                                      idanexoreunion:
+                                                          optionsVarItem.id,
+                                                      formulario:
+                                                          widget.formulario!,
+                                                      spd: widget.spd!,
+                                                    ),
                                                   ),
                                                 );
                                               },

@@ -44,8 +44,11 @@ class _DesplegablederechosprincipalWidgetState
     super.initState();
     _model = createModel(context, () => DesplegablederechosprincipalModel());
 
-    _model.textController ??= TextEditingController();
-    _model.textFieldFocusNode ??= FocusNode();
+    _model.textController1 ??= TextEditingController();
+    _model.textFieldFocusNode1 ??= FocusNode();
+
+    _model.textController2 ??= TextEditingController();
+    _model.textFieldFocusNode2 ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -96,7 +99,7 @@ class _DesplegablederechosprincipalWidgetState
               ),
               child: Container(
                 width: MediaQuery.sizeOf(context).width * 1.0,
-                height: 453.85,
+                height: 561.52,
                 constraints: BoxConstraints(
                   maxWidth: 600.0,
                 ),
@@ -105,7 +108,7 @@ class _DesplegablederechosprincipalWidgetState
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 child: Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, -1.0),
                   child: Form(
                     key: _model.formKey,
                     autovalidateMode: AutovalidateMode.always,
@@ -117,6 +120,23 @@ class _DesplegablederechosprincipalWidgetState
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
+                          Align(
+                            alignment: AlignmentDirectional(1.0, -1.0),
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                Navigator.pop(context);
+                              },
+                              child: Icon(
+                                Icons.cancel_outlined,
+                                color: FlutterFlowTheme.of(context).error,
+                                size: 24.0,
+                              ),
+                            ),
+                          ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
@@ -375,8 +395,8 @@ class _DesplegablederechosprincipalWidgetState
                           Container(
                             width: 200.0,
                             child: TextFormField(
-                              controller: _model.textController,
-                              focusNode: _model.textFieldFocusNode,
+                              controller: _model.textController1,
+                              focusNode: _model.textFieldFocusNode1,
                               autofocus: false,
                               obscureText: false,
                               decoration: InputDecoration(
@@ -475,7 +495,114 @@ class _DesplegablederechosprincipalWidgetState
                               maxLines: 5,
                               cursorColor:
                                   FlutterFlowTheme.of(context).primaryText,
-                              validator: _model.textControllerValidator
+                              validator: _model.textController1Validator
+                                  .asValidator(context),
+                            ),
+                          ),
+                          Container(
+                            width: 200.0,
+                            child: TextFormField(
+                              controller: _model.textController2,
+                              focusNode: _model.textFieldFocusNode2,
+                              autofocus: false,
+                              obscureText: false,
+                              decoration: InputDecoration(
+                                isDense: true,
+                                labelStyle: FlutterFlowTheme.of(context)
+                                    .labelMedium
+                                    .override(
+                                      font: GoogleFonts.notoSansJp(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .fontStyle,
+                                      ),
+                                      letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontStyle,
+                                    ),
+                                hintText: 'Indicadores de la vulneracion',
+                                hintStyle: FlutterFlowTheme.of(context)
+                                    .labelMedium
+                                    .override(
+                                      font: GoogleFonts.notoSansJp(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .fontStyle,
+                                      ),
+                                      letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontStyle,
+                                    ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color:
+                                        FlutterFlowTheme.of(context).alternate,
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                errorBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context).error,
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                focusedErrorBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context).error,
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                filled: true,
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    font: GoogleFonts.notoSansJp(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
+                              maxLines: 5,
+                              cursorColor:
+                                  FlutterFlowTheme.of(context).primaryText,
+                              validator: _model.textController2Validator
                                   .asValidator(context),
                             ),
                           ),
@@ -509,7 +636,9 @@ class _DesplegablederechosprincipalWidgetState
                                   'formulario': widget.form,
                                   'iduser': currentUserUid,
                                   'validoinforme': false,
-                                  'observaciones': _model.textController.text,
+                                  'observaciones': _model.textController1.text,
+                                  'indicador_vulneracion':
+                                      _model.textController2.text,
                                 });
                                 Navigator.pop(context, true);
                               },

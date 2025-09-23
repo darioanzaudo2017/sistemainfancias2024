@@ -17,10 +17,33 @@ class AvisoconcurrenciaadultoModel
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();
+  // State field(s) for TextFieldapellido widget.
+  FocusNode? textFieldapellidoFocusNode;
+  TextEditingController? textFieldapellidoTextController;
+  String? Function(BuildContext, String?)?
+      textFieldapellidoTextControllerValidator;
+  // State field(s) for TextFieldnombre widget.
+  FocusNode? textFieldnombreFocusNode;
+  TextEditingController? textFieldnombreTextController;
+  String? Function(BuildContext, String?)?
+      textFieldnombreTextControllerValidator;
+  // State field(s) for TextFieldDNI widget.
+  FocusNode? textFieldDNIFocusNode;
+  TextEditingController? textFieldDNITextController;
+  late MaskTextInputFormatter textFieldDNIMask;
+  String? Function(BuildContext, String?)? textFieldDNITextControllerValidator;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode1;
+  TextEditingController? textController4;
+  String? Function(BuildContext, String?)? textController4Validator;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode2;
+  TextEditingController? textController5;
+  String? Function(BuildContext, String?)? textController5Validator;
   // State field(s) for TextFieldresena widget.
   FocusNode? textFieldresenaFocusNode;
   TextEditingController? textFieldresenaTextController;
-  final textFieldresenaMask = MaskTextInputFormatter(mask: '##:## hs');
+  late MaskTextInputFormatter textFieldresenaMask;
   String? Function(BuildContext, String?)?
       textFieldresenaTextControllerValidator;
   String? _textFieldresenaTextControllerValidator(
@@ -35,15 +58,17 @@ class AvisoconcurrenciaadultoModel
   // State field(s) for TextFieldtelacontactar widget.
   FocusNode? textFieldtelacontactarFocusNode;
   TextEditingController? textFieldtelacontactarTextController;
-  final textFieldtelacontactarMask = MaskTextInputFormatter(mask: '##########');
+  late MaskTextInputFormatter textFieldtelacontactarMask;
   String? Function(BuildContext, String?)?
       textFieldtelacontactarTextControllerValidator;
   DateTime? datePicked1;
   DateTime? datePicked2;
-  // Stores action output result for [Backend Call - API (Concurrencia visita adulto)] action in Button widget.
-  ApiCallResponse? apiResultm56;
-  // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
-  List<AmpliaciondeinformacionRow>? crearnuevaconcurrenciaadulto;
+  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
+  AvisovisitaadultosRow? convocatororia;
+  // Stores action output result for [Backend Call - API (Convocatoria visita adulto)] action in Button widget.
+  ApiCallResponse? apiResultm56convocatoria;
+  // Stores action output result for [Backend Call - API (Aviso visita adulto)] action in Button widget.
+  ApiCallResponse? docvisita;
   Completer<List<AvisovisitaadultosRow>>? requestCompleter;
 
   @override
@@ -54,6 +79,21 @@ class AvisoconcurrenciaadultoModel
 
   @override
   void dispose() {
+    textFieldapellidoFocusNode?.dispose();
+    textFieldapellidoTextController?.dispose();
+
+    textFieldnombreFocusNode?.dispose();
+    textFieldnombreTextController?.dispose();
+
+    textFieldDNIFocusNode?.dispose();
+    textFieldDNITextController?.dispose();
+
+    textFieldFocusNode1?.dispose();
+    textController4?.dispose();
+
+    textFieldFocusNode2?.dispose();
+    textController5?.dispose();
+
     textFieldresenaFocusNode?.dispose();
     textFieldresenaTextController?.dispose();
 

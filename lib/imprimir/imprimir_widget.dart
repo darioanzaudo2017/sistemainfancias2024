@@ -9,6 +9,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'imprimir_model.dart';
 export 'imprimir_model.dart';
 
@@ -975,22 +976,28 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
 
                                                                         if ((_model.apiResultznw?.succeeded ??
                                                                             true)) {
-                                                                          await Future.delayed(
-                                                                              const Duration(milliseconds: 5000));
+                                                                          await Future
+                                                                              .delayed(
+                                                                            Duration(
+                                                                              milliseconds: 5000,
+                                                                            ),
+                                                                          );
                                                                           await showDialog(
                                                                             context:
                                                                                 context,
                                                                             builder:
                                                                                 (alertDialogContext) {
-                                                                              return AlertDialog(
-                                                                                title: Text('Se ejecuto correctamente!'),
-                                                                                content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
-                                                                                actions: [
-                                                                                  TextButton(
-                                                                                    onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                    child: Text('Ok'),
-                                                                                  ),
-                                                                                ],
+                                                                              return WebViewAware(
+                                                                                child: AlertDialog(
+                                                                                  title: Text('Se ejecuto correctamente!'),
+                                                                                  content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                  actions: [
+                                                                                    TextButton(
+                                                                                      onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                      child: Text('Ok'),
+                                                                                    ),
+                                                                                  ],
+                                                                                ),
                                                                               );
                                                                             },
                                                                           );
@@ -1022,19 +1029,25 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
 
                                                                           if ((_model.apiResultznwrecepcion?.succeeded ??
                                                                               true)) {
-                                                                            await Future.delayed(const Duration(milliseconds: 5000));
+                                                                            await Future.delayed(
+                                                                              Duration(
+                                                                                milliseconds: 5000,
+                                                                              ),
+                                                                            );
                                                                             await showDialog(
                                                                               context: context,
                                                                               builder: (alertDialogContext) {
-                                                                                return AlertDialog(
-                                                                                  title: Text('Se ejecuto correctamente!'),
-                                                                                  content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
-                                                                                  actions: [
-                                                                                    TextButton(
-                                                                                      onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                      child: Text('Ok'),
-                                                                                    ),
-                                                                                  ],
+                                                                                return WebViewAware(
+                                                                                  child: AlertDialog(
+                                                                                    title: Text('Se ejecuto correctamente!'),
+                                                                                    content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                    actions: [
+                                                                                      TextButton(
+                                                                                        onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                        child: Text('Ok'),
+                                                                                      ),
+                                                                                    ],
+                                                                                  ),
                                                                                 );
                                                                               },
                                                                             );
@@ -1058,19 +1071,25 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
 
                                                                             if ((_model.apiResultznwinfsintesiscreate?.succeeded ??
                                                                                 true)) {
-                                                                              await Future.delayed(const Duration(milliseconds: 5000));
+                                                                              await Future.delayed(
+                                                                                Duration(
+                                                                                  milliseconds: 5000,
+                                                                                ),
+                                                                              );
                                                                               await showDialog(
                                                                                 context: context,
                                                                                 builder: (alertDialogContext) {
-                                                                                  return AlertDialog(
-                                                                                    title: Text('Se ejecuto correctamente!'),
-                                                                                    content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
-                                                                                    actions: [
-                                                                                      TextButton(
-                                                                                        onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                        child: Text('Ok'),
-                                                                                      ),
-                                                                                    ],
+                                                                                  return WebViewAware(
+                                                                                    child: AlertDialog(
+                                                                                      title: Text('Se ejecuto correctamente!'),
+                                                                                      content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                      actions: [
+                                                                                        TextButton(
+                                                                                          onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                          child: Text('Ok'),
+                                                                                        ),
+                                                                                      ],
+                                                                                    ),
                                                                                   );
                                                                                 },
                                                                               );
@@ -1091,19 +1110,25 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                               );
 
                                                                               if ((_model.apiResultznwinfmedidas?.succeeded ?? true)) {
-                                                                                await Future.delayed(const Duration(milliseconds: 5000));
+                                                                                await Future.delayed(
+                                                                                  Duration(
+                                                                                    milliseconds: 5000,
+                                                                                  ),
+                                                                                );
                                                                                 await showDialog(
                                                                                   context: context,
                                                                                   builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
-                                                                                      title: Text('Se ejecuto correctamente!'),
-                                                                                      content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
-                                                                                      actions: [
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                          child: Text('Ok'),
-                                                                                        ),
-                                                                                      ],
+                                                                                    return WebViewAware(
+                                                                                      child: AlertDialog(
+                                                                                        title: Text('Se ejecuto correctamente!'),
+                                                                                        content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                            child: Text('Ok'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      ),
                                                                                     );
                                                                                   },
                                                                                 );
@@ -1123,19 +1148,25 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                 );
 
                                                                                 if ((_model.apiResultznwinfsenaf?.succeeded ?? true)) {
-                                                                                  await Future.delayed(const Duration(milliseconds: 5000));
+                                                                                  await Future.delayed(
+                                                                                    Duration(
+                                                                                      milliseconds: 5000,
+                                                                                    ),
+                                                                                  );
                                                                                   await showDialog(
                                                                                     context: context,
                                                                                     builder: (alertDialogContext) {
-                                                                                      return AlertDialog(
-                                                                                        title: Text('Se ejecuto correctamente!'),
-                                                                                        content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
-                                                                                        actions: [
-                                                                                          TextButton(
-                                                                                            onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                            child: Text('Ok'),
-                                                                                          ),
-                                                                                        ],
+                                                                                      return WebViewAware(
+                                                                                        child: AlertDialog(
+                                                                                          title: Text('Se ejecuto correctamente!'),
+                                                                                          content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                          actions: [
+                                                                                            TextButton(
+                                                                                              onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                              child: Text('Ok'),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
                                                                                       );
                                                                                     },
                                                                                   );
@@ -1144,15 +1175,17 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                   await showDialog(
                                                                                     context: context,
                                                                                     builder: (alertDialogContext) {
-                                                                                      return AlertDialog(
-                                                                                        title: Text('Se enviara un mail a la cordinacion!'),
-                                                                                        content: Text('Se envio el mail!!'),
-                                                                                        actions: [
-                                                                                          TextButton(
-                                                                                            onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                            child: Text('Ok'),
-                                                                                          ),
-                                                                                        ],
+                                                                                      return WebViewAware(
+                                                                                        child: AlertDialog(
+                                                                                          title: Text('Se enviara un mail a la cordinacion!'),
+                                                                                          content: Text('Se envio el mail!!'),
+                                                                                          actions: [
+                                                                                            TextButton(
+                                                                                              onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                              child: Text('Ok'),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
                                                                                       );
                                                                                     },
                                                                                   );
@@ -1246,22 +1279,28 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
 
                                                                         if ((_model.apiResultznwCopy?.succeeded ??
                                                                             true)) {
-                                                                          await Future.delayed(
-                                                                              const Duration(milliseconds: 5000));
+                                                                          await Future
+                                                                              .delayed(
+                                                                            Duration(
+                                                                              milliseconds: 5000,
+                                                                            ),
+                                                                          );
                                                                           await showDialog(
                                                                             context:
                                                                                 context,
                                                                             builder:
                                                                                 (alertDialogContext) {
-                                                                              return AlertDialog(
-                                                                                title: Text('Se ejecuto correctamente!'),
-                                                                                content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
-                                                                                actions: [
-                                                                                  TextButton(
-                                                                                    onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                    child: Text('Ok'),
-                                                                                  ),
-                                                                                ],
+                                                                              return WebViewAware(
+                                                                                child: AlertDialog(
+                                                                                  title: Text('Se ejecuto correctamente!'),
+                                                                                  content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                  actions: [
+                                                                                    TextButton(
+                                                                                      onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                      child: Text('Ok'),
+                                                                                    ),
+                                                                                  ],
+                                                                                ),
                                                                               );
                                                                             },
                                                                           );
@@ -1295,19 +1334,25 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
 
                                                                           if ((_model.apiResultznwCopyrecepcion?.succeeded ??
                                                                               true)) {
-                                                                            await Future.delayed(const Duration(milliseconds: 5000));
+                                                                            await Future.delayed(
+                                                                              Duration(
+                                                                                milliseconds: 5000,
+                                                                              ),
+                                                                            );
                                                                             await showDialog(
                                                                               context: context,
                                                                               builder: (alertDialogContext) {
-                                                                                return AlertDialog(
-                                                                                  title: Text('Se ejecuto correctamente!'),
-                                                                                  content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
-                                                                                  actions: [
-                                                                                    TextButton(
-                                                                                      onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                      child: Text('Ok'),
-                                                                                    ),
-                                                                                  ],
+                                                                                return WebViewAware(
+                                                                                  child: AlertDialog(
+                                                                                    title: Text('Se ejecuto correctamente!'),
+                                                                                    content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                    actions: [
+                                                                                      TextButton(
+                                                                                        onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                        child: Text('Ok'),
+                                                                                      ),
+                                                                                    ],
+                                                                                  ),
                                                                                 );
                                                                               },
                                                                             );
@@ -1332,19 +1377,25 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
 
                                                                             if ((_model.apiResultznwCopyinfsintesis?.succeeded ??
                                                                                 true)) {
-                                                                              await Future.delayed(const Duration(milliseconds: 5000));
+                                                                              await Future.delayed(
+                                                                                Duration(
+                                                                                  milliseconds: 5000,
+                                                                                ),
+                                                                              );
                                                                               await showDialog(
                                                                                 context: context,
                                                                                 builder: (alertDialogContext) {
-                                                                                  return AlertDialog(
-                                                                                    title: Text('Se ejecuto correctamente!'),
-                                                                                    content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
-                                                                                    actions: [
-                                                                                      TextButton(
-                                                                                        onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                        child: Text('Ok'),
-                                                                                      ),
-                                                                                    ],
+                                                                                  return WebViewAware(
+                                                                                    child: AlertDialog(
+                                                                                      title: Text('Se ejecuto correctamente!'),
+                                                                                      content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                      actions: [
+                                                                                        TextButton(
+                                                                                          onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                          child: Text('Ok'),
+                                                                                        ),
+                                                                                      ],
+                                                                                    ),
                                                                                   );
                                                                                 },
                                                                               );
@@ -1366,19 +1417,25 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                               );
 
                                                                               if ((_model.apiResultznwinfmedidas?.succeeded ?? true)) {
-                                                                                await Future.delayed(const Duration(milliseconds: 5000));
+                                                                                await Future.delayed(
+                                                                                  Duration(
+                                                                                    milliseconds: 5000,
+                                                                                  ),
+                                                                                );
                                                                                 await showDialog(
                                                                                   context: context,
                                                                                   builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
-                                                                                      title: Text('Se ejecuto correctamente!'),
-                                                                                      content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
-                                                                                      actions: [
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                          child: Text('Ok'),
-                                                                                        ),
-                                                                                      ],
+                                                                                    return WebViewAware(
+                                                                                      child: AlertDialog(
+                                                                                        title: Text('Se ejecuto correctamente!'),
+                                                                                        content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                            child: Text('Ok'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      ),
                                                                                     );
                                                                                   },
                                                                                 );
@@ -1399,19 +1456,25 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                 );
 
                                                                                 if ((_model.apiResultznwCopyFormularioSolicituddemedidaexcepcional?.succeeded ?? true)) {
-                                                                                  await Future.delayed(const Duration(milliseconds: 5000));
+                                                                                  await Future.delayed(
+                                                                                    Duration(
+                                                                                      milliseconds: 5000,
+                                                                                    ),
+                                                                                  );
                                                                                   await showDialog(
                                                                                     context: context,
                                                                                     builder: (alertDialogContext) {
-                                                                                      return AlertDialog(
-                                                                                        title: Text('Se ejecuto correctamente!'),
-                                                                                        content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
-                                                                                        actions: [
-                                                                                          TextButton(
-                                                                                            onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                            child: Text('Ok'),
-                                                                                          ),
-                                                                                        ],
+                                                                                      return WebViewAware(
+                                                                                        child: AlertDialog(
+                                                                                          title: Text('Se ejecuto correctamente!'),
+                                                                                          content: Text('La informacion se solicito y se generara un archivo en google drive!!'),
+                                                                                          actions: [
+                                                                                            TextButton(
+                                                                                              onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                              child: Text('Ok'),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
                                                                                       );
                                                                                     },
                                                                                   );
@@ -1420,15 +1483,17 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                                                                   await showDialog(
                                                                                     context: context,
                                                                                     builder: (alertDialogContext) {
-                                                                                      return AlertDialog(
-                                                                                        title: Text('Se enviara una mail a la coordinacion'),
-                                                                                        content: Text('Se envio un mail!!!'),
-                                                                                        actions: [
-                                                                                          TextButton(
-                                                                                            onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                            child: Text('Ok'),
-                                                                                          ),
-                                                                                        ],
+                                                                                      return WebViewAware(
+                                                                                        child: AlertDialog(
+                                                                                          title: Text('Se enviara una mail a la coordinacion'),
+                                                                                          content: Text('Se envio un mail!!!'),
+                                                                                          actions: [
+                                                                                            TextButton(
+                                                                                              onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                              child: Text('Ok'),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
                                                                                       );
                                                                                     },
                                                                                   );

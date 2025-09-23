@@ -297,6 +297,35 @@ class FFAppState extends ChangeNotifier {
   set idrol(int value) {
     _idrol = value;
   }
+
+  List<PersonasactasStruct> _listapersonasacta = [];
+  List<PersonasactasStruct> get listapersonasacta => _listapersonasacta;
+  set listapersonasacta(List<PersonasactasStruct> value) {
+    _listapersonasacta = value;
+  }
+
+  void addToListapersonasacta(PersonasactasStruct value) {
+    listapersonasacta.add(value);
+  }
+
+  void removeFromListapersonasacta(PersonasactasStruct value) {
+    listapersonasacta.remove(value);
+  }
+
+  void removeAtIndexFromListapersonasacta(int index) {
+    listapersonasacta.removeAt(index);
+  }
+
+  void updateListapersonasactaAtIndex(
+    int index,
+    PersonasactasStruct Function(PersonasactasStruct) updateFn,
+  ) {
+    listapersonasacta[index] = updateFn(_listapersonasacta[index]);
+  }
+
+  void insertAtIndexInListapersonasacta(int index, PersonasactasStruct value) {
+    listapersonasacta.insert(index, value);
+  }
 }
 
 void _safeInit(Function() initializeField) {

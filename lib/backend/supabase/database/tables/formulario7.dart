@@ -113,4 +113,7 @@ class Formulario7Row extends SupabaseDataRow {
 
   int? get idgrupofamiliar => getField<int>('idgrupofamiliar');
   set idgrupofamiliar(int? value) => setField<int>('idgrupofamiliar', value);
+
+  DateTime? get fechadeacta => getField<DateTime>('fechadeacta');
+  set fechadeacta(DateTime? value) => setField<DateTime>('fechadeacta', value);
 }

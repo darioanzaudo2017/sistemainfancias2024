@@ -146,4 +146,10 @@ class VistaRecepciondelademandaRow extends SupabaseDataRow {
   String? get desicionSeccion9 => getField<String>('desicion_seccion9');
   set desicionSeccion9(String? value) =>
       setField<String>('desicion_seccion9', value);
+
+  String? get barrio => getField<String>('barrio');
+  set barrio(String? value) => setField<String>('barrio', value);
+
+  String? get barrioOtro => getField<String>('Barrio_Otro');
+  set barrioOtro(String? value) => setField<String>('Barrio_Otro', value);
 }

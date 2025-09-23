@@ -1,7 +1,7 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/custom_code/widgets/index.dart' as custom_widgets;
+import '/flutter_flow/flutter_flow_web_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'informesenaf_model.dart';
@@ -93,16 +93,17 @@ class _InformesenafWidgetState extends State<InformesenafWidget> {
         ),
         body: SafeArea(
           top: true,
-          child: Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
-            child: Container(
-              width: 1000.0,
-              height: 800.0,
-              child: custom_widgets.PowerBIEmbed(
-                width: 1000.0,
-                height: 800.0,
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              FlutterFlowWebView(
+                content: 'https://flutter.dev',
+                bypass: false,
+                height: 500.0,
+                verticalScroll: false,
+                horizontalScroll: false,
               ),
-            ),
+            ],
           ),
         ),
       ),

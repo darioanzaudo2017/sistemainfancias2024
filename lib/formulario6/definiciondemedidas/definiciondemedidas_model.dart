@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/anexosbotonera_widget.dart';
 import '/components/barrade_navegacion_widget.dart';
@@ -39,14 +40,18 @@ class DefiniciondemedidasModel
       FlutterFlowDataTableController<Formulario6Row>();
   // Stores action output result for [Bottom Sheet - formulario6] action in Button widget.
   String? form6edit;
-  Completer<List<Formulario7Row>>? requestCompleter2;
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
+  // Stores action output result for [Backend Call - API (acta)] action in IconButton widget.
+  ApiCallResponse? acta;
+  bool isDataUploading_uploadDataEnt = false;
+  FFUploadedFile uploadedLocalFile_uploadDataEnt =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
+  String uploadedFileUrl_uploadDataEnt = '';
 
+  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
+  Formulario7Row? form7;
   // Stores action output result for [Bottom Sheet - formulario7] action in Button widget.
   bool? creoacta;
+  Completer<List<Formulario7Row>>? requestCompleter2;
 
   @override
   void initState(BuildContext context) {

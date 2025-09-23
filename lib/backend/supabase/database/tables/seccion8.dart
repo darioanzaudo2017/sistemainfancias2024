@@ -49,4 +49,14 @@ class Seccion8Row extends SupabaseDataRow {
 
   String? get Vinculo => getField<String>('Vinculo');
   set Vinculo(String? value) => setField<String>('Vinculo', value);
+
+  bool? get entrevistado => getField<bool>('entrevistado');
+  set entrevistado(bool? value) => setField<bool>('entrevistado', value);
+
+  String? get ocupacion => getField<String>('ocupacion');
+  set ocupacion(String? value) => setField<String>('ocupacion', value);
+
+  String? get refdeubicacion => getField<String>('refdeubicacion');
+  set refdeubicacion(String? value) =>
+      setField<String>('refdeubicacion', value);
 }

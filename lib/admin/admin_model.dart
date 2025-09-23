@@ -2,6 +2,7 @@ import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/index.dart';
 import 'admin_widget.dart' show AdminWidget;
 import 'package:flutter/material.dart';
 
@@ -29,6 +30,17 @@ class AdminModel extends FlutterFlowModel<AdminWidget> {
       FlutterFlowDataTableController<VistaIngresosExpedienteRow>();
   // Stores action output result for [Backend Call - Query Rows] action in IconButton widget.
   List<Formulario9Row>? rowform9;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<VistaExpedientesUltimoEstadoRow>? vistaexpe;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<SpdRow>? spdrow;
+  // State field(s) for PaginatedDataTable widget.
+  final paginatedDataTableController4 =
+      FlutterFlowDataTableController<AccionesConRecursoRow>();
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<VistaExpedientesUltimoEstadoRow>? vistaexpe1;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<SpdRow>? spdroww;
 
   @override
   void initState(BuildContext context) {}
@@ -39,5 +51,6 @@ class AdminModel extends FlutterFlowModel<AdminWidget> {
     paginatedDataTableController1.dispose();
     paginatedDataTableController2.dispose();
     paginatedDataTableController3.dispose();
+    paginatedDataTableController4.dispose();
   }
 }

@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'seccion4_model.dart';
 export 'seccion4_model.dart';
 
@@ -75,39 +76,38 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Align(
-          alignment: AlignmentDirectional(0.0, 0.0),
-          child: FutureBuilder<List<Seccion4Row>>(
-            future: Seccion4Table().querySingleRow(
-              queryFn: (q) => q.eqOrNull(
-                'idIngreso',
-                widget.rowingreso?.id,
+    return FutureBuilder<List<Seccion4Row>>(
+      future: Seccion4Table().querySingleRow(
+        queryFn: (q) => q.eqOrNull(
+          'idIngreso',
+          widget.rowingreso?.id,
+        ),
+      ),
+      builder: (context, snapshot) {
+        // Customize what your widget looks like when it's loading.
+        if (!snapshot.hasData) {
+          return Center(
+            child: SizedBox(
+              width: 50.0,
+              height: 50.0,
+              child: CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(
+                  FlutterFlowTheme.of(context).primary,
+                ),
               ),
             ),
-            builder: (context, snapshot) {
-              // Customize what your widget looks like when it's loading.
-              if (!snapshot.hasData) {
-                return Center(
-                  child: SizedBox(
-                    width: 50.0,
-                    height: 50.0,
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        FlutterFlowTheme.of(context).primary,
-                      ),
-                    ),
-                  ),
-                );
-              }
-              List<Seccion4Row> containerSeccion4RowList = snapshot.data!;
+          );
+        }
+        List<Seccion4Row> stackSeccion4RowList = snapshot.data!;
 
-              final containerSeccion4Row = containerSeccion4RowList.isNotEmpty
-                  ? containerSeccion4RowList.first
-                  : null;
+        final stackSeccion4Row =
+            stackSeccion4RowList.isNotEmpty ? stackSeccion4RowList.first : null;
 
-              return Material(
+        return Stack(
+          children: [
+            Align(
+              alignment: AlignmentDirectional(0.0, 0.0),
+              child: Material(
                 color: Colors.transparent,
                 elevation: 2.0,
                 shape: RoundedRectangleBorder(
@@ -171,25 +171,24 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                       ),
                                     ),
                                   ),
-                                  if (!_model.editarotrsdatos)
-                                    Align(
-                                      alignment: AlignmentDirectional(1.0, 0.0),
-                                      child: FlutterFlowIconButton(
-                                        borderColor: Colors.transparent,
-                                        borderRadius: 20.0,
-                                        borderWidth: 1.0,
-                                        buttonSize: 46.0,
-                                        icon: Icon(
-                                          Icons.cancel_outlined,
-                                          color: FlutterFlowTheme.of(context)
-                                              .error,
-                                          size: 24.0,
-                                        ),
-                                        onPressed: () async {
-                                          Navigator.pop(context);
-                                        },
+                                  Align(
+                                    alignment: AlignmentDirectional(1.0, 0.0),
+                                    child: FlutterFlowIconButton(
+                                      borderColor: Colors.transparent,
+                                      borderRadius: 20.0,
+                                      borderWidth: 1.0,
+                                      buttonSize: 46.0,
+                                      icon: Icon(
+                                        Icons.cancel_outlined,
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        size: 24.0,
                                       ),
+                                      onPressed: () async {
+                                        Navigator.pop(context);
+                                      },
                                     ),
+                                  ),
                                 ],
                               ),
                               Padding(
@@ -258,7 +257,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                                       .radioButtonPaicorValueController ??=
                                                   FormFieldController<String>(
                                                       valueOrDefault<String>(
-                                                containerSeccion4Row?.paicor,
+                                                stackSeccion4Row?.paicor,
                                                 'Desconoce',
                                               )),
                                               optionHeight: 40.0,
@@ -390,7 +389,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                                     .radioButtonAUHValueController ??=
                                                 FormFieldController<String>(
                                                     valueOrDefault<String>(
-                                              containerSeccion4Row?.auh,
+                                              stackSeccion4Row?.auh,
                                               'Desconoce',
                                             )),
                                             optionHeight: 40.0,
@@ -537,7 +536,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                                       .radioButtonPensionValueController ??=
                                                   FormFieldController<String>(
                                                       valueOrDefault<String>(
-                                                containerSeccion4Row?.pension,
+                                                stackSeccion4Row?.pension,
                                                 'Desconoce',
                                               )),
                                               optionHeight: 40.0,
@@ -669,7 +668,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                                     .radioButtonTarjetaValueController ??=
                                                 FormFieldController<String>(
                                                     valueOrDefault<String>(
-                                              containerSeccion4Row?.tarjeta,
+                                              stackSeccion4Row?.tarjeta,
                                               'Desconoce',
                                             )),
                                             optionHeight: 40.0,
@@ -756,7 +755,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                 child: TextFormField(
                                   controller: _model.textController1 ??=
                                       TextEditingController(
-                                    text: containerSeccion4Row?.cualPen,
+                                    text: stackSeccion4Row?.cualPen,
                                   ),
                                   focusNode: _model.textFieldFocusNode1,
                                   autofocus: true,
@@ -873,7 +872,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                 child: TextFormField(
                                   controller: _model.textController2 ??=
                                       TextEditingController(
-                                    text: containerSeccion4Row?.otros,
+                                    text: stackSeccion4Row?.otros,
                                   ),
                                   focusNode: _model.textFieldFocusNode2,
                                   autofocus: true,
@@ -991,7 +990,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                 child: TextFormField(
                                   controller: _model.textController3 ??=
                                       TextEditingController(
-                                    text: containerSeccion4Row?.actividad,
+                                    text: stackSeccion4Row?.actividad,
                                   ),
                                   focusNode: _model.textFieldFocusNode3,
                                   autofocus: true,
@@ -1274,7 +1273,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                           if (widget.edit == false) {
                                             return widget.edit!;
                                           } else if (widget.edit == true) {
-                                            return containerSeccion4Row!.agua!;
+                                            return stackSeccion4Row!.agua!;
                                           } else {
                                             return false;
                                           }
@@ -1283,11 +1282,16 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                           safeSetState(() => _model
                                               .checkboxValue1 = newValue!);
                                         },
-                                        side: BorderSide(
-                                          width: 2,
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                        ),
+                                        side: (FlutterFlowTheme.of(context)
+                                                    .secondaryText !=
+                                                null)
+                                            ? BorderSide(
+                                                width: 2,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                              )
+                                            : null,
                                         activeColor:
                                             FlutterFlowTheme.of(context)
                                                 .primary,
@@ -1302,7 +1306,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                         child: TextFormField(
                                           controller: _model.textController4 ??=
                                               TextEditingController(
-                                            text: containerSeccion4Row?.aguaObs,
+                                            text: stackSeccion4Row?.aguaObs,
                                           ),
                                           focusNode: _model.textFieldFocusNode4,
                                           autofocus: true,
@@ -1506,8 +1510,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                           if (widget.edit == false) {
                                             return widget.edit!;
                                           } else if (widget.edit == true) {
-                                            return containerSeccion4Row!
-                                                .cloacas!;
+                                            return stackSeccion4Row!.cloacas!;
                                           } else {
                                             return false;
                                           }
@@ -1516,11 +1519,16 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                           safeSetState(() => _model
                                               .checkboxValue2 = newValue!);
                                         },
-                                        side: BorderSide(
-                                          width: 2,
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                        ),
+                                        side: (FlutterFlowTheme.of(context)
+                                                    .secondaryText !=
+                                                null)
+                                            ? BorderSide(
+                                                width: 2,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                              )
+                                            : null,
                                         activeColor:
                                             FlutterFlowTheme.of(context)
                                                 .primary,
@@ -1535,8 +1543,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                         child: TextFormField(
                                           controller: _model.textController5 ??=
                                               TextEditingController(
-                                            text: containerSeccion4Row
-                                                ?.cloacasObs,
+                                            text: stackSeccion4Row?.cloacasObs,
                                           ),
                                           focusNode: _model.textFieldFocusNode5,
                                           autofocus: true,
@@ -1739,7 +1746,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                           if (widget.edit == false) {
                                             return widget.edit!;
                                           } else if (widget.edit == true) {
-                                            return containerSeccion4Row!.gas!;
+                                            return stackSeccion4Row!.gas!;
                                           } else {
                                             return false;
                                           }
@@ -1748,11 +1755,16 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                           safeSetState(() => _model
                                               .checkboxValue3 = newValue!);
                                         },
-                                        side: BorderSide(
-                                          width: 2,
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                        ),
+                                        side: (FlutterFlowTheme.of(context)
+                                                    .secondaryText !=
+                                                null)
+                                            ? BorderSide(
+                                                width: 2,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                              )
+                                            : null,
                                         activeColor:
                                             FlutterFlowTheme.of(context)
                                                 .primary,
@@ -1767,7 +1779,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                         child: TextFormField(
                                           controller: _model.textController6 ??=
                                               TextEditingController(
-                                            text: containerSeccion4Row?.gasObs,
+                                            text: stackSeccion4Row?.gasObs,
                                           ),
                                           focusNode: _model.textFieldFocusNode6,
                                           autofocus: true,
@@ -1970,7 +1982,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                           if (widget.edit == false) {
                                             return widget.edit!;
                                           } else if (widget.edit == true) {
-                                            return containerSeccion4Row!
+                                            return stackSeccion4Row!
                                                 .electricidad!;
                                           } else {
                                             return false;
@@ -1980,11 +1992,16 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                           safeSetState(() => _model
                                               .checkboxValue4 = newValue!);
                                         },
-                                        side: BorderSide(
-                                          width: 2,
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                        ),
+                                        side: (FlutterFlowTheme.of(context)
+                                                    .secondaryText !=
+                                                null)
+                                            ? BorderSide(
+                                                width: 2,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                              )
+                                            : null,
                                         activeColor:
                                             FlutterFlowTheme.of(context)
                                                 .primary,
@@ -1999,7 +2016,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                         child: TextFormField(
                                           controller: _model.textController7 ??=
                                               TextEditingController(
-                                            text: containerSeccion4Row
+                                            text: stackSeccion4Row
                                                 ?.electricidadObs,
                                           ),
                                           focusNode: _model.textFieldFocusNode7,
@@ -2203,8 +2220,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                           if (widget.edit == false) {
                                             return widget.edit!;
                                           } else if (widget.edit == true) {
-                                            return containerSeccion4Row!
-                                                .internet!;
+                                            return stackSeccion4Row!.internet!;
                                           } else {
                                             return false;
                                           }
@@ -2213,11 +2229,16 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                           safeSetState(() => _model
                                               .checkboxValue5 = newValue!);
                                         },
-                                        side: BorderSide(
-                                          width: 2,
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                        ),
+                                        side: (FlutterFlowTheme.of(context)
+                                                    .secondaryText !=
+                                                null)
+                                            ? BorderSide(
+                                                width: 2,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                              )
+                                            : null,
                                         activeColor:
                                             FlutterFlowTheme.of(context)
                                                 .primary,
@@ -2232,8 +2253,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                         child: TextFormField(
                                           controller: _model.textController8 ??=
                                               TextEditingController(
-                                            text: containerSeccion4Row
-                                                ?.internetObs,
+                                            text: stackSeccion4Row?.internetObs,
                                           ),
                                           focusNode: _model.textFieldFocusNode8,
                                           autofocus: true,
@@ -2472,7 +2492,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                           if (widget.edit == false) {
                                             return widget.edit!;
                                           } else if (widget.edit == true) {
-                                            return containerSeccion4Row!.paa!;
+                                            return stackSeccion4Row!.paa!;
                                           } else {
                                             return false;
                                           }
@@ -2481,11 +2501,16 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                           safeSetState(() => _model
                                               .checkboxValue6 = newValue!);
                                         },
-                                        side: BorderSide(
-                                          width: 2,
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                        ),
+                                        side: (FlutterFlowTheme.of(context)
+                                                    .secondaryText !=
+                                                null)
+                                            ? BorderSide(
+                                                width: 2,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                              )
+                                            : null,
                                         activeColor:
                                             FlutterFlowTheme.of(context)
                                                 .primary,
@@ -2500,7 +2525,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                         child: TextFormField(
                                           controller: _model.textController9 ??=
                                               TextEditingController(
-                                            text: containerSeccion4Row?.paaObs,
+                                            text: stackSeccion4Row?.paaObs,
                                           ),
                                           focusNode: _model.textFieldFocusNode9,
                                           autofocus: true,
@@ -2703,7 +2728,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                           if (widget.edit == false) {
                                             return widget.edit!;
                                           } else if (widget.edit == true) {
-                                            return containerSeccion4Row!.pmv!;
+                                            return stackSeccion4Row!.pmv!;
                                           } else {
                                             return false;
                                           }
@@ -2712,11 +2737,16 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                           safeSetState(() => _model
                                               .checkboxValue7 = newValue!);
                                         },
-                                        side: BorderSide(
-                                          width: 2,
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                        ),
+                                        side: (FlutterFlowTheme.of(context)
+                                                    .secondaryText !=
+                                                null)
+                                            ? BorderSide(
+                                                width: 2,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                              )
+                                            : null,
                                         activeColor:
                                             FlutterFlowTheme.of(context)
                                                 .primary,
@@ -2732,7 +2762,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                           controller:
                                               _model.textController10 ??=
                                                   TextEditingController(
-                                            text: containerSeccion4Row?.pmvObs,
+                                            text: stackSeccion4Row?.pmvObs,
                                           ),
                                           focusNode:
                                               _model.textFieldFocusNode10,
@@ -2936,7 +2966,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                           if (widget.edit == false) {
                                             return widget.edit!;
                                           } else if (widget.edit == true) {
-                                            return containerSeccion4Row!.ssp!;
+                                            return stackSeccion4Row!.ssp!;
                                           } else {
                                             return false;
                                           }
@@ -2945,11 +2975,16 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                           safeSetState(() => _model
                                               .checkboxValue8 = newValue!);
                                         },
-                                        side: BorderSide(
-                                          width: 2,
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                        ),
+                                        side: (FlutterFlowTheme.of(context)
+                                                    .secondaryText !=
+                                                null)
+                                            ? BorderSide(
+                                                width: 2,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                              )
+                                            : null,
                                         activeColor:
                                             FlutterFlowTheme.of(context)
                                                 .primary,
@@ -2965,7 +3000,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                           controller:
                                               _model.textController11 ??=
                                                   TextEditingController(
-                                            text: containerSeccion4Row?.sspObs,
+                                            text: stackSeccion4Row?.sspObs,
                                           ),
                                           focusNode:
                                               _model.textFieldFocusNode11,
@@ -3185,18 +3220,21 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                             await showDialog(
                                               context: context,
                                               builder: (alertDialogContext) {
-                                                return AlertDialog(
-                                                  title: Text('Carga correcta'),
-                                                  content: Text(
-                                                      'La informacion se guardo correctamente!!'),
-                                                  actions: [
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext),
-                                                      child: Text('Ok'),
-                                                    ),
-                                                  ],
+                                                return WebViewAware(
+                                                  child: AlertDialog(
+                                                    title:
+                                                        Text('Carga correcta'),
+                                                    content: Text(
+                                                        'La informacion se guardo correctamente!!'),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext),
+                                                        child: Text('Ok'),
+                                                      ),
+                                                    ],
+                                                  ),
                                                 );
                                               },
                                             );
@@ -3274,18 +3312,21 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                             await showDialog(
                                               context: context,
                                               builder: (alertDialogContext) {
-                                                return AlertDialog(
-                                                  title: Text('Carga correcta'),
-                                                  content: Text(
-                                                      'La informacion se guardo correctamente!!'),
-                                                  actions: [
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext),
-                                                      child: Text('Ok'),
-                                                    ),
-                                                  ],
+                                                return WebViewAware(
+                                                  child: AlertDialog(
+                                                    title:
+                                                        Text('Carga correcta'),
+                                                    content: Text(
+                                                        'La informacion se guardo correctamente!!'),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext),
+                                                        child: Text('Ok'),
+                                                      ),
+                                                    ],
+                                                  ),
                                                 );
                                               },
                                             );
@@ -3479,18 +3520,20 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                           await showDialog(
                                             context: context,
                                             builder: (alertDialogContext) {
-                                              return AlertDialog(
-                                                title: Text('Carga correcta'),
-                                                content: Text(
-                                                    'La informacion se guardo correctamente!!'),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext),
-                                                    child: Text('Ok'),
-                                                  ),
-                                                ],
+                                              return WebViewAware(
+                                                child: AlertDialog(
+                                                  title: Text('Carga correcta'),
+                                                  content: Text(
+                                                      'La informacion se guardo correctamente!!'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: Text('Ok'),
+                                                    ),
+                                                  ],
+                                                ),
                                               );
                                             },
                                           );
@@ -3555,84 +3598,90 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                     ),
                   ),
                 ),
-              );
-            },
-          ),
-        ),
-        if (_model.editarotrsdatos)
-          Container(
-            width: MediaQuery.sizeOf(context).width * 1.0,
-            height: MediaQuery.sizeOf(context).height * 1.0,
-            decoration: BoxDecoration(
-              color: Color(0x3BE0E3E7),
-            ),
-            child: Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Align(
-                    alignment: AlignmentDirectional(1.0, -1.0),
-                    child: Material(
-                      color: Colors.transparent,
-                      elevation: 5.0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      child: Container(
-                        width: 80.0,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: FlutterFlowIconButton(
-                                borderRadius: 8.0,
-                                buttonSize: 40.0,
-                                icon: Icon(
-                                  Icons.cancel_outlined,
-                                  color: FlutterFlowTheme.of(context).error,
-                                  size: 24.0,
-                                ),
-                                onPressed: () async {
-                                  Navigator.pop(context);
-                                },
-                              ),
-                            ),
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: FlutterFlowIconButton(
-                                borderRadius: 8.0,
-                                buttonSize: 40.0,
-                                fillColor: FlutterFlowTheme.of(context).primary,
-                                icon: Icon(
-                                  Icons.edit_rounded,
-                                  color: FlutterFlowTheme.of(context).info,
-                                  size: 24.0,
-                                ),
-                                onPressed: () async {
-                                  _model.editarotrsdatos = false;
-                                  safeSetState(() {});
-                                },
-                              ),
-                            ),
-                          ]
-                              .divide(SizedBox(height: 10.0))
-                              .around(SizedBox(height: 10.0)),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
               ),
             ),
-          ),
-      ],
+            if ((_model.editarotrsdatos == true) &&
+                (stackSeccion4Row?.idSec4 != null))
+              Container(
+                width: MediaQuery.sizeOf(context).width * 1.0,
+                height: MediaQuery.sizeOf(context).height * 1.0,
+                decoration: BoxDecoration(
+                  color: Color(0x3BE0E3E7),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.all(15.0),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Align(
+                          alignment: AlignmentDirectional(1.0, -1.0),
+                          child: Material(
+                            color: Colors.transparent,
+                            elevation: 5.0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            child: Container(
+                              width: 80.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Align(
+                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    child: FlutterFlowIconButton(
+                                      borderRadius: 8.0,
+                                      buttonSize: 40.0,
+                                      icon: Icon(
+                                        Icons.cancel_outlined,
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        size: 24.0,
+                                      ),
+                                      onPressed: () async {
+                                        Navigator.pop(context);
+                                      },
+                                    ),
+                                  ),
+                                  Align(
+                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    child: FlutterFlowIconButton(
+                                      borderRadius: 8.0,
+                                      buttonSize: 40.0,
+                                      fillColor:
+                                          FlutterFlowTheme.of(context).primary,
+                                      icon: Icon(
+                                        Icons.edit_rounded,
+                                        color:
+                                            FlutterFlowTheme.of(context).info,
+                                        size: 24.0,
+                                      ),
+                                      onPressed: () async {
+                                        _model.editarotrsdatos = false;
+                                        safeSetState(() {});
+                                      },
+                                    ),
+                                  ),
+                                ]
+                                    .divide(SizedBox(height: 10.0))
+                                    .around(SizedBox(height: 10.0)),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+          ],
+        );
+      },
     );
   }
 }

@@ -117,4 +117,7 @@ class Seccion1Row extends SupabaseDataRow {
   String? get cualesPrestaciones => getField<String>('cualesPrestaciones');
   set cualesPrestaciones(String? value) =>
       setField<String>('cualesPrestaciones', value);
+
+  String? get barrioOtro => getField<String>('Barrio_Otro');
+  set barrioOtro(String? value) => setField<String>('Barrio_Otro', value);
 }

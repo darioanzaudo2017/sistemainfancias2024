@@ -5,7 +5,6 @@ import '/components/barrade_navegacion_widget.dart';
 import '/components/tarjetaencabezado_widget.dart';
 import '/components/ultimaactualizacion_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/form_field_controller.dart';
 import '/index.dart';
 import 'dart:async';
 import 'perfil_widget.dart' show PerfilWidget;
@@ -18,6 +17,8 @@ class PerfilModel extends FlutterFlowModel<PerfilWidget> {
   late BarradeNavegacionModel barradeNavegacionModel;
   // Model for anexosbotonera component.
   late AnexosbotoneraModel anexosbotoneraModel;
+  // Stores action output result for [Backend Call - API (ExisteDNIexpediente)] action in Button widget.
+  ApiCallResponse? checkdnifuncion1;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   ExpedienteRow? creaexpgrupoCopy;
   // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
@@ -35,8 +36,12 @@ class PerfilModel extends FlutterFlowModel<PerfilWidget> {
   Completer<List<IngresosRow>>? requestCompleter1;
   // Stores action output result for [Bottom Sheet - seccion2] action in Button widget.
   bool? seccion2true;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<Seccion1Row>? seccion1;
   // Stores action output result for [Bottom Sheet - seccion3] action in Button widget.
   bool? seccion3true;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<Seccion1Row>? idseccion1edit;
   // Stores action output result for [Bottom Sheet - seccion4] action in Button widget.
   bool? seccion4;
   // Stores action output result for [Bottom Sheet - seccion4] action in Button widget.
@@ -60,8 +65,6 @@ class PerfilModel extends FlutterFlowModel<PerfilWidget> {
   Completer<List<AnexoAForm1Row>>? requestCompleter2;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   Seccion9Row? seccion9Copy;
-  // State field(s) for RadioButton widget.
-  FormFieldController<String>? radioButtonValueController;
 
   @override
   void initState(BuildContext context) {
@@ -112,6 +115,4 @@ class PerfilModel extends FlutterFlowModel<PerfilWidget> {
       }
     }
   }
-
-  String? get radioButtonValue => radioButtonValueController?.value;
 }

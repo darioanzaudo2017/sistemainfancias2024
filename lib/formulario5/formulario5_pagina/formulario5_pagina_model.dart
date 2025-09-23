@@ -49,7 +49,7 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
 
   // Stores action output result for [Bottom Sheet - desplegablederechosprincipal] action in Button widget.
   bool? agregarderecho;
-  Completer<List<ListaDerechosVulneradosexpedienteRow>>? requestCompleter;
+  Completer<List<ListaDerechosVulneradosexpedienteRow>>? requestCompleter1;
   // State field(s) for PaginatedDataTable widget.
   final paginatedDataTableController1 =
       FlutterFlowDataTableController<ListaDerechosVulneradosexpedienteRow>();
@@ -60,20 +60,6 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
           .where((e) => e.value)
           .map((e) => e.key)
           .toList();
-
-  // State field(s) for TextFieldinddevulneracion widget.
-  FocusNode? textFieldinddevulneracionFocusNode;
-  TextEditingController? textFieldinddevulneracionTextController;
-  String? Function(BuildContext, String?)?
-      textFieldinddevulneracionTextControllerValidator;
-  String? _textFieldinddevulneracionTextControllerValidator(
-      BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'Campo obligatorio';
-    }
-
-    return null;
-  }
 
   // State field(s) for TextFieldresponsables widget.
   FocusNode? textFieldresponsablesFocusNode;
@@ -96,9 +82,9 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
       textFieldantecedentesTextControllerValidator;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
-  TextEditingController? textController5;
-  String? Function(BuildContext, String?)? textController5Validator;
-  String? _textController5Validator(BuildContext context, String? val) {
+  TextEditingController? textController4;
+  String? Function(BuildContext, String?)? textController4Validator;
+  String? _textController4Validator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Campo obligatorio';
     }
@@ -144,6 +130,7 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
       textFieldPropuestasparamedidasdeProteccionIntegralTextControllerValidator;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   Formulario5Row? insertform5;
+  Completer<List<IngresosRow>>? requestCompleter2;
   // Model for anexosbotonera component.
   late AnexosbotoneraModel anexosbotoneraModel;
 
@@ -153,11 +140,9 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
         createModel(context, () => TarjetaencabezadoModel());
     textFieldprofesionalesTextControllerValidator =
         _textFieldprofesionalesTextControllerValidator;
-    textFieldinddevulneracionTextControllerValidator =
-        _textFieldinddevulneracionTextControllerValidator;
     textFieldresponsablesTextControllerValidator =
         _textFieldresponsablesTextControllerValidator;
-    textController5Validator = _textController5Validator;
+    textController4Validator = _textController4Validator;
     anexosbotoneraModel = createModel(context, () => AnexosbotoneraModel());
   }
 
@@ -168,9 +153,6 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
     textFieldprofesionalesTextController?.dispose();
 
     paginatedDataTableController1.dispose();
-    textFieldinddevulneracionFocusNode?.dispose();
-    textFieldinddevulneracionTextController?.dispose();
-
     textFieldresponsablesFocusNode?.dispose();
     textFieldresponsablesTextController?.dispose();
 
@@ -178,7 +160,7 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
     textFieldantecedentesTextController?.dispose();
 
     textFieldFocusNode?.dispose();
-    textController5?.dispose();
+    textController4?.dispose();
 
     textFieldnombreespacioFocusNode?.dispose();
     textFieldnombreespacioTextController?.dispose();
@@ -197,7 +179,7 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
   }
 
   /// Additional helper methods.
-  Future waitForRequestCompleted({
+  Future waitForRequestCompleted1({
     double minWait = 0,
     double maxWait = double.infinity,
   }) async {
@@ -205,7 +187,22 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
     while (true) {
       await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = requestCompleter?.isCompleted ?? false;
+      final requestComplete = requestCompleter1?.isCompleted ?? false;
+      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
+        break;
+      }
+    }
+  }
+
+  Future waitForRequestCompleted2({
+    double minWait = 0,
+    double maxWait = double.infinity,
+  }) async {
+    final stopwatch = Stopwatch()..start();
+    while (true) {
+      await Future.delayed(Duration(milliseconds: 50));
+      final timeElapsed = stopwatch.elapsedMilliseconds;
+      final requestComplete = requestCompleter2?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
         break;
       }

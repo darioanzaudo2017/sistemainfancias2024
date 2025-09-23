@@ -1,11 +1,8 @@
 import '/backend/supabase/supabase.dart';
-import '/components/desplegablederechosprincipal_widget.dart';
 import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'formulario5_model.dart';
@@ -324,18 +321,13 @@ class _Formulario5WidgetState extends State<Formulario5Widget> {
                           ),
                           FutureBuilder<
                               List<ListaDerechosVulneradosexpedienteRow>>(
-                            future: (_model.requestCompleter ??= Completer<
-                                    List<
-                                        ListaDerechosVulneradosexpedienteRow>>()
-                                  ..complete(
-                                      ListaDerechosVulneradosexpedienteTable()
-                                          .queryRows(
-                                    queryFn: (q) => q.eqOrNull(
-                                      'idingreso',
-                                      widget.idingreso?.id,
-                                    ),
-                                  )))
-                                .future,
+                            future: ListaDerechosVulneradosexpedienteTable()
+                                .queryRows(
+                              queryFn: (q) => q.eqOrNull(
+                                'idingreso',
+                                widget.idingreso?.id,
+                              ),
+                            ),
                             builder: (context, snapshot) {
                               // Customize what your widget looks like when it's loading.
                               if (!snapshot.hasData) {
@@ -365,92 +357,6 @@ class _Formulario5WidgetState extends State<Formulario5Widget> {
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
-                                    Align(
-                                      alignment:
-                                          AlignmentDirectional(1.0, -1.0),
-                                      child: FFButtonWidget(
-                                        onPressed: () async {
-                                          await showModalBottomSheet(
-                                            isScrollControlled: true,
-                                            backgroundColor: Colors.transparent,
-                                            enableDrag: false,
-                                            context: context,
-                                            builder: (context) {
-                                              return Padding(
-                                                padding:
-                                                    MediaQuery.viewInsetsOf(
-                                                        context),
-                                                child:
-                                                    DesplegablederechosprincipalWidget(
-                                                  idexp: widget.rowexp?.id,
-                                                  idingreso:
-                                                      widget.idingreso?.id,
-                                                  form: 'Form5',
-                                                ),
-                                              );
-                                            },
-                                          ).then((value) => safeSetState(() =>
-                                              _model.agregarderecho = value));
-
-                                          if (_model.agregarderecho!) {
-                                            safeSetState(() =>
-                                                _model.requestCompleter = null);
-                                            await _model
-                                                .waitForRequestCompleted();
-                                            _model.derechoscompletos = true;
-                                            safeSetState(() {});
-                                          }
-
-                                          safeSetState(() {});
-                                        },
-                                        text: 'Agregar Derecho',
-                                        options: FFButtonOptions(
-                                          height: 40.0,
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  24.0, 0.0, 24.0, 0.0),
-                                          iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          textStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .titleSmall
-                                              .override(
-                                                font: GoogleFonts.notoSansJp(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall
-                                                          .fontStyle,
-                                                ),
-                                                color: Colors.white,
-                                                letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .fontStyle,
-                                              ),
-                                          elevation: 3.0,
-                                          borderSide: BorderSide(
-                                            color: Colors.transparent,
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                      ),
-                                    ),
                                     Expanded(
                                       child: Builder(
                                         builder: (context) {

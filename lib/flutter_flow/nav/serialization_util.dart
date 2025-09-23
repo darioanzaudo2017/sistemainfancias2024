@@ -220,8 +220,18 @@ dynamic deserializeParam<T>(
             return VistaTotalVulneradosRow(data);
           case ListadniexpedienteRow:
             return ListadniexpedienteRow(data);
+          case ListaPersonasActaRow:
+            return ListaPersonasActaRow(data);
+          case EstadodeaccionRow:
+            return EstadodeaccionRow(data);
           case ImpresionesExpedientesRow:
             return ImpresionesExpedientesRow(data);
+          case VistaExpedientesUltimoEstadoTodosRow:
+            return VistaExpedientesUltimoEstadoTodosRow(data);
+          case VistaResumenIngresosPorZonaRow:
+            return VistaResumenIngresosPorZonaRow(data);
+          case VistaResumenIngresosPorSpdRow:
+            return VistaResumenIngresosPorSpdRow(data);
           case LogExpedienteRow:
             return LogExpedienteRow(data);
           case DerechovulneradoRow:
@@ -258,8 +268,12 @@ dynamic deserializeParam<T>(
             return Formulario5HistorialRow(data);
           case ArticulacionComunitariaRow:
             return ArticulacionComunitariaRow(data);
+          case ListadeactasRow:
+            return ListadeactasRow(data);
           case VistaExpedientesSenafRow:
             return VistaExpedientesSenafRow(data);
+          case AmplaicionSeccion8Row:
+            return AmplaicionSeccion8Row(data);
           case VistaEstadisticasAdminRow:
             return VistaEstadisticasAdminRow(data);
           case PruebarlsRow:
@@ -306,12 +320,22 @@ dynamic deserializeParam<T>(
             return NNyAExpGruRow(data);
           case AmpliaciondeinformacionhistorialRow:
             return AmpliaciondeinformacionhistorialRow(data);
+          case TNotificacionUsuariosRow:
+            return TNotificacionUsuariosRow(data);
           case Seccion1Row:
             return Seccion1Row(data);
+          case EnviomailsRow:
+            return EnviomailsRow(data);
+          case AccionesMedidaRow:
+            return AccionesMedidaRow(data);
           case ExpedienteRow:
             return ExpedienteRow(data);
           case Seccion2Row:
             return Seccion2Row(data);
+          case NotificacionesRow:
+            return NotificacionesRow(data);
+          case AccionesConRecursoRow:
+            return AccionesConRecursoRow(data);
           case AvisovisitaadultosRow:
             return AvisovisitaadultosRow(data);
           case Anexo4RequerimientoaccionesRow:
@@ -348,6 +372,8 @@ dynamic deserializeParam<T>(
             return Formulario7Row(data);
           case ZonasRow:
             return ZonasRow(data);
+          case VistaResumenIngresosAdminRow:
+            return VistaResumenIngresosAdminRow(data);
           case Seccion7Row:
             return Seccion7Row(data);
           case Formulario6Row:

@@ -36,4 +36,7 @@ class ArticulacionComunitariaRow extends SupabaseDataRow {
 
   int? get idingreso => getField<int>('idingreso');
   set idingreso(int? value) => setField<int>('idingreso', value);
+
+  String? get form => getField<String>('form');
+  set form(String? value) => setField<String>('form', value);
 }

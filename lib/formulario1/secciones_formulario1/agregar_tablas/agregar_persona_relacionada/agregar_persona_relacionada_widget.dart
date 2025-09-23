@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'agregar_persona_relacionada_model.dart';
 export 'agregar_persona_relacionada_model.dart';
 
@@ -50,11 +51,18 @@ class _AgregarPersonaRelacionadaWidgetState
     _model.textController3 ??= TextEditingController();
     _model.textFieldFocusNode3 ??= FocusNode();
 
+    _model.textFieldMask3 = MaskTextInputFormatter(mask: '##########');
     _model.textController4 ??= TextEditingController();
     _model.textFieldFocusNode4 ??= FocusNode();
 
     _model.textController5 ??= TextEditingController();
     _model.textFieldFocusNode5 ??= FocusNode();
+
+    _model.textController6 ??= TextEditingController();
+    _model.textFieldFocusNode6 ??= FocusNode();
+
+    _model.textController7 ??= TextEditingController();
+    _model.textFieldFocusNode7 ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -553,6 +561,105 @@ class _AgregarPersonaRelacionadaWidgetState
                         ),
                       ),
                       Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                        child: TextFormField(
+                          controller: _model.textController5,
+                          focusNode: _model.textFieldFocusNode5,
+                          autofocus: true,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            labelText: 'Referencia de la ubicacion',
+                            labelStyle: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  font: GoogleFonts.notoSansJp(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
+                                  ),
+                                  letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontStyle,
+                                ),
+                            hintStyle: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  font: GoogleFonts.notoSansJp(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
+                                  ),
+                                  letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontStyle,
+                                ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).alternate,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).primary,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).error,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).error,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    font: GoogleFonts.notoSansJp(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
+                          validator: _model.textController5Validator
+                              .asValidator(context),
+                        ),
+                      ),
+                      Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
                             10.0, 0.0, 10.0, 0.0),
                         child: FlutterFlowDropDown<String>(
@@ -615,8 +722,8 @@ class _AgregarPersonaRelacionadaWidgetState
                           padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: TextFormField(
-                            controller: _model.textController5,
-                            focusNode: _model.textFieldFocusNode5,
+                            controller: _model.textController6,
+                            focusNode: _model.textFieldFocusNode6,
                             autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -709,10 +816,111 @@ class _AgregarPersonaRelacionadaWidgetState
                                 ),
                             maxLines: 10,
                             minLines: 1,
-                            validator: _model.textController5Validator
+                            validator: _model.textController6Validator
                                 .asValidator(context),
                           ),
                         ),
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                        child: TextFormField(
+                          controller: _model.textController7,
+                          focusNode: _model.textFieldFocusNode7,
+                          autofocus: true,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            labelText: 'Ocupacion',
+                            labelStyle: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  font: GoogleFonts.notoSansJp(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
+                                  ),
+                                  letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontStyle,
+                                ),
+                            hintStyle: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  font: GoogleFonts.notoSansJp(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
+                                  ),
+                                  letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontStyle,
+                                ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).alternate,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).primary,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).error,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).error,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    font: GoogleFonts.notoSansJp(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
+                          maxLines: 10,
+                          minLines: 1,
+                          validator: _model.textController7Validator
+                              .asValidator(context),
+                        ),
+                      ),
                       ListView(
                         padding: EdgeInsets.zero,
                         shrinkWrap: true,
@@ -729,7 +937,7 @@ class _AgregarPersonaRelacionadaWidgetState
                                     'apellido': _model.textController2.text,
                                     'vinculo': _model.dropDownValue != 'Otros'
                                         ? _model.dropDownValue
-                                        : _model.textController5.text,
+                                        : _model.textController6.text,
                                     'telefono': double.tryParse(
                                         _model.textController3.text),
                                     'direccion': _model.textController4.text,
@@ -740,7 +948,11 @@ class _AgregarPersonaRelacionadaWidgetState
                                     'iduser': currentUserUid,
                                     'Vinculo': _model.dropDownValue != 'Otros'
                                         ? _model.dropDownValue
-                                        : _model.textController5.text,
+                                        : _model.textController6.text,
+                                    'entrevistado': false,
+                                    'ocupacion': _model.textController7.text,
+                                    'refdeubicacion':
+                                        _model.textController5.text,
                                   });
                                   await Formulario4Table().insert({
                                     'idIngreso': widget.rowingreso?.id,
@@ -751,7 +963,7 @@ class _AgregarPersonaRelacionadaWidgetState
                                     'apeEnt': _model.textController2.text,
                                     'relacion': _model.dropDownValue != 'Otros'
                                         ? _model.dropDownValue
-                                        : _model.textController5.text,
+                                        : _model.textController6.text,
                                     'dirEnt': _model.textController4.text,
                                     'telEnt': _model.textController3.text,
                                   });

@@ -17,10 +17,10 @@ class AdjuntardocumentoModel extends FlutterFlowModel<AdjuntardocumentoWidget> {
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
+  bool isDataUploading_uploadData9zv = false;
+  FFUploadedFile uploadedLocalFile_uploadData9zv =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
+  String uploadedFileUrl_uploadData9zv = '';
 
   @override
   void initState(BuildContext context) {}

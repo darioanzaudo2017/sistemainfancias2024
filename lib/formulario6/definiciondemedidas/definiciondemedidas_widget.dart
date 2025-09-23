@@ -3,7 +3,9 @@ import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/anexosbotonera_widget.dart';
 import '/components/barrade_navegacion_widget.dart';
+import '/components/derechoysubderechomedida_widget.dart';
 import '/components/formcaratula_widget.dart';
+import '/components/nuevaaccion_widget.dart';
 import '/components/tarjetaencabezado_widget.dart';
 import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -20,6 +22,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'definiciondemedidas_model.dart';
 export 'definiciondemedidas_model.dart';
 
@@ -402,25 +405,30 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                 enableDrag: false,
                                                 context: context,
                                                 builder: (context) {
-                                                  return GestureDetector(
-                                                    onTap: () {
-                                                      FocusScope.of(context)
-                                                          .unfocus();
-                                                      FocusManager
-                                                          .instance.primaryFocus
-                                                          ?.unfocus();
-                                                    },
-                                                    child: Padding(
-                                                      padding: MediaQuery
-                                                          .viewInsetsOf(
-                                                              context),
-                                                      child: FormcaratulaWidget(
-                                                        usuariorow:
-                                                            widget.usuariorow!,
-                                                        idexp:
-                                                            widget.rowexp?.id,
-                                                        editar: true,
-                                                        dniok: false,
+                                                  return WebViewAware(
+                                                    child: GestureDetector(
+                                                      onTap: () {
+                                                        FocusScope.of(context)
+                                                            .unfocus();
+                                                        FocusManager.instance
+                                                            .primaryFocus
+                                                            ?.unfocus();
+                                                      },
+                                                      child: Padding(
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
+                                                        child:
+                                                            FormcaratulaWidget(
+                                                          usuariorow: widget
+                                                              .usuariorow!,
+                                                          idexp: widget
+                                                              .rowexp?.id,
+                                                          editar: true,
+                                                          dniok: false,
+                                                          usuariorol: widget
+                                                              .usuariosrol!,
+                                                        ),
                                                       ),
                                                     ),
                                                   );
@@ -486,26 +494,30 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                 enableDrag: false,
                                                 context: context,
                                                 builder: (context) {
-                                                  return GestureDetector(
-                                                    onTap: () {
-                                                      FocusScope.of(context)
-                                                          .unfocus();
-                                                      FocusManager
-                                                          .instance.primaryFocus
-                                                          ?.unfocus();
-                                                    },
-                                                    child: Padding(
-                                                      padding: MediaQuery
-                                                          .viewInsetsOf(
-                                                              context),
-                                                      child: Formulario1Widget(
-                                                        idingreso:
-                                                            containerIngresosRow!,
-                                                        rowexp: widget.rowexp!,
-                                                        usuariorow:
-                                                            widget.usuariorow!,
-                                                        usuariosrol: widget
-                                                            .usuariosrol!,
+                                                  return WebViewAware(
+                                                    child: GestureDetector(
+                                                      onTap: () {
+                                                        FocusScope.of(context)
+                                                            .unfocus();
+                                                        FocusManager.instance
+                                                            .primaryFocus
+                                                            ?.unfocus();
+                                                      },
+                                                      child: Padding(
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
+                                                        child:
+                                                            Formulario1Widget(
+                                                          idingreso:
+                                                              containerIngresosRow!,
+                                                          rowexp:
+                                                              widget.rowexp!,
+                                                          usuariorow: widget
+                                                              .usuariorow!,
+                                                          usuariosrol: widget
+                                                              .usuariosrol!,
+                                                        ),
                                                       ),
                                                     ),
                                                   );
@@ -641,27 +653,30 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                     context,
                                                                 builder:
                                                                     (alertDialogContext) {
-                                                                  return AlertDialog(
-                                                                    title: Text(
-                                                                        'Copiar lista de medidas'),
-                                                                    content: Text(
-                                                                        'Estas por copiar la lista de medidas del NNyA principal'),
-                                                                    actions: [
-                                                                      TextButton(
-                                                                        onPressed: () => Navigator.pop(
-                                                                            alertDialogContext,
-                                                                            false),
-                                                                        child: Text(
-                                                                            'Cancelar'),
-                                                                      ),
-                                                                      TextButton(
-                                                                        onPressed: () => Navigator.pop(
-                                                                            alertDialogContext,
-                                                                            true),
-                                                                        child: Text(
-                                                                            'Confirmar'),
-                                                                      ),
-                                                                    ],
+                                                                  return WebViewAware(
+                                                                    child:
+                                                                        AlertDialog(
+                                                                      title: Text(
+                                                                          'Copiar lista de medidas'),
+                                                                      content: Text(
+                                                                          'Estas por copiar la lista de medidas del NNyA principal'),
+                                                                      actions: [
+                                                                        TextButton(
+                                                                          onPressed: () => Navigator.pop(
+                                                                              alertDialogContext,
+                                                                              false),
+                                                                          child:
+                                                                              Text('Cancelar'),
+                                                                        ),
+                                                                        TextButton(
+                                                                          onPressed: () => Navigator.pop(
+                                                                              alertDialogContext,
+                                                                              true),
+                                                                          child:
+                                                                              Text('Confirmar'),
+                                                                        ),
+                                                                      ],
+                                                                    ),
                                                                   );
                                                                 },
                                                               ) ??
@@ -681,17 +696,21 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                           context: context,
                                                           builder:
                                                               (alertDialogContext) {
-                                                            return AlertDialog(
-                                                              title: Text('1'),
-                                                              actions: [
-                                                                TextButton(
-                                                                  onPressed: () =>
-                                                                      Navigator.pop(
-                                                                          alertDialogContext),
-                                                                  child: Text(
-                                                                      'Ok'),
-                                                                ),
-                                                              ],
+                                                            return WebViewAware(
+                                                              child:
+                                                                  AlertDialog(
+                                                                title:
+                                                                    Text('1'),
+                                                                actions: [
+                                                                  TextButton(
+                                                                    onPressed: () =>
+                                                                        Navigator.pop(
+                                                                            alertDialogContext),
+                                                                    child: Text(
+                                                                        'Ok'),
+                                                                  ),
+                                                                ],
+                                                              ),
                                                             );
                                                           },
                                                         );
@@ -1032,30 +1051,35 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                       context,
                                                                   builder:
                                                                       (context) {
-                                                                    return GestureDetector(
-                                                                      onTap:
-                                                                          () {
-                                                                        FocusScope.of(context)
-                                                                            .unfocus();
-                                                                        FocusManager
-                                                                            .instance
-                                                                            .primaryFocus
-                                                                            ?.unfocus();
-                                                                      },
+                                                                    return WebViewAware(
                                                                       child:
-                                                                          Padding(
-                                                                        padding:
-                                                                            MediaQuery.viewInsetsOf(context),
+                                                                          GestureDetector(
+                                                                        onTap:
+                                                                            () {
+                                                                          FocusScope.of(context)
+                                                                              .unfocus();
+                                                                          FocusManager
+                                                                              .instance
+                                                                              .primaryFocus
+                                                                              ?.unfocus();
+                                                                        },
                                                                         child:
-                                                                            Formulario6Widget(
-                                                                          idingreso:
-                                                                              widget.ingresorow,
-                                                                          rowexp:
-                                                                              widget.rowexp,
-                                                                          editar:
-                                                                              false,
-                                                                          idform6:
-                                                                              0,
+                                                                            Padding(
+                                                                          padding:
+                                                                              MediaQuery.viewInsetsOf(context),
+                                                                          child:
+                                                                              Formulario6Widget(
+                                                                            idingreso:
+                                                                                widget.ingresorow,
+                                                                            rowexp:
+                                                                                widget.rowexp,
+                                                                            editar:
+                                                                                false,
+                                                                            idform6:
+                                                                                0,
+                                                                            rol:
+                                                                                widget.usuariosrol!,
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                     );
@@ -1404,7 +1428,17 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                             child:
                                                                                 VerticalDivider(
                                                                               thickness: 5.0,
-                                                                              color: listdefiniciondemedidasItem.estado == 'Activa' ? FlutterFlowTheme.of(context).secondary : FlutterFlowTheme.of(context).tertiary,
+                                                                              color: () {
+                                                                                if (listdefiniciondemedidasItem.estado == 'Activa') {
+                                                                                  return FlutterFlowTheme.of(context).secondary;
+                                                                                } else if (listdefiniciondemedidasItem.estado == 'Resuelta') {
+                                                                                  return FlutterFlowTheme.of(context).success;
+                                                                                } else if (listdefiniciondemedidasItem.estado == 'Sustituida') {
+                                                                                  return FlutterFlowTheme.of(context).tertiary;
+                                                                                } else {
+                                                                                  return FlutterFlowTheme.of(context).tertiary;
+                                                                                }
+                                                                              }(),
                                                                             ),
                                                                           ),
                                                                           Flexible(
@@ -1563,63 +1597,51 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                           decoration:
                                                                               BoxDecoration(),
                                                                           child:
-                                                                              Column(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.start,
-                                                                            crossAxisAlignment:
-                                                                                CrossAxisAlignment.start,
-                                                                            children: [
-                                                                              Flexible(
-                                                                                child: Align(
-                                                                                  alignment: AlignmentDirectional(-1.0, -1.0),
-                                                                                  child: Text(
-                                                                                    valueOrDefault<String>(
-                                                                                      containerListaDerechosVulneradosexpedienteRow?.derecho,
-                                                                                      'Derecho',
-                                                                                    ).maybeHandleOverflow(
-                                                                                      maxChars: 15,
-                                                                                      replacement: '…',
-                                                                                    ),
-                                                                                    textAlign: TextAlign.center,
-                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          font: GoogleFonts.notoSansJp(
-                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                          ),
-                                                                                          letterSpacing: 0.0,
-                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                        ),
+                                                                              Align(
+                                                                            alignment:
+                                                                                AlignmentDirectional(0.0, 0.0),
+                                                                            child:
+                                                                                Column(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                                              crossAxisAlignment: CrossAxisAlignment.center,
+                                                                              children: [
+                                                                                FlutterFlowIconButton(
+                                                                                  borderRadius: 8.0,
+                                                                                  buttonSize: 40.0,
+                                                                                  fillColor: FlutterFlowTheme.of(context).primary,
+                                                                                  icon: Icon(
+                                                                                    Icons.view_agenda,
+                                                                                    color: FlutterFlowTheme.of(context).info,
+                                                                                    size: 24.0,
                                                                                   ),
-                                                                                ),
-                                                                              ),
-                                                                              Flexible(
-                                                                                child: Align(
-                                                                                  alignment: AlignmentDirectional(-1.0, -1.0),
-                                                                                  child: Text(
-                                                                                    valueOrDefault<String>(
-                                                                                      containerListaDerechosVulneradosexpedienteRow?.subcategoria,
-                                                                                      'Subcategoria',
-                                                                                    ).maybeHandleOverflow(
-                                                                                      maxChars: 20,
-                                                                                      replacement: '…',
-                                                                                    ),
-                                                                                    textAlign: TextAlign.center,
-                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          font: GoogleFonts.notoSansJp(
-                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                  onPressed: () async {
+                                                                                    await showModalBottomSheet(
+                                                                                      isScrollControlled: true,
+                                                                                      backgroundColor: Colors.transparent,
+                                                                                      enableDrag: false,
+                                                                                      context: context,
+                                                                                      builder: (context) {
+                                                                                        return WebViewAware(
+                                                                                          child: GestureDetector(
+                                                                                            onTap: () {
+                                                                                              FocusScope.of(context).unfocus();
+                                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                                            },
+                                                                                            child: Padding(
+                                                                                              padding: MediaQuery.viewInsetsOf(context),
+                                                                                              child: DerechoysubderechomedidaWidget(
+                                                                                                derecho: containerListaDerechosVulneradosexpedienteRow!,
+                                                                                              ),
+                                                                                            ),
                                                                                           ),
-                                                                                          letterSpacing: 0.0,
-                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                        ),
-                                                                                  ),
+                                                                                        );
+                                                                                      },
+                                                                                    ).then((value) => safeSetState(() {}));
+                                                                                  },
                                                                                 ),
-                                                                              ),
-                                                                            ],
+                                                                              ],
+                                                                            ),
                                                                           ),
                                                                         );
                                                                       },
@@ -1635,53 +1657,6 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                             MainAxisAlignment.center,
                                                                         children:
                                                                             [
-                                                                          FFButtonWidget(
-                                                                            onPressed:
-                                                                                () async {
-                                                                              context.pushNamed(
-                                                                                Respuestaform6pageWidget.routeName,
-                                                                                queryParameters: {
-                                                                                  'idingreso': serializeParam(
-                                                                                    widget.ingresorow,
-                                                                                    ParamType.SupabaseRow,
-                                                                                  ),
-                                                                                  'expedienterow': serializeParam(
-                                                                                    widget.rowexp,
-                                                                                    ParamType.SupabaseRow,
-                                                                                  ),
-                                                                                  'idform6': serializeParam(
-                                                                                    listdefiniciondemedidasItem.id,
-                                                                                    ParamType.int,
-                                                                                  ),
-                                                                                }.withoutNulls,
-                                                                              );
-                                                                            },
-                                                                            text:
-                                                                                'Ver respuestas',
-                                                                            options:
-                                                                                FFButtonOptions(
-                                                                              height: 30.0,
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                              textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: GoogleFonts.notoSansJp(
-                                                                                      fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                    ),
-                                                                                    color: Colors.white,
-                                                                                    letterSpacing: 0.0,
-                                                                                    fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                    fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                  ),
-                                                                              elevation: 3.0,
-                                                                              borderSide: BorderSide(
-                                                                                color: Colors.transparent,
-                                                                                width: 1.0,
-                                                                              ),
-                                                                              borderRadius: BorderRadius.circular(8.0),
-                                                                            ),
-                                                                          ),
                                                                           Align(
                                                                             alignment:
                                                                                 AlignmentDirectional(0.0, 0.0),
@@ -1694,18 +1669,21 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                                   enableDrag: false,
                                                                                   context: context,
                                                                                   builder: (context) {
-                                                                                    return GestureDetector(
-                                                                                      onTap: () {
-                                                                                        FocusScope.of(context).unfocus();
-                                                                                        FocusManager.instance.primaryFocus?.unfocus();
-                                                                                      },
-                                                                                      child: Padding(
-                                                                                        padding: MediaQuery.viewInsetsOf(context),
-                                                                                        child: Formulario6Widget(
-                                                                                          idingreso: widget.ingresorow,
-                                                                                          rowexp: widget.rowexp,
-                                                                                          editar: true,
-                                                                                          idform6: listdefiniciondemedidasItem.id,
+                                                                                    return WebViewAware(
+                                                                                      child: GestureDetector(
+                                                                                        onTap: () {
+                                                                                          FocusScope.of(context).unfocus();
+                                                                                          FocusManager.instance.primaryFocus?.unfocus();
+                                                                                        },
+                                                                                        child: Padding(
+                                                                                          padding: MediaQuery.viewInsetsOf(context),
+                                                                                          child: Formulario6Widget(
+                                                                                            idingreso: widget.ingresorow,
+                                                                                            rowexp: widget.rowexp,
+                                                                                            editar: true,
+                                                                                            idform6: listdefiniciondemedidasItem.id,
+                                                                                            rol: widget.usuariosrol!,
+                                                                                          ),
                                                                                         ),
                                                                                       ),
                                                                                     );
@@ -1719,18 +1697,21 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                                     enableDrag: false,
                                                                                     context: context,
                                                                                     builder: (context) {
-                                                                                      return GestureDetector(
-                                                                                        onTap: () {
-                                                                                          FocusScope.of(context).unfocus();
-                                                                                          FocusManager.instance.primaryFocus?.unfocus();
-                                                                                        },
-                                                                                        child: Padding(
-                                                                                          padding: MediaQuery.viewInsetsOf(context),
-                                                                                          child: Formulario6Widget(
-                                                                                            idingreso: widget.ingresorow,
-                                                                                            rowexp: widget.rowexp,
-                                                                                            editar: false,
-                                                                                            idform6: listdefiniciondemedidasItem.id,
+                                                                                      return WebViewAware(
+                                                                                        child: GestureDetector(
+                                                                                          onTap: () {
+                                                                                            FocusScope.of(context).unfocus();
+                                                                                            FocusManager.instance.primaryFocus?.unfocus();
+                                                                                          },
+                                                                                          child: Padding(
+                                                                                            padding: MediaQuery.viewInsetsOf(context),
+                                                                                            child: Formulario6Widget(
+                                                                                              idingreso: widget.ingresorow,
+                                                                                              rowexp: widget.rowexp,
+                                                                                              editar: false,
+                                                                                              idform6: listdefiniciondemedidasItem.id,
+                                                                                              rol: widget.usuariosrol!,
+                                                                                            ),
                                                                                           ),
                                                                                         ),
                                                                                       );
@@ -1775,6 +1756,56 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                                 ),
                                                                                 borderRadius: BorderRadius.circular(12.0),
                                                                               ),
+                                                                            ),
+                                                                          ),
+                                                                          FFButtonWidget(
+                                                                            onPressed:
+                                                                                () async {
+                                                                              await showModalBottomSheet(
+                                                                                isScrollControlled: true,
+                                                                                backgroundColor: Colors.transparent,
+                                                                                enableDrag: false,
+                                                                                context: context,
+                                                                                builder: (context) {
+                                                                                  return WebViewAware(
+                                                                                    child: GestureDetector(
+                                                                                      onTap: () {
+                                                                                        FocusScope.of(context).unfocus();
+                                                                                        FocusManager.instance.primaryFocus?.unfocus();
+                                                                                      },
+                                                                                      child: Padding(
+                                                                                        padding: MediaQuery.viewInsetsOf(context),
+                                                                                        child: NuevaaccionWidget(
+                                                                                          idingreso: widget.ingresorow?.id,
+                                                                                          idmedida: listdefiniciondemedidasItem.id,
+                                                                                          idexpediente: widget.rowexp!.id!,
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  );
+                                                                                },
+                                                                              ).then((value) => safeSetState(() {}));
+                                                                            },
+                                                                            text:
+                                                                                'Acciones',
+                                                                            options:
+                                                                                FFButtonOptions(
+                                                                              height: 30.0,
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                              color: FlutterFlowTheme.of(context).primary,
+                                                                              textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                    font: GoogleFonts.notoSansJp(
+                                                                                      fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                      fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                    ),
+                                                                                    color: Colors.white,
+                                                                                    letterSpacing: 0.0,
+                                                                                    fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                    fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                  ),
+                                                                              elevation: 0.0,
+                                                                              borderRadius: BorderRadius.circular(8.0),
                                                                             ),
                                                                           ),
                                                                         ].divide(SizedBox(height: 5.0)),
@@ -2003,230 +2034,14 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                                           fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
                                                                                         ),
                                                                                   ),
-                                                                                  Row(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    children: [
-                                                                                      FFButtonWidget(
-                                                                                        onPressed: () async {
-                                                                                          if (containerform7Formulario7Row?.linkDocs == null || containerform7Formulario7Row?.linkDocs == '') {
-                                                                                            await ActaCall.call(
-                                                                                              idingreso: widget.ingresorow?.id,
-                                                                                              edit: 0,
-                                                                                              carpeta: widget.ingresorow?.idcarpeta,
-                                                                                            );
-
-                                                                                            await Future.delayed(const Duration(milliseconds: 3500));
-                                                                                            await showDialog(
-                                                                                              context: context,
-                                                                                              builder: (alertDialogContext) {
-                                                                                                return AlertDialog(
-                                                                                                  title: Text('Carga correcta'),
-                                                                                                  content: Text('EL acta se genero un tu drive correctamente!!'),
-                                                                                                  actions: [
-                                                                                                    TextButton(
-                                                                                                      onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                      child: Text('Ok'),
-                                                                                                    ),
-                                                                                                  ],
-                                                                                                );
-                                                                                              },
-                                                                                            );
-                                                                                            safeSetState(() => _model.requestCompleter2 = null);
-                                                                                            await _model.waitForRequestCompleted2();
-                                                                                          } else {
-                                                                                            await ActaCall.call(
-                                                                                              idingreso: widget.ingresorow?.id,
-                                                                                              edit: 1,
-                                                                                              carpeta: widget.ingresorow?.idcarpeta,
-                                                                                            );
-
-                                                                                            await Future.delayed(const Duration(milliseconds: 3500));
-                                                                                            await showDialog(
-                                                                                              context: context,
-                                                                                              builder: (alertDialogContext) {
-                                                                                                return AlertDialog(
-                                                                                                  title: Text('Carga correcta'),
-                                                                                                  content: Text('EL acta se genero un tu drive correctamente!!'),
-                                                                                                  actions: [
-                                                                                                    TextButton(
-                                                                                                      onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                      child: Text('Ok'),
-                                                                                                    ),
-                                                                                                  ],
-                                                                                                );
-                                                                                              },
-                                                                                            );
-                                                                                            safeSetState(() => _model.requestCompleter2 = null);
-                                                                                            await _model.waitForRequestCompleted2();
-                                                                                          }
-                                                                                        },
-                                                                                        text: 'Imprimir acta',
-                                                                                        options: FFButtonOptions(
-                                                                                          height: 40.0,
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                          color: () {
-                                                                                            if (containerform7Formulario7Row?.linkDocs == null || containerform7Formulario7Row?.linkDocs == '') {
-                                                                                              return FlutterFlowTheme.of(context).tertiary;
-                                                                                            } else if (containerform7Formulario7Row?.linkDocs != null && containerform7Formulario7Row?.linkDocs != '') {
-                                                                                              return FlutterFlowTheme.of(context).secondary;
-                                                                                            } else {
-                                                                                              return Color(0x00000000);
-                                                                                            }
-                                                                                          }(),
-                                                                                          textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                font: GoogleFonts.notoSansJp(
-                                                                                                  fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                ),
-                                                                                                color: Colors.white,
-                                                                                                letterSpacing: 0.0,
-                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                              ),
-                                                                                          elevation: 3.0,
-                                                                                          borderSide: BorderSide(
-                                                                                            color: Colors.transparent,
-                                                                                            width: 1.0,
-                                                                                          ),
-                                                                                          borderRadius: BorderRadius.circular(20.0),
-                                                                                        ),
-                                                                                      ),
-                                                                                      if (containerform7Formulario7Row?.linkDocs != null && containerform7Formulario7Row?.linkDocs != '')
-                                                                                        FlutterFlowIconButton(
-                                                                                          borderColor: FlutterFlowTheme.of(context).primary,
-                                                                                          borderRadius: 20.0,
-                                                                                          borderWidth: 1.0,
-                                                                                          buttonSize: 40.0,
-                                                                                          fillColor: FlutterFlowTheme.of(context).accent1,
-                                                                                          icon: FaIcon(
-                                                                                            FontAwesomeIcons.googleDrive,
-                                                                                            color: FlutterFlowTheme.of(context).primaryText,
-                                                                                            size: 24.0,
-                                                                                          ),
-                                                                                          onPressed: () async {
-                                                                                            await launchURL(containerform7Formulario7Row!.linkDocs!);
-                                                                                          },
-                                                                                        ),
-                                                                                      FFButtonWidget(
-                                                                                        onPressed: () async {
-                                                                                          var confirmDialogResponse = await showDialog<bool>(
-                                                                                                context: context,
-                                                                                                builder: (alertDialogContext) {
-                                                                                                  return AlertDialog(
-                                                                                                    title: Text('Desea adjuntar Acta'),
-                                                                                                    content: Text('Recorda que tenes que tener descargada el acta en pdf!!!'),
-                                                                                                    actions: [
-                                                                                                      TextButton(
-                                                                                                        onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                                        child: Text('Cancelar'),
-                                                                                                      ),
-                                                                                                      TextButton(
-                                                                                                        onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                                        child: Text('Confirmar'),
-                                                                                                      ),
-                                                                                                    ],
-                                                                                                  );
-                                                                                                },
-                                                                                              ) ??
-                                                                                              false;
-                                                                                          if (confirmDialogResponse) {
-                                                                                            final selectedFiles = await selectFiles(
-                                                                                              storageFolderPath: 'acta',
-                                                                                              allowedExtensions: ['pdf'],
-                                                                                              multiFile: false,
-                                                                                            );
-                                                                                            if (selectedFiles != null) {
-                                                                                              safeSetState(() => _model.isDataUploading = true);
-                                                                                              var selectedUploadedFiles = <FFUploadedFile>[];
-
-                                                                                              var downloadUrls = <String>[];
-                                                                                              try {
-                                                                                                selectedUploadedFiles = selectedFiles
-                                                                                                    .map((m) => FFUploadedFile(
-                                                                                                          name: m.storagePath.split('/').last,
-                                                                                                          bytes: m.bytes,
-                                                                                                        ))
-                                                                                                    .toList();
-
-                                                                                                downloadUrls = await uploadSupabaseStorageFiles(
-                                                                                                  bucketName: 'acta',
-                                                                                                  selectedFiles: selectedFiles,
-                                                                                                );
-                                                                                              } finally {
-                                                                                                _model.isDataUploading = false;
-                                                                                              }
-                                                                                              if (selectedUploadedFiles.length == selectedFiles.length && downloadUrls.length == selectedFiles.length) {
-                                                                                                safeSetState(() {
-                                                                                                  _model.uploadedLocalFile = selectedUploadedFiles.first;
-                                                                                                  _model.uploadedFileUrl = downloadUrls.first;
-                                                                                                });
-                                                                                              } else {
-                                                                                                safeSetState(() {});
-                                                                                                return;
-                                                                                              }
-                                                                                            }
-
-                                                                                            await DocumentosadjuntosTable().insert({
-                                                                                              'idexpdoc': containerIngresosRow?.idexpediente?.toDouble(),
-                                                                                              'idingresodoc': containerIngresosRow?.id,
-                                                                                              'documentopdf': _model.uploadedFileUrl,
-                                                                                              'tipodocumento': 'Acta de acuerdo',
-                                                                                            });
-                                                                                            await showDialog(
-                                                                                              context: context,
-                                                                                              builder: (alertDialogContext) {
-                                                                                                return AlertDialog(
-                                                                                                  title: Text('Se cargo correctamente la informacion'),
-                                                                                                  actions: [
-                                                                                                    TextButton(
-                                                                                                      onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                      child: Text('Ok'),
-                                                                                                    ),
-                                                                                                  ],
-                                                                                                );
-                                                                                              },
-                                                                                            );
-                                                                                          }
-                                                                                        },
-                                                                                        text: 'Adjuntar acta firmada',
-                                                                                        icon: FaIcon(
-                                                                                          FontAwesomeIcons.signature,
-                                                                                          size: 15.0,
-                                                                                        ),
-                                                                                        options: FFButtonOptions(
-                                                                                          height: 40.0,
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                          color: FlutterFlowTheme.of(context).primary,
-                                                                                          textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                font: GoogleFonts.notoSansJp(
-                                                                                                  fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                ),
-                                                                                                color: Colors.white,
-                                                                                                letterSpacing: 0.0,
-                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                              ),
-                                                                                          elevation: 0.0,
-                                                                                          borderRadius: BorderRadius.circular(8.0),
-                                                                                        ),
-                                                                                      ),
-                                                                                    ].divide(SizedBox(width: 10.0)),
-                                                                                  ),
                                                                                   Container(
-                                                                                    width: 448.85,
+                                                                                    width: 721.35,
                                                                                     decoration: BoxDecoration(),
-                                                                                    child: FutureBuilder<List<DocumentosadjuntosRow>>(
-                                                                                      future: DocumentosadjuntosTable().queryRows(
+                                                                                    child: FutureBuilder<List<ListadeactasRow>>(
+                                                                                      future: ListadeactasTable().queryRows(
                                                                                         queryFn: (q) => q
                                                                                             .eqOrNull(
-                                                                                              'tipodocumento',
-                                                                                              'Acta de acuerdo',
-                                                                                            )
-                                                                                            .eqOrNull(
-                                                                                              'idingresodoc',
+                                                                                              'idingreso',
                                                                                               widget.ingresorow?.id,
                                                                                             )
                                                                                             .order('created_at'),
@@ -2246,15 +2061,15 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                                             ),
                                                                                           );
                                                                                         }
-                                                                                        List<DocumentosadjuntosRow> listViewDocumentosadjuntosRowList = snapshot.data!;
+                                                                                        List<ListadeactasRow> listViewListadeactasRowList = snapshot.data!;
 
                                                                                         return ListView.builder(
                                                                                           padding: EdgeInsets.zero,
                                                                                           shrinkWrap: true,
                                                                                           scrollDirection: Axis.vertical,
-                                                                                          itemCount: listViewDocumentosadjuntosRowList.length,
+                                                                                          itemCount: listViewListadeactasRowList.length,
                                                                                           itemBuilder: (context, listViewIndex) {
-                                                                                            final listViewDocumentosadjuntosRow = listViewDocumentosadjuntosRowList[listViewIndex];
+                                                                                            final listViewListadeactasRow = listViewListadeactasRowList[listViewIndex];
                                                                                             return Padding(
                                                                                               padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                                                                                               child: Container(
@@ -2288,7 +2103,11 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                                                             children: [
                                                                                                               Text(
                                                                                                                 valueOrDefault<String>(
-                                                                                                                  listViewDocumentosadjuntosRow.tipodocumento,
+                                                                                                                  dateTimeFormat(
+                                                                                                                    "d/M/y",
+                                                                                                                    listViewListadeactasRow.fecha,
+                                                                                                                    locale: FFLocalizations.of(context).languageCode,
+                                                                                                                  ),
                                                                                                                   'Sin dato',
                                                                                                                 ),
                                                                                                                 style: FlutterFlowTheme.of(context).bodyLarge.override(
@@ -2303,45 +2122,278 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                                                                       fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                                                                     ),
                                                                                                               ),
-                                                                                                              Padding(
-                                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
-                                                                                                                child: Text(
-                                                                                                                  dateTimeFormat(
-                                                                                                                    "d/M/y",
-                                                                                                                    listViewDocumentosadjuntosRow.createdAt,
-                                                                                                                    locale: FFLocalizations.of(context).languageCode,
-                                                                                                                  ),
-                                                                                                                  style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                                                        font: GoogleFonts.plusJakartaSans(
-                                                                                                                          fontWeight: FontWeight.w500,
-                                                                                                                          fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                                                                        ),
-                                                                                                                        color: Color(0xFF57636C),
-                                                                                                                        fontSize: 12.0,
-                                                                                                                        letterSpacing: 0.0,
-                                                                                                                        fontWeight: FontWeight.w500,
-                                                                                                                        fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                                                                      ),
-                                                                                                                ),
-                                                                                                              ),
                                                                                                             ],
                                                                                                           ),
                                                                                                         ),
                                                                                                       ),
-                                                                                                      FlutterFlowIconButton(
-                                                                                                        borderColor: Color(0xFFE0E3E7),
-                                                                                                        borderRadius: 8.0,
-                                                                                                        borderWidth: 2.0,
-                                                                                                        buttonSize: 40.0,
-                                                                                                        icon: Icon(
-                                                                                                          Icons.more_vert,
-                                                                                                          color: Color(0xFF57636C),
-                                                                                                          size: 20.0,
+                                                                                                      if (listViewListadeactasRow.idform7 != null)
+                                                                                                        Padding(
+                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 15.0, 0.0),
+                                                                                                          child: FlutterFlowIconButton(
+                                                                                                            borderColor: Color(0xFFE0E3E7),
+                                                                                                            borderRadius: 8.0,
+                                                                                                            borderWidth: 2.0,
+                                                                                                            buttonSize: 40.0,
+                                                                                                            icon: Icon(
+                                                                                                              Icons.edit,
+                                                                                                              color: Color(0xFF57636C),
+                                                                                                              size: 20.0,
+                                                                                                            ),
+                                                                                                            onPressed: () async {
+                                                                                                              await showModalBottomSheet(
+                                                                                                                isScrollControlled: true,
+                                                                                                                backgroundColor: Colors.transparent,
+                                                                                                                enableDrag: false,
+                                                                                                                context: context,
+                                                                                                                builder: (context) {
+                                                                                                                  return WebViewAware(
+                                                                                                                    child: GestureDetector(
+                                                                                                                      onTap: () {
+                                                                                                                        FocusScope.of(context).unfocus();
+                                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                                      },
+                                                                                                                      child: Padding(
+                                                                                                                        padding: MediaQuery.viewInsetsOf(context),
+                                                                                                                        child: Formulario7Widget(
+                                                                                                                          idingreso: widget.ingresorow,
+                                                                                                                          rowexp: widget.rowexp,
+                                                                                                                          editar: true,
+                                                                                                                          usuariorow: widget.usuariorow!,
+                                                                                                                          idform7: listViewListadeactasRow.idform7,
+                                                                                                                          idlistaacta: listViewListadeactasRow.id,
+                                                                                                                        ),
+                                                                                                                      ),
+                                                                                                                    ),
+                                                                                                                  );
+                                                                                                                },
+                                                                                                              ).then((value) => safeSetState(() {}));
+                                                                                                            },
+                                                                                                          ),
                                                                                                         ),
-                                                                                                        onPressed: () async {
-                                                                                                          await launchURL(listViewDocumentosadjuntosRow.documentopdf!);
-                                                                                                        },
+                                                                                                      Padding(
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 15.0, 0.0),
+                                                                                                        child: FlutterFlowIconButton(
+                                                                                                          borderColor: Color(0xFFE0E3E7),
+                                                                                                          borderRadius: 8.0,
+                                                                                                          borderWidth: 2.0,
+                                                                                                          buttonSize: 40.0,
+                                                                                                          icon: Icon(
+                                                                                                            Icons.print_rounded,
+                                                                                                            color: Color(0xFF57636C),
+                                                                                                            size: 20.0,
+                                                                                                          ),
+                                                                                                          onPressed: () async {
+                                                                                                            _model.acta = await ActaCall.call(
+                                                                                                              idingreso: listViewListadeactasRow.idingreso,
+                                                                                                              idform7: listViewListadeactasRow.idform7,
+                                                                                                            );
+
+                                                                                                            if ((_model.acta?.succeeded ?? true)) {
+                                                                                                              await ListadeactasTable().update(
+                                                                                                                data: {
+                                                                                                                  'link': ActaCall.url(
+                                                                                                                    (_model.acta?.jsonBody ?? ''),
+                                                                                                                  ),
+                                                                                                                },
+                                                                                                                matchingRows: (rows) => rows.eqOrNull(
+                                                                                                                  'id',
+                                                                                                                  listViewListadeactasRow.id,
+                                                                                                                ),
+                                                                                                              );
+                                                                                                              await showDialog(
+                                                                                                                context: context,
+                                                                                                                builder: (alertDialogContext) {
+                                                                                                                  return WebViewAware(
+                                                                                                                    child: AlertDialog(
+                                                                                                                      title: Text('Acta creada'),
+                                                                                                                      content: Text('Se creo el acta'),
+                                                                                                                      actions: [
+                                                                                                                        TextButton(
+                                                                                                                          onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                                          child: Text('Ok'),
+                                                                                                                        ),
+                                                                                                                      ],
+                                                                                                                    ),
+                                                                                                                  );
+                                                                                                                },
+                                                                                                              );
+                                                                                                            }
+
+                                                                                                            safeSetState(() {});
+                                                                                                          },
+                                                                                                        ),
                                                                                                       ),
+                                                                                                      if (listViewListadeactasRow.link != null && listViewListadeactasRow.link != '')
+                                                                                                        Padding(
+                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 15.0, 0.0),
+                                                                                                          child: FlutterFlowIconButton(
+                                                                                                            borderColor: Color(0xFFE0E3E7),
+                                                                                                            borderRadius: 8.0,
+                                                                                                            borderWidth: 2.0,
+                                                                                                            buttonSize: 40.0,
+                                                                                                            icon: Icon(
+                                                                                                              Icons.document_scanner_sharp,
+                                                                                                              color: Color(0xFF57636C),
+                                                                                                              size: 20.0,
+                                                                                                            ),
+                                                                                                            onPressed: () async {
+                                                                                                              await launchURL('https://view.officeapps.live.com/op/embed.aspx?src=${listViewListadeactasRow.link}');
+                                                                                                            },
+                                                                                                          ),
+                                                                                                        ),
+                                                                                                      if (listViewListadeactasRow.link != null && listViewListadeactasRow.link != '')
+                                                                                                        Padding(
+                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 15.0, 0.0),
+                                                                                                          child: FlutterFlowIconButton(
+                                                                                                            borderColor: Color(0xFFE0E3E7),
+                                                                                                            borderRadius: 8.0,
+                                                                                                            borderWidth: 2.0,
+                                                                                                            buttonSize: 40.0,
+                                                                                                            icon: Icon(
+                                                                                                              Icons.download_outlined,
+                                                                                                              color: Color(0xFF57636C),
+                                                                                                              size: 20.0,
+                                                                                                            ),
+                                                                                                            onPressed: () async {
+                                                                                                              await launchURL(listViewListadeactasRow.link!);
+                                                                                                            },
+                                                                                                          ),
+                                                                                                        ),
+                                                                                                      FFButtonWidget(
+                                                                                                        onPressed: () async {
+                                                                                                          var confirmDialogResponse = await showDialog<bool>(
+                                                                                                                context: context,
+                                                                                                                builder: (alertDialogContext) {
+                                                                                                                  return WebViewAware(
+                                                                                                                    child: AlertDialog(
+                                                                                                                      title: Text('Desea adjuntar Acta'),
+                                                                                                                      content: Text('Recorda que tenes que tener descargada el acta en pdf!!!'),
+                                                                                                                      actions: [
+                                                                                                                        TextButton(
+                                                                                                                          onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                                                          child: Text('Cancelar'),
+                                                                                                                        ),
+                                                                                                                        TextButton(
+                                                                                                                          onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                                                          child: Text('Confirmar'),
+                                                                                                                        ),
+                                                                                                                      ],
+                                                                                                                    ),
+                                                                                                                  );
+                                                                                                                },
+                                                                                                              ) ??
+                                                                                                              false;
+                                                                                                          if (confirmDialogResponse) {
+                                                                                                            final selectedFiles = await selectFiles(
+                                                                                                              storageFolderPath: 'acta',
+                                                                                                              allowedExtensions: ['pdf'],
+                                                                                                              multiFile: false,
+                                                                                                            );
+                                                                                                            if (selectedFiles != null) {
+                                                                                                              safeSetState(() => _model.isDataUploading_uploadDataEnt = true);
+                                                                                                              var selectedUploadedFiles = <FFUploadedFile>[];
+
+                                                                                                              var downloadUrls = <String>[];
+                                                                                                              try {
+                                                                                                                selectedUploadedFiles = selectedFiles
+                                                                                                                    .map((m) => FFUploadedFile(
+                                                                                                                          name: m.storagePath.split('/').last,
+                                                                                                                          bytes: m.bytes,
+                                                                                                                        ))
+                                                                                                                    .toList();
+
+                                                                                                                downloadUrls = await uploadSupabaseStorageFiles(
+                                                                                                                  bucketName: 'acta',
+                                                                                                                  selectedFiles: selectedFiles,
+                                                                                                                );
+                                                                                                              } finally {
+                                                                                                                _model.isDataUploading_uploadDataEnt = false;
+                                                                                                              }
+                                                                                                              if (selectedUploadedFiles.length == selectedFiles.length && downloadUrls.length == selectedFiles.length) {
+                                                                                                                safeSetState(() {
+                                                                                                                  _model.uploadedLocalFile_uploadDataEnt = selectedUploadedFiles.first;
+                                                                                                                  _model.uploadedFileUrl_uploadDataEnt = downloadUrls.first;
+                                                                                                                });
+                                                                                                              } else {
+                                                                                                                safeSetState(() {});
+                                                                                                                return;
+                                                                                                              }
+                                                                                                            }
+
+                                                                                                            await ListadeactasTable().update(
+                                                                                                              data: {
+                                                                                                                'link_Acta_firmada': _model.uploadedFileUrl_uploadDataEnt,
+                                                                                                              },
+                                                                                                              matchingRows: (rows) => rows.eqOrNull(
+                                                                                                                'id',
+                                                                                                                listViewListadeactasRow.id,
+                                                                                                              ),
+                                                                                                            );
+                                                                                                            await DocumentosadjuntosTable().insert({
+                                                                                                              'idexpdoc': containerIngresosRow?.idexpediente?.toDouble(),
+                                                                                                              'idingresodoc': containerIngresosRow?.id,
+                                                                                                              'documentopdf': _model.uploadedFileUrl_uploadDataEnt,
+                                                                                                              'tipodocumento': 'Acta de acuerdo',
+                                                                                                            });
+                                                                                                            await showDialog(
+                                                                                                              context: context,
+                                                                                                              builder: (alertDialogContext) {
+                                                                                                                return WebViewAware(
+                                                                                                                  child: AlertDialog(
+                                                                                                                    title: Text('Se cargo correctamente la informacion'),
+                                                                                                                    actions: [
+                                                                                                                      TextButton(
+                                                                                                                        onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                                        child: Text('Ok'),
+                                                                                                                      ),
+                                                                                                                    ],
+                                                                                                                  ),
+                                                                                                                );
+                                                                                                              },
+                                                                                                            );
+                                                                                                          }
+                                                                                                        },
+                                                                                                        text: 'Adjuntar acta firmada',
+                                                                                                        icon: FaIcon(
+                                                                                                          FontAwesomeIcons.signature,
+                                                                                                          size: 15.0,
+                                                                                                        ),
+                                                                                                        options: FFButtonOptions(
+                                                                                                          height: 40.0,
+                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                          color: FlutterFlowTheme.of(context).primary,
+                                                                                                          textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                                font: GoogleFonts.notoSansJp(
+                                                                                                                  fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                                ),
+                                                                                                                color: Colors.white,
+                                                                                                                letterSpacing: 0.0,
+                                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                              ),
+                                                                                                          elevation: 0.0,
+                                                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                                                        ),
+                                                                                                      ),
+                                                                                                      if (listViewListadeactasRow.linkActaFirmada != null && listViewListadeactasRow.linkActaFirmada != '')
+                                                                                                        Padding(
+                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                                                          child: FlutterFlowIconButton(
+                                                                                                            borderRadius: 8.0,
+                                                                                                            buttonSize: 40.0,
+                                                                                                            fillColor: FlutterFlowTheme.of(context).primary,
+                                                                                                            icon: Icon(
+                                                                                                              Icons.download_for_offline_sharp,
+                                                                                                              color: FlutterFlowTheme.of(context).info,
+                                                                                                              size: 24.0,
+                                                                                                            ),
+                                                                                                            onPressed: () async {
+                                                                                                              await launchURL(listViewListadeactasRow.linkActaFirmada!);
+                                                                                                            },
+                                                                                                          ),
+                                                                                                        ),
                                                                                                     ],
                                                                                                   ),
                                                                                                 ),
@@ -2384,24 +2436,33 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                                       alignment: AlignmentDirectional(0.0, 1.0),
                                                                                       child: FFButtonWidget(
                                                                                         onPressed: () async {
+                                                                                          _model.form7 = await Formulario7Table().insert({
+                                                                                            'nombres': widget.rowexp?.nombre,
+                                                                                            'apellidos': widget.rowexp?.apellido,
+                                                                                            'dni': widget.rowexp?.DNI?.toString(),
+                                                                                          });
                                                                                           await showModalBottomSheet(
                                                                                             isScrollControlled: true,
                                                                                             backgroundColor: Colors.transparent,
                                                                                             enableDrag: false,
                                                                                             context: context,
                                                                                             builder: (context) {
-                                                                                              return GestureDetector(
-                                                                                                onTap: () {
-                                                                                                  FocusScope.of(context).unfocus();
-                                                                                                  FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                },
-                                                                                                child: Padding(
-                                                                                                  padding: MediaQuery.viewInsetsOf(context),
-                                                                                                  child: Formulario7Widget(
-                                                                                                    idingreso: widget.ingresorow,
-                                                                                                    rowexp: widget.rowexp,
-                                                                                                    editar: false,
-                                                                                                    usuariorow: widget.usuariorow!,
+                                                                                              return WebViewAware(
+                                                                                                child: GestureDetector(
+                                                                                                  onTap: () {
+                                                                                                    FocusScope.of(context).unfocus();
+                                                                                                    FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                  },
+                                                                                                  child: Padding(
+                                                                                                    padding: MediaQuery.viewInsetsOf(context),
+                                                                                                    child: Formulario7Widget(
+                                                                                                      idingreso: widget.ingresorow,
+                                                                                                      rowexp: widget.rowexp,
+                                                                                                      editar: false,
+                                                                                                      usuariorow: widget.usuariorow!,
+                                                                                                      idform7: _model.form7?.id,
+                                                                                                      idlistaacta: 0,
+                                                                                                    ),
                                                                                                   ),
                                                                                                 ),
                                                                                               );
@@ -2417,68 +2478,13 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
 
                                                                                           safeSetState(() {});
                                                                                         },
-                                                                                        text: 'Completar',
+                                                                                        text: 'Crear acta',
                                                                                         options: FFButtonOptions(
                                                                                           width: 150.0,
                                                                                           height: 30.0,
                                                                                           padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                                                                                           iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                           color: FlutterFlowTheme.of(context).primary,
-                                                                                          textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                font: GoogleFonts.notoSansJp(
-                                                                                                  fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                ),
-                                                                                                color: Colors.white,
-                                                                                                letterSpacing: 0.0,
-                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                              ),
-                                                                                          elevation: 3.0,
-                                                                                          borderSide: BorderSide(
-                                                                                            color: Colors.transparent,
-                                                                                            width: 1.0,
-                                                                                          ),
-                                                                                          borderRadius: BorderRadius.circular(8.0),
-                                                                                        ),
-                                                                                      ),
-                                                                                    ),
-                                                                                  if (containerIngresosRow?.form7completo ?? true)
-                                                                                    Align(
-                                                                                      alignment: AlignmentDirectional(0.0, 1.0),
-                                                                                      child: FFButtonWidget(
-                                                                                        onPressed: () async {
-                                                                                          await showModalBottomSheet(
-                                                                                            isScrollControlled: true,
-                                                                                            backgroundColor: Colors.transparent,
-                                                                                            enableDrag: false,
-                                                                                            context: context,
-                                                                                            builder: (context) {
-                                                                                              return GestureDetector(
-                                                                                                onTap: () {
-                                                                                                  FocusScope.of(context).unfocus();
-                                                                                                  FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                },
-                                                                                                child: Padding(
-                                                                                                  padding: MediaQuery.viewInsetsOf(context),
-                                                                                                  child: Formulario7Widget(
-                                                                                                    idingreso: widget.ingresorow,
-                                                                                                    rowexp: widget.rowexp,
-                                                                                                    editar: true,
-                                                                                                    usuariorow: widget.usuariorow!,
-                                                                                                  ),
-                                                                                                ),
-                                                                                              );
-                                                                                            },
-                                                                                          ).then((value) => safeSetState(() {}));
-                                                                                        },
-                                                                                        text: 'Editar',
-                                                                                        options: FFButtonOptions(
-                                                                                          width: 150.0,
-                                                                                          height: 30.0,
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                          color: FlutterFlowTheme.of(context).secondary,
                                                                                           textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                 font: GoogleFonts.notoSansJp(
                                                                                                   fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
@@ -2535,97 +2541,6 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                   ),
                 ],
               ),
-              if (_model.editarformmedida)
-                Container(
-                  width: MediaQuery.sizeOf(context).width * 1.0,
-                  height: MediaQuery.sizeOf(context).height * 1.0,
-                  decoration: BoxDecoration(
-                    color: Color(0x3BE0E3E7),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.all(15.0),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Align(
-                          alignment: AlignmentDirectional(1.0, -1.0),
-                          child: Material(
-                            color: Colors.transparent,
-                            elevation: 5.0,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            child: Container(
-                              width: 80.0,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
-                                    child: FlutterFlowIconButton(
-                                      borderRadius: 8.0,
-                                      buttonSize: 40.0,
-                                      icon: Icon(
-                                        Icons.cancel_outlined,
-                                        color:
-                                            FlutterFlowTheme.of(context).error,
-                                        size: 24.0,
-                                      ),
-                                      onPressed: () async {
-                                        Navigator.pop(context);
-                                      },
-                                    ),
-                                  ),
-                                  if (() {
-                                    if ((widget.usuariosrol?.rolId == 3) &&
-                                        (widget.usuariosrol?.spd ==
-                                            widget.rowexp?.spd)) {
-                                      return true;
-                                    } else if (widget.usuariosrol?.rolId ==
-                                        2) {
-                                      return true;
-                                    } else if (widget.usuariosrol?.rolId ==
-                                        1) {
-                                      return false;
-                                    } else {
-                                      return false;
-                                    }
-                                  }())
-                                    Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
-                                      child: FlutterFlowIconButton(
-                                        borderRadius: 8.0,
-                                        buttonSize: 40.0,
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        icon: Icon(
-                                          Icons.edit_rounded,
-                                          color:
-                                              FlutterFlowTheme.of(context).info,
-                                          size: 24.0,
-                                        ),
-                                        onPressed: () async {
-                                          _model.editarformmedida = false;
-                                          safeSetState(() {});
-                                        },
-                                      ),
-                                    ),
-                                ]
-                                    .divide(SizedBox(height: 10.0))
-                                    .around(SizedBox(height: 10.0)),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
             ],
           ),
         ),

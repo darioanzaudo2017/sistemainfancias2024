@@ -1,4 +1,3 @@
-import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/barrade_navegacion_widget.dart';
 import '/components/tarjetaencabezado_widget.dart';
@@ -22,10 +21,6 @@ class IngresosModel extends FlutterFlowModel<IngresosWidget> {
   List<ImpresionesExpedientesRow>? caprtetaexp;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   IngresosRow? crearingreso;
-  // Stores action output result for [Backend Call - API (crear carpeta ingreso)] action in Button widget.
-  ApiCallResponse? apiResultz88;
-  // Stores action output result for [Backend Call - API (crearlistadocumentosadjuntos)] action in Button widget.
-  ApiCallResponse? apiResultgyy;
   Completer<List<VistaIngresosDiasRow>>? requestCompleter2;
 
   @override

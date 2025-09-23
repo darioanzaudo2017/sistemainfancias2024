@@ -240,4 +240,17 @@ class AmpliaciondeinformacionRow extends SupabaseDataRow {
 
   String? get etapa => getField<String>('etapa');
   set etapa(String? value) => setField<String>('etapa', value);
+
+  String? get otrasActividades => getField<String>('Otras actividades');
+  set otrasActividades(String? value) =>
+      setField<String>('Otras actividades', value);
+
+  String? get observacionesActividades =>
+      getField<String>('observaciones_Actividades');
+  set observacionesActividades(String? value) =>
+      setField<String>('observaciones_Actividades', value);
+
+  String? get observacionesInteres => getField<String>('observaciones_interes');
+  set observacionesInteres(String? value) =>
+      setField<String>('observaciones_interes', value);
 }

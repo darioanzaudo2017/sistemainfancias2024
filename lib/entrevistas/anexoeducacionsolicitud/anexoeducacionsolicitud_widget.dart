@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'anexoeducacionsolicitud_model.dart';
 export 'anexoeducacionsolicitud_model.dart';
 
@@ -16,12 +17,16 @@ class AnexoeducacionsolicitudWidget extends StatefulWidget {
     required this.rowexp,
     this.editar,
     this.idanexosalud,
+    required this.idampliacion,
+    required this.spd,
   });
 
   final IngresosRow? rowingreso;
   final VistaExpedientesUltimoEstadoRow? rowexp;
   final bool? editar;
   final int? idanexosalud;
+  final VistaAmpliacionInformacionRow? idampliacion;
+  final SpdRow? spd;
 
   @override
   State<AnexoeducacionsolicitudWidget> createState() =>
@@ -42,6 +47,10 @@ class _AnexoeducacionsolicitudWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => AnexoeducacionsolicitudModel());
+
+    _model.textFieldcpcTextController ??=
+        TextEditingController(text: widget.spd?.nombrespd);
+    _model.textFieldcpcFocusNode ??= FocusNode();
 
     _model.textFieldmotivoFocusNode ??= FocusNode();
 
@@ -402,7 +411,7 @@ class _AnexoeducacionsolicitudWidgetState
                               valueOrDefault<String>(
                                 dateTimeFormat(
                                   "d/M/y",
-                                  _model.datePicked1,
+                                  _model.datePicked,
                                   locale:
                                       FFLocalizations.of(context).languageCode,
                                 ),
@@ -430,10 +439,10 @@ class _AnexoeducacionsolicitudWidgetState
                             ),
                             FFButtonWidget(
                               onPressed: () async {
-                                final _datePicked1Date = await showDatePicker(
+                                final _datePickedDate = await showDatePicker(
                                   context: context,
                                   initialDate: getCurrentTimestamp,
-                                  firstDate: getCurrentTimestamp,
+                                  firstDate: DateTime(1900),
                                   lastDate: DateTime(2050),
                                   builder: (context, child) {
                                     return wrapInMaterialDatePickerTheme(
@@ -480,17 +489,17 @@ class _AnexoeducacionsolicitudWidgetState
                                   },
                                 );
 
-                                if (_datePicked1Date != null) {
+                                if (_datePickedDate != null) {
                                   safeSetState(() {
-                                    _model.datePicked1 = DateTime(
-                                      _datePicked1Date.year,
-                                      _datePicked1Date.month,
-                                      _datePicked1Date.day,
+                                    _model.datePicked = DateTime(
+                                      _datePickedDate.year,
+                                      _datePickedDate.month,
+                                      _datePickedDate.day,
                                     );
                                   });
-                                } else if (_model.datePicked1 != null) {
+                                } else if (_model.datePicked != null) {
                                   safeSetState(() {
-                                    _model.datePicked1 = getCurrentTimestamp;
+                                    _model.datePicked = getCurrentTimestamp;
                                   });
                                 }
                               },
@@ -530,6 +539,110 @@ class _AnexoeducacionsolicitudWidgetState
                               ),
                             ),
                           ],
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              8.0, 0.0, 8.0, 0.0),
+                          child: TextFormField(
+                            controller: _model.textFieldcpcTextController,
+                            focusNode: _model.textFieldcpcFocusNode,
+                            autofocus: true,
+                            obscureText: false,
+                            decoration: InputDecoration(
+                              labelText: 'SPD',
+                              labelStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    font: GoogleFonts.notoSansJp(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
+                                  ),
+                              alignLabelWithHint: true,
+                              hintText: 'SPD',
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    font: GoogleFonts.notoSansJp(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
+                                  ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).alternate,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              errorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).error,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              focusedErrorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).error,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  font: GoogleFonts.notoSansJp(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
+                                  letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
+                                ),
+                            maxLines: 2,
+                            validator: _model
+                                .textFieldcpcTextControllerValidator
+                                .asValidator(context),
+                          ),
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
@@ -641,143 +754,6 @@ class _AnexoeducacionsolicitudWidgetState
                         ),
                         Row(
                           mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Text(
-                              valueOrDefault<String>(
-                                dateTimeFormat(
-                                  "d/M/y",
-                                  _model.datePicked2,
-                                  locale:
-                                      FFLocalizations.of(context).languageCode,
-                                ),
-                                'no tiene fecha',
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.notoSansJp(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                            ),
-                            FFButtonWidget(
-                              onPressed: () async {
-                                final _datePicked2Date = await showDatePicker(
-                                  context: context,
-                                  initialDate: getCurrentTimestamp,
-                                  firstDate: getCurrentTimestamp,
-                                  lastDate: DateTime(2050),
-                                  builder: (context, child) {
-                                    return wrapInMaterialDatePickerTheme(
-                                      context,
-                                      child!,
-                                      headerBackgroundColor:
-                                          FlutterFlowTheme.of(context).primary,
-                                      headerForegroundColor:
-                                          FlutterFlowTheme.of(context).info,
-                                      headerTextStyle: FlutterFlowTheme.of(
-                                              context)
-                                          .headlineLarge
-                                          .override(
-                                            font: GoogleFonts.notoSansJp(
-                                              fontWeight: FontWeight.w600,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineLarge
-                                                      .fontStyle,
-                                            ),
-                                            fontSize: 32.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w600,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineLarge
-                                                    .fontStyle,
-                                          ),
-                                      pickerBackgroundColor:
-                                          FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                      pickerForegroundColor:
-                                          FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                      selectedDateTimeBackgroundColor:
-                                          FlutterFlowTheme.of(context).primary,
-                                      selectedDateTimeForegroundColor:
-                                          FlutterFlowTheme.of(context).info,
-                                      actionButtonForegroundColor:
-                                          FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                      iconSize: 24.0,
-                                    );
-                                  },
-                                );
-
-                                if (_datePicked2Date != null) {
-                                  safeSetState(() {
-                                    _model.datePicked2 = DateTime(
-                                      _datePicked2Date.year,
-                                      _datePicked2Date.month,
-                                      _datePicked2Date.day,
-                                    );
-                                  });
-                                } else if (_model.datePicked2 != null) {
-                                  safeSetState(() {
-                                    _model.datePicked2 = getCurrentTimestamp;
-                                  });
-                                }
-                              },
-                              text: valueOrDefault<String>(
-                                containerAnexoinstitucioneeducacionRow?.fecha,
-                                'Fecha de documento',
-                              ),
-                              options: FFButtonOptions(
-                                height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 16.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                color: FlutterFlowTheme.of(context).primary,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      font: GoogleFonts.notoSansJp(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .fontStyle,
-                                      ),
-                                      color: Colors.white,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .fontStyle,
-                                    ),
-                                elevation: 0.0,
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             FFButtonWidget(
@@ -786,20 +762,23 @@ class _AnexoeducacionsolicitudWidgetState
                                     !_model.formKey.currentState!.validate()) {
                                   return;
                                 }
-                                if (_model.datePicked1 == null) {
+                                if (_model.datePicked == null) {
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {
-                                      return AlertDialog(
-                                        title: Text('Campo obligatorio'),
-                                        content: Text('La fecha obligatoria!'),
-                                        actions: [
-                                          TextButton(
-                                            onPressed: () => Navigator.pop(
-                                                alertDialogContext),
-                                            child: Text('Ok'),
-                                          ),
-                                        ],
+                                      return WebViewAware(
+                                        child: AlertDialog(
+                                          title: Text('Campo obligatorio'),
+                                          content:
+                                              Text('La fecha obligatoria!'),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: Text('Ok'),
+                                            ),
+                                          ],
+                                        ),
                                       );
                                     },
                                   );
@@ -809,62 +788,90 @@ class _AnexoeducacionsolicitudWidgetState
                                     await AnexoinstitucioneeducacionTable()
                                         .insert({
                                   'spd': widget.rowexp?.spd,
-                                  'fecha': _model.datePicked1?.toString(),
+                                  'fecha': _model.datePicked?.toString(),
                                   'idingreso': widget.rowingreso?.id,
                                   'expediente': widget.rowexp?.expediente,
                                   'updated_at': supaSerialize<DateTime>(
                                       getCurrentTimestamp),
-                                  'fechacomienzo': dateTimeFormat(
-                                    "d/M/y",
-                                    _model.datePicked2,
-                                    locale: FFLocalizations.of(context)
-                                        .languageCode,
-                                  ),
+                                  'fechacomienzo':
+                                      widget.rowexp?.fecha?.toString(),
                                   'numestablecimiento':
                                       _model.textFieldmotivoTextController.text,
+                                  'cpc': _model.textFieldcpcTextController.text,
                                 });
                                 _model.apiResults9dedujcacio =
                                     await AnexoSolicitaInformacinAInstitucinEducativaCall
                                         .call(
                                   fecha: dateTimeFormat(
                                     "d/M/y",
-                                    _model.datePicked1,
+                                    _model.datePicked,
                                     locale: FFLocalizations.of(context)
                                         .languageCode,
                                   ),
                                   nombreyapellido:
-                                      '${widget.rowexp?.nombres}, ${widget.rowexp?.apellidos}',
-                                  dni: widget.rowexp?.dni,
+                                      '${widget.rowexp?.nombre}, ${widget.rowexp?.apellido}',
+                                  dni: widget.rowexp?.DNI,
                                   numestablecimiento:
                                       _model.textFieldmotivoTextController.text,
-                                  idsolicitud:
-                                      _model.creasolicitudeducacion?.id,
-                                  expediente: widget.rowexp?.expediente,
-                                  carpeta: widget.rowingreso?.idcarpeta,
+                                  cpc: widget.spd?.direccion,
                                   spd: widget.rowexp?.spd,
-                                  fechadecomienzo:
-                                      _model.datePicked2?.toString(),
+                                  fechadecomienzo: dateTimeFormat(
+                                    "d/M/y",
+                                    widget.rowexp?.fecha,
+                                    locale: FFLocalizations.of(context)
+                                        .languageCode,
+                                  ),
+                                  domicilio: widget.spd?.direccion,
                                 );
 
+                                await AnexoinstitucioneeducacionTable().update(
+                                  data: {
+                                    'linkdoc':
+                                        AnexoSolicitaInformacinAInstitucinEducativaCall
+                                            .url(
+                                      (_model.apiResults9dedujcacio?.jsonBody ??
+                                          ''),
+                                    ),
+                                  },
+                                  matchingRows: (rows) => rows.eqOrNull(
+                                    'id',
+                                    _model.creasolicitudeducacion?.id,
+                                  ),
+                                );
+                                await AmpliaciondeinformacionTable().update(
+                                  data: {
+                                    'noment': _model
+                                        .textFieldmotivoTextController.text,
+                                  },
+                                  matchingRows: (rows) => rows.eqOrNull(
+                                    'idampliacion',
+                                    widget.idampliacion?.ampliacionId,
+                                  ),
+                                );
                                 if ((_model.apiResults9dedujcacio?.succeeded ??
                                     true)) {
                                   await Future.delayed(
-                                      const Duration(milliseconds: 1000));
+                                    Duration(
+                                      milliseconds: 1000,
+                                    ),
+                                  );
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {
-                                      return AlertDialog(
-                                        title: Text(
-                                            'Se cargo correctamente la informacion'),
-                                        content: Text(
-                                            'Se guardo la informacion y se creo un documento en google docs!'),
-                                        actions: [
-                                          TextButton(
-                                            onPressed: () => Navigator.pop(
-                                                alertDialogContext),
-                                            child: Text('Ok'),
-                                          ),
-                                        ],
+                                      return WebViewAware(
+                                        child: AlertDialog(
+                                          title: Text(
+                                              'Se cargo correctamente la informacion'),
+                                          content: Text(
+                                              'Se guardo la informacion y se creo un documento en google docs!'),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: Text('Ok'),
+                                            ),
+                                          ],
+                                        ),
                                       );
                                     },
                                   );
