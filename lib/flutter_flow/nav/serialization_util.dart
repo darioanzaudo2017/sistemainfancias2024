@@ -320,6 +320,8 @@ dynamic deserializeParam<T>(
             return NNyAExpGruRow(data);
           case AmpliaciondeinformacionhistorialRow:
             return AmpliaciondeinformacionhistorialRow(data);
+          case TNotificacionUsuariosRow:
+            return TNotificacionUsuariosRow(data);
           case Seccion1Row:
             return Seccion1Row(data);
           case EnviomailsRow:
@@ -330,6 +332,10 @@ dynamic deserializeParam<T>(
             return ExpedienteRow(data);
           case Seccion2Row:
             return Seccion2Row(data);
+          case NotificacionesRow:
+            return NotificacionesRow(data);
+          case AccionesConRecursoRow:
+            return AccionesConRecursoRow(data);
           case AvisovisitaadultosRow:
             return AvisovisitaadultosRow(data);
           case Anexo4RequerimientoaccionesRow:

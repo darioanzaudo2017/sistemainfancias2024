@@ -278,15 +278,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                context.pushNamed(
-                                  InformesenafWidget.routeName,
-                                  queryParameters: {
-                                    'link': serializeParam(
-                                      'sdf',
-                                      ParamType.String,
-                                    ),
-                                  }.withoutNulls,
-                                );
+                                await launchURL(
+                                    'https://app.powerbi.com/view?r=eyJrIjoiOTdlNjM2ZTItMDVmYy00ZmNkLTkyOTMtMzk4MGFmYTc5ODg2IiwidCI6ImVjNmU3NTQ4LWZjZTMtNGY0NC05NjZhLWY0N2EwZjEyNWE4MSIsImMiOjR9&pageName=e10df7231e19ff69d497');
                               },
                               child: Material(
                                 color: Colors.transparent,
@@ -299,56 +292,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   ),
                                   title: Text(
                                     'Tablero',
-                                    textAlign: TextAlign.start,
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleLarge
-                                        .override(
-                                          font: GoogleFonts.notoSansJp(
-                                            fontWeight: FontWeight.normal,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleLarge
-                                                    .fontStyle,
-                                          ),
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                          fontSize: 20.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.normal,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleLarge
-                                                  .fontStyle,
-                                        ),
-                                  ),
-                                  tileColor: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  dense: false,
-                                ),
-                              ),
-                            ),
-                          ),
-                          Align(
-                            alignment: AlignmentDirectional(-1.0, -1.0),
-                            child: InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                context.pushNamed(HomestitchWidget.routeName);
-                              },
-                              child: Material(
-                                color: Colors.transparent,
-                                child: ListTile(
-                                  leading: Icon(
-                                    Icons.home_outlined,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    size: 25.0,
-                                  ),
-                                  title: Text(
-                                    'Home 2',
                                     textAlign: TextAlign.start,
                                     style: FlutterFlowTheme.of(context)
                                         .titleLarge
@@ -830,7 +773,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                                 },
                                                                                 child: Padding(
                                                                                   padding: MediaQuery.viewInsetsOf(context),
-                                                                                  child: NotificacionesWidget(),
+                                                                                  child: NotificacionesWidget(
+                                                                                    spd: containerSpdRow?.nombrespd,
+                                                                                    idusuario: currentUserUid,
+                                                                                  ),
                                                                                 ),
                                                                               ),
                                                                             );

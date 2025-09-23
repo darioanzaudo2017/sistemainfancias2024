@@ -5034,7 +5034,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            'Seccion 1',
+                                                            'Datos NNyA',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyLarge
@@ -5166,7 +5166,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            'Seccion 2',
+                                                            'Datos del o la Solicitante',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyLarge
@@ -5345,7 +5345,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            'Seccion 5',
+                                                            'Motivo de la consulta',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyLarge
@@ -5480,7 +5480,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            'Seccion 7',
+                                                            'Derechos Vulnerados',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyLarge
@@ -5581,7 +5581,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            'Seccion 9',
+                                                            'Decision del caso',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyLarge
@@ -5715,214 +5715,257 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                           .fontStyle,
                                                 ),
                                           ),
-                                          Container(
-                                            width: 333.0,
-                                            height: 333.0,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                            ),
-                                            child: FutureBuilder<
-                                                List<Formulario5HistorialRow>>(
-                                              future:
-                                                  Formulario5HistorialTable()
-                                                      .queryRows(
-                                                queryFn: (q) => q.eqOrNull(
-                                                  'idIngreso',
-                                                  widget.idingreso,
-                                                ),
+                                          FutureBuilder<
+                                              List<Formulario5HistorialRow>>(
+                                            future: Formulario5HistorialTable()
+                                                .queryRows(
+                                              queryFn: (q) => q.eqOrNull(
+                                                'idIngreso',
+                                                widget.idingreso,
                                               ),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      child:
-                                                          CircularProgressIndicator(
-                                                        valueColor:
-                                                            AlwaysStoppedAnimation<
-                                                                Color>(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                        ),
+                                            ),
+                                            builder: (context, snapshot) {
+                                              // Customize what your widget looks like when it's loading.
+                                              if (!snapshot.hasData) {
+                                                return Center(
+                                                  child: SizedBox(
+                                                    width: 50.0,
+                                                    height: 50.0,
+                                                    child:
+                                                        CircularProgressIndicator(
+                                                      valueColor:
+                                                          AlwaysStoppedAnimation<
+                                                              Color>(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primary,
                                                       ),
                                                     ),
-                                                  );
-                                                }
-                                                List<Formulario5HistorialRow>
-                                                    listViewFormulario5HistorialRowList =
-                                                    snapshot.data!;
+                                                  ),
+                                                );
+                                              }
+                                              List<Formulario5HistorialRow>
+                                                  containerFormulario5HistorialRowList =
+                                                  snapshot.data!;
 
-                                                return ListView.builder(
-                                                  padding: EdgeInsets.zero,
-                                                  shrinkWrap: true,
-                                                  scrollDirection:
-                                                      Axis.vertical,
-                                                  itemCount:
-                                                      listViewFormulario5HistorialRowList
-                                                          .length,
-                                                  itemBuilder:
-                                                      (context, listViewIndex) {
-                                                    final listViewFormulario5HistorialRow =
-                                                        listViewFormulario5HistorialRowList[
-                                                            listViewIndex];
-                                                    return Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  16.0,
-                                                                  0.0,
-                                                                  16.0,
-                                                                  16.0),
-                                                      child: Container(
-                                                        width: double.infinity,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: Colors.white,
-                                                          boxShadow: [
-                                                            BoxShadow(
-                                                              blurRadius: 7.0,
-                                                              color: Color(
-                                                                  0x2F1D2429),
-                                                              offset: Offset(
-                                                                0.0,
-                                                                3.0,
-                                                              ),
-                                                            )
-                                                          ],
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      8.0),
-                                                        ),
-                                                        child: Padding(
+                                              return Container(
+                                                width: 333.0,
+                                                height: 333.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                ),
+                                                child: Builder(
+                                                  builder: (context) {
+                                                    final containerVar =
+                                                        containerFormulario5HistorialRowList
+                                                            .toList();
+
+                                                    return ListView.builder(
+                                                      padding: EdgeInsets.zero,
+                                                      shrinkWrap: true,
+                                                      scrollDirection:
+                                                          Axis.vertical,
+                                                      itemCount:
+                                                          containerVar.length,
+                                                      itemBuilder: (context,
+                                                          containerVarIndex) {
+                                                        final containerVarItem =
+                                                            containerVar[
+                                                                containerVarIndex];
+                                                        return Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
                                                                   .fromSTEB(
-                                                                      12.0,
-                                                                      8.0,
-                                                                      12.0,
-                                                                      8.0),
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            children: [
-                                                              Expanded(
-                                                                child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                      16.0,
+                                                                      0.0,
+                                                                      16.0,
+                                                                      16.0),
+                                                          child: Container(
+                                                            width:
+                                                                double.infinity,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color:
+                                                                  Colors.white,
+                                                              boxShadow: [
+                                                                BoxShadow(
+                                                                  blurRadius:
+                                                                      7.0,
+                                                                  color: Color(
+                                                                      0x2F1D2429),
+                                                                  offset:
+                                                                      Offset(
+                                                                    0.0,
+                                                                    3.0,
+                                                                  ),
+                                                                )
+                                                              ],
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8.0),
+                                                            ),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
+                                                                          12.0,
+                                                                          8.0,
+                                                                          12.0,
+                                                                          8.0),
+                                                              child: Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Expanded(
+                                                                    child:
+                                                                        Padding(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           12.0,
                                                                           0.0,
                                                                           8.0,
                                                                           0.0),
-                                                                  child: Column(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .center,
-                                                                    crossAxisAlignment:
-                                                                        CrossAxisAlignment
-                                                                            .start,
-                                                                    children: [
-                                                                      Text(
-                                                                        dateTimeFormat(
-                                                                          "d/M/y",
-                                                                          listViewFormulario5HistorialRow
-                                                                              .fecha!,
-                                                                          locale:
-                                                                              FFLocalizations.of(context).languageCode,
-                                                                        ),
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyLarge
-                                                                            .override(
-                                                                              font: GoogleFonts.plusJakartaSans(
-                                                                                fontWeight: FontWeight.w500,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                              ),
-                                                                              color: Color(0xFF14181B),
-                                                                              fontSize: 16.0,
-                                                                              letterSpacing: 0.0,
-                                                                              fontWeight: FontWeight.w500,
-                                                                              fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                      child:
+                                                                          Column(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        mainAxisAlignment:
+                                                                            MainAxisAlignment.center,
+                                                                        crossAxisAlignment:
+                                                                            CrossAxisAlignment.start,
+                                                                        children: [
+                                                                          Text(
+                                                                            dateTimeFormat(
+                                                                              "d/M/y",
+                                                                              containerVarItem.fecha!,
+                                                                              locale: FFLocalizations.of(context).languageCode,
                                                                             ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                              FlutterFlowIconButton(
-                                                                borderColor: Color(
-                                                                    0xFFE0E3E7),
-                                                                borderRadius:
-                                                                    8.0,
-                                                                borderWidth:
-                                                                    2.0,
-                                                                buttonSize:
-                                                                    40.0,
-                                                                icon: Icon(
-                                                                  Icons
-                                                                      .navigate_next,
-                                                                  color: Color(
-                                                                      0xFF57636C),
-                                                                  size: 20.0,
-                                                                ),
-                                                                onPressed:
-                                                                    () async {
-                                                                  await showModalBottomSheet(
-                                                                    isScrollControlled:
-                                                                        true,
-                                                                    backgroundColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    enableDrag:
-                                                                        false,
-                                                                    context:
-                                                                        context,
-                                                                    builder:
-                                                                        (context) {
-                                                                      return WebViewAware(
-                                                                        child:
-                                                                            GestureDetector(
-                                                                          onTap:
-                                                                              () {
-                                                                            FocusScope.of(context).unfocus();
-                                                                            FocusManager.instance.primaryFocus?.unfocus();
-                                                                          },
-                                                                          child:
-                                                                              Padding(
-                                                                            padding:
-                                                                                MediaQuery.viewInsetsOf(context),
-                                                                            child:
-                                                                                Formulario5Widget(
-                                                                              idingreso: widget.rowingreso,
-                                                                              rowexp: widget.rowexpediente,
-                                                                              idform5historial: listViewFormulario5HistorialRow.idForm5,
-                                                                            ),
+                                                                            style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                  font: GoogleFonts.plusJakartaSans(
+                                                                                    fontWeight: FontWeight.w500,
+                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                  ),
+                                                                                  color: Color(0xFF14181B),
+                                                                                  fontSize: 16.0,
+                                                                                  letterSpacing: 0.0,
+                                                                                  fontWeight: FontWeight.w500,
+                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                ),
                                                                           ),
+                                                                          Text(
+                                                                            'Version: ${containerVarIndex.toString()}',
+                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                  font: GoogleFonts.notoSansJp(
+                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                  ),
+                                                                                  letterSpacing: 0.0,
+                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                ),
+                                                                          ),
+                                                                        ],
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  FlutterFlowIconButton(
+                                                                    borderColor:
+                                                                        Color(
+                                                                            0xFFE0E3E7),
+                                                                    borderRadius:
+                                                                        8.0,
+                                                                    borderWidth:
+                                                                        2.0,
+                                                                    buttonSize:
+                                                                        40.0,
+                                                                    icon: Icon(
+                                                                      Icons
+                                                                          .navigate_next,
+                                                                      color: Color(
+                                                                          0xFF57636C),
+                                                                      size:
+                                                                          20.0,
+                                                                    ),
+                                                                    onPressed:
+                                                                        () async {
+                                                                      await showModalBottomSheet(
+                                                                        isScrollControlled:
+                                                                            true,
+                                                                        backgroundColor:
+                                                                            Colors.transparent,
+                                                                        enableDrag:
+                                                                            false,
+                                                                        context:
+                                                                            context,
+                                                                        builder:
+                                                                            (context) {
+                                                                          return WebViewAware(
+                                                                            child:
+                                                                                GestureDetector(
+                                                                              onTap: () {
+                                                                                FocusScope.of(context).unfocus();
+                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                              },
+                                                                              child: Padding(
+                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                child: Formulario5Widget(
+                                                                                  idingreso: widget.rowingreso,
+                                                                                  rowexp: widget.rowexpediente,
+                                                                                  idform5historial: containerVarItem.idForm5,
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          );
+                                                                        },
+                                                                      ).then((value) =>
+                                                                          safeSetState(
+                                                                              () {}));
+                                                                    },
+                                                                  ),
+                                                                  FlutterFlowIconButton(
+                                                                    borderRadius:
+                                                                        8.0,
+                                                                    buttonSize:
+                                                                        40.0,
+                                                                    icon: Icon(
+                                                                      Icons
+                                                                          .delete_rounded,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .error,
+                                                                      size:
+                                                                          24.0,
+                                                                    ),
+                                                                    onPressed:
+                                                                        () async {
+                                                                      await Formulario5HistorialTable()
+                                                                          .delete(
+                                                                        matchingRows:
+                                                                            (rows) =>
+                                                                                rows.eqOrNull(
+                                                                          'idForm5',
+                                                                          containerVarItem
+                                                                              .idForm5,
                                                                         ),
                                                                       );
                                                                     },
-                                                                  ).then((value) =>
-                                                                      safeSetState(
-                                                                          () {}));
-                                                                },
+                                                                  ),
+                                                                ].divide(SizedBox(
+                                                                    width:
+                                                                        5.0)),
                                                               ),
-                                                            ],
+                                                            ),
                                                           ),
-                                                        ),
-                                                      ),
+                                                        );
+                                                      },
                                                     );
                                                   },
-                                                );
-                                              },
-                                            ),
+                                                ),
+                                              );
+                                            },
                                           ),
                                         ]
                                             .divide(SizedBox(height: 10.0))

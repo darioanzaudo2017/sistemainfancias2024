@@ -12,6 +12,12 @@ class Seccion2Model extends FlutterFlowModel<Seccion2Widget> {
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();
+  // State field(s) for ChoiceChips widget.
+  FormFieldController<List<String>>? choiceChipsValueController;
+  String? get choiceChipsValue =>
+      choiceChipsValueController?.value?.firstOrNull;
+  set choiceChipsValue(String? val) =>
+      choiceChipsValueController?.value = val != null ? [val] : [];
   // State field(s) for DropDowncanaldeingreso widget.
   String? dropDowncanaldeingresoValue;
   FormFieldController<String>? dropDowncanaldeingresoValueController;

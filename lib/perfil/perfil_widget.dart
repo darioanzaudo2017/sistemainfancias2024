@@ -1085,6 +1085,16 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                             safeSetState(
                                                                 () {}));
 
+                                                        await NotificacionesTable()
+                                                            .insert({
+                                                          'descripcion':
+                                                              'Cambio de expediente',
+                                                          'idexpediente':
+                                                              widget
+                                                                  .rowexp?.id,
+                                                          'spd': widget
+                                                              .spd?.nombrespd,
+                                                        });
                                                         await showDialog(
                                                           context: context,
                                                           builder:

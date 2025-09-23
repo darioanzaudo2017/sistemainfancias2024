@@ -78,6 +78,8 @@ class Seccion1Model extends FlutterFlowModel<Seccion1Widget> {
   FocusNode? textFieldFocusNode5;
   TextEditingController? textController9;
   String? Function(BuildContext, String?)? textController9Validator;
+  // State field(s) for RadioButtoedunocorresponde widget.
+  FormFieldController<String>? radioButtoedunocorrespondeValueController;
   // State field(s) for RadioButtonconcurreescuela widget.
   FormFieldController<String>? radioButtonconcurreescuelaValueController;
   // State field(s) for RadioButtomatriculo widget.
@@ -172,6 +174,8 @@ class Seccion1Model extends FlutterFlowModel<Seccion1Widget> {
   String? get radioButtoncudValue => radioButtoncudValueController?.value;
   String? get radioButtonprestacionesValue =>
       radioButtonprestacionesValueController?.value;
+  String? get radioButtoedunocorrespondeValue =>
+      radioButtoedunocorrespondeValueController?.value;
   String? get radioButtonconcurreescuelaValue =>
       radioButtonconcurreescuelaValueController?.value;
   String? get radioButtomatriculoValue =>

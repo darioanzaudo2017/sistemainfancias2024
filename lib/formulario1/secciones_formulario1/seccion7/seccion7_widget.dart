@@ -222,7 +222,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Text(
-                                        'Marca el o las casillas que correspondan:',
+                                        'Marca las casillas que correspondan:',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
