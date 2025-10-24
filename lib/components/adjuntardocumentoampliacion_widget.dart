@@ -359,6 +359,15 @@ class _AdjuntardocumentoampliacionWidgetState
                             supaSerialize<DateTime>(getCurrentTimestamp),
                         'iduser': currentUserUid,
                       });
+                      await AmpliaciondeinformacionTable().update(
+                        data: {
+                          'noment': _model.dropDownValue,
+                        },
+                        matchingRows: (rows) => rows.eqOrNull(
+                          'idampliacion',
+                          widget.idampliacion,
+                        ),
+                      );
                       await showDialog(
                         context: context,
                         builder: (alertDialogContext) {

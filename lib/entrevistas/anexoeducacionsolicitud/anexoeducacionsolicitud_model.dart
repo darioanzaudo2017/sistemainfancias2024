@@ -14,11 +14,11 @@ class AnexoeducacionsolicitudModel
   FocusNode? textFieldcpcFocusNode;
   TextEditingController? textFieldcpcTextController;
   String? Function(BuildContext, String?)? textFieldcpcTextControllerValidator;
-  // State field(s) for TextFieldmotivo widget.
-  FocusNode? textFieldmotivoFocusNode;
-  TextEditingController? textFieldmotivoTextController;
+  // State field(s) for TextFieldnombreestablecimiento widget.
+  FocusNode? textFieldnombreestablecimientoFocusNode;
+  TextEditingController? textFieldnombreestablecimientoTextController;
   String? Function(BuildContext, String?)?
-      textFieldmotivoTextControllerValidator;
+      textFieldnombreestablecimientoTextControllerValidator;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   AnexoinstitucioneeducacionRow? creasolicitudeducacion;
   // Stores action output result for [Backend Call - API (ANEXO  SOLICITA INFORMACIN A INSTITUCIN EDUCATIVA)] action in Button widget.
@@ -32,7 +32,7 @@ class AnexoeducacionsolicitudModel
     textFieldcpcFocusNode?.dispose();
     textFieldcpcTextController?.dispose();
 
-    textFieldmotivoFocusNode?.dispose();
-    textFieldmotivoTextController?.dispose();
+    textFieldnombreestablecimientoFocusNode?.dispose();
+    textFieldnombreestablecimientoTextController?.dispose();
   }
 }

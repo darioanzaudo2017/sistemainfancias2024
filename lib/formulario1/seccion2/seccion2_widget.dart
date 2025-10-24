@@ -2413,8 +2413,8 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                                       stackSeccion2Row?.vinculo,
                                                 ),
                                                 options: [
-                                                  'Madre',
-                                                  'Padre',
+                                                  'Progenitor',
+                                                  'Progenitora',
                                                   'Hemana/os',
                                                   'Abuela/o Paterno',
                                                   'Otros',

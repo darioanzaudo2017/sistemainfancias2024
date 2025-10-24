@@ -29,6 +29,8 @@ class BarradeNavegacionWidget extends StatefulWidget {
     required this.carpeta,
     required this.ingreso,
     required this.perfil,
+    this.spd,
+    this.usuariorol,
   });
 
   final VistaExpedientesUltimoEstadoRow? exprow;
@@ -47,6 +49,8 @@ class BarradeNavegacionWidget extends StatefulWidget {
   final bool? carpeta;
   final bool? ingreso;
   final bool? perfil;
+  final SpdRow? spd;
+  final VistaUsuariosRolesRow? usuariorol;
 
   @override
   State<BarradeNavegacionWidget> createState() =>
@@ -189,6 +193,14 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                       ),
                       'usuariorow': serializeParam(
                         widget.usuariorow,
+                        ParamType.SupabaseRow,
+                      ),
+                      'spd': serializeParam(
+                        widget.spd,
+                        ParamType.SupabaseRow,
+                      ),
+                      'usuariorol': serializeParam(
+                        widget.usuariorol,
                         ParamType.SupabaseRow,
                       ),
                     }.withoutNulls,

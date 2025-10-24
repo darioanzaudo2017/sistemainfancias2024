@@ -1225,8 +1225,8 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                                   ?.vinculo,
                                         ),
                                         options: [
-                                          'Madre',
-                                          'Padre',
+                                          'Progenitora',
+                                          'Progenitor',
                                           'Hemana/os',
                                           'Abuela/o paterno',
                                           'Otros',
@@ -2155,6 +2155,26 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                                       ?.firstOrNull
                                                       ?.id,
                                                 });
+                                                await Seccion8Table().insert({
+                                                  'nombre': '',
+                                                  'apellido': _model
+                                                      .textController2.text,
+                                                  'vinculo':
+                                                      _model.dropDownValue,
+                                                  'telefono': double.tryParse(
+                                                      _model.textController6
+                                                          .text),
+                                                  'direccion': _model
+                                                      .textController7.text,
+                                                  'idIngreso':
+                                                      widget.rowingreso?.id,
+                                                  'idExpediente':
+                                                      widget.idexp?.id,
+                                                  'updated_at':
+                                                      supaSerialize<DateTime>(
+                                                          getCurrentTimestamp),
+                                                  'entrevistado': false,
+                                                });
                                                 await GrupoConvivienteTable()
                                                     .update(
                                                   data: {
@@ -2282,6 +2302,25 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                                   widget.rowingreso?.id,
                                                 ),
                                               );
+                                              await Seccion8Table().insert({
+                                                'nombre': '',
+                                                'apellido':
+                                                    _model.textController2.text,
+                                                'vinculo': _model.dropDownValue,
+                                                'telefono': double.tryParse(
+                                                    _model
+                                                        .textController6.text),
+                                                'direccion':
+                                                    _model.textController7.text,
+                                                'idIngreso':
+                                                    widget.rowingreso?.id,
+                                                'idExpediente':
+                                                    widget.idexp?.id,
+                                                'updated_at':
+                                                    supaSerialize<DateTime>(
+                                                        getCurrentTimestamp),
+                                                'entrevistado': false,
+                                              });
                                               await showDialog(
                                                 context: context,
                                                 builder: (alertDialogContext) {

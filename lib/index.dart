@@ -36,3 +36,5 @@ export '/pages/homestitch/homestitch_widget.dart' show HomestitchWidget;
 export '/adminzona/adminzona_widget.dart' show AdminzonaWidget;
 export '/cuenta_perfil_creacion/auth_2_create_copy/auth2_create_copy_widget.dart'
     show Auth2CreateCopyWidget;
+export '/paginapruebaquery/paginapruebaquery_widget.dart'
+    show PaginapruebaqueryWidget;

@@ -52,7 +52,7 @@ class _AnexoeducacionsolicitudWidgetState
         TextEditingController(text: widget.spd?.nombrespd);
     _model.textFieldcpcFocusNode ??= FocusNode();
 
-    _model.textFieldmotivoFocusNode ??= FocusNode();
+    _model.textFieldnombreestablecimientoFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -648,12 +648,14 @@ class _AnexoeducacionsolicitudWidgetState
                           padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: TextFormField(
-                            controller: _model.textFieldmotivoTextController ??=
+                            controller: _model
+                                    .textFieldnombreestablecimientoTextController ??=
                                 TextEditingController(
                               text: containerAnexoinstitucioneeducacionRow
                                   ?.numestablecimiento,
                             ),
-                            focusNode: _model.textFieldmotivoFocusNode,
+                            focusNode:
+                                _model.textFieldnombreestablecimientoFocusNode,
                             autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -748,7 +750,7 @@ class _AnexoeducacionsolicitudWidgetState
                                 ),
                             maxLines: 2,
                             validator: _model
-                                .textFieldmotivoTextControllerValidator
+                                .textFieldnombreestablecimientoTextControllerValidator
                                 .asValidator(context),
                           ),
                         ),
@@ -795,8 +797,9 @@ class _AnexoeducacionsolicitudWidgetState
                                       getCurrentTimestamp),
                                   'fechacomienzo':
                                       widget.rowexp?.fecha?.toString(),
-                                  'numestablecimiento':
-                                      _model.textFieldmotivoTextController.text,
+                                  'numestablecimiento': _model
+                                      .textFieldnombreestablecimientoTextController
+                                      .text,
                                   'cpc': _model.textFieldcpcTextController.text,
                                 });
                                 _model.apiResults9dedujcacio =
@@ -811,8 +814,9 @@ class _AnexoeducacionsolicitudWidgetState
                                   nombreyapellido:
                                       '${widget.rowexp?.nombre}, ${widget.rowexp?.apellido}',
                                   dni: widget.rowexp?.DNI,
-                                  numestablecimiento:
-                                      _model.textFieldmotivoTextController.text,
+                                  numestablecimiento: _model
+                                      .textFieldnombreestablecimientoTextController
+                                      .text,
                                   cpc: widget.spd?.direccion,
                                   spd: widget.rowexp?.spd,
                                   fechadecomienzo: dateTimeFormat(
@@ -841,7 +845,8 @@ class _AnexoeducacionsolicitudWidgetState
                                 await AmpliaciondeinformacionTable().update(
                                   data: {
                                     'noment': _model
-                                        .textFieldmotivoTextController.text,
+                                        .textFieldnombreestablecimientoTextController
+                                        .text,
                                   },
                                   matchingRows: (rows) => rows.eqOrNull(
                                     'idampliacion',

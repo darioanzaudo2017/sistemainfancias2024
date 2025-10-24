@@ -437,6 +437,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.int,
             ),
           ),
+        ),
+        FFRoute(
+          name: PaginapruebaqueryWidget.routeName,
+          path: PaginapruebaqueryWidget.routePath,
+          builder: (context, params) => PaginapruebaqueryWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

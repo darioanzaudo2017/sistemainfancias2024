@@ -1,5 +1,7 @@
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
+import 'dart:async';
 import 'seccion1_widget.dart' show Seccion1Widget;
 import 'package:flutter/material.dart';
 
@@ -63,6 +65,7 @@ class Seccion1Model extends FlutterFlowModel<Seccion1Widget> {
   FocusNode? textFieldFocusNode3;
   TextEditingController? textController7;
   String? Function(BuildContext, String?)? textController7Validator;
+  Completer<List<TIntitucionesSaludRow>>? requestCompleter;
   // State field(s) for DropDowndiscapacidad widget.
   List<String>? dropDowndiscapacidadValue;
   FormFieldController<List<String>>? dropDowndiscapacidadValueController;
@@ -171,6 +174,21 @@ class Seccion1Model extends FlutterFlowModel<Seccion1Widget> {
 
   /// Additional helper methods.
   String? get radioButtonrnpValue => radioButtonrnpValueController?.value;
+  Future waitForRequestCompleted({
+    double minWait = 0,
+    double maxWait = double.infinity,
+  }) async {
+    final stopwatch = Stopwatch()..start();
+    while (true) {
+      await Future.delayed(Duration(milliseconds: 50));
+      final timeElapsed = stopwatch.elapsedMilliseconds;
+      final requestComplete = requestCompleter?.isCompleted ?? false;
+      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
+        break;
+      }
+    }
+  }
+
   String? get radioButtoncudValue => radioButtoncudValueController?.value;
   String? get radioButtonprestacionesValue =>
       radioButtonprestacionesValueController?.value;

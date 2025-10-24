@@ -264,6 +264,8 @@ dynamic deserializeParam<T>(
             return SpdRow(data);
           case AnexosForm1Row:
             return AnexosForm1Row(data);
+          case TIntitucionesSaludRow:
+            return TIntitucionesSaludRow(data);
           case Formulario5HistorialRow:
             return Formulario5HistorialRow(data);
           case ArticulacionComunitariaRow:
