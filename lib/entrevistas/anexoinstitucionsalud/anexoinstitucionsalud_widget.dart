@@ -20,12 +20,14 @@ class AnexoinstitucionsaludWidget extends StatefulWidget {
     required this.rowexp,
     this.editar,
     this.idanexosalud,
+    this.idampliacion,
   });
 
   final IngresosRow? rowingreso;
   final VistaExpedientesUltimoEstadoRow? rowexp;
   final bool? editar;
   final int? idanexosalud;
+  final int? idampliacion;
 
   @override
   State<AnexoinstitucionsaludWidget> createState() =>
@@ -813,6 +815,16 @@ class _AnexoinstitucionsaludWidgetState
                                     matchingRows: (rows) => rows.eqOrNull(
                                       'id',
                                       _model.crearsolicitudsalud?.id,
+                                    ),
+                                  );
+                                  await AmpliaciondeinformacionTable().update(
+                                    data: {
+                                      'noment': _model
+                                          .textFieldmotivoTextController1.text,
+                                    },
+                                    matchingRows: (rows) => rows.eqOrNull(
+                                      'idampliacion',
+                                      widget.idampliacion,
                                     ),
                                   );
                                   await showDialog(

@@ -359,8 +359,8 @@ class CarpetaDelExpedienteCall {
 
 class ActaCall {
   static Future<ApiCallResponse> call({
-    int? idingreso = 229,
-    int? idform7 = 38,
+    int? idingreso = 341,
+    int? idform7 = 96,
   }) async {
     final ffApiRequestBody = '''
 {

@@ -1097,6 +1097,10 @@ class _AvisoVisitaNNyAWidgetState extends State<AvisoVisitaNNyAWidget> {
                                               ?.jsonBody ??
                                           ''),
                                     ),
+                                    'noment': _model
+                                        .textFieldmotivoTextController1.text,
+                                    'apeent': _model
+                                        .textFieldmotivoTextController2.text,
                                   },
                                   matchingRows: (rows) => rows.eqOrNull(
                                     'idampliacion',

@@ -420,8 +420,10 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                                             .expedienteprincipal1
                                                             ?.firstOrNull
                                                             ?.edad,
-                                                        'idexppropio':
-                                                            widget.idexp?.id,
+                                                        'idexppropio': _model
+                                                            .expedienteprincipal1
+                                                            ?.firstOrNull
+                                                            ?.id,
                                                       });
                                                       while (_model.contador! <=
                                                           _model

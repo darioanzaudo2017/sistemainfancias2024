@@ -12,3 +12,4 @@ export 'enviarmail.dart' show enviarmail;
 export 'listadedocumentoadjuntosparasolicitud.dart'
     show listadedocumentoadjuntosparasolicitud;
 export 'anos.dart' show anos;
+export 'get_expedientes_with_n_ny_a.dart' show getExpedientesWithNNyA;

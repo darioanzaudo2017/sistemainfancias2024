@@ -29,6 +29,7 @@ export 'tables/vista_ingresos_dias.dart';
 export 'tables/grupofamiliar.dart';
 export 'tables/spd.dart';
 export 'tables/anexos_form_1.dart';
+export 'tables/t_intituciones_salud.dart';
 export 'tables/formulario5_historial.dart';
 export 'tables/articulacion_comunitaria.dart';
 export 'tables/listadeactas.dart';

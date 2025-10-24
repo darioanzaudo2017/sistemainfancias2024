@@ -130,6 +130,7 @@ class _ListasolicitudasaludWidgetState
                             child: AnexoinstitucionsaludWidget(
                               rowingreso: widget.ingresorow!,
                               rowexp: widget.rowexp!,
+                              idampliacion: widget.rowampliacion?.ampliacionId,
                             ),
                           ),
                         );

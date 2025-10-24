@@ -2515,7 +2515,7 @@ class _AmpliacioninformacionWidgetState
                                                                             0.0,
                                                                             0.0),
                                                                 child: Text(
-                                                                  '2. Personas /datos que la familia propone para ampliar información',
+                                                                  '2. Personas /datos que la familia/NNyA proponen para ampliar información',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .titleMedium

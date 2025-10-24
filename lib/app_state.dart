@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '/backend/schema/structs/index.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
+import 'dart:convert';
 
 class FFAppState extends ChangeNotifier {
   static FFAppState _instance = FFAppState._internal();
@@ -325,6 +326,12 @@ class FFAppState extends ChangeNotifier {
 
   void insertAtIndexInListapersonasacta(int index, PersonasactasStruct value) {
     listapersonasacta.insert(index, value);
+  }
+
+  dynamic _json;
+  dynamic get json => _json;
+  set json(dynamic value) {
+    _json = value;
   }
 }
 
