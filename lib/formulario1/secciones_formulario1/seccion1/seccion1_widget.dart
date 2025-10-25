@@ -128,7 +128,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                 child: Container(
                   width: MediaQuery.sizeOf(context).width * 0.9,
                   decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).alternate,
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
                     borderRadius: BorderRadius.circular(20.0),
                   ),
                   alignment: AlignmentDirectional(0.0, 0.0),

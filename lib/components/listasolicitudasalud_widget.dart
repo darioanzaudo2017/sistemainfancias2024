@@ -383,7 +383,7 @@ class _ListasolicitudasaludWidgetState
                                                             0.0, 0.0, 0.0, 0.0),
                                                 iconColor:
                                                     FlutterFlowTheme.of(context)
-                                                        .info,
+                                                        .secondaryBackground,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
@@ -406,7 +406,7 @@ class _ListasolicitudasaludWidgetState
                                                           ),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .info,
+                                                              .secondaryBackground,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FlutterFlowTheme.of(
@@ -457,7 +457,7 @@ class _ListasolicitudasaludWidgetState
                                                             0.0, 0.0, 0.0, 0.0),
                                                 iconColor:
                                                     FlutterFlowTheme.of(context)
-                                                        .info,
+                                                        .secondaryBackground,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
@@ -480,7 +480,7 @@ class _ListasolicitudasaludWidgetState
                                                           ),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .info,
+                                                              .secondaryBackground,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FlutterFlowTheme.of(

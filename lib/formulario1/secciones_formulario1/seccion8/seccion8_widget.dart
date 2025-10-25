@@ -411,7 +411,7 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
                                             label: DefaultTextStyle.merge(
                                               softWrap: true,
                                               child: Text(
-                                                'Edit Header 6',
+                                                'Eliminar',
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .labelLarge
@@ -429,6 +429,9 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
                                                                     .labelLarge
                                                                     .fontStyle,
                                                           ),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FlutterFlowTheme.of(

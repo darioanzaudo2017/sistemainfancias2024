@@ -74,7 +74,7 @@ class _CardexpedienteencabezadoWidgetState
       ),
       child: Card(
         clipBehavior: Clip.antiAliasWithSaveLayer,
-        color: FlutterFlowTheme.of(context).alternate,
+        color: FlutterFlowTheme.of(context).secondaryBackground,
         elevation: 2.0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12.0),

@@ -52,6 +52,7 @@ class _IndicadordevuneracionWidgetState
         height: 240.92,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
+          borderRadius: BorderRadius.circular(10.0),
         ),
         child: Column(
           mainAxisSize: MainAxisSize.max,

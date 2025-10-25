@@ -1223,7 +1223,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                             labelColor:
                                                                 FlutterFlowTheme.of(
                                                                         context)
-                                                                    .primaryText,
+                                                                    .secondaryBackground,
                                                             unselectedLabelColor:
                                                                 FlutterFlowTheme.of(
                                                                         context)
@@ -1231,19 +1231,11 @@ class _SenafWidgetState extends State<SenafWidget>
                                                             backgroundColor:
                                                                 FlutterFlowTheme.of(
                                                                         context)
-                                                                    .secondary,
+                                                                    .success,
                                                             unselectedBackgroundColor:
                                                                 FlutterFlowTheme.of(
                                                                         context)
-                                                                    .alternate,
-                                                            borderColor:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primary,
-                                                            unselectedBorderColor:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .alternate,
+                                                                    .primaryBackground,
                                                             borderWidth: 2.0,
                                                             borderRadius: 8.0,
                                                             elevation: 0.0,

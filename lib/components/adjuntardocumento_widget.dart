@@ -162,7 +162,7 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                       ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).secondaryText,
+                      color: FlutterFlowTheme.of(context).alternate,
                       width: 1.0,
                     ),
                     borderRadius: BorderRadius.circular(8.0),
@@ -248,7 +248,7 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                 ),
                 fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                 elevation: 2.0,
-                borderColor: FlutterFlowTheme.of(context).secondaryText,
+                borderColor: FlutterFlowTheme.of(context).alternate,
                 borderWidth: 0.0,
                 borderRadius: 8.0,
                 margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),

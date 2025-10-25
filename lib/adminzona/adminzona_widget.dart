@@ -326,7 +326,8 @@ class _AdminzonaWidgetState extends State<AdminzonaWidget>
                                         MediaQuery.sizeOf(context).width * 1.0,
                                     height: 123.95,
                                     decoration: BoxDecoration(
-                                      color: Color(0xFF39A9EF),
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
                                       boxShadow: [
                                         BoxShadow(
                                           blurRadius: 4.0,

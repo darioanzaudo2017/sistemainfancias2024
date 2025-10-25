@@ -830,7 +830,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                                               BoxDecoration(
                                                             color: FlutterFlowTheme
                                                                     .of(context)
-                                                                .secondary,
+                                                                .success,
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
@@ -1165,8 +1165,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                             val?.firstOrNull),
                                     selectedChipStyle: ChipStyle(
                                       backgroundColor:
-                                          FlutterFlowTheme.of(context)
-                                              .secondary,
+                                          FlutterFlowTheme.of(context).success,
                                       textStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -1181,7 +1180,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                                       .fontStyle,
                                             ),
                                             color: FlutterFlowTheme.of(context)
-                                                .info,
+                                                .secondaryBackground,
                                             letterSpacing: 0.0,
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
@@ -1192,8 +1191,8 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                                     .bodyMedium
                                                     .fontStyle,
                                           ),
-                                      iconColor:
-                                          FlutterFlowTheme.of(context).info,
+                                      iconColor: FlutterFlowTheme.of(context)
+                                          .secondaryText,
                                       iconSize: 16.0,
                                       labelPadding: EdgeInsets.all(10.0),
                                       elevation: 0.0,
@@ -1217,7 +1216,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                                       .fontStyle,
                                             ),
                                             color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
+                                                .primaryText,
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
                                             fontWeight:
@@ -1230,7 +1229,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                                     .fontStyle,
                                           ),
                                       iconColor: FlutterFlowTheme.of(context)
-                                          .secondaryText,
+                                          .secondaryBackground,
                                       iconSize: 16.0,
                                       labelPadding: EdgeInsets.all(10.0),
                                       elevation: 0.0,

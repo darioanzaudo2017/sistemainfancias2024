@@ -384,7 +384,10 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                   enabledBorder:
                                                       OutlineInputBorder(
                                                     borderSide: BorderSide(
-                                                      color: Color(0x00000000),
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .alternate,
                                                       width: 1.0,
                                                     ),
                                                     borderRadius:
@@ -431,7 +434,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                   fillColor:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .alternate,
+                                                          .secondaryBackground,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -582,7 +585,10 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                   enabledBorder:
                                                       OutlineInputBorder(
                                                     borderSide: BorderSide(
-                                                      color: Color(0x00000000),
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .alternate,
                                                       width: 1.0,
                                                     ),
                                                     borderRadius:
@@ -629,7 +635,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                   fillColor:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .alternate,
+                                                          .secondaryBackground,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -909,7 +915,9 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                         OutlineInputBorder(
                                                       borderSide: BorderSide(
                                                         color:
-                                                            Color(0x00000000),
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .alternate,
                                                         width: 1.0,
                                                       ),
                                                       borderRadius:
@@ -954,10 +962,9 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                               8.0),
                                                     ),
                                                     filled: true,
-                                                    fillColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .alternate,
+                                                    fillColor: FlutterFlowTheme
+                                                            .of(context)
+                                                        .secondaryBackground,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -1112,7 +1119,10 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                   enabledBorder:
                                                       OutlineInputBorder(
                                                     borderSide: BorderSide(
-                                                      color: Color(0x00000000),
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .alternate,
                                                       width: 1.0,
                                                     ),
                                                     borderRadius:
@@ -1159,7 +1169,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                   fillColor:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .alternate,
+                                                          .secondaryBackground,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -1588,13 +1598,11 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                                 .secondaryText,
                                                             size: 24.0,
                                                           ),
-                                                          fillColor:
+                                                          elevation: 2.0,
+                                                          borderColor:
                                                               FlutterFlowTheme.of(
                                                                       context)
                                                                   .alternate,
-                                                          elevation: 2.0,
-                                                          borderColor: Colors
-                                                              .transparent,
                                                           borderWidth: 0.0,
                                                           borderRadius: 8.0,
                                                           margin:

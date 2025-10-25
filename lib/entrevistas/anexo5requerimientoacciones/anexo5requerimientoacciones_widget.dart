@@ -1092,7 +1092,9 @@ class _Anexo5requerimientoaccionesWidgetState
                                                               .bodyMedium
                                                               .fontStyle,
                                                     ),
-                                                    color: Color(0xFF39D2C0),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
                                                     fontSize: 14.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
@@ -1226,7 +1228,7 @@ class _Anexo5requerimientoaccionesWidgetState
                                                         .picture_as_pdf_outlined,
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .info,
+                                                        .secondaryBackground,
                                                     size: 24.0,
                                                   ),
                                                   onPressed: () async {

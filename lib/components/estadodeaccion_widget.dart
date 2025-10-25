@@ -1345,7 +1345,7 @@ class _EstadodeaccionWidgetState extends State<EstadodeaccionWidget> {
                                               ),
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .info,
+                                                      .secondaryBackground,
                                               letterSpacing: 0.0,
                                               fontWeight:
                                                   FlutterFlowTheme.of(context)

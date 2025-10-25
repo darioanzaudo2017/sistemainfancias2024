@@ -767,7 +767,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                               width: 100.0,
                                                                                                                               height: 30.0,
                                                                                                                               decoration: BoxDecoration(
-                                                                                                                                color: FlutterFlowTheme.of(context).tertiary,
+                                                                                                                                color: FlutterFlowTheme.of(context).error,
                                                                                                                                 borderRadius: BorderRadius.only(
                                                                                                                                   bottomLeft: Radius.circular(0.0),
                                                                                                                                   bottomRight: Radius.circular(20.0),
@@ -784,6 +784,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                                           fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                                                                                           fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                                                         ),
+                                                                                                                                        color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                                                                         letterSpacing: 0.0,
                                                                                                                                         fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                                                                                         fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
@@ -813,6 +814,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                                           fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                                                                                           fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                                                         ),
+                                                                                                                                        color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                                                                         letterSpacing: 0.0,
                                                                                                                                         fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                                                                                         fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,

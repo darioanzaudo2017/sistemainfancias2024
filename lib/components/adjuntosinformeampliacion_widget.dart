@@ -289,7 +289,8 @@ class _AdjuntosinformeampliacionWidgetState
                                 fillColor: FlutterFlowTheme.of(context).primary,
                                 icon: FaIcon(
                                   FontAwesomeIcons.googleDrive,
-                                  color: FlutterFlowTheme.of(context).info,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
                                   size: 24.0,
                                 ),
                                 onPressed: () async {

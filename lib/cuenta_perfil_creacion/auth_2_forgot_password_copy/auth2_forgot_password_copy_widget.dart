@@ -139,29 +139,6 @@ class _Auth2ForgotPasswordCopyWidgetState
                             size: 44.0,
                           ),
                         ),
-                        Text(
-                          'flow.io',
-                          style: FlutterFlowTheme.of(context)
-                              .displaySmall
-                              .override(
-                                font: GoogleFonts.notoSansJp(
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .displaySmall
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .displaySmall
-                                      .fontStyle,
-                                ),
-                                color: FlutterFlowTheme.of(context).info,
-                                letterSpacing: 0.0,
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .displaySmall
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .displaySmall
-                                    .fontStyle,
-                              ),
-                        ),
                       ],
                     ),
                   ),
