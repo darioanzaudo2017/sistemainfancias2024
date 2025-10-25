@@ -1861,7 +1861,7 @@ class _Formulario4WidgetState extends State<Formulario4Widget> {
                                           );
                                           Navigator.pop(context);
                                         },
-                                        text: 'Guardar',
+                                        text: 'Editar',
                                         icon: Icon(
                                           Icons.save,
                                           size: 15.0,

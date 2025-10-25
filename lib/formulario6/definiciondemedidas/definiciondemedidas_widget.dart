@@ -1612,7 +1612,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                                   fillColor: FlutterFlowTheme.of(context).primary,
                                                                                   icon: Icon(
                                                                                     Icons.view_agenda,
-                                                                                    color: FlutterFlowTheme.of(context).info,
+                                                                                    color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                     size: 24.0,
                                                                                   ),
                                                                                   onPressed: () async {

@@ -192,8 +192,8 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                           FlutterFlowTheme.of(context).primary,
                                       icon: Icon(
                                         Icons.edit_sharp,
-                                        color:
-                                            FlutterFlowTheme.of(context).info,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
                                         size: 24.0,
                                       ),
                                       onPressed: () async {

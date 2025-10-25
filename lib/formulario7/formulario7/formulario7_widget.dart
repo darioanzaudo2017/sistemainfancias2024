@@ -1099,8 +1099,8 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                             .primary,
                                         icon: Icon(
                                           Icons.add,
-                                          color:
-                                              FlutterFlowTheme.of(context).info,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
                                           size: 24.0,
                                         ),
                                         onPressed: () async {

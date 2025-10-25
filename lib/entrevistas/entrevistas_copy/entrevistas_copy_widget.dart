@@ -433,7 +433,7 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                                           fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                                           fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                         ),
-                                                                                        color: FlutterFlowTheme.of(context).info,
+                                                                                        color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                         letterSpacing: 0.0,
                                                                                         fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                                         fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
@@ -1295,7 +1295,7 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                                               fillColor: FlutterFlowTheme.of(context).primary,
                                                                                               icon: Icon(
                                                                                                 Icons.file_upload_outlined,
-                                                                                                color: FlutterFlowTheme.of(context).info,
+                                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                                 size: 24.0,
                                                                                               ),
                                                                                               onPressed: () async {
@@ -1332,7 +1332,7 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                                               fillColor: FlutterFlowTheme.of(context).primary,
                                                                                               icon: Icon(
                                                                                                 Icons.child_care,
-                                                                                                color: FlutterFlowTheme.of(context).info,
+                                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                                 size: 24.0,
                                                                                               ),
                                                                                               onPressed: () async {
@@ -1372,7 +1372,7 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                                               fillColor: FlutterFlowTheme.of(context).primary,
                                                                                               icon: FaIcon(
                                                                                                 FontAwesomeIcons.userAlt,
-                                                                                                color: FlutterFlowTheme.of(context).info,
+                                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                                 size: 24.0,
                                                                                               ),
                                                                                               onPressed: () async {
@@ -1411,7 +1411,7 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                                               fillColor: FlutterFlowTheme.of(context).primary,
                                                                                               icon: Icon(
                                                                                                 Icons.school,
-                                                                                                color: FlutterFlowTheme.of(context).info,
+                                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                                 size: 24.0,
                                                                                               ),
                                                                                               onPressed: () async {
@@ -1450,7 +1450,7 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                                               fillColor: FlutterFlowTheme.of(context).primary,
                                                                                               icon: Icon(
                                                                                                 Icons.health_and_safety_outlined,
-                                                                                                color: FlutterFlowTheme.of(context).info,
+                                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                                 size: 24.0,
                                                                                               ),
                                                                                               onPressed: () async {
@@ -1487,7 +1487,7 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                                               fillColor: FlutterFlowTheme.of(context).primary,
                                                                                               icon: Icon(
                                                                                                 Icons.turned_in,
-                                                                                                color: FlutterFlowTheme.of(context).info,
+                                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                                 size: 24.0,
                                                                                               ),
                                                                                               onPressed: () async {

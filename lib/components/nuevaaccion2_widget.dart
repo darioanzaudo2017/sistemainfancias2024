@@ -481,7 +481,8 @@ class _Nuevaaccion2WidgetState extends State<Nuevaaccion2Widget> {
                                             .bodyMedium
                                             .fontStyle,
                                       ),
-                                      color: FlutterFlowTheme.of(context).info,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
                                       fontSize: 14.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FlutterFlowTheme.of(context)

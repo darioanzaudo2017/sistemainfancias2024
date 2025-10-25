@@ -683,7 +683,8 @@ class _EnviarmailWidgetState extends State<EnviarmailWidget> {
                             padding: EdgeInsets.all(8.0),
                             iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconColor: FlutterFlowTheme.of(context).info,
+                            iconColor: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
@@ -696,7 +697,8 @@ class _EnviarmailWidgetState extends State<EnviarmailWidget> {
                                         .titleSmall
                                         .fontStyle,
                                   ),
-                                  color: FlutterFlowTheme.of(context).info,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
                                   letterSpacing: 0.0,
                                   fontWeight: FlutterFlowTheme.of(context)
                                       .titleSmall
@@ -1143,7 +1145,9 @@ class _EnviarmailWidgetState extends State<EnviarmailWidget> {
                                           children: [
                                             Icon(
                                               Icons.mail_outline_outlined,
-                                              color: Color(0xFF4B39EF),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
                                               size: 32.0,
                                             ),
                                             Expanded(

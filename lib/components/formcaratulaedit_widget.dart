@@ -1625,7 +1625,7 @@ class _FormcaratulaeditWidgetState extends State<FormcaratulaeditWidget> {
                                                                         BoxDecoration(
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .secondary,
+                                                                          .success,
                                                                       borderRadius:
                                                                           BorderRadius.circular(
                                                                               15.0),
@@ -1651,6 +1651,7 @@ class _FormcaratulaeditWidgetState extends State<FormcaratulaeditWidget> {
                                                                                 fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                                 fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                               ),
+                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                               fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,

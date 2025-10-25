@@ -733,12 +733,13 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
                                                               fillColor:
                                                                   FlutterFlowTheme.of(
                                                                           context)
-                                                                      .secondary,
+                                                                      .primary,
                                                               icon: Icon(
                                                                 Icons
                                                                     .navigate_next,
-                                                                color: Color(
-                                                                    0xFF57636C),
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryBackground,
                                                                 size: 20.0,
                                                               ),
                                                               onPressed:

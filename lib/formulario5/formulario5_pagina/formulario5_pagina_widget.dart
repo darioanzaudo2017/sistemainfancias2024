@@ -2016,7 +2016,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                                       width: 65.0,
                                                                                       height: 40.0,
                                                                                       decoration: BoxDecoration(
-                                                                                        color: FlutterFlowTheme.of(context).secondary,
+                                                                                        color: FlutterFlowTheme.of(context).success,
                                                                                         borderRadius: BorderRadius.circular(15.0),
                                                                                       ),
                                                                                       child: Align(
@@ -2031,6 +2031,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                                                   fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                                                   fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                 ),
+                                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                                 letterSpacing: 0.0,
                                                                                                 fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                                                 fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
