@@ -85,10 +85,44 @@ class _FFButtonWidgetState extends State<FFButtonWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+    final defaultTextStyle = widget.options.textStyle ??
+        theme.textTheme.labelLarge?.copyWith(
+          fontWeight: FontWeight.w600,
+          letterSpacing: 0.2,
+          color: colorScheme.onPrimary,
+        );
+    final resolvedTextStyle = widget.options.textStyle ?? defaultTextStyle;
+    final buttonColor = widget.options.color ?? colorScheme.primary;
+    final hoverColor = widget.options.hoverColor ??
+        buttonColor.withOpacity(colorScheme.brightness == Brightness.dark
+            ? 0.18
+            : 0.12);
+    final splashColor = widget.options.splashColor ??
+        buttonColor.withOpacity(colorScheme.brightness == Brightness.dark
+            ? 0.22
+            : 0.16);
+    final disabledColor = widget.options.disabledColor ??
+        colorScheme.outlineVariant.withOpacity(0.6);
+    final disabledTextColor = widget.options.disabledTextColor ??
+        colorScheme.onSurface.withOpacity(0.38);
+    final borderRadius = widget.options.borderRadius ??
+        BorderRadius.circular(16);
+    final padding = widget.options.padding ??
+        const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0);
+
+    final bool hideText = resolvedTextStyle?.fontSize == 0;
+    final String? textContent = hideText ? null : widget.text;
+
     Widget textWidget = loading
         ? SizedBox(
             width: widget.options.width == null
-                ? _getTextWidth(text, widget.options.textStyle, maxLines)
+                ? _getTextWidth(
+                    textContent,
+                    resolvedTextStyle,
+                    maxLines,
+                  )
                 : null,
             child: Center(
               child: SizedBox(
@@ -96,16 +130,17 @@ class _FFButtonWidgetState extends State<FFButtonWidget> {
                 height: 23,
                 child: CircularProgressIndicator(
                   valueColor: AlwaysStoppedAnimation<Color>(
-                    widget.options.textStyle?.color ?? Colors.white,
+                    resolvedTextStyle?.color ?? colorScheme.onPrimary,
                   ),
                 ),
               ),
             ),
           )
         : AutoSizeText(
-            text ?? '',
-            style:
-                text == null ? null : widget.options.textStyle?.withoutColor(),
+            textContent ?? '',
+            style: textContent == null
+                ? null
+                : resolvedTextStyle?.withoutColor(),
             textAlign: widget.options.textAlign,
             maxLines: maxLines,
             overflow: TextOverflow.ellipsis,
@@ -134,22 +169,19 @@ class _FFButtonWidgetState extends State<FFButtonWidget> {
         if (states.contains(WidgetState.hovered) &&
             widget.options.hoverBorderSide != null) {
           return RoundedRectangleBorder(
-            borderRadius:
-                widget.options.borderRadius ?? BorderRadius.circular(8),
+            borderRadius: borderRadius,
             side: widget.options.hoverBorderSide!,
           );
         }
         if (states.contains(WidgetState.focused) &&
             widget.options.focusBorderSide != null) {
           return RoundedRectangleBorder(
-            borderRadius: widget.options.focusBorderRadius ??
-                widget.options.borderRadius ??
-                BorderRadius.circular(8),
+            borderRadius: widget.options.focusBorderRadius ?? borderRadius,
             side: widget.options.focusBorderSide!,
           );
         }
         return RoundedRectangleBorder(
-          borderRadius: widget.options.borderRadius ?? BorderRadius.circular(8),
+          borderRadius: borderRadius,
           side: widget.options.borderSide ?? BorderSide.none,
         );
       }),
@@ -162,7 +194,13 @@ class _FFButtonWidgetState extends State<FFButtonWidget> {
             widget.options.hoverTextColor != null) {
           return widget.options.hoverTextColor;
         }
-        return widget.options.textStyle?.color ?? Colors.white;
+        if (states.contains(WidgetState.disabled)) {
+          return disabledTextColor;
+        }
+        return resolvedTextStyle?.color ??
+            (widget.options.color != null
+                ? resolvedTextStyle?.color
+                : colorScheme.onPrimary);
       }),
       backgroundColor: WidgetStateProperty.resolveWith<Color?>((states) {
         if (states.contains(WidgetState.disabled) &&
@@ -173,24 +211,31 @@ class _FFButtonWidgetState extends State<FFButtonWidget> {
             widget.options.hoverColor != null) {
           return widget.options.hoverColor;
         }
-        return widget.options.color;
+        if (states.contains(WidgetState.disabled)) {
+          return disabledColor;
+        }
+        return buttonColor;
       }),
       overlayColor: WidgetStateProperty.resolveWith<Color?>((states) {
         if (states.contains(WidgetState.pressed)) {
-          return widget.options.splashColor;
+          return splashColor;
         }
-        return widget.options.hoverColor == null ? null : Colors.transparent;
+        return widget.options.hoverColor == null ? hoverColor : Colors.transparent;
       }),
-      padding: WidgetStateProperty.all(
-        widget.options.padding ??
-            const EdgeInsets.symmetric(horizontal: 12.0, vertical: 4.0),
-      ),
+      padding: WidgetStateProperty.all(padding),
       elevation: WidgetStateProperty.resolveWith<double?>((states) {
         if (states.contains(WidgetState.hovered) &&
             widget.options.hoverElevation != null) {
           return widget.options.hoverElevation!;
         }
-        return widget.options.elevation ?? 2.0;
+        if (states.contains(WidgetState.hovered) ||
+            states.contains(WidgetState.focused)) {
+          return (widget.options.elevation ?? 4.0) + 2;
+        }
+        if (states.contains(WidgetState.disabled)) {
+          return 0;
+        }
+        return widget.options.elevation ?? 4.0;
       }),
       iconColor: WidgetStateProperty.resolveWith<Color?>((states) {
         if (states.contains(WidgetState.disabled) &&
@@ -201,8 +246,18 @@ class _FFButtonWidgetState extends State<FFButtonWidget> {
             widget.options.hoverTextColor != null) {
           return widget.options.hoverTextColor;
         }
-        return widget.options.iconColor;
+        if (states.contains(WidgetState.disabled)) {
+          return disabledTextColor;
+        }
+        return widget.options.iconColor ??
+            (widget.options.color != null
+                ? resolvedTextStyle?.color
+                : colorScheme.onPrimary);
       }),
+      shadowColor: WidgetStateProperty.all(
+        theme.shadowColor.withOpacity(0.25),
+      ),
+      animationDuration: const Duration(milliseconds: 200),
     );
 
     if ((widget.icon != null || widget.iconData != null) && !loading) {
@@ -210,10 +265,13 @@ class _FFButtonWidgetState extends State<FFButtonWidget> {
           FaIcon(
             widget.iconData!,
             size: widget.options.iconSize,
-            color: widget.options.iconColor,
+            color: widget.options.iconColor ??
+                (widget.options.color != null
+                    ? resolvedTextStyle?.color
+                    : colorScheme.onPrimary),
           );
 
-      if (text == null) {
+      if (textContent == null) {
         return Container(
           height: widget.options.height,
           width: widget.options.width,
@@ -221,8 +279,14 @@ class _FFButtonWidgetState extends State<FFButtonWidget> {
             border: Border.fromBorderSide(
               widget.options.borderSide ?? BorderSide.none,
             ),
-            borderRadius:
-                widget.options.borderRadius ?? BorderRadius.circular(8),
+            borderRadius: borderRadius,
+            boxShadow: [
+              BoxShadow(
+                color: theme.shadowColor.withOpacity(0.15),
+                blurRadius: 16,
+                offset: const Offset(0, 10),
+              ),
+            ],
           ),
           child: IconButton(
             splashRadius: 1.0,
