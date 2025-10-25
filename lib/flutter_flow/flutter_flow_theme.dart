@@ -142,22 +142,22 @@ class LightModeTheme extends FlutterFlowTheme {
   @Deprecated('Use tertiary instead')
   Color get tertiaryColor => tertiary;
 
-  late Color primary = const Color(0xFF4A7CBA);
-  late Color secondary = const Color(0xFFCB5F6D);
-  late Color tertiary = const Color(0xFFF8D065);
-  late Color alternate = const Color(0xFFAAAAAA);
-  late Color primaryText = const Color(0xFF000000);
-  late Color secondaryText = const Color(0xFF6E7C8C);
-  late Color primaryBackground = const Color(0xFFF8F8F8);
+  late Color primary = const Color(0xFF0EA5E9);
+  late Color secondary = const Color(0xFF6366F1);
+  late Color tertiary = const Color(0xFFF97316);
+  late Color alternate = const Color(0xFFE2E8F5);
+  late Color primaryText = const Color(0xFF0F172A);
+  late Color secondaryText = const Color(0xFF475569);
+  late Color primaryBackground = const Color(0xFFF6F9FC);
   late Color secondaryBackground = const Color(0xFFFFFFFF);
-  late Color accent1 = const Color(0xFFF8D065);
-  late Color accent2 = const Color(0xFFCB5F6D);
-  late Color accent3 = const Color(0xFF82D0AB);
-  late Color accent4 = const Color(0xFF4A7CBA);
-  late Color success = const Color(0xFF82D0AB);
-  late Color warning = const Color(0xFFF8D065);
-  late Color error = const Color(0xFFCB5F6D);
-  late Color info = const Color(0xFF4A7CBA);
+  late Color accent1 = const Color(0xFFBFE6FB);
+  late Color accent2 = const Color(0xFFE4DEFF);
+  late Color accent3 = const Color(0xFFFFE2CB);
+  late Color accent4 = const Color(0xFF1E293B);
+  late Color success = const Color(0xFF22C55E);
+  late Color warning = const Color(0xFFFACC15);
+  late Color error = const Color(0xFFEF4444);
+  late Color info = const Color(0xFF0EA5E9);
 }
 
 abstract class Typography {
@@ -213,110 +213,114 @@ class ThemeTypography extends Typography {
 
   final FlutterFlowTheme theme;
 
-  String get displayLargeFamily => 'Noto Sans JP';
+  String get displayLargeFamily => 'Inter';
   bool get displayLargeIsCustom => false;
-  TextStyle get displayLarge => GoogleFonts.notoSansJp(
+  TextStyle get displayLarge => GoogleFonts.inter(
         color: theme.primaryText,
-        fontWeight: FontWeight.normal,
-        fontSize: 64.0,
+        fontWeight: FontWeight.w600,
+        fontSize: 56.0,
+        letterSpacing: -0.5,
       );
-  String get displayMediumFamily => 'Noto Sans JP';
+  String get displayMediumFamily => 'Inter';
   bool get displayMediumIsCustom => false;
-  TextStyle get displayMedium => GoogleFonts.notoSansJp(
+  TextStyle get displayMedium => GoogleFonts.inter(
         color: theme.primaryText,
-        fontWeight: FontWeight.normal,
+        fontWeight: FontWeight.w600,
         fontSize: 44.0,
       );
-  String get displaySmallFamily => 'Noto Sans JP';
+  String get displaySmallFamily => 'Inter';
   bool get displaySmallIsCustom => false;
-  TextStyle get displaySmall => GoogleFonts.notoSansJp(
+  TextStyle get displaySmall => GoogleFonts.inter(
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 36.0,
       );
-  String get headlineLargeFamily => 'Noto Sans JP';
+  String get headlineLargeFamily => 'Inter';
   bool get headlineLargeIsCustom => false;
-  TextStyle get headlineLarge => GoogleFonts.notoSansJp(
+  TextStyle get headlineLarge => GoogleFonts.inter(
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
-        fontSize: 32.0,
+        fontSize: 30.0,
       );
-  String get headlineMediumFamily => 'Noto Sans JP';
+  String get headlineMediumFamily => 'Inter';
   bool get headlineMediumIsCustom => false;
-  TextStyle get headlineMedium => GoogleFonts.notoSansJp(
-        color: theme.primaryText,
-        fontWeight: FontWeight.normal,
-        fontSize: 24.0,
-      );
-  String get headlineSmallFamily => 'Noto Sans JP';
-  bool get headlineSmallIsCustom => false;
-  TextStyle get headlineSmall => GoogleFonts.notoSansJp(
+  TextStyle get headlineMedium => GoogleFonts.inter(
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
-        fontSize: 24.0,
+        fontSize: 26.0,
       );
-  String get titleLargeFamily => 'Noto Sans JP';
-  bool get titleLargeIsCustom => false;
-  TextStyle get titleLarge => GoogleFonts.notoSansJp(
+  String get headlineSmallFamily => 'Inter';
+  bool get headlineSmallIsCustom => false;
+  TextStyle get headlineSmall => GoogleFonts.inter(
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 22.0,
       );
-  String get titleMediumFamily => 'Noto Sans JP';
-  bool get titleMediumIsCustom => false;
-  TextStyle get titleMedium => GoogleFonts.notoSansJp(
-        color: theme.primary,
-        fontWeight: FontWeight.normal,
+  String get titleLargeFamily => 'Inter';
+  bool get titleLargeIsCustom => false;
+  TextStyle get titleLarge => GoogleFonts.inter(
+        color: theme.primaryText,
+        fontWeight: FontWeight.w600,
         fontSize: 20.0,
       );
-  String get titleSmallFamily => 'Noto Sans JP';
+  String get titleMediumFamily => 'Inter';
+  bool get titleMediumIsCustom => false;
+  TextStyle get titleMedium => GoogleFonts.inter(
+        color: theme.secondary,
+        fontWeight: FontWeight.w500,
+        fontSize: 18.0,
+      );
+  String get titleSmallFamily => 'Inter';
   bool get titleSmallIsCustom => false;
-  TextStyle get titleSmall => GoogleFonts.notoSansJp(
+  TextStyle get titleSmall => GoogleFonts.inter(
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
-  String get labelLargeFamily => 'Noto Sans JP';
+  String get labelLargeFamily => 'Inter';
   bool get labelLargeIsCustom => false;
-  TextStyle get labelLarge => GoogleFonts.notoSansJp(
-        color: theme.secondaryText,
-        fontWeight: FontWeight.normal,
-        fontSize: 16.0,
+  TextStyle get labelLarge => GoogleFonts.inter(
+        color: theme.secondaryBackground,
+        fontWeight: FontWeight.w600,
+        fontSize: 15.0,
       );
-  String get labelMediumFamily => 'Noto Sans JP';
+  String get labelMediumFamily => 'Inter';
   bool get labelMediumIsCustom => false;
-  TextStyle get labelMedium => GoogleFonts.notoSansJp(
+  TextStyle get labelMedium => GoogleFonts.inter(
         color: theme.secondaryText,
-        fontWeight: FontWeight.normal,
-        fontSize: 17.0,
+        fontWeight: FontWeight.w500,
+        fontSize: 13.0,
       );
-  String get labelSmallFamily => 'Noto Sans JP';
+  String get labelSmallFamily => 'Inter';
   bool get labelSmallIsCustom => false;
-  TextStyle get labelSmall => GoogleFonts.notoSansJp(
+  TextStyle get labelSmall => GoogleFonts.inter(
         color: theme.secondaryText,
-        fontWeight: FontWeight.normal,
-        fontSize: 14.0,
-      );
-  String get bodyLargeFamily => 'Noto Sans JP';
-  bool get bodyLargeIsCustom => false;
-  TextStyle get bodyLarge => GoogleFonts.notoSansJp(
-        color: theme.primaryText,
-        fontWeight: FontWeight.normal,
-        fontSize: 16.0,
-      );
-  String get bodyMediumFamily => 'Noto Sans JP';
-  bool get bodyMediumIsCustom => false;
-  TextStyle get bodyMedium => GoogleFonts.notoSansJp(
-        color: theme.primaryText,
-        fontWeight: FontWeight.normal,
-        fontSize: 14.0,
-      );
-  String get bodySmallFamily => 'Noto Sans JP';
-  bool get bodySmallIsCustom => false;
-  TextStyle get bodySmall => GoogleFonts.notoSansJp(
-        color: theme.primaryText,
-        fontWeight: FontWeight.normal,
+        fontWeight: FontWeight.w500,
         fontSize: 12.0,
+      );
+  String get bodyLargeFamily => 'Inter';
+  bool get bodyLargeIsCustom => false;
+  TextStyle get bodyLarge => GoogleFonts.inter(
+        color: theme.primaryText,
+        fontWeight: FontWeight.w400,
+        fontSize: 16.0,
+        height: 1.6,
+      );
+  String get bodyMediumFamily => 'Inter';
+  bool get bodyMediumIsCustom => false;
+  TextStyle get bodyMedium => GoogleFonts.inter(
+        color: theme.primaryText,
+        fontWeight: FontWeight.w400,
+        fontSize: 14.0,
+        height: 1.6,
+      );
+  String get bodySmallFamily => 'Inter';
+  bool get bodySmallIsCustom => false;
+  TextStyle get bodySmall => GoogleFonts.inter(
+        color: theme.secondaryText,
+        fontWeight: FontWeight.w400,
+        fontSize: 12.0,
+        height: 1.5,
       );
 }
 
@@ -328,22 +332,22 @@ class DarkModeTheme extends FlutterFlowTheme {
   @Deprecated('Use tertiary instead')
   Color get tertiaryColor => tertiary;
 
-  late Color primary = const Color(0xFF3B5D8A);
-  late Color secondary = const Color(0xFFB74C5C);
-  late Color tertiary = const Color(0xFFE0C054);
-  late Color alternate = const Color(0xFF6FB6A2);
-  late Color primaryText = const Color(0xFFFFFFFF);
-  late Color secondaryText = const Color(0xFFB0B0B0);
-  late Color primaryBackground = const Color(0xFF2C2C2C);
-  late Color secondaryBackground = const Color(0xFF1A1A1A);
-  late Color accent1 = const Color(0xFFE0C054);
-  late Color accent2 = const Color(0xFFB74C5C);
-  late Color accent3 = const Color(0xFF6FB6A2);
-  late Color accent4 = const Color(0xFF3B5D8A);
-  late Color success = const Color(0xFF6FB6A2);
-  late Color warning = const Color(0xFFE0C054);
-  late Color error = const Color(0xFFB74C5C);
-  late Color info = const Color(0xFF3B5D8A);
+  late Color primary = const Color(0xFF38BDF8);
+  late Color secondary = const Color(0xFFADB2FF);
+  late Color tertiary = const Color(0xFFFFB677);
+  late Color alternate = const Color(0xFF1E293B);
+  late Color primaryText = const Color(0xFFF8FAFC);
+  late Color secondaryText = const Color(0xFFA8B1CF);
+  late Color primaryBackground = const Color(0xFF0B1120);
+  late Color secondaryBackground = const Color(0xFF141C2C);
+  late Color accent1 = const Color(0xFF13476D);
+  late Color accent2 = const Color(0xFF2B2464);
+  late Color accent3 = const Color(0xFF4A2A10);
+  late Color accent4 = const Color(0xFF94A3B8);
+  late Color success = const Color(0xFF4ADE80);
+  late Color warning = const Color(0xFFEAB308);
+  late Color error = const Color(0xFFF87171);
+  late Color info = const Color(0xFF38BDF8);
 }
 
 extension TextStyleHelper on TextStyle {
