@@ -64,7 +64,7 @@ class _ListasolicitudaeducacionWidgetState
       child: Container(
         width: 600.0,
         decoration: BoxDecoration(
-          color: FlutterFlowTheme.of(context).secondaryBackground,
+          color: FlutterFlowTheme.of(context).primaryBackground,
         ),
         child: Column(
           mainAxisSize: MainAxisSize.max,

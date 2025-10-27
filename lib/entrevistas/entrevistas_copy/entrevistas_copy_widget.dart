@@ -188,7 +188,7 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                               height: MediaQuery.sizeOf(context).height * 1.0,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
+                                    .primaryBackground,
                               ),
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
@@ -307,7 +307,7 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                   BoxDecoration(
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .secondaryBackground,
+                                                                    .primaryBackground,
                                                               ),
                                                               child: Column(
                                                                 mainAxisSize:
@@ -323,8 +323,8 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                             0.0),
                                                                     child:
                                                                         Container(
-                                                                      width: double
-                                                                          .infinity,
+                                                                      width:
+                                                                          905.41,
                                                                       decoration:
                                                                           BoxDecoration(
                                                                         color: FlutterFlowTheme.of(context)
@@ -538,7 +538,7 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                       decoration:
                                                                           BoxDecoration(
                                                                         color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
+                                                                            .primaryBackground,
                                                                       ),
                                                                       child:
                                                                           Column(

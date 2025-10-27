@@ -606,7 +606,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                   child: Container(
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                          .primaryBackground,
                                       borderRadius: BorderRadius.circular(20.0),
                                       shape: BoxShape.rectangle,
                                       border: Border.all(
@@ -1586,6 +1586,10 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                           .circular(
                                                                               10.0),
                                                                 ),
+                                                                filled: true,
+                                                                fillColor: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryBackground,
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -1708,7 +1712,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                     BoxDecoration(
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .secondaryBackground,
+                                                                      .primaryBackground,
                                                                 ),
                                                                 child: Column(
                                                                   mainAxisSize:
@@ -2410,6 +2414,10 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                           .circular(
                                                                               10.0),
                                                                 ),
+                                                                filled: true,
+                                                                fillColor: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryBackground,
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -2621,6 +2629,10 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                           .circular(
                                                                               10.0),
                                                                 ),
+                                                                filled: true,
+                                                                fillColor: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryBackground,
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -2819,6 +2831,10 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                           .circular(
                                                                               10.0),
                                                                 ),
+                                                                filled: true,
+                                                                fillColor: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryBackground,
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -3051,6 +3067,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                                 ),
                                                                                 borderRadius: BorderRadius.circular(10.0),
                                                                               ),
+                                                                              filled: true,
+                                                                              fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   font: GoogleFonts.notoSansJp(
@@ -3140,6 +3158,8 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                                 ),
                                                                                 borderRadius: BorderRadius.circular(10.0),
                                                                               ),
+                                                                              filled: true,
+                                                                              fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   font: GoogleFonts.notoSansJp(
@@ -3842,7 +3862,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                               .fontStyle,
                                                                         ),
                                                                         color: FlutterFlowTheme.of(context)
-                                                                            .info,
+                                                                            .primaryBackground,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         fontWeight: FlutterFlowTheme.of(context)
@@ -3889,7 +3909,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                               .fontStyle,
                                                                         ),
                                                                         color: FlutterFlowTheme.of(context)
-                                                                            .secondaryText,
+                                                                            .primaryText,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
@@ -4414,6 +4434,10 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                           .circular(
                                                                               10.0),
                                                                 ),
+                                                                filled: true,
+                                                                fillColor: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryBackground,
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -4613,6 +4637,10 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                           .circular(
                                                                               10.0),
                                                                 ),
+                                                                filled: true,
+                                                                fillColor: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryBackground,
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)

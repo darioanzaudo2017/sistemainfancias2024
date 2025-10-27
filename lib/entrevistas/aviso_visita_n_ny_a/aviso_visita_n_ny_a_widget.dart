@@ -123,7 +123,7 @@ class _AvisoVisitaNNyAWidgetState extends State<AvisoVisitaNNyAWidget> {
                 maxWidth: 600.0,
               ),
               decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).secondaryBackground,
+                color: FlutterFlowTheme.of(context).primaryBackground,
                 borderRadius: BorderRadius.circular(20.0),
                 border: Border.all(
                   color: FlutterFlowTheme.of(context).primary,
@@ -270,6 +270,9 @@ class _AvisoVisitaNNyAWidgetState extends State<AvisoVisitaNNyAWidget> {
                                 ),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
+                              filled: true,
+                              fillColor: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -374,6 +377,9 @@ class _AvisoVisitaNNyAWidgetState extends State<AvisoVisitaNNyAWidget> {
                                 ),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
+                              filled: true,
+                              fillColor: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -478,6 +484,9 @@ class _AvisoVisitaNNyAWidgetState extends State<AvisoVisitaNNyAWidget> {
                                 ),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
+                              filled: true,
+                              fillColor: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -582,6 +591,9 @@ class _AvisoVisitaNNyAWidgetState extends State<AvisoVisitaNNyAWidget> {
                                 ),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
+                              filled: true,
+                              fillColor: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -686,6 +698,9 @@ class _AvisoVisitaNNyAWidgetState extends State<AvisoVisitaNNyAWidget> {
                                 ),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
+                              filled: true,
+                              fillColor: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium

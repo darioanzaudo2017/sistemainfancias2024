@@ -103,7 +103,7 @@ class _EstadodeaccionWidgetState extends State<EstadodeaccionWidget> {
               padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
               child: Container(
                 decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  color: FlutterFlowTheme.of(context).primaryBackground,
                   boxShadow: [
                     BoxShadow(
                       blurRadius: 4.0,
@@ -952,6 +952,8 @@ class _EstadodeaccionWidgetState extends State<EstadodeaccionWidget> {
                                               .secondaryText,
                                           size: 24.0,
                                         ),
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
                                         elevation: 2.0,
                                         borderColor:
                                             FlutterFlowTheme.of(context)

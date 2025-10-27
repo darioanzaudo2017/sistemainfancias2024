@@ -59,7 +59,7 @@ class _DerechoysubderechomedidaWidgetState
           width: 350.0,
           height: 200.0,
           decoration: BoxDecoration(
-            color: FlutterFlowTheme.of(context).secondaryBackground,
+            color: FlutterFlowTheme.of(context).primaryBackground,
             borderRadius: BorderRadius.circular(8.0),
           ),
           child: Padding(

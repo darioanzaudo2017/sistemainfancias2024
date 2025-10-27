@@ -72,7 +72,7 @@ class _IntervencionesrealizadasWidgetState
           width: 628.57,
           height: 406.4,
           decoration: BoxDecoration(
-            color: FlutterFlowTheme.of(context).secondaryBackground,
+            color: FlutterFlowTheme.of(context).primaryBackground,
             borderRadius: BorderRadius.circular(10.0),
           ),
           child: Column(
@@ -155,6 +155,9 @@ class _IntervencionesrealizadasWidgetState
                         ),
                         borderRadius: BorderRadius.circular(10.0),
                       ),
+                      filled: true,
+                      fillColor:
+                          FlutterFlowTheme.of(context).secondaryBackground,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           font: GoogleFonts.notoSansJp(
@@ -254,6 +257,9 @@ class _IntervencionesrealizadasWidgetState
                           ),
                           borderRadius: BorderRadius.circular(10.0),
                         ),
+                        filled: true,
+                        fillColor:
+                            FlutterFlowTheme.of(context).secondaryBackground,
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             font: GoogleFonts.notoSansJp(
@@ -355,6 +361,9 @@ class _IntervencionesrealizadasWidgetState
                         ),
                         borderRadius: BorderRadius.circular(10.0),
                       ),
+                      filled: true,
+                      fillColor:
+                          FlutterFlowTheme.of(context).secondaryBackground,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           font: GoogleFonts.notoSansJp(

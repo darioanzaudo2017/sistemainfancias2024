@@ -213,7 +213,9 @@ class _AmpliacioninformacionWidgetState
                       snapshot.data!;
 
                   return Container(
-                    decoration: BoxDecoration(),
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).primaryBackground,
+                    ),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
@@ -310,7 +312,7 @@ class _AmpliacioninformacionWidgetState
                                         width: 1130.89,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
+                                              .primaryBackground,
                                           borderRadius:
                                               BorderRadius.circular(10.0),
                                           border: Border.all(
@@ -554,6 +556,10 @@ class _AmpliacioninformacionWidgetState
                                                                         .circular(
                                                                             10.0),
                                                               ),
+                                                              filled: true,
+                                                              fillColor: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondaryBackground,
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -682,13 +688,6 @@ class _AmpliacioninformacionWidgetState
                                                                   MainAxisSize
                                                                       .max,
                                                               children: [
-                                                                Divider(
-                                                                  thickness:
-                                                                      2.0,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .alternate,
-                                                                ),
                                                                 Divider(
                                                                   thickness:
                                                                       2.0,
@@ -1378,7 +1377,7 @@ class _AmpliacioninformacionWidgetState
                                       width: 1100.0,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
+                                            .primaryBackground,
                                         borderRadius:
                                             BorderRadius.circular(10.0),
                                         border: Border.all(
@@ -1404,7 +1403,11 @@ class _AmpliacioninformacionWidgetState
                                                       'Entrevistas a otros'))
                                                 Container(
                                                   width: 1000.0,
-                                                  decoration: BoxDecoration(),
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBackground,
+                                                  ),
                                                   child: Container(
                                                     width: double.infinity,
                                                     color: Color(0x00000000),
@@ -1611,6 +1614,10 @@ class _AmpliacioninformacionWidgetState
                                                                         BorderRadius.circular(
                                                                             10.0),
                                                                   ),
+                                                                  filled: true,
+                                                                  fillColor: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryBackground,
                                                                 ),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
@@ -1764,6 +1771,11 @@ class _AmpliacioninformacionWidgetState
                                                                           BorderRadius.circular(
                                                                               10.0),
                                                                     ),
+                                                                    filled:
+                                                                        true,
+                                                                    fillColor: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondaryBackground,
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
@@ -2102,6 +2114,10 @@ class _AmpliacioninformacionWidgetState
                                                                           borderRadius:
                                                                               BorderRadius.circular(10.0),
                                                                         ),
+                                                                        filled:
+                                                                            true,
+                                                                        fillColor:
+                                                                            FlutterFlowTheme.of(context).secondaryBackground,
                                                                       ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
@@ -2229,6 +2245,10 @@ class _AmpliacioninformacionWidgetState
                                                                           borderRadius:
                                                                               BorderRadius.circular(10.0),
                                                                         ),
+                                                                        filled:
+                                                                            true,
+                                                                        fillColor:
+                                                                            FlutterFlowTheme.of(context).secondaryBackground,
                                                                       ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
@@ -2469,6 +2489,10 @@ class _AmpliacioninformacionWidgetState
                                                                         BorderRadius.circular(
                                                                             10.0),
                                                                   ),
+                                                                  filled: true,
+                                                                  fillColor: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryBackground,
                                                                 ),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
@@ -2777,6 +2801,11 @@ class _AmpliacioninformacionWidgetState
                                                                         borderRadius:
                                                                             BorderRadius.circular(10.0),
                                                                       ),
+                                                                      filled:
+                                                                          true,
+                                                                      fillColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .secondaryBackground,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -2882,43 +2911,7 @@ class _AmpliacioninformacionWidgetState
                                                                     .fontStyle,
                                                               ),
                                                         ),
-                                                        collapsed: Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.min,
-                                                          children: [
-                                                            Text(
-                                                              'Collapsed body text',
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    font: GoogleFonts
-                                                                        .notoSansJp(
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .fontStyle,
-                                                                    ),
-                                                                    color: Color(
-                                                                        0x8A000000),
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                            ),
-                                                          ],
-                                                        ),
+                                                        collapsed: Container(),
                                                         expanded: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -3308,43 +3301,7 @@ class _AmpliacioninformacionWidgetState
                                                                     .fontStyle,
                                                               ),
                                                         ),
-                                                        collapsed: Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.min,
-                                                          children: [
-                                                            Text(
-                                                              'Collapsed body text',
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    font: GoogleFonts
-                                                                        .notoSansJp(
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .fontStyle,
-                                                                    ),
-                                                                    color: Color(
-                                                                        0x8A000000),
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                            ),
-                                                          ],
-                                                        ),
+                                                        collapsed: Container(),
                                                         expanded: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -4023,6 +3980,8 @@ class _AmpliacioninformacionWidgetState
                                                                                             ),
                                                                                             borderRadius: BorderRadius.circular(10.0),
                                                                                           ),
+                                                                                          filled: true,
+                                                                                          fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                               font: GoogleFonts.notoSansJp(
@@ -4096,6 +4055,8 @@ class _AmpliacioninformacionWidgetState
                                                                                             ),
                                                                                             borderRadius: BorderRadius.circular(10.0),
                                                                                           ),
+                                                                                          filled: true,
+                                                                                          fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                               font: GoogleFonts.notoSansJp(
@@ -4843,12 +4804,12 @@ class _AmpliacioninformacionWidgetState
                                                                             .width *
                                                                         1.0,
                                                                     height:
-                                                                        673.65,
+                                                                        673.6,
                                                                     decoration:
                                                                         BoxDecoration(
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .secondaryBackground,
+                                                                          .primaryBackground,
                                                                     ),
                                                                     child:
                                                                         Column(
@@ -5087,7 +5048,7 @@ class _AmpliacioninformacionWidgetState
                                                                                   ),
                                                                               enabledBorder: OutlineInputBorder(
                                                                                 borderSide: BorderSide(
-                                                                                  color: FlutterFlowTheme.of(context).tertiary,
+                                                                                  color: FlutterFlowTheme.of(context).alternate,
                                                                                   width: 1.0,
                                                                                 ),
                                                                                 borderRadius: BorderRadius.circular(10.0),
@@ -5269,7 +5230,7 @@ class _AmpliacioninformacionWidgetState
                                                                                   ),
                                                                               enabledBorder: OutlineInputBorder(
                                                                                 borderSide: BorderSide(
-                                                                                  color: FlutterFlowTheme.of(context).tertiary,
+                                                                                  color: FlutterFlowTheme.of(context).alternate,
                                                                                   width: 1.0,
                                                                                 ),
                                                                                 borderRadius: BorderRadius.circular(10.0),
@@ -5421,6 +5382,8 @@ class _AmpliacioninformacionWidgetState
                                                                                       ),
                                                                                       borderRadius: BorderRadius.circular(10.0),
                                                                                     ),
+                                                                                    filled: true,
+                                                                                    fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                         font: GoogleFonts.notoSansJp(
@@ -5513,43 +5476,7 @@ class _AmpliacioninformacionWidgetState
                                                                     .fontStyle,
                                                               ),
                                                         ),
-                                                        collapsed: Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.min,
-                                                          children: [
-                                                            Text(
-                                                              'Collapsed body text',
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    font: GoogleFonts
-                                                                        .notoSansJp(
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .fontStyle,
-                                                                    ),
-                                                                    color: Color(
-                                                                        0x8A000000),
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                            ),
-                                                          ],
-                                                        ),
+                                                        collapsed: Container(),
                                                         expanded: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,

@@ -67,7 +67,7 @@ class _CambiarexpeWidgetState extends State<CambiarexpeWidget> {
           width: 400.0,
           height: 180.0,
           decoration: BoxDecoration(
-            color: FlutterFlowTheme.of(context).secondaryBackground,
+            color: FlutterFlowTheme.of(context).primaryBackground,
             borderRadius: BorderRadius.circular(10.0),
           ),
           child: Column(

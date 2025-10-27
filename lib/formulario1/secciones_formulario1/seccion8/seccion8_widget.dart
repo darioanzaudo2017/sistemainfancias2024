@@ -90,7 +90,7 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
                   width: MediaQuery.sizeOf(context).width * 0.8,
                   height: 593.0,
                   decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                    color: FlutterFlowTheme.of(context).primaryBackground,
                     borderRadius: BorderRadius.circular(20.0),
                     border: Border.all(
                       color: FlutterFlowTheme.of(context).primary,

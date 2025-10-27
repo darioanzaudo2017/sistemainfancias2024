@@ -66,7 +66,7 @@ class _AdjuntardocumentoampliacionWidgetState
         width: 450.0,
         height: 353.0,
         decoration: BoxDecoration(
-          color: FlutterFlowTheme.of(context).secondaryBackground,
+          color: FlutterFlowTheme.of(context).primaryBackground,
           boxShadow: [
             BoxShadow(
               blurRadius: 5.0,

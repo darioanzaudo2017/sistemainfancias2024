@@ -107,7 +107,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
               width: MediaQuery.sizeOf(context).width * 0.8,
               height: 946.0,
               decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).secondaryBackground,
+                color: FlutterFlowTheme.of(context).primaryBackground,
                 borderRadius: BorderRadius.circular(20.0),
                 shape: BoxShape.rectangle,
                 border: Border.all(
@@ -325,7 +325,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                                   ),
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .primary,
+                                                      .primaryText,
                                                   fontSize: 12.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight:
@@ -774,6 +774,10 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                             borderRadius:
                                                 BorderRadius.circular(10.0),
                                           ),
+                                          filled: true,
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -917,6 +921,10 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                             borderRadius:
                                                 BorderRadius.circular(10.0),
                                           ),
+                                          filled: true,
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -1326,6 +1334,10 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                             borderRadius:
                                                 BorderRadius.circular(10.0),
                                           ),
+                                          filled: true,
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -1363,12 +1375,12 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                       height: 270.0,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
+                                            .primaryBackground,
                                         borderRadius:
                                             BorderRadius.circular(10.0),
                                         border: Border.all(
                                           color: FlutterFlowTheme.of(context)
-                                              .secondary,
+                                              .alternate,
                                         ),
                                       ),
                                       child: Padding(
@@ -1661,12 +1673,12 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                                 1.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
+                                              .primaryBackground,
                                           borderRadius:
                                               BorderRadius.circular(10.0),
                                           border: Border.all(
                                             color: FlutterFlowTheme.of(context)
-                                                .secondary,
+                                                .alternate,
                                           ),
                                         ),
                                         child: Column(
@@ -1970,6 +1982,10 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                                           BorderRadius.circular(
                                                               10.0),
                                                     ),
+                                                    filled: true,
+                                                    fillColor: FlutterFlowTheme
+                                                            .of(context)
+                                                        .secondaryBackground,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)

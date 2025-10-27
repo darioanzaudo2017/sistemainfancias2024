@@ -94,7 +94,7 @@ class _OtrasactividadesWidgetState extends State<OtrasactividadesWidget> {
             child: Container(
               width: MediaQuery.sizeOf(context).width * 0.7,
               decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).secondaryBackground,
+                color: FlutterFlowTheme.of(context).primaryBackground,
                 borderRadius: BorderRadius.circular(10.0),
               ),
               child: Padding(

@@ -93,7 +93,7 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
       child: Container(
         width: 350.0,
         decoration: BoxDecoration(
-          color: FlutterFlowTheme.of(context).secondaryBackground,
+          color: FlutterFlowTheme.of(context).primaryBackground,
           borderRadius: BorderRadius.circular(10.0),
         ),
         child: Padding(

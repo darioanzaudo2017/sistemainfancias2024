@@ -155,7 +155,7 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                 maxWidth: 800.0,
               ),
               decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).secondaryBackground,
+                color: FlutterFlowTheme.of(context).primaryBackground,
                 borderRadius: BorderRadius.circular(20.0),
                 shape: BoxShape.rectangle,
                 border: Border.all(
@@ -322,6 +322,9 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                           borderRadius:
                                               BorderRadius.circular(10.0),
                                         ),
+                                        filled: true,
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -445,6 +448,9 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                           borderRadius:
                                               BorderRadius.circular(10.0),
                                         ),
+                                        filled: true,
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -568,6 +574,9 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                           borderRadius:
                                               BorderRadius.circular(10.0),
                                         ),
+                                        filled: true,
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -755,6 +764,10 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                                 borderRadius:
                                                     BorderRadius.circular(10.0),
                                               ),
+                                              filled: true,
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -907,6 +920,10 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                                 borderRadius:
                                                     BorderRadius.circular(10.0),
                                               ),
+                                              filled: true,
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -1058,6 +1075,10 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                                 borderRadius:
                                                     BorderRadius.circular(10.0),
                                               ),
+                                              filled: true,
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -1347,6 +1368,9 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                   ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
+                                filled: true,
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -1520,6 +1544,10 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                             borderRadius:
                                                 BorderRadius.circular(10.0),
                                           ),
+                                          filled: true,
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -1703,6 +1731,10 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                             borderRadius:
                                                 BorderRadius.circular(10.0),
                                           ),
+                                          filled: true,
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -1992,6 +2024,9 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                         borderRadius:
                                             BorderRadius.circular(10.0),
                                       ),
+                                      filled: true,
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -2193,6 +2228,9 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                         borderRadius:
                                             BorderRadius.circular(10.0),
                                       ),
+                                      filled: true,
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -2301,6 +2339,9 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                   ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
+                                filled: true,
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -2406,6 +2447,9 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                   ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
+                                filled: true,
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -2511,6 +2555,9 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                   ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
+                                filled: true,
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -2620,6 +2667,9 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                   ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
+                                filled: true,
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -2727,6 +2777,9 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                   ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
+                                filled: true,
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -2835,6 +2888,9 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                   ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
+                                filled: true,
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -2942,6 +2998,9 @@ class _Formulario7WidgetState extends State<Formulario7Widget> {
                                   ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
+                                filled: true,
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium

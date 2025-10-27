@@ -169,7 +169,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                     return Container(
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).alternate,
+                        color: FlutterFlowTheme.of(context).primaryBackground,
                       ),
                       child: Align(
                         alignment: AlignmentDirectional(0.0, 0.0),
@@ -212,7 +212,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                               ),
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
+                                    .primaryBackground,
                               ),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -556,7 +556,7 @@ class _ImprimirWidgetState extends State<ImprimirWidget> {
                                     width: 700.0,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                          .primaryBackground,
                                     ),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,

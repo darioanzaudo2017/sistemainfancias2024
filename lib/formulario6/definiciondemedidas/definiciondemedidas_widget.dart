@@ -363,7 +363,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                             height: MediaQuery.sizeOf(context).height * 1.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
+                                  .primaryBackground,
                             ),
                             child: SingleChildScrollView(
                               child: Column(
@@ -446,7 +446,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
+                                                      .primaryBackground,
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .titleSmall
@@ -464,7 +464,9 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                               .titleSmall
                                                               .fontStyle,
                                                     ),
-                                                    color: Color(0xFF39A9EF),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
                                                     letterSpacing: 0.0,
                                                     fontWeight:
                                                         FlutterFlowTheme.of(
@@ -479,7 +481,9 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                   ),
                                               elevation: 3.0,
                                               borderSide: BorderSide(
-                                                color: Color(0xFF39A9EF),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
                                               ),
                                               borderRadius:
                                                   BorderRadius.circular(25.0),
@@ -536,7 +540,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
+                                                      .primaryBackground,
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .titleSmall
@@ -554,7 +558,9 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                               .titleSmall
                                                               .fontStyle,
                                                     ),
-                                                    color: Color(0xFF39A9EF),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
                                                     letterSpacing: 0.0,
                                                     fontWeight:
                                                         FlutterFlowTheme.of(
@@ -569,7 +575,9 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                   ),
                                               elevation: 3.0,
                                               borderSide: BorderSide(
-                                                color: Color(0xFF39A9EF),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
                                               ),
                                               borderRadius:
                                                   BorderRadius.circular(25.0),
@@ -914,7 +922,10 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                     ),
                                   ),
                                   Container(
-                                    decoration: BoxDecoration(),
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                    ),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
@@ -1737,13 +1748,13 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                                 height: 30.0,
                                                                                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                color: Color(0x4C4B39EF),
+                                                                                color: FlutterFlowTheme.of(context).primary,
                                                                                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                       font: GoogleFonts.plusJakartaSans(
                                                                                         fontWeight: FontWeight.w500,
                                                                                         fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
                                                                                       ),
-                                                                                      color: Color(0xFF14181B),
+                                                                                      color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                       fontSize: 14.0,
                                                                                       letterSpacing: 0.0,
                                                                                       fontWeight: FontWeight.w500,
@@ -1751,7 +1762,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                                     ),
                                                                                 elevation: 0.0,
                                                                                 borderSide: BorderSide(
-                                                                                  color: Color(0xFF4B39EF),
+                                                                                  color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                   width: 2.0,
                                                                                 ),
                                                                                 borderRadius: BorderRadius.circular(12.0),

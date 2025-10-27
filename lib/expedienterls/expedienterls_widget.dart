@@ -952,7 +952,7 @@ class _ExpedienterlsWidgetState extends State<ExpedienterlsWidget> {
                     );
                   },
                 ),
-              ],
+              ].divide(SizedBox(height: 10.0)),
             ),
           ),
         ),

@@ -102,7 +102,7 @@ class _ListaconvocatoriaNNyAWidgetState
             child: Container(
               width: 600.0,
               decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).secondaryBackground,
+                color: FlutterFlowTheme.of(context).primaryBackground,
                 borderRadius: BorderRadius.circular(10.0),
               ),
               child: Padding(

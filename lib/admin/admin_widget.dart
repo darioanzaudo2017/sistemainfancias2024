@@ -149,7 +149,9 @@ class _AdminWidgetState extends State<AdminWidget>
               child: Container(
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 height: MediaQuery.sizeOf(context).height * 1.0,
-                decoration: BoxDecoration(),
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).primaryBackground,
+                ),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [

@@ -149,8 +149,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                           maxWidth: 600.0,
                         ),
                         decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                          color: FlutterFlowTheme.of(context).primaryBackground,
                           borderRadius: BorderRadius.circular(20.0),
                         ),
                         alignment: AlignmentDirectional(0.0, 0.0),
@@ -2649,7 +2648,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                       width: 633.3,
                       height: 841.28,
                       decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        color: FlutterFlowTheme.of(context).primaryBackground,
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                       child: Padding(
@@ -2661,7 +2660,8 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                             Container(
                               width: double.infinity,
                               decoration: BoxDecoration(
-                                color: Color(0xFFE8EDF5),
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
                               child: Padding(
@@ -2832,7 +2832,8 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                           .headlineSmall
                                           .fontStyle,
                                     ),
-                                    color: Color(0xFF0D141C),
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     fontSize: 22.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,

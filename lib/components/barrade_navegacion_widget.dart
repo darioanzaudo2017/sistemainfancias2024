@@ -136,7 +136,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                     children: [
                       Icon(
                         Icons.home,
-                        color: Color(0xFF15161E),
+                        color: FlutterFlowTheme.of(context).primaryText,
                         size: 24.0,
                       ),
                       Expanded(
@@ -154,7 +154,8 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                                         .bodyMedium
                                         .fontStyle,
                                   ),
-                                  color: Color(0xFF15161E),
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                   fontSize: 14.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
@@ -224,7 +225,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                       children: [
                         FaIcon(
                           FontAwesomeIcons.addressBook,
-                          color: Color(0xFF15161E),
+                          color: FlutterFlowTheme.of(context).primaryText,
                           size: 24.0,
                         ),
                         Expanded(
@@ -242,7 +243,8 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                                           .bodyMedium
                                           .fontStyle,
                                     ),
-                                    color: Color(0xFF15161E),
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -304,7 +306,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                       children: [
                         FaIcon(
                           FontAwesomeIcons.addressBook,
-                          color: Color(0xFF15161E),
+                          color: FlutterFlowTheme.of(context).primaryText,
                           size: 24.0,
                         ),
                         Expanded(
@@ -322,7 +324,8 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                                           .bodyMedium
                                           .fontStyle,
                                     ),
-                                    color: Color(0xFF15161E),
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -384,7 +387,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                       children: [
                         Icon(
                           Icons.upload_file,
-                          color: Color(0xFF15161E),
+                          color: FlutterFlowTheme.of(context).primaryText,
                           size: 24.0,
                         ),
                         Expanded(
@@ -402,7 +405,8 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                                           .bodyMedium
                                           .fontStyle,
                                     ),
-                                    color: Color(0xFF15161E),
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,

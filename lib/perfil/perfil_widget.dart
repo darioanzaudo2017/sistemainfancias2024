@@ -887,7 +887,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                       child: Container(
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
+                                              .primaryBackground,
                                         ),
                                         child: Padding(
                                           padding:
@@ -1214,384 +1214,67 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                           padding:
                                                               EdgeInsets.all(
                                                                   5.0),
-                                                          child: Material(
-                                                            color: Colors
-                                                                .transparent,
-                                                            elevation: 5.0,
-                                                            shape:
-                                                                RoundedRectangleBorder(
+                                                          child: Container(
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondaryBackground,
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
                                                                           20.0),
-                                                            ),
-                                                            child: Container(
-                                                              decoration:
-                                                                  BoxDecoration(
+                                                              border:
+                                                                  Border.all(
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .secondaryBackground,
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            20.0),
-                                                              ),
-                                                              child: Column(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .min,
-                                                                children: [
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            20.0,
-                                                                            0.0),
-                                                                    child: Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      mainAxisAlignment:
-                                                                          MainAxisAlignment
-                                                                              .spaceBetween,
-                                                                      crossAxisAlignment:
-                                                                          CrossAxisAlignment
-                                                                              .center,
-                                                                      children:
-                                                                          [
-                                                                        Flexible(
-                                                                          child:
-                                                                              Align(
-                                                                            alignment:
-                                                                                AlignmentDirectional(-1.0, -1.0),
-                                                                            child:
-                                                                                Row(
-                                                                              mainAxisSize: MainAxisSize.min,
-                                                                              crossAxisAlignment: CrossAxisAlignment.center,
-                                                                              children: [
-                                                                                Container(
-                                                                                  width: 15.0,
-                                                                                  height: 120.0,
-                                                                                  decoration: BoxDecoration(
-                                                                                    color: () {
-                                                                                      if (containeringresosIngresosRow!.form9! && !containeringresosIngresosRow.form9completo!) {
-                                                                                        return FlutterFlowTheme.of(context).alternate;
-                                                                                      } else if (containeringresosIngresosRow.form9! && containeringresosIngresosRow.form9completo!) {
-                                                                                        return FlutterFlowTheme.of(context).success;
-                                                                                      } else {
-                                                                                        return Color(0x00000000);
-                                                                                      }
-                                                                                    }(),
-                                                                                    borderRadius: BorderRadius.only(
-                                                                                      bottomLeft: Radius.circular(20.0),
-                                                                                      bottomRight: Radius.circular(0.0),
-                                                                                      topLeft: Radius.circular(20.0),
-                                                                                      topRight: Radius.circular(0.0),
-                                                                                    ),
-                                                                                    shape: BoxShape.rectangle,
-                                                                                  ),
-                                                                                ),
-                                                                                Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
-                                                                                  child: Column(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                    children: [
-                                                                                      Text(
-                                                                                        '5. Cese de la intervención',
-                                                                                        style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                              font: GoogleFonts.notoSansJp(
-                                                                                                fontWeight: FontWeight.w600,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
-                                                                                              ),
-                                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                                              letterSpacing: 0.0,
-                                                                                              fontWeight: FontWeight.w600,
-                                                                                              fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
-                                                                                            ),
-                                                                                      ),
-                                                                                      Container(
-                                                                                        width: 450.0,
-                                                                                        decoration: BoxDecoration(),
-                                                                                        child: Align(
-                                                                                          alignment: AlignmentDirectional(-1.0, 0.0),
-                                                                                          child: Column(
-                                                                                            mainAxisSize: MainAxisSize.max,
-                                                                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                            children: [
-                                                                                              Text(
-                                                                                                'Causa: ${containeringresosIngresosRow?.motivocierre}',
-                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                      font: GoogleFonts.notoSansJp(
-                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                      ),
-                                                                                                      letterSpacing: 0.0,
-                                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                    ),
-                                                                                              ),
-                                                                                              Text(
-                                                                                                'Fecha: ${dateTimeFormat(
-                                                                                                  "d/M/y",
-                                                                                                  containeringresosIngresosRow?.fechacierre,
-                                                                                                  locale: FFLocalizations.of(context).languageCode,
-                                                                                                )}',
-                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                      font: GoogleFonts.notoSansJp(
-                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                      ),
-                                                                                                      letterSpacing: 0.0,
-                                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                    ),
-                                                                                              ),
-                                                                                              Text(
-                                                                                                'Observacion: ${containeringresosIngresosRow?.observacioncierre}'.maybeHandleOverflow(
-                                                                                                  maxChars: 40,
-                                                                                                ),
-                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                      font: GoogleFonts.notoSansJp(
-                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                      ),
-                                                                                                      letterSpacing: 0.0,
-                                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                    ),
-                                                                                              ),
-                                                                                            ],
-                                                                                          ),
-                                                                                        ),
-                                                                                      ),
-                                                                                    ].divide(SizedBox(height: 4.0)),
-                                                                                  ),
-                                                                                ),
-                                                                              ],
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                        Flexible(
-                                                                          child:
-                                                                              Container(
-                                                                            width:
-                                                                                200.0,
-                                                                            decoration:
-                                                                                BoxDecoration(),
-                                                                            child:
-                                                                                Column(
-                                                                              mainAxisSize: MainAxisSize.max,
-                                                                              crossAxisAlignment: CrossAxisAlignment.center,
-                                                                              children: [
-                                                                                Column(
-                                                                                  mainAxisSize: MainAxisSize.max,
-                                                                                  children: [
-                                                                                    if (!containeringresosIngresosRow!.form9completo!)
-                                                                                      Align(
-                                                                                        alignment: AlignmentDirectional(0.0, 1.0),
-                                                                                        child: FFButtonWidget(
-                                                                                          onPressed: () async {
-                                                                                            context.pushNamed(
-                                                                                              SenafWidget.routeName,
-                                                                                              queryParameters: {
-                                                                                                'ingrow': serializeParam(
-                                                                                                  containeringresosIngresosRow,
-                                                                                                  ParamType.SupabaseRow,
-                                                                                                ),
-                                                                                                'expediente': serializeParam(
-                                                                                                  widget.rowexp,
-                                                                                                  ParamType.SupabaseRow,
-                                                                                                ),
-                                                                                                'usuariorow': serializeParam(
-                                                                                                  widget.usuariorow,
-                                                                                                  ParamType.SupabaseRow,
-                                                                                                ),
-                                                                                                'usuariorol': serializeParam(
-                                                                                                  widget.usuariorol,
-                                                                                                  ParamType.SupabaseRow,
-                                                                                                ),
-                                                                                                'spdrow': serializeParam(
-                                                                                                  widget.spd,
-                                                                                                  ParamType.SupabaseRow,
-                                                                                                ),
-                                                                                              }.withoutNulls,
-                                                                                            );
-                                                                                          },
-                                                                                          text: 'Completar',
-                                                                                          options: FFButtonOptions(
-                                                                                            width: 150.0,
-                                                                                            height: 30.0,
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                            color: FlutterFlowTheme.of(context).primary,
-                                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: GoogleFonts.notoSansJp(
-                                                                                                    fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                  ),
-                                                                                                  color: Colors.white,
-                                                                                                  letterSpacing: 0.0,
-                                                                                                  fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                ),
-                                                                                            elevation: 3.0,
-                                                                                            borderSide: BorderSide(
-                                                                                              color: Colors.transparent,
-                                                                                              width: 1.0,
-                                                                                            ),
-                                                                                            borderRadius: BorderRadius.circular(8.0),
-                                                                                          ),
-                                                                                        ),
-                                                                                      ),
-                                                                                    if (containeringresosIngresosRow.form9completo ?? true)
-                                                                                      Align(
-                                                                                        alignment: AlignmentDirectional(0.0, 1.0),
-                                                                                        child: FFButtonWidget(
-                                                                                          onPressed: () async {
-                                                                                            context.pushNamed(
-                                                                                              SenafWidget.routeName,
-                                                                                              queryParameters: {
-                                                                                                'ingrow': serializeParam(
-                                                                                                  containeringresosIngresosRow,
-                                                                                                  ParamType.SupabaseRow,
-                                                                                                ),
-                                                                                                'expediente': serializeParam(
-                                                                                                  widget.rowexp,
-                                                                                                  ParamType.SupabaseRow,
-                                                                                                ),
-                                                                                                'usuariorow': serializeParam(
-                                                                                                  widget.usuariorow,
-                                                                                                  ParamType.SupabaseRow,
-                                                                                                ),
-                                                                                                'usuariorol': serializeParam(
-                                                                                                  widget.usuariorol,
-                                                                                                  ParamType.SupabaseRow,
-                                                                                                ),
-                                                                                                'spdrow': serializeParam(
-                                                                                                  widget.spd,
-                                                                                                  ParamType.SupabaseRow,
-                                                                                                ),
-                                                                                              }.withoutNulls,
-                                                                                            );
-                                                                                          },
-                                                                                          text: 'Editar',
-                                                                                          options: FFButtonOptions(
-                                                                                            width: 150.0,
-                                                                                            height: 30.0,
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                            color: FlutterFlowTheme.of(context).secondary,
-                                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: GoogleFonts.notoSansJp(
-                                                                                                    fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                  ),
-                                                                                                  color: Colors.white,
-                                                                                                  letterSpacing: 0.0,
-                                                                                                  fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                ),
-                                                                                            elevation: 3.0,
-                                                                                            borderSide: BorderSide(
-                                                                                              color: Colors.transparent,
-                                                                                              width: 1.0,
-                                                                                            ),
-                                                                                            borderRadius: BorderRadius.circular(8.0),
-                                                                                          ),
-                                                                                        ),
-                                                                                      ),
-                                                                                  ].divide(SizedBox(height: 5.0)),
-                                                                                ),
-                                                                              ].divide(SizedBox(height: 5.0)),
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      ].divide(SizedBox(
-                                                                              width: 16.0)),
-                                                                    ),
-                                                                  ),
-                                                                ],
+                                                                    .alternate,
                                                               ),
                                                             ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    if (containeringresosIngresosRow
-                                                            ?.form6 ??
-                                                        true)
-                                                      Align(
-                                                        alignment:
-                                                            AlignmentDirectional(
-                                                                -1.0, 0.0),
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsets.all(
-                                                                  5.0),
-                                                          child: Material(
-                                                            color: Colors
-                                                                .transparent,
-                                                            elevation: 5.0,
-                                                            shape:
-                                                                RoundedRectangleBorder(
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          20.0),
-                                                            ),
-                                                            child: Container(
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryBackground,
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            20.0),
-                                                              ),
-                                                              child: Column(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                children: [
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            20.0,
-                                                                            0.0),
-                                                                    child: Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      mainAxisAlignment:
-                                                                          MainAxisAlignment
-                                                                              .spaceBetween,
-                                                                      crossAxisAlignment:
-                                                                          CrossAxisAlignment
-                                                                              .center,
-                                                                      children:
-                                                                          [
-                                                                        Align(
+                                                            child: Column(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .min,
+                                                              children: [
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          20.0,
+                                                                          0.0),
+                                                                  child: Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .spaceBetween,
+                                                                    crossAxisAlignment:
+                                                                        CrossAxisAlignment
+                                                                            .center,
+                                                                    children: [
+                                                                      Flexible(
+                                                                        child:
+                                                                            Align(
                                                                           alignment: AlignmentDirectional(
-                                                                              1.0,
-                                                                              0.0),
+                                                                              -1.0,
+                                                                              -1.0),
                                                                           child:
                                                                               Row(
                                                                             mainAxisSize:
-                                                                                MainAxisSize.max,
+                                                                                MainAxisSize.min,
+                                                                            crossAxisAlignment:
+                                                                                CrossAxisAlignment.center,
                                                                             children: [
                                                                               Container(
                                                                                 width: 15.0,
-                                                                                height: 100.0,
+                                                                                height: 120.0,
                                                                                 decoration: BoxDecoration(
                                                                                   color: () {
-                                                                                    if (containeringresosIngresosRow!.form6! && !containeringresosIngresosRow.form6completo!) {
+                                                                                    if (containeringresosIngresosRow!.form9! && !containeringresosIngresosRow.form9completo!) {
                                                                                       return FlutterFlowTheme.of(context).alternate;
-                                                                                    } else if (containeringresosIngresosRow.form6! && containeringresosIngresosRow.form6completo!) {
+                                                                                    } else if (containeringresosIngresosRow.form9! && containeringresosIngresosRow.form9completo!) {
                                                                                       return FlutterFlowTheme.of(context).success;
                                                                                     } else {
                                                                                       return Color(0x00000000);
@@ -1612,21 +1295,72 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                                                   children: [
-                                                                                    Container(
-                                                                                      width: 500.0,
-                                                                                      decoration: BoxDecoration(),
-                                                                                      child: Text(
-                                                                                        '4. Definicion, sustitucion y seguimiento  de la MPI',
-                                                                                        style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                              font: GoogleFonts.notoSansJp(
-                                                                                                fontWeight: FontWeight.w600,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
-                                                                                              ),
-                                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                                              letterSpacing: 0.0,
+                                                                                    Text(
+                                                                                      '5. Cese de la intervención',
+                                                                                      style: FlutterFlowTheme.of(context).headlineSmall.override(
+                                                                                            font: GoogleFonts.notoSansJp(
                                                                                               fontWeight: FontWeight.w600,
                                                                                               fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
                                                                                             ),
+                                                                                            color: FlutterFlowTheme.of(context).primary,
+                                                                                            letterSpacing: 0.0,
+                                                                                            fontWeight: FontWeight.w600,
+                                                                                            fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
+                                                                                          ),
+                                                                                    ),
+                                                                                    Container(
+                                                                                      width: 450.0,
+                                                                                      decoration: BoxDecoration(),
+                                                                                      child: Align(
+                                                                                        alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                        child: Column(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                          children: [
+                                                                                            Text(
+                                                                                              'Causa: ${containeringresosIngresosRow?.motivocierre}',
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    font: GoogleFonts.notoSansJp(
+                                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                    ),
+                                                                                                    letterSpacing: 0.0,
+                                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                  ),
+                                                                                            ),
+                                                                                            Text(
+                                                                                              'Fecha: ${dateTimeFormat(
+                                                                                                "d/M/y",
+                                                                                                containeringresosIngresosRow?.fechacierre,
+                                                                                                locale: FFLocalizations.of(context).languageCode,
+                                                                                              )}',
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    font: GoogleFonts.notoSansJp(
+                                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                    ),
+                                                                                                    letterSpacing: 0.0,
+                                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                  ),
+                                                                                            ),
+                                                                                            Text(
+                                                                                              'Observacion: ${containeringresosIngresosRow?.observacioncierre}'.maybeHandleOverflow(
+                                                                                                maxChars: 40,
+                                                                                              ),
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    font: GoogleFonts.notoSansJp(
+                                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                    ),
+                                                                                                    letterSpacing: 0.0,
+                                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                  ),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
                                                                                       ),
                                                                                     ),
                                                                                   ].divide(SizedBox(height: 4.0)),
@@ -1635,43 +1369,511 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                             ],
                                                                           ),
                                                                         ),
-                                                                        Flexible(
+                                                                      ),
+                                                                      Flexible(
+                                                                        child:
+                                                                            Container(
+                                                                          width:
+                                                                              200.0,
+                                                                          decoration:
+                                                                              BoxDecoration(),
                                                                           child:
-                                                                              Container(
-                                                                            width:
-                                                                                200.0,
-                                                                            decoration:
-                                                                                BoxDecoration(),
-                                                                            child:
-                                                                                Column(
-                                                                              mainAxisSize: MainAxisSize.max,
-                                                                              crossAxisAlignment: CrossAxisAlignment.center,
-                                                                              children: [
+                                                                              Column(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            crossAxisAlignment:
+                                                                                CrossAxisAlignment.center,
+                                                                            children:
+                                                                                [
+                                                                              Column(
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                children: [
+                                                                                  if (!containeringresosIngresosRow!.form9completo!)
+                                                                                    Align(
+                                                                                      alignment: AlignmentDirectional(0.0, 1.0),
+                                                                                      child: FFButtonWidget(
+                                                                                        onPressed: () async {
+                                                                                          context.pushNamed(
+                                                                                            SenafWidget.routeName,
+                                                                                            queryParameters: {
+                                                                                              'ingrow': serializeParam(
+                                                                                                containeringresosIngresosRow,
+                                                                                                ParamType.SupabaseRow,
+                                                                                              ),
+                                                                                              'expediente': serializeParam(
+                                                                                                widget.rowexp,
+                                                                                                ParamType.SupabaseRow,
+                                                                                              ),
+                                                                                              'usuariorow': serializeParam(
+                                                                                                widget.usuariorow,
+                                                                                                ParamType.SupabaseRow,
+                                                                                              ),
+                                                                                              'usuariorol': serializeParam(
+                                                                                                widget.usuariorol,
+                                                                                                ParamType.SupabaseRow,
+                                                                                              ),
+                                                                                              'spdrow': serializeParam(
+                                                                                                widget.spd,
+                                                                                                ParamType.SupabaseRow,
+                                                                                              ),
+                                                                                            }.withoutNulls,
+                                                                                          );
+                                                                                        },
+                                                                                        text: 'Completar',
+                                                                                        options: FFButtonOptions(
+                                                                                          width: 150.0,
+                                                                                          height: 30.0,
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                          color: FlutterFlowTheme.of(context).primary,
+                                                                                          textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                font: GoogleFonts.notoSansJp(
+                                                                                                  fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                ),
+                                                                                                color: Colors.white,
+                                                                                                letterSpacing: 0.0,
+                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                              ),
+                                                                                          elevation: 3.0,
+                                                                                          borderSide: BorderSide(
+                                                                                            color: Colors.transparent,
+                                                                                            width: 1.0,
+                                                                                          ),
+                                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  if (containeringresosIngresosRow.form9completo ?? true)
+                                                                                    Align(
+                                                                                      alignment: AlignmentDirectional(0.0, 1.0),
+                                                                                      child: FFButtonWidget(
+                                                                                        onPressed: () async {
+                                                                                          context.pushNamed(
+                                                                                            SenafWidget.routeName,
+                                                                                            queryParameters: {
+                                                                                              'ingrow': serializeParam(
+                                                                                                containeringresosIngresosRow,
+                                                                                                ParamType.SupabaseRow,
+                                                                                              ),
+                                                                                              'expediente': serializeParam(
+                                                                                                widget.rowexp,
+                                                                                                ParamType.SupabaseRow,
+                                                                                              ),
+                                                                                              'usuariorow': serializeParam(
+                                                                                                widget.usuariorow,
+                                                                                                ParamType.SupabaseRow,
+                                                                                              ),
+                                                                                              'usuariorol': serializeParam(
+                                                                                                widget.usuariorol,
+                                                                                                ParamType.SupabaseRow,
+                                                                                              ),
+                                                                                              'spdrow': serializeParam(
+                                                                                                widget.spd,
+                                                                                                ParamType.SupabaseRow,
+                                                                                              ),
+                                                                                            }.withoutNulls,
+                                                                                          );
+                                                                                        },
+                                                                                        text: 'Editar',
+                                                                                        options: FFButtonOptions(
+                                                                                          width: 150.0,
+                                                                                          height: 30.0,
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                          color: FlutterFlowTheme.of(context).secondary,
+                                                                                          textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                font: GoogleFonts.notoSansJp(
+                                                                                                  fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                ),
+                                                                                                color: Colors.white,
+                                                                                                letterSpacing: 0.0,
+                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                              ),
+                                                                                          elevation: 3.0,
+                                                                                          borderSide: BorderSide(
+                                                                                            color: Colors.transparent,
+                                                                                            width: 1.0,
+                                                                                          ),
+                                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                ].divide(SizedBox(height: 5.0)),
+                                                                              ),
+                                                                            ].divide(SizedBox(height: 5.0)),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ].divide(SizedBox(
+                                                                        width:
+                                                                            16.0)),
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    if (containeringresosIngresosRow
+                                                            ?.form6 ??
+                                                        true)
+                                                      Align(
+                                                        alignment:
+                                                            AlignmentDirectional(
+                                                                -1.0, 0.0),
+                                                        child: Padding(
+                                                          padding:
+                                                              EdgeInsets.all(
+                                                                  5.0),
+                                                          child: Container(
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondaryBackground,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          20.0),
+                                                              border:
+                                                                  Border.all(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .alternate,
+                                                              ),
+                                                            ),
+                                                            child: Column(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              children: [
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          20.0,
+                                                                          0.0),
+                                                                  child: Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .spaceBetween,
+                                                                    crossAxisAlignment:
+                                                                        CrossAxisAlignment
+                                                                            .center,
+                                                                    children: [
+                                                                      Align(
+                                                                        alignment: AlignmentDirectional(
+                                                                            1.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children: [
+                                                                            Container(
+                                                                              width: 15.0,
+                                                                              height: 100.0,
+                                                                              decoration: BoxDecoration(
+                                                                                color: () {
+                                                                                  if (containeringresosIngresosRow!.form6! && !containeringresosIngresosRow.form6completo!) {
+                                                                                    return FlutterFlowTheme.of(context).alternate;
+                                                                                  } else if (containeringresosIngresosRow.form6! && containeringresosIngresosRow.form6completo!) {
+                                                                                    return FlutterFlowTheme.of(context).success;
+                                                                                  } else {
+                                                                                    return Color(0x00000000);
+                                                                                  }
+                                                                                }(),
+                                                                                borderRadius: BorderRadius.only(
+                                                                                  bottomLeft: Radius.circular(20.0),
+                                                                                  bottomRight: Radius.circular(0.0),
+                                                                                  topLeft: Radius.circular(20.0),
+                                                                                  topRight: Radius.circular(0.0),
+                                                                                ),
+                                                                                shape: BoxShape.rectangle,
+                                                                              ),
+                                                                            ),
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
+                                                                              child: Column(
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                children: [
+                                                                                  Container(
+                                                                                    width: 500.0,
+                                                                                    decoration: BoxDecoration(),
+                                                                                    child: Text(
+                                                                                      '4. Definicion, sustitucion y seguimiento  de la MPI',
+                                                                                      style: FlutterFlowTheme.of(context).headlineSmall.override(
+                                                                                            font: GoogleFonts.notoSansJp(
+                                                                                              fontWeight: FontWeight.w600,
+                                                                                              fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
+                                                                                            ),
+                                                                                            color: FlutterFlowTheme.of(context).primary,
+                                                                                            letterSpacing: 0.0,
+                                                                                            fontWeight: FontWeight.w600,
+                                                                                            fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
+                                                                                          ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ].divide(SizedBox(height: 4.0)),
+                                                                              ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      ),
+                                                                      Flexible(
+                                                                        child:
+                                                                            Container(
+                                                                          width:
+                                                                              200.0,
+                                                                          decoration:
+                                                                              BoxDecoration(),
+                                                                          child:
+                                                                              Column(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            crossAxisAlignment:
+                                                                                CrossAxisAlignment.center,
+                                                                            children:
+                                                                                [
+                                                                              Align(
+                                                                                alignment: AlignmentDirectional(0.0, 1.0),
+                                                                                child: FFButtonWidget(
+                                                                                  onPressed: () async {
+                                                                                    context.pushNamed(
+                                                                                      DefiniciondemedidasWidget.routeName,
+                                                                                      queryParameters: {
+                                                                                        'ingresorow': serializeParam(
+                                                                                          containeringresosIngresosRow,
+                                                                                          ParamType.SupabaseRow,
+                                                                                        ),
+                                                                                        'rowexp': serializeParam(
+                                                                                          widget.rowexp,
+                                                                                          ParamType.SupabaseRow,
+                                                                                        ),
+                                                                                        'usuariorow': serializeParam(
+                                                                                          widget.usuariorow,
+                                                                                          ParamType.SupabaseRow,
+                                                                                        ),
+                                                                                        'usuariosrol': serializeParam(
+                                                                                          widget.usuariorol,
+                                                                                          ParamType.SupabaseRow,
+                                                                                        ),
+                                                                                        'spd': serializeParam(
+                                                                                          widget.spd,
+                                                                                          ParamType.SupabaseRow,
+                                                                                        ),
+                                                                                      }.withoutNulls,
+                                                                                    );
+                                                                                  },
+                                                                                  text: 'Completar',
+                                                                                  options: FFButtonOptions(
+                                                                                    width: 150.0,
+                                                                                    height: 30.0,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    color: !containeringresosIngresosRow!.form6completo! ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).secondary,
+                                                                                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                          font: GoogleFonts.notoSansJp(
+                                                                                            fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                            fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                          ),
+                                                                                          color: Colors.white,
+                                                                                          letterSpacing: 0.0,
+                                                                                          fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                          fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                        ),
+                                                                                    elevation: 3.0,
+                                                                                    borderSide: BorderSide(
+                                                                                      color: Colors.transparent,
+                                                                                      width: 1.0,
+                                                                                    ),
+                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ].divide(SizedBox(height: 5.0)),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ].divide(SizedBox(
+                                                                        width:
+                                                                            16.0)),
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    if (containeringresosIngresosRow
+                                                            ?.ampliacioncompleto ??
+                                                        true)
+                                                      Align(
+                                                        alignment:
+                                                            AlignmentDirectional(
+                                                                -1.0, 0.0),
+                                                        child: Padding(
+                                                          padding:
+                                                              EdgeInsets.all(
+                                                                  5.0),
+                                                          child: Container(
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondaryBackground,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          20.0),
+                                                              border:
+                                                                  Border.all(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .alternate,
+                                                              ),
+                                                            ),
+                                                            child: Column(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              children: [
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          20.0,
+                                                                          0.0),
+                                                                  child: Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .spaceBetween,
+                                                                    crossAxisAlignment:
+                                                                        CrossAxisAlignment
+                                                                            .center,
+                                                                    children: [
+                                                                      Align(
+                                                                        alignment: AlignmentDirectional(
+                                                                            1.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children: [
+                                                                            Container(
+                                                                              width: 15.0,
+                                                                              height: 120.0,
+                                                                              decoration: BoxDecoration(
+                                                                                color: () {
+                                                                                  if (containeringresosIngresosRow!.form5! && !containeringresosIngresosRow.form5completo!) {
+                                                                                    return FlutterFlowTheme.of(context).alternate;
+                                                                                  } else if (containeringresosIngresosRow.form5! && containeringresosIngresosRow.form5completo!) {
+                                                                                    return FlutterFlowTheme.of(context).success;
+                                                                                  } else {
+                                                                                    return Color(0x00000000);
+                                                                                  }
+                                                                                }(),
+                                                                                borderRadius: BorderRadius.only(
+                                                                                  bottomLeft: Radius.circular(20.0),
+                                                                                  bottomRight: Radius.circular(0.0),
+                                                                                  topLeft: Radius.circular(20.0),
+                                                                                  topRight: Radius.circular(0.0),
+                                                                                ),
+                                                                                shape: BoxShape.rectangle,
+                                                                              ),
+                                                                            ),
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
+                                                                              child: Column(
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                children: [
+                                                                                  Container(
+                                                                                    width: 300.0,
+                                                                                    decoration: BoxDecoration(),
+                                                                                    child: Text(
+                                                                                      '3.  Informe síntesis de Valoracion Integral y propuestas de MPI',
+                                                                                      style: FlutterFlowTheme.of(context).headlineSmall.override(
+                                                                                            font: GoogleFonts.notoSansJp(
+                                                                                              fontWeight: FontWeight.w600,
+                                                                                              fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
+                                                                                            ),
+                                                                                            color: FlutterFlowTheme.of(context).primary,
+                                                                                            letterSpacing: 0.0,
+                                                                                            fontWeight: FontWeight.w600,
+                                                                                            fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
+                                                                                          ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ].divide(SizedBox(height: 4.0)),
+                                                                              ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      ),
+                                                                      Flexible(
+                                                                        child:
+                                                                            Container(
+                                                                          width:
+                                                                              200.0,
+                                                                          decoration:
+                                                                              BoxDecoration(),
+                                                                          child:
+                                                                              Column(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            crossAxisAlignment:
+                                                                                CrossAxisAlignment.center,
+                                                                            children:
+                                                                                [
+                                                                              if ((containeringresosIngresosRow?.form5 == true) && (containeringresosIngresosRow?.form5completo == false))
                                                                                 Align(
                                                                                   alignment: AlignmentDirectional(0.0, 1.0),
                                                                                   child: FFButtonWidget(
                                                                                     onPressed: () async {
                                                                                       context.pushNamed(
-                                                                                        DefiniciondemedidasWidget.routeName,
+                                                                                        Formulario5PaginaWidget.routeName,
                                                                                         queryParameters: {
-                                                                                          'ingresorow': serializeParam(
-                                                                                            containeringresosIngresosRow,
-                                                                                            ParamType.SupabaseRow,
+                                                                                          'idingreso': serializeParam(
+                                                                                            widget.idingreso,
+                                                                                            ParamType.int,
                                                                                           ),
-                                                                                          'rowexp': serializeParam(
+                                                                                          'rowexpediente': serializeParam(
                                                                                             widget.rowexp,
                                                                                             ParamType.SupabaseRow,
+                                                                                          ),
+                                                                                          'edit': serializeParam(
+                                                                                            false,
+                                                                                            ParamType.bool,
                                                                                           ),
                                                                                           'usuariorow': serializeParam(
                                                                                             widget.usuariorow,
                                                                                             ParamType.SupabaseRow,
                                                                                           ),
-                                                                                          'usuariosrol': serializeParam(
+                                                                                          'usuariorol': serializeParam(
                                                                                             widget.usuariorol,
                                                                                             ParamType.SupabaseRow,
                                                                                           ),
                                                                                           'spd': serializeParam(
                                                                                             widget.spd,
+                                                                                            ParamType.SupabaseRow,
+                                                                                          ),
+                                                                                          'rowingreso': serializeParam(
+                                                                                            containeringresosIngresosRow,
                                                                                             ParamType.SupabaseRow,
                                                                                           ),
                                                                                         }.withoutNulls,
@@ -1683,7 +1885,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                       height: 30.0,
                                                                                       padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                                                                                       iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                      color: !containeringresosIngresosRow!.form6completo! ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).secondary,
+                                                                                      color: FlutterFlowTheme.of(context).primary,
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             font: GoogleFonts.notoSansJp(
                                                                                               fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
@@ -1703,436 +1905,29 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                     ),
                                                                                   ),
                                                                                 ),
-                                                                              ].divide(SizedBox(height: 5.0)),
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      ].divide(SizedBox(
-                                                                              width: 16.0)),
-                                                                    ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    if (containeringresosIngresosRow
-                                                            ?.ampliacioncompleto ??
-                                                        true)
-                                                      Align(
-                                                        alignment:
-                                                            AlignmentDirectional(
-                                                                -1.0, 0.0),
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsets.all(
-                                                                  5.0),
-                                                          child: Material(
-                                                            color: Colors
-                                                                .transparent,
-                                                            elevation: 5.0,
-                                                            shape:
-                                                                RoundedRectangleBorder(
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          20.0),
-                                                            ),
-                                                            child: Container(
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryBackground,
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            20.0),
-                                                              ),
-                                                              child: Column(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                children: [
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            20.0,
-                                                                            0.0),
-                                                                    child: Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      mainAxisAlignment:
-                                                                          MainAxisAlignment
-                                                                              .spaceBetween,
-                                                                      crossAxisAlignment:
-                                                                          CrossAxisAlignment
-                                                                              .center,
-                                                                      children:
-                                                                          [
-                                                                        Align(
-                                                                          alignment: AlignmentDirectional(
-                                                                              1.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Row(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            children: [
-                                                                              Container(
-                                                                                width: 15.0,
-                                                                                height: 120.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: () {
-                                                                                    if (containeringresosIngresosRow!.form5! && !containeringresosIngresosRow.form5completo!) {
-                                                                                      return FlutterFlowTheme.of(context).alternate;
-                                                                                    } else if (containeringresosIngresosRow.form5! && containeringresosIngresosRow.form5completo!) {
-                                                                                      return FlutterFlowTheme.of(context).success;
-                                                                                    } else {
-                                                                                      return Color(0x00000000);
-                                                                                    }
-                                                                                  }(),
-                                                                                  borderRadius: BorderRadius.only(
-                                                                                    bottomLeft: Radius.circular(20.0),
-                                                                                    bottomRight: Radius.circular(0.0),
-                                                                                    topLeft: Radius.circular(20.0),
-                                                                                    topRight: Radius.circular(0.0),
-                                                                                  ),
-                                                                                  shape: BoxShape.rectangle,
-                                                                                ),
-                                                                              ),
-                                                                              Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
-                                                                                child: Column(
-                                                                                  mainAxisSize: MainAxisSize.max,
-                                                                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                  children: [
-                                                                                    Container(
-                                                                                      width: 300.0,
-                                                                                      decoration: BoxDecoration(),
-                                                                                      child: Text(
-                                                                                        '3.  Informe síntesis de Valoracion Integral y propuestas de MPI',
-                                                                                        style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                              font: GoogleFonts.notoSansJp(
-                                                                                                fontWeight: FontWeight.w600,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
-                                                                                              ),
-                                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                                              letterSpacing: 0.0,
-                                                                                              fontWeight: FontWeight.w600,
-                                                                                              fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
-                                                                                            ),
-                                                                                      ),
-                                                                                    ),
-                                                                                  ].divide(SizedBox(height: 4.0)),
-                                                                                ),
-                                                                              ),
-                                                                            ],
-                                                                          ),
-                                                                        ),
-                                                                        Flexible(
-                                                                          child:
-                                                                              Container(
-                                                                            width:
-                                                                                200.0,
-                                                                            decoration:
-                                                                                BoxDecoration(),
-                                                                            child:
-                                                                                Column(
-                                                                              mainAxisSize: MainAxisSize.max,
-                                                                              crossAxisAlignment: CrossAxisAlignment.center,
-                                                                              children: [
-                                                                                if ((containeringresosIngresosRow?.form5 == true) && (containeringresosIngresosRow?.form5completo == false))
-                                                                                  Align(
-                                                                                    alignment: AlignmentDirectional(0.0, 1.0),
-                                                                                    child: FFButtonWidget(
-                                                                                      onPressed: () async {
-                                                                                        context.pushNamed(
-                                                                                          Formulario5PaginaWidget.routeName,
-                                                                                          queryParameters: {
-                                                                                            'idingreso': serializeParam(
-                                                                                              widget.idingreso,
-                                                                                              ParamType.int,
-                                                                                            ),
-                                                                                            'rowexpediente': serializeParam(
-                                                                                              widget.rowexp,
-                                                                                              ParamType.SupabaseRow,
-                                                                                            ),
-                                                                                            'edit': serializeParam(
-                                                                                              false,
-                                                                                              ParamType.bool,
-                                                                                            ),
-                                                                                            'usuariorow': serializeParam(
-                                                                                              widget.usuariorow,
-                                                                                              ParamType.SupabaseRow,
-                                                                                            ),
-                                                                                            'usuariorol': serializeParam(
-                                                                                              widget.usuariorol,
-                                                                                              ParamType.SupabaseRow,
-                                                                                            ),
-                                                                                            'spd': serializeParam(
-                                                                                              widget.spd,
-                                                                                              ParamType.SupabaseRow,
-                                                                                            ),
-                                                                                            'rowingreso': serializeParam(
-                                                                                              containeringresosIngresosRow,
-                                                                                              ParamType.SupabaseRow,
-                                                                                            ),
-                                                                                          }.withoutNulls,
-                                                                                        );
-                                                                                      },
-                                                                                      text: 'Completar',
-                                                                                      options: FFButtonOptions(
-                                                                                        width: 150.0,
-                                                                                        height: 30.0,
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                        color: FlutterFlowTheme.of(context).primary,
-                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                              font: GoogleFonts.notoSansJp(
-                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                              ),
-                                                                                              color: Colors.white,
-                                                                                              letterSpacing: 0.0,
-                                                                                              fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                              fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                            ),
-                                                                                        elevation: 3.0,
-                                                                                        borderSide: BorderSide(
-                                                                                          color: Colors.transparent,
-                                                                                          width: 1.0,
-                                                                                        ),
-                                                                                        borderRadius: BorderRadius.circular(8.0),
-                                                                                      ),
-                                                                                    ),
-                                                                                  ),
-                                                                                if (containeringresosIngresosRow?.form5completo ?? true)
-                                                                                  Align(
-                                                                                    alignment: AlignmentDirectional(0.0, 1.0),
-                                                                                    child: FFButtonWidget(
-                                                                                      onPressed: () async {
-                                                                                        context.pushNamed(
-                                                                                          Formulario5PaginaWidget.routeName,
-                                                                                          queryParameters: {
-                                                                                            'idingreso': serializeParam(
-                                                                                              widget.idingreso,
-                                                                                              ParamType.int,
-                                                                                            ),
-                                                                                            'rowexpediente': serializeParam(
-                                                                                              widget.rowexp,
-                                                                                              ParamType.SupabaseRow,
-                                                                                            ),
-                                                                                            'rowingreso': serializeParam(
-                                                                                              containeringresosIngresosRow,
-                                                                                              ParamType.SupabaseRow,
-                                                                                            ),
-                                                                                            'edit': serializeParam(
-                                                                                              true,
-                                                                                              ParamType.bool,
-                                                                                            ),
-                                                                                            'usuariorow': serializeParam(
-                                                                                              widget.usuariorow,
-                                                                                              ParamType.SupabaseRow,
-                                                                                            ),
-                                                                                            'usuariorol': serializeParam(
-                                                                                              widget.usuariorol,
-                                                                                              ParamType.SupabaseRow,
-                                                                                            ),
-                                                                                            'spd': serializeParam(
-                                                                                              widget.spd,
-                                                                                              ParamType.SupabaseRow,
-                                                                                            ),
-                                                                                          }.withoutNulls,
-                                                                                        );
-                                                                                      },
-                                                                                      text: 'Editar',
-                                                                                      options: FFButtonOptions(
-                                                                                        width: 150.0,
-                                                                                        height: 30.0,
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                        color: FlutterFlowTheme.of(context).secondary,
-                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                              font: GoogleFonts.notoSansJp(
-                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                              ),
-                                                                                              color: Colors.white,
-                                                                                              letterSpacing: 0.0,
-                                                                                              fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                              fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                            ),
-                                                                                        elevation: 3.0,
-                                                                                        borderSide: BorderSide(
-                                                                                          color: Colors.transparent,
-                                                                                          width: 1.0,
-                                                                                        ),
-                                                                                        borderRadius: BorderRadius.circular(8.0),
-                                                                                      ),
-                                                                                    ),
-                                                                                  ),
-                                                                              ].divide(SizedBox(height: 5.0)),
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      ].divide(SizedBox(
-                                                                              width: 16.0)),
-                                                                    ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    if (containeringresosIngresosRow
-                                                            ?.ampliacion ??
-                                                        true)
-                                                      Align(
-                                                        alignment:
-                                                            AlignmentDirectional(
-                                                                -1.0, 0.0),
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsets.all(
-                                                                  5.0),
-                                                          child: Material(
-                                                            color: Colors
-                                                                .transparent,
-                                                            elevation: 5.0,
-                                                            shape:
-                                                                RoundedRectangleBorder(
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          20.0),
-                                                            ),
-                                                            child: Container(
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryBackground,
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            20.0),
-                                                              ),
-                                                              child: Column(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                children: [
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            20.0,
-                                                                            0.0),
-                                                                    child: Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      mainAxisAlignment:
-                                                                          MainAxisAlignment
-                                                                              .spaceBetween,
-                                                                      crossAxisAlignment:
-                                                                          CrossAxisAlignment
-                                                                              .center,
-                                                                      children:
-                                                                          [
-                                                                        Align(
-                                                                          alignment: AlignmentDirectional(
-                                                                              1.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Row(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            children: [
-                                                                              Container(
-                                                                                width: 15.0,
-                                                                                height: 200.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: () {
-                                                                                    if (containeringresosIngresosRow!.ampliacion! && !containeringresosIngresosRow.ampliacioncompleto!) {
-                                                                                      return FlutterFlowTheme.of(context).alternate;
-                                                                                    } else if (containeringresosIngresosRow.ampliacion! && containeringresosIngresosRow.ampliacioncompleto!) {
-                                                                                      return FlutterFlowTheme.of(context).success;
-                                                                                    } else {
-                                                                                      return FlutterFlowTheme.of(context).accent3;
-                                                                                    }
-                                                                                  }(),
-                                                                                  borderRadius: BorderRadius.only(
-                                                                                    bottomLeft: Radius.circular(20.0),
-                                                                                    bottomRight: Radius.circular(0.0),
-                                                                                    topLeft: Radius.circular(20.0),
-                                                                                    topRight: Radius.circular(0.0),
-                                                                                  ),
-                                                                                  shape: BoxShape.rectangle,
-                                                                                ),
-                                                                              ),
-                                                                              Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
-                                                                                child: Column(
-                                                                                  mainAxisSize: MainAxisSize.max,
-                                                                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                  children: [
-                                                                                    Container(
-                                                                                      width: 500.0,
-                                                                                      decoration: BoxDecoration(),
-                                                                                      child: Text(
-                                                                                        '2. Verificacion y ampliacion de informacion.',
-                                                                                        style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                              font: GoogleFonts.notoSansJp(
-                                                                                                fontWeight: FontWeight.w600,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
-                                                                                              ),
-                                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                                              letterSpacing: 0.0,
-                                                                                              fontWeight: FontWeight.w600,
-                                                                                              fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
-                                                                                            ),
-                                                                                      ),
-                                                                                    ),
-                                                                                  ].divide(SizedBox(height: 4.0)),
-                                                                                ),
-                                                                              ),
-                                                                            ],
-                                                                          ),
-                                                                        ),
-                                                                        Flexible(
-                                                                          child:
-                                                                              Container(
-                                                                            width:
-                                                                                200.0,
-                                                                            decoration:
-                                                                                BoxDecoration(),
-                                                                            child:
-                                                                                Column(
-                                                                              mainAxisSize: MainAxisSize.max,
-                                                                              crossAxisAlignment: CrossAxisAlignment.center,
-                                                                              children: [
+                                                                              if (containeringresosIngresosRow?.form5completo ?? true)
                                                                                 Align(
                                                                                   alignment: AlignmentDirectional(0.0, 1.0),
                                                                                   child: FFButtonWidget(
                                                                                     onPressed: () async {
                                                                                       context.pushNamed(
-                                                                                        EntrevistasCopyWidget.routeName,
+                                                                                        Formulario5PaginaWidget.routeName,
                                                                                         queryParameters: {
-                                                                                          'ingresorow': serializeParam(
-                                                                                            containeringresosIngresosRow.id,
+                                                                                          'idingreso': serializeParam(
+                                                                                            widget.idingreso,
                                                                                             ParamType.int,
                                                                                           ),
-                                                                                          'rowexp': serializeParam(
+                                                                                          'rowexpediente': serializeParam(
                                                                                             widget.rowexp,
                                                                                             ParamType.SupabaseRow,
+                                                                                          ),
+                                                                                          'rowingreso': serializeParam(
+                                                                                            containeringresosIngresosRow,
+                                                                                            ParamType.SupabaseRow,
+                                                                                          ),
+                                                                                          'edit': serializeParam(
+                                                                                            true,
+                                                                                            ParamType.bool,
                                                                                           ),
                                                                                           'usuariorow': serializeParam(
                                                                                             widget.usuariorow,
@@ -2149,13 +1944,13 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                         }.withoutNulls,
                                                                                       );
                                                                                     },
-                                                                                    text: 'Ingresar',
+                                                                                    text: 'Editar',
                                                                                     options: FFButtonOptions(
-                                                                                      width: 200.0,
+                                                                                      width: 150.0,
                                                                                       height: 30.0,
                                                                                       padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                                                                                       iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                      color: containeringresosIngresosRow!.ampliacioncompleto! ? FlutterFlowTheme.of(context).secondary : FlutterFlowTheme.of(context).primary,
+                                                                                      color: FlutterFlowTheme.of(context).secondary,
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             font: GoogleFonts.notoSansJp(
                                                                                               fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
@@ -2175,16 +1970,212 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                     ),
                                                                                   ),
                                                                                 ),
-                                                                              ].divide(SizedBox(height: 5.0)),
-                                                                            ),
+                                                                            ].divide(SizedBox(height: 5.0)),
                                                                           ),
                                                                         ),
-                                                                      ].divide(SizedBox(
-                                                                              width: 16.0)),
-                                                                    ),
+                                                                      ),
+                                                                    ].divide(SizedBox(
+                                                                        width:
+                                                                            16.0)),
                                                                   ),
-                                                                ],
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    if (containeringresosIngresosRow
+                                                            ?.ampliacion ??
+                                                        true)
+                                                      Align(
+                                                        alignment:
+                                                            AlignmentDirectional(
+                                                                -1.0, 0.0),
+                                                        child: Padding(
+                                                          padding:
+                                                              EdgeInsets.all(
+                                                                  5.0),
+                                                          child: Container(
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondaryBackground,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          20.0),
+                                                              border:
+                                                                  Border.all(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .alternate,
                                                               ),
+                                                            ),
+                                                            child: Column(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              children: [
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          20.0,
+                                                                          0.0),
+                                                                  child: Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .spaceBetween,
+                                                                    crossAxisAlignment:
+                                                                        CrossAxisAlignment
+                                                                            .center,
+                                                                    children: [
+                                                                      Align(
+                                                                        alignment: AlignmentDirectional(
+                                                                            1.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children: [
+                                                                            Container(
+                                                                              width: 15.0,
+                                                                              height: 200.0,
+                                                                              decoration: BoxDecoration(
+                                                                                color: () {
+                                                                                  if (containeringresosIngresosRow!.ampliacion! && !containeringresosIngresosRow.ampliacioncompleto!) {
+                                                                                    return FlutterFlowTheme.of(context).alternate;
+                                                                                  } else if (containeringresosIngresosRow.ampliacion! && containeringresosIngresosRow.ampliacioncompleto!) {
+                                                                                    return FlutterFlowTheme.of(context).success;
+                                                                                  } else {
+                                                                                    return FlutterFlowTheme.of(context).accent3;
+                                                                                  }
+                                                                                }(),
+                                                                                borderRadius: BorderRadius.only(
+                                                                                  bottomLeft: Radius.circular(20.0),
+                                                                                  bottomRight: Radius.circular(0.0),
+                                                                                  topLeft: Radius.circular(20.0),
+                                                                                  topRight: Radius.circular(0.0),
+                                                                                ),
+                                                                                shape: BoxShape.rectangle,
+                                                                              ),
+                                                                            ),
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
+                                                                              child: Column(
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                children: [
+                                                                                  Container(
+                                                                                    width: 500.0,
+                                                                                    decoration: BoxDecoration(),
+                                                                                    child: Text(
+                                                                                      '2. Verificacion y ampliacion de informacion.',
+                                                                                      style: FlutterFlowTheme.of(context).headlineSmall.override(
+                                                                                            font: GoogleFonts.notoSansJp(
+                                                                                              fontWeight: FontWeight.w600,
+                                                                                              fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
+                                                                                            ),
+                                                                                            color: FlutterFlowTheme.of(context).primary,
+                                                                                            letterSpacing: 0.0,
+                                                                                            fontWeight: FontWeight.w600,
+                                                                                            fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
+                                                                                          ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ].divide(SizedBox(height: 4.0)),
+                                                                              ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      ),
+                                                                      Flexible(
+                                                                        child:
+                                                                            Container(
+                                                                          width:
+                                                                              200.0,
+                                                                          decoration:
+                                                                              BoxDecoration(),
+                                                                          child:
+                                                                              Column(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            crossAxisAlignment:
+                                                                                CrossAxisAlignment.center,
+                                                                            children:
+                                                                                [
+                                                                              Align(
+                                                                                alignment: AlignmentDirectional(0.0, 1.0),
+                                                                                child: FFButtonWidget(
+                                                                                  onPressed: () async {
+                                                                                    context.pushNamed(
+                                                                                      EntrevistasCopyWidget.routeName,
+                                                                                      queryParameters: {
+                                                                                        'ingresorow': serializeParam(
+                                                                                          containeringresosIngresosRow.id,
+                                                                                          ParamType.int,
+                                                                                        ),
+                                                                                        'rowexp': serializeParam(
+                                                                                          widget.rowexp,
+                                                                                          ParamType.SupabaseRow,
+                                                                                        ),
+                                                                                        'usuariorow': serializeParam(
+                                                                                          widget.usuariorow,
+                                                                                          ParamType.SupabaseRow,
+                                                                                        ),
+                                                                                        'usuariorol': serializeParam(
+                                                                                          widget.usuariorol,
+                                                                                          ParamType.SupabaseRow,
+                                                                                        ),
+                                                                                        'spd': serializeParam(
+                                                                                          widget.spd,
+                                                                                          ParamType.SupabaseRow,
+                                                                                        ),
+                                                                                      }.withoutNulls,
+                                                                                    );
+                                                                                  },
+                                                                                  text: 'Ingresar',
+                                                                                  options: FFButtonOptions(
+                                                                                    width: 200.0,
+                                                                                    height: 30.0,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    color: containeringresosIngresosRow!.ampliacioncompleto! ? FlutterFlowTheme.of(context).secondary : FlutterFlowTheme.of(context).primary,
+                                                                                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                          font: GoogleFonts.notoSansJp(
+                                                                                            fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                            fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                          ),
+                                                                                          color: Colors.white,
+                                                                                          letterSpacing: 0.0,
+                                                                                          fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                          fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                        ),
+                                                                                    elevation: 3.0,
+                                                                                    borderSide: BorderSide(
+                                                                                      color: Colors.transparent,
+                                                                                      width: 1.0,
+                                                                                    ),
+                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ].divide(SizedBox(height: 5.0)),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ].divide(SizedBox(
+                                                                        width:
+                                                                            16.0)),
+                                                                  ),
+                                                                ),
+                                                              ],
                                                             ),
                                                           ),
                                                         ),
@@ -2200,2083 +2191,2085 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                           padding:
                                                               EdgeInsets.all(
                                                                   5.0),
-                                                          child: Material(
-                                                            color: Colors
-                                                                .transparent,
-                                                            elevation: 5.0,
-                                                            shape:
-                                                                RoundedRectangleBorder(
+                                                          child: Container(
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondaryBackground,
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
                                                                           20.0),
-                                                            ),
-                                                            child: Container(
-                                                              decoration:
-                                                                  BoxDecoration(
+                                                              border:
+                                                                  Border.all(
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .secondaryBackground,
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            20.0),
+                                                                    .alternate,
                                                               ),
-                                                              child: Align(
-                                                                alignment:
-                                                                    AlignmentDirectional(
-                                                                        -1.0,
-                                                                        0.0),
-                                                                child: Row(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  crossAxisAlignment:
-                                                                      CrossAxisAlignment
-                                                                          .start,
-                                                                  children: [
-                                                                    Container(
-                                                                      width:
-                                                                          15.0,
-                                                                      height:
-                                                                          750.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color:
-                                                                            () {
-                                                                          if (!containeringresosIngresosRow!.form1seccion1! &&
-                                                                              !containeringresosIngresosRow
-                                                                                  .form1seccion2! &&
-                                                                              !containeringresosIngresosRow
-                                                                                  .form1seccion3! &&
-                                                                              !containeringresosIngresosRow
-                                                                                  .form1seccion5! &&
-                                                                              !containeringresosIngresosRow
-                                                                                  .form1seccion7! &&
-                                                                              !containeringresosIngresosRow
-                                                                                  .form1seccion9!) {
-                                                                            return FlutterFlowTheme.of(context).primary;
-                                                                          } else if (containeringresosIngresosRow.form1seccion1! &&
-                                                                              containeringresosIngresosRow
-                                                                                  .form1seccion2! &&
-                                                                              !containeringresosIngresosRow
-                                                                                  .form1seccion3! &&
-                                                                              containeringresosIngresosRow
-                                                                                  .form1seccion5! &&
-                                                                              !containeringresosIngresosRow
-                                                                                  .form1seccion7! &&
-                                                                              !containeringresosIngresosRow
-                                                                                  .form1seccion9!) {
-                                                                            return FlutterFlowTheme.of(context).accent1;
-                                                                          } else if (containeringresosIngresosRow.form1seccion1! &&
-                                                                              containeringresosIngresosRow.form1seccion2! &&
-                                                                              containeringresosIngresosRow.form1seccion3! &&
-                                                                              containeringresosIngresosRow.form1seccion5! &&
-                                                                              containeringresosIngresosRow.form1seccion7! &&
-                                                                              containeringresosIngresosRow.form1seccion9!) {
-                                                                            return FlutterFlowTheme.of(context).success;
-                                                                          } else {
-                                                                            return FlutterFlowTheme.of(context).primary;
-                                                                          }
-                                                                        }(),
-                                                                        borderRadius:
-                                                                            BorderRadius.only(
-                                                                          bottomLeft:
-                                                                              Radius.circular(20.0),
-                                                                          bottomRight:
-                                                                              Radius.circular(0.0),
-                                                                          topLeft:
-                                                                              Radius.circular(20.0),
-                                                                          topRight:
-                                                                              Radius.circular(0.0),
-                                                                        ),
-                                                                        shape: BoxShape
-                                                                            .rectangle,
+                                                            ),
+                                                            child: Align(
+                                                              alignment:
+                                                                  AlignmentDirectional(
+                                                                      -1.0,
+                                                                      0.0),
+                                                              child: Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .start,
+                                                                children: [
+                                                                  Container(
+                                                                    width: 15.0,
+                                                                    height:
+                                                                        750.0,
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                      color:
+                                                                          () {
+                                                                        if (!containeringresosIngresosRow!.form1seccion1! &&
+                                                                            !containeringresosIngresosRow
+                                                                                .form1seccion2! &&
+                                                                            !containeringresosIngresosRow
+                                                                                .form1seccion3! &&
+                                                                            !containeringresosIngresosRow
+                                                                                .form1seccion5! &&
+                                                                            !containeringresosIngresosRow
+                                                                                .form1seccion7! &&
+                                                                            !containeringresosIngresosRow
+                                                                                .form1seccion9!) {
+                                                                          return FlutterFlowTheme.of(context)
+                                                                              .primary;
+                                                                        } else if (containeringresosIngresosRow.form1seccion1! &&
+                                                                            containeringresosIngresosRow
+                                                                                .form1seccion2! &&
+                                                                            !containeringresosIngresosRow
+                                                                                .form1seccion3! &&
+                                                                            containeringresosIngresosRow
+                                                                                .form1seccion5! &&
+                                                                            !containeringresosIngresosRow
+                                                                                .form1seccion7! &&
+                                                                            !containeringresosIngresosRow
+                                                                                .form1seccion9!) {
+                                                                          return FlutterFlowTheme.of(context)
+                                                                              .accent1;
+                                                                        } else if (containeringresosIngresosRow.form1seccion1! &&
+                                                                            containeringresosIngresosRow.form1seccion2! &&
+                                                                            containeringresosIngresosRow.form1seccion3! &&
+                                                                            containeringresosIngresosRow.form1seccion5! &&
+                                                                            containeringresosIngresosRow.form1seccion7! &&
+                                                                            containeringresosIngresosRow.form1seccion9!) {
+                                                                          return FlutterFlowTheme.of(context)
+                                                                              .success;
+                                                                        } else {
+                                                                          return FlutterFlowTheme.of(context)
+                                                                              .primary;
+                                                                        }
+                                                                      }(),
+                                                                      borderRadius:
+                                                                          BorderRadius
+                                                                              .only(
+                                                                        bottomLeft:
+                                                                            Radius.circular(20.0),
+                                                                        bottomRight:
+                                                                            Radius.circular(0.0),
+                                                                        topLeft:
+                                                                            Radius.circular(20.0),
+                                                                        topRight:
+                                                                            Radius.circular(0.0),
                                                                       ),
+                                                                      shape: BoxShape
+                                                                          .rectangle,
                                                                     ),
-                                                                    Align(
-                                                                      alignment:
-                                                                          AlignmentDirectional(
-                                                                              0.0,
-                                                                              -1.0),
-                                                                      child: FutureBuilder<
-                                                                          List<
-                                                                              AnexoAForm1Row>>(
-                                                                        future: (_model.requestCompleter2 ??= Completer<List<AnexoAForm1Row>>()
-                                                                              ..complete(AnexoAForm1Table().querySingleRow(
-                                                                                queryFn: (q) => q.eqOrNull(
-                                                                                  'idingreso',
-                                                                                  widget.idingreso,
-                                                                                ),
-                                                                              )))
-                                                                            .future,
-                                                                        builder:
-                                                                            (context,
-                                                                                snapshot) {
-                                                                          // Customize what your widget looks like when it's loading.
-                                                                          if (!snapshot
-                                                                              .hasData) {
-                                                                            return Center(
-                                                                              child: SizedBox(
-                                                                                width: 50.0,
-                                                                                height: 50.0,
-                                                                                child: CircularProgressIndicator(
-                                                                                  valueColor: AlwaysStoppedAnimation<Color>(
-                                                                                    FlutterFlowTheme.of(context).primary,
-                                                                                  ),
-                                                                                ),
+                                                                  ),
+                                                                  Align(
+                                                                    alignment:
+                                                                        AlignmentDirectional(
+                                                                            0.0,
+                                                                            -1.0),
+                                                                    child: FutureBuilder<
+                                                                        List<
+                                                                            AnexoAForm1Row>>(
+                                                                      future: (_model
+                                                                              .requestCompleter2 ??= Completer<List<AnexoAForm1Row>>()
+                                                                            ..complete(AnexoAForm1Table().querySingleRow(
+                                                                              queryFn: (q) => q.eqOrNull(
+                                                                                'idingreso',
+                                                                                widget.idingreso,
                                                                               ),
-                                                                            );
-                                                                          }
-                                                                          List<AnexoAForm1Row>
-                                                                              containeranexoAnexoAForm1RowList =
-                                                                              snapshot.data!;
-
-                                                                          final containeranexoAnexoAForm1Row = containeranexoAnexoAForm1RowList.isNotEmpty
-                                                                              ? containeranexoAnexoAForm1RowList.first
-                                                                              : null;
-
-                                                                          return Container(
-                                                                            width:
-                                                                                MediaQuery.sizeOf(context).width * 0.7,
-                                                                            decoration:
-                                                                                BoxDecoration(),
+                                                                            )))
+                                                                          .future,
+                                                                      builder:
+                                                                          (context,
+                                                                              snapshot) {
+                                                                        // Customize what your widget looks like when it's loading.
+                                                                        if (!snapshot
+                                                                            .hasData) {
+                                                                          return Center(
                                                                             child:
-                                                                                Align(
-                                                                              alignment: AlignmentDirectional(0.0, -1.0),
-                                                                              child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(15.0, 10.0, 10.0, 0.0),
-                                                                                child: Column(
-                                                                                  mainAxisSize: MainAxisSize.min,
-                                                                                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                                                                                  children: [
-                                                                                    Text(
-                                                                                      '1. Recepcion de la demanda',
-                                                                                      style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                            font: GoogleFonts.notoSansJp(
-                                                                                              fontWeight: FontWeight.w600,
-                                                                                              fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
-                                                                                            ),
-                                                                                            color: FlutterFlowTheme.of(context).primary,
-                                                                                            letterSpacing: 0.0,
-                                                                                            fontWeight: FontWeight.w600,
-                                                                                            fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
-                                                                                          ),
-                                                                                    ),
-                                                                                    Text(
-                                                                                      'Fecha de cierre por derivacion o asesoramiento : ${dateTimeFormat(
-                                                                                        "d/M/y",
-                                                                                        containeringresosIngresosRow?.fechacierre,
-                                                                                        locale: FFLocalizations.of(context).languageCode,
-                                                                                      )}',
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            font: GoogleFonts.notoSansJp(
-                                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                            ),
-                                                                                            letterSpacing: 0.0,
-                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                          ),
-                                                                                    ),
-                                                                                    Container(
-                                                                                      decoration: BoxDecoration(),
-                                                                                      child: Column(
-                                                                                        mainAxisSize: MainAxisSize.max,
-                                                                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                        children: [
-                                                                                          Flex(
-                                                                                            direction: (MediaQuery.sizeOf(context).width > 800.0) ? Axis.horizontal : Axis.vertical,
-                                                                                            mainAxisSize: MainAxisSize.max,
-                                                                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                            children: [
-                                                                                              Row(
-                                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                                children: [
-                                                                                                  Icon(
-                                                                                                    Icons.check_circle,
-                                                                                                    color: containeringresosIngresosRow?.form1seccion1 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
-                                                                                                    size: 24.0,
-                                                                                                  ),
-                                                                                                  Text(
-                                                                                                    'Datos NNyA',
-                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                          font: GoogleFonts.notoSansJp(
-                                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                          ),
-                                                                                                          letterSpacing: 0.0,
-                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                        ),
-                                                                                                  ),
-                                                                                                ],
-                                                                                              ),
-                                                                                              Padding(
-                                                                                                padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
-                                                                                                child: Row(
-                                                                                                  mainAxisSize: MainAxisSize.max,
-                                                                                                  mainAxisAlignment: MainAxisAlignment.start,
-                                                                                                  children: [
-                                                                                                    if (!containeringresosIngresosRow!.form1seccion1!)
-                                                                                                      Padding(
-                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
-                                                                                                        child: FFButtonWidget(
-                                                                                                          onPressed: !() {
-                                                                                                            if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
-                                                                                                              return true;
-                                                                                                            } else if (widget.usuariorol?.rolId == 1) {
-                                                                                                              return true;
-                                                                                                            } else if (widget.usuariorol?.rolId == 2) {
-                                                                                                              return true;
-                                                                                                            } else {
-                                                                                                              return false;
-                                                                                                            }
-                                                                                                          }()
-                                                                                                              ? null
-                                                                                                              : () async {
-                                                                                                                  await showModalBottomSheet(
-                                                                                                                    isScrollControlled: true,
-                                                                                                                    backgroundColor: Colors.transparent,
-                                                                                                                    enableDrag: false,
-                                                                                                                    context: context,
-                                                                                                                    builder: (context) {
-                                                                                                                      return WebViewAware(
-                                                                                                                        child: GestureDetector(
-                                                                                                                          onTap: () {
-                                                                                                                            FocusScope.of(context).unfocus();
-                                                                                                                            FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                                          },
-                                                                                                                          child: Padding(
-                                                                                                                            padding: MediaQuery.viewInsetsOf(context),
-                                                                                                                            child: Seccion1Widget(
-                                                                                                                              idingreso: containeringresosIngresosRow,
-                                                                                                                              rowexp: widget.rowexp,
-                                                                                                                              editar: false,
-                                                                                                                              usuariorow: widget.usuariorow!,
-                                                                                                                              usuariorol: widget.usuariorol!,
-                                                                                                                            ),
-                                                                                                                          ),
-                                                                                                                        ),
-                                                                                                                      );
-                                                                                                                    },
-                                                                                                                  ).then((value) => safeSetState(() => _model.seccio1true = value));
-
-                                                                                                                  if (_model.seccio1true!) {
-                                                                                                                    safeSetState(() => _model.requestCompleter1 = null);
-                                                                                                                    await _model.waitForRequestCompleted1();
-                                                                                                                  }
-
-                                                                                                                  safeSetState(() {});
-                                                                                                                },
-                                                                                                          text: 'Sección 1',
-                                                                                                          options: FFButtonOptions(
-                                                                                                            height: 30.0,
-                                                                                                            padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                            color: containeringresosIngresosRow.form1seccion1 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).secondary,
-                                                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                                  font: GoogleFonts.notoSansJp(
-                                                                                                                    fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                                    fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                                  ),
-                                                                                                                  color: Colors.white,
-                                                                                                                  letterSpacing: 0.0,
-                                                                                                                  fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                                ),
-                                                                                                            elevation: 3.0,
-                                                                                                            borderSide: BorderSide(
-                                                                                                              color: Colors.transparent,
-                                                                                                              width: 1.0,
-                                                                                                            ),
-                                                                                                            borderRadius: BorderRadius.circular(8.0),
-                                                                                                            disabledColor: FlutterFlowTheme.of(context).alternate,
-                                                                                                          ),
-                                                                                                        ),
-                                                                                                      ),
-                                                                                                    if (containeringresosIngresosRow.form1seccion1 ?? true)
-                                                                                                      Padding(
-                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
-                                                                                                        child: FFButtonWidget(
-                                                                                                          onPressed: !() {
-                                                                                                            if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
-                                                                                                              return true;
-                                                                                                            } else if (widget.usuariorol?.rolId == 1) {
-                                                                                                              return true;
-                                                                                                            } else if (widget.usuariorol?.rolId == 2) {
-                                                                                                              return true;
-                                                                                                            } else {
-                                                                                                              return false;
-                                                                                                            }
-                                                                                                          }()
-                                                                                                              ? null
-                                                                                                              : () async {
-                                                                                                                  await showModalBottomSheet(
-                                                                                                                    isScrollControlled: true,
-                                                                                                                    backgroundColor: Colors.transparent,
-                                                                                                                    enableDrag: false,
-                                                                                                                    context: context,
-                                                                                                                    builder: (context) {
-                                                                                                                      return WebViewAware(
-                                                                                                                        child: GestureDetector(
-                                                                                                                          onTap: () {
-                                                                                                                            FocusScope.of(context).unfocus();
-                                                                                                                            FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                                          },
-                                                                                                                          child: Padding(
-                                                                                                                            padding: MediaQuery.viewInsetsOf(context),
-                                                                                                                            child: Seccion1Widget(
-                                                                                                                              idingreso: containeringresosIngresosRow,
-                                                                                                                              rowexp: widget.rowexp,
-                                                                                                                              editar: true,
-                                                                                                                              usuariorow: widget.usuariorow!,
-                                                                                                                              usuariorol: widget.usuariorol!,
-                                                                                                                            ),
-                                                                                                                          ),
-                                                                                                                        ),
-                                                                                                                      );
-                                                                                                                    },
-                                                                                                                  ).then((value) => safeSetState(() {}));
-                                                                                                                },
-                                                                                                          text: 'editar Sección 1',
-                                                                                                          options: FFButtonOptions(
-                                                                                                            height: 30.0,
-                                                                                                            padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                            color: containeringresosIngresosRow.form1seccion1 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
-                                                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                                  font: GoogleFonts.notoSansJp(
-                                                                                                                    fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                                    fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                                  ),
-                                                                                                                  color: Colors.white,
-                                                                                                                  letterSpacing: 0.0,
-                                                                                                                  fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                                ),
-                                                                                                            elevation: 3.0,
-                                                                                                            borderSide: BorderSide(
-                                                                                                              color: Colors.transparent,
-                                                                                                              width: 1.0,
-                                                                                                            ),
-                                                                                                            borderRadius: BorderRadius.circular(8.0),
-                                                                                                            disabledColor: FlutterFlowTheme.of(context).alternate,
-                                                                                                          ),
-                                                                                                        ),
-                                                                                                      ),
-                                                                                                  ],
-                                                                                                ),
-                                                                                              ),
-                                                                                            ],
-                                                                                          ),
-                                                                                          Divider(
-                                                                                            thickness: 2.0,
-                                                                                            color: FlutterFlowTheme.of(context).alternate,
-                                                                                          ),
-                                                                                          Row(
-                                                                                            mainAxisSize: MainAxisSize.max,
-                                                                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                            children: [
-                                                                                              Row(
-                                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                                children: [
-                                                                                                  Icon(
-                                                                                                    Icons.check_circle,
-                                                                                                    color: containeringresosIngresosRow.form1seccion2 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
-                                                                                                    size: 24.0,
-                                                                                                  ),
-                                                                                                  Text(
-                                                                                                    'Datos del o la  solicitante',
-                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                          font: GoogleFonts.notoSansJp(
-                                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                          ),
-                                                                                                          letterSpacing: 0.0,
-                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                        ),
-                                                                                                  ),
-                                                                                                ],
-                                                                                              ),
-                                                                                              Row(
-                                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                                children: [
-                                                                                                  if (!containeringresosIngresosRow.form1seccion2!)
-                                                                                                    Padding(
-                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
-                                                                                                      child: FFButtonWidget(
-                                                                                                        onPressed: !() {
-                                                                                                          if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
-                                                                                                            return true;
-                                                                                                          } else if (widget.usuariorol?.rolId == 1) {
-                                                                                                            return true;
-                                                                                                          } else if (widget.usuariorol?.rolId == 2) {
-                                                                                                            return true;
-                                                                                                          } else {
-                                                                                                            return false;
-                                                                                                          }
-                                                                                                        }()
-                                                                                                            ? null
-                                                                                                            : () async {
-                                                                                                                await showModalBottomSheet(
-                                                                                                                  isScrollControlled: true,
-                                                                                                                  backgroundColor: Colors.transparent,
-                                                                                                                  enableDrag: false,
-                                                                                                                  context: context,
-                                                                                                                  builder: (context) {
-                                                                                                                    return WebViewAware(
-                                                                                                                      child: GestureDetector(
-                                                                                                                        onTap: () {
-                                                                                                                          FocusScope.of(context).unfocus();
-                                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                                        },
-                                                                                                                        child: Padding(
-                                                                                                                          padding: MediaQuery.viewInsetsOf(context),
-                                                                                                                          child: Seccion2Widget(
-                                                                                                                            rowingreso: containeringresosIngresosRow,
-                                                                                                                            rowexp: widget.rowexp!,
-                                                                                                                            editar: false,
-                                                                                                                            usuariorow: widget.usuariorol!,
-                                                                                                                          ),
-                                                                                                                        ),
-                                                                                                                      ),
-                                                                                                                    );
-                                                                                                                  },
-                                                                                                                ).then((value) => safeSetState(() => _model.seccion2true = value));
-
-                                                                                                                if (_model.seccion2true!) {
-                                                                                                                  safeSetState(() => _model.requestCompleter1 = null);
-                                                                                                                  await _model.waitForRequestCompleted1();
-                                                                                                                }
-
-                                                                                                                safeSetState(() {});
-                                                                                                              },
-                                                                                                        text: 'Sección 2',
-                                                                                                        options: FFButtonOptions(
-                                                                                                          height: 30.0,
-                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                          color: containeringresosIngresosRow.form1seccion2 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).secondary,
-                                                                                                          textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                                font: GoogleFonts.notoSansJp(
-                                                                                                                  fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                                ),
-                                                                                                                color: Colors.white,
-                                                                                                                letterSpacing: 0.0,
-                                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                              ),
-                                                                                                          elevation: 3.0,
-                                                                                                          borderSide: BorderSide(
-                                                                                                            color: Colors.transparent,
-                                                                                                            width: 1.0,
-                                                                                                          ),
-                                                                                                          borderRadius: BorderRadius.circular(8.0),
-                                                                                                          disabledColor: FlutterFlowTheme.of(context).alternate,
-                                                                                                        ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                  if (containeringresosIngresosRow.form1seccion2 ?? true)
-                                                                                                    Padding(
-                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
-                                                                                                      child: FFButtonWidget(
-                                                                                                        onPressed: !() {
-                                                                                                          if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
-                                                                                                            return true;
-                                                                                                          } else if (widget.usuariorol?.rolId == 1) {
-                                                                                                            return true;
-                                                                                                          } else if (widget.usuariorol?.rolId == 2) {
-                                                                                                            return true;
-                                                                                                          } else {
-                                                                                                            return false;
-                                                                                                          }
-                                                                                                        }()
-                                                                                                            ? null
-                                                                                                            : () async {
-                                                                                                                await showModalBottomSheet(
-                                                                                                                  isScrollControlled: true,
-                                                                                                                  backgroundColor: Colors.transparent,
-                                                                                                                  enableDrag: false,
-                                                                                                                  context: context,
-                                                                                                                  builder: (context) {
-                                                                                                                    return WebViewAware(
-                                                                                                                      child: GestureDetector(
-                                                                                                                        onTap: () {
-                                                                                                                          FocusScope.of(context).unfocus();
-                                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                                        },
-                                                                                                                        child: Padding(
-                                                                                                                          padding: MediaQuery.viewInsetsOf(context),
-                                                                                                                          child: Seccion2Widget(
-                                                                                                                            rowingreso: containeringresosIngresosRow,
-                                                                                                                            rowexp: widget.rowexp!,
-                                                                                                                            editar: true,
-                                                                                                                            usuariorow: widget.usuariorol!,
-                                                                                                                          ),
-                                                                                                                        ),
-                                                                                                                      ),
-                                                                                                                    );
-                                                                                                                  },
-                                                                                                                ).then((value) => safeSetState(() {}));
-                                                                                                              },
-                                                                                                        text: 'Editar Sección 2',
-                                                                                                        options: FFButtonOptions(
-                                                                                                          height: 30.0,
-                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                          color: containeringresosIngresosRow.form1seccion2 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
-                                                                                                          textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                                font: GoogleFonts.notoSansJp(
-                                                                                                                  fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                                ),
-                                                                                                                color: Colors.white,
-                                                                                                                letterSpacing: 0.0,
-                                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                              ),
-                                                                                                          elevation: 3.0,
-                                                                                                          borderSide: BorderSide(
-                                                                                                            color: Colors.transparent,
-                                                                                                            width: 1.0,
-                                                                                                          ),
-                                                                                                          borderRadius: BorderRadius.circular(8.0),
-                                                                                                          disabledColor: FlutterFlowTheme.of(context).alternate,
-                                                                                                        ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                ],
-                                                                                              ),
-                                                                                            ],
-                                                                                          ),
-                                                                                          Divider(
-                                                                                            thickness: 2.0,
-                                                                                            color: FlutterFlowTheme.of(context).alternate,
-                                                                                          ),
-                                                                                          Row(
-                                                                                            mainAxisSize: MainAxisSize.max,
-                                                                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                            children: [
-                                                                                              Row(
-                                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                                children: [
-                                                                                                  Icon(
-                                                                                                    Icons.check_circle,
-                                                                                                    color: containeringresosIngresosRow.form1seccion3 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
-                                                                                                    size: 24.0,
-                                                                                                  ),
-                                                                                                  Text(
-                                                                                                    'Grupo conviviente y no conviviente',
-                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                          font: GoogleFonts.notoSansJp(
-                                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                          ),
-                                                                                                          letterSpacing: 0.0,
-                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                        ),
-                                                                                                  ),
-                                                                                                ],
-                                                                                              ),
-                                                                                              Row(
-                                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                                children: [
-                                                                                                  if (!containeringresosIngresosRow.form1seccion3!)
-                                                                                                    Padding(
-                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
-                                                                                                      child: FFButtonWidget(
-                                                                                                        onPressed: !() {
-                                                                                                          if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
-                                                                                                            return true;
-                                                                                                          } else if (widget.usuariorol?.rolId == 1) {
-                                                                                                            return true;
-                                                                                                          } else if (widget.usuariorol?.rolId == 2) {
-                                                                                                            return true;
-                                                                                                          } else {
-                                                                                                            return false;
-                                                                                                          }
-                                                                                                        }()
-                                                                                                            ? null
-                                                                                                            : () async {
-                                                                                                                _model.seccion1 = await Seccion1Table().queryRows(
-                                                                                                                  queryFn: (q) => q.eqOrNull(
-                                                                                                                    'idIngreso',
-                                                                                                                    widget.idingreso,
-                                                                                                                  ),
-                                                                                                                );
-                                                                                                                await showModalBottomSheet(
-                                                                                                                  isScrollControlled: true,
-                                                                                                                  backgroundColor: Colors.transparent,
-                                                                                                                  enableDrag: false,
-                                                                                                                  context: context,
-                                                                                                                  builder: (context) {
-                                                                                                                    return WebViewAware(
-                                                                                                                      child: GestureDetector(
-                                                                                                                        onTap: () {
-                                                                                                                          FocusScope.of(context).unfocus();
-                                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                                        },
-                                                                                                                        child: Padding(
-                                                                                                                          padding: MediaQuery.viewInsetsOf(context),
-                                                                                                                          child: Seccion3Widget(
-                                                                                                                            idingreso: containeringresosIngresosRow,
-                                                                                                                            idexp: widget.rowexp!,
-                                                                                                                            editar: false,
-                                                                                                                            titulo: 'Grupo conviente y No conviviente',
-                                                                                                                            userrol: widget.usuariorol!,
-                                                                                                                            idseccion1: _model.seccion1!.firstOrNull!.idSec1,
-                                                                                                                          ),
-                                                                                                                        ),
-                                                                                                                      ),
-                                                                                                                    );
-                                                                                                                  },
-                                                                                                                ).then((value) => safeSetState(() => _model.seccion3true = value));
-
-                                                                                                                if (_model.seccion3true!) {
-                                                                                                                  safeSetState(() => _model.requestCompleter1 = null);
-                                                                                                                  await _model.waitForRequestCompleted1();
-                                                                                                                }
-
-                                                                                                                safeSetState(() {});
-                                                                                                              },
-                                                                                                        text: 'Sección 3',
-                                                                                                        options: FFButtonOptions(
-                                                                                                          height: 30.0,
-                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                          color: containeringresosIngresosRow.form1seccion3 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).secondary,
-                                                                                                          textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                                font: GoogleFonts.notoSansJp(
-                                                                                                                  fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                                ),
-                                                                                                                color: Colors.white,
-                                                                                                                letterSpacing: 0.0,
-                                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                              ),
-                                                                                                          elevation: 3.0,
-                                                                                                          borderSide: BorderSide(
-                                                                                                            color: Colors.transparent,
-                                                                                                            width: 1.0,
-                                                                                                          ),
-                                                                                                          borderRadius: BorderRadius.circular(8.0),
-                                                                                                          disabledColor: FlutterFlowTheme.of(context).alternate,
-                                                                                                        ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                  if (containeringresosIngresosRow.form1seccion3 ?? true)
-                                                                                                    Padding(
-                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
-                                                                                                      child: FFButtonWidget(
-                                                                                                        onPressed: !() {
-                                                                                                          if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
-                                                                                                            return true;
-                                                                                                          } else if (widget.usuariorol?.rolId == 1) {
-                                                                                                            return true;
-                                                                                                          } else if (widget.usuariorol?.rolId == 2) {
-                                                                                                            return true;
-                                                                                                          } else {
-                                                                                                            return false;
-                                                                                                          }
-                                                                                                        }()
-                                                                                                            ? null
-                                                                                                            : () async {
-                                                                                                                _model.idseccion1edit = await Seccion1Table().queryRows(
-                                                                                                                  queryFn: (q) => q.eqOrNull(
-                                                                                                                    'idIngreso',
-                                                                                                                    widget.idingreso,
-                                                                                                                  ),
-                                                                                                                );
-                                                                                                                await showModalBottomSheet(
-                                                                                                                  isScrollControlled: true,
-                                                                                                                  backgroundColor: Colors.transparent,
-                                                                                                                  enableDrag: false,
-                                                                                                                  context: context,
-                                                                                                                  builder: (context) {
-                                                                                                                    return WebViewAware(
-                                                                                                                      child: GestureDetector(
-                                                                                                                        onTap: () {
-                                                                                                                          FocusScope.of(context).unfocus();
-                                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                                        },
-                                                                                                                        child: Padding(
-                                                                                                                          padding: MediaQuery.viewInsetsOf(context),
-                                                                                                                          child: Seccion3Widget(
-                                                                                                                            idingreso: containeringresosIngresosRow,
-                                                                                                                            idexp: widget.rowexp!,
-                                                                                                                            editar: false,
-                                                                                                                            titulo: '3. Grupo conviente',
-                                                                                                                            userrol: widget.usuariorol!,
-                                                                                                                            idseccion1: _model.idseccion1edit!.firstOrNull!.idSec1,
-                                                                                                                          ),
-                                                                                                                        ),
-                                                                                                                      ),
-                                                                                                                    );
-                                                                                                                  },
-                                                                                                                ).then((value) => safeSetState(() {}));
-
-                                                                                                                safeSetState(() {});
-                                                                                                              },
-                                                                                                        text: 'Editar Sección 3',
-                                                                                                        options: FFButtonOptions(
-                                                                                                          height: 30.0,
-                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                          color: containeringresosIngresosRow.form1seccion3 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
-                                                                                                          textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                                font: GoogleFonts.notoSansJp(
-                                                                                                                  fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                                ),
-                                                                                                                color: Colors.white,
-                                                                                                                letterSpacing: 0.0,
-                                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                              ),
-                                                                                                          elevation: 3.0,
-                                                                                                          borderSide: BorderSide(
-                                                                                                            color: Colors.transparent,
-                                                                                                            width: 1.0,
-                                                                                                          ),
-                                                                                                          borderRadius: BorderRadius.circular(8.0),
-                                                                                                          disabledColor: FlutterFlowTheme.of(context).alternate,
-                                                                                                        ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                ],
-                                                                                              ),
-                                                                                            ],
-                                                                                          ),
-                                                                                          Divider(
-                                                                                            thickness: 2.0,
-                                                                                            color: FlutterFlowTheme.of(context).alternate,
-                                                                                          ),
-                                                                                          Row(
-                                                                                            mainAxisSize: MainAxisSize.max,
-                                                                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                            children: [
-                                                                                              Row(
-                                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                                children: [
-                                                                                                  Icon(
-                                                                                                    Icons.check_circle,
-                                                                                                    color: containeringresosIngresosRow.form1seccion4 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
-                                                                                                    size: 24.0,
-                                                                                                  ),
-                                                                                                  Text(
-                                                                                                    'Situacion socio-economica',
-                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                          font: GoogleFonts.notoSansJp(
-                                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                          ),
-                                                                                                          letterSpacing: 0.0,
-                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                        ),
-                                                                                                  ),
-                                                                                                ],
-                                                                                              ),
-                                                                                              Row(
-                                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                                children: [
-                                                                                                  if (containeringresosIngresosRow.form1seccion4 ?? true)
-                                                                                                    Padding(
-                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
-                                                                                                      child: FFButtonWidget(
-                                                                                                        onPressed: !() {
-                                                                                                          if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
-                                                                                                            return true;
-                                                                                                          } else if (widget.usuariorol?.rolId == 1) {
-                                                                                                            return true;
-                                                                                                          } else if (widget.usuariorol?.rolId == 2) {
-                                                                                                            return true;
-                                                                                                          } else {
-                                                                                                            return false;
-                                                                                                          }
-                                                                                                        }()
-                                                                                                            ? null
-                                                                                                            : () async {
-                                                                                                                await showModalBottomSheet(
-                                                                                                                  isScrollControlled: true,
-                                                                                                                  backgroundColor: Colors.transparent,
-                                                                                                                  enableDrag: false,
-                                                                                                                  context: context,
-                                                                                                                  builder: (context) {
-                                                                                                                    return WebViewAware(
-                                                                                                                      child: GestureDetector(
-                                                                                                                        onTap: () {
-                                                                                                                          FocusScope.of(context).unfocus();
-                                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                                        },
-                                                                                                                        child: Padding(
-                                                                                                                          padding: MediaQuery.viewInsetsOf(context),
-                                                                                                                          child: Seccion4Widget(
-                                                                                                                            rowingreso: containeringresosIngresosRow,
-                                                                                                                            rowexp: widget.rowexp!,
-                                                                                                                            edit: true,
-                                                                                                                          ),
-                                                                                                                        ),
-                                                                                                                      ),
-                                                                                                                    );
-                                                                                                                  },
-                                                                                                                ).then((value) => safeSetState(() => _model.seccion4 = value));
-
-                                                                                                                if (_model.seccion4!) {
-                                                                                                                  safeSetState(() => _model.requestCompleter1 = null);
-                                                                                                                  await _model.waitForRequestCompleted1();
-                                                                                                                }
-
-                                                                                                                safeSetState(() {});
-                                                                                                              },
-                                                                                                        text: 'Editar Sección 4',
-                                                                                                        options: FFButtonOptions(
-                                                                                                          height: 30.0,
-                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                          color: containeringresosIngresosRow.form1seccion4 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).secondary,
-                                                                                                          textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                                font: GoogleFonts.notoSansJp(
-                                                                                                                  fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                                ),
-                                                                                                                color: Colors.white,
-                                                                                                                letterSpacing: 0.0,
-                                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                              ),
-                                                                                                          elevation: 3.0,
-                                                                                                          borderSide: BorderSide(
-                                                                                                            color: Colors.transparent,
-                                                                                                            width: 1.0,
-                                                                                                          ),
-                                                                                                          borderRadius: BorderRadius.circular(8.0),
-                                                                                                          disabledColor: FlutterFlowTheme.of(context).alternate,
-                                                                                                        ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                  if (!containeringresosIngresosRow.form1seccion4!)
-                                                                                                    Padding(
-                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
-                                                                                                      child: FFButtonWidget(
-                                                                                                        onPressed: !() {
-                                                                                                          if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
-                                                                                                            return true;
-                                                                                                          } else if (widget.usuariorol?.rolId == 1) {
-                                                                                                            return true;
-                                                                                                          } else if (widget.usuariorol?.rolId == 2) {
-                                                                                                            return true;
-                                                                                                          } else {
-                                                                                                            return false;
-                                                                                                          }
-                                                                                                        }()
-                                                                                                            ? null
-                                                                                                            : () async {
-                                                                                                                await showModalBottomSheet(
-                                                                                                                  isScrollControlled: true,
-                                                                                                                  backgroundColor: Colors.transparent,
-                                                                                                                  enableDrag: false,
-                                                                                                                  context: context,
-                                                                                                                  builder: (context) {
-                                                                                                                    return WebViewAware(
-                                                                                                                      child: GestureDetector(
-                                                                                                                        onTap: () {
-                                                                                                                          FocusScope.of(context).unfocus();
-                                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                                        },
-                                                                                                                        child: Padding(
-                                                                                                                          padding: MediaQuery.viewInsetsOf(context),
-                                                                                                                          child: Seccion4Widget(
-                                                                                                                            rowingreso: containeringresosIngresosRow,
-                                                                                                                            rowexp: widget.rowexp!,
-                                                                                                                            edit: false,
-                                                                                                                          ),
-                                                                                                                        ),
-                                                                                                                      ),
-                                                                                                                    );
-                                                                                                                  },
-                                                                                                                ).then((value) => safeSetState(() => _model.seccion4true = value));
-
-                                                                                                                if (_model.seccion4true!) {
-                                                                                                                  safeSetState(() => _model.requestCompleter1 = null);
-                                                                                                                  await _model.waitForRequestCompleted1();
-                                                                                                                }
-
-                                                                                                                safeSetState(() {});
-                                                                                                              },
-                                                                                                        text: 'Sección 4',
-                                                                                                        options: FFButtonOptions(
-                                                                                                          height: 30.0,
-                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                          color: containeringresosIngresosRow.form1seccion4 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).secondary,
-                                                                                                          textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                                font: GoogleFonts.notoSansJp(
-                                                                                                                  fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                                ),
-                                                                                                                color: Colors.white,
-                                                                                                                letterSpacing: 0.0,
-                                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                              ),
-                                                                                                          elevation: 3.0,
-                                                                                                          borderSide: BorderSide(
-                                                                                                            color: Colors.transparent,
-                                                                                                            width: 1.0,
-                                                                                                          ),
-                                                                                                          borderRadius: BorderRadius.circular(8.0),
-                                                                                                          disabledColor: FlutterFlowTheme.of(context).alternate,
-                                                                                                        ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                ],
-                                                                                              ),
-                                                                                            ],
-                                                                                          ),
-                                                                                          Divider(
-                                                                                            thickness: 2.0,
-                                                                                            color: FlutterFlowTheme.of(context).alternate,
-                                                                                          ),
-                                                                                          Row(
-                                                                                            mainAxisSize: MainAxisSize.max,
-                                                                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                            children: [
-                                                                                              Row(
-                                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                                children: [
-                                                                                                  Icon(
-                                                                                                    Icons.check_circle,
-                                                                                                    color: containeringresosIngresosRow.form1seccion5 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
-                                                                                                    size: 24.0,
-                                                                                                  ),
-                                                                                                  Text(
-                                                                                                    'Motivo',
-                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                          font: GoogleFonts.notoSansJp(
-                                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                          ),
-                                                                                                          letterSpacing: 0.0,
-                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                        ),
-                                                                                                  ),
-                                                                                                ],
-                                                                                              ),
-                                                                                              Row(
-                                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                                children: [
-                                                                                                  if (containeringresosIngresosRow.form1seccion5 ?? true)
-                                                                                                    Padding(
-                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
-                                                                                                      child: FFButtonWidget(
-                                                                                                        onPressed: !() {
-                                                                                                          if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
-                                                                                                            return true;
-                                                                                                          } else if (widget.usuariorol?.rolId == 1) {
-                                                                                                            return true;
-                                                                                                          } else if (widget.usuariorol?.rolId == 2) {
-                                                                                                            return true;
-                                                                                                          } else {
-                                                                                                            return false;
-                                                                                                          }
-                                                                                                        }()
-                                                                                                            ? null
-                                                                                                            : () async {
-                                                                                                                await showModalBottomSheet(
-                                                                                                                  isScrollControlled: true,
-                                                                                                                  backgroundColor: Colors.transparent,
-                                                                                                                  enableDrag: false,
-                                                                                                                  context: context,
-                                                                                                                  builder: (context) {
-                                                                                                                    return WebViewAware(
-                                                                                                                      child: GestureDetector(
-                                                                                                                        onTap: () {
-                                                                                                                          FocusScope.of(context).unfocus();
-                                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                                        },
-                                                                                                                        child: Padding(
-                                                                                                                          padding: MediaQuery.viewInsetsOf(context),
-                                                                                                                          child: Seccion5Widget(
-                                                                                                                            rowingreso: containeringresosIngresosRow,
-                                                                                                                            rowexp: widget.rowexp!,
-                                                                                                                            editar: true,
-                                                                                                                          ),
-                                                                                                                        ),
-                                                                                                                      ),
-                                                                                                                    );
-                                                                                                                  },
-                                                                                                                ).then((value) => safeSetState(() {}));
-                                                                                                              },
-                                                                                                        text: 'Editar Sección 5',
-                                                                                                        options: FFButtonOptions(
-                                                                                                          height: 30.0,
-                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                          color: containeringresosIngresosRow.form1seccion5 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).secondary,
-                                                                                                          textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                                font: GoogleFonts.notoSansJp(
-                                                                                                                  fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                                ),
-                                                                                                                color: Colors.white,
-                                                                                                                letterSpacing: 0.0,
-                                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                              ),
-                                                                                                          elevation: 3.0,
-                                                                                                          borderSide: BorderSide(
-                                                                                                            color: Colors.transparent,
-                                                                                                            width: 1.0,
-                                                                                                          ),
-                                                                                                          borderRadius: BorderRadius.circular(8.0),
-                                                                                                          disabledColor: FlutterFlowTheme.of(context).alternate,
-                                                                                                        ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                  if (!containeringresosIngresosRow.form1seccion5!)
-                                                                                                    Padding(
-                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
-                                                                                                      child: FFButtonWidget(
-                                                                                                        onPressed: !() {
-                                                                                                          if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
-                                                                                                            return true;
-                                                                                                          } else if (widget.usuariorol?.rolId == 1) {
-                                                                                                            return true;
-                                                                                                          } else if (widget.usuariorol?.rolId == 2) {
-                                                                                                            return true;
-                                                                                                          } else {
-                                                                                                            return false;
-                                                                                                          }
-                                                                                                        }()
-                                                                                                            ? null
-                                                                                                            : () async {
-                                                                                                                await showModalBottomSheet(
-                                                                                                                  isScrollControlled: true,
-                                                                                                                  backgroundColor: Colors.transparent,
-                                                                                                                  enableDrag: false,
-                                                                                                                  context: context,
-                                                                                                                  builder: (context) {
-                                                                                                                    return WebViewAware(
-                                                                                                                      child: GestureDetector(
-                                                                                                                        onTap: () {
-                                                                                                                          FocusScope.of(context).unfocus();
-                                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                                        },
-                                                                                                                        child: Padding(
-                                                                                                                          padding: MediaQuery.viewInsetsOf(context),
-                                                                                                                          child: Seccion5Widget(
-                                                                                                                            rowingreso: containeringresosIngresosRow,
-                                                                                                                            rowexp: widget.rowexp!,
-                                                                                                                            editar: false,
-                                                                                                                          ),
-                                                                                                                        ),
-                                                                                                                      ),
-                                                                                                                    );
-                                                                                                                  },
-                                                                                                                ).then((value) => safeSetState(() => _model.seccion5true = value));
-
-                                                                                                                if (_model.seccion5true!) {
-                                                                                                                  safeSetState(() => _model.requestCompleter1 = null);
-                                                                                                                  await _model.waitForRequestCompleted1();
-                                                                                                                }
-
-                                                                                                                safeSetState(() {});
-                                                                                                              },
-                                                                                                        text: 'Sección 5',
-                                                                                                        options: FFButtonOptions(
-                                                                                                          height: 30.0,
-                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                          color: containeringresosIngresosRow.form1seccion5 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).secondary,
-                                                                                                          textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                                font: GoogleFonts.notoSansJp(
-                                                                                                                  fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                                ),
-                                                                                                                color: Colors.white,
-                                                                                                                letterSpacing: 0.0,
-                                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                              ),
-                                                                                                          elevation: 3.0,
-                                                                                                          borderSide: BorderSide(
-                                                                                                            color: Colors.transparent,
-                                                                                                            width: 1.0,
-                                                                                                          ),
-                                                                                                          borderRadius: BorderRadius.circular(8.0),
-                                                                                                          disabledColor: FlutterFlowTheme.of(context).alternate,
-                                                                                                        ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                ],
-                                                                                              ),
-                                                                                            ],
-                                                                                          ),
-                                                                                          Divider(
-                                                                                            thickness: 2.0,
-                                                                                            color: FlutterFlowTheme.of(context).alternate,
-                                                                                          ),
-                                                                                          Row(
-                                                                                            mainAxisSize: MainAxisSize.max,
-                                                                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                            children: [
-                                                                                              Row(
-                                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                                children: [
-                                                                                                  Icon(
-                                                                                                    Icons.check_circle,
-                                                                                                    color: containeringresosIngresosRow.form1seccion6 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
-                                                                                                    size: 24.0,
-                                                                                                  ),
-                                                                                                  Text(
-                                                                                                    'Intervenciones',
-                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                          font: GoogleFonts.notoSansJp(
-                                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                          ),
-                                                                                                          letterSpacing: 0.0,
-                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                        ),
-                                                                                                  ),
-                                                                                                ],
-                                                                                              ),
-                                                                                              Column(
-                                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                                children: [
-                                                                                                  if (containeringresosIngresosRow.form1seccion6 ?? true)
-                                                                                                    Padding(
-                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
-                                                                                                      child: FFButtonWidget(
-                                                                                                        onPressed: !() {
-                                                                                                          if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
-                                                                                                            return true;
-                                                                                                          } else if (widget.usuariorol?.rolId == 1) {
-                                                                                                            return true;
-                                                                                                          } else if (widget.usuariorol?.rolId == 2) {
-                                                                                                            return true;
-                                                                                                          } else {
-                                                                                                            return false;
-                                                                                                          }
-                                                                                                        }()
-                                                                                                            ? null
-                                                                                                            : () async {
-                                                                                                                await showModalBottomSheet(
-                                                                                                                  isScrollControlled: true,
-                                                                                                                  backgroundColor: Colors.transparent,
-                                                                                                                  enableDrag: false,
-                                                                                                                  context: context,
-                                                                                                                  builder: (context) {
-                                                                                                                    return WebViewAware(
-                                                                                                                      child: GestureDetector(
-                                                                                                                        onTap: () {
-                                                                                                                          FocusScope.of(context).unfocus();
-                                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                                        },
-                                                                                                                        child: Padding(
-                                                                                                                          padding: MediaQuery.viewInsetsOf(context),
-                                                                                                                          child: Seccion6Widget(
-                                                                                                                            rowingreso: containeringresosIngresosRow,
-                                                                                                                            rowexp: widget.rowexp,
-                                                                                                                            edit: true,
-                                                                                                                          ),
-                                                                                                                        ),
-                                                                                                                      ),
-                                                                                                                    );
-                                                                                                                  },
-                                                                                                                ).then((value) => safeSetState(() {}));
-                                                                                                              },
-                                                                                                        text: 'Agregar intervenciones ant.',
-                                                                                                        options: FFButtonOptions(
-                                                                                                          height: 30.0,
-                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                          color: containeringresosIngresosRow.form1seccion6 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).secondary,
-                                                                                                          textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                                font: GoogleFonts.notoSansJp(
-                                                                                                                  fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                                ),
-                                                                                                                color: Colors.white,
-                                                                                                                letterSpacing: 0.0,
-                                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                              ),
-                                                                                                          elevation: 3.0,
-                                                                                                          borderSide: BorderSide(
-                                                                                                            color: Colors.transparent,
-                                                                                                            width: 1.0,
-                                                                                                          ),
-                                                                                                          borderRadius: BorderRadius.circular(8.0),
-                                                                                                          disabledColor: FlutterFlowTheme.of(context).alternate,
-                                                                                                        ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                  if (!containeringresosIngresosRow.form1seccion6!)
-                                                                                                    Padding(
-                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
-                                                                                                      child: FFButtonWidget(
-                                                                                                        onPressed: !() {
-                                                                                                          if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
-                                                                                                            return true;
-                                                                                                          } else if (widget.usuariorol?.rolId == 1) {
-                                                                                                            return true;
-                                                                                                          } else if (widget.usuariorol?.rolId == 2) {
-                                                                                                            return true;
-                                                                                                          } else {
-                                                                                                            return false;
-                                                                                                          }
-                                                                                                        }()
-                                                                                                            ? null
-                                                                                                            : () async {
-                                                                                                                await showModalBottomSheet(
-                                                                                                                  isScrollControlled: true,
-                                                                                                                  backgroundColor: Colors.transparent,
-                                                                                                                  enableDrag: false,
-                                                                                                                  context: context,
-                                                                                                                  builder: (context) {
-                                                                                                                    return WebViewAware(
-                                                                                                                      child: GestureDetector(
-                                                                                                                        onTap: () {
-                                                                                                                          FocusScope.of(context).unfocus();
-                                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                                        },
-                                                                                                                        child: Padding(
-                                                                                                                          padding: MediaQuery.viewInsetsOf(context),
-                                                                                                                          child: Seccion6Widget(
-                                                                                                                            rowingreso: containeringresosIngresosRow,
-                                                                                                                            rowexp: widget.rowexp,
-                                                                                                                            edit: false,
-                                                                                                                          ),
-                                                                                                                        ),
-                                                                                                                      ),
-                                                                                                                    );
-                                                                                                                  },
-                                                                                                                ).then((value) => safeSetState(() => _model.seccion6true = value));
-
-                                                                                                                if (_model.seccion6true!) {
-                                                                                                                  safeSetState(() => _model.requestCompleter1 = null);
-                                                                                                                  await _model.waitForRequestCompleted1();
-                                                                                                                }
-
-                                                                                                                safeSetState(() {});
-                                                                                                              },
-                                                                                                        text: 'Agregar intervenciones ant.',
-                                                                                                        options: FFButtonOptions(
-                                                                                                          height: 30.0,
-                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                          color: containeringresosIngresosRow.form1seccion6 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
-                                                                                                          textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                                font: GoogleFonts.notoSansJp(
-                                                                                                                  fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                                ),
-                                                                                                                color: Colors.white,
-                                                                                                                letterSpacing: 0.0,
-                                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                              ),
-                                                                                                          elevation: 3.0,
-                                                                                                          borderSide: BorderSide(
-                                                                                                            color: Colors.transparent,
-                                                                                                            width: 1.0,
-                                                                                                          ),
-                                                                                                          borderRadius: BorderRadius.circular(8.0),
-                                                                                                          disabledColor: FlutterFlowTheme.of(context).alternate,
-                                                                                                        ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                ],
-                                                                                              ),
-                                                                                            ],
-                                                                                          ),
-                                                                                          Divider(
-                                                                                            thickness: 2.0,
-                                                                                            color: FlutterFlowTheme.of(context).alternate,
-                                                                                          ),
-                                                                                          Row(
-                                                                                            mainAxisSize: MainAxisSize.max,
-                                                                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                            children: [
-                                                                                              Row(
-                                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                                children: [
-                                                                                                  Icon(
-                                                                                                    Icons.check_circle,
-                                                                                                    color: containeringresosIngresosRow.form1seccion7 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
-                                                                                                    size: 24.0,
-                                                                                                  ),
-                                                                                                  Text(
-                                                                                                    'Derechos vulnerados  y/o amenazados',
-                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                          font: GoogleFonts.notoSansJp(
-                                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                          ),
-                                                                                                          letterSpacing: 0.0,
-                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                        ),
-                                                                                                  ),
-                                                                                                ],
-                                                                                              ),
-                                                                                              Row(
-                                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                                children: [
-                                                                                                  if (containeringresosIngresosRow.form1seccion7 ?? true)
-                                                                                                    Padding(
-                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
-                                                                                                      child: FFButtonWidget(
-                                                                                                        onPressed: !() {
-                                                                                                          if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
-                                                                                                            return true;
-                                                                                                          } else if (widget.usuariorol?.rolId == 1) {
-                                                                                                            return true;
-                                                                                                          } else if (widget.usuariorol?.rolId == 2) {
-                                                                                                            return true;
-                                                                                                          } else {
-                                                                                                            return false;
-                                                                                                          }
-                                                                                                        }()
-                                                                                                            ? null
-                                                                                                            : () async {
-                                                                                                                await showModalBottomSheet(
-                                                                                                                  isScrollControlled: true,
-                                                                                                                  backgroundColor: Colors.transparent,
-                                                                                                                  enableDrag: false,
-                                                                                                                  context: context,
-                                                                                                                  builder: (context) {
-                                                                                                                    return WebViewAware(
-                                                                                                                      child: GestureDetector(
-                                                                                                                        onTap: () {
-                                                                                                                          FocusScope.of(context).unfocus();
-                                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                                        },
-                                                                                                                        child: Padding(
-                                                                                                                          padding: MediaQuery.viewInsetsOf(context),
-                                                                                                                          child: Seccion7Widget(
-                                                                                                                            rowingreso: containeringresosIngresosRow,
-                                                                                                                            rowexp: widget.rowexp!,
-                                                                                                                            editar: true,
-                                                                                                                          ),
-                                                                                                                        ),
-                                                                                                                      ),
-                                                                                                                    );
-                                                                                                                  },
-                                                                                                                ).then((value) => safeSetState(() {}));
-                                                                                                              },
-                                                                                                        text: 'Editar Sección 7',
-                                                                                                        options: FFButtonOptions(
-                                                                                                          height: 30.0,
-                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                          color: containeringresosIngresosRow.form1seccion7 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).secondary,
-                                                                                                          textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                                font: GoogleFonts.notoSansJp(
-                                                                                                                  fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                                ),
-                                                                                                                color: Colors.white,
-                                                                                                                letterSpacing: 0.0,
-                                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                              ),
-                                                                                                          elevation: 3.0,
-                                                                                                          borderSide: BorderSide(
-                                                                                                            color: Colors.transparent,
-                                                                                                            width: 1.0,
-                                                                                                          ),
-                                                                                                          borderRadius: BorderRadius.circular(8.0),
-                                                                                                          disabledColor: FlutterFlowTheme.of(context).alternate,
-                                                                                                        ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                  if (!containeringresosIngresosRow.form1seccion7!)
-                                                                                                    Padding(
-                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
-                                                                                                      child: FFButtonWidget(
-                                                                                                        onPressed: !() {
-                                                                                                          if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
-                                                                                                            return true;
-                                                                                                          } else if (widget.usuariorol?.rolId == 1) {
-                                                                                                            return true;
-                                                                                                          } else if (widget.usuariorol?.rolId == 2) {
-                                                                                                            return true;
-                                                                                                          } else {
-                                                                                                            return false;
-                                                                                                          }
-                                                                                                        }()
-                                                                                                            ? null
-                                                                                                            : () async {
-                                                                                                                await showModalBottomSheet(
-                                                                                                                  isScrollControlled: true,
-                                                                                                                  backgroundColor: Colors.transparent,
-                                                                                                                  enableDrag: false,
-                                                                                                                  context: context,
-                                                                                                                  builder: (context) {
-                                                                                                                    return WebViewAware(
-                                                                                                                      child: GestureDetector(
-                                                                                                                        onTap: () {
-                                                                                                                          FocusScope.of(context).unfocus();
-                                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                                        },
-                                                                                                                        child: Padding(
-                                                                                                                          padding: MediaQuery.viewInsetsOf(context),
-                                                                                                                          child: Seccion7Widget(
-                                                                                                                            rowingreso: containeringresosIngresosRow,
-                                                                                                                            rowexp: widget.rowexp!,
-                                                                                                                            editar: false,
-                                                                                                                          ),
-                                                                                                                        ),
-                                                                                                                      ),
-                                                                                                                    );
-                                                                                                                  },
-                                                                                                                ).then((value) => safeSetState(() => _model.seccion7true = value));
-
-                                                                                                                if (_model.seccion7true!) {
-                                                                                                                  safeSetState(() => _model.requestCompleter1 = null);
-                                                                                                                  await _model.waitForRequestCompleted1();
-                                                                                                                }
-
-                                                                                                                safeSetState(() {});
-                                                                                                              },
-                                                                                                        text: 'Sección 7',
-                                                                                                        options: FFButtonOptions(
-                                                                                                          height: 30.0,
-                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                          color: containeringresosIngresosRow.form1seccion7 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
-                                                                                                          textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                                font: GoogleFonts.notoSansJp(
-                                                                                                                  fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                                ),
-                                                                                                                color: Colors.white,
-                                                                                                                letterSpacing: 0.0,
-                                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                              ),
-                                                                                                          elevation: 3.0,
-                                                                                                          borderSide: BorderSide(
-                                                                                                            color: Colors.transparent,
-                                                                                                            width: 1.0,
-                                                                                                          ),
-                                                                                                          borderRadius: BorderRadius.circular(8.0),
-                                                                                                          disabledColor: FlutterFlowTheme.of(context).alternate,
-                                                                                                        ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                ],
-                                                                                              ),
-                                                                                            ],
-                                                                                          ),
-                                                                                          Divider(
-                                                                                            thickness: 2.0,
-                                                                                            color: FlutterFlowTheme.of(context).alternate,
-                                                                                          ),
-                                                                                          Row(
-                                                                                            mainAxisSize: MainAxisSize.max,
-                                                                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                            children: [
-                                                                                              Row(
-                                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                                children: [
-                                                                                                  Icon(
-                                                                                                    Icons.check_circle,
-                                                                                                    color: containeringresosIngresosRow.form1seccion8 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
-                                                                                                    size: 24.0,
-                                                                                                  ),
-                                                                                                  Text(
-                                                                                                    'Personas relacionadas',
-                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                          font: GoogleFonts.notoSansJp(
-                                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                          ),
-                                                                                                          letterSpacing: 0.0,
-                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                        ),
-                                                                                                  ),
-                                                                                                ],
-                                                                                              ),
-                                                                                              Padding(
-                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
-                                                                                                child: FFButtonWidget(
-                                                                                                  onPressed: !() {
-                                                                                                    if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
-                                                                                                      return true;
-                                                                                                    } else if (widget.usuariorol?.rolId == 1) {
-                                                                                                      return true;
-                                                                                                    } else if (widget.usuariorol?.rolId == 2) {
-                                                                                                      return true;
-                                                                                                    } else {
-                                                                                                      return false;
-                                                                                                    }
-                                                                                                  }()
-                                                                                                      ? null
-                                                                                                      : () async {
-                                                                                                          await showModalBottomSheet(
-                                                                                                            isScrollControlled: true,
-                                                                                                            backgroundColor: Colors.transparent,
-                                                                                                            enableDrag: false,
-                                                                                                            context: context,
-                                                                                                            builder: (context) {
-                                                                                                              return WebViewAware(
-                                                                                                                child: GestureDetector(
-                                                                                                                  onTap: () {
-                                                                                                                    FocusScope.of(context).unfocus();
-                                                                                                                    FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                                  },
-                                                                                                                  child: Padding(
-                                                                                                                    padding: MediaQuery.viewInsetsOf(context),
-                                                                                                                    child: Seccion8Widget(
-                                                                                                                      idingreso: containeringresosIngresosRow,
-                                                                                                                      idexp: widget.rowexp!,
-                                                                                                                    ),
-                                                                                                                  ),
-                                                                                                                ),
-                                                                                                              );
-                                                                                                            },
-                                                                                                          ).then((value) => safeSetState(() => _model.seccion8guardada = value));
-
-                                                                                                          if (_model.seccion8guardada!) {
-                                                                                                            safeSetState(() => _model.requestCompleter1 = null);
-                                                                                                            await _model.waitForRequestCompleted1();
-                                                                                                          }
-
-                                                                                                          safeSetState(() {});
-                                                                                                        },
-                                                                                                  text: 'Sección 8',
-                                                                                                  options: FFButtonOptions(
-                                                                                                    height: 30.0,
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                    color: containeringresosIngresosRow.form1seccion8! ? FlutterFlowTheme.of(context).secondary : FlutterFlowTheme.of(context).primary,
-                                                                                                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                          font: GoogleFonts.notoSansJp(
-                                                                                                            fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                            fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                          ),
-                                                                                                          color: Colors.white,
-                                                                                                          letterSpacing: 0.0,
-                                                                                                          fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                          fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                        ),
-                                                                                                    elevation: 3.0,
-                                                                                                    borderSide: BorderSide(
-                                                                                                      color: Colors.transparent,
-                                                                                                      width: 1.0,
-                                                                                                    ),
-                                                                                                    borderRadius: BorderRadius.circular(8.0),
-                                                                                                    disabledColor: FlutterFlowTheme.of(context).alternate,
-                                                                                                  ),
-                                                                                                ),
-                                                                                              ),
-                                                                                            ],
-                                                                                          ),
-                                                                                          Divider(
-                                                                                            thickness: 2.0,
-                                                                                            color: FlutterFlowTheme.of(context).alternate,
-                                                                                          ),
-                                                                                          FutureBuilder<List<Seccion9Row>>(
-                                                                                            future: Seccion9Table().querySingleRow(
-                                                                                              queryFn: (q) => q.eqOrNull(
-                                                                                                'idIngreso',
-                                                                                                widget.idingreso,
-                                                                                              ),
-                                                                                            ),
-                                                                                            builder: (context, snapshot) {
-                                                                                              // Customize what your widget looks like when it's loading.
-                                                                                              if (!snapshot.hasData) {
-                                                                                                return Center(
-                                                                                                  child: SizedBox(
-                                                                                                    width: 50.0,
-                                                                                                    height: 50.0,
-                                                                                                    child: CircularProgressIndicator(
-                                                                                                      valueColor: AlwaysStoppedAnimation<Color>(
-                                                                                                        FlutterFlowTheme.of(context).primary,
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                  ),
-                                                                                                );
-                                                                                              }
-                                                                                              List<Seccion9Row> containerSeccion9RowList = snapshot.data!;
-
-                                                                                              final containerSeccion9Row = containerSeccion9RowList.isNotEmpty ? containerSeccion9RowList.first : null;
-
-                                                                                              return Container(
-                                                                                                decoration: BoxDecoration(),
-                                                                                                child: Row(
-                                                                                                  mainAxisSize: MainAxisSize.max,
-                                                                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                                  children: [
-                                                                                                    Row(
-                                                                                                      mainAxisSize: MainAxisSize.max,
-                                                                                                      children: [
-                                                                                                        Icon(
-                                                                                                          Icons.check_circle,
-                                                                                                          color: containeringresosIngresosRow.form1seccion9 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
-                                                                                                          size: 24.0,
-                                                                                                        ),
-                                                                                                        Text(
-                                                                                                          'Apertura de expediente / Asesoramiento',
-                                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                font: GoogleFonts.notoSansJp(
-                                                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                                ),
-                                                                                                                letterSpacing: 0.0,
-                                                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                              ),
-                                                                                                        ),
-                                                                                                      ],
-                                                                                                    ),
-                                                                                                    FFButtonWidget(
-                                                                                                      onPressed: !() {
-                                                                                                        if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
-                                                                                                          return true;
-                                                                                                        } else if (widget.usuariorol?.rolId == 1) {
-                                                                                                          return true;
-                                                                                                        } else if (widget.usuariorol?.rolId == 2) {
-                                                                                                          return true;
-                                                                                                        } else {
-                                                                                                          return false;
-                                                                                                        }
-                                                                                                      }()
-                                                                                                          ? null
-                                                                                                          : () async {
-                                                                                                              if (containerSeccion9Row?.idSec9 != null) {
-                                                                                                                await Seccion9Table().update(
-                                                                                                                  data: {
-                                                                                                                    'Desicion': 'Apertura',
-                                                                                                                    'iduser': currentUserUid,
-                                                                                                                  },
-                                                                                                                  matchingRows: (rows) => rows.eqOrNull(
-                                                                                                                    'idIngreso',
-                                                                                                                    widget.idingreso,
-                                                                                                                  ),
-                                                                                                                );
-                                                                                                                safeSetState(() => _model.requestCompleter1 = null);
-                                                                                                                await _model.waitForRequestCompleted1();
-                                                                                                              } else {
-                                                                                                                _model.seccion9 = await Seccion9Table().insert({
-                                                                                                                  'idIngreso': containeringresosIngresosRow.id,
-                                                                                                                  'idExpediente': widget.rowexp?.id,
-                                                                                                                  'Desicion': 'Apertura',
-                                                                                                                  'iduser': currentUserUid,
-                                                                                                                });
-                                                                                                                await IngresosTable().update(
-                                                                                                                  data: {
-                                                                                                                    'form1seccion9': true,
-                                                                                                                    'updated_at': supaSerialize<DateTime>(getCurrentTimestamp),
-                                                                                                                  },
-                                                                                                                  matchingRows: (rows) => rows.eqOrNull(
-                                                                                                                    'id',
-                                                                                                                    containeringresosIngresosRow.id,
-                                                                                                                  ),
-                                                                                                                );
-                                                                                                                await showDialog(
-                                                                                                                  context: context,
-                                                                                                                  builder: (alertDialogContext) {
-                                                                                                                    return WebViewAware(
-                                                                                                                      child: AlertDialog(
-                                                                                                                        title: Text('Carga correcta'),
-                                                                                                                        content: Text('La informacion se guardo correctamente com \"Apertura de legajo\"!!'),
-                                                                                                                        actions: [
-                                                                                                                          TextButton(
-                                                                                                                            onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                                            child: Text('Ok'),
-                                                                                                                          ),
-                                                                                                                        ],
-                                                                                                                      ),
-                                                                                                                    );
-                                                                                                                  },
-                                                                                                                );
-                                                                                                                safeSetState(() => _model.requestCompleter1 = null);
-                                                                                                                await _model.waitForRequestCompleted1();
-                                                                                                              }
-
-                                                                                                              safeSetState(() {});
-                                                                                                            },
-                                                                                                      text: 'Apertura de expediente',
-                                                                                                      options: FFButtonOptions(
-                                                                                                        height: 40.0,
-                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                        color: containerSeccion9Row?.desicion == 'Apertura' ? FlutterFlowTheme.of(context).success : FlutterFlowTheme.of(context).primary,
-                                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                              font: GoogleFonts.notoSansJp(
-                                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                              ),
-                                                                                                              color: Colors.white,
-                                                                                                              letterSpacing: 0.0,
-                                                                                                              fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                              fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                            ),
-                                                                                                        elevation: 0.0,
-                                                                                                        borderRadius: BorderRadius.circular(8.0),
-                                                                                                        disabledColor: FlutterFlowTheme.of(context).alternate,
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                    FFButtonWidget(
-                                                                                                      onPressed: !() {
-                                                                                                        if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
-                                                                                                          return true;
-                                                                                                        } else if (widget.usuariorol?.rolId == 1) {
-                                                                                                          return true;
-                                                                                                        } else if (widget.usuariorol?.rolId == 2) {
-                                                                                                          return true;
-                                                                                                        } else {
-                                                                                                          return false;
-                                                                                                        }
-                                                                                                      }()
-                                                                                                          ? null
-                                                                                                          : () async {
-                                                                                                              if (containerSeccion9Row?.idSec9 != null) {
-                                                                                                                await Seccion9Table().update(
-                                                                                                                  data: {
-                                                                                                                    'Desicion': 'Asesoramiento',
-                                                                                                                  },
-                                                                                                                  matchingRows: (rows) => rows.eqOrNull(
-                                                                                                                    'idIngreso',
-                                                                                                                    widget.idingreso,
-                                                                                                                  ),
-                                                                                                                );
-                                                                                                                await showModalBottomSheet(
-                                                                                                                  isScrollControlled: true,
-                                                                                                                  backgroundColor: Colors.transparent,
-                                                                                                                  enableDrag: false,
-                                                                                                                  context: context,
-                                                                                                                  builder: (context) {
-                                                                                                                    return WebViewAware(
-                                                                                                                      child: GestureDetector(
-                                                                                                                        onTap: () {
-                                                                                                                          FocusScope.of(context).unfocus();
-                                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                                        },
-                                                                                                                        child: Padding(
-                                                                                                                          padding: MediaQuery.viewInsetsOf(context),
-                                                                                                                          child: AsesoramientoAnexoAWidget(
-                                                                                                                            rowingreso: containeringresosIngresosRow,
-                                                                                                                            rowexpediente: widget.rowexp,
-                                                                                                                            rowseccion9: containerSeccion9Row,
-                                                                                                                            usuariorow: widget.usuariorow,
-                                                                                                                            spd: widget.spd,
-                                                                                                                            usuariorol: widget.usuariorol,
-                                                                                                                          ),
-                                                                                                                        ),
-                                                                                                                      ),
-                                                                                                                    );
-                                                                                                                  },
-                                                                                                                ).then((value) => safeSetState(() => _model.creoasesoramiento1 = value));
-
-                                                                                                                if (_model.creoasesoramiento1!) {
-                                                                                                                  safeSetState(() => _model.requestCompleter1 = null);
-                                                                                                                  await _model.waitForRequestCompleted1();
-                                                                                                                  safeSetState(() => _model.requestCompleter2 = null);
-                                                                                                                  await _model.waitForRequestCompleted2();
-                                                                                                                }
-                                                                                                              } else {
-                                                                                                                _model.seccion9Copy = await Seccion9Table().insert({
-                                                                                                                  'idIngreso': containeringresosIngresosRow.id,
-                                                                                                                  'idExpediente': widget.rowexp?.id,
-                                                                                                                  'Desicion': 'Asesoramiento',
-                                                                                                                  'iduser': currentUserUid,
-                                                                                                                });
-                                                                                                                await IngresosTable().update(
-                                                                                                                  data: {
-                                                                                                                    'form1seccion9': true,
-                                                                                                                    'Estado': 'Cerrado',
-                                                                                                                    'fechacierre': supaSerialize<DateTime>(getCurrentTimestamp),
-                                                                                                                    'Motivocierre': 'Asesoramiento',
-                                                                                                                    'updated_at': supaSerialize<DateTime>(getCurrentTimestamp),
-                                                                                                                  },
-                                                                                                                  matchingRows: (rows) => rows.eqOrNull(
-                                                                                                                    'id',
-                                                                                                                    containeringresosIngresosRow.id,
-                                                                                                                  ),
-                                                                                                                );
-                                                                                                                await showDialog(
-                                                                                                                  context: context,
-                                                                                                                  builder: (alertDialogContext) {
-                                                                                                                    return WebViewAware(
-                                                                                                                      child: AlertDialog(
-                                                                                                                        title: Text('Carga correcta'),
-                                                                                                                        content: Text('La informacion se guardo correctamente!!'),
-                                                                                                                        actions: [
-                                                                                                                          TextButton(
-                                                                                                                            onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                                            child: Text('Ok'),
-                                                                                                                          ),
-                                                                                                                        ],
-                                                                                                                      ),
-                                                                                                                    );
-                                                                                                                  },
-                                                                                                                );
-                                                                                                                safeSetState(() => _model.requestCompleter1 = null);
-                                                                                                                await _model.waitForRequestCompleted1();
-                                                                                                                await showModalBottomSheet(
-                                                                                                                  isScrollControlled: true,
-                                                                                                                  backgroundColor: Colors.transparent,
-                                                                                                                  enableDrag: false,
-                                                                                                                  context: context,
-                                                                                                                  builder: (context) {
-                                                                                                                    return WebViewAware(
-                                                                                                                      child: GestureDetector(
-                                                                                                                        onTap: () {
-                                                                                                                          FocusScope.of(context).unfocus();
-                                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                                        },
-                                                                                                                        child: Padding(
-                                                                                                                          padding: MediaQuery.viewInsetsOf(context),
-                                                                                                                          child: AsesoramientoAnexoAWidget(
-                                                                                                                            rowingreso: containeringresosIngresosRow,
-                                                                                                                            rowexpediente: widget.rowexp,
-                                                                                                                            rowseccion9: _model.seccion9Copy,
-                                                                                                                            usuariorow: widget.usuariorow,
-                                                                                                                            spd: widget.spd,
-                                                                                                                            usuariorol: widget.usuariorol,
-                                                                                                                          ),
-                                                                                                                        ),
-                                                                                                                      ),
-                                                                                                                    );
-                                                                                                                  },
-                                                                                                                ).then((value) => safeSetState(() {}));
-
-                                                                                                                if (_model.creoasesoramiento1!) {
-                                                                                                                  safeSetState(() => _model.requestCompleter2 = null);
-                                                                                                                  await _model.waitForRequestCompleted2();
-                                                                                                                  safeSetState(() => _model.requestCompleter1 = null);
-                                                                                                                  await _model.waitForRequestCompleted1();
-                                                                                                                }
-                                                                                                              }
-
-                                                                                                              safeSetState(() {});
-                                                                                                            },
-                                                                                                      text: 'Asesoramiento',
-                                                                                                      options: FFButtonOptions(
-                                                                                                        height: 40.0,
-                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                        color: containerSeccion9Row?.desicion == 'Asesoramiento' ? FlutterFlowTheme.of(context).success : FlutterFlowTheme.of(context).primary,
-                                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                              font: GoogleFonts.notoSansJp(
-                                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                              ),
-                                                                                                              color: Colors.white,
-                                                                                                              letterSpacing: 0.0,
-                                                                                                              fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                              fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                            ),
-                                                                                                        elevation: 0.0,
-                                                                                                        borderRadius: BorderRadius.circular(8.0),
-                                                                                                        disabledColor: FlutterFlowTheme.of(context).alternate,
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                  ],
-                                                                                                ),
-                                                                                              );
-                                                                                            },
-                                                                                          ),
-                                                                                        ].divide(SizedBox(height: 3.0)),
-                                                                                      ),
-                                                                                    ),
-                                                                                    Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
-                                                                                      child: Container(
-                                                                                        decoration: BoxDecoration(),
-                                                                                        child: Row(
-                                                                                          mainAxisSize: MainAxisSize.max,
-                                                                                          children: [
-                                                                                            if (containeranexoAnexoAForm1Row?.linkdoc != null && containeranexoAnexoAForm1Row?.linkdoc != '')
-                                                                                              FFButtonWidget(
-                                                                                                onPressed: () async {
-                                                                                                  await launchURL('https://view.officeapps.live.com/op/embed.aspx?src=${containeranexoAnexoAForm1Row?.linkdoc}');
-                                                                                                },
-                                                                                                text: 'Asesoramiento',
-                                                                                                icon: Icon(
-                                                                                                  Icons.remove_red_eye_sharp,
-                                                                                                  size: 15.0,
-                                                                                                ),
-                                                                                                options: FFButtonOptions(
-                                                                                                  height: 30.0,
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                  color: FlutterFlowTheme.of(context).primary,
-                                                                                                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                        font: GoogleFonts.notoSansJp(
-                                                                                                          fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                          fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                        ),
-                                                                                                        color: Colors.white,
-                                                                                                        fontSize: 10.0,
-                                                                                                        letterSpacing: 0.0,
-                                                                                                        fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                        fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                      ),
-                                                                                                  elevation: 0.0,
-                                                                                                  borderRadius: BorderRadius.circular(8.0),
-                                                                                                ),
-                                                                                              ),
-                                                                                            if (containeranexoAnexoAForm1Row?.linkdoc != null && containeranexoAnexoAForm1Row?.linkdoc != '')
-                                                                                              FFButtonWidget(
-                                                                                                onPressed: () async {
-                                                                                                  await launchURL(containeranexoAnexoAForm1Row!.linkdoc!);
-                                                                                                },
-                                                                                                text: 'Asesoramiento',
-                                                                                                icon: Icon(
-                                                                                                  Icons.download_sharp,
-                                                                                                  size: 15.0,
-                                                                                                ),
-                                                                                                options: FFButtonOptions(
-                                                                                                  height: 30.0,
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                  color: FlutterFlowTheme.of(context).primary,
-                                                                                                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                        font: GoogleFonts.notoSansJp(
-                                                                                                          fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                          fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                        ),
-                                                                                                        color: Colors.white,
-                                                                                                        fontSize: 10.0,
-                                                                                                        letterSpacing: 0.0,
-                                                                                                        fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                        fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                      ),
-                                                                                                  elevation: 0.0,
-                                                                                                  borderRadius: BorderRadius.circular(8.0),
-                                                                                                ),
-                                                                                              ),
-                                                                                          ].divide(SizedBox(width: 3.0)),
-                                                                                        ),
-                                                                                      ),
-                                                                                    ),
-                                                                                    if (containeringresosIngresosRow.form1seccion1! && containeringresosIngresosRow.form1seccion2! && containeringresosIngresosRow.form1seccion5! && containeringresosIngresosRow.form1seccion7! && containeringresosIngresosRow.form1seccion9!)
-                                                                                      Padding(
-                                                                                        padding: EdgeInsets.all(10.0),
-                                                                                        child: Container(
-                                                                                          height: 120.0,
-                                                                                          decoration: BoxDecoration(
-                                                                                            color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                            borderRadius: BorderRadius.circular(10.0),
-                                                                                            border: Border.all(
-                                                                                              color: FlutterFlowTheme.of(context).secondary,
-                                                                                            ),
-                                                                                          ),
-                                                                                          child: Column(
-                                                                                            mainAxisSize: MainAxisSize.max,
-                                                                                            mainAxisAlignment: MainAxisAlignment.center,
-                                                                                            children: [
-                                                                                              Padding(
-                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
-                                                                                                child: FFButtonWidget(
-                                                                                                  onPressed: () async {
-                                                                                                    if (containeringresosIngresosRow.emergencia == 'Si') {
-                                                                                                      await IngresosTable().update(
-                                                                                                        data: {
-                                                                                                          'form1completo': true,
-                                                                                                          'form9': true,
-                                                                                                          'Ampliacion': true,
-                                                                                                        },
-                                                                                                        matchingRows: (rows) => rows.eqOrNull(
-                                                                                                          'id',
-                                                                                                          containeringresosIngresosRow.id,
-                                                                                                        ),
-                                                                                                      );
-                                                                                                    } else {
-                                                                                                      await IngresosTable().update(
-                                                                                                        data: {
-                                                                                                          'form1completo': true,
-                                                                                                          'Ampliacioncompleto': false,
-                                                                                                          'Ampliacion': true,
-                                                                                                        },
-                                                                                                        matchingRows: (rows) => rows.eqOrNull(
-                                                                                                          'id',
-                                                                                                          containeringresosIngresosRow.id,
-                                                                                                        ),
-                                                                                                      );
-                                                                                                    }
-
-                                                                                                    await showDialog(
-                                                                                                      context: context,
-                                                                                                      builder: (alertDialogContext) {
-                                                                                                        return WebViewAware(
-                                                                                                          child: AlertDialog(
-                                                                                                            title: Text('Ok para avanzar!!'),
-                                                                                                            content: Text('Se completaron los requisitos minimos para avanzar!!'),
-                                                                                                            actions: [
-                                                                                                              TextButton(
-                                                                                                                onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                                child: Text('Ok'),
-                                                                                                              ),
-                                                                                                            ],
-                                                                                                          ),
-                                                                                                        );
-                                                                                                      },
-                                                                                                    );
-                                                                                                    safeSetState(() => _model.requestCompleter1 = null);
-                                                                                                    await _model.waitForRequestCompleted1();
-                                                                                                  },
-                                                                                                  text: 'Ok para avanzar',
-                                                                                                  icon: Icon(
-                                                                                                    Icons.save,
-                                                                                                    size: 15.0,
-                                                                                                  ),
-                                                                                                  options: FFButtonOptions(
-                                                                                                    width: 300.0,
-                                                                                                    height: 40.0,
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                    color: FlutterFlowTheme.of(context).success,
-                                                                                                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                          font: GoogleFonts.notoSansJp(
-                                                                                                            fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                            fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                          ),
-                                                                                                          color: Colors.white,
-                                                                                                          letterSpacing: 0.0,
-                                                                                                          fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                          fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                        ),
-                                                                                                    elevation: 2.0,
-                                                                                                    borderSide: BorderSide(
-                                                                                                      color: Colors.transparent,
-                                                                                                      width: 1.0,
-                                                                                                    ),
-                                                                                                    borderRadius: BorderRadius.circular(20.0),
-                                                                                                    hoverElevation: 4.0,
-                                                                                                  ),
-                                                                                                ),
-                                                                                              ),
-                                                                                            ].divide(SizedBox(height: 10.0)),
-                                                                                          ),
-                                                                                        ),
-                                                                                      ),
-                                                                                  ].divide(SizedBox(height: 4.0)),
+                                                                                SizedBox(
+                                                                              width: 50.0,
+                                                                              height: 50.0,
+                                                                              child: CircularProgressIndicator(
+                                                                                valueColor: AlwaysStoppedAnimation<Color>(
+                                                                                  FlutterFlowTheme.of(context).primary,
                                                                                 ),
                                                                               ),
                                                                             ),
                                                                           );
-                                                                        },
-                                                                      ),
+                                                                        }
+                                                                        List<AnexoAForm1Row>
+                                                                            containeranexoAnexoAForm1RowList =
+                                                                            snapshot.data!;
+
+                                                                        final containeranexoAnexoAForm1Row = containeranexoAnexoAForm1RowList.isNotEmpty
+                                                                            ? containeranexoAnexoAForm1RowList.first
+                                                                            : null;
+
+                                                                        return Container(
+                                                                          width:
+                                                                              MediaQuery.sizeOf(context).width * 0.7,
+                                                                          decoration:
+                                                                              BoxDecoration(),
+                                                                          child:
+                                                                              Align(
+                                                                            alignment:
+                                                                                AlignmentDirectional(0.0, -1.0),
+                                                                            child:
+                                                                                Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(15.0, 10.0, 10.0, 0.0),
+                                                                              child: Column(
+                                                                                mainAxisSize: MainAxisSize.min,
+                                                                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                                                                children: [
+                                                                                  Text(
+                                                                                    '1. Recepcion de la demanda',
+                                                                                    style: FlutterFlowTheme.of(context).headlineSmall.override(
+                                                                                          font: GoogleFonts.notoSansJp(
+                                                                                            fontWeight: FontWeight.w600,
+                                                                                            fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
+                                                                                          ),
+                                                                                          color: FlutterFlowTheme.of(context).primary,
+                                                                                          letterSpacing: 0.0,
+                                                                                          fontWeight: FontWeight.w600,
+                                                                                          fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
+                                                                                        ),
+                                                                                  ),
+                                                                                  Text(
+                                                                                    'Fecha de cierre por derivacion o asesoramiento : ${dateTimeFormat(
+                                                                                      "d/M/y",
+                                                                                      containeringresosIngresosRow?.fechacierre,
+                                                                                      locale: FFLocalizations.of(context).languageCode,
+                                                                                    )}',
+                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                          font: GoogleFonts.notoSansJp(
+                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                          ),
+                                                                                          letterSpacing: 0.0,
+                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                        ),
+                                                                                  ),
+                                                                                  Container(
+                                                                                    decoration: BoxDecoration(),
+                                                                                    child: Column(
+                                                                                      mainAxisSize: MainAxisSize.max,
+                                                                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                      children: [
+                                                                                        Flex(
+                                                                                          direction: (MediaQuery.sizeOf(context).width > 800.0) ? Axis.horizontal : Axis.vertical,
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                          children: [
+                                                                                            Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              children: [
+                                                                                                Icon(
+                                                                                                  Icons.check_circle,
+                                                                                                  color: containeringresosIngresosRow?.form1seccion1 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
+                                                                                                  size: 24.0,
+                                                                                                ),
+                                                                                                Text(
+                                                                                                  'Datos NNyA',
+                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                        font: GoogleFonts.notoSansJp(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ],
+                                                                                            ),
+                                                                                            Padding(
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                                                                                              child: Row(
+                                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                                mainAxisAlignment: MainAxisAlignment.start,
+                                                                                                children: [
+                                                                                                  if (!containeringresosIngresosRow!.form1seccion1!)
+                                                                                                    Padding(
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                      child: FFButtonWidget(
+                                                                                                        onPressed: !() {
+                                                                                                          if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
+                                                                                                            return true;
+                                                                                                          } else if (widget.usuariorol?.rolId == 1) {
+                                                                                                            return true;
+                                                                                                          } else if (widget.usuariorol?.rolId == 2) {
+                                                                                                            return true;
+                                                                                                          } else {
+                                                                                                            return false;
+                                                                                                          }
+                                                                                                        }()
+                                                                                                            ? null
+                                                                                                            : () async {
+                                                                                                                await showModalBottomSheet(
+                                                                                                                  isScrollControlled: true,
+                                                                                                                  backgroundColor: Colors.transparent,
+                                                                                                                  enableDrag: false,
+                                                                                                                  context: context,
+                                                                                                                  builder: (context) {
+                                                                                                                    return WebViewAware(
+                                                                                                                      child: GestureDetector(
+                                                                                                                        onTap: () {
+                                                                                                                          FocusScope.of(context).unfocus();
+                                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                                        },
+                                                                                                                        child: Padding(
+                                                                                                                          padding: MediaQuery.viewInsetsOf(context),
+                                                                                                                          child: Seccion1Widget(
+                                                                                                                            idingreso: containeringresosIngresosRow,
+                                                                                                                            rowexp: widget.rowexp,
+                                                                                                                            editar: false,
+                                                                                                                            usuariorow: widget.usuariorow!,
+                                                                                                                            usuariorol: widget.usuariorol!,
+                                                                                                                          ),
+                                                                                                                        ),
+                                                                                                                      ),
+                                                                                                                    );
+                                                                                                                  },
+                                                                                                                ).then((value) => safeSetState(() => _model.seccio1true = value));
+
+                                                                                                                if (_model.seccio1true!) {
+                                                                                                                  safeSetState(() => _model.requestCompleter1 = null);
+                                                                                                                  await _model.waitForRequestCompleted1();
+                                                                                                                }
+
+                                                                                                                safeSetState(() {});
+                                                                                                              },
+                                                                                                        text: 'Sección 1',
+                                                                                                        options: FFButtonOptions(
+                                                                                                          height: 30.0,
+                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                          color: containeringresosIngresosRow.form1seccion1 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).secondary,
+                                                                                                          textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                                font: GoogleFonts.notoSansJp(
+                                                                                                                  fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                                ),
+                                                                                                                color: Colors.white,
+                                                                                                                letterSpacing: 0.0,
+                                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                              ),
+                                                                                                          elevation: 3.0,
+                                                                                                          borderSide: BorderSide(
+                                                                                                            color: Colors.transparent,
+                                                                                                            width: 1.0,
+                                                                                                          ),
+                                                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                                                          disabledColor: FlutterFlowTheme.of(context).alternate,
+                                                                                                        ),
+                                                                                                      ),
+                                                                                                    ),
+                                                                                                  if (containeringresosIngresosRow.form1seccion1 ?? true)
+                                                                                                    Padding(
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                      child: FFButtonWidget(
+                                                                                                        onPressed: !() {
+                                                                                                          if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
+                                                                                                            return true;
+                                                                                                          } else if (widget.usuariorol?.rolId == 1) {
+                                                                                                            return true;
+                                                                                                          } else if (widget.usuariorol?.rolId == 2) {
+                                                                                                            return true;
+                                                                                                          } else {
+                                                                                                            return false;
+                                                                                                          }
+                                                                                                        }()
+                                                                                                            ? null
+                                                                                                            : () async {
+                                                                                                                await showModalBottomSheet(
+                                                                                                                  isScrollControlled: true,
+                                                                                                                  backgroundColor: Colors.transparent,
+                                                                                                                  enableDrag: false,
+                                                                                                                  context: context,
+                                                                                                                  builder: (context) {
+                                                                                                                    return WebViewAware(
+                                                                                                                      child: GestureDetector(
+                                                                                                                        onTap: () {
+                                                                                                                          FocusScope.of(context).unfocus();
+                                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                                        },
+                                                                                                                        child: Padding(
+                                                                                                                          padding: MediaQuery.viewInsetsOf(context),
+                                                                                                                          child: Seccion1Widget(
+                                                                                                                            idingreso: containeringresosIngresosRow,
+                                                                                                                            rowexp: widget.rowexp,
+                                                                                                                            editar: true,
+                                                                                                                            usuariorow: widget.usuariorow!,
+                                                                                                                            usuariorol: widget.usuariorol!,
+                                                                                                                          ),
+                                                                                                                        ),
+                                                                                                                      ),
+                                                                                                                    );
+                                                                                                                  },
+                                                                                                                ).then((value) => safeSetState(() {}));
+                                                                                                              },
+                                                                                                        text: 'editar Sección 1',
+                                                                                                        options: FFButtonOptions(
+                                                                                                          height: 30.0,
+                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                          color: containeringresosIngresosRow.form1seccion1 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
+                                                                                                          textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                                font: GoogleFonts.notoSansJp(
+                                                                                                                  fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                                ),
+                                                                                                                color: Colors.white,
+                                                                                                                letterSpacing: 0.0,
+                                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                              ),
+                                                                                                          elevation: 3.0,
+                                                                                                          borderSide: BorderSide(
+                                                                                                            color: Colors.transparent,
+                                                                                                            width: 1.0,
+                                                                                                          ),
+                                                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                                                          disabledColor: FlutterFlowTheme.of(context).alternate,
+                                                                                                        ),
+                                                                                                      ),
+                                                                                                    ),
+                                                                                                ],
+                                                                                              ),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                        Divider(
+                                                                                          thickness: 2.0,
+                                                                                          color: FlutterFlowTheme.of(context).alternate,
+                                                                                        ),
+                                                                                        Row(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                          children: [
+                                                                                            Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              children: [
+                                                                                                Icon(
+                                                                                                  Icons.check_circle,
+                                                                                                  color: containeringresosIngresosRow.form1seccion2 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
+                                                                                                  size: 24.0,
+                                                                                                ),
+                                                                                                Text(
+                                                                                                  'Datos del o la  solicitante',
+                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                        font: GoogleFonts.notoSansJp(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ],
+                                                                                            ),
+                                                                                            Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              children: [
+                                                                                                if (!containeringresosIngresosRow.form1seccion2!)
+                                                                                                  Padding(
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                    child: FFButtonWidget(
+                                                                                                      onPressed: !() {
+                                                                                                        if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
+                                                                                                          return true;
+                                                                                                        } else if (widget.usuariorol?.rolId == 1) {
+                                                                                                          return true;
+                                                                                                        } else if (widget.usuariorol?.rolId == 2) {
+                                                                                                          return true;
+                                                                                                        } else {
+                                                                                                          return false;
+                                                                                                        }
+                                                                                                      }()
+                                                                                                          ? null
+                                                                                                          : () async {
+                                                                                                              await showModalBottomSheet(
+                                                                                                                isScrollControlled: true,
+                                                                                                                backgroundColor: Colors.transparent,
+                                                                                                                enableDrag: false,
+                                                                                                                context: context,
+                                                                                                                builder: (context) {
+                                                                                                                  return WebViewAware(
+                                                                                                                    child: GestureDetector(
+                                                                                                                      onTap: () {
+                                                                                                                        FocusScope.of(context).unfocus();
+                                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                                      },
+                                                                                                                      child: Padding(
+                                                                                                                        padding: MediaQuery.viewInsetsOf(context),
+                                                                                                                        child: Seccion2Widget(
+                                                                                                                          rowingreso: containeringresosIngresosRow,
+                                                                                                                          rowexp: widget.rowexp!,
+                                                                                                                          editar: false,
+                                                                                                                          usuariorow: widget.usuariorol!,
+                                                                                                                        ),
+                                                                                                                      ),
+                                                                                                                    ),
+                                                                                                                  );
+                                                                                                                },
+                                                                                                              ).then((value) => safeSetState(() => _model.seccion2true = value));
+
+                                                                                                              if (_model.seccion2true!) {
+                                                                                                                safeSetState(() => _model.requestCompleter1 = null);
+                                                                                                                await _model.waitForRequestCompleted1();
+                                                                                                              }
+
+                                                                                                              safeSetState(() {});
+                                                                                                            },
+                                                                                                      text: 'Sección 2',
+                                                                                                      options: FFButtonOptions(
+                                                                                                        height: 30.0,
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                        color: containeringresosIngresosRow.form1seccion2 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).secondary,
+                                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                              font: GoogleFonts.notoSansJp(
+                                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                              ),
+                                                                                                              color: Colors.white,
+                                                                                                              letterSpacing: 0.0,
+                                                                                                              fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                            ),
+                                                                                                        elevation: 3.0,
+                                                                                                        borderSide: BorderSide(
+                                                                                                          color: Colors.transparent,
+                                                                                                          width: 1.0,
+                                                                                                        ),
+                                                                                                        borderRadius: BorderRadius.circular(8.0),
+                                                                                                        disabledColor: FlutterFlowTheme.of(context).alternate,
+                                                                                                      ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                if (containeringresosIngresosRow.form1seccion2 ?? true)
+                                                                                                  Padding(
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                    child: FFButtonWidget(
+                                                                                                      onPressed: !() {
+                                                                                                        if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
+                                                                                                          return true;
+                                                                                                        } else if (widget.usuariorol?.rolId == 1) {
+                                                                                                          return true;
+                                                                                                        } else if (widget.usuariorol?.rolId == 2) {
+                                                                                                          return true;
+                                                                                                        } else {
+                                                                                                          return false;
+                                                                                                        }
+                                                                                                      }()
+                                                                                                          ? null
+                                                                                                          : () async {
+                                                                                                              await showModalBottomSheet(
+                                                                                                                isScrollControlled: true,
+                                                                                                                backgroundColor: Colors.transparent,
+                                                                                                                enableDrag: false,
+                                                                                                                context: context,
+                                                                                                                builder: (context) {
+                                                                                                                  return WebViewAware(
+                                                                                                                    child: GestureDetector(
+                                                                                                                      onTap: () {
+                                                                                                                        FocusScope.of(context).unfocus();
+                                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                                      },
+                                                                                                                      child: Padding(
+                                                                                                                        padding: MediaQuery.viewInsetsOf(context),
+                                                                                                                        child: Seccion2Widget(
+                                                                                                                          rowingreso: containeringresosIngresosRow,
+                                                                                                                          rowexp: widget.rowexp!,
+                                                                                                                          editar: true,
+                                                                                                                          usuariorow: widget.usuariorol!,
+                                                                                                                        ),
+                                                                                                                      ),
+                                                                                                                    ),
+                                                                                                                  );
+                                                                                                                },
+                                                                                                              ).then((value) => safeSetState(() {}));
+                                                                                                            },
+                                                                                                      text: 'Editar Sección 2',
+                                                                                                      options: FFButtonOptions(
+                                                                                                        height: 30.0,
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                        color: containeringresosIngresosRow.form1seccion2 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
+                                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                              font: GoogleFonts.notoSansJp(
+                                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                              ),
+                                                                                                              color: Colors.white,
+                                                                                                              letterSpacing: 0.0,
+                                                                                                              fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                            ),
+                                                                                                        elevation: 3.0,
+                                                                                                        borderSide: BorderSide(
+                                                                                                          color: Colors.transparent,
+                                                                                                          width: 1.0,
+                                                                                                        ),
+                                                                                                        borderRadius: BorderRadius.circular(8.0),
+                                                                                                        disabledColor: FlutterFlowTheme.of(context).alternate,
+                                                                                                      ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                              ],
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                        Divider(
+                                                                                          thickness: 2.0,
+                                                                                          color: FlutterFlowTheme.of(context).alternate,
+                                                                                        ),
+                                                                                        Row(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                          children: [
+                                                                                            Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                              children: [
+                                                                                                Icon(
+                                                                                                  Icons.check_circle,
+                                                                                                  color: containeringresosIngresosRow.form1seccion3 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
+                                                                                                  size: 24.0,
+                                                                                                ),
+                                                                                                Text(
+                                                                                                  'Grupo conviviente y no conviviente',
+                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                        font: GoogleFonts.notoSansJp(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ],
+                                                                                            ),
+                                                                                            Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              children: [
+                                                                                                if (!containeringresosIngresosRow.form1seccion3!)
+                                                                                                  Padding(
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                    child: FFButtonWidget(
+                                                                                                      onPressed: !() {
+                                                                                                        if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
+                                                                                                          return true;
+                                                                                                        } else if (widget.usuariorol?.rolId == 1) {
+                                                                                                          return true;
+                                                                                                        } else if (widget.usuariorol?.rolId == 2) {
+                                                                                                          return true;
+                                                                                                        } else {
+                                                                                                          return false;
+                                                                                                        }
+                                                                                                      }()
+                                                                                                          ? null
+                                                                                                          : () async {
+                                                                                                              _model.seccion1 = await Seccion1Table().queryRows(
+                                                                                                                queryFn: (q) => q.eqOrNull(
+                                                                                                                  'idIngreso',
+                                                                                                                  widget.idingreso,
+                                                                                                                ),
+                                                                                                              );
+                                                                                                              await showModalBottomSheet(
+                                                                                                                isScrollControlled: true,
+                                                                                                                backgroundColor: Colors.transparent,
+                                                                                                                enableDrag: false,
+                                                                                                                context: context,
+                                                                                                                builder: (context) {
+                                                                                                                  return WebViewAware(
+                                                                                                                    child: GestureDetector(
+                                                                                                                      onTap: () {
+                                                                                                                        FocusScope.of(context).unfocus();
+                                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                                      },
+                                                                                                                      child: Padding(
+                                                                                                                        padding: MediaQuery.viewInsetsOf(context),
+                                                                                                                        child: Seccion3Widget(
+                                                                                                                          idingreso: containeringresosIngresosRow,
+                                                                                                                          idexp: widget.rowexp!,
+                                                                                                                          editar: false,
+                                                                                                                          titulo: 'Grupo conviente y No conviviente',
+                                                                                                                          userrol: widget.usuariorol!,
+                                                                                                                          idseccion1: _model.seccion1!.firstOrNull!.idSec1,
+                                                                                                                        ),
+                                                                                                                      ),
+                                                                                                                    ),
+                                                                                                                  );
+                                                                                                                },
+                                                                                                              ).then((value) => safeSetState(() => _model.seccion3true = value));
+
+                                                                                                              if (_model.seccion3true!) {
+                                                                                                                safeSetState(() => _model.requestCompleter1 = null);
+                                                                                                                await _model.waitForRequestCompleted1();
+                                                                                                              }
+
+                                                                                                              safeSetState(() {});
+                                                                                                            },
+                                                                                                      text: 'Sección 3',
+                                                                                                      options: FFButtonOptions(
+                                                                                                        height: 30.0,
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                        color: containeringresosIngresosRow.form1seccion3 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).secondary,
+                                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                              font: GoogleFonts.notoSansJp(
+                                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                              ),
+                                                                                                              color: Colors.white,
+                                                                                                              letterSpacing: 0.0,
+                                                                                                              fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                            ),
+                                                                                                        elevation: 3.0,
+                                                                                                        borderSide: BorderSide(
+                                                                                                          color: Colors.transparent,
+                                                                                                          width: 1.0,
+                                                                                                        ),
+                                                                                                        borderRadius: BorderRadius.circular(8.0),
+                                                                                                        disabledColor: FlutterFlowTheme.of(context).alternate,
+                                                                                                      ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                if (containeringresosIngresosRow.form1seccion3 ?? true)
+                                                                                                  Padding(
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                    child: FFButtonWidget(
+                                                                                                      onPressed: !() {
+                                                                                                        if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
+                                                                                                          return true;
+                                                                                                        } else if (widget.usuariorol?.rolId == 1) {
+                                                                                                          return true;
+                                                                                                        } else if (widget.usuariorol?.rolId == 2) {
+                                                                                                          return true;
+                                                                                                        } else {
+                                                                                                          return false;
+                                                                                                        }
+                                                                                                      }()
+                                                                                                          ? null
+                                                                                                          : () async {
+                                                                                                              _model.idseccion1edit = await Seccion1Table().queryRows(
+                                                                                                                queryFn: (q) => q.eqOrNull(
+                                                                                                                  'idIngreso',
+                                                                                                                  widget.idingreso,
+                                                                                                                ),
+                                                                                                              );
+                                                                                                              await showModalBottomSheet(
+                                                                                                                isScrollControlled: true,
+                                                                                                                backgroundColor: Colors.transparent,
+                                                                                                                enableDrag: false,
+                                                                                                                context: context,
+                                                                                                                builder: (context) {
+                                                                                                                  return WebViewAware(
+                                                                                                                    child: GestureDetector(
+                                                                                                                      onTap: () {
+                                                                                                                        FocusScope.of(context).unfocus();
+                                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                                      },
+                                                                                                                      child: Padding(
+                                                                                                                        padding: MediaQuery.viewInsetsOf(context),
+                                                                                                                        child: Seccion3Widget(
+                                                                                                                          idingreso: containeringresosIngresosRow,
+                                                                                                                          idexp: widget.rowexp!,
+                                                                                                                          editar: false,
+                                                                                                                          titulo: '3. Grupo conviente',
+                                                                                                                          userrol: widget.usuariorol!,
+                                                                                                                          idseccion1: _model.idseccion1edit!.firstOrNull!.idSec1,
+                                                                                                                        ),
+                                                                                                                      ),
+                                                                                                                    ),
+                                                                                                                  );
+                                                                                                                },
+                                                                                                              ).then((value) => safeSetState(() {}));
+
+                                                                                                              safeSetState(() {});
+                                                                                                            },
+                                                                                                      text: 'Editar Sección 3',
+                                                                                                      options: FFButtonOptions(
+                                                                                                        height: 30.0,
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                        color: containeringresosIngresosRow.form1seccion3 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
+                                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                              font: GoogleFonts.notoSansJp(
+                                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                              ),
+                                                                                                              color: Colors.white,
+                                                                                                              letterSpacing: 0.0,
+                                                                                                              fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                            ),
+                                                                                                        elevation: 3.0,
+                                                                                                        borderSide: BorderSide(
+                                                                                                          color: Colors.transparent,
+                                                                                                          width: 1.0,
+                                                                                                        ),
+                                                                                                        borderRadius: BorderRadius.circular(8.0),
+                                                                                                        disabledColor: FlutterFlowTheme.of(context).alternate,
+                                                                                                      ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                              ],
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                        Divider(
+                                                                                          thickness: 2.0,
+                                                                                          color: FlutterFlowTheme.of(context).alternate,
+                                                                                        ),
+                                                                                        Row(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                          children: [
+                                                                                            Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              children: [
+                                                                                                Icon(
+                                                                                                  Icons.check_circle,
+                                                                                                  color: containeringresosIngresosRow.form1seccion4 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
+                                                                                                  size: 24.0,
+                                                                                                ),
+                                                                                                Text(
+                                                                                                  'Situacion socio-economica',
+                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                        font: GoogleFonts.notoSansJp(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ],
+                                                                                            ),
+                                                                                            Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              children: [
+                                                                                                if (containeringresosIngresosRow.form1seccion4 ?? true)
+                                                                                                  Padding(
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                    child: FFButtonWidget(
+                                                                                                      onPressed: !() {
+                                                                                                        if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
+                                                                                                          return true;
+                                                                                                        } else if (widget.usuariorol?.rolId == 1) {
+                                                                                                          return true;
+                                                                                                        } else if (widget.usuariorol?.rolId == 2) {
+                                                                                                          return true;
+                                                                                                        } else {
+                                                                                                          return false;
+                                                                                                        }
+                                                                                                      }()
+                                                                                                          ? null
+                                                                                                          : () async {
+                                                                                                              await showModalBottomSheet(
+                                                                                                                isScrollControlled: true,
+                                                                                                                backgroundColor: Colors.transparent,
+                                                                                                                enableDrag: false,
+                                                                                                                context: context,
+                                                                                                                builder: (context) {
+                                                                                                                  return WebViewAware(
+                                                                                                                    child: GestureDetector(
+                                                                                                                      onTap: () {
+                                                                                                                        FocusScope.of(context).unfocus();
+                                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                                      },
+                                                                                                                      child: Padding(
+                                                                                                                        padding: MediaQuery.viewInsetsOf(context),
+                                                                                                                        child: Seccion4Widget(
+                                                                                                                          rowingreso: containeringresosIngresosRow,
+                                                                                                                          rowexp: widget.rowexp!,
+                                                                                                                          edit: true,
+                                                                                                                        ),
+                                                                                                                      ),
+                                                                                                                    ),
+                                                                                                                  );
+                                                                                                                },
+                                                                                                              ).then((value) => safeSetState(() => _model.seccion4 = value));
+
+                                                                                                              if (_model.seccion4!) {
+                                                                                                                safeSetState(() => _model.requestCompleter1 = null);
+                                                                                                                await _model.waitForRequestCompleted1();
+                                                                                                              }
+
+                                                                                                              safeSetState(() {});
+                                                                                                            },
+                                                                                                      text: 'Editar Sección 4',
+                                                                                                      options: FFButtonOptions(
+                                                                                                        height: 30.0,
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                        color: containeringresosIngresosRow.form1seccion4 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
+                                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                              font: GoogleFonts.notoSansJp(
+                                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                              ),
+                                                                                                              color: Colors.white,
+                                                                                                              letterSpacing: 0.0,
+                                                                                                              fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                            ),
+                                                                                                        elevation: 3.0,
+                                                                                                        borderSide: BorderSide(
+                                                                                                          color: Colors.transparent,
+                                                                                                          width: 1.0,
+                                                                                                        ),
+                                                                                                        borderRadius: BorderRadius.circular(8.0),
+                                                                                                        disabledColor: FlutterFlowTheme.of(context).alternate,
+                                                                                                      ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                if (!containeringresosIngresosRow.form1seccion4!)
+                                                                                                  Padding(
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                    child: FFButtonWidget(
+                                                                                                      onPressed: !() {
+                                                                                                        if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
+                                                                                                          return true;
+                                                                                                        } else if (widget.usuariorol?.rolId == 1) {
+                                                                                                          return true;
+                                                                                                        } else if (widget.usuariorol?.rolId == 2) {
+                                                                                                          return true;
+                                                                                                        } else {
+                                                                                                          return false;
+                                                                                                        }
+                                                                                                      }()
+                                                                                                          ? null
+                                                                                                          : () async {
+                                                                                                              await showModalBottomSheet(
+                                                                                                                isScrollControlled: true,
+                                                                                                                backgroundColor: Colors.transparent,
+                                                                                                                enableDrag: false,
+                                                                                                                context: context,
+                                                                                                                builder: (context) {
+                                                                                                                  return WebViewAware(
+                                                                                                                    child: GestureDetector(
+                                                                                                                      onTap: () {
+                                                                                                                        FocusScope.of(context).unfocus();
+                                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                                      },
+                                                                                                                      child: Padding(
+                                                                                                                        padding: MediaQuery.viewInsetsOf(context),
+                                                                                                                        child: Seccion4Widget(
+                                                                                                                          rowingreso: containeringresosIngresosRow,
+                                                                                                                          rowexp: widget.rowexp!,
+                                                                                                                          edit: false,
+                                                                                                                        ),
+                                                                                                                      ),
+                                                                                                                    ),
+                                                                                                                  );
+                                                                                                                },
+                                                                                                              ).then((value) => safeSetState(() => _model.seccion4true = value));
+
+                                                                                                              if (_model.seccion4true!) {
+                                                                                                                safeSetState(() => _model.requestCompleter1 = null);
+                                                                                                                await _model.waitForRequestCompleted1();
+                                                                                                              }
+
+                                                                                                              safeSetState(() {});
+                                                                                                            },
+                                                                                                      text: 'Sección 4',
+                                                                                                      options: FFButtonOptions(
+                                                                                                        height: 30.0,
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                        color: containeringresosIngresosRow.form1seccion4 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).secondary,
+                                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                              font: GoogleFonts.notoSansJp(
+                                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                              ),
+                                                                                                              color: Colors.white,
+                                                                                                              letterSpacing: 0.0,
+                                                                                                              fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                            ),
+                                                                                                        elevation: 3.0,
+                                                                                                        borderSide: BorderSide(
+                                                                                                          color: Colors.transparent,
+                                                                                                          width: 1.0,
+                                                                                                        ),
+                                                                                                        borderRadius: BorderRadius.circular(8.0),
+                                                                                                        disabledColor: FlutterFlowTheme.of(context).alternate,
+                                                                                                      ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                              ],
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                        Divider(
+                                                                                          thickness: 2.0,
+                                                                                          color: FlutterFlowTheme.of(context).alternate,
+                                                                                        ),
+                                                                                        Row(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                          children: [
+                                                                                            Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              children: [
+                                                                                                Icon(
+                                                                                                  Icons.check_circle,
+                                                                                                  color: containeringresosIngresosRow.form1seccion5 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
+                                                                                                  size: 24.0,
+                                                                                                ),
+                                                                                                Text(
+                                                                                                  'Motivo',
+                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                        font: GoogleFonts.notoSansJp(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ],
+                                                                                            ),
+                                                                                            Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              children: [
+                                                                                                if (containeringresosIngresosRow.form1seccion5 ?? true)
+                                                                                                  Padding(
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                    child: FFButtonWidget(
+                                                                                                      onPressed: !() {
+                                                                                                        if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
+                                                                                                          return true;
+                                                                                                        } else if (widget.usuariorol?.rolId == 1) {
+                                                                                                          return true;
+                                                                                                        } else if (widget.usuariorol?.rolId == 2) {
+                                                                                                          return true;
+                                                                                                        } else {
+                                                                                                          return false;
+                                                                                                        }
+                                                                                                      }()
+                                                                                                          ? null
+                                                                                                          : () async {
+                                                                                                              await showModalBottomSheet(
+                                                                                                                isScrollControlled: true,
+                                                                                                                backgroundColor: Colors.transparent,
+                                                                                                                enableDrag: false,
+                                                                                                                context: context,
+                                                                                                                builder: (context) {
+                                                                                                                  return WebViewAware(
+                                                                                                                    child: GestureDetector(
+                                                                                                                      onTap: () {
+                                                                                                                        FocusScope.of(context).unfocus();
+                                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                                      },
+                                                                                                                      child: Padding(
+                                                                                                                        padding: MediaQuery.viewInsetsOf(context),
+                                                                                                                        child: Seccion5Widget(
+                                                                                                                          rowingreso: containeringresosIngresosRow,
+                                                                                                                          rowexp: widget.rowexp!,
+                                                                                                                          editar: true,
+                                                                                                                        ),
+                                                                                                                      ),
+                                                                                                                    ),
+                                                                                                                  );
+                                                                                                                },
+                                                                                                              ).then((value) => safeSetState(() {}));
+                                                                                                            },
+                                                                                                      text: 'Editar Sección 5',
+                                                                                                      options: FFButtonOptions(
+                                                                                                        height: 30.0,
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                        color: containeringresosIngresosRow.form1seccion5 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
+                                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                              font: GoogleFonts.notoSansJp(
+                                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                              ),
+                                                                                                              color: Colors.white,
+                                                                                                              letterSpacing: 0.0,
+                                                                                                              fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                            ),
+                                                                                                        elevation: 3.0,
+                                                                                                        borderSide: BorderSide(
+                                                                                                          color: Colors.transparent,
+                                                                                                          width: 1.0,
+                                                                                                        ),
+                                                                                                        borderRadius: BorderRadius.circular(8.0),
+                                                                                                        disabledColor: FlutterFlowTheme.of(context).alternate,
+                                                                                                      ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                if (!containeringresosIngresosRow.form1seccion5!)
+                                                                                                  Padding(
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                    child: FFButtonWidget(
+                                                                                                      onPressed: !() {
+                                                                                                        if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
+                                                                                                          return true;
+                                                                                                        } else if (widget.usuariorol?.rolId == 1) {
+                                                                                                          return true;
+                                                                                                        } else if (widget.usuariorol?.rolId == 2) {
+                                                                                                          return true;
+                                                                                                        } else {
+                                                                                                          return false;
+                                                                                                        }
+                                                                                                      }()
+                                                                                                          ? null
+                                                                                                          : () async {
+                                                                                                              await showModalBottomSheet(
+                                                                                                                isScrollControlled: true,
+                                                                                                                backgroundColor: Colors.transparent,
+                                                                                                                enableDrag: false,
+                                                                                                                context: context,
+                                                                                                                builder: (context) {
+                                                                                                                  return WebViewAware(
+                                                                                                                    child: GestureDetector(
+                                                                                                                      onTap: () {
+                                                                                                                        FocusScope.of(context).unfocus();
+                                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                                      },
+                                                                                                                      child: Padding(
+                                                                                                                        padding: MediaQuery.viewInsetsOf(context),
+                                                                                                                        child: Seccion5Widget(
+                                                                                                                          rowingreso: containeringresosIngresosRow,
+                                                                                                                          rowexp: widget.rowexp!,
+                                                                                                                          editar: false,
+                                                                                                                        ),
+                                                                                                                      ),
+                                                                                                                    ),
+                                                                                                                  );
+                                                                                                                },
+                                                                                                              ).then((value) => safeSetState(() => _model.seccion5true = value));
+
+                                                                                                              if (_model.seccion5true!) {
+                                                                                                                safeSetState(() => _model.requestCompleter1 = null);
+                                                                                                                await _model.waitForRequestCompleted1();
+                                                                                                              }
+
+                                                                                                              safeSetState(() {});
+                                                                                                            },
+                                                                                                      text: 'Sección 5',
+                                                                                                      options: FFButtonOptions(
+                                                                                                        height: 30.0,
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                        color: containeringresosIngresosRow.form1seccion5 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).secondary,
+                                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                              font: GoogleFonts.notoSansJp(
+                                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                              ),
+                                                                                                              color: Colors.white,
+                                                                                                              letterSpacing: 0.0,
+                                                                                                              fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                            ),
+                                                                                                        elevation: 3.0,
+                                                                                                        borderSide: BorderSide(
+                                                                                                          color: Colors.transparent,
+                                                                                                          width: 1.0,
+                                                                                                        ),
+                                                                                                        borderRadius: BorderRadius.circular(8.0),
+                                                                                                        disabledColor: FlutterFlowTheme.of(context).alternate,
+                                                                                                      ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                              ],
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                        Divider(
+                                                                                          thickness: 2.0,
+                                                                                          color: FlutterFlowTheme.of(context).alternate,
+                                                                                        ),
+                                                                                        Row(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                          children: [
+                                                                                            Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              children: [
+                                                                                                Icon(
+                                                                                                  Icons.check_circle,
+                                                                                                  color: containeringresosIngresosRow.form1seccion6 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
+                                                                                                  size: 24.0,
+                                                                                                ),
+                                                                                                Text(
+                                                                                                  'Intervenciones',
+                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                        font: GoogleFonts.notoSansJp(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ],
+                                                                                            ),
+                                                                                            Column(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              children: [
+                                                                                                if (containeringresosIngresosRow.form1seccion6 ?? true)
+                                                                                                  Padding(
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                    child: FFButtonWidget(
+                                                                                                      onPressed: !() {
+                                                                                                        if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
+                                                                                                          return true;
+                                                                                                        } else if (widget.usuariorol?.rolId == 1) {
+                                                                                                          return true;
+                                                                                                        } else if (widget.usuariorol?.rolId == 2) {
+                                                                                                          return true;
+                                                                                                        } else {
+                                                                                                          return false;
+                                                                                                        }
+                                                                                                      }()
+                                                                                                          ? null
+                                                                                                          : () async {
+                                                                                                              await showModalBottomSheet(
+                                                                                                                isScrollControlled: true,
+                                                                                                                backgroundColor: Colors.transparent,
+                                                                                                                enableDrag: false,
+                                                                                                                context: context,
+                                                                                                                builder: (context) {
+                                                                                                                  return WebViewAware(
+                                                                                                                    child: GestureDetector(
+                                                                                                                      onTap: () {
+                                                                                                                        FocusScope.of(context).unfocus();
+                                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                                      },
+                                                                                                                      child: Padding(
+                                                                                                                        padding: MediaQuery.viewInsetsOf(context),
+                                                                                                                        child: Seccion6Widget(
+                                                                                                                          rowingreso: containeringresosIngresosRow,
+                                                                                                                          rowexp: widget.rowexp,
+                                                                                                                          edit: true,
+                                                                                                                        ),
+                                                                                                                      ),
+                                                                                                                    ),
+                                                                                                                  );
+                                                                                                                },
+                                                                                                              ).then((value) => safeSetState(() {}));
+                                                                                                            },
+                                                                                                      text: 'Agregar intervenciones ant.',
+                                                                                                      options: FFButtonOptions(
+                                                                                                        height: 30.0,
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                        color: containeringresosIngresosRow.form1seccion6 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).secondary,
+                                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                              font: GoogleFonts.notoSansJp(
+                                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                              ),
+                                                                                                              color: Colors.white,
+                                                                                                              letterSpacing: 0.0,
+                                                                                                              fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                            ),
+                                                                                                        elevation: 3.0,
+                                                                                                        borderSide: BorderSide(
+                                                                                                          color: Colors.transparent,
+                                                                                                          width: 1.0,
+                                                                                                        ),
+                                                                                                        borderRadius: BorderRadius.circular(8.0),
+                                                                                                        disabledColor: FlutterFlowTheme.of(context).alternate,
+                                                                                                      ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                if (!containeringresosIngresosRow.form1seccion6!)
+                                                                                                  Padding(
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                    child: FFButtonWidget(
+                                                                                                      onPressed: !() {
+                                                                                                        if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
+                                                                                                          return true;
+                                                                                                        } else if (widget.usuariorol?.rolId == 1) {
+                                                                                                          return true;
+                                                                                                        } else if (widget.usuariorol?.rolId == 2) {
+                                                                                                          return true;
+                                                                                                        } else {
+                                                                                                          return false;
+                                                                                                        }
+                                                                                                      }()
+                                                                                                          ? null
+                                                                                                          : () async {
+                                                                                                              await showModalBottomSheet(
+                                                                                                                isScrollControlled: true,
+                                                                                                                backgroundColor: Colors.transparent,
+                                                                                                                enableDrag: false,
+                                                                                                                context: context,
+                                                                                                                builder: (context) {
+                                                                                                                  return WebViewAware(
+                                                                                                                    child: GestureDetector(
+                                                                                                                      onTap: () {
+                                                                                                                        FocusScope.of(context).unfocus();
+                                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                                      },
+                                                                                                                      child: Padding(
+                                                                                                                        padding: MediaQuery.viewInsetsOf(context),
+                                                                                                                        child: Seccion6Widget(
+                                                                                                                          rowingreso: containeringresosIngresosRow,
+                                                                                                                          rowexp: widget.rowexp,
+                                                                                                                          edit: false,
+                                                                                                                        ),
+                                                                                                                      ),
+                                                                                                                    ),
+                                                                                                                  );
+                                                                                                                },
+                                                                                                              ).then((value) => safeSetState(() => _model.seccion6true = value));
+
+                                                                                                              if (_model.seccion6true!) {
+                                                                                                                safeSetState(() => _model.requestCompleter1 = null);
+                                                                                                                await _model.waitForRequestCompleted1();
+                                                                                                              }
+
+                                                                                                              safeSetState(() {});
+                                                                                                            },
+                                                                                                      text: 'Agregar intervenciones ant.',
+                                                                                                      options: FFButtonOptions(
+                                                                                                        height: 30.0,
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                        color: containeringresosIngresosRow.form1seccion6 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
+                                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                              font: GoogleFonts.notoSansJp(
+                                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                              ),
+                                                                                                              color: Colors.white,
+                                                                                                              letterSpacing: 0.0,
+                                                                                                              fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                            ),
+                                                                                                        elevation: 3.0,
+                                                                                                        borderSide: BorderSide(
+                                                                                                          color: Colors.transparent,
+                                                                                                          width: 1.0,
+                                                                                                        ),
+                                                                                                        borderRadius: BorderRadius.circular(8.0),
+                                                                                                        disabledColor: FlutterFlowTheme.of(context).alternate,
+                                                                                                      ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                              ],
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                        Divider(
+                                                                                          thickness: 2.0,
+                                                                                          color: FlutterFlowTheme.of(context).alternate,
+                                                                                        ),
+                                                                                        Row(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                          children: [
+                                                                                            Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              children: [
+                                                                                                Icon(
+                                                                                                  Icons.check_circle,
+                                                                                                  color: containeringresosIngresosRow.form1seccion7 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
+                                                                                                  size: 24.0,
+                                                                                                ),
+                                                                                                Text(
+                                                                                                  'Derechos vulnerados  y/o amenazados',
+                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                        font: GoogleFonts.notoSansJp(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ],
+                                                                                            ),
+                                                                                            Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              children: [
+                                                                                                if (containeringresosIngresosRow.form1seccion7 ?? true)
+                                                                                                  Padding(
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                    child: FFButtonWidget(
+                                                                                                      onPressed: !() {
+                                                                                                        if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
+                                                                                                          return true;
+                                                                                                        } else if (widget.usuariorol?.rolId == 1) {
+                                                                                                          return true;
+                                                                                                        } else if (widget.usuariorol?.rolId == 2) {
+                                                                                                          return true;
+                                                                                                        } else {
+                                                                                                          return false;
+                                                                                                        }
+                                                                                                      }()
+                                                                                                          ? null
+                                                                                                          : () async {
+                                                                                                              await showModalBottomSheet(
+                                                                                                                isScrollControlled: true,
+                                                                                                                backgroundColor: Colors.transparent,
+                                                                                                                enableDrag: false,
+                                                                                                                context: context,
+                                                                                                                builder: (context) {
+                                                                                                                  return WebViewAware(
+                                                                                                                    child: GestureDetector(
+                                                                                                                      onTap: () {
+                                                                                                                        FocusScope.of(context).unfocus();
+                                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                                      },
+                                                                                                                      child: Padding(
+                                                                                                                        padding: MediaQuery.viewInsetsOf(context),
+                                                                                                                        child: Seccion7Widget(
+                                                                                                                          rowingreso: containeringresosIngresosRow,
+                                                                                                                          rowexp: widget.rowexp!,
+                                                                                                                          editar: true,
+                                                                                                                        ),
+                                                                                                                      ),
+                                                                                                                    ),
+                                                                                                                  );
+                                                                                                                },
+                                                                                                              ).then((value) => safeSetState(() {}));
+                                                                                                            },
+                                                                                                      text: 'Editar Sección 7',
+                                                                                                      options: FFButtonOptions(
+                                                                                                        height: 30.0,
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                        color: containeringresosIngresosRow.form1seccion7 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).secondary,
+                                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                              font: GoogleFonts.notoSansJp(
+                                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                              ),
+                                                                                                              color: Colors.white,
+                                                                                                              letterSpacing: 0.0,
+                                                                                                              fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                            ),
+                                                                                                        elevation: 3.0,
+                                                                                                        borderSide: BorderSide(
+                                                                                                          color: Colors.transparent,
+                                                                                                          width: 1.0,
+                                                                                                        ),
+                                                                                                        borderRadius: BorderRadius.circular(8.0),
+                                                                                                        disabledColor: FlutterFlowTheme.of(context).alternate,
+                                                                                                      ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                if (!containeringresosIngresosRow.form1seccion7!)
+                                                                                                  Padding(
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                    child: FFButtonWidget(
+                                                                                                      onPressed: !() {
+                                                                                                        if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
+                                                                                                          return true;
+                                                                                                        } else if (widget.usuariorol?.rolId == 1) {
+                                                                                                          return true;
+                                                                                                        } else if (widget.usuariorol?.rolId == 2) {
+                                                                                                          return true;
+                                                                                                        } else {
+                                                                                                          return false;
+                                                                                                        }
+                                                                                                      }()
+                                                                                                          ? null
+                                                                                                          : () async {
+                                                                                                              await showModalBottomSheet(
+                                                                                                                isScrollControlled: true,
+                                                                                                                backgroundColor: Colors.transparent,
+                                                                                                                enableDrag: false,
+                                                                                                                context: context,
+                                                                                                                builder: (context) {
+                                                                                                                  return WebViewAware(
+                                                                                                                    child: GestureDetector(
+                                                                                                                      onTap: () {
+                                                                                                                        FocusScope.of(context).unfocus();
+                                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                                      },
+                                                                                                                      child: Padding(
+                                                                                                                        padding: MediaQuery.viewInsetsOf(context),
+                                                                                                                        child: Seccion7Widget(
+                                                                                                                          rowingreso: containeringresosIngresosRow,
+                                                                                                                          rowexp: widget.rowexp!,
+                                                                                                                          editar: false,
+                                                                                                                        ),
+                                                                                                                      ),
+                                                                                                                    ),
+                                                                                                                  );
+                                                                                                                },
+                                                                                                              ).then((value) => safeSetState(() => _model.seccion7true = value));
+
+                                                                                                              if (_model.seccion7true!) {
+                                                                                                                safeSetState(() => _model.requestCompleter1 = null);
+                                                                                                                await _model.waitForRequestCompleted1();
+                                                                                                              }
+
+                                                                                                              safeSetState(() {});
+                                                                                                            },
+                                                                                                      text: 'Sección 7',
+                                                                                                      options: FFButtonOptions(
+                                                                                                        height: 30.0,
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                        color: containeringresosIngresosRow.form1seccion7 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
+                                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                              font: GoogleFonts.notoSansJp(
+                                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                              ),
+                                                                                                              color: Colors.white,
+                                                                                                              letterSpacing: 0.0,
+                                                                                                              fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                            ),
+                                                                                                        elevation: 3.0,
+                                                                                                        borderSide: BorderSide(
+                                                                                                          color: Colors.transparent,
+                                                                                                          width: 1.0,
+                                                                                                        ),
+                                                                                                        borderRadius: BorderRadius.circular(8.0),
+                                                                                                        disabledColor: FlutterFlowTheme.of(context).alternate,
+                                                                                                      ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                              ],
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                        Divider(
+                                                                                          thickness: 2.0,
+                                                                                          color: FlutterFlowTheme.of(context).alternate,
+                                                                                        ),
+                                                                                        Row(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                          children: [
+                                                                                            Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              children: [
+                                                                                                Icon(
+                                                                                                  Icons.check_circle,
+                                                                                                  color: containeringresosIngresosRow.form1seccion8 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
+                                                                                                  size: 24.0,
+                                                                                                ),
+                                                                                                Text(
+                                                                                                  'Personas relacionadas',
+                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                        font: GoogleFonts.notoSansJp(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ],
+                                                                                            ),
+                                                                                            Padding(
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                              child: FFButtonWidget(
+                                                                                                onPressed: !() {
+                                                                                                  if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
+                                                                                                    return true;
+                                                                                                  } else if (widget.usuariorol?.rolId == 1) {
+                                                                                                    return true;
+                                                                                                  } else if (widget.usuariorol?.rolId == 2) {
+                                                                                                    return true;
+                                                                                                  } else {
+                                                                                                    return false;
+                                                                                                  }
+                                                                                                }()
+                                                                                                    ? null
+                                                                                                    : () async {
+                                                                                                        await showModalBottomSheet(
+                                                                                                          isScrollControlled: true,
+                                                                                                          backgroundColor: Colors.transparent,
+                                                                                                          enableDrag: false,
+                                                                                                          context: context,
+                                                                                                          builder: (context) {
+                                                                                                            return WebViewAware(
+                                                                                                              child: GestureDetector(
+                                                                                                                onTap: () {
+                                                                                                                  FocusScope.of(context).unfocus();
+                                                                                                                  FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                                },
+                                                                                                                child: Padding(
+                                                                                                                  padding: MediaQuery.viewInsetsOf(context),
+                                                                                                                  child: Seccion8Widget(
+                                                                                                                    idingreso: containeringresosIngresosRow,
+                                                                                                                    idexp: widget.rowexp!,
+                                                                                                                  ),
+                                                                                                                ),
+                                                                                                              ),
+                                                                                                            );
+                                                                                                          },
+                                                                                                        ).then((value) => safeSetState(() => _model.seccion8guardada = value));
+
+                                                                                                        if (_model.seccion8guardada!) {
+                                                                                                          safeSetState(() => _model.requestCompleter1 = null);
+                                                                                                          await _model.waitForRequestCompleted1();
+                                                                                                        }
+
+                                                                                                        safeSetState(() {});
+                                                                                                      },
+                                                                                                text: 'Sección 8',
+                                                                                                options: FFButtonOptions(
+                                                                                                  height: 30.0,
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                  color: containeringresosIngresosRow.form1seccion8! ? FlutterFlowTheme.of(context).accent3 : FlutterFlowTheme.of(context).primary,
+                                                                                                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                        font: GoogleFonts.notoSansJp(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                        ),
+                                                                                                        color: Colors.white,
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                      ),
+                                                                                                  elevation: 3.0,
+                                                                                                  borderSide: BorderSide(
+                                                                                                    color: Colors.transparent,
+                                                                                                    width: 1.0,
+                                                                                                  ),
+                                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                                  disabledColor: FlutterFlowTheme.of(context).alternate,
+                                                                                                ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                        Divider(
+                                                                                          thickness: 2.0,
+                                                                                          color: FlutterFlowTheme.of(context).alternate,
+                                                                                        ),
+                                                                                        FutureBuilder<List<Seccion9Row>>(
+                                                                                          future: Seccion9Table().querySingleRow(
+                                                                                            queryFn: (q) => q.eqOrNull(
+                                                                                              'idIngreso',
+                                                                                              widget.idingreso,
+                                                                                            ),
+                                                                                          ),
+                                                                                          builder: (context, snapshot) {
+                                                                                            // Customize what your widget looks like when it's loading.
+                                                                                            if (!snapshot.hasData) {
+                                                                                              return Center(
+                                                                                                child: SizedBox(
+                                                                                                  width: 50.0,
+                                                                                                  height: 50.0,
+                                                                                                  child: CircularProgressIndicator(
+                                                                                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                                                                                      FlutterFlowTheme.of(context).primary,
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                ),
+                                                                                              );
+                                                                                            }
+                                                                                            List<Seccion9Row> containerSeccion9RowList = snapshot.data!;
+
+                                                                                            final containerSeccion9Row = containerSeccion9RowList.isNotEmpty ? containerSeccion9RowList.first : null;
+
+                                                                                            return Container(
+                                                                                              decoration: BoxDecoration(),
+                                                                                              child: Row(
+                                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                                children: [
+                                                                                                  Row(
+                                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                                    children: [
+                                                                                                      Icon(
+                                                                                                        Icons.check_circle,
+                                                                                                        color: containeringresosIngresosRow.form1seccion9 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
+                                                                                                        size: 24.0,
+                                                                                                      ),
+                                                                                                      Text(
+                                                                                                        'Apertura de expediente / Asesoramiento',
+                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                              font: GoogleFonts.notoSansJp(
+                                                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                              ),
+                                                                                                              letterSpacing: 0.0,
+                                                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                            ),
+                                                                                                      ),
+                                                                                                    ],
+                                                                                                  ),
+                                                                                                  FFButtonWidget(
+                                                                                                    onPressed: !() {
+                                                                                                      if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
+                                                                                                        return true;
+                                                                                                      } else if (widget.usuariorol?.rolId == 1) {
+                                                                                                        return true;
+                                                                                                      } else if (widget.usuariorol?.rolId == 2) {
+                                                                                                        return true;
+                                                                                                      } else {
+                                                                                                        return false;
+                                                                                                      }
+                                                                                                    }()
+                                                                                                        ? null
+                                                                                                        : () async {
+                                                                                                            if (containerSeccion9Row?.idSec9 != null) {
+                                                                                                              await Seccion9Table().update(
+                                                                                                                data: {
+                                                                                                                  'Desicion': 'Apertura',
+                                                                                                                  'iduser': currentUserUid,
+                                                                                                                },
+                                                                                                                matchingRows: (rows) => rows.eqOrNull(
+                                                                                                                  'idIngreso',
+                                                                                                                  widget.idingreso,
+                                                                                                                ),
+                                                                                                              );
+                                                                                                              safeSetState(() => _model.requestCompleter1 = null);
+                                                                                                              await _model.waitForRequestCompleted1();
+                                                                                                            } else {
+                                                                                                              _model.seccion9 = await Seccion9Table().insert({
+                                                                                                                'idIngreso': containeringresosIngresosRow.id,
+                                                                                                                'idExpediente': widget.rowexp?.id,
+                                                                                                                'Desicion': 'Apertura',
+                                                                                                                'iduser': currentUserUid,
+                                                                                                              });
+                                                                                                              await IngresosTable().update(
+                                                                                                                data: {
+                                                                                                                  'form1seccion9': true,
+                                                                                                                  'updated_at': supaSerialize<DateTime>(getCurrentTimestamp),
+                                                                                                                },
+                                                                                                                matchingRows: (rows) => rows.eqOrNull(
+                                                                                                                  'id',
+                                                                                                                  containeringresosIngresosRow.id,
+                                                                                                                ),
+                                                                                                              );
+                                                                                                              await showDialog(
+                                                                                                                context: context,
+                                                                                                                builder: (alertDialogContext) {
+                                                                                                                  return WebViewAware(
+                                                                                                                    child: AlertDialog(
+                                                                                                                      title: Text('Carga correcta'),
+                                                                                                                      content: Text('La informacion se guardo correctamente com \"Apertura de legajo\"!!'),
+                                                                                                                      actions: [
+                                                                                                                        TextButton(
+                                                                                                                          onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                                          child: Text('Ok'),
+                                                                                                                        ),
+                                                                                                                      ],
+                                                                                                                    ),
+                                                                                                                  );
+                                                                                                                },
+                                                                                                              );
+                                                                                                              safeSetState(() => _model.requestCompleter1 = null);
+                                                                                                              await _model.waitForRequestCompleted1();
+                                                                                                            }
+
+                                                                                                            safeSetState(() {});
+                                                                                                          },
+                                                                                                    text: 'Apertura de expediente',
+                                                                                                    options: FFButtonOptions(
+                                                                                                      height: 40.0,
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                      color: containerSeccion9Row?.desicion == 'Apertura' ? FlutterFlowTheme.of(context).success : FlutterFlowTheme.of(context).primary,
+                                                                                                      textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                            font: GoogleFonts.notoSansJp(
+                                                                                                              fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                            ),
+                                                                                                            color: Colors.white,
+                                                                                                            letterSpacing: 0.0,
+                                                                                                            fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                          ),
+                                                                                                      elevation: 0.0,
+                                                                                                      borderRadius: BorderRadius.circular(8.0),
+                                                                                                      disabledColor: FlutterFlowTheme.of(context).alternate,
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                  FFButtonWidget(
+                                                                                                    onPressed: !() {
+                                                                                                      if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
+                                                                                                        return true;
+                                                                                                      } else if (widget.usuariorol?.rolId == 1) {
+                                                                                                        return true;
+                                                                                                      } else if (widget.usuariorol?.rolId == 2) {
+                                                                                                        return true;
+                                                                                                      } else {
+                                                                                                        return false;
+                                                                                                      }
+                                                                                                    }()
+                                                                                                        ? null
+                                                                                                        : () async {
+                                                                                                            if (containerSeccion9Row?.idSec9 != null) {
+                                                                                                              await Seccion9Table().update(
+                                                                                                                data: {
+                                                                                                                  'Desicion': 'Asesoramiento',
+                                                                                                                },
+                                                                                                                matchingRows: (rows) => rows.eqOrNull(
+                                                                                                                  'idIngreso',
+                                                                                                                  widget.idingreso,
+                                                                                                                ),
+                                                                                                              );
+                                                                                                              await showModalBottomSheet(
+                                                                                                                isScrollControlled: true,
+                                                                                                                backgroundColor: Colors.transparent,
+                                                                                                                enableDrag: false,
+                                                                                                                context: context,
+                                                                                                                builder: (context) {
+                                                                                                                  return WebViewAware(
+                                                                                                                    child: GestureDetector(
+                                                                                                                      onTap: () {
+                                                                                                                        FocusScope.of(context).unfocus();
+                                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                                      },
+                                                                                                                      child: Padding(
+                                                                                                                        padding: MediaQuery.viewInsetsOf(context),
+                                                                                                                        child: AsesoramientoAnexoAWidget(
+                                                                                                                          rowingreso: containeringresosIngresosRow,
+                                                                                                                          rowexpediente: widget.rowexp,
+                                                                                                                          rowseccion9: containerSeccion9Row,
+                                                                                                                          usuariorow: widget.usuariorow,
+                                                                                                                          spd: widget.spd,
+                                                                                                                          usuariorol: widget.usuariorol,
+                                                                                                                        ),
+                                                                                                                      ),
+                                                                                                                    ),
+                                                                                                                  );
+                                                                                                                },
+                                                                                                              ).then((value) => safeSetState(() => _model.creoasesoramiento1 = value));
+
+                                                                                                              if (_model.creoasesoramiento1!) {
+                                                                                                                safeSetState(() => _model.requestCompleter1 = null);
+                                                                                                                await _model.waitForRequestCompleted1();
+                                                                                                                safeSetState(() => _model.requestCompleter2 = null);
+                                                                                                                await _model.waitForRequestCompleted2();
+                                                                                                              }
+                                                                                                            } else {
+                                                                                                              _model.seccion9Copy = await Seccion9Table().insert({
+                                                                                                                'idIngreso': containeringresosIngresosRow.id,
+                                                                                                                'idExpediente': widget.rowexp?.id,
+                                                                                                                'Desicion': 'Asesoramiento',
+                                                                                                                'iduser': currentUserUid,
+                                                                                                              });
+                                                                                                              await IngresosTable().update(
+                                                                                                                data: {
+                                                                                                                  'form1seccion9': true,
+                                                                                                                  'Estado': 'Cerrado',
+                                                                                                                  'fechacierre': supaSerialize<DateTime>(getCurrentTimestamp),
+                                                                                                                  'Motivocierre': 'Asesoramiento',
+                                                                                                                  'updated_at': supaSerialize<DateTime>(getCurrentTimestamp),
+                                                                                                                },
+                                                                                                                matchingRows: (rows) => rows.eqOrNull(
+                                                                                                                  'id',
+                                                                                                                  containeringresosIngresosRow.id,
+                                                                                                                ),
+                                                                                                              );
+                                                                                                              await showDialog(
+                                                                                                                context: context,
+                                                                                                                builder: (alertDialogContext) {
+                                                                                                                  return WebViewAware(
+                                                                                                                    child: AlertDialog(
+                                                                                                                      title: Text('Carga correcta'),
+                                                                                                                      content: Text('La informacion se guardo correctamente!!'),
+                                                                                                                      actions: [
+                                                                                                                        TextButton(
+                                                                                                                          onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                                          child: Text('Ok'),
+                                                                                                                        ),
+                                                                                                                      ],
+                                                                                                                    ),
+                                                                                                                  );
+                                                                                                                },
+                                                                                                              );
+                                                                                                              safeSetState(() => _model.requestCompleter1 = null);
+                                                                                                              await _model.waitForRequestCompleted1();
+                                                                                                              await showModalBottomSheet(
+                                                                                                                isScrollControlled: true,
+                                                                                                                backgroundColor: Colors.transparent,
+                                                                                                                enableDrag: false,
+                                                                                                                context: context,
+                                                                                                                builder: (context) {
+                                                                                                                  return WebViewAware(
+                                                                                                                    child: GestureDetector(
+                                                                                                                      onTap: () {
+                                                                                                                        FocusScope.of(context).unfocus();
+                                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                                      },
+                                                                                                                      child: Padding(
+                                                                                                                        padding: MediaQuery.viewInsetsOf(context),
+                                                                                                                        child: AsesoramientoAnexoAWidget(
+                                                                                                                          rowingreso: containeringresosIngresosRow,
+                                                                                                                          rowexpediente: widget.rowexp,
+                                                                                                                          rowseccion9: _model.seccion9Copy,
+                                                                                                                          usuariorow: widget.usuariorow,
+                                                                                                                          spd: widget.spd,
+                                                                                                                          usuariorol: widget.usuariorol,
+                                                                                                                        ),
+                                                                                                                      ),
+                                                                                                                    ),
+                                                                                                                  );
+                                                                                                                },
+                                                                                                              ).then((value) => safeSetState(() {}));
+
+                                                                                                              if (_model.creoasesoramiento1!) {
+                                                                                                                safeSetState(() => _model.requestCompleter2 = null);
+                                                                                                                await _model.waitForRequestCompleted2();
+                                                                                                                safeSetState(() => _model.requestCompleter1 = null);
+                                                                                                                await _model.waitForRequestCompleted1();
+                                                                                                              }
+                                                                                                            }
+
+                                                                                                            safeSetState(() {});
+                                                                                                          },
+                                                                                                    text: 'Asesoramiento',
+                                                                                                    options: FFButtonOptions(
+                                                                                                      height: 40.0,
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                      color: containerSeccion9Row?.desicion == 'Asesoramiento' ? FlutterFlowTheme.of(context).success : FlutterFlowTheme.of(context).primary,
+                                                                                                      textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                            font: GoogleFonts.notoSansJp(
+                                                                                                              fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                            ),
+                                                                                                            color: Colors.white,
+                                                                                                            letterSpacing: 0.0,
+                                                                                                            fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                          ),
+                                                                                                      elevation: 0.0,
+                                                                                                      borderRadius: BorderRadius.circular(8.0),
+                                                                                                      disabledColor: FlutterFlowTheme.of(context).alternate,
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                ],
+                                                                                              ),
+                                                                                            );
+                                                                                          },
+                                                                                        ),
+                                                                                      ].divide(SizedBox(height: 3.0)),
+                                                                                    ),
+                                                                                  ),
+                                                                                  Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                                                                                    child: Container(
+                                                                                      decoration: BoxDecoration(),
+                                                                                      child: Row(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        children: [
+                                                                                          if (containeranexoAnexoAForm1Row?.linkdoc != null && containeranexoAnexoAForm1Row?.linkdoc != '')
+                                                                                            FFButtonWidget(
+                                                                                              onPressed: () async {
+                                                                                                await launchURL('https://view.officeapps.live.com/op/embed.aspx?src=${containeranexoAnexoAForm1Row?.linkdoc}');
+                                                                                              },
+                                                                                              text: 'Asesoramiento',
+                                                                                              icon: Icon(
+                                                                                                Icons.remove_red_eye_sharp,
+                                                                                                size: 15.0,
+                                                                                              ),
+                                                                                              options: FFButtonOptions(
+                                                                                                height: 30.0,
+                                                                                                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                      font: GoogleFonts.notoSansJp(
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                      ),
+                                                                                                      color: Colors.white,
+                                                                                                      fontSize: 10.0,
+                                                                                                      letterSpacing: 0.0,
+                                                                                                      fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                      fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                    ),
+                                                                                                elevation: 0.0,
+                                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                              ),
+                                                                                            ),
+                                                                                          if (containeranexoAnexoAForm1Row?.linkdoc != null && containeranexoAnexoAForm1Row?.linkdoc != '')
+                                                                                            FFButtonWidget(
+                                                                                              onPressed: () async {
+                                                                                                await launchURL(containeranexoAnexoAForm1Row!.linkdoc!);
+                                                                                              },
+                                                                                              text: 'Asesoramiento',
+                                                                                              icon: Icon(
+                                                                                                Icons.download_sharp,
+                                                                                                size: 15.0,
+                                                                                              ),
+                                                                                              options: FFButtonOptions(
+                                                                                                height: 30.0,
+                                                                                                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                      font: GoogleFonts.notoSansJp(
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                      ),
+                                                                                                      color: Colors.white,
+                                                                                                      fontSize: 10.0,
+                                                                                                      letterSpacing: 0.0,
+                                                                                                      fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                      fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                    ),
+                                                                                                elevation: 0.0,
+                                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                              ),
+                                                                                            ),
+                                                                                        ].divide(SizedBox(width: 3.0)),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                  if (containeringresosIngresosRow.form1seccion1! && containeringresosIngresosRow.form1seccion2! && containeringresosIngresosRow.form1seccion5! && containeringresosIngresosRow.form1seccion7! && containeringresosIngresosRow.form1seccion9!)
+                                                                                    Padding(
+                                                                                      padding: EdgeInsets.all(10.0),
+                                                                                      child: Container(
+                                                                                        height: 120.0,
+                                                                                        decoration: BoxDecoration(
+                                                                                          color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                          borderRadius: BorderRadius.circular(10.0),
+                                                                                          border: Border.all(
+                                                                                            color: FlutterFlowTheme.of(context).secondary,
+                                                                                          ),
+                                                                                        ),
+                                                                                        child: Column(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.center,
+                                                                                          children: [
+                                                                                            Padding(
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                                                                                              child: FFButtonWidget(
+                                                                                                onPressed: () async {
+                                                                                                  if (containeringresosIngresosRow.emergencia == 'Si') {
+                                                                                                    await IngresosTable().update(
+                                                                                                      data: {
+                                                                                                        'form1completo': true,
+                                                                                                        'form9': true,
+                                                                                                        'Ampliacion': true,
+                                                                                                      },
+                                                                                                      matchingRows: (rows) => rows.eqOrNull(
+                                                                                                        'id',
+                                                                                                        containeringresosIngresosRow.id,
+                                                                                                      ),
+                                                                                                    );
+                                                                                                  } else {
+                                                                                                    await IngresosTable().update(
+                                                                                                      data: {
+                                                                                                        'form1completo': true,
+                                                                                                        'Ampliacioncompleto': false,
+                                                                                                        'Ampliacion': true,
+                                                                                                      },
+                                                                                                      matchingRows: (rows) => rows.eqOrNull(
+                                                                                                        'id',
+                                                                                                        containeringresosIngresosRow.id,
+                                                                                                      ),
+                                                                                                    );
+                                                                                                  }
+
+                                                                                                  await showDialog(
+                                                                                                    context: context,
+                                                                                                    builder: (alertDialogContext) {
+                                                                                                      return WebViewAware(
+                                                                                                        child: AlertDialog(
+                                                                                                          title: Text('Ok para avanzar!!'),
+                                                                                                          content: Text('Se completaron los requisitos minimos para avanzar!!'),
+                                                                                                          actions: [
+                                                                                                            TextButton(
+                                                                                                              onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                              child: Text('Ok'),
+                                                                                                            ),
+                                                                                                          ],
+                                                                                                        ),
+                                                                                                      );
+                                                                                                    },
+                                                                                                  );
+                                                                                                  safeSetState(() => _model.requestCompleter1 = null);
+                                                                                                  await _model.waitForRequestCompleted1();
+                                                                                                },
+                                                                                                text: 'Ok para avanzar',
+                                                                                                icon: Icon(
+                                                                                                  Icons.save,
+                                                                                                  size: 15.0,
+                                                                                                ),
+                                                                                                options: FFButtonOptions(
+                                                                                                  width: 300.0,
+                                                                                                  height: 40.0,
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                  color: FlutterFlowTheme.of(context).success,
+                                                                                                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                        font: GoogleFonts.notoSansJp(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                        ),
+                                                                                                        color: Colors.white,
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                      ),
+                                                                                                  elevation: 2.0,
+                                                                                                  borderSide: BorderSide(
+                                                                                                    color: Colors.transparent,
+                                                                                                    width: 1.0,
+                                                                                                  ),
+                                                                                                  borderRadius: BorderRadius.circular(20.0),
+                                                                                                  hoverElevation: 4.0,
+                                                                                                ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          ].divide(SizedBox(height: 10.0)),
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                ].divide(SizedBox(height: 4.0)),
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                        );
+                                                                      },
                                                                     ),
-                                                                  ],
-                                                                ),
+                                                                  ),
+                                                                ],
                                                               ),
                                                             ),
                                                           ),

@@ -114,15 +114,7 @@ class _Auth2CreateCopyWidgetState extends State<Auth2CreateCopyWidget>
           width: double.infinity,
           height: double.infinity,
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                FlutterFlowTheme.of(context).primary,
-                FlutterFlowTheme.of(context).secondaryBackground
-              ],
-              stops: [0.0, 1.0],
-              begin: AlignmentDirectional(0.87, -1.0),
-              end: AlignmentDirectional(-0.87, 1.0),
-            ),
+            color: FlutterFlowTheme.of(context).secondaryBackground,
           ),
           alignment: AlignmentDirectional(0.0, -1.0),
           child: SingleChildScrollView(
@@ -211,8 +203,7 @@ class _Auth2CreateCopyWidgetState extends State<Auth2CreateCopyWidget>
                           maxWidth: 570.0,
                         ),
                         decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                          color: FlutterFlowTheme.of(context).primaryBackground,
                           boxShadow: [
                             BoxShadow(
                               blurRadius: 4.0,
@@ -593,7 +584,7 @@ class _Auth2CreateCopyWidgetState extends State<Auth2CreateCopyWidget>
                                       size: 24.0,
                                     ),
                                     fillColor: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
+                                        .primaryBackground,
                                     elevation: 2.0,
                                     borderColor:
                                         FlutterFlowTheme.of(context).alternate,
@@ -653,7 +644,7 @@ class _Auth2CreateCopyWidgetState extends State<Auth2CreateCopyWidget>
                                         size: 24.0,
                                       ),
                                       fillColor: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                          .primaryBackground,
                                       elevation: 2.0,
                                       borderColor: FlutterFlowTheme.of(context)
                                           .alternate,

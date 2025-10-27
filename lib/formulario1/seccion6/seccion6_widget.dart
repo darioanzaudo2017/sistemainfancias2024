@@ -104,7 +104,7 @@ class _Seccion6WidgetState extends State<Seccion6Widget> {
                   width: MediaQuery.sizeOf(context).width * 0.8,
                   height: 600.0,
                   decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                    color: FlutterFlowTheme.of(context).primaryBackground,
                     borderRadius: BorderRadius.circular(20.0),
                     border: Border.all(
                       color: FlutterFlowTheme.of(context).primary,
@@ -344,6 +344,10 @@ class _Seccion6WidgetState extends State<Seccion6Widget> {
                                                       BorderRadius.circular(
                                                           10.0),
                                                 ),
+                                                filled: true,
+                                                fillColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
                                               ),
                                               style: FlutterFlowTheme.of(
                                                       context)
@@ -510,6 +514,11 @@ class _Seccion6WidgetState extends State<Seccion6Widget> {
                                                         BorderRadius.circular(
                                                             10.0),
                                                   ),
+                                                  filled: true,
+                                                  fillColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryBackground,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -678,6 +687,11 @@ class _Seccion6WidgetState extends State<Seccion6Widget> {
                                                         BorderRadius.circular(
                                                             10.0),
                                                   ),
+                                                  filled: true,
+                                                  fillColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryBackground,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)

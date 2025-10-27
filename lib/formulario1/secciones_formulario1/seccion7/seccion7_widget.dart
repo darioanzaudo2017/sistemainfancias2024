@@ -98,7 +98,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                 child: Container(
                   width: MediaQuery.sizeOf(context).width * 0.8,
                   decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                    color: FlutterFlowTheme.of(context).primaryBackground,
                     borderRadius: BorderRadius.circular(20.0),
                     border: Border.all(
                       color: FlutterFlowTheme.of(context).primary,
@@ -830,7 +830,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                                               BoxDecoration(
                                                             color: FlutterFlowTheme
                                                                     .of(context)
-                                                                .success,
+                                                                .secondary,
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
@@ -862,6 +862,9 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                                                           .bodyMedium
                                                                           .fontStyle,
                                                                     ),
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryBackground,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     fontWeight: FlutterFlowTheme.of(
@@ -1165,7 +1168,8 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                             val?.firstOrNull),
                                     selectedChipStyle: ChipStyle(
                                       backgroundColor:
-                                          FlutterFlowTheme.of(context).success,
+                                          FlutterFlowTheme.of(context)
+                                              .secondary,
                                       textStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
