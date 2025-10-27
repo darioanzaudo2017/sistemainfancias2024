@@ -593,7 +593,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                       width: double.infinity,
                                                       decoration: BoxDecoration(
                                                         color:
-                                                            Color(0xFF39A9EF),
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
                                                         boxShadow: [
                                                           BoxShadow(
                                                             blurRadius: 4.0,
@@ -1070,7 +1072,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                                                       fontWeight: FontWeight.w500,
                                                                                                       fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                                                     ),
-                                                                                                    color: Color(0xFF14181B),
+                                                                                                    color: FlutterFlowTheme.of(context).primaryText,
                                                                                                     fontSize: 10.0,
                                                                                                     letterSpacing: 0.0,
                                                                                                     fontWeight: FontWeight.w500,
@@ -1150,7 +1152,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                                                       fontWeight: FontWeight.w500,
                                                                                                       fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                                                     ),
-                                                                                                    color: Color(0xFF14181B),
+                                                                                                    color: FlutterFlowTheme.of(context).primaryText,
                                                                                                     fontSize: 12.0,
                                                                                                     letterSpacing: 0.0,
                                                                                                     fontWeight: FontWeight.w500,
@@ -1230,7 +1232,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                                                       fontWeight: FontWeight.w500,
                                                                                                       fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                                                     ),
-                                                                                                    color: Color(0xFF14181B),
+                                                                                                    color: FlutterFlowTheme.of(context).primaryText,
                                                                                                     fontSize: 12.0,
                                                                                                     letterSpacing: 0.0,
                                                                                                     fontWeight: FontWeight.w500,
@@ -1310,7 +1312,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                                                       fontWeight: FontWeight.w500,
                                                                                                       fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                                                     ),
-                                                                                                    color: Color(0xFF14181B),
+                                                                                                    color: FlutterFlowTheme.of(context).primaryText,
                                                                                                     fontSize: 14.0,
                                                                                                     letterSpacing: 0.0,
                                                                                                     fontWeight: FontWeight.w500,
@@ -1391,7 +1393,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                                                       fontWeight: FontWeight.w500,
                                                                                                       fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                                                     ),
-                                                                                                    color: Color(0xFF14181B),
+                                                                                                    color: FlutterFlowTheme.of(context).primaryText,
                                                                                                     fontSize: 14.0,
                                                                                                     letterSpacing: 0.0,
                                                                                                     fontWeight: FontWeight.w500,
@@ -1472,7 +1474,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                                                       fontWeight: FontWeight.w500,
                                                                                                       fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                                                     ),
-                                                                                                    color: Color(0xFF14181B),
+                                                                                                    color: FlutterFlowTheme.of(context).primaryText,
                                                                                                     fontSize: 12.0,
                                                                                                     letterSpacing: 0.0,
                                                                                                     fontWeight: FontWeight.w500,
@@ -1627,7 +1629,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                                                       fontWeight: FontWeight.w500,
                                                                                                       fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                                                     ),
-                                                                                                    color: Color(0xFF14181B),
+                                                                                                    color: FlutterFlowTheme.of(context).primaryText,
                                                                                                     fontSize: 10.0,
                                                                                                     letterSpacing: 0.0,
                                                                                                     fontWeight: FontWeight.w500,
@@ -1707,7 +1709,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                                                       fontWeight: FontWeight.w500,
                                                                                                       fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                                                     ),
-                                                                                                    color: Color(0xFF14181B),
+                                                                                                    color: FlutterFlowTheme.of(context).primaryText,
                                                                                                     fontSize: 12.0,
                                                                                                     letterSpacing: 0.0,
                                                                                                     fontWeight: FontWeight.w500,
@@ -1787,7 +1789,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                                                       fontWeight: FontWeight.w500,
                                                                                                       fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                                                     ),
-                                                                                                    color: Color(0xFF14181B),
+                                                                                                    color: FlutterFlowTheme.of(context).primaryText,
                                                                                                     fontSize: 12.0,
                                                                                                     letterSpacing: 0.0,
                                                                                                     fontWeight: FontWeight.w500,
@@ -1867,7 +1869,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                                                       fontWeight: FontWeight.w500,
                                                                                                       fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                                                     ),
-                                                                                                    color: Color(0xFF14181B),
+                                                                                                    color: FlutterFlowTheme.of(context).primaryText,
                                                                                                     fontSize: 14.0,
                                                                                                     letterSpacing: 0.0,
                                                                                                     fontWeight: FontWeight.w500,
@@ -1948,7 +1950,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                                                       fontWeight: FontWeight.w500,
                                                                                                       fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                                                     ),
-                                                                                                    color: Color(0xFF14181B),
+                                                                                                    color: FlutterFlowTheme.of(context).primaryText,
                                                                                                     fontSize: 14.0,
                                                                                                     letterSpacing: 0.0,
                                                                                                     fontWeight: FontWeight.w500,
@@ -2029,7 +2031,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                                                       fontWeight: FontWeight.w500,
                                                                                                       fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                                                     ),
-                                                                                                    color: Color(0xFF14181B),
+                                                                                                    color: FlutterFlowTheme.of(context).primaryText,
                                                                                                     fontSize: 12.0,
                                                                                                     letterSpacing: 0.0,
                                                                                                     fontWeight: FontWeight.w500,
@@ -2149,7 +2151,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                                                   fontWeight: FontWeight.w500,
                                                                                                   fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                                                 ),
-                                                                                                color: Color(0xFF14181B),
+                                                                                                color: FlutterFlowTheme.of(context).primaryText,
                                                                                                 fontSize: 10.0,
                                                                                                 letterSpacing: 0.0,
                                                                                                 fontWeight: FontWeight.w500,
@@ -2238,7 +2240,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                                                   fontWeight: FontWeight.w500,
                                                                                                   fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                                                 ),
-                                                                                                color: Color(0xFF14181B),
+                                                                                                color: FlutterFlowTheme.of(context).primaryText,
                                                                                                 fontSize: 12.0,
                                                                                                 letterSpacing: 0.0,
                                                                                                 fontWeight: FontWeight.w500,
@@ -2327,7 +2329,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                                                   fontWeight: FontWeight.w500,
                                                                                                   fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                                                 ),
-                                                                                                color: Color(0xFF14181B),
+                                                                                                color: FlutterFlowTheme.of(context).primaryText,
                                                                                                 fontSize: 12.0,
                                                                                                 letterSpacing: 0.0,
                                                                                                 fontWeight: FontWeight.w500,
@@ -2416,7 +2418,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                                                   fontWeight: FontWeight.w500,
                                                                                                   fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                                                 ),
-                                                                                                color: Color(0xFF14181B),
+                                                                                                color: FlutterFlowTheme.of(context).primaryText,
                                                                                                 fontSize: 14.0,
                                                                                                 letterSpacing: 0.0,
                                                                                                 fontWeight: FontWeight.w500,
@@ -2506,7 +2508,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                                                   fontWeight: FontWeight.w500,
                                                                                                   fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                                                 ),
-                                                                                                color: Color(0xFF14181B),
+                                                                                                color: FlutterFlowTheme.of(context).primaryText,
                                                                                                 fontSize: 14.0,
                                                                                                 letterSpacing: 0.0,
                                                                                                 fontWeight: FontWeight.w500,
@@ -2596,7 +2598,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                                                   fontWeight: FontWeight.w500,
                                                                                                   fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                                                 ),
-                                                                                                color: Color(0xFF14181B),
+                                                                                                color: FlutterFlowTheme.of(context).primaryText,
                                                                                                 fontSize: 12.0,
                                                                                                 letterSpacing: 0.0,
                                                                                                 fontWeight: FontWeight.w500,
@@ -2834,58 +2836,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 ),
                                               ),
                                             ),
-                                          FFButtonWidget(
-                                            onPressed: () async {
-                                              context.pushNamed(
-                                                  PaginapruebaqueryWidget
-                                                      .routeName);
-                                            },
-                                            text: 'Button',
-                                            options: FFButtonOptions(
-                                              height: 40.0,
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      16.0, 0.0, 16.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              textStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .titleSmall
-                                                  .override(
-                                                    font:
-                                                        GoogleFonts.notoSansJp(
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .fontStyle,
-                                                    ),
-                                                    color: Colors.white,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleSmall
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleSmall
-                                                            .fontStyle,
-                                                  ),
-                                              elevation: 0.0,
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
-                                            ),
-                                          ),
                                           Container(
                                             constraints: BoxConstraints(
                                               maxWidth: 800.0,
@@ -3211,7 +3161,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                       MediaQuery.sizeOf(context)
                                                               .width *
                                                           1.0,
-                                                  height: 400.0,
+                                                  height:
+                                                      MediaQuery.sizeOf(context)
+                                                              .height *
+                                                          0.7,
                                                   constraints: BoxConstraints(
                                                     maxWidth: 1000.0,
                                                     maxHeight: 800.0,
@@ -3219,7 +3172,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .secondaryBackground,
+                                                        .primaryBackground,
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             20.0),
@@ -3256,13 +3209,18 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                               [];
 
                                                           return ListView
-                                                              .builder(
+                                                              .separated(
                                                             padding:
                                                                 EdgeInsets.zero,
                                                             scrollDirection:
                                                                 Axis.vertical,
                                                             itemCount:
                                                                 lista2.length,
+                                                            separatorBuilder: (_,
+                                                                    __) =>
+                                                                SizedBox(
+                                                                    height:
+                                                                        10.0),
                                                             itemBuilder: (context,
                                                                 lista2Index) {
                                                               final lista2Item =
@@ -3392,7 +3350,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                                   decoration: BoxDecoration(
                                                                                     color: () {
                                                                                       if (lista2Item.ultimoEstado == 'Abierto') {
-                                                                                        return Color(0xFF39D2C0);
+                                                                                        return FlutterFlowTheme.of(context).secondary;
                                                                                       } else if (lista2Item.ultimoEstado == 'Cerrado') {
                                                                                         return FlutterFlowTheme.of(context).error;
                                                                                       } else if (lista2Item.motivocierre == 'Asesoramiento') {
@@ -3412,7 +3370,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                                       children: [
                                                                                         Icon(
                                                                                           Icons.check_circle_outline,
-                                                                                          color: Color(0xFF4B39EF),
+                                                                                          color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                           size: 16.0,
                                                                                         ),
                                                                                         Text(
@@ -3422,7 +3380,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                                                   fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
                                                                                                   fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
                                                                                                 ),
-                                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                                color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                                 letterSpacing: 0.0,
                                                                                                 fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
                                                                                                 fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,

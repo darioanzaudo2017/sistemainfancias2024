@@ -128,7 +128,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                 child: Container(
                   width: MediaQuery.sizeOf(context).width * 0.9,
                   decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                    color: FlutterFlowTheme.of(context).primaryBackground,
                     borderRadius: BorderRadius.circular(20.0),
                   ),
                   alignment: AlignmentDirectional(0.0, 0.0),
@@ -170,7 +170,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                               Container(
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                                      .primaryBackground,
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Column(
@@ -352,6 +352,10 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                             BorderRadius
                                                                 .circular(10.0),
                                                       ),
+                                                      filled: true,
+                                                      fillColor: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -694,6 +698,10 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                                   .circular(
                                                                       10.0),
                                                         ),
+                                                        filled: true,
+                                                        fillColor: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
                                                       ),
                                                       style:
                                                           FlutterFlowTheme.of(
@@ -848,6 +856,10 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                             BorderRadius
                                                                 .circular(10.0),
                                                       ),
+                                                      filled: true,
+                                                      fillColor: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -1005,6 +1017,10 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                             BorderRadius
                                                                 .circular(10.0),
                                                       ),
+                                                      filled: true,
+                                                      fillColor: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -1372,6 +1388,10 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                             BorderRadius
                                                                 .circular(10.0),
                                                       ),
+                                                      filled: true,
+                                                      fillColor: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -1594,7 +1614,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                 child: Container(
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
+                                        .primaryBackground,
                                     borderRadius: BorderRadius.circular(10.0),
                                   ),
                                   child: Column(
@@ -1777,6 +1797,10 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                           BorderRadius.circular(
                                                               10.0),
                                                     ),
+                                                    filled: true,
+                                                    fillColor: FlutterFlowTheme
+                                                            .of(context)
+                                                        .secondaryBackground,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -1943,6 +1967,10 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                           BorderRadius.circular(
                                                               10.0),
                                                     ),
+                                                    filled: true,
+                                                    fillColor: FlutterFlowTheme
+                                                            .of(context)
+                                                        .secondaryBackground,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -2785,6 +2813,10 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                           BorderRadius.circular(
                                                               10.0),
                                                     ),
+                                                    filled: true,
+                                                    fillColor: FlutterFlowTheme
+                                                            .of(context)
+                                                        .secondaryBackground,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -2936,6 +2968,10 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                               borderRadius:
                                                   BorderRadius.circular(10.0),
                                             ),
+                                            filled: true,
+                                            fillColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryBackground,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -2986,7 +3022,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                 child: Container(
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
+                                        .primaryBackground,
                                     borderRadius: BorderRadius.circular(10.0),
                                   ),
                                   child: Column(
@@ -3616,6 +3652,10 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                           BorderRadius.circular(
                                                               10.0),
                                                     ),
+                                                    filled: true,
+                                                    fillColor: FlutterFlowTheme
+                                                            .of(context)
+                                                        .secondaryBackground,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -4038,6 +4078,10 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                           BorderRadius.circular(
                                                               10.0),
                                                     ),
+                                                    filled: true,
+                                                    fillColor: FlutterFlowTheme
+                                                            .of(context)
+                                                        .secondaryBackground,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -4203,6 +4247,10 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                           BorderRadius.circular(
                                                               10.0),
                                                     ),
+                                                    filled: true,
+                                                    fillColor: FlutterFlowTheme
+                                                            .of(context)
+                                                        .secondaryBackground,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -4503,6 +4551,10 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                           BorderRadius.circular(
                                                               10.0),
                                                     ),
+                                                    filled: true,
+                                                    fillColor: FlutterFlowTheme
+                                                            .of(context)
+                                                        .secondaryBackground,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -4560,7 +4612,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                 child: Container(
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
+                                        .primaryBackground,
                                     borderRadius: BorderRadius.circular(10.0),
                                   ),
                                   child: Column(
@@ -4880,6 +4932,10 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                             BorderRadius
                                                                 .circular(10.0),
                                                       ),
+                                                      filled: true,
+                                                      fillColor: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)

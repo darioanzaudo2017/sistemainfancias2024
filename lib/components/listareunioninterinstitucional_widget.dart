@@ -104,7 +104,7 @@ class _ListareunioninterinstitucionalWidgetState
             child: Container(
               width: MediaQuery.sizeOf(context).width * 0.6,
               decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).secondaryBackground,
+                color: FlutterFlowTheme.of(context).primaryBackground,
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(0.0),
                   bottomRight: Radius.circular(0.0),

@@ -220,7 +220,9 @@ class _SenafWidgetState extends State<SenafWidget>
                               : null;
 
                       return Container(
-                        decoration: BoxDecoration(),
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.of(context).primaryBackground,
+                        ),
                         child: FutureBuilder<List<IngresosRow>>(
                           future: (_model.requestCompleter1 ??=
                                   Completer<List<IngresosRow>>()
@@ -1313,7 +1315,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                         decoration:
                                                                             BoxDecoration(
                                                                           color:
-                                                                              FlutterFlowTheme.of(context).secondaryBackground,
+                                                                              FlutterFlowTheme.of(context).primaryBackground,
                                                                           border:
                                                                               Border.all(
                                                                             color:
@@ -1393,7 +1395,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                             fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                                             fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                           ),
-                                                                                          color: FlutterFlowTheme.of(context).primary,
+                                                                                          color: FlutterFlowTheme.of(context).primaryText,
                                                                                           letterSpacing: 0.0,
                                                                                           fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                                           fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
@@ -1405,7 +1407,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                       color: FlutterFlowTheme.of(context).secondaryText,
                                                                                       size: 24.0,
                                                                                     ),
-                                                                                    fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                    fillColor: FlutterFlowTheme.of(context).primaryBackground,
                                                                                     elevation: 2.0,
                                                                                     borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                     borderWidth: 2.0,
@@ -1713,7 +1715,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                       ),
                                                                                       child: Container(
                                                                                         decoration: BoxDecoration(
-                                                                                          color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                          color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                           borderRadius: BorderRadius.circular(10.0),
                                                                                           border: Border.all(
                                                                                             color: FlutterFlowTheme.of(context).secondaryText,
@@ -2031,7 +2033,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                   if (currentUserEmail == 'a2@sdert.com')
                                                                                                     Container(
                                                                                                       decoration: BoxDecoration(
-                                                                                                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                        color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                                         borderRadius: BorderRadius.circular(10.0),
                                                                                                         border: Border.all(
                                                                                                           color: FlutterFlowTheme.of(context).alternate,
@@ -2050,7 +2052,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                               ),
                                                                                                               child: Container(
                                                                                                                 decoration: BoxDecoration(
-                                                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                                  color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                                                   borderRadius: BorderRadius.circular(10.0),
                                                                                                                   border: Border.all(
                                                                                                                     color: FlutterFlowTheme.of(context).alternate,
@@ -2512,7 +2514,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                               ),
                                                                                                               child: Container(
                                                                                                                 decoration: BoxDecoration(
-                                                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                                  color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                                                   borderRadius: BorderRadius.circular(10.0),
                                                                                                                   border: Border.all(
                                                                                                                     color: FlutterFlowTheme.of(context).alternate,
@@ -2605,7 +2607,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                               ),
                                                                                                               child: Container(
                                                                                                                 decoration: BoxDecoration(
-                                                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                                  color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                                                   borderRadius: BorderRadius.circular(10.0),
                                                                                                                   border: Border.all(
                                                                                                                     color: FlutterFlowTheme.of(context).alternate,
@@ -2909,7 +2911,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                               ),
                                                                                                               child: Container(
                                                                                                                 decoration: BoxDecoration(
-                                                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                                  color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                                                   borderRadius: BorderRadius.circular(10.0),
                                                                                                                   border: Border.all(
                                                                                                                     color: FlutterFlowTheme.of(context).alternate,
@@ -3755,7 +3757,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                             ),
                                                                             decoration:
                                                                                 BoxDecoration(
-                                                                              color: Colors.transparent,
+                                                                              color: FlutterFlowTheme.of(context).primaryBackground,
                                                                             ),
                                                                             child:
                                                                                 Padding(
@@ -4817,7 +4819,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                           decoration:
                                                                               BoxDecoration(
                                                                             color:
-                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                FlutterFlowTheme.of(context).primaryBackground,
                                                                             borderRadius:
                                                                                 BorderRadius.circular(12.0),
                                                                             border:
@@ -4843,95 +4845,99 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                       height: 55.0,
                                                                                       decoration: BoxDecoration(
                                                                                         color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                        borderRadius: BorderRadius.circular(10.0),
                                                                                       ),
-                                                                                      child: Row(
-                                                                                        mainAxisSize: MainAxisSize.max,
-                                                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                        children: [
-                                                                                          Text(
-                                                                                            dateTimeFormat(
-                                                                                              "d/M/y",
-                                                                                              _model.datePicked6,
-                                                                                              locale: FFLocalizations.of(context).languageCode,
-                                                                                            ),
-                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  font: GoogleFonts.notoSansJp(
+                                                                                      child: Padding(
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                                                                                        child: Row(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                          children: [
+                                                                                            Text(
+                                                                                              dateTimeFormat(
+                                                                                                "d/M/y",
+                                                                                                _model.datePicked6,
+                                                                                                locale: FFLocalizations.of(context).languageCode,
+                                                                                              ),
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    font: GoogleFonts.notoSansJp(
+                                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                    ),
+                                                                                                    letterSpacing: 0.0,
                                                                                                     fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                                                     fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                   ),
-                                                                                                  letterSpacing: 0.0,
-                                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                ),
-                                                                                          ),
-                                                                                          FFButtonWidget(
-                                                                                            onPressed: () async {
-                                                                                              final _datePicked6Date = await showDatePicker(
-                                                                                                context: context,
-                                                                                                initialDate: getCurrentTimestamp,
-                                                                                                firstDate: DateTime(1900),
-                                                                                                lastDate: DateTime(2050),
-                                                                                                builder: (context, child) {
-                                                                                                  return wrapInMaterialDatePickerTheme(
-                                                                                                    context,
-                                                                                                    child!,
-                                                                                                    headerBackgroundColor: FlutterFlowTheme.of(context).primary,
-                                                                                                    headerForegroundColor: FlutterFlowTheme.of(context).info,
-                                                                                                    headerTextStyle: FlutterFlowTheme.of(context).headlineLarge.override(
-                                                                                                          font: GoogleFonts.notoSansJp(
+                                                                                            ),
+                                                                                            FFButtonWidget(
+                                                                                              onPressed: () async {
+                                                                                                final _datePicked6Date = await showDatePicker(
+                                                                                                  context: context,
+                                                                                                  initialDate: getCurrentTimestamp,
+                                                                                                  firstDate: DateTime(1900),
+                                                                                                  lastDate: DateTime(2050),
+                                                                                                  builder: (context, child) {
+                                                                                                    return wrapInMaterialDatePickerTheme(
+                                                                                                      context,
+                                                                                                      child!,
+                                                                                                      headerBackgroundColor: FlutterFlowTheme.of(context).primary,
+                                                                                                      headerForegroundColor: FlutterFlowTheme.of(context).info,
+                                                                                                      headerTextStyle: FlutterFlowTheme.of(context).headlineLarge.override(
+                                                                                                            font: GoogleFonts.notoSansJp(
+                                                                                                              fontWeight: FontWeight.w600,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).headlineLarge.fontStyle,
+                                                                                                            ),
+                                                                                                            fontSize: 32.0,
+                                                                                                            letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.w600,
                                                                                                             fontStyle: FlutterFlowTheme.of(context).headlineLarge.fontStyle,
                                                                                                           ),
-                                                                                                          fontSize: 32.0,
-                                                                                                          letterSpacing: 0.0,
-                                                                                                          fontWeight: FontWeight.w600,
-                                                                                                          fontStyle: FlutterFlowTheme.of(context).headlineLarge.fontStyle,
-                                                                                                        ),
-                                                                                                    pickerBackgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                                    pickerForegroundColor: FlutterFlowTheme.of(context).primaryText,
-                                                                                                    selectedDateTimeBackgroundColor: FlutterFlowTheme.of(context).primary,
-                                                                                                    selectedDateTimeForegroundColor: FlutterFlowTheme.of(context).info,
-                                                                                                    actionButtonForegroundColor: FlutterFlowTheme.of(context).primaryText,
-                                                                                                    iconSize: 24.0,
-                                                                                                  );
-                                                                                                },
-                                                                                              );
+                                                                                                      pickerBackgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                      pickerForegroundColor: FlutterFlowTheme.of(context).primaryText,
+                                                                                                      selectedDateTimeBackgroundColor: FlutterFlowTheme.of(context).primary,
+                                                                                                      selectedDateTimeForegroundColor: FlutterFlowTheme.of(context).info,
+                                                                                                      actionButtonForegroundColor: FlutterFlowTheme.of(context).primaryText,
+                                                                                                      iconSize: 24.0,
+                                                                                                    );
+                                                                                                  },
+                                                                                                );
 
-                                                                                              if (_datePicked6Date != null) {
-                                                                                                safeSetState(() {
-                                                                                                  _model.datePicked6 = DateTime(
-                                                                                                    _datePicked6Date.year,
-                                                                                                    _datePicked6Date.month,
-                                                                                                    _datePicked6Date.day,
-                                                                                                  );
-                                                                                                });
-                                                                                              } else if (_model.datePicked6 != null) {
-                                                                                                safeSetState(() {
-                                                                                                  _model.datePicked6 = getCurrentTimestamp;
-                                                                                                });
-                                                                                              }
-                                                                                            },
-                                                                                            text: 'Fecha',
-                                                                                            options: FFButtonOptions(
-                                                                                              height: 40.0,
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                                              textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: GoogleFonts.notoSansJp(
+                                                                                                if (_datePicked6Date != null) {
+                                                                                                  safeSetState(() {
+                                                                                                    _model.datePicked6 = DateTime(
+                                                                                                      _datePicked6Date.year,
+                                                                                                      _datePicked6Date.month,
+                                                                                                      _datePicked6Date.day,
+                                                                                                    );
+                                                                                                  });
+                                                                                                } else if (_model.datePicked6 != null) {
+                                                                                                  safeSetState(() {
+                                                                                                    _model.datePicked6 = getCurrentTimestamp;
+                                                                                                  });
+                                                                                                }
+                                                                                              },
+                                                                                              text: 'Fecha',
+                                                                                              options: FFButtonOptions(
+                                                                                                height: 40.0,
+                                                                                                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                      font: GoogleFonts.notoSansJp(
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                      ),
+                                                                                                      color: Colors.white,
+                                                                                                      letterSpacing: 0.0,
                                                                                                       fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
                                                                                                       fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
                                                                                                     ),
-                                                                                                    color: Colors.white,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                  ),
-                                                                                              elevation: 0.0,
-                                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                                                elevation: 0.0,
+                                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                              ),
                                                                                             ),
-                                                                                          ),
-                                                                                        ],
+                                                                                          ],
+                                                                                        ),
                                                                                       ),
                                                                                     ),
                                                                                     FlutterFlowDropDown<String>(
@@ -4962,7 +4968,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                       ),
                                                                                       fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                       elevation: 2.0,
-                                                                                      borderColor: FlutterFlowTheme.of(context).primary,
+                                                                                      borderColor: FlutterFlowTheme.of(context).alternate,
                                                                                       borderWidth: 0.0,
                                                                                       borderRadius: 8.0,
                                                                                       margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
@@ -5001,7 +5007,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                         ),
                                                                                     enabledBorder: OutlineInputBorder(
                                                                                       borderSide: BorderSide(
-                                                                                        color: FlutterFlowTheme.of(context).primary,
+                                                                                        color: FlutterFlowTheme.of(context).alternate,
                                                                                         width: 1.0,
                                                                                       ),
                                                                                       borderRadius: BorderRadius.circular(8.0),
@@ -5091,7 +5097,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                       decoration:
                                                                           BoxDecoration(
                                                                         color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
+                                                                            .primaryBackground,
                                                                       ),
                                                                       child: FutureBuilder<
                                                                           List<
@@ -5149,7 +5155,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                     maxWidth: 1270.0,
                                                                                   ),
                                                                                   decoration: BoxDecoration(
-                                                                                    color: Colors.white,
+                                                                                    color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                     boxShadow: [
                                                                                       BoxShadow(
                                                                                         blurRadius: 4.0,

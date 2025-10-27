@@ -99,12 +99,12 @@ class _DesplegablederechosprincipalWidgetState
               ),
               child: Container(
                 width: MediaQuery.sizeOf(context).width * 1.0,
-                height: 561.52,
+                height: 561.5,
                 constraints: BoxConstraints(
                   maxWidth: 600.0,
                 ),
                 decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  color: FlutterFlowTheme.of(context).primaryBackground,
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 child: Align(

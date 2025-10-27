@@ -93,7 +93,7 @@ class _EnviarmailWidgetState extends State<EnviarmailWidget> {
                   maxWidth: 800.0,
                 ),
                 decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  color: FlutterFlowTheme.of(context).primaryBackground,
                   boxShadow: [
                     BoxShadow(
                       blurRadius: 3.0,
@@ -1004,7 +1004,7 @@ class _EnviarmailWidgetState extends State<EnviarmailWidget> {
                   child: Container(
                     width: 432.6,
                     decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      color: FlutterFlowTheme.of(context).primaryBackground,
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     child: Padding(

@@ -97,7 +97,7 @@ class _NuevaaccionWidgetState extends State<NuevaaccionWidget>
             width: 692.6,
             height: 2500.0,
             decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).secondaryBackground,
+              color: FlutterFlowTheme.of(context).primaryBackground,
             ),
             child: Padding(
               padding: EdgeInsets.all(10.0),
@@ -212,7 +212,7 @@ class _NuevaaccionWidgetState extends State<NuevaaccionWidget>
                       width: 673.4,
                       height: 500.0,
                       decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        color: FlutterFlowTheme.of(context).primaryBackground,
                       ),
                       child: Column(
                         children: [

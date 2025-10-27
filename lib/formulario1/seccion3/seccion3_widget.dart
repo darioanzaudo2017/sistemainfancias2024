@@ -101,7 +101,7 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                     maxWidth: MediaQuery.sizeOf(context).width * 0.8,
                   ),
                   decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                    color: FlutterFlowTheme.of(context).primaryBackground,
                     borderRadius: BorderRadius.circular(20.0),
                     border: Border.all(
                       color: FlutterFlowTheme.of(context).primary,

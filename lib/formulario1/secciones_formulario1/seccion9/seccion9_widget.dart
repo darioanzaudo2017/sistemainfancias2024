@@ -98,7 +98,7 @@ class _Seccion9WidgetState extends State<Seccion9Widget> {
               width: MediaQuery.sizeOf(context).width * 0.5,
               height: 278.0,
               decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).secondaryBackground,
+                color: FlutterFlowTheme.of(context).primaryBackground,
                 borderRadius: BorderRadius.circular(20.0),
                 border: Border.all(
                   color: FlutterFlowTheme.of(context).primary,
@@ -444,7 +444,7 @@ class _Seccion9WidgetState extends State<Seccion9Widget> {
                             height: 100.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
+                                  .primaryBackground,
                             ),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,

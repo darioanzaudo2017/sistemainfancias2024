@@ -121,12 +121,12 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
             ),
             child: Container(
               width: MediaQuery.sizeOf(context).width * 1.0,
-              height: 706.25,
+              height: 706.3,
               constraints: BoxConstraints(
                 maxWidth: 600.0,
               ),
               decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).secondaryBackground,
+                color: FlutterFlowTheme.of(context).primaryBackground,
                 borderRadius: BorderRadius.circular(20.0),
                 border: Border.all(
                   color: FlutterFlowTheme.of(context).primary,
@@ -339,6 +339,10 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                             borderRadius:
                                                 BorderRadius.circular(10.0),
                                           ),
+                                          filled: true,
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -476,6 +480,10 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                             borderRadius:
                                                 BorderRadius.circular(10.0),
                                           ),
+                                          filled: true,
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -625,6 +633,10 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                             borderRadius:
                                                 BorderRadius.circular(10.0),
                                           ),
+                                          filled: true,
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -775,6 +787,10 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                             borderRadius:
                                                 BorderRadius.circular(10.0),
                                           ),
+                                          filled: true,
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -1220,7 +1236,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                         elevation: 2.0,
                                         borderColor:
                                             FlutterFlowTheme.of(context)
-                                                .secondaryText,
+                                                .alternate,
                                         borderWidth: 0.0,
                                         borderRadius: 8.0,
                                         margin: EdgeInsetsDirectional.fromSTEB(

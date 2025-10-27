@@ -86,7 +86,7 @@ class _SeleccionarrolusuarioWidgetState
           return Container(
             width: 548.7,
             decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).secondaryBackground,
+              color: FlutterFlowTheme.of(context).primaryBackground,
               boxShadow: [
                 BoxShadow(
                   blurRadius: 5.0,

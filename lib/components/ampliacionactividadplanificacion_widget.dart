@@ -135,7 +135,7 @@ class _AmpliacionactividadplanificacionWidgetState
                     width: 933.8,
                     height: 396.7,
                     decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      color: FlutterFlowTheme.of(context).primaryBackground,
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                     child: Align(

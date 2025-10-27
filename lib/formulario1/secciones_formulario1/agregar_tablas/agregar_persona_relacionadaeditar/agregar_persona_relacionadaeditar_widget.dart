@@ -116,7 +116,7 @@ class _AgregarPersonaRelacionadaeditarWidgetState
                 maxWidth: 600.0,
               ),
               decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).secondaryBackground,
+                color: FlutterFlowTheme.of(context).primaryBackground,
                 borderRadius: BorderRadius.circular(20.0),
                 border: Border.all(
                   color: FlutterFlowTheme.of(context).primary,
@@ -254,6 +254,9 @@ class _AgregarPersonaRelacionadaeditarWidgetState
                                   ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
+                                filled: true,
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -358,6 +361,9 @@ class _AgregarPersonaRelacionadaeditarWidgetState
                                   ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
+                                filled: true,
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -482,6 +488,9 @@ class _AgregarPersonaRelacionadaeditarWidgetState
                                         borderRadius:
                                             BorderRadius.circular(10.0),
                                       ),
+                                      filled: true,
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -594,6 +603,9 @@ class _AgregarPersonaRelacionadaeditarWidgetState
                                   ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
+                                filled: true,
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -698,6 +710,9 @@ class _AgregarPersonaRelacionadaeditarWidgetState
                                   ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
+                                filled: true,
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -774,7 +789,8 @@ class _AgregarPersonaRelacionadaeditarWidgetState
                               fillColor: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
                               elevation: 2.0,
-                              borderColor: FlutterFlowTheme.of(context).accent1,
+                              borderColor:
+                                  FlutterFlowTheme.of(context).alternate,
                               borderWidth: 0.0,
                               borderRadius: 8.0,
                               margin: EdgeInsetsDirectional.fromSTEB(
@@ -868,6 +884,9 @@ class _AgregarPersonaRelacionadaeditarWidgetState
                                     ),
                                     borderRadius: BorderRadius.circular(10.0),
                                   ),
+                                  filled: true,
+                                  fillColor: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -980,6 +999,9 @@ class _AgregarPersonaRelacionadaeditarWidgetState
                                     ),
                                     borderRadius: BorderRadius.circular(10.0),
                                   ),
+                                  filled: true,
+                                  fillColor: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -1067,7 +1089,7 @@ class _AgregarPersonaRelacionadaeditarWidgetState
                                           EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
-                                          FlutterFlowTheme.of(context).success,
+                                          FlutterFlowTheme.of(context).primary,
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(

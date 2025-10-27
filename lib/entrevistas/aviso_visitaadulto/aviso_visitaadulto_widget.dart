@@ -99,7 +99,7 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                 maxWidth: 600.0,
               ),
               decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).secondaryBackground,
+                color: FlutterFlowTheme.of(context).primaryBackground,
                 borderRadius: BorderRadius.circular(20.0),
                 border: Border.all(
                   color: FlutterFlowTheme.of(context).primary,
@@ -115,7 +115,7 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         Padding(
@@ -384,6 +384,9 @@ class _AvisoVisitaadultoWidgetState extends State<AvisoVisitaadultoWidget> {
                                 ),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
+                              filled: true,
+                              fillColor: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium

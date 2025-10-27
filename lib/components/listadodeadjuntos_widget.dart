@@ -89,7 +89,7 @@ class _ListadodeadjuntosWidgetState extends State<ListadodeadjuntosWidget> {
               child: Container(
                 width: 432.6,
                 decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  color: FlutterFlowTheme.of(context).primaryBackground,
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: Padding(
@@ -199,7 +199,8 @@ class _ListadodeadjuntosWidgetState extends State<ListadodeadjuntosWidget> {
                                 child: Container(
                                   width: double.infinity,
                                   decoration: BoxDecoration(
-                                    color: Colors.white,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
                                     boxShadow: [
                                       BoxShadow(
                                         blurRadius: 7.0,

@@ -162,7 +162,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                 ),
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                                      .primaryBackground,
                                 ),
                                 child: Builder(
                                   builder: (context) {

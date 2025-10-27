@@ -149,7 +149,9 @@ class _AdminzonaWidgetState extends State<AdminzonaWidget>
               child: Container(
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 height: MediaQuery.sizeOf(context).height * 1.0,
-                decoration: BoxDecoration(),
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).primaryBackground,
+                ),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -166,7 +168,8 @@ class _AdminzonaWidgetState extends State<AdminzonaWidget>
                               width: MediaQuery.sizeOf(context).width * 0.25,
                               height: double.infinity,
                               decoration: BoxDecoration(
-                                color: Color(0xFFF1F4F8),
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
                                 borderRadius: BorderRadius.circular(0.0),
                                 border: Border.all(
                                   color: Color(0xFFE5E7EB),

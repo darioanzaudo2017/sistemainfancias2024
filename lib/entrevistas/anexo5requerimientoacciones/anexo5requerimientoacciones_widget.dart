@@ -112,7 +112,7 @@ class _Anexo5requerimientoaccionesWidgetState
                 maxWidth: 600.0,
               ),
               decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).secondaryBackground,
+                color: FlutterFlowTheme.of(context).primaryBackground,
                 borderRadius: BorderRadius.circular(20.0),
                 border: Border.all(
                   color: FlutterFlowTheme.of(context).primary,
@@ -490,6 +490,9 @@ class _Anexo5requerimientoaccionesWidgetState
                                   ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
+                                filled: true,
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -595,6 +598,9 @@ class _Anexo5requerimientoaccionesWidgetState
                                   ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
+                                filled: true,
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -700,6 +706,9 @@ class _Anexo5requerimientoaccionesWidgetState
                                   ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
+                                filled: true,
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -1036,11 +1045,13 @@ class _Anexo5requerimientoaccionesWidgetState
                                   containerAnexo5requerimientoaccionesRowList
                                       .toList();
 
-                              return ListView.builder(
+                              return ListView.separated(
                                 padding: EdgeInsets.zero,
                                 shrinkWrap: true,
                                 scrollDirection: Axis.vertical,
                                 itemCount: listareqacciones.length,
+                                separatorBuilder: (_, __) =>
+                                    SizedBox(height: 10.0),
                                 itemBuilder: (context, listareqaccionesIndex) {
                                   final listareqaccionesItem =
                                       listareqacciones[listareqaccionesIndex];
@@ -1050,7 +1061,8 @@ class _Anexo5requerimientoaccionesWidgetState
                                     child: Container(
                                       width: double.infinity,
                                       decoration: BoxDecoration(
-                                        color: Colors.white,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
                                         boxShadow: [
                                           BoxShadow(
                                             blurRadius: 7.0,

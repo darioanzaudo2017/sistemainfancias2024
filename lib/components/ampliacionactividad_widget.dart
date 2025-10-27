@@ -68,7 +68,7 @@ class _AmpliacionactividadWidgetState extends State<AmpliacionactividadWidget> {
           width: 522.4,
           height: 325.9,
           decoration: BoxDecoration(
-            color: FlutterFlowTheme.of(context).secondaryBackground,
+            color: FlutterFlowTheme.of(context).primaryBackground,
             borderRadius: BorderRadius.circular(10.0),
           ),
           child: Align(
