@@ -17,7 +17,7 @@ class AdjuntasolicitudsenaffirmadaModel
   String? Function(BuildContext, String?)? textControllerValidator;
   bool isDataUploading_uploadData9zvsolicitudfirmada = false;
   FFUploadedFile uploadedLocalFile_uploadData9zvsolicitudfirmada =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   String uploadedFileUrl_uploadData9zvsolicitudfirmada = '';
 
   @override

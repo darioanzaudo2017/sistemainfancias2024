@@ -85,44 +85,10 @@ class _FFButtonWidgetState extends State<FFButtonWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
-    final defaultTextStyle = widget.options.textStyle ??
-        theme.textTheme.labelLarge?.copyWith(
-          fontWeight: FontWeight.w600,
-          letterSpacing: 0.2,
-          color: colorScheme.onPrimary,
-        );
-    final resolvedTextStyle = widget.options.textStyle ?? defaultTextStyle;
-    final buttonColor = widget.options.color ?? colorScheme.primary;
-    final hoverColor = widget.options.hoverColor ??
-        buttonColor.withOpacity(colorScheme.brightness == Brightness.dark
-            ? 0.18
-            : 0.12);
-    final splashColor = widget.options.splashColor ??
-        buttonColor.withOpacity(colorScheme.brightness == Brightness.dark
-            ? 0.22
-            : 0.16);
-    final disabledColor = widget.options.disabledColor ??
-        colorScheme.outlineVariant.withOpacity(0.6);
-    final disabledTextColor = widget.options.disabledTextColor ??
-        colorScheme.onSurface.withOpacity(0.38);
-    final borderRadius = widget.options.borderRadius ??
-        BorderRadius.circular(16);
-    final padding = widget.options.padding ??
-        const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0);
-
-    final bool hideText = resolvedTextStyle?.fontSize == 0;
-    final String? textContent = hideText ? null : widget.text;
-
     Widget textWidget = loading
         ? SizedBox(
             width: widget.options.width == null
-                ? _getTextWidth(
-                    textContent,
-                    resolvedTextStyle,
-                    maxLines,
-                  )
+                ? _getTextWidth(text, widget.options.textStyle, maxLines)
                 : null,
             child: Center(
               child: SizedBox(
@@ -130,17 +96,16 @@ class _FFButtonWidgetState extends State<FFButtonWidget> {
                 height: 23,
                 child: CircularProgressIndicator(
                   valueColor: AlwaysStoppedAnimation<Color>(
-                    resolvedTextStyle?.color ?? colorScheme.onPrimary,
+                    widget.options.textStyle?.color ?? Colors.white,
                   ),
                 ),
               ),
             ),
           )
         : AutoSizeText(
-            textContent ?? '',
-            style: textContent == null
-                ? null
-                : resolvedTextStyle?.withoutColor(),
+            text ?? '',
+            style:
+                text == null ? null : widget.options.textStyle?.withoutColor(),
             textAlign: widget.options.textAlign,
             maxLines: maxLines,
             overflow: TextOverflow.ellipsis,
@@ -169,19 +134,22 @@ class _FFButtonWidgetState extends State<FFButtonWidget> {
         if (states.contains(WidgetState.hovered) &&
             widget.options.hoverBorderSide != null) {
           return RoundedRectangleBorder(
-            borderRadius: borderRadius,
+            borderRadius:
+                widget.options.borderRadius ?? BorderRadius.circular(8),
             side: widget.options.hoverBorderSide!,
           );
         }
         if (states.contains(WidgetState.focused) &&
             widget.options.focusBorderSide != null) {
           return RoundedRectangleBorder(
-            borderRadius: widget.options.focusBorderRadius ?? borderRadius,
+            borderRadius: widget.options.focusBorderRadius ??
+                widget.options.borderRadius ??
+                BorderRadius.circular(8),
             side: widget.options.focusBorderSide!,
           );
         }
         return RoundedRectangleBorder(
-          borderRadius: borderRadius,
+          borderRadius: widget.options.borderRadius ?? BorderRadius.circular(8),
           side: widget.options.borderSide ?? BorderSide.none,
         );
       }),
@@ -194,13 +162,7 @@ class _FFButtonWidgetState extends State<FFButtonWidget> {
             widget.options.hoverTextColor != null) {
           return widget.options.hoverTextColor;
         }
-        if (states.contains(WidgetState.disabled)) {
-          return disabledTextColor;
-        }
-        return resolvedTextStyle?.color ??
-            (widget.options.color != null
-                ? resolvedTextStyle?.color
-                : colorScheme.onPrimary);
+        return widget.options.textStyle?.color ?? Colors.white;
       }),
       backgroundColor: WidgetStateProperty.resolveWith<Color?>((states) {
         if (states.contains(WidgetState.disabled) &&
@@ -211,31 +173,24 @@ class _FFButtonWidgetState extends State<FFButtonWidget> {
             widget.options.hoverColor != null) {
           return widget.options.hoverColor;
         }
-        if (states.contains(WidgetState.disabled)) {
-          return disabledColor;
-        }
-        return buttonColor;
+        return widget.options.color;
       }),
       overlayColor: WidgetStateProperty.resolveWith<Color?>((states) {
         if (states.contains(WidgetState.pressed)) {
-          return splashColor;
+          return widget.options.splashColor;
         }
-        return widget.options.hoverColor == null ? hoverColor : Colors.transparent;
+        return widget.options.hoverColor == null ? null : Colors.transparent;
       }),
-      padding: WidgetStateProperty.all(padding),
+      padding: WidgetStateProperty.all(
+        widget.options.padding ??
+            const EdgeInsets.symmetric(horizontal: 12.0, vertical: 4.0),
+      ),
       elevation: WidgetStateProperty.resolveWith<double?>((states) {
         if (states.contains(WidgetState.hovered) &&
             widget.options.hoverElevation != null) {
           return widget.options.hoverElevation!;
         }
-        if (states.contains(WidgetState.hovered) ||
-            states.contains(WidgetState.focused)) {
-          return (widget.options.elevation ?? 4.0) + 2;
-        }
-        if (states.contains(WidgetState.disabled)) {
-          return 0;
-        }
-        return widget.options.elevation ?? 4.0;
+        return widget.options.elevation ?? 2.0;
       }),
       iconColor: WidgetStateProperty.resolveWith<Color?>((states) {
         if (states.contains(WidgetState.disabled) &&
@@ -246,18 +201,8 @@ class _FFButtonWidgetState extends State<FFButtonWidget> {
             widget.options.hoverTextColor != null) {
           return widget.options.hoverTextColor;
         }
-        if (states.contains(WidgetState.disabled)) {
-          return disabledTextColor;
-        }
-        return widget.options.iconColor ??
-            (widget.options.color != null
-                ? resolvedTextStyle?.color
-                : colorScheme.onPrimary);
+        return widget.options.iconColor;
       }),
-      shadowColor: WidgetStateProperty.all(
-        theme.shadowColor.withOpacity(0.25),
-      ),
-      animationDuration: const Duration(milliseconds: 200),
     );
 
     if ((widget.icon != null || widget.iconData != null) && !loading) {
@@ -265,13 +210,10 @@ class _FFButtonWidgetState extends State<FFButtonWidget> {
           FaIcon(
             widget.iconData!,
             size: widget.options.iconSize,
-            color: widget.options.iconColor ??
-                (widget.options.color != null
-                    ? resolvedTextStyle?.color
-                    : colorScheme.onPrimary),
+            color: widget.options.iconColor,
           );
 
-      if (textContent == null) {
+      if (text == null) {
         return Container(
           height: widget.options.height,
           width: widget.options.width,
@@ -279,14 +221,8 @@ class _FFButtonWidgetState extends State<FFButtonWidget> {
             border: Border.fromBorderSide(
               widget.options.borderSide ?? BorderSide.none,
             ),
-            borderRadius: borderRadius,
-            boxShadow: [
-              BoxShadow(
-                color: theme.shadowColor.withOpacity(0.15),
-                blurRadius: 16,
-                offset: const Offset(0, 10),
-              ),
-            ],
+            borderRadius:
+                widget.options.borderRadius ?? BorderRadius.circular(8),
           ),
           child: IconButton(
             splashRadius: 1.0,

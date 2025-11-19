@@ -304,6 +304,8 @@ class _AnexoreunioninstitucionalWidgetState
                                               name:
                                                   m.storagePath.split('/').last,
                                               bytes: m.bytes,
+                                              originalFilename:
+                                                  m.originalFilename,
                                             ))
                                         .toList();
 

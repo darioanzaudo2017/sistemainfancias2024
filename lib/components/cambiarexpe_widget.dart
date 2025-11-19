@@ -223,12 +223,18 @@ class _CambiarexpeWidgetState extends State<CambiarexpeWidget> {
                         widget.expe?.id,
                       ),
                     );
-                    await CambiospdCall.call(
+                    _model.cambiospdapi = await CambiospdCall.call(
                       idexp: widget.expe?.id,
                       spd: _model.dropDownValue,
                       token: currentJwtToken,
                     );
 
+                    await NotificacionesTable().insert({
+                      'descripcion': 'Cambio de expediente',
+                      'idexpediente': widget.expe?.id,
+                      'spd': widget.expe?.spd,
+                      'spdnuevo': _model.dropDownValue,
+                    });
                     await showDialog(
                       context: context,
                       builder: (alertDialogContext) {

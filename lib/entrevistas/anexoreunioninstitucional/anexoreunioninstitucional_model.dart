@@ -12,7 +12,7 @@ class AnexoreunioninstitucionalModel
   final formKey = GlobalKey<FormState>();
   bool isDataUploading_uploadData9zvreunion = false;
   FFUploadedFile uploadedLocalFile_uploadData9zvreunion =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   String uploadedFileUrl_uploadData9zvreunion = '';
 
   DateTime? datePicked;

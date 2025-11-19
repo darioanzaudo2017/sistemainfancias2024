@@ -44,7 +44,7 @@ class DefiniciondemedidasModel
   ApiCallResponse? acta;
   bool isDataUploading_uploadDataEnt = false;
   FFUploadedFile uploadedLocalFile_uploadDataEnt =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   String uploadedFileUrl_uploadDataEnt = '';
 
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.

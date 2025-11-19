@@ -33,4 +33,7 @@ class NotificacionesRow extends SupabaseDataRow {
 
   String? get spd => getField<String>('spd');
   set spd(String? value) => setField<String>('spd', value);
+
+  String? get spdnuevo => getField<String>('spdnuevo');
+  set spdnuevo(String? value) => setField<String>('spdnuevo', value);
 }
