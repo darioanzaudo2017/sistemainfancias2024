@@ -60,7 +60,7 @@ class _NotificacionesWidgetState extends State<NotificacionesWidget> {
           child: FutureBuilder<List<NotificacionesRow>>(
             future: NotificacionesTable().queryRows(
               queryFn: (q) => q.eqOrNull(
-                'spd',
+                'spdnuevo',
                 widget.spd,
               ),
             ),
@@ -142,8 +142,8 @@ class _NotificacionesWidgetState extends State<NotificacionesWidget> {
                               Navigator.pop(context);
                             },
                             child: Container(
-                              width: 24.0,
-                              height: 24.0,
+                              width: 40.0,
+                              height: 40.0,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context).error,
                                 borderRadius: BorderRadius.circular(12.0),
@@ -151,7 +151,8 @@ class _NotificacionesWidgetState extends State<NotificacionesWidget> {
                               child: Padding(
                                 padding: EdgeInsets.all(8.0),
                                 child: Text(
-                                  '3',
+                                  containerNotificacionesRowList.length
+                                      .toString(),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .labelSmall
@@ -166,8 +167,8 @@ class _NotificacionesWidgetState extends State<NotificacionesWidget> {
                                                   .labelSmall
                                                   .fontStyle,
                                         ),
-                                        color:
-                                            FlutterFlowTheme.of(context).info,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
                                         letterSpacing: 0.0,
                                         fontWeight: FlutterFlowTheme.of(context)
                                             .labelSmall
@@ -435,41 +436,41 @@ class _NotificacionesWidgetState extends State<NotificacionesWidget> {
                         },
                       ),
                       FFButtonWidget(
-                        onPressed: () {
-                          print('Button pressed ...');
+                        onPressed: () async {
+                          Navigator.pop(context);
                         },
-                        text: 'View All Notifications',
+                        text: 'Cerrar',
+                        icon: Icon(
+                          Icons.cancel_outlined,
+                          size: 15.0,
+                        ),
                         options: FFButtonOptions(
-                          width: double.infinity,
                           height: 40.0,
-                          padding: EdgeInsets.all(8.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              16.0, 0.0, 16.0, 0.0),
                           iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: Colors.transparent,
+                          color: FlutterFlowTheme.of(context).primary,
                           textStyle:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
+                              FlutterFlowTheme.of(context).titleSmall.override(
                                     font: GoogleFonts.notoSansJp(
                                       fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
+                                          .titleSmall
                                           .fontWeight,
                                       fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
+                                          .titleSmall
                                           .fontStyle,
                                     ),
-                                    color: FlutterFlowTheme.of(context).primary,
+                                    color: Colors.white,
                                     letterSpacing: 0.0,
                                     fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
+                                        .titleSmall
                                         .fontWeight,
                                     fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
+                                        .titleSmall
                                         .fontStyle,
                                   ),
                           elevation: 0.0,
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).primary,
-                            width: 1.0,
-                          ),
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                       ),

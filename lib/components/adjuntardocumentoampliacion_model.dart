@@ -21,7 +21,7 @@ class AdjuntardocumentoampliacionModel
   String? Function(BuildContext, String?)? textControllerValidator;
   bool isDataUploading_uploadData9zvampliacion = false;
   FFUploadedFile uploadedLocalFile_uploadData9zvampliacion =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   String uploadedFileUrl_uploadData9zvampliacion = '';
 
   @override

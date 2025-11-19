@@ -234,6 +234,7 @@ class _AdjuntasolicitudsenaffirmadaWidgetState
                               .map((m) => FFUploadedFile(
                                     name: m.storagePath.split('/').last,
                                     bytes: m.bytes,
+                                    originalFilename: m.originalFilename,
                                   ))
                               .toList();
 

@@ -1079,37 +1079,6 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                       ).then((value) =>
                                                           safeSetState(() {}));
 
-                                                      await NotificacionesTable()
-                                                          .insert({
-                                                        'descripcion':
-                                                            'Cambio de expediente',
-                                                        'idexpediente':
-                                                            widget.rowexp?.id,
-                                                        'spd': widget
-                                                            .spd?.nombrespd,
-                                                      });
-                                                      await showDialog(
-                                                        context: context,
-                                                        builder:
-                                                            (alertDialogContext) {
-                                                          return WebViewAware(
-                                                            child: AlertDialog(
-                                                              title: Text(
-                                                                  'Se cambio el expediente a otro SPD'),
-                                                              actions: [
-                                                                TextButton(
-                                                                  onPressed: () =>
-                                                                      Navigator.pop(
-                                                                          alertDialogContext),
-                                                                  child: Text(
-                                                                      'Ok'),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          );
-                                                        },
-                                                      );
-
                                                       context.pushNamed(
                                                           HomePageWidget
                                                               .routeName);

@@ -19,7 +19,7 @@ class AdjuntardocumentoModel extends FlutterFlowModel<AdjuntardocumentoWidget> {
   FormFieldController<String>? dropDownValueController;
   bool isDataUploading_uploadData9zv = false;
   FFUploadedFile uploadedLocalFile_uploadData9zv =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   String uploadedFileUrl_uploadData9zv = '';
 
   @override

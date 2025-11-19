@@ -66,7 +66,7 @@ class AmpliacioninformacionModel
       textFieldreferentesafectivoTextControllerValidator;
   bool isDataUploading_uploadData7y7 = false;
   FFUploadedFile uploadedLocalFile_uploadData7y7 =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   String uploadedFileUrl_uploadData7y7 = '';
 
   // State field(s) for TextFieldobjetivo widget.

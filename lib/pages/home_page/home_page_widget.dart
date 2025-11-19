@@ -3296,7 +3296,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                                   decoration: BoxDecoration(
                                                                                     color: () {
                                                                                       if (lista2Item.ultimoEstado == 'Abierto') {
-                                                                                        return Color(0xFF39D2C0);
+                                                                                        return FlutterFlowTheme.of(context).secondary;
                                                                                       } else if (lista2Item.ultimoEstado == 'Cerrado') {
                                                                                         return FlutterFlowTheme.of(context).error;
                                                                                       } else if (lista2Item.motivocierre == 'Asesoramiento') {
