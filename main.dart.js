@@ -139236,12 +139236,17 @@ n=o.d
 n===$&&A.f()
 n=n.x
 n===$&&A.f()
-m=o.a.e
-m.toString
-n=A.jV(A.a98(!1,!1,!1,i,i,r,i,m),n,new A.b9h(o),t.FG)
-m=A.a2(a,B.C,h).w
+m=o.a
+l=m.e
+l.toString
+m=m.d
+m=m==null?i:m.j("id",t.S)
+k=o.a.d
+k=k==null?i:k.j("idNNyA",t.S)
+n=A.jV(A.a98(!1,!1,!1,m,k,r,o.a.r,l),n,new A.b9h(o),t.FG)
+l=A.a2(a,B.C,h).w
 h=A.a2(a,B.C,h).w
-l=(A.a(a).ax.a===B.a?A.b():A.c()).gu()
+m=(A.a(a).ax.a===B.a?A.b():A.c()).gu()
 k=o.d
 j=k.z
 if(j==null){j=new A.b4(new A.aw($.aL,t._L),t.zn)
@@ -139249,9 +139254,9 @@ j.cl(new A.wX().b2(new A.b9i(o)))
 k.z=j
 k=j}else k=j
 j=t.p
-m=A.Z(A.e([A.Q(A.e([n,A.E(i,A.E(i,new A.H(new A.G(0,0),i,i,A.E(i,new A.H(new A.G(0,0),i,i,A.R(A.e([A.aS(new A.b9j(o,r),k.a,t.Sr)],j),B.x,B.L,B.f,i),i),B.i,i,i,new A.K(l,i,i,i,i,i,i,B.o),i,i,i,i,i,i,h.a.a*0.789),i),B.i,i,i,new A.K(i,i,i,i,i,i,i,B.o),i,i,i,i,i,i,m.a.a),B.i,i,i,new A.K(i,i,i,i,i,i,i,B.o),i,i,i,i,i,i,i)],j),B.x,B.l,B.f)],t.lR),A.B(i,10,i),i)
+l=A.Z(A.e([A.Q(A.e([n,A.E(i,A.E(i,new A.H(new A.G(0,0),i,i,A.E(i,new A.H(new A.G(0,0),i,i,A.R(A.e([A.aS(new A.b9j(o,r),k.a,t.Sr)],j),B.x,B.L,B.f,i),i),B.i,i,i,new A.K(m,i,i,i,i,i,i,B.o),i,i,i,i,i,i,h.a.a*0.789),i),B.i,i,i,new A.K(i,i,i,i,i,i,i,B.o),i,i,i,i,i,i,l.a.a),B.i,i,i,new A.K(i,i,i,i,i,i,i,B.o),i,i,i,i,i,i,i)],j),B.x,B.l,B.f)],t.lR),A.B(i,10,i),i)
 h=A.B(i,10,i)
-return A.E(i,new A.H(new A.G(0,0),i,i,A.c9(A.Q(A.e([new A.H(new A.G(0,-1),i,i,new A.l(new A.j(20,0,0,0),A.E(i,new A.l(new A.j(10,0,0,0),A.c9(A.Q(A.bM(A.bN(m,h),h),B.j,B.l,B.N),B.D,i,B.v,i,i,i,!1,B.F),i),B.i,i,i,new A.K(p,i,i,i,i,i,i,B.o),i,q.a.b,i,i,i,i,i),i),i)],j),B.at,B.l,B.f),B.D,i,B.v,i,i,i,!1,B.F),i),B.i,i,i,new A.K(i,i,i,i,i,i,i,B.o),i,i,i,i,i,i,s.a.a*0.99)},
+return A.E(i,new A.H(new A.G(0,0),i,i,A.c9(A.Q(A.e([new A.H(new A.G(0,-1),i,i,new A.l(new A.j(20,0,0,0),A.E(i,new A.l(new A.j(10,0,0,0),A.c9(A.Q(A.bM(A.bN(l,h),h),B.j,B.l,B.N),B.D,i,B.v,i,i,i,!1,B.F),i),B.i,i,i,new A.K(p,i,i,i,i,i,i,B.o),i,q.a.b,i,i,i,i,i),i),i)],j),B.at,B.l,B.f),B.D,i,B.v,i,i,i,!1,B.F),i),B.i,i,i,new A.K(i,i,i,i,i,i,i,B.o),i,i,i,i,i,i,s.a.a*0.99)},
 $S:63}
 A.b9h.prototype={
 $0(){var s=this.a
@@ -149858,12 +149863,16 @@ m=m.z
 m===$&&A.f()
 l=k.a
 i=l.e
-l=l.r
-l.toString
-m=A.jV(A.a98(!1,!1,!1,a9,a9,i,a9,l),m,new A.beD(k),t.FG)
-l=k.d
-i=A.a2(b6,B.C,b5).w.a.a>1200?B.aa:B.F
-h=(A.a(b6).ax.a===B.a?A.b():A.c()).gu()
+h=l.r
+h.toString
+l=l.d
+l=l==null?a9:l.j("id",t.S)
+g=k.a.d
+g=g==null?a9:g.j("idNNyA",t.S)
+m=A.jV(A.a98(!1,!1,!1,l,g,i,k.a.x,h),m,new A.beD(k),t.FG)
+h=k.d
+l=A.a2(b6,B.C,b5).w.a.a>1200?B.aa:B.F
+i=(A.a(b6).ax.a===B.a?A.b():A.c()).gu()
 g=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),16,B.d)
 f=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),16,B.d).w
 f=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),16,B.d).x,f)
@@ -149871,8 +149880,8 @@ e=A.N(b0)
 d=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),16,B.d).w
 g=A.h(g,e,a9,f,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),16,B.d).x,d,0,a9)
 f=A.N(b0)
-g=A.am(a9,new A.beO(k,b6),A.al(A.i(25),new A.m(f,1,B.e,-1),h,a9,3,35,a9,a9,a9,new A.j(0,0,0,0),new A.j(16,0,16,0),g,a9),"Editar caratula")
-h=(A.a(b6).ax.a===B.a?A.b():A.c()).gu()
+g=A.am(a9,new A.beO(k,b6),A.al(A.i(25),new A.m(f,1,B.e,-1),i,a9,3,35,a9,a9,a9,new A.j(0,0,0,0),new A.j(16,0,16,0),g,a9),"Editar caratula")
+i=(A.a(b6).ax.a===B.a?A.b():A.c()).gu()
 f=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),16,B.d)
 e=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),16,B.d).w
 e=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),16,B.d).x,e)
@@ -149880,40 +149889,40 @@ d=A.N(b0)
 c=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),16,B.d).w
 f=A.h(f,d,a9,e,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),16,B.d).x,c,0,a9)
 e=A.N(b0)
-f=A.e([g,A.am(a9,new A.beR(k,b6),A.al(A.i(25),new A.m(e,1,B.e,-1),h,a9,3,35,a9,a9,a9,new A.j(0,0,0,0),new A.j(16,0,16,0),f,a9),"Completar Recepcion de la demanda")],t.JS)
-h=A.Z(f,A.a2(b6,B.C,b5).w.a.a>1200?A.B(a9,a9,10):A.B(a9,10,a9),a9)
+f=A.e([g,A.am(a9,new A.beR(k,b6),A.al(A.i(25),new A.m(e,1,B.e,-1),i,a9,3,35,a9,a9,a9,new A.j(0,0,0,0),new A.j(16,0,16,0),f,a9),"Completar Recepcion de la demanda")],t.JS)
+i=A.Z(f,A.a2(b6,B.C,b5).w.a.a>1200?A.B(a9,a9,10):A.B(a9,10,a9),a9)
 b5=A.a2(b6,B.C,b5).w.a.a>1200?A.B(a9,a9,10):A.B(a9,10,a9)
-i=A.M9(A.bM(A.bN(h,b5),b5),B.j,i,a9,B.cz,B.f,0,a9,a9,B.bv)
+l=A.M9(A.bM(A.bN(i,b5),b5),B.j,l,a9,B.cz,B.f,0,a9,a9,B.bv)
 b5=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b)
-h=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
-h=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,h)
+i=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
+i=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,i)
 g=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
-b5=A.e([i,A.k("daro",a9,a9,a9,a9,a9,a9,a9,A.h(b5,a9,a9,h,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,g,0,a9),a9,a9,a9,a9)],j)
-i=k.a.w
-if((i==null?a9:i.j("rol_id",t.S))!==3){i=k.a.w
-i=(i==null?a9:i.j("rol_id",t.S))===2}else i=!0
-if(i&&k.d.x){i=(A.a(b6).ax.a===B.a?A.b():A.c()).gm()
-b5.push(new A.H(new A.G(1,0),a9,a9,A.bi(a9,8,a9,40,a9,i,A.a1(B.cw,(A.a(b6).ax.a===B.a?A.b():A.c()).gaO(),a9,24),new A.beS(k)),a9))}b5.push(A.aS(new A.beT(k),new A.o4().c6(new A.beU(k)),t.xb))
-i=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),24,B.d)
-h=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),24,B.d).x,B.n)
+b5=A.e([l,A.k("daro",a9,a9,a9,a9,a9,a9,a9,A.h(b5,a9,a9,i,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,g,0,a9),a9,a9,a9,a9)],j)
+l=k.a.w
+if((l==null?a9:l.j("rol_id",t.S))!==3){l=k.a.w
+l=(l==null?a9:l.j("rol_id",t.S))===2}else l=!0
+if(l&&k.d.x){l=(A.a(b6).ax.a===B.a?A.b():A.c()).gm()
+b5.push(new A.H(new A.G(1,0),a9,a9,A.bi(a9,8,a9,40,a9,l,A.a1(B.cw,(A.a(b6).ax.a===B.a?A.b():A.c()).gaO(),a9,24),new A.beS(k)),a9))}b5.push(A.aS(new A.beT(k),new A.o4().c6(new A.beU(k)),t.xb))
+l=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),24,B.d)
+i=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),24,B.d).x,B.n)
 g=(A.a(b6).ax.a===B.a?A.b():A.c()).gm()
-b5.push(new A.H(new A.G(0,-1),a9,a9,A.k("Informe s\xedntesis de Valoracion Integral y propuestas de MPI",a9,a9,a9,a9,a9,a9,a9,A.h(i,g,a9,h,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),24,B.d).x,B.n,0,a9),B.av,a9,a9,a9),a9))
-i=k.d.ay
-h=t.L
-g=A.b2(b6,B.O,h)
+b5.push(new A.H(new A.G(0,-1),a9,a9,A.k("Informe s\xedntesis de Valoracion Integral y propuestas de MPI",a9,a9,a9,a9,a9,a9,a9,A.h(l,g,a9,i,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),24,B.d).x,B.n,0,a9),B.av,a9,a9,a9),a9))
+l=k.d.ay
+i=t.L
+g=A.b2(b6,B.O,i)
 g.toString
-g=A.V(A.bA("d/M/y",i,g.a.b4("_")),"No tiene fecha nueva cargada")
-i=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b)
+g=A.V(A.bA("d/M/y",l,g.a.b4("_")),"No tiene fecha nueva cargada")
+l=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b)
 f=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
 f=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,f)
 e=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
-i=A.k(g,a9,a9,a9,a9,a9,a9,a9,A.h(i,a9,a9,f,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,e,0,a9),a9,a9,a9,a9)
+l=A.k(g,a9,a9,a9,a9,a9,a9,a9,A.h(l,a9,a9,f,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,e,0,a9),a9,a9,a9,a9)
 g=k.d.x?a9:new A.beV(k,b6)
 f=r==null
 e=f?a9:r.j("fecha",t.k)
-h=A.b2(b6,B.O,h)
-h.toString
-h=A.V(A.bA("d/M/y",e,h.a.b4("_")),"Fecha")
+i=A.b2(b6,B.O,i)
+i.toString
+i=A.V(A.bA("d/M/y",e,i.a.b4("_")),"Fecha")
 e=(A.a(b6).ax.a===B.a?A.b():A.c()).gm()
 d=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),16,B.d)
 c=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),16,B.d).w
@@ -149921,16 +149930,16 @@ c=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a
 b=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),16,B.d).w
 d=A.h(d,B.q,a9,c,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),16,B.d).x,b,0,a9)
 c=A.i(8)
-b5.push(new A.l(new A.j(8,0,8,0),A.R(A.e([new A.c3(1,B.a2,i,a9),A.am(a9,g,A.al(c,new A.m(B.m,1,B.e,-1),e,(A.a(b6).ax.a===B.a?A.b():A.c()).gi(),3,40,a9,a9,a9,new A.j(0,0,0,0),new A.j(24,0,24,0),d,a9),h)],j),B.j,B.bB,B.f,a9),a9))
+b5.push(new A.l(new A.j(8,0,8,0),A.R(A.e([new A.c3(1,B.a2,l,a9),A.am(a9,g,A.al(c,new A.m(B.m,1,B.e,-1),e,(A.a(b6).ax.a===B.a?A.b():A.c()).gi(),3,40,a9,a9,a9,new A.j(0,0,0,0),new A.j(24,0,24,0),d,a9),i)],j),B.j,B.bB,B.f,a9),a9))
+l=k.d
+i=l.CW
+if(i==null){i=f?a9:r.j("profesionales",t.N)
+i=i==null?B.u:new A.ay(i,B.B,B.z)
+i=l.CW=new A.an(i,$.A())
+l=i}else l=i
 i=k.d
-h=i.CW
-if(h==null){h=f?a9:r.j("profesionales",t.N)
-h=h==null?B.u:new A.ay(h,B.B,B.z)
-h=i.CW=new A.an(h,$.A())
-i=h}else i=h
-h=k.d
-g=h.ch
-h=h.x
+g=i.ch
+i=i.x
 e=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),17,B.b)
 d=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),17,B.b).w
 d=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),17,B.b).x,d)
@@ -149954,28 +149963,28 @@ d=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.
 c=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
 c=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,c)
 b=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
-b5.push(new A.l(new A.j(8,0,8,0),A.ar(a9,!1,i,a9,e,!1,g,a9,a9,a9,3,a9,!1,a9,a9,a9,h,A.h(d,a9,a9,c,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,b,0,a9),B.t,a9,A.as(k.d.cx,b6)),a9))
-i=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b)
-h=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).w
-h=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).x,h)
+b5.push(new A.l(new A.j(8,0,8,0),A.ar(a9,!1,l,a9,e,!1,g,a9,a9,a9,3,a9,!1,a9,a9,a9,i,A.h(d,a9,a9,c,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,b,0,a9),B.t,a9,A.as(k.d.cx,b6)),a9))
+l=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b)
+i=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).w
+i=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).x,i)
 g=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).w
-b5.push(A.k(u._,a9,a9,a9,a9,a9,a9,a9,A.h(i,a9,a9,h,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).x,g,0,a9),a9,a9,a9,a9))
+b5.push(A.k(u._,a9,a9,a9,a9,a9,a9,a9,A.h(l,a9,a9,i,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).x,g,0,a9),a9,a9,a9,a9))
+l=k.d
+i=l.db
+if(i==null){i=new A.b4(new A.aw($.aL,t.O8),t.tR)
+i.cl(new A.ib().b2(new A.beW(k)))
+l.db=i
+l=i}else l=i
+b5.push(A.aS(new A.beX(k),l.a,t.k6))
+l=k.d
+i=l.fx
+if(i==null){i=f?a9:r.j("responsables",t.N)
+i=i==null?B.u:new A.ay(i,B.B,B.z)
+i=l.fx=new A.an(i,$.A())
+l=i}else l=i
 i=k.d
-h=i.db
-if(h==null){h=new A.b4(new A.aw($.aL,t.O8),t.tR)
-h.cl(new A.ib().b2(new A.beW(k)))
-i.db=h
-i=h}else i=h
-b5.push(A.aS(new A.beX(k),i.a,t.k6))
-i=k.d
-h=i.fx
-if(h==null){h=f?a9:r.j("responsables",t.N)
-h=h==null?B.u:new A.ay(h,B.B,B.z)
-h=i.fx=new A.an(h,$.A())
-i=h}else i=h
-h=k.d
-g=h.fr
-h=h.x
+g=i.fr
+i=i.x
 e=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),17,B.b)
 d=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),17,B.b).w
 d=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),17,B.b).x,d)
@@ -149999,22 +150008,22 @@ d=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.
 c=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
 c=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,c)
 b=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
-b5.push(new A.l(new A.j(8,0,8,0),A.ar(a9,!0,i,a9,e,!1,g,a9,a9,a9,10,2,!1,a9,a9,a9,h,A.h(d,a9,a9,c,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,b,0,a9),B.t,a9,A.as(k.d.fy,b6)),a9))
-i=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b)
-h=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
-h=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,h)
+b5.push(new A.l(new A.j(8,0,8,0),A.ar(a9,!0,l,a9,e,!1,g,a9,a9,a9,10,2,!1,a9,a9,a9,i,A.h(d,a9,a9,c,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,b,0,a9),B.t,a9,A.as(k.d.fy,b6)),a9))
+l=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b)
+i=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
+i=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,i)
 g=(A.a(b6).ax.a===B.a?A.b():A.c()).gm()
 e=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
-b5.push(new A.l(new A.j(0,0,0,10),A.k("Antecedentes de las intervenciones previas del SPD y otras instituciones ",a9,a9,a9,a9,a9,a9,a9,A.h(i,g,a9,h,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,e,0,a9),a9,a9,a9,a9),a9))
+b5.push(new A.l(new A.j(0,0,0,10),A.k("Antecedentes de las intervenciones previas del SPD y otras instituciones ",a9,a9,a9,a9,a9,a9,a9,A.h(l,g,a9,i,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,e,0,a9),a9,a9,a9,a9),a9))
+l=k.d
+i=l.id
+if(i==null){i=f?a9:r.j("antecedentes",t.N)
+i=i==null?B.u:new A.ay(i,B.B,B.z)
+i=l.id=new A.an(i,$.A())
+l=i}else l=i
 i=k.d
-h=i.id
-if(h==null){h=f?a9:r.j("antecedentes",t.N)
-h=h==null?B.u:new A.ay(h,B.B,B.z)
-h=i.id=new A.an(h,$.A())
-i=h}else i=h
-h=k.d
-g=h.go
-h=h.x
+g=i.go
+i=i.x
 e=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),17,B.b)
 d=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),17,B.b).w
 d=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),17,B.b).x,d)
@@ -150038,21 +150047,21 @@ d=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.
 c=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
 c=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,c)
 b=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
-b5.push(new A.l(new A.j(8,0,8,0),A.ar(a9,!0,i,a9,e,!1,g,a9,a9,a9,20,1,!1,a9,a9,a9,h,A.h(d,a9,a9,c,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,b,0,a9),B.t,a9,A.as(a9,b6)),a9))
-i=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b)
-h=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).w
-h=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).x,h)
+b5.push(new A.l(new A.j(8,0,8,0),A.ar(a9,!0,l,a9,e,!1,g,a9,a9,a9,20,1,!1,a9,a9,a9,i,A.h(d,a9,a9,c,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,b,0,a9),B.t,a9,A.as(a9,b6)),a9))
+l=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b)
+i=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).w
+i=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).x,i)
 g=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).w
-b5.push(A.k(u.h,a9,a9,a9,a9,a9,a9,a9,A.h(i,a9,a9,h,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).x,g,0,a9),a9,a9,a9,a9))
+b5.push(A.k(u.h,a9,a9,a9,a9,a9,a9,a9,A.h(l,a9,a9,i,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).x,g,0,a9),a9,a9,a9,a9))
+l=k.d
+i=l.k3
+if(i==null){i=f?a9:r.j("info1",t.N)
+i=i==null?B.u:new A.ay(i,B.B,B.z)
+i=l.k3=new A.an(i,$.A())
+l=i}else l=i
 i=k.d
-h=i.k3
-if(h==null){h=f?a9:r.j("info1",t.N)
-h=h==null?B.u:new A.ay(h,B.B,B.z)
-h=i.k3=new A.an(h,$.A())
-i=h}else i=h
-h=k.d
-g=h.k2
-h=h.x
+g=i.k2
+i=i.x
 e=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),17,B.b)
 d=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),17,B.b).w
 d=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),17,B.b).x,d)
@@ -150076,17 +150085,17 @@ d=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.
 c=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
 c=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,c)
 b=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
-b5.push(new A.l(new A.j(8,0,8,0),A.ar(a9,!0,i,a9,e,!1,g,a9,a9,a9,10,2,!1,a9,a9,a9,h,A.h(d,a9,a9,c,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,b,0,a9),B.t,a9,A.as(k.d.k4,b6)),a9))
-i=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b)
-h=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).w
-h=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).x,h)
+b5.push(new A.l(new A.j(8,0,8,0),A.ar(a9,!0,l,a9,e,!1,g,a9,a9,a9,10,2,!1,a9,a9,a9,i,A.h(d,a9,a9,c,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,b,0,a9),B.t,a9,A.as(k.d.k4,b6)),a9))
+l=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b)
+i=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).w
+i=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).x,i)
 g=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).w
-b5.push(A.k("3. Informacion para articulacion  comunitaria",a9,a9,a9,a9,a9,a9,a9,A.h(i,a9,a9,h,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).x,g,0,a9),a9,a9,a9,a9))
-i=k.d
-h=i.p1
-i=h==null?i.p1=new A.c8(a9,$.A(),t.U):h
-h=t.s
-g=A.e(["Centro de salud","Hospital","Escuela","Equipo de Salud mental","CIC","ONG","Parroquia","Centro vecinal"," Parque educativo","Club","Merendero","Comedor infantil","Casa Abierta","Mesas de articulaci\xf3n","Centro cultural","Consejo de j\xf3venes","Orquesta infantil","Ludotecas o bibliotecas",u.F,"Cooperativa","Sala cuna","Otros"],h)
+b5.push(A.k("3. Informacion para articulacion  comunitaria",a9,a9,a9,a9,a9,a9,a9,A.h(l,a9,a9,i,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).x,g,0,a9),a9,a9,a9,a9))
+l=k.d
+i=l.p1
+l=i==null?l.p1=new A.c8(a9,$.A(),t.U):i
+i=t.s
+g=A.e(["Centro de salud","Hospital","Escuela","Equipo de Salud mental","CIC","ONG","Parroquia","Centro vecinal"," Parque educativo","Club","Merendero","Comedor infantil","Casa Abierta","Mesas de articulaci\xf3n","Centro cultural","Consejo de j\xf3venes","Orquesta infantil","Ludotecas o bibliotecas",u.F,"Cooperativa","Sala cuna","Otros"],i)
 e=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b)
 d=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
 d=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,d)
@@ -150095,12 +150104,12 @@ e=A.h(e,a9,a9,d,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():
 d=A.a1(B.ac,(A.a(b6).ax.a===B.a?A.b():A.c()).gi(),a9,24)
 c=(A.a(b6).ax.a===B.a?A.b():A.c()).gu()
 b=t.N
-e=A.d8((A.a(b6).ax.a===B.a?A.b():A.c()).gJ(),8,2,i,!1,2,c,56,!0,"Actores referentes",d,!1,!0,!1,a9,a9,new A.j(16,4,16,4),a9,a9,a9,new A.beE(k),a9,a9,g,a9,a9,a9,e,a9,b)
+e=A.d8((A.a(b6).ax.a===B.a?A.b():A.c()).gJ(),8,2,l,!1,2,c,56,!0,"Actores referentes",d,!1,!0,!1,a9,a9,new A.j(16,4,16,4),a9,a9,a9,new A.beE(k),a9,a9,g,a9,a9,a9,e,a9,b)
 g=k.d
 d=g.p3
-if(d==null){i=f?a9:r.j("info2",b)
-i=i==null?B.u:new A.ay(i,B.B,B.z)
-i=g.p3=new A.an(i,$.A())}else i=d
+if(d==null){l=f?a9:r.j("info2",b)
+l=l==null?B.u:new A.ay(l,B.B,B.z)
+l=g.p3=new A.an(l,$.A())}else l=d
 g=k.d.p2
 d=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),17,B.b)
 c=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),17,B.b).w
@@ -150125,7 +150134,7 @@ c=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.
 a=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
 a=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,a)
 a0=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
-i=A.ar(a9,!0,i,a9,d,!1,g,a9,a9,a9,10,2,!1,a9,a9,a9,!1,A.h(c,a9,a9,a,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,a0,0,a9),B.t,a9,A.as(a9,b6))
+l=A.ar(a9,!0,l,a9,d,!1,g,a9,a9,a9,10,2,!1,a9,a9,a9,!1,A.h(c,a9,a9,a,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,a0,0,a9),B.t,a9,A.as(a9,b6))
 g=k.d
 d=g.RG
 if(d==null){d=f?a9:r.j("info2",b)
@@ -150156,7 +150165,7 @@ a=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.
 a0=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
 a0=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,a0)
 a1=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
-i=A.Q(A.e([A.R(A.e([new A.c3(1,B.a2,new A.l(new A.j(8,0,8,0),e,a9),a9),new A.c3(1,B.a2,new A.l(new A.j(8,0,8,0),i,a9),a9),new A.c3(1,B.a2,new A.l(new A.j(8,0,8,0),A.ar(a9,!0,g,a9,c,!1,d,a9,a9,a9,10,2,!1,a9,a9,a9,!1,A.h(a,a9,a9,a0,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,a1,0,a9),B.t,a9,A.as(a9,b6)),a9),a9)],j),B.j,B.l,B.f,a9)],j),B.j,B.l,B.f)
+l=A.Q(A.e([A.R(A.e([new A.c3(1,B.a2,new A.l(new A.j(8,0,8,0),e,a9),a9),new A.c3(1,B.a2,new A.l(new A.j(8,0,8,0),l,a9),a9),new A.c3(1,B.a2,new A.l(new A.j(8,0,8,0),A.ar(a9,!0,g,a9,c,!1,d,a9,a9,a9,10,2,!1,a9,a9,a9,!1,A.h(a,a9,a9,a0,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,a1,0,a9),B.t,a9,A.as(a9,b6)),a9),a9)],j),B.j,B.l,B.f,a9)],j),B.j,B.l,B.f)
 g=k.d.x?a9:new A.beF(k)
 e=(A.a(b6).ax.a===B.a?A.b():A.c()).gm()
 d=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),16,B.d)
@@ -150165,23 +150174,23 @@ c=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a
 a=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),16,B.d).w
 d=A.h(d,B.q,a9,c,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),16,B.d).x,a,0,a9)
 c=A.i(8)
-b5.push(A.Q(A.Z(A.e([i,A.am(a9,g,A.al(c,a9,e,(A.a(b6).ax.a===B.a?A.b():A.c()).gi(),0,40,a9,a9,a9,new A.j(0,0,0,0),new A.j(16,0,16,0),d,a9),"Agregar articulacion comunitaria"),A.aS(new A.beG(k),new A.mJ().b2(new A.beH(k)),t.mM)],j),A.B(a9,5,a9),a9),B.j,B.l,B.f))
-i=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b)
+b5.push(A.Q(A.Z(A.e([l,A.am(a9,g,A.al(c,a9,e,(A.a(b6).ax.a===B.a?A.b():A.c()).gi(),0,40,a9,a9,a9,new A.j(0,0,0,0),new A.j(16,0,16,0),d,a9),"Agregar articulacion comunitaria"),A.aS(new A.beG(k),new A.mJ().b2(new A.beH(k)),t.mM)],j),A.B(a9,5,a9),a9),B.j,B.l,B.f))
+l=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b)
 g=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).w
 g=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).x,g)
 e=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).w
-b5.push(A.k(u.P,a9,a9,a9,a9,a9,a9,a9,A.h(i,a9,a9,g,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).x,e,0,a9),a9,a9,a9,a9))
-i=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b)
+b5.push(A.k(u.P,a9,a9,a9,a9,a9,a9,a9,A.h(l,a9,a9,g,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).x,e,0,a9),a9,a9,a9,a9))
+l=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b)
 g=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
 g=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,g)
 e=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
-b5.push(A.k("Criterios registrados en la recepcion de la demanda",a9,a9,a9,a9,a9,a9,a9,A.h(i,a9,a9,g,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,e,0,a9),a9,a9,a9,a9))
+b5.push(A.k("Criterios registrados en la recepcion de la demanda",a9,a9,a9,a9,a9,a9,a9,A.h(l,a9,a9,g,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,e,0,a9),a9,a9,a9,a9))
 b5.push(A.aS(new A.beI(),new A.to().c6(new A.beJ(k)),t.di))
-i=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b)
+l=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b)
 g=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
 g=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,g)
 e=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
-i=A.k("Tiene criterios de priorizacion?",a9,a9,a9,a9,a9,a9,a9,A.h(i,a9,a9,g,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,e,0,a9),a9,a9,a9,a9)
+l=A.k("Tiene criterios de priorizacion?",a9,a9,a9,a9,a9,a9,a9,A.h(l,a9,a9,g,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,e,0,a9),a9,a9,a9,a9)
 g=A.e([new A.fb("Si"),new A.fb("No")],t.D7)
 e=k.d.x?a9:new A.beK(k)
 d=(A.a(b6).ax.a===B.a?A.b():A.c()).gcU()
@@ -150206,18 +150215,18 @@ a5=A.i(8)
 a6=k.d.gfM()
 a7=k.d
 a8=a7.to
-if(a8==null)a7=a7.to=new A.c8(A.e([A.V(f?a9:r.j("tiene_criterios_form5",b),"No")],h),$.A(),t.PU)
+if(a8==null)a7=a7.to=new A.c8(A.e([A.V(f?a9:r.j("tiene_criterios_form5",b),"No")],i),$.A(),t.PU)
 else a7=a8
-a5=A.Z(A.e([i,A.vb(B.an,10,a7,a6!=null,!1,e,g,10,new A.hA(d,c,a,16,new A.aa(10,10,10,10),0,a9,a0),new A.hA(a1,a2,a3,16,new A.aa(10,10,10,10),0,a4,a5),!0)],j),A.B(a9,a9,15),a9)
+a5=A.Z(A.e([l,A.vb(B.an,10,a7,a6!=null,!1,e,g,10,new A.hA(d,c,a,16,new A.aa(10,10,10,10),0,a9,a0),new A.hA(a1,a2,a3,16,new A.aa(10,10,10,10),0,a4,a5),!0)],j),A.B(a9,a9,15),a9)
 a4=A.B(a9,a9,15)
 b5.push(A.R(A.bM(A.bN(a5,a4),a4),B.j,B.l,B.f,a9))
-if(k.d.gfM()==="Si"){i=k.d
-g=i.x2
-if(g==null){g=i.x1
+if(k.d.gfM()==="Si"){l=k.d
+g=l.x2
+if(g==null){g=l.x1
 if(g==null){g=f?a9:r.jq("criteriopriorizaciondrop",b)
-g=i.x1=A.ex(g==null?[]:g,!0,b)}g=i.x2=A.Mr(g,b)
-i=g}else i=g
-h=A.e(["No tiene criterios de priorizacion","Riesgo de vida.",u.dI,u.O,u.aO,"Agresor/a del NNY A conviviente.",u.c2,u.aE,"Reci\xe9n nacidos y Ni\xf1os de 0 a 3 a\xf1os."],h)
+g=l.x1=A.ex(g==null?[]:g,!0,b)}g=l.x2=A.Mr(g,b)
+l=g}else l=g
+i=A.e(["No tiene criterios de priorizacion","Riesgo de vida.",u.dI,u.O,u.aO,"Agresor/a del NNY A conviviente.",u.c2,u.aE,"Reci\xe9n nacidos y Ni\xf1os de 0 a 3 a\xf1os."],i)
 g=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),17,B.b)
 e=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),17,B.b).w
 e=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),17,B.b).x,e)
@@ -150235,29 +150244,29 @@ a=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.
 d=A.h(d,a9,a9,c,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,a,0,a9)
 c=A.a1(B.ac,(A.a(b6).ax.a===B.a?A.b():A.c()).gi(),a9,24)
 a=(A.a(b6).ax.a===B.a?A.b():A.c()).gu()
-i=A.d8((A.a(b6).ax.a===B.a?A.b():A.c()).gJ(),8,2,a9,k.d.x,2,a,56,!0,"Criterios de priorizaci\xf3n",c,!0,!0,!0,a9,a9,new A.j(16,4,16,4),a9,a9,i,a9,new A.beL(k),a9,h,"Buscar",g,e,d,580,b)
-h=A.a1(B.nG,(A.a(b6).ax.a===B.a?A.b():A.c()).gB(),a9,24)
+l=A.d8((A.a(b6).ax.a===B.a?A.b():A.c()).gJ(),8,2,a9,k.d.x,2,a,56,!0,"Criterios de priorizaci\xf3n",c,!0,!0,!0,a9,a9,new A.j(16,4,16,4),a9,a9,l,a9,new A.beL(k),a9,i,"Buscar",g,e,d,580,b)
+i=A.a1(B.nG,(A.a(b6).ax.a===B.a?A.b():A.c()).gB(),a9,24)
 g=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b)
 e=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
 e=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,e)
 d=(A.a(b6).ax.a===B.a?A.b():A.c()).gB()
 c=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
-h=A.Z(A.e([h,A.k("Es necesario seleccionar nuevamente los criterios de priorizacion",a9,a9,a9,a9,a9,a9,a9,A.h(g,d,a9,e,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,c,0,a9),a9,a9,a9,a9)],t.bH),A.B(a9,a9,10),a9)
+i=A.Z(A.e([i,A.k("Es necesario seleccionar nuevamente los criterios de priorizacion",a9,a9,a9,a9,a9,a9,a9,A.h(g,d,a9,e,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,c,0,a9),a9,a9,a9,a9)],t.bH),A.B(a9,a9,10),a9)
 g=A.B(a9,a9,10)
-b5.push(A.Q(A.Z(A.e([new A.l(new A.j(8,0,8,0),i,a9),A.R(A.bM(A.bN(h,g),g),B.j,B.l,B.f,a9),new A.ci(new A.beM(k),a9)],j),A.B(a9,10,a9),a9),B.x,B.l,B.f))}i=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b)
-h=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
-h=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,h)
+b5.push(A.Q(A.Z(A.e([new A.l(new A.j(8,0,8,0),l,a9),A.R(A.bM(A.bN(i,g),g),B.j,B.l,B.f,a9),new A.ci(new A.beM(k),a9)],j),A.B(a9,10,a9),a9),B.x,B.l,B.f))}l=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b)
+i=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
+i=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,i)
 g=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
-b5.push(A.k(b3,a9,a9,a9,a9,a9,a9,a9,A.h(i,a9,a9,h,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,g,0,a9),a9,a9,a9,a9))
+b5.push(A.k(b3,a9,a9,a9,a9,a9,a9,a9,A.h(l,a9,a9,i,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,g,0,a9),a9,a9,a9,a9))
+l=k.d
+i=l.y1
+if(i==null){i=f?a9:r.j(b3,b)
+i=i==null?B.u:new A.ay(i,B.B,B.z)
+i=l.y1=new A.an(i,$.A())
+l=i}else l=i
 i=k.d
-h=i.y1
-if(h==null){h=f?a9:r.j(b3,b)
-h=h==null?B.u:new A.ay(h,B.B,B.z)
-h=i.y1=new A.an(h,$.A())
-i=h}else i=h
-h=k.d
-g=h.xr
-h=h.x
+g=i.xr
+i=i.x
 e=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),17,B.b)
 d=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),17,B.b).w
 d=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),17,B.b).x,d)
@@ -150281,21 +150290,21 @@ d=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.
 c=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
 c=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,c)
 a=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
-b5.push(new A.l(new A.j(8,0,8,0),A.ar(a9,!0,i,a9,e,!1,g,a9,a9,a9,10,2,!1,a9,a9,a9,h,A.h(d,a9,a9,c,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,a,0,a9),B.t,a9,A.as(a9,b6)),a9))
-i=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b)
-h=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).w
-h=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).x,h)
+b5.push(new A.l(new A.j(8,0,8,0),A.ar(a9,!0,l,a9,e,!1,g,a9,a9,a9,10,2,!1,a9,a9,a9,i,A.h(d,a9,a9,c,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,a,0,a9),B.t,a9,A.as(a9,b6)),a9))
+l=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b)
+i=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).w
+i=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).x,i)
 g=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).w
-b5.push(A.k(u.o,a9,a9,a9,a9,a9,a9,a9,A.h(i,a9,a9,h,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).x,g,0,a9),a9,a9,a9,a9))
+b5.push(A.k(u.o,a9,a9,a9,a9,a9,a9,a9,A.h(l,a9,a9,i,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gm(),20,B.b).x,g,0,a9),a9,a9,a9,a9))
+l=k.d
+i=l.bg
+if(i==null){i=f?a9:r.j("PropuestaMedida",b)
+i=i==null?B.u:new A.ay(i,B.B,B.z)
+i=l.bg=new A.an(i,$.A())
+l=i}else l=i
 i=k.d
-h=i.bg
-if(h==null){h=f?a9:r.j("PropuestaMedida",b)
-h=h==null?B.u:new A.ay(h,B.B,B.z)
-h=i.bg=new A.an(h,$.A())
-i=h}else i=h
-h=k.d
-g=h.b7
-h=h.x
+g=i.b7
+i=i.x
 f=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),17,B.b)
 e=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),17,B.b).w
 e=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),17,B.b).x,e)
@@ -150319,18 +150328,18 @@ e=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.
 d=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
 d=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,d)
 c=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).w
-b5.push(new A.l(new A.j(8,0,8,0),A.ar(a9,!0,i,a9,f,!1,g,a9,a9,a9,20,a9,!1,a9,a9,a9,h,A.h(e,a9,a9,d,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,c,0,a9),B.t,a9,A.as(a9,b6)),a9))
-i=A.a1(B.aZ,a9,a9,15)
-h=(A.a(b6).ax.a===B.a?A.b():A.c()).gcM()
+b5.push(new A.l(new A.j(8,0,8,0),A.ar(a9,!0,l,a9,f,!1,g,a9,a9,a9,20,a9,!1,a9,a9,a9,i,A.h(e,a9,a9,d,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gh(),14,B.b).x,c,0,a9),B.t,a9,A.as(a9,b6)),a9))
+l=A.a1(B.aZ,a9,a9,15)
+i=(A.a(b6).ax.a===B.a?A.b():A.c()).gcM()
 g=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),16,B.d)
 f=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),16,B.d).w
 f=A.d().$2$fontStyle$fontWeight(A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),16,B.d).x,f)
 e=A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),16,B.d).w
 g=A.h(g,B.q,a9,f,a9,A.d().$3$color$fontSize$fontWeight((A.a(b6).ax.a===B.a?A.b():A.c()).gi(),16,B.d).x,e,0,a9)
-b5.push(A.ia(A.e([A.R(A.e([new A.l(new A.j(0,8,0,0),A.am(i,new A.beN(k,b6,r),A.al(A.i(20),new A.m(B.m,1,B.e,-1),h,a9,2,40,a9,4,a9,new A.j(0,0,0,0),new A.j(24,0,24,0),g,250),"Guardar"),a9)],j),B.j,B.L,B.f,a9)],j),B.M,a9,B.F,!0))
+b5.push(A.ia(A.e([A.R(A.e([new A.l(new A.j(0,8,0,0),A.am(l,new A.beN(k,b6,r),A.al(A.i(20),new A.m(B.m,1,B.e,-1),i,a9,2,40,a9,4,a9,new A.j(0,0,0,0),new A.j(24,0,24,0),g,250),"Guardar"),a9)],j),B.j,B.L,B.f,a9)],j),B.M,a9,B.F,!0))
 b5=A.Z(b5,A.B(a9,12,a9),a9)
 g=A.B(a9,12,a9)
-return A.eI(B.aW,A.e([A.R(A.Z(A.e([new A.H(new A.G(0,-1),a9,a9,s,a9),A.aC(new A.H(new A.G(0,0),a9,a9,A.bx(B.J,!0,a9,A.E(new A.G(0,0),A.c9(A.Q(A.e([m,A.eg(B.ay,A.Q(A.e([new A.H(new A.G(0,0),a9,a9,new A.l(new A.j(5,0,5,0),A.c9(A.Q(A.bM(A.bN(b5,g),g),B.x,B.l,B.N),B.D,a9,B.v,a9,a9,a9,!1,B.F),a9),a9)],j),B.j,B.l,B.f),l.y)],j),B.j,B.l,B.f),B.D,a9,B.v,a9,a9,a9,!1,B.F),B.i,a9,a9,new A.K(p,a9,n,o,a9,a9,a9,B.o),a9,a9,a9,a9,a9,a9,a9),B.i,B.m,2,a9,a9,new A.b8(q,B.w),a9,a9,B.Q),a9),1,a9),new A.H(new A.G(-1,-1),a9,a9,A.aS(new A.beP(k),new A.wY().c6(new A.beQ(k)),t.ep),a9)],j),A.B(a9,a9,5),a9),B.j,B.L,B.f,a9)],j),B.D,B.aM,a9)},
+return A.eI(B.aW,A.e([A.R(A.Z(A.e([new A.H(new A.G(0,-1),a9,a9,s,a9),A.aC(new A.H(new A.G(0,0),a9,a9,A.bx(B.J,!0,a9,A.E(new A.G(0,0),A.c9(A.Q(A.e([m,A.eg(B.ay,A.Q(A.e([new A.H(new A.G(0,0),a9,a9,new A.l(new A.j(5,0,5,0),A.c9(A.Q(A.bM(A.bN(b5,g),g),B.x,B.l,B.N),B.D,a9,B.v,a9,a9,a9,!1,B.F),a9),a9)],j),B.j,B.l,B.f),h.y)],j),B.j,B.l,B.f),B.D,a9,B.v,a9,a9,a9,!1,B.F),B.i,a9,a9,new A.K(p,a9,n,o,a9,a9,a9,B.o),a9,a9,a9,a9,a9,a9,a9),B.i,B.m,2,a9,a9,new A.b8(q,B.w),a9,a9,B.Q),a9),1,a9),new A.H(new A.G(-1,-1),a9,a9,A.aS(new A.beP(k),new A.wY().c6(new A.beQ(k)),t.ep),a9)],j),A.B(a9,a9,5),a9),B.j,B.L,B.f,a9)],j),B.D,B.aM,a9)},
 $S:1095}
 A.beC.prototype={
 $1(a){var s=this.a.a.c
@@ -152076,9 +152085,13 @@ o=o.z
 o===$&&A.f()
 n=p.a
 m=n.c
-n=n.e
-n.toString
-o=A.jV(A.a98(!0,!0,!0,g,g,m,g,n),o,new A.b6a(p),t.FG)
+l=n.e
+l.toString
+n=n.d
+n=n==null?g:n.j("id",t.S)
+k=p.a.d
+k=k==null?g:k.j("idNNyA",t.S)
+o=A.jV(A.a98(!0,!0,!0,n,k,m,p.a.r,l),o,new A.b6a(p),t.FG)
 n=A.a2(a,B.C,f).w.a.a>1200?B.aa:B.F
 m=(A.a(a).ax.a===B.a?A.b():A.c()).gab()
 l=A.d().$3$color$fontSize$fontWeight((A.a(a).ax.a===B.a?A.b():A.c()).gi(),16,B.d)
