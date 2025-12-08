@@ -217,6 +217,9 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                               cambia: false,
                                               ingresorow: containerIngresosRow,
                                               usuariorow: widget.usuariorow!,
+                                              idexpediente: widget.rowexp?.id,
+                                              idnnya: widget.rowexp?.idNNyA,
+                                              rowspd: widget.spd,
                                             ),
                                           ),
                                           Container(

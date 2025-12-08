@@ -382,6 +382,9 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                       cambia: true,
                                       ingresorow: widget.ingresorow,
                                       usuariorow: widget.usuariorow!,
+                                      idexpediente: widget.rowexp?.id,
+                                      idnnya: widget.rowexp?.idNNyA,
+                                      rowspd: widget.spd,
                                     ),
                                   ),
                                   Align(

@@ -636,6 +636,11 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                               cambia: false,
                                               ingresorow: widget.rowingreso,
                                               usuariorow: widget.usuariorow!,
+                                              idexpediente:
+                                                  widget.rowexpediente?.id,
+                                              idnnya:
+                                                  widget.rowexpediente?.idNNyA,
+                                              rowspd: widget.spd,
                                             ),
                                           ),
                                           Form(
