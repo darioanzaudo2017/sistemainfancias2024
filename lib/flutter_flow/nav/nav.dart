@@ -450,6 +450,36 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: PaginapruebaqueryWidget.routeName,
           path: PaginapruebaqueryWidget.routePath,
           builder: (context, params) => PaginapruebaqueryWidget(),
+        ),
+        FFRoute(
+          name: GrupoconvivientepaginaWidget.routeName,
+          path: GrupoconvivientepaginaWidget.routePath,
+          builder: (context, params) => GrupoconvivientepaginaWidget(
+            idingreso: params.getParam(
+              'idingreso',
+              ParamType.int,
+            ),
+            idexpediente: params.getParam(
+              'idexpediente',
+              ParamType.int,
+            ),
+            rowingreso: params.getParam<IngresosRow>(
+              'rowingreso',
+              ParamType.SupabaseRow,
+            ),
+            rowexp: params.getParam<VistaExpedientesUltimoEstadoRow>(
+              'rowexp',
+              ParamType.SupabaseRow,
+            ),
+            idseccion1: params.getParam(
+              'idseccion1',
+              ParamType.int,
+            ),
+            idnnya: params.getParam(
+              'idnnya',
+              ParamType.int,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

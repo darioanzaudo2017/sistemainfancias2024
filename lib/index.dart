@@ -38,3 +38,5 @@ export '/cuenta_perfil_creacion/auth_2_create_copy/auth2_create_copy_widget.dart
     show Auth2CreateCopyWidget;
 export '/paginapruebaquery/paginapruebaquery_widget.dart'
     show PaginapruebaqueryWidget;
+export '/grupoconvivientepagina/grupoconvivientepagina_widget.dart'
+    show GrupoconvivientepaginaWidget;

@@ -2489,6 +2489,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                                 );
                                               },
                                             );
+                                            Navigator.pop(context);
                                           }
 
                                           safeSetState(() {});

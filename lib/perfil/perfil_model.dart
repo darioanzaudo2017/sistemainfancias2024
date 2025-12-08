@@ -37,11 +37,9 @@ class PerfilModel extends FlutterFlowModel<PerfilWidget> {
   // Stores action output result for [Bottom Sheet - seccion2] action in Button widget.
   bool? seccion2true;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
-  List<Seccion1Row>? seccion1;
-  // Stores action output result for [Bottom Sheet - seccion3] action in Button widget.
-  bool? seccion3true;
+  List<Seccion1Row>? seccion111Copy;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
-  List<Seccion1Row>? idseccion1edit;
+  List<Seccion1Row>? seccion1;
   // Stores action output result for [Bottom Sheet - seccion4] action in Button widget.
   bool? seccion4;
   // Stores action output result for [Bottom Sheet - seccion4] action in Button widget.

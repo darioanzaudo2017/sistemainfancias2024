@@ -8,8 +8,8 @@ class ListaexpedientesrelacionadosModel
     extends FlutterFlowModel<ListaexpedientesrelacionadosWidget> {
   ///  State fields for stateful widgets in this component.
 
-  // Stores action output result for [Backend Call - Query Rows] action in IconButton widget.
-  List<VistaExpedientesUltimoEstadoRow>? queryexp;
+  // Stores action output result for [Backend Call - Query Rows] action in card_8 widget.
+  List<VistaExpedientesUltimoEstadoRow>? vistaexp;
 
   @override
   void initState(BuildContext context) {}
