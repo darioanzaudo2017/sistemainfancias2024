@@ -293,6 +293,12 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                   idexpediente:
                                                                       widget
                                                                           .idexp,
+                                                                  idnnya:
+                                                                      containerexpVistaExpedientesUltimoEstadoRow
+                                                                          ?.idNNyA,
+                                                                  rowspd:
+                                                                      widget
+                                                                          .spd,
                                                                 ),
                                                               ),
                                                               Flex(

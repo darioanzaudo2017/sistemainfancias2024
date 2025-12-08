@@ -351,22 +351,6 @@ class FFAppState extends ChangeNotifier {
   void clearUsuariosrolesCache() => _usuariosrolesManager.clear();
   void clearUsuariosrolesCacheKey(String? uniqueKey) =>
       _usuariosrolesManager.clearRequest(uniqueKey);
-
-  final _listaexpedientesNNyAManager =
-      FutureRequestManager<List<VistaNnyaexpgruRow>>();
-  Future<List<VistaNnyaexpgruRow>> listaexpedientesNNyA({
-    String? uniqueQueryKey,
-    bool? overrideCache,
-    required Future<List<VistaNnyaexpgruRow>> Function() requestFn,
-  }) =>
-      _listaexpedientesNNyAManager.performRequest(
-        uniqueQueryKey: uniqueQueryKey,
-        overrideCache: overrideCache,
-        requestFn: requestFn,
-      );
-  void clearListaexpedientesNNyACache() => _listaexpedientesNNyAManager.clear();
-  void clearListaexpedientesNNyACacheKey(String? uniqueKey) =>
-      _listaexpedientesNNyAManager.clearRequest(uniqueKey);
 }
 
 void _safeInit(Function() initializeField) {

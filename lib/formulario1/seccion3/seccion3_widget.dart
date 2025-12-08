@@ -1007,7 +1007,10 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                         ),
                                         cells: [
                                           Text(
-                                            '${listItem.nombre}, ${listItem.apellido}',
+                                            valueOrDefault<String>(
+                                              '${listItem.nombre}, ${listItem.apellido}',
+                                              'Sin dato',
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(

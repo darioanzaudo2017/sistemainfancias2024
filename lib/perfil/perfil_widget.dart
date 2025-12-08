@@ -13,7 +13,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/formulario1/seccion2/seccion2_widget.dart';
-import '/formulario1/seccion3/seccion3_widget.dart';
 import '/formulario1/seccion6/seccion6_widget.dart';
 import '/formulario1/secciones_formulario1/seccion1/seccion1_widget.dart';
 import '/formulario1/secciones_formulario1/seccion4/seccion4_widget.dart';
@@ -914,6 +913,8 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                   contactosref: true,
                                                   cambia: true,
                                                   idexpediente: widget.idexp,
+                                                  idnnya:
+                                                      widget.rowexp?.idNNyA,
                                                 ),
                                               ),
                                               Flex(
@@ -2771,44 +2772,42 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                       }()
                                                                                                           ? null
                                                                                                           : () async {
-                                                                                                              _model.seccion1 = await Seccion1Table().queryRows(
+                                                                                                              _model.seccion111Copy = await Seccion1Table().queryRows(
                                                                                                                 queryFn: (q) => q.eqOrNull(
                                                                                                                   'idIngreso',
                                                                                                                   widget.idingreso,
                                                                                                                 ),
                                                                                                               );
-                                                                                                              await showModalBottomSheet(
-                                                                                                                isScrollControlled: true,
-                                                                                                                backgroundColor: Colors.transparent,
-                                                                                                                enableDrag: false,
-                                                                                                                context: context,
-                                                                                                                builder: (context) {
-                                                                                                                  return WebViewAware(
-                                                                                                                    child: GestureDetector(
-                                                                                                                      onTap: () {
-                                                                                                                        FocusScope.of(context).unfocus();
-                                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                                      },
-                                                                                                                      child: Padding(
-                                                                                                                        padding: MediaQuery.viewInsetsOf(context),
-                                                                                                                        child: Seccion3Widget(
-                                                                                                                          idingreso: containeringresosIngresosRow,
-                                                                                                                          idexp: widget.rowexp!,
-                                                                                                                          editar: false,
-                                                                                                                          titulo: 'Grupo conviente y No conviviente',
-                                                                                                                          userrol: widget.usuariorol!,
-                                                                                                                          idseccion1: _model.seccion1!.firstOrNull!.idSec1,
-                                                                                                                        ),
-                                                                                                                      ),
-                                                                                                                    ),
-                                                                                                                  );
-                                                                                                                },
-                                                                                                              ).then((value) => safeSetState(() => _model.seccion3true = value));
 
-                                                                                                              if (_model.seccion3true!) {
-                                                                                                                safeSetState(() => _model.requestCompleter1 = null);
-                                                                                                                await _model.waitForRequestCompleted1();
-                                                                                                              }
+                                                                                                              context.pushNamed(
+                                                                                                                GrupoconvivientepaginaWidget.routeName,
+                                                                                                                queryParameters: {
+                                                                                                                  'idingreso': serializeParam(
+                                                                                                                    widget.idingreso,
+                                                                                                                    ParamType.int,
+                                                                                                                  ),
+                                                                                                                  'idexpediente': serializeParam(
+                                                                                                                    widget.idexp,
+                                                                                                                    ParamType.int,
+                                                                                                                  ),
+                                                                                                                  'rowingreso': serializeParam(
+                                                                                                                    containeringresosIngresosRow,
+                                                                                                                    ParamType.SupabaseRow,
+                                                                                                                  ),
+                                                                                                                  'rowexp': serializeParam(
+                                                                                                                    widget.rowexp,
+                                                                                                                    ParamType.SupabaseRow,
+                                                                                                                  ),
+                                                                                                                  'idseccion1': serializeParam(
+                                                                                                                    _model.seccion111Copy?.firstOrNull?.idSec1,
+                                                                                                                    ParamType.int,
+                                                                                                                  ),
+                                                                                                                  'idnnya': serializeParam(
+                                                                                                                    widget.rowexp?.idNNyA,
+                                                                                                                    ParamType.int,
+                                                                                                                  ),
+                                                                                                                }.withoutNulls,
+                                                                                                              );
 
                                                                                                               safeSetState(() {});
                                                                                                             },
@@ -2855,39 +2854,42 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                       }()
                                                                                                           ? null
                                                                                                           : () async {
-                                                                                                              _model.idseccion1edit = await Seccion1Table().queryRows(
+                                                                                                              _model.seccion1 = await Seccion1Table().queryRows(
                                                                                                                 queryFn: (q) => q.eqOrNull(
                                                                                                                   'idIngreso',
                                                                                                                   widget.idingreso,
                                                                                                                 ),
                                                                                                               );
-                                                                                                              await showModalBottomSheet(
-                                                                                                                isScrollControlled: true,
-                                                                                                                backgroundColor: Colors.transparent,
-                                                                                                                enableDrag: false,
-                                                                                                                context: context,
-                                                                                                                builder: (context) {
-                                                                                                                  return WebViewAware(
-                                                                                                                    child: GestureDetector(
-                                                                                                                      onTap: () {
-                                                                                                                        FocusScope.of(context).unfocus();
-                                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                                      },
-                                                                                                                      child: Padding(
-                                                                                                                        padding: MediaQuery.viewInsetsOf(context),
-                                                                                                                        child: Seccion3Widget(
-                                                                                                                          idingreso: containeringresosIngresosRow,
-                                                                                                                          idexp: widget.rowexp!,
-                                                                                                                          editar: false,
-                                                                                                                          titulo: '3. Grupo conviente',
-                                                                                                                          userrol: widget.usuariorol!,
-                                                                                                                          idseccion1: _model.idseccion1edit!.firstOrNull!.idSec1,
-                                                                                                                        ),
-                                                                                                                      ),
-                                                                                                                    ),
-                                                                                                                  );
-                                                                                                                },
-                                                                                                              ).then((value) => safeSetState(() {}));
+
+                                                                                                              context.pushNamed(
+                                                                                                                GrupoconvivientepaginaWidget.routeName,
+                                                                                                                queryParameters: {
+                                                                                                                  'idingreso': serializeParam(
+                                                                                                                    widget.idingreso,
+                                                                                                                    ParamType.int,
+                                                                                                                  ),
+                                                                                                                  'idexpediente': serializeParam(
+                                                                                                                    widget.idexp,
+                                                                                                                    ParamType.int,
+                                                                                                                  ),
+                                                                                                                  'rowingreso': serializeParam(
+                                                                                                                    containeringresosIngresosRow,
+                                                                                                                    ParamType.SupabaseRow,
+                                                                                                                  ),
+                                                                                                                  'rowexp': serializeParam(
+                                                                                                                    widget.rowexp,
+                                                                                                                    ParamType.SupabaseRow,
+                                                                                                                  ),
+                                                                                                                  'idseccion1': serializeParam(
+                                                                                                                    _model.seccion1?.firstOrNull?.idSec1,
+                                                                                                                    ParamType.int,
+                                                                                                                  ),
+                                                                                                                  'idnnya': serializeParam(
+                                                                                                                    widget.rowexp?.idNNyA,
+                                                                                                                    ParamType.int,
+                                                                                                                  ),
+                                                                                                                }.withoutNulls,
+                                                                                                              );
 
                                                                                                               safeSetState(() {});
                                                                                                             },

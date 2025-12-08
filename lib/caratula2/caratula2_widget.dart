@@ -1896,67 +1896,76 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                       SizedBox(height: 10.0)),
                                                 ),
                                               ),
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: FFButtonWidget(
-                                                  onPressed: () async {},
-                                                  text:
-                                                      'verificar NNyA y crear expediente',
-                                                  options: FFButtonOptions(
-                                                    height: 40.0,
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(24.0, 0.0,
-                                                                24.0, 0.0),
-                                                    iconPadding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 0.0),
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondary,
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          font: GoogleFonts
-                                                              .notoSansJp(
-                                                            fontWeight:
-                                                                FlutterFlowTheme.of(
+                                              if (currentUserEmail == '1')
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: FFButtonWidget(
+                                                    onPressed: () async {},
+                                                    text:
+                                                        'verificar NNyA y crear expediente',
+                                                    options: FFButtonOptions(
+                                                      height: 40.0,
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  24.0,
+                                                                  0.0,
+                                                                  24.0,
+                                                                  0.0),
+                                                      iconPadding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondary,
+                                                      textStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .notoSansJp(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .fontStyle,
+                                                                ),
+                                                                color: Colors
+                                                                    .white,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
                                                                         context)
                                                                     .titleSmall
                                                                     .fontWeight,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
+                                                                fontStyle: FlutterFlowTheme.of(
                                                                         context)
                                                                     .titleSmall
                                                                     .fontStyle,
-                                                          ),
-                                                          color: Colors.white,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmall
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmall
-                                                                  .fontStyle,
-                                                        ),
-                                                    elevation: 3.0,
-                                                    borderSide: BorderSide(
-                                                      color: Colors.transparent,
-                                                      width: 1.0,
+                                                              ),
+                                                      elevation: 3.0,
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            Colors.transparent,
+                                                        width: 1.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
                                                     ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
                                                   ),
                                                 ),
-                                              ),
                                             ].divide(SizedBox(height: 10.0)),
                                           ),
                                         ),
@@ -2057,7 +2066,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
 
                                       safeSetState(() {});
                                     },
-                                    text: 'crear expediente back',
+                                    text: 'Verificar NNyA y crear expediente',
                                     options: FFButtonOptions(
                                       height: 40.0,
                                       padding: EdgeInsetsDirectional.fromSTEB(
@@ -2564,6 +2573,43 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                 ),
                                               ),
                                             ),
+                                            DataColumn2(
+                                              label: DefaultTextStyle.merge(
+                                                softWrap: true,
+                                                child: Text(
+                                                  'Edit Header 6',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .labelLarge
+                                                      .override(
+                                                        font: GoogleFonts
+                                                            .notoSansJp(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelLarge
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelLarge
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
                                           ],
                                           dataRowBuilder: (tabla2Item,
                                                   tabla2Index,
@@ -2594,6 +2640,7 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                                     .bodyMedium
                                                                     .fontStyle,
                                                           ),
+                                                          fontSize: 10.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
@@ -2710,6 +2757,35 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                         ),
                                                       );
 
+                                                      context.pushNamed(
+                                                        IngresosWidget
+                                                            .routeName,
+                                                        queryParameters: {
+                                                          'idexp':
+                                                              serializeParam(
+                                                            tabla2Item.id,
+                                                            ParamType.int,
+                                                          ),
+                                                          'usuariorow':
+                                                              serializeParam(
+                                                            widget.usuario,
+                                                            ParamType
+                                                                .SupabaseRow,
+                                                          ),
+                                                          'spd': serializeParam(
+                                                            widget.spd,
+                                                            ParamType
+                                                                .SupabaseRow,
+                                                          ),
+                                                          'usuariorol':
+                                                              serializeParam(
+                                                            widget.usuriorol,
+                                                            ParamType
+                                                                .SupabaseRow,
+                                                          ),
+                                                        }.withoutNulls,
+                                                      );
+
                                                       safeSetState(() {});
                                                     },
                                                     child: Text(
@@ -2747,6 +2823,38 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                     ),
                                                   ),
                                                 ),
+                                              ),
+                                              Text(
+                                                tabla2Item.spd,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .notoSansJp(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                               ),
                                             ].map((c) => DataCell(c)).toList(),
                                           ),
