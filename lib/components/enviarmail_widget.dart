@@ -1049,9 +1049,10 @@ class _EnviarmailWidgetState extends State<EnviarmailWidget> {
                                         padding:
                                             MediaQuery.viewInsetsOf(context),
                                         child: AdjuntardocumentoWidget(
-                                          exprow: widget.expediente,
                                           ingrow: widget.ingresosrow,
                                           idampliacion: widget.idampliacion,
+                                          idexp: widget.idexp!,
+                                          idingreso: widget.idingreso!,
                                         ),
                                       ),
                                     );

@@ -1,3 +1,5 @@
+import '/backend/api_requests/api_calls.dart';
+import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -40,15 +42,15 @@ class AmpliacioninformacionModel
       textFieldprofesionalTextControllerValidator;
   // Stores action output result for [Bottom Sheet - agregarPersonaRelacionada] action in Button widget.
   bool? creopersonaampliar;
-  Completer<List<Seccion8Row>>? requestCompleter;
+  Completer<ApiCallResponse>? apiRequestCompleter;
   // State field(s) for PaginatedDataTable widget.
   final paginatedDataTableController1 =
-      FlutterFlowDataTableController<Seccion8Row>();
+      FlutterFlowDataTableController<Seccion8GrupoconvivienteStruct>();
   // Stores action output result for [Bottom Sheet - agregarPersonaRelacionadaeditar] action in IconButton widget.
   bool? editopersonarelacionada;
   // State field(s) for Checkbox widget.
-  Map<Seccion8Row, bool> checkboxValueMap = {};
-  List<Seccion8Row> get checkboxCheckedItems =>
+  Map<Seccion8GrupoconvivienteStruct, bool> checkboxValueMap = {};
+  List<Seccion8GrupoconvivienteStruct> get checkboxCheckedItems =>
       checkboxValueMap.entries.where((e) => e.value).map((e) => e.key).toList();
 
   // State field(s) for Expandable widget.
@@ -253,7 +255,7 @@ class AmpliacioninformacionModel
   }
 
   /// Additional helper methods.
-  Future waitForRequestCompleted({
+  Future waitForApiRequestCompleted({
     double minWait = 0,
     double maxWait = double.infinity,
   }) async {
@@ -261,7 +263,7 @@ class AmpliacioninformacionModel
     while (true) {
       await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = requestCompleter?.isCompleted ?? false;
+      final requestComplete = apiRequestCompleter?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
         break;
       }

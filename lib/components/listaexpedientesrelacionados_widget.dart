@@ -240,10 +240,6 @@ class _ListaexpedientesrelacionadosWidgetState
                                   context.pushNamed(
                                     IngresosWidget.routeName,
                                     queryParameters: {
-                                      'idexpediente': serializeParam(
-                                        _model.queryexp?.firstOrNull,
-                                        ParamType.SupabaseRow,
-                                      ),
                                       'idexp': serializeParam(
                                         listViewVistaNnyaexpgruRow.idExpediente,
                                         ParamType.int,

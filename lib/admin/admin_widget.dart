@@ -2179,6 +2179,15 @@ class _AdminWidgetState extends State<AdminWidget>
                                                                       ParamType
                                                                           .SupabaseRow,
                                                                     ),
+                                                                    'idexp':
+                                                                        serializeParam(
+                                                                      _model
+                                                                          .vistaexpe
+                                                                          ?.firstOrNull
+                                                                          ?.id,
+                                                                      ParamType
+                                                                          .int,
+                                                                    ),
                                                                   }.withoutNulls,
                                                                 );
 
@@ -2617,6 +2626,12 @@ class _AdminWidgetState extends State<AdminWidget>
                                                                           .usuariosroles,
                                                                       ParamType
                                                                           .SupabaseRow,
+                                                                    ),
+                                                                    'idexp':
+                                                                        serializeParam(
+                                                                      0,
+                                                                      ParamType
+                                                                          .int,
                                                                     ),
                                                                   }.withoutNulls,
                                                                 );

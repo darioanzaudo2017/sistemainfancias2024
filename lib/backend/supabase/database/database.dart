@@ -55,6 +55,7 @@ export 'tables/vista_estadisticas_zona.dart';
 export 'tables/seguimientosolicitud.dart';
 export 'tables/grupo_conviviente.dart';
 export 'tables/resuestas_form6.dart';
+export 'tables/vista_resumen_etapas.dart';
 export 'tables/vista_historial_movimientos_solicitudsenaf.dart';
 export 'tables/n_ny_a_exp_gru.dart';
 export 'tables/ampliaciondeinformacionhistorial.dart';

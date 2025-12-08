@@ -113,6 +113,10 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                     widget.spd,
                     ParamType.SupabaseRow,
                   ),
+                  'idexp': serializeParam(
+                    widget.rowexp?.id,
+                    ParamType.int,
+                  ),
                 }.withoutNulls,
               );
             },
@@ -211,7 +215,6 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                               editarcaratula: false,
                                               contactosref: false,
                                               cambia: false,
-                                              exprow: widget.rowexp!,
                                               ingresorow: containerIngresosRow,
                                               usuariorow: widget.usuariorow!,
                                             ),
@@ -318,13 +321,14 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             16.0,
-                                                                            0.0,
+                                                                            10.0,
                                                                             16.0,
-                                                                            0.0),
+                                                                            10.0),
                                                                     child:
                                                                         Container(
-                                                                      width:
-                                                                          905.41,
+                                                                      width: MediaQuery.sizeOf(context)
+                                                                              .width *
+                                                                          0.7,
                                                                       decoration:
                                                                           BoxDecoration(
                                                                         color: FlutterFlowTheme.of(context)
@@ -358,6 +362,8 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                             Column(
                                                                           mainAxisSize:
                                                                               MainAxisSize.min,
+                                                                          crossAxisAlignment:
+                                                                              CrossAxisAlignment.center,
                                                                           children:
                                                                               [
                                                                             Text(
@@ -477,6 +483,7 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                                                     letterSpacing: 0.0,
                                                                                                     fontWeight: FlutterFlowTheme.of(context).titleLarge.fontWeight,
                                                                                                     fontStyle: FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                                                                                                    decoration: TextDecoration.underline,
                                                                                                   ),
                                                                                             ),
                                                                                             TextSpan(
@@ -517,6 +524,7 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                                                 fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                               ),
                                                                                         ),
+                                                                                        textAlign: TextAlign.justify,
                                                                                       );
                                                                                     },
                                                                                   );

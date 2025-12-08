@@ -102,10 +102,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'idingreso',
               ParamType.int,
             ),
-            rowexp: params.getParam<VistaExpedientesUltimoEstadoRow>(
-              'rowexp',
-              ParamType.SupabaseRow,
-            ),
             usuariorow: params.getParam<UsuariosRow>(
               'usuariorow',
               ParamType.SupabaseRow,
@@ -118,6 +114,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'usuariorol',
               ParamType.SupabaseRow,
             ),
+            rowexp: params.getParam<VistaExpedientesUltimoEstadoRow>(
+              'rowexp',
+              ParamType.SupabaseRow,
+            ),
+            idexp: params.getParam(
+              'idexp',
+              ParamType.int,
+            ),
           ),
         ),
         FFRoute(
@@ -125,10 +129,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: IngresosWidget.routePath,
           requireAuth: true,
           builder: (context, params) => IngresosWidget(
-            idexpediente: params.getParam<VistaExpedientesUltimoEstadoRow>(
-              'idexpediente',
-              ParamType.SupabaseRow,
-            ),
             idexp: params.getParam(
               'idexp',
               ParamType.int,
@@ -269,6 +269,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             spdrow: params.getParam<SpdRow>(
               'spdrow',
               ParamType.SupabaseRow,
+            ),
+            idexp: params.getParam(
+              'idexp',
+              ParamType.int,
+            ),
+            idingreso: params.getParam(
+              'idingreso',
+              ParamType.int,
             ),
           ),
         ),

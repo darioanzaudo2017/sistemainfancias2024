@@ -2,12 +2,13 @@ import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'agregar_conviviente_widget.dart' show AgregarConvivienteWidget;
+import 'agregar_convivienteeditar_widget.dart'
+    show AgregarConvivienteeditarWidget;
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
-class AgregarConvivienteModel
-    extends FlutterFlowModel<AgregarConvivienteWidget> {
+class AgregarConvivienteeditarModel
+    extends FlutterFlowModel<AgregarConvivienteeditarWidget> {
   ///  Local state fields for this component.
 
   String? nombre;
@@ -86,18 +87,12 @@ class AgregarConvivienteModel
   FocusNode? textFieldFocusNode6;
   TextEditingController? textController8;
   String? Function(BuildContext, String?)? textController8Validator;
-  // Stores action output result for [Backend Call - API (ExisteDNInnya)] action in Button widget.
-  ApiCallResponse? chekdnigrupo;
-  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
-  List<NNyARow>? busquedapersonadni;
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  GrupoConvivienteRow? aaa;
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  NNyARow? crearnnyanuevo;
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  GrupoConvivienteRow? creargrupo;
-  // Stores action output result for [Backend Call - API (Agregar grupo conviviente)] action in Button widget.
-  ApiCallResponse? apiResultyuv;
+  // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
+  List<GrupoConvivienteRow>? creargrupoedit;
+  // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
+  List<NNyARow>? editNNyA;
+  // Stores action output result for [Backend Call - API (Actualizar grupo conviviente )] action in Button widget.
+  ApiCallResponse? apiResultyu;
 
   @override
   void initState(BuildContext context) {

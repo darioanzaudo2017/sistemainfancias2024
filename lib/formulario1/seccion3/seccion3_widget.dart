@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/formulario1/secciones_formulario1/agregar_tablas/agregar_conviviente/agregar_conviviente_widget.dart';
+import '/formulario1/secciones_formulario1/agregar_tablas/agregar_convivienteeditar/agregar_convivienteeditar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
@@ -1149,17 +1150,14 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                                                           .viewInsetsOf(
                                                               context),
                                                       child:
-                                                          AgregarConvivienteWidget(
+                                                          AgregarConvivienteeditarWidget(
                                                         rowingreso:
                                                             widget.idingreso!,
                                                         idexp: widget.idexp!,
-                                                        editar: true,
-                                                        idgrupoconviviente:
-                                                            listItem.id,
-                                                        idnnya: listItem
-                                                            .idnnyaGrupo,
                                                         idseccion1:
                                                             widget.idseccion1!,
+                                                        idgrupoconviviente:
+                                                            listItem.id,
                                                       ),
                                                     ),
                                                   );

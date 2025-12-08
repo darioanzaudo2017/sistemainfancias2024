@@ -398,8 +398,7 @@ class _AgregarPersonaRelacionadaeditarWidgetState
                                   child: TextFormField(
                                     controller: _model.textController3 ??=
                                         TextEditingController(
-                                      text: containerSeccion8Row?.telefono
-                                          ?.toString(),
+                                      text: containerSeccion8Row?.telefono,
                                     ),
                                     focusNode: _model.textFieldFocusNode3,
                                     autofocus: true,
@@ -1048,8 +1047,8 @@ class _AgregarPersonaRelacionadaeditarWidgetState
                                               _model.dropDownValue != 'Otros'
                                                   ? _model.dropDownValue
                                                   : _model.textController6.text,
-                                          'telefono': double.tryParse(
-                                              _model.textController3.text),
+                                          'telefono':
+                                              _model.textController3.text,
                                           'direccion':
                                               _model.textController4.text,
                                           'idIngreso': widget.rowingreso?.id,

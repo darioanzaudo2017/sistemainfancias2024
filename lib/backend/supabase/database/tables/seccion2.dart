@@ -88,4 +88,8 @@ class Seccion2Row extends SupabaseDataRow {
 
   String? get viculoDrop => getField<String>('viculo_drop');
   set viculoDrop(String? value) => setField<String>('viculo_drop', value);
+
+  String? get tipoSolicitante => getField<String>('tipo_solicitante');
+  set tipoSolicitante(String? value) =>
+      setField<String>('tipo_solicitante', value);
 }

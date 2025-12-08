@@ -32,6 +32,8 @@ class SenafWidget extends StatefulWidget {
     required this.usuariorow,
     required this.usuariorol,
     required this.spdrow,
+    this.idexp,
+    this.idingreso,
   });
 
   final IngresosRow? ingrow;
@@ -39,6 +41,8 @@ class SenafWidget extends StatefulWidget {
   final UsuariosRow? usuariorow;
   final VistaUsuariosRolesRow? usuariorol;
   final SpdRow? spdrow;
+  final int? idexp;
+  final int? idingreso;
 
   static String routeName = 'Senaf';
   static String routePath = '/senaf';
@@ -4409,6 +4413,8 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                                                         child: ListadodeadjuntosWidget(
                                                                                                                                           expedienterow: widget.expediente!,
                                                                                                                                           ingresorow: widget.ingrow!,
+                                                                                                                                          idexp: widget.idexp!,
+                                                                                                                                          idingreso: widget.idingreso!,
                                                                                                                                         ),
                                                                                                                                       ),
                                                                                                                                     ),

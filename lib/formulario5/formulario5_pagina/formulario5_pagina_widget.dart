@@ -135,6 +135,10 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                     widget.usuariorol,
                     ParamType.SupabaseRow,
                   ),
+                  'idexp': serializeParam(
+                    widget.rowexpediente?.id,
+                    ParamType.int,
+                  ),
                 }.withoutNulls,
               );
             },
@@ -630,7 +634,6 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                               editarcaratula: false,
                                               contactosref: false,
                                               cambia: false,
-                                              exprow: widget.rowexpediente!,
                                               ingresorow: widget.rowingreso,
                                               usuariorow: widget.usuariorow!,
                                             ),

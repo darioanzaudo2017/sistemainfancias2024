@@ -16,14 +16,16 @@ export 'adjuntardocumento_model.dart';
 class AdjuntardocumentoWidget extends StatefulWidget {
   const AdjuntardocumentoWidget({
     super.key,
-    this.exprow,
     this.ingrow,
     this.idampliacion,
+    required this.idexp,
+    required this.idingreso,
   });
 
-  final VistaExpedientesUltimoEstadoRow? exprow;
   final IngresosRow? ingrow;
   final int? idampliacion;
+  final int? idexp;
+  final int? idingreso;
 
   @override
   State<AdjuntardocumentoWidget> createState() =>
@@ -362,8 +364,8 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                   child: FFButtonWidget(
                     onPressed: () async {
                       await DocumentosadjuntosTable().insert({
-                        'idexpdoc': widget.exprow?.id?.toDouble(),
-                        'idingresodoc': widget.ingrow?.id,
+                        'idexpdoc': widget.idexp?.toDouble(),
+                        'idingresodoc': widget.idingreso,
                         'documentopdf': _model.uploadedFileUrl_uploadData9zv,
                         'tipodocumento': _model.dropDownValue,
                         'Observaciones': _model.textController.text,
