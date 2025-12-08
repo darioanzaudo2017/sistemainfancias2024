@@ -26,8 +26,8 @@ class Seccion8Row extends SupabaseDataRow {
   String? get vinculo => getField<String>('vinculo');
   set vinculo(String? value) => setField<String>('vinculo', value);
 
-  double? get telefono => getField<double>('telefono');
-  set telefono(double? value) => setField<double>('telefono', value);
+  String? get telefono => getField<String>('telefono');
+  set telefono(String? value) => setField<String>('telefono', value);
 
   String? get direccion => getField<String>('direccion');
   set direccion(String? value) => setField<String>('direccion', value);
@@ -44,9 +44,6 @@ class Seccion8Row extends SupabaseDataRow {
   String? get iduser => getField<String>('iduser');
   set iduser(String? value) => setField<String>('iduser', value);
 
-  int? get idgrupofamiliar => getField<int>('idgrupofamiliar');
-  set idgrupofamiliar(int? value) => setField<int>('idgrupofamiliar', value);
-
   String? get Vinculo => getField<String>('Vinculo');
   set Vinculo(String? value) => setField<String>('Vinculo', value);
 
@@ -59,4 +56,11 @@ class Seccion8Row extends SupabaseDataRow {
   String? get refdeubicacion => getField<String>('refdeubicacion');
   set refdeubicacion(String? value) =>
       setField<String>('refdeubicacion', value);
+
+  int? get idNNyA => getField<int>('idNNyA');
+  set idNNyA(int? value) => setField<int>('idNNyA', value);
+
+  int? get idGrupoconviviente => getField<int>('id_grupoconviviente');
+  set idGrupoconviviente(int? value) =>
+      setField<int>('id_grupoconviviente', value);
 }

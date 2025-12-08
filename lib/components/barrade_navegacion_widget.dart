@@ -13,7 +13,6 @@ export 'barrade_navegacion_model.dart';
 class BarradeNavegacionWidget extends StatefulWidget {
   const BarradeNavegacionWidget({
     super.key,
-    required this.exprow,
     this.idexp,
     required this.usuariorow,
     this.parameter4,
@@ -33,7 +32,6 @@ class BarradeNavegacionWidget extends StatefulWidget {
     this.usuariorol,
   });
 
-  final VistaExpedientesUltimoEstadoRow? exprow;
   final int? idexp;
   final UsuariosRow? usuariorow;
   final String? parameter4;
@@ -184,10 +182,6 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                   context.pushNamed(
                     IngresosWidget.routeName,
                     queryParameters: {
-                      'idexpediente': serializeParam(
-                        widget.exprow,
-                        ParamType.SupabaseRow,
-                      ),
                       'idexp': serializeParam(
                         widget.idexp,
                         ParamType.int,
@@ -261,87 +255,6 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                 ),
               ),
             ),
-          if (widget.perfil ?? true)
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-              child: InkWell(
-                splashColor: Colors.transparent,
-                focusColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                onTap: () async {
-                  context.pushNamed(
-                    PerfilWidget.routeName,
-                    queryParameters: {
-                      'idingreso': serializeParam(
-                        widget.ingresorow?.id,
-                        ParamType.int,
-                      ),
-                      'rowexp': serializeParam(
-                        widget.exprow,
-                        ParamType.SupabaseRow,
-                      ),
-                      'usuariorow': serializeParam(
-                        widget.usuariorow,
-                        ParamType.SupabaseRow,
-                      ),
-                    }.withoutNulls,
-                  );
-                },
-                child: AnimatedContainer(
-                  duration: Duration(milliseconds: 200),
-                  curve: Curves.easeInOut,
-                  width: double.infinity,
-                  height: 44.0,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).accent1,
-                    borderRadius: BorderRadius.circular(12.0),
-                    shape: BoxShape.rectangle,
-                  ),
-                  child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        FaIcon(
-                          FontAwesomeIcons.addressBook,
-                          color: FlutterFlowTheme.of(context).primaryText,
-                          size: 24.0,
-                        ),
-                        Expanded(
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                12.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              'Perfil',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.plusJakartaSans(
-                                      fontWeight: FontWeight.w500,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    fontSize: 14.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
           if (widget.adjuntar ?? true)
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
@@ -361,8 +274,10 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                         child: Padding(
                           padding: MediaQuery.viewInsetsOf(context),
                           child: AdjuntardocumentoWidget(
-                            exprow: widget.exprow,
                             ingrow: widget.ingresorow,
+                            idexp: widget.idexp!,
+                            idampliacion: 0,
+                            idingreso: widget.idingreso!,
                           ),
                         ),
                       );

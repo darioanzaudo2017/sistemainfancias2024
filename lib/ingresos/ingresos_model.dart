@@ -22,6 +22,8 @@ class IngresosModel extends FlutterFlowModel<IngresosWidget> {
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   IngresosRow? crearingreso;
   Completer<List<VistaIngresosDiasRow>>? requestCompleter2;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<VistaExpedientesUltimoEstadoRow>? expvista;
 
   @override
   void initState(BuildContext context) {

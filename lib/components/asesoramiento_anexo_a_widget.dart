@@ -1457,10 +1457,6 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                                           context.pushNamed(
                                             IngresosWidget.routeName,
                                             queryParameters: {
-                                              'idexpediente': serializeParam(
-                                                widget.rowexpediente,
-                                                ParamType.SupabaseRow,
-                                              ),
                                               'idexp': serializeParam(
                                                 widget.rowexpediente?.id,
                                                 ParamType.int,

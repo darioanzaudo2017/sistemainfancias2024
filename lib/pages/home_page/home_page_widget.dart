@@ -971,1682 +971,1650 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                   ),
                                                             ),
                                                           ),
-                                                          if (containerVistaUsuariosRolesRow
-                                                                  ?.rolId ==
-                                                              1)
-                                                            Expanded(
-                                                              child: Align(
-                                                                alignment:
-                                                                    AlignmentDirectional(
-                                                                        0.0,
-                                                                        -1.0),
-                                                                child: FutureBuilder<
-                                                                    List<
-                                                                        VistaResumenIngresosAdminRow>>(
-                                                                  future: VistaResumenIngresosAdminTable()
-                                                                      .querySingleRow(
-                                                                    queryFn:
-                                                                        (q) =>
-                                                                            q,
-                                                                  ),
-                                                                  builder: (context,
-                                                                      snapshot) {
-                                                                    // Customize what your widget looks like when it's loading.
-                                                                    if (!snapshot
-                                                                        .hasData) {
-                                                                      return Center(
-                                                                        child:
-                                                                            SizedBox(
-                                                                          width:
-                                                                              50.0,
-                                                                          height:
-                                                                              50.0,
-                                                                          child:
-                                                                              CircularProgressIndicator(
-                                                                            valueColor:
-                                                                                AlwaysStoppedAnimation<Color>(
-                                                                              FlutterFlowTheme.of(context).primary,
+                                                          Expanded(
+                                                            child: Align(
+                                                              alignment:
+                                                                  AlignmentDirectional(
+                                                                      0.0,
+                                                                      -1.0),
+                                                              child: Builder(
+                                                                builder:
+                                                                    (context) {
+                                                                  if (containerVistaUsuariosRolesRow
+                                                                          ?.rolId ==
+                                                                      1) {
+                                                                    return Visibility(
+                                                                      visible:
+                                                                          containerVistaUsuariosRolesRow?.rolId ==
+                                                                              1,
+                                                                      child: FutureBuilder<
+                                                                          List<
+                                                                              VistaResumenIngresosAdminRow>>(
+                                                                        future:
+                                                                            VistaResumenIngresosAdminTable().querySingleRow(
+                                                                          queryFn: (q) =>
+                                                                              q,
+                                                                        ),
+                                                                        builder:
+                                                                            (context,
+                                                                                snapshot) {
+                                                                          // Customize what your widget looks like when it's loading.
+                                                                          if (!snapshot
+                                                                              .hasData) {
+                                                                            return Center(
+                                                                              child: SizedBox(
+                                                                                width: 50.0,
+                                                                                height: 50.0,
+                                                                                child: CircularProgressIndicator(
+                                                                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                                                                    FlutterFlowTheme.of(context).primary,
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            );
+                                                                          }
+                                                                          List<VistaResumenIngresosAdminRow>
+                                                                              containernumerosadminVistaResumenIngresosAdminRowList =
+                                                                              snapshot.data!;
+
+                                                                          final containernumerosadminVistaResumenIngresosAdminRow = containernumerosadminVistaResumenIngresosAdminRowList.isNotEmpty
+                                                                              ? containernumerosadminVistaResumenIngresosAdminRowList.first
+                                                                              : null;
+
+                                                                          return Container(
+                                                                            decoration:
+                                                                                BoxDecoration(),
+                                                                            child:
+                                                                                SingleChildScrollView(
+                                                                              scrollDirection: Axis.horizontal,
+                                                                              child: Row(
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                children: [
+                                                                                  Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
+                                                                                    child: Container(
+                                                                                      width: 110.0,
+                                                                                      height: 100.0,
+                                                                                      decoration: BoxDecoration(
+                                                                                        color: Colors.white,
+                                                                                        boxShadow: [
+                                                                                          BoxShadow(
+                                                                                            blurRadius: 4.0,
+                                                                                            color: Color(0x2B202529),
+                                                                                            offset: Offset(
+                                                                                              0.0,
+                                                                                              2.0,
+                                                                                            ),
+                                                                                          )
+                                                                                        ],
+                                                                                        borderRadius: BorderRadius.circular(12.0),
+                                                                                      ),
+                                                                                      child: Padding(
+                                                                                        padding: EdgeInsets.all(12.0),
+                                                                                        child: Column(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                                                          children: [
+                                                                                            Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                                                              children: [
+                                                                                                Expanded(
+                                                                                                  child: Text(
+                                                                                                    'Expedientes',
+                                                                                                    textAlign: TextAlign.center,
+                                                                                                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                                          font: GoogleFonts.plusJakartaSans(
+                                                                                                            fontWeight: FontWeight.w500,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                          ),
+                                                                                                          color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                          fontSize: 10.0,
+                                                                                                          letterSpacing: 0.0,
+                                                                                                          fontWeight: FontWeight.w500,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                        ),
+                                                                                                  ),
+                                                                                                ),
+                                                                                              ],
+                                                                                            ),
+                                                                                            Padding(
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                              child: Row(
+                                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                crossAxisAlignment: CrossAxisAlignment.end,
+                                                                                                children: [
+                                                                                                  Text(
+                                                                                                    valueOrDefault<String>(
+                                                                                                      containernumerosadminVistaResumenIngresosAdminRow?.totalExpedientes?.toString(),
+                                                                                                      '0',
+                                                                                                    ),
+                                                                                                    style: FlutterFlowTheme.of(context).displaySmall.override(
+                                                                                                          font: GoogleFonts.outfit(
+                                                                                                            fontWeight: FontWeight.w600,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                          ),
+                                                                                                          color: Color(0xFF14181B),
+                                                                                                          fontSize: 25.0,
+                                                                                                          letterSpacing: 0.0,
+                                                                                                          fontWeight: FontWeight.w600,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                        ),
+                                                                                                  ),
+                                                                                                ],
+                                                                                              ),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                  Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
+                                                                                    child: Container(
+                                                                                      width: 110.0,
+                                                                                      height: 80.0,
+                                                                                      decoration: BoxDecoration(
+                                                                                        color: Colors.white,
+                                                                                        boxShadow: [
+                                                                                          BoxShadow(
+                                                                                            blurRadius: 4.0,
+                                                                                            color: Color(0x2B202529),
+                                                                                            offset: Offset(
+                                                                                              0.0,
+                                                                                              2.0,
+                                                                                            ),
+                                                                                          )
+                                                                                        ],
+                                                                                        borderRadius: BorderRadius.circular(12.0),
+                                                                                      ),
+                                                                                      child: Padding(
+                                                                                        padding: EdgeInsets.all(12.0),
+                                                                                        child: Column(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                                                          children: [
+                                                                                            Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                                                              children: [
+                                                                                                Expanded(
+                                                                                                  child: Text(
+                                                                                                    'Demandas totales',
+                                                                                                    textAlign: TextAlign.center,
+                                                                                                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                                          font: GoogleFonts.plusJakartaSans(
+                                                                                                            fontWeight: FontWeight.w500,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                          ),
+                                                                                                          color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                          fontSize: 12.0,
+                                                                                                          letterSpacing: 0.0,
+                                                                                                          fontWeight: FontWeight.w500,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                        ),
+                                                                                                  ),
+                                                                                                ),
+                                                                                              ],
+                                                                                            ),
+                                                                                            Padding(
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                              child: Row(
+                                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                crossAxisAlignment: CrossAxisAlignment.end,
+                                                                                                children: [
+                                                                                                  Text(
+                                                                                                    valueOrDefault<String>(
+                                                                                                      containernumerosadminVistaResumenIngresosAdminRow?.totalIngresos?.toString(),
+                                                                                                      '0',
+                                                                                                    ),
+                                                                                                    style: FlutterFlowTheme.of(context).displaySmall.override(
+                                                                                                          font: GoogleFonts.outfit(
+                                                                                                            fontWeight: FontWeight.w600,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                          ),
+                                                                                                          color: Color(0xFF14181B),
+                                                                                                          fontSize: 25.0,
+                                                                                                          letterSpacing: 0.0,
+                                                                                                          fontWeight: FontWeight.w600,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                        ),
+                                                                                                  ),
+                                                                                                ],
+                                                                                              ),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                  Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
+                                                                                    child: Container(
+                                                                                      width: 110.0,
+                                                                                      height: 80.0,
+                                                                                      decoration: BoxDecoration(
+                                                                                        color: Colors.white,
+                                                                                        boxShadow: [
+                                                                                          BoxShadow(
+                                                                                            blurRadius: 4.0,
+                                                                                            color: Color(0x2B202529),
+                                                                                            offset: Offset(
+                                                                                              0.0,
+                                                                                              2.0,
+                                                                                            ),
+                                                                                          )
+                                                                                        ],
+                                                                                        borderRadius: BorderRadius.circular(12.0),
+                                                                                      ),
+                                                                                      child: Padding(
+                                                                                        padding: EdgeInsets.all(12.0),
+                                                                                        child: Column(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                                                          children: [
+                                                                                            Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                                                              children: [
+                                                                                                Expanded(
+                                                                                                  child: Text(
+                                                                                                    'Casos Abiertos',
+                                                                                                    textAlign: TextAlign.center,
+                                                                                                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                                          font: GoogleFonts.plusJakartaSans(
+                                                                                                            fontWeight: FontWeight.w500,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                          ),
+                                                                                                          color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                          fontSize: 12.0,
+                                                                                                          letterSpacing: 0.0,
+                                                                                                          fontWeight: FontWeight.w500,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                        ),
+                                                                                                  ),
+                                                                                                ),
+                                                                                              ],
+                                                                                            ),
+                                                                                            Padding(
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                              child: Row(
+                                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                crossAxisAlignment: CrossAxisAlignment.end,
+                                                                                                children: [
+                                                                                                  Text(
+                                                                                                    valueOrDefault<String>(
+                                                                                                      containernumerosadminVistaResumenIngresosAdminRow?.ingresosApertura?.toString(),
+                                                                                                      '0',
+                                                                                                    ),
+                                                                                                    style: FlutterFlowTheme.of(context).displaySmall.override(
+                                                                                                          font: GoogleFonts.outfit(
+                                                                                                            fontWeight: FontWeight.w600,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                          ),
+                                                                                                          color: Color(0xFF14181B),
+                                                                                                          fontSize: 25.0,
+                                                                                                          letterSpacing: 0.0,
+                                                                                                          fontWeight: FontWeight.w600,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                        ),
+                                                                                                  ),
+                                                                                                ],
+                                                                                              ),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                  Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
+                                                                                    child: Container(
+                                                                                      width: 110.0,
+                                                                                      height: 80.0,
+                                                                                      decoration: BoxDecoration(
+                                                                                        color: Colors.white,
+                                                                                        boxShadow: [
+                                                                                          BoxShadow(
+                                                                                            blurRadius: 4.0,
+                                                                                            color: Color(0x2B202529),
+                                                                                            offset: Offset(
+                                                                                              0.0,
+                                                                                              2.0,
+                                                                                            ),
+                                                                                          )
+                                                                                        ],
+                                                                                        borderRadius: BorderRadius.circular(12.0),
+                                                                                      ),
+                                                                                      child: Padding(
+                                                                                        padding: EdgeInsets.all(12.0),
+                                                                                        child: Column(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                                                          children: [
+                                                                                            Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                                                              children: [
+                                                                                                Expanded(
+                                                                                                  child: Text(
+                                                                                                    'Asesoramiento',
+                                                                                                    textAlign: TextAlign.center,
+                                                                                                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                                          font: GoogleFonts.plusJakartaSans(
+                                                                                                            fontWeight: FontWeight.w500,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                          ),
+                                                                                                          color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                          fontSize: 14.0,
+                                                                                                          letterSpacing: 0.0,
+                                                                                                          fontWeight: FontWeight.w500,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                          lineHeight: 1.0,
+                                                                                                        ),
+                                                                                                  ),
+                                                                                                ),
+                                                                                              ],
+                                                                                            ),
+                                                                                            Padding(
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                              child: Row(
+                                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                crossAxisAlignment: CrossAxisAlignment.end,
+                                                                                                children: [
+                                                                                                  Text(
+                                                                                                    valueOrDefault<String>(
+                                                                                                      containernumerosadminVistaResumenIngresosAdminRow?.ingresosAsesoramiento?.toString(),
+                                                                                                      '0',
+                                                                                                    ),
+                                                                                                    style: FlutterFlowTheme.of(context).displaySmall.override(
+                                                                                                          font: GoogleFonts.outfit(
+                                                                                                            fontWeight: FontWeight.w600,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                          ),
+                                                                                                          color: Color(0xFF14181B),
+                                                                                                          fontSize: 25.0,
+                                                                                                          letterSpacing: 0.0,
+                                                                                                          fontWeight: FontWeight.w600,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                        ),
+                                                                                                  ),
+                                                                                                ],
+                                                                                              ),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                  Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
+                                                                                    child: Container(
+                                                                                      width: 110.0,
+                                                                                      height: 80.0,
+                                                                                      decoration: BoxDecoration(
+                                                                                        color: Colors.white,
+                                                                                        boxShadow: [
+                                                                                          BoxShadow(
+                                                                                            blurRadius: 4.0,
+                                                                                            color: Color(0x2B202529),
+                                                                                            offset: Offset(
+                                                                                              0.0,
+                                                                                              2.0,
+                                                                                            ),
+                                                                                          )
+                                                                                        ],
+                                                                                        borderRadius: BorderRadius.circular(12.0),
+                                                                                      ),
+                                                                                      child: Padding(
+                                                                                        padding: EdgeInsets.all(12.0),
+                                                                                        child: Column(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                                                          children: [
+                                                                                            Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                                                              children: [
+                                                                                                Expanded(
+                                                                                                  child: Text(
+                                                                                                    'Solicitudes a SENAF',
+                                                                                                    textAlign: TextAlign.center,
+                                                                                                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                                          font: GoogleFonts.plusJakartaSans(
+                                                                                                            fontWeight: FontWeight.w500,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                          ),
+                                                                                                          color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                          fontSize: 14.0,
+                                                                                                          letterSpacing: 0.0,
+                                                                                                          fontWeight: FontWeight.w500,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                          lineHeight: 1.0,
+                                                                                                        ),
+                                                                                                  ),
+                                                                                                ),
+                                                                                              ],
+                                                                                            ),
+                                                                                            Padding(
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                              child: Row(
+                                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                crossAxisAlignment: CrossAxisAlignment.end,
+                                                                                                children: [
+                                                                                                  Text(
+                                                                                                    valueOrDefault<String>(
+                                                                                                      containernumerosadminVistaResumenIngresosAdminRow?.ingresosConSolicitudMedidaExcepcional?.toString(),
+                                                                                                      '0',
+                                                                                                    ),
+                                                                                                    style: FlutterFlowTheme.of(context).displaySmall.override(
+                                                                                                          font: GoogleFonts.outfit(
+                                                                                                            fontWeight: FontWeight.w600,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                          ),
+                                                                                                          color: Color(0xFF14181B),
+                                                                                                          fontSize: 25.0,
+                                                                                                          letterSpacing: 0.0,
+                                                                                                          fontWeight: FontWeight.w600,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                        ),
+                                                                                                  ),
+                                                                                                ],
+                                                                                              ),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                  Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
+                                                                                    child: Container(
+                                                                                      width: 110.0,
+                                                                                      height: 80.0,
+                                                                                      decoration: BoxDecoration(
+                                                                                        color: Colors.white,
+                                                                                        boxShadow: [
+                                                                                          BoxShadow(
+                                                                                            blurRadius: 4.0,
+                                                                                            color: Color(0x2B202529),
+                                                                                            offset: Offset(
+                                                                                              0.0,
+                                                                                              2.0,
+                                                                                            ),
+                                                                                          )
+                                                                                        ],
+                                                                                        borderRadius: BorderRadius.circular(12.0),
+                                                                                      ),
+                                                                                      child: Padding(
+                                                                                        padding: EdgeInsets.all(12.0),
+                                                                                        child: Column(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                                                          children: [
+                                                                                            Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                                                              children: [
+                                                                                                Expanded(
+                                                                                                  child: Text(
+                                                                                                    'Casos 30 dias',
+                                                                                                    textAlign: TextAlign.center,
+                                                                                                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                                          font: GoogleFonts.plusJakartaSans(
+                                                                                                            fontWeight: FontWeight.w500,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                          ),
+                                                                                                          color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                          fontSize: 12.0,
+                                                                                                          letterSpacing: 0.0,
+                                                                                                          fontWeight: FontWeight.w500,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                          lineHeight: 1.0,
+                                                                                                        ),
+                                                                                                  ),
+                                                                                                ),
+                                                                                              ],
+                                                                                            ),
+                                                                                            Padding(
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                              child: Row(
+                                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                crossAxisAlignment: CrossAxisAlignment.end,
+                                                                                                children: [
+                                                                                                  Text(
+                                                                                                    valueOrDefault<String>(
+                                                                                                      containernumerosadminVistaResumenIngresosAdminRow?.ingresosUltimos30Dias?.toString(),
+                                                                                                      '0',
+                                                                                                    ),
+                                                                                                    style: FlutterFlowTheme.of(context).displaySmall.override(
+                                                                                                          font: GoogleFonts.outfit(
+                                                                                                            fontWeight: FontWeight.w600,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                          ),
+                                                                                                          color: Color(0xFF14181B),
+                                                                                                          fontSize: 25.0,
+                                                                                                          letterSpacing: 0.0,
+                                                                                                          fontWeight: FontWeight.w600,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                        ),
+                                                                                                  ),
+                                                                                                ],
+                                                                                              ),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ],
+                                                                              ),
+                                                                            ),
+                                                                          );
+                                                                        },
+                                                                      ),
+                                                                    );
+                                                                  } else if (containerVistaUsuariosRolesRow
+                                                                          ?.rolId ==
+                                                                      2) {
+                                                                    return Visibility(
+                                                                      visible:
+                                                                          containerVistaUsuariosRolesRow?.rolId ==
+                                                                              2,
+                                                                      child:
+                                                                          Align(
+                                                                        alignment: AlignmentDirectional(
+                                                                            0.0,
+                                                                            -1.0),
+                                                                        child: FutureBuilder<
+                                                                            List<VistaResumenIngresosPorZonaRow>>(
+                                                                          future:
+                                                                              VistaResumenIngresosPorZonaTable().querySingleRow(
+                                                                            queryFn: (q) =>
+                                                                                q.eqOrNull(
+                                                                              'zona',
+                                                                              containerVistaUsuariosRolesRow?.zonaUsuario,
                                                                             ),
                                                                           ),
-                                                                        ),
-                                                                      );
-                                                                    }
-                                                                    List<VistaResumenIngresosAdminRow>
-                                                                        containernumerosadminVistaResumenIngresosAdminRowList =
-                                                                        snapshot
-                                                                            .data!;
+                                                                          builder:
+                                                                              (context, snapshot) {
+                                                                            // Customize what your widget looks like when it's loading.
+                                                                            if (!snapshot.hasData) {
+                                                                              return Center(
+                                                                                child: SizedBox(
+                                                                                  width: 50.0,
+                                                                                  height: 50.0,
+                                                                                  child: CircularProgressIndicator(
+                                                                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                                                                      FlutterFlowTheme.of(context).primary,
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              );
+                                                                            }
+                                                                            List<VistaResumenIngresosPorZonaRow>
+                                                                                containerzonaVistaResumenIngresosPorZonaRowList =
+                                                                                snapshot.data!;
 
-                                                                    final containernumerosadminVistaResumenIngresosAdminRow = containernumerosadminVistaResumenIngresosAdminRowList
-                                                                            .isNotEmpty
-                                                                        ? containernumerosadminVistaResumenIngresosAdminRowList
-                                                                            .first
-                                                                        : null;
+                                                                            final containerzonaVistaResumenIngresosPorZonaRow = containerzonaVistaResumenIngresosPorZonaRowList.isNotEmpty
+                                                                                ? containerzonaVistaResumenIngresosPorZonaRowList.first
+                                                                                : null;
 
-                                                                    return Container(
-                                                                      decoration:
-                                                                          BoxDecoration(),
-                                                                      child:
-                                                                          SingleChildScrollView(
-                                                                        scrollDirection:
-                                                                            Axis.horizontal,
-                                                                        child:
-                                                                            Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          children: [
-                                                                            Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
-                                                                              child: Container(
-                                                                                width: 110.0,
-                                                                                height: 100.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: Colors.white,
-                                                                                  boxShadow: [
-                                                                                    BoxShadow(
-                                                                                      blurRadius: 4.0,
-                                                                                      color: Color(0x2B202529),
-                                                                                      offset: Offset(
-                                                                                        0.0,
-                                                                                        2.0,
-                                                                                      ),
-                                                                                    )
-                                                                                  ],
-                                                                                  borderRadius: BorderRadius.circular(12.0),
-                                                                                ),
-                                                                                child: Padding(
-                                                                                  padding: EdgeInsets.all(12.0),
-                                                                                  child: Column(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                                                                    children: [
-                                                                                      Row(
-                                                                                        mainAxisSize: MainAxisSize.max,
-                                                                                        mainAxisAlignment: MainAxisAlignment.center,
-                                                                                        children: [
-                                                                                          Expanded(
-                                                                                            child: Text(
-                                                                                              'Expedientes',
-                                                                                              textAlign: TextAlign.center,
-                                                                                              style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                                    font: GoogleFonts.plusJakartaSans(
-                                                                                                      fontWeight: FontWeight.w500,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                    ),
-                                                                                                    color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                    fontSize: 10.0,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FontWeight.w500,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ),
-                                                                                        ],
-                                                                                      ),
-                                                                                      Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                                                                                        child: Row(
-                                                                                          mainAxisSize: MainAxisSize.max,
-                                                                                          mainAxisAlignment: MainAxisAlignment.center,
-                                                                                          crossAxisAlignment: CrossAxisAlignment.end,
-                                                                                          children: [
-                                                                                            Text(
-                                                                                              valueOrDefault<String>(
-                                                                                                containernumerosadminVistaResumenIngresosAdminRow?.totalExpedientes?.toString(),
-                                                                                                '0',
+                                                                            return Container(
+                                                                              decoration: BoxDecoration(),
+                                                                              child: SingleChildScrollView(
+                                                                                scrollDirection: Axis.horizontal,
+                                                                                child: Row(
+                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                  children: [
+                                                                                    Padding(
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
+                                                                                      child: Container(
+                                                                                        width: 110.0,
+                                                                                        height: 100.0,
+                                                                                        decoration: BoxDecoration(
+                                                                                          color: Colors.white,
+                                                                                          boxShadow: [
+                                                                                            BoxShadow(
+                                                                                              blurRadius: 4.0,
+                                                                                              color: Color(0x2B202529),
+                                                                                              offset: Offset(
+                                                                                                0.0,
+                                                                                                2.0,
                                                                                               ),
-                                                                                              style: FlutterFlowTheme.of(context).displaySmall.override(
-                                                                                                    font: GoogleFonts.outfit(
-                                                                                                      fontWeight: FontWeight.w600,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                                    ),
-                                                                                                    color: Color(0xFF14181B),
-                                                                                                    fontSize: 25.0,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FontWeight.w600,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                                  ),
-                                                                                            ),
+                                                                                            )
                                                                                           ],
+                                                                                          borderRadius: BorderRadius.circular(12.0),
+                                                                                        ),
+                                                                                        child: Padding(
+                                                                                          padding: EdgeInsets.all(12.0),
+                                                                                          child: Column(
+                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                                                            children: [
+                                                                                              Row(
+                                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                children: [
+                                                                                                  Expanded(
+                                                                                                    child: Text(
+                                                                                                      'Expedientes',
+                                                                                                      textAlign: TextAlign.center,
+                                                                                                      style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                                            font: GoogleFonts.plusJakartaSans(
+                                                                                                              fontWeight: FontWeight.w500,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                            ),
+                                                                                                            color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                            fontSize: 10.0,
+                                                                                                            letterSpacing: 0.0,
+                                                                                                            fontWeight: FontWeight.w500,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                          ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                ],
+                                                                                              ),
+                                                                                              Padding(
+                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                                child: Row(
+                                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                                  mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                                                                                  children: [
+                                                                                                    Text(
+                                                                                                      valueOrDefault<String>(
+                                                                                                        containerzonaVistaResumenIngresosPorZonaRow?.totalExpedientes?.toString(),
+                                                                                                        '0',
+                                                                                                      ),
+                                                                                                      style: FlutterFlowTheme.of(context).displaySmall.override(
+                                                                                                            font: GoogleFonts.outfit(
+                                                                                                              fontWeight: FontWeight.w600,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                            ),
+                                                                                                            color: Color(0xFF14181B),
+                                                                                                            fontSize: 25.0,
+                                                                                                            letterSpacing: 0.0,
+                                                                                                            fontWeight: FontWeight.w600,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                          ),
+                                                                                                    ),
+                                                                                                  ],
+                                                                                                ),
+                                                                                              ),
+                                                                                            ],
+                                                                                          ),
                                                                                         ),
                                                                                       ),
-                                                                                    ],
-                                                                                  ),
-                                                                                ),
-                                                                              ),
-                                                                            ),
-                                                                            Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
-                                                                              child: Container(
-                                                                                width: 110.0,
-                                                                                height: 80.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: Colors.white,
-                                                                                  boxShadow: [
-                                                                                    BoxShadow(
-                                                                                      blurRadius: 4.0,
-                                                                                      color: Color(0x2B202529),
-                                                                                      offset: Offset(
-                                                                                        0.0,
-                                                                                        2.0,
-                                                                                      ),
-                                                                                    )
-                                                                                  ],
-                                                                                  borderRadius: BorderRadius.circular(12.0),
-                                                                                ),
-                                                                                child: Padding(
-                                                                                  padding: EdgeInsets.all(12.0),
-                                                                                  child: Column(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                                                                    children: [
-                                                                                      Row(
-                                                                                        mainAxisSize: MainAxisSize.max,
-                                                                                        mainAxisAlignment: MainAxisAlignment.center,
-                                                                                        children: [
-                                                                                          Expanded(
-                                                                                            child: Text(
-                                                                                              'Demandas totales',
-                                                                                              textAlign: TextAlign.center,
-                                                                                              style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                                    font: GoogleFonts.plusJakartaSans(
-                                                                                                      fontWeight: FontWeight.w500,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                    ),
-                                                                                                    color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                    fontSize: 12.0,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FontWeight.w500,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ),
-                                                                                        ],
-                                                                                      ),
-                                                                                      Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                                                                                        child: Row(
-                                                                                          mainAxisSize: MainAxisSize.max,
-                                                                                          mainAxisAlignment: MainAxisAlignment.center,
-                                                                                          crossAxisAlignment: CrossAxisAlignment.end,
-                                                                                          children: [
-                                                                                            Text(
-                                                                                              valueOrDefault<String>(
-                                                                                                containernumerosadminVistaResumenIngresosAdminRow?.totalIngresos?.toString(),
-                                                                                                '0',
+                                                                                    ),
+                                                                                    Padding(
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
+                                                                                      child: Container(
+                                                                                        width: 110.0,
+                                                                                        height: 80.0,
+                                                                                        decoration: BoxDecoration(
+                                                                                          color: Colors.white,
+                                                                                          boxShadow: [
+                                                                                            BoxShadow(
+                                                                                              blurRadius: 4.0,
+                                                                                              color: Color(0x2B202529),
+                                                                                              offset: Offset(
+                                                                                                0.0,
+                                                                                                2.0,
                                                                                               ),
-                                                                                              style: FlutterFlowTheme.of(context).displaySmall.override(
-                                                                                                    font: GoogleFonts.outfit(
-                                                                                                      fontWeight: FontWeight.w600,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                                    ),
-                                                                                                    color: Color(0xFF14181B),
-                                                                                                    fontSize: 25.0,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FontWeight.w600,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                                  ),
-                                                                                            ),
+                                                                                            )
                                                                                           ],
+                                                                                          borderRadius: BorderRadius.circular(12.0),
+                                                                                        ),
+                                                                                        child: Padding(
+                                                                                          padding: EdgeInsets.all(12.0),
+                                                                                          child: Column(
+                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                                                            children: [
+                                                                                              Row(
+                                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                children: [
+                                                                                                  Expanded(
+                                                                                                    child: Text(
+                                                                                                      'Demandas totales',
+                                                                                                      textAlign: TextAlign.center,
+                                                                                                      style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                                            font: GoogleFonts.plusJakartaSans(
+                                                                                                              fontWeight: FontWeight.w500,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                            ),
+                                                                                                            color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                            fontSize: 12.0,
+                                                                                                            letterSpacing: 0.0,
+                                                                                                            fontWeight: FontWeight.w500,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                          ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                ],
+                                                                                              ),
+                                                                                              Padding(
+                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                                child: Row(
+                                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                                  mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                                                                                  children: [
+                                                                                                    Text(
+                                                                                                      valueOrDefault<String>(
+                                                                                                        containerzonaVistaResumenIngresosPorZonaRow?.totalIngresos?.toString(),
+                                                                                                        '0',
+                                                                                                      ),
+                                                                                                      style: FlutterFlowTheme.of(context).displaySmall.override(
+                                                                                                            font: GoogleFonts.outfit(
+                                                                                                              fontWeight: FontWeight.w600,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                            ),
+                                                                                                            color: Color(0xFF14181B),
+                                                                                                            fontSize: 25.0,
+                                                                                                            letterSpacing: 0.0,
+                                                                                                            fontWeight: FontWeight.w600,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                          ),
+                                                                                                    ),
+                                                                                                  ],
+                                                                                                ),
+                                                                                              ),
+                                                                                            ],
+                                                                                          ),
                                                                                         ),
                                                                                       ),
-                                                                                    ],
-                                                                                  ),
-                                                                                ),
-                                                                              ),
-                                                                            ),
-                                                                            Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
-                                                                              child: Container(
-                                                                                width: 110.0,
-                                                                                height: 80.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: Colors.white,
-                                                                                  boxShadow: [
-                                                                                    BoxShadow(
-                                                                                      blurRadius: 4.0,
-                                                                                      color: Color(0x2B202529),
-                                                                                      offset: Offset(
-                                                                                        0.0,
-                                                                                        2.0,
-                                                                                      ),
-                                                                                    )
-                                                                                  ],
-                                                                                  borderRadius: BorderRadius.circular(12.0),
-                                                                                ),
-                                                                                child: Padding(
-                                                                                  padding: EdgeInsets.all(12.0),
-                                                                                  child: Column(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                                                                    children: [
-                                                                                      Row(
-                                                                                        mainAxisSize: MainAxisSize.max,
-                                                                                        mainAxisAlignment: MainAxisAlignment.center,
-                                                                                        children: [
-                                                                                          Expanded(
-                                                                                            child: Text(
-                                                                                              'Casos Abiertos',
-                                                                                              textAlign: TextAlign.center,
-                                                                                              style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                                    font: GoogleFonts.plusJakartaSans(
-                                                                                                      fontWeight: FontWeight.w500,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                    ),
-                                                                                                    color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                    fontSize: 12.0,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FontWeight.w500,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ),
-                                                                                        ],
-                                                                                      ),
-                                                                                      Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                                                                                        child: Row(
-                                                                                          mainAxisSize: MainAxisSize.max,
-                                                                                          mainAxisAlignment: MainAxisAlignment.center,
-                                                                                          crossAxisAlignment: CrossAxisAlignment.end,
-                                                                                          children: [
-                                                                                            Text(
-                                                                                              valueOrDefault<String>(
-                                                                                                containernumerosadminVistaResumenIngresosAdminRow?.ingresosApertura?.toString(),
-                                                                                                '0',
+                                                                                    ),
+                                                                                    Padding(
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
+                                                                                      child: Container(
+                                                                                        width: 110.0,
+                                                                                        height: 80.0,
+                                                                                        decoration: BoxDecoration(
+                                                                                          color: Colors.white,
+                                                                                          boxShadow: [
+                                                                                            BoxShadow(
+                                                                                              blurRadius: 4.0,
+                                                                                              color: Color(0x2B202529),
+                                                                                              offset: Offset(
+                                                                                                0.0,
+                                                                                                2.0,
                                                                                               ),
-                                                                                              style: FlutterFlowTheme.of(context).displaySmall.override(
-                                                                                                    font: GoogleFonts.outfit(
-                                                                                                      fontWeight: FontWeight.w600,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                                    ),
-                                                                                                    color: Color(0xFF14181B),
-                                                                                                    fontSize: 25.0,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FontWeight.w600,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                                  ),
-                                                                                            ),
+                                                                                            )
                                                                                           ],
+                                                                                          borderRadius: BorderRadius.circular(12.0),
+                                                                                        ),
+                                                                                        child: Padding(
+                                                                                          padding: EdgeInsets.all(12.0),
+                                                                                          child: Column(
+                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                                                            children: [
+                                                                                              Row(
+                                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                children: [
+                                                                                                  Expanded(
+                                                                                                    child: Text(
+                                                                                                      'Casos Abiertos',
+                                                                                                      textAlign: TextAlign.center,
+                                                                                                      style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                                            font: GoogleFonts.plusJakartaSans(
+                                                                                                              fontWeight: FontWeight.w500,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                            ),
+                                                                                                            color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                            fontSize: 12.0,
+                                                                                                            letterSpacing: 0.0,
+                                                                                                            fontWeight: FontWeight.w500,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                          ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                ],
+                                                                                              ),
+                                                                                              Padding(
+                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                                child: Row(
+                                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                                  mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                                                                                  children: [
+                                                                                                    Text(
+                                                                                                      valueOrDefault<String>(
+                                                                                                        containerzonaVistaResumenIngresosPorZonaRow?.ingresosApertura?.toString(),
+                                                                                                        '0',
+                                                                                                      ),
+                                                                                                      style: FlutterFlowTheme.of(context).displaySmall.override(
+                                                                                                            font: GoogleFonts.outfit(
+                                                                                                              fontWeight: FontWeight.w600,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                            ),
+                                                                                                            color: Color(0xFF14181B),
+                                                                                                            fontSize: 25.0,
+                                                                                                            letterSpacing: 0.0,
+                                                                                                            fontWeight: FontWeight.w600,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                          ),
+                                                                                                    ),
+                                                                                                  ],
+                                                                                                ),
+                                                                                              ),
+                                                                                            ],
+                                                                                          ),
                                                                                         ),
                                                                                       ),
-                                                                                    ],
-                                                                                  ),
-                                                                                ),
-                                                                              ),
-                                                                            ),
-                                                                            Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
-                                                                              child: Container(
-                                                                                width: 110.0,
-                                                                                height: 80.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: Colors.white,
-                                                                                  boxShadow: [
-                                                                                    BoxShadow(
-                                                                                      blurRadius: 4.0,
-                                                                                      color: Color(0x2B202529),
-                                                                                      offset: Offset(
-                                                                                        0.0,
-                                                                                        2.0,
-                                                                                      ),
-                                                                                    )
-                                                                                  ],
-                                                                                  borderRadius: BorderRadius.circular(12.0),
-                                                                                ),
-                                                                                child: Padding(
-                                                                                  padding: EdgeInsets.all(12.0),
-                                                                                  child: Column(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                                                                    children: [
-                                                                                      Row(
-                                                                                        mainAxisSize: MainAxisSize.max,
-                                                                                        mainAxisAlignment: MainAxisAlignment.center,
-                                                                                        children: [
-                                                                                          Expanded(
-                                                                                            child: Text(
-                                                                                              'Asesoramiento',
-                                                                                              textAlign: TextAlign.center,
-                                                                                              style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                                    font: GoogleFonts.plusJakartaSans(
-                                                                                                      fontWeight: FontWeight.w500,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                    ),
-                                                                                                    color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                    fontSize: 14.0,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FontWeight.w500,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                    lineHeight: 1.0,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ),
-                                                                                        ],
-                                                                                      ),
-                                                                                      Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                                                                                        child: Row(
-                                                                                          mainAxisSize: MainAxisSize.max,
-                                                                                          mainAxisAlignment: MainAxisAlignment.center,
-                                                                                          crossAxisAlignment: CrossAxisAlignment.end,
-                                                                                          children: [
-                                                                                            Text(
-                                                                                              valueOrDefault<String>(
-                                                                                                containernumerosadminVistaResumenIngresosAdminRow?.ingresosAsesoramiento?.toString(),
-                                                                                                '0',
+                                                                                    ),
+                                                                                    Padding(
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
+                                                                                      child: Container(
+                                                                                        width: 110.0,
+                                                                                        height: 80.0,
+                                                                                        decoration: BoxDecoration(
+                                                                                          color: Colors.white,
+                                                                                          boxShadow: [
+                                                                                            BoxShadow(
+                                                                                              blurRadius: 4.0,
+                                                                                              color: Color(0x2B202529),
+                                                                                              offset: Offset(
+                                                                                                0.0,
+                                                                                                2.0,
                                                                                               ),
-                                                                                              style: FlutterFlowTheme.of(context).displaySmall.override(
-                                                                                                    font: GoogleFonts.outfit(
-                                                                                                      fontWeight: FontWeight.w600,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                                    ),
-                                                                                                    color: Color(0xFF14181B),
-                                                                                                    fontSize: 25.0,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FontWeight.w600,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                                  ),
-                                                                                            ),
+                                                                                            )
                                                                                           ],
+                                                                                          borderRadius: BorderRadius.circular(12.0),
+                                                                                        ),
+                                                                                        child: Padding(
+                                                                                          padding: EdgeInsets.all(12.0),
+                                                                                          child: Column(
+                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                                                            children: [
+                                                                                              Row(
+                                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                children: [
+                                                                                                  Expanded(
+                                                                                                    child: Text(
+                                                                                                      'Asesoramiento',
+                                                                                                      textAlign: TextAlign.center,
+                                                                                                      style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                                            font: GoogleFonts.plusJakartaSans(
+                                                                                                              fontWeight: FontWeight.w500,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                            ),
+                                                                                                            color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                            fontSize: 14.0,
+                                                                                                            letterSpacing: 0.0,
+                                                                                                            fontWeight: FontWeight.w500,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                            lineHeight: 1.0,
+                                                                                                          ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                ],
+                                                                                              ),
+                                                                                              Padding(
+                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                                child: Row(
+                                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                                  mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                                                                                  children: [
+                                                                                                    Text(
+                                                                                                      valueOrDefault<String>(
+                                                                                                        containerzonaVistaResumenIngresosPorZonaRow?.ingresosAsesoramiento?.toString(),
+                                                                                                        '0',
+                                                                                                      ),
+                                                                                                      style: FlutterFlowTheme.of(context).displaySmall.override(
+                                                                                                            font: GoogleFonts.outfit(
+                                                                                                              fontWeight: FontWeight.w600,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                            ),
+                                                                                                            color: Color(0xFF14181B),
+                                                                                                            fontSize: 25.0,
+                                                                                                            letterSpacing: 0.0,
+                                                                                                            fontWeight: FontWeight.w600,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                          ),
+                                                                                                    ),
+                                                                                                  ],
+                                                                                                ),
+                                                                                              ),
+                                                                                            ],
+                                                                                          ),
                                                                                         ),
                                                                                       ),
-                                                                                    ],
-                                                                                  ),
-                                                                                ),
-                                                                              ),
-                                                                            ),
-                                                                            Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
-                                                                              child: Container(
-                                                                                width: 110.0,
-                                                                                height: 80.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: Colors.white,
-                                                                                  boxShadow: [
-                                                                                    BoxShadow(
-                                                                                      blurRadius: 4.0,
-                                                                                      color: Color(0x2B202529),
-                                                                                      offset: Offset(
-                                                                                        0.0,
-                                                                                        2.0,
-                                                                                      ),
-                                                                                    )
-                                                                                  ],
-                                                                                  borderRadius: BorderRadius.circular(12.0),
-                                                                                ),
-                                                                                child: Padding(
-                                                                                  padding: EdgeInsets.all(12.0),
-                                                                                  child: Column(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                                                                    children: [
-                                                                                      Row(
-                                                                                        mainAxisSize: MainAxisSize.max,
-                                                                                        mainAxisAlignment: MainAxisAlignment.center,
-                                                                                        children: [
-                                                                                          Expanded(
-                                                                                            child: Text(
-                                                                                              'Solicitudes a SENAF',
-                                                                                              textAlign: TextAlign.center,
-                                                                                              style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                                    font: GoogleFonts.plusJakartaSans(
-                                                                                                      fontWeight: FontWeight.w500,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                    ),
-                                                                                                    color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                    fontSize: 14.0,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FontWeight.w500,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                    lineHeight: 1.0,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ),
-                                                                                        ],
-                                                                                      ),
-                                                                                      Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                                                                                        child: Row(
-                                                                                          mainAxisSize: MainAxisSize.max,
-                                                                                          mainAxisAlignment: MainAxisAlignment.center,
-                                                                                          crossAxisAlignment: CrossAxisAlignment.end,
-                                                                                          children: [
-                                                                                            Text(
-                                                                                              valueOrDefault<String>(
-                                                                                                containernumerosadminVistaResumenIngresosAdminRow?.ingresosConSolicitudMedidaExcepcional?.toString(),
-                                                                                                '0',
+                                                                                    ),
+                                                                                    Padding(
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
+                                                                                      child: Container(
+                                                                                        width: 110.0,
+                                                                                        height: 80.0,
+                                                                                        decoration: BoxDecoration(
+                                                                                          color: Colors.white,
+                                                                                          boxShadow: [
+                                                                                            BoxShadow(
+                                                                                              blurRadius: 4.0,
+                                                                                              color: Color(0x2B202529),
+                                                                                              offset: Offset(
+                                                                                                0.0,
+                                                                                                2.0,
                                                                                               ),
-                                                                                              style: FlutterFlowTheme.of(context).displaySmall.override(
-                                                                                                    font: GoogleFonts.outfit(
-                                                                                                      fontWeight: FontWeight.w600,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                                    ),
-                                                                                                    color: Color(0xFF14181B),
-                                                                                                    fontSize: 25.0,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FontWeight.w600,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                                  ),
-                                                                                            ),
+                                                                                            )
                                                                                           ],
+                                                                                          borderRadius: BorderRadius.circular(12.0),
+                                                                                        ),
+                                                                                        child: Padding(
+                                                                                          padding: EdgeInsets.all(12.0),
+                                                                                          child: Column(
+                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                                                            children: [
+                                                                                              Row(
+                                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                children: [
+                                                                                                  Expanded(
+                                                                                                    child: Text(
+                                                                                                      'Solicitudes a SENAF',
+                                                                                                      textAlign: TextAlign.center,
+                                                                                                      style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                                            font: GoogleFonts.plusJakartaSans(
+                                                                                                              fontWeight: FontWeight.w500,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                            ),
+                                                                                                            color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                            fontSize: 14.0,
+                                                                                                            letterSpacing: 0.0,
+                                                                                                            fontWeight: FontWeight.w500,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                            lineHeight: 1.0,
+                                                                                                          ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                ],
+                                                                                              ),
+                                                                                              Padding(
+                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                                child: Row(
+                                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                                  mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                                                                                  children: [
+                                                                                                    Text(
+                                                                                                      valueOrDefault<String>(
+                                                                                                        containerzonaVistaResumenIngresosPorZonaRow?.ingresosConSolicitudMedidaExcepcional?.toString(),
+                                                                                                        '0',
+                                                                                                      ),
+                                                                                                      style: FlutterFlowTheme.of(context).displaySmall.override(
+                                                                                                            font: GoogleFonts.outfit(
+                                                                                                              fontWeight: FontWeight.w600,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                            ),
+                                                                                                            color: Color(0xFF14181B),
+                                                                                                            fontSize: 25.0,
+                                                                                                            letterSpacing: 0.0,
+                                                                                                            fontWeight: FontWeight.w600,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                          ),
+                                                                                                    ),
+                                                                                                  ],
+                                                                                                ),
+                                                                                              ),
+                                                                                            ],
+                                                                                          ),
                                                                                         ),
                                                                                       ),
-                                                                                    ],
-                                                                                  ),
-                                                                                ),
-                                                                              ),
-                                                                            ),
-                                                                            Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
-                                                                              child: Container(
-                                                                                width: 110.0,
-                                                                                height: 80.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: Colors.white,
-                                                                                  boxShadow: [
-                                                                                    BoxShadow(
-                                                                                      blurRadius: 4.0,
-                                                                                      color: Color(0x2B202529),
-                                                                                      offset: Offset(
-                                                                                        0.0,
-                                                                                        2.0,
-                                                                                      ),
-                                                                                    )
-                                                                                  ],
-                                                                                  borderRadius: BorderRadius.circular(12.0),
-                                                                                ),
-                                                                                child: Padding(
-                                                                                  padding: EdgeInsets.all(12.0),
-                                                                                  child: Column(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                                                                    children: [
-                                                                                      Row(
-                                                                                        mainAxisSize: MainAxisSize.max,
-                                                                                        mainAxisAlignment: MainAxisAlignment.center,
-                                                                                        children: [
-                                                                                          Expanded(
-                                                                                            child: Text(
-                                                                                              'Casos 30 dias',
-                                                                                              textAlign: TextAlign.center,
-                                                                                              style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                                    font: GoogleFonts.plusJakartaSans(
-                                                                                                      fontWeight: FontWeight.w500,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                    ),
-                                                                                                    color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                    fontSize: 12.0,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FontWeight.w500,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                    lineHeight: 1.0,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ),
-                                                                                        ],
-                                                                                      ),
-                                                                                      Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                                                                                        child: Row(
-                                                                                          mainAxisSize: MainAxisSize.max,
-                                                                                          mainAxisAlignment: MainAxisAlignment.center,
-                                                                                          crossAxisAlignment: CrossAxisAlignment.end,
-                                                                                          children: [
-                                                                                            Text(
-                                                                                              valueOrDefault<String>(
-                                                                                                containernumerosadminVistaResumenIngresosAdminRow?.ingresosUltimos30Dias?.toString(),
-                                                                                                '0',
+                                                                                    ),
+                                                                                    Padding(
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
+                                                                                      child: Container(
+                                                                                        width: 110.0,
+                                                                                        height: 80.0,
+                                                                                        decoration: BoxDecoration(
+                                                                                          color: Colors.white,
+                                                                                          boxShadow: [
+                                                                                            BoxShadow(
+                                                                                              blurRadius: 4.0,
+                                                                                              color: Color(0x2B202529),
+                                                                                              offset: Offset(
+                                                                                                0.0,
+                                                                                                2.0,
                                                                                               ),
-                                                                                              style: FlutterFlowTheme.of(context).displaySmall.override(
-                                                                                                    font: GoogleFonts.outfit(
-                                                                                                      fontWeight: FontWeight.w600,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                                    ),
-                                                                                                    color: Color(0xFF14181B),
-                                                                                                    fontSize: 25.0,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FontWeight.w600,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                                  ),
-                                                                                            ),
+                                                                                            )
                                                                                           ],
+                                                                                          borderRadius: BorderRadius.circular(12.0),
+                                                                                        ),
+                                                                                        child: Padding(
+                                                                                          padding: EdgeInsets.all(12.0),
+                                                                                          child: Column(
+                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                                                            children: [
+                                                                                              Row(
+                                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                children: [
+                                                                                                  Expanded(
+                                                                                                    child: Text(
+                                                                                                      'Casos 30 dias',
+                                                                                                      textAlign: TextAlign.center,
+                                                                                                      style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                                            font: GoogleFonts.plusJakartaSans(
+                                                                                                              fontWeight: FontWeight.w500,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                            ),
+                                                                                                            color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                            fontSize: 12.0,
+                                                                                                            letterSpacing: 0.0,
+                                                                                                            fontWeight: FontWeight.w500,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                            lineHeight: 1.0,
+                                                                                                          ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                ],
+                                                                                              ),
+                                                                                              Padding(
+                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                                child: Row(
+                                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                                  mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                                                                                  children: [
+                                                                                                    Text(
+                                                                                                      valueOrDefault<String>(
+                                                                                                        containerzonaVistaResumenIngresosPorZonaRow?.ingresosUltimos30Dias?.toString(),
+                                                                                                        '0',
+                                                                                                      ),
+                                                                                                      style: FlutterFlowTheme.of(context).displaySmall.override(
+                                                                                                            font: GoogleFonts.outfit(
+                                                                                                              fontWeight: FontWeight.w600,
+                                                                                                              fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                            ),
+                                                                                                            color: Color(0xFF14181B),
+                                                                                                            fontSize: 25.0,
+                                                                                                            letterSpacing: 0.0,
+                                                                                                            fontWeight: FontWeight.w600,
+                                                                                                            fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                          ),
+                                                                                                    ),
+                                                                                                  ],
+                                                                                                ),
+                                                                                              ),
+                                                                                            ],
+                                                                                          ),
                                                                                         ),
                                                                                       ),
-                                                                                    ],
-                                                                                  ),
+                                                                                    ),
+                                                                                  ],
                                                                                 ),
                                                                               ),
-                                                                            ),
-                                                                          ],
+                                                                            );
+                                                                          },
                                                                         ),
                                                                       ),
                                                                     );
-                                                                  },
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          if (containerVistaUsuariosRolesRow
-                                                                  ?.rolId ==
-                                                              2)
-                                                            Expanded(
-                                                              child: Align(
-                                                                alignment:
-                                                                    AlignmentDirectional(
-                                                                        0.0,
-                                                                        -1.0),
-                                                                child: FutureBuilder<
-                                                                    List<
-                                                                        VistaResumenIngresosPorZonaRow>>(
-                                                                  future: VistaResumenIngresosPorZonaTable()
-                                                                      .querySingleRow(
-                                                                    queryFn: (q) =>
-                                                                        q.eqOrNull(
-                                                                      'zona',
-                                                                      containerVistaUsuariosRolesRow
-                                                                          ?.zonaUsuario,
-                                                                    ),
-                                                                  ),
-                                                                  builder: (context,
-                                                                      snapshot) {
-                                                                    // Customize what your widget looks like when it's loading.
-                                                                    if (!snapshot
-                                                                        .hasData) {
-                                                                      return Center(
+                                                                  } else if (containerVistaUsuariosRolesRow
+                                                                          ?.rolId ==
+                                                                      3) {
+                                                                    return Visibility(
+                                                                      visible:
+                                                                          containerVistaUsuariosRolesRow?.rolId ==
+                                                                              3,
+                                                                      child:
+                                                                          Align(
+                                                                        alignment: AlignmentDirectional(
+                                                                            0.0,
+                                                                            -1.0),
                                                                         child:
-                                                                            SizedBox(
-                                                                          width:
-                                                                              50.0,
-                                                                          height:
-                                                                              50.0,
+                                                                            Container(
+                                                                          decoration:
+                                                                              BoxDecoration(),
                                                                           child:
-                                                                              CircularProgressIndicator(
-                                                                            valueColor:
-                                                                                AlwaysStoppedAnimation<Color>(
-                                                                              FlutterFlowTheme.of(context).primary,
+                                                                              SingleChildScrollView(
+                                                                            scrollDirection:
+                                                                                Axis.horizontal,
+                                                                            child:
+                                                                                Row(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              children: [
+                                                                                Padding(
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
+                                                                                  child: Container(
+                                                                                    width: 110.0,
+                                                                                    height: 100.0,
+                                                                                    decoration: BoxDecoration(
+                                                                                      color: Colors.white,
+                                                                                      boxShadow: [
+                                                                                        BoxShadow(
+                                                                                          blurRadius: 4.0,
+                                                                                          color: Color(0x2B202529),
+                                                                                          offset: Offset(
+                                                                                            0.0,
+                                                                                            2.0,
+                                                                                          ),
+                                                                                        )
+                                                                                      ],
+                                                                                      borderRadius: BorderRadius.circular(12.0),
+                                                                                    ),
+                                                                                    child: Padding(
+                                                                                      padding: EdgeInsets.all(12.0),
+                                                                                      child: Column(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                                                        children: [
+                                                                                          Row(
+                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                            mainAxisAlignment: MainAxisAlignment.center,
+                                                                                            children: [
+                                                                                              Expanded(
+                                                                                                child: Text(
+                                                                                                  'Expedientes',
+                                                                                                  textAlign: TextAlign.center,
+                                                                                                  style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                                        font: GoogleFonts.plusJakartaSans(
+                                                                                                          fontWeight: FontWeight.w500,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                        ),
+                                                                                                        color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                        fontSize: 10.0,
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FontWeight.w500,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ),
+                                                                                            ],
+                                                                                          ),
+                                                                                          Padding(
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                            child: Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                                                              crossAxisAlignment: CrossAxisAlignment.end,
+                                                                                              children: [
+                                                                                                Text(
+                                                                                                  valueOrDefault<String>(
+                                                                                                    containerVistaResumenIngresosPorSpdRow?.totalExpedientes?.toString(),
+                                                                                                    '0',
+                                                                                                  ),
+                                                                                                  style: FlutterFlowTheme.of(context).displaySmall.override(
+                                                                                                        font: GoogleFonts.outfit(
+                                                                                                          fontWeight: FontWeight.w600,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                        ),
+                                                                                                        color: Color(0xFF14181B),
+                                                                                                        fontSize: 25.0,
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FontWeight.w600,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ],
+                                                                                            ),
+                                                                                          ),
+                                                                                        ],
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                                Padding(
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
+                                                                                  child: Container(
+                                                                                    width: 110.0,
+                                                                                    height: 80.0,
+                                                                                    decoration: BoxDecoration(
+                                                                                      color: Colors.white,
+                                                                                      boxShadow: [
+                                                                                        BoxShadow(
+                                                                                          blurRadius: 4.0,
+                                                                                          color: Color(0x2B202529),
+                                                                                          offset: Offset(
+                                                                                            0.0,
+                                                                                            2.0,
+                                                                                          ),
+                                                                                        )
+                                                                                      ],
+                                                                                      borderRadius: BorderRadius.circular(12.0),
+                                                                                    ),
+                                                                                    child: Padding(
+                                                                                      padding: EdgeInsets.all(12.0),
+                                                                                      child: Column(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                                                        children: [
+                                                                                          Row(
+                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                            mainAxisAlignment: MainAxisAlignment.center,
+                                                                                            children: [
+                                                                                              Expanded(
+                                                                                                child: Text(
+                                                                                                  'Demandas totales',
+                                                                                                  textAlign: TextAlign.center,
+                                                                                                  style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                                        font: GoogleFonts.plusJakartaSans(
+                                                                                                          fontWeight: FontWeight.w500,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                        ),
+                                                                                                        color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                        fontSize: 12.0,
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FontWeight.w500,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ),
+                                                                                            ],
+                                                                                          ),
+                                                                                          Padding(
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                            child: Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                                                              crossAxisAlignment: CrossAxisAlignment.end,
+                                                                                              children: [
+                                                                                                Text(
+                                                                                                  valueOrDefault<String>(
+                                                                                                    containerVistaResumenIngresosPorSpdRow?.totalIngresos?.toString(),
+                                                                                                    '0',
+                                                                                                  ),
+                                                                                                  style: FlutterFlowTheme.of(context).displaySmall.override(
+                                                                                                        font: GoogleFonts.outfit(
+                                                                                                          fontWeight: FontWeight.w600,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                        ),
+                                                                                                        color: Color(0xFF14181B),
+                                                                                                        fontSize: 25.0,
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FontWeight.w600,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ],
+                                                                                            ),
+                                                                                          ),
+                                                                                        ],
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                                Padding(
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
+                                                                                  child: Container(
+                                                                                    width: 110.0,
+                                                                                    height: 80.0,
+                                                                                    decoration: BoxDecoration(
+                                                                                      color: Colors.white,
+                                                                                      boxShadow: [
+                                                                                        BoxShadow(
+                                                                                          blurRadius: 4.0,
+                                                                                          color: Color(0x2B202529),
+                                                                                          offset: Offset(
+                                                                                            0.0,
+                                                                                            2.0,
+                                                                                          ),
+                                                                                        )
+                                                                                      ],
+                                                                                      borderRadius: BorderRadius.circular(12.0),
+                                                                                    ),
+                                                                                    child: Padding(
+                                                                                      padding: EdgeInsets.all(12.0),
+                                                                                      child: Column(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                                                        children: [
+                                                                                          Row(
+                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                            mainAxisAlignment: MainAxisAlignment.center,
+                                                                                            children: [
+                                                                                              Expanded(
+                                                                                                child: Text(
+                                                                                                  'Casos Abiertos',
+                                                                                                  textAlign: TextAlign.center,
+                                                                                                  style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                                        font: GoogleFonts.plusJakartaSans(
+                                                                                                          fontWeight: FontWeight.w500,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                        ),
+                                                                                                        color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                        fontSize: 12.0,
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FontWeight.w500,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ),
+                                                                                            ],
+                                                                                          ),
+                                                                                          Padding(
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                            child: Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                                                              crossAxisAlignment: CrossAxisAlignment.end,
+                                                                                              children: [
+                                                                                                Text(
+                                                                                                  valueOrDefault<String>(
+                                                                                                    containerVistaResumenIngresosPorSpdRow?.ingresosApertura?.toString(),
+                                                                                                    '0',
+                                                                                                  ),
+                                                                                                  style: FlutterFlowTheme.of(context).displaySmall.override(
+                                                                                                        font: GoogleFonts.outfit(
+                                                                                                          fontWeight: FontWeight.w600,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                        ),
+                                                                                                        color: Color(0xFF14181B),
+                                                                                                        fontSize: 25.0,
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FontWeight.w600,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ],
+                                                                                            ),
+                                                                                          ),
+                                                                                        ],
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                                Padding(
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
+                                                                                  child: Container(
+                                                                                    width: 110.0,
+                                                                                    height: 80.0,
+                                                                                    decoration: BoxDecoration(
+                                                                                      color: Colors.white,
+                                                                                      boxShadow: [
+                                                                                        BoxShadow(
+                                                                                          blurRadius: 4.0,
+                                                                                          color: Color(0x2B202529),
+                                                                                          offset: Offset(
+                                                                                            0.0,
+                                                                                            2.0,
+                                                                                          ),
+                                                                                        )
+                                                                                      ],
+                                                                                      borderRadius: BorderRadius.circular(12.0),
+                                                                                    ),
+                                                                                    child: Padding(
+                                                                                      padding: EdgeInsets.all(12.0),
+                                                                                      child: Column(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                                                        children: [
+                                                                                          Row(
+                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                            mainAxisAlignment: MainAxisAlignment.center,
+                                                                                            children: [
+                                                                                              Expanded(
+                                                                                                child: Text(
+                                                                                                  'Asesoramiento',
+                                                                                                  textAlign: TextAlign.center,
+                                                                                                  style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                                        font: GoogleFonts.plusJakartaSans(
+                                                                                                          fontWeight: FontWeight.w500,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                        ),
+                                                                                                        color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                        fontSize: 14.0,
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FontWeight.w500,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                        lineHeight: 1.0,
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ),
+                                                                                            ],
+                                                                                          ),
+                                                                                          Padding(
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                            child: Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                                                              crossAxisAlignment: CrossAxisAlignment.end,
+                                                                                              children: [
+                                                                                                Text(
+                                                                                                  valueOrDefault<String>(
+                                                                                                    containerVistaResumenIngresosPorSpdRow?.ingresosAsesoramiento?.toString(),
+                                                                                                    '0',
+                                                                                                  ),
+                                                                                                  style: FlutterFlowTheme.of(context).displaySmall.override(
+                                                                                                        font: GoogleFonts.outfit(
+                                                                                                          fontWeight: FontWeight.w600,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                        ),
+                                                                                                        color: Color(0xFF14181B),
+                                                                                                        fontSize: 25.0,
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FontWeight.w600,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ],
+                                                                                            ),
+                                                                                          ),
+                                                                                        ],
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                                Padding(
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
+                                                                                  child: Container(
+                                                                                    width: 110.0,
+                                                                                    height: 80.0,
+                                                                                    decoration: BoxDecoration(
+                                                                                      color: Colors.white,
+                                                                                      boxShadow: [
+                                                                                        BoxShadow(
+                                                                                          blurRadius: 4.0,
+                                                                                          color: Color(0x2B202529),
+                                                                                          offset: Offset(
+                                                                                            0.0,
+                                                                                            2.0,
+                                                                                          ),
+                                                                                        )
+                                                                                      ],
+                                                                                      borderRadius: BorderRadius.circular(12.0),
+                                                                                    ),
+                                                                                    child: Padding(
+                                                                                      padding: EdgeInsets.all(12.0),
+                                                                                      child: Column(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                                                        children: [
+                                                                                          Row(
+                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                            mainAxisAlignment: MainAxisAlignment.center,
+                                                                                            children: [
+                                                                                              Expanded(
+                                                                                                child: Text(
+                                                                                                  'Solicitudes a SENAF',
+                                                                                                  textAlign: TextAlign.center,
+                                                                                                  style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                                        font: GoogleFonts.plusJakartaSans(
+                                                                                                          fontWeight: FontWeight.w500,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                        ),
+                                                                                                        color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                        fontSize: 14.0,
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FontWeight.w500,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                        lineHeight: 1.0,
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ),
+                                                                                            ],
+                                                                                          ),
+                                                                                          Padding(
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                            child: Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                                                              crossAxisAlignment: CrossAxisAlignment.end,
+                                                                                              children: [
+                                                                                                Text(
+                                                                                                  valueOrDefault<String>(
+                                                                                                    containerVistaResumenIngresosPorSpdRow?.ingresosConSolicitudMedidaExcepcional?.toString(),
+                                                                                                    '0',
+                                                                                                  ),
+                                                                                                  style: FlutterFlowTheme.of(context).displaySmall.override(
+                                                                                                        font: GoogleFonts.outfit(
+                                                                                                          fontWeight: FontWeight.w600,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                        ),
+                                                                                                        color: Color(0xFF14181B),
+                                                                                                        fontSize: 25.0,
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FontWeight.w600,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ],
+                                                                                            ),
+                                                                                          ),
+                                                                                        ],
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                                Padding(
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
+                                                                                  child: Container(
+                                                                                    width: 110.0,
+                                                                                    height: 80.0,
+                                                                                    decoration: BoxDecoration(
+                                                                                      color: Colors.white,
+                                                                                      boxShadow: [
+                                                                                        BoxShadow(
+                                                                                          blurRadius: 4.0,
+                                                                                          color: Color(0x2B202529),
+                                                                                          offset: Offset(
+                                                                                            0.0,
+                                                                                            2.0,
+                                                                                          ),
+                                                                                        )
+                                                                                      ],
+                                                                                      borderRadius: BorderRadius.circular(12.0),
+                                                                                    ),
+                                                                                    child: Padding(
+                                                                                      padding: EdgeInsets.all(12.0),
+                                                                                      child: Column(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                                                        children: [
+                                                                                          Row(
+                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                            mainAxisAlignment: MainAxisAlignment.center,
+                                                                                            children: [
+                                                                                              Expanded(
+                                                                                                child: Text(
+                                                                                                  'Casos 30 dias',
+                                                                                                  textAlign: TextAlign.center,
+                                                                                                  style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                                        font: GoogleFonts.plusJakartaSans(
+                                                                                                          fontWeight: FontWeight.w500,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                        ),
+                                                                                                        color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                        fontSize: 12.0,
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FontWeight.w500,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                        lineHeight: 1.0,
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ),
+                                                                                            ],
+                                                                                          ),
+                                                                                          Padding(
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                            child: Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                                                              crossAxisAlignment: CrossAxisAlignment.end,
+                                                                                              children: [
+                                                                                                Text(
+                                                                                                  valueOrDefault<String>(
+                                                                                                    containerVistaResumenIngresosPorSpdRow?.ingresosUltimos30Dias?.toString(),
+                                                                                                    '0',
+                                                                                                  ),
+                                                                                                  style: FlutterFlowTheme.of(context).displaySmall.override(
+                                                                                                        font: GoogleFonts.outfit(
+                                                                                                          fontWeight: FontWeight.w600,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                        ),
+                                                                                                        color: Color(0xFF14181B),
+                                                                                                        fontSize: 25.0,
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FontWeight.w600,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ],
+                                                                                            ),
+                                                                                          ),
+                                                                                        ],
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ],
                                                                             ),
                                                                           ),
-                                                                        ),
-                                                                      );
-                                                                    }
-                                                                    List<VistaResumenIngresosPorZonaRow>
-                                                                        containerVistaResumenIngresosPorZonaRowList =
-                                                                        snapshot
-                                                                            .data!;
-
-                                                                    final containerVistaResumenIngresosPorZonaRow = containerVistaResumenIngresosPorZonaRowList
-                                                                            .isNotEmpty
-                                                                        ? containerVistaResumenIngresosPorZonaRowList
-                                                                            .first
-                                                                        : null;
-
-                                                                    return Container(
-                                                                      decoration:
-                                                                          BoxDecoration(),
-                                                                      child:
-                                                                          SingleChildScrollView(
-                                                                        scrollDirection:
-                                                                            Axis.horizontal,
-                                                                        child:
-                                                                            Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          children: [
-                                                                            Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
-                                                                              child: Container(
-                                                                                width: 110.0,
-                                                                                height: 100.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: Colors.white,
-                                                                                  boxShadow: [
-                                                                                    BoxShadow(
-                                                                                      blurRadius: 4.0,
-                                                                                      color: Color(0x2B202529),
-                                                                                      offset: Offset(
-                                                                                        0.0,
-                                                                                        2.0,
-                                                                                      ),
-                                                                                    )
-                                                                                  ],
-                                                                                  borderRadius: BorderRadius.circular(12.0),
-                                                                                ),
-                                                                                child: Padding(
-                                                                                  padding: EdgeInsets.all(12.0),
-                                                                                  child: Column(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                                                                    children: [
-                                                                                      Row(
-                                                                                        mainAxisSize: MainAxisSize.max,
-                                                                                        mainAxisAlignment: MainAxisAlignment.center,
-                                                                                        children: [
-                                                                                          Expanded(
-                                                                                            child: Text(
-                                                                                              'Expedientes',
-                                                                                              textAlign: TextAlign.center,
-                                                                                              style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                                    font: GoogleFonts.plusJakartaSans(
-                                                                                                      fontWeight: FontWeight.w500,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                    ),
-                                                                                                    color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                    fontSize: 10.0,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FontWeight.w500,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ),
-                                                                                        ],
-                                                                                      ),
-                                                                                      Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                                                                                        child: Row(
-                                                                                          mainAxisSize: MainAxisSize.max,
-                                                                                          mainAxisAlignment: MainAxisAlignment.center,
-                                                                                          crossAxisAlignment: CrossAxisAlignment.end,
-                                                                                          children: [
-                                                                                            Text(
-                                                                                              valueOrDefault<String>(
-                                                                                                containerVistaResumenIngresosPorZonaRow?.totalExpedientes?.toString(),
-                                                                                                '0',
-                                                                                              ),
-                                                                                              style: FlutterFlowTheme.of(context).displaySmall.override(
-                                                                                                    font: GoogleFonts.outfit(
-                                                                                                      fontWeight: FontWeight.w600,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                                    ),
-                                                                                                    color: Color(0xFF14181B),
-                                                                                                    fontSize: 25.0,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FontWeight.w600,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ],
-                                                                                        ),
-                                                                                      ),
-                                                                                    ],
-                                                                                  ),
-                                                                                ),
-                                                                              ),
-                                                                            ),
-                                                                            Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
-                                                                              child: Container(
-                                                                                width: 110.0,
-                                                                                height: 80.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: Colors.white,
-                                                                                  boxShadow: [
-                                                                                    BoxShadow(
-                                                                                      blurRadius: 4.0,
-                                                                                      color: Color(0x2B202529),
-                                                                                      offset: Offset(
-                                                                                        0.0,
-                                                                                        2.0,
-                                                                                      ),
-                                                                                    )
-                                                                                  ],
-                                                                                  borderRadius: BorderRadius.circular(12.0),
-                                                                                ),
-                                                                                child: Padding(
-                                                                                  padding: EdgeInsets.all(12.0),
-                                                                                  child: Column(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                                                                    children: [
-                                                                                      Row(
-                                                                                        mainAxisSize: MainAxisSize.max,
-                                                                                        mainAxisAlignment: MainAxisAlignment.center,
-                                                                                        children: [
-                                                                                          Expanded(
-                                                                                            child: Text(
-                                                                                              'Demandas totales',
-                                                                                              textAlign: TextAlign.center,
-                                                                                              style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                                    font: GoogleFonts.plusJakartaSans(
-                                                                                                      fontWeight: FontWeight.w500,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                    ),
-                                                                                                    color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                    fontSize: 12.0,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FontWeight.w500,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ),
-                                                                                        ],
-                                                                                      ),
-                                                                                      Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                                                                                        child: Row(
-                                                                                          mainAxisSize: MainAxisSize.max,
-                                                                                          mainAxisAlignment: MainAxisAlignment.center,
-                                                                                          crossAxisAlignment: CrossAxisAlignment.end,
-                                                                                          children: [
-                                                                                            Text(
-                                                                                              valueOrDefault<String>(
-                                                                                                containerVistaResumenIngresosPorZonaRow?.totalIngresos?.toString(),
-                                                                                                '0',
-                                                                                              ),
-                                                                                              style: FlutterFlowTheme.of(context).displaySmall.override(
-                                                                                                    font: GoogleFonts.outfit(
-                                                                                                      fontWeight: FontWeight.w600,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                                    ),
-                                                                                                    color: Color(0xFF14181B),
-                                                                                                    fontSize: 25.0,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FontWeight.w600,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ],
-                                                                                        ),
-                                                                                      ),
-                                                                                    ],
-                                                                                  ),
-                                                                                ),
-                                                                              ),
-                                                                            ),
-                                                                            Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
-                                                                              child: Container(
-                                                                                width: 110.0,
-                                                                                height: 80.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: Colors.white,
-                                                                                  boxShadow: [
-                                                                                    BoxShadow(
-                                                                                      blurRadius: 4.0,
-                                                                                      color: Color(0x2B202529),
-                                                                                      offset: Offset(
-                                                                                        0.0,
-                                                                                        2.0,
-                                                                                      ),
-                                                                                    )
-                                                                                  ],
-                                                                                  borderRadius: BorderRadius.circular(12.0),
-                                                                                ),
-                                                                                child: Padding(
-                                                                                  padding: EdgeInsets.all(12.0),
-                                                                                  child: Column(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                                                                    children: [
-                                                                                      Row(
-                                                                                        mainAxisSize: MainAxisSize.max,
-                                                                                        mainAxisAlignment: MainAxisAlignment.center,
-                                                                                        children: [
-                                                                                          Expanded(
-                                                                                            child: Text(
-                                                                                              'Casos Abiertos',
-                                                                                              textAlign: TextAlign.center,
-                                                                                              style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                                    font: GoogleFonts.plusJakartaSans(
-                                                                                                      fontWeight: FontWeight.w500,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                    ),
-                                                                                                    color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                    fontSize: 12.0,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FontWeight.w500,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ),
-                                                                                        ],
-                                                                                      ),
-                                                                                      Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                                                                                        child: Row(
-                                                                                          mainAxisSize: MainAxisSize.max,
-                                                                                          mainAxisAlignment: MainAxisAlignment.center,
-                                                                                          crossAxisAlignment: CrossAxisAlignment.end,
-                                                                                          children: [
-                                                                                            Text(
-                                                                                              valueOrDefault<String>(
-                                                                                                containerVistaResumenIngresosPorZonaRow?.ingresosApertura?.toString(),
-                                                                                                '0',
-                                                                                              ),
-                                                                                              style: FlutterFlowTheme.of(context).displaySmall.override(
-                                                                                                    font: GoogleFonts.outfit(
-                                                                                                      fontWeight: FontWeight.w600,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                                    ),
-                                                                                                    color: Color(0xFF14181B),
-                                                                                                    fontSize: 25.0,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FontWeight.w600,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ],
-                                                                                        ),
-                                                                                      ),
-                                                                                    ],
-                                                                                  ),
-                                                                                ),
-                                                                              ),
-                                                                            ),
-                                                                            Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
-                                                                              child: Container(
-                                                                                width: 110.0,
-                                                                                height: 80.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: Colors.white,
-                                                                                  boxShadow: [
-                                                                                    BoxShadow(
-                                                                                      blurRadius: 4.0,
-                                                                                      color: Color(0x2B202529),
-                                                                                      offset: Offset(
-                                                                                        0.0,
-                                                                                        2.0,
-                                                                                      ),
-                                                                                    )
-                                                                                  ],
-                                                                                  borderRadius: BorderRadius.circular(12.0),
-                                                                                ),
-                                                                                child: Padding(
-                                                                                  padding: EdgeInsets.all(12.0),
-                                                                                  child: Column(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                                                                    children: [
-                                                                                      Row(
-                                                                                        mainAxisSize: MainAxisSize.max,
-                                                                                        mainAxisAlignment: MainAxisAlignment.center,
-                                                                                        children: [
-                                                                                          Expanded(
-                                                                                            child: Text(
-                                                                                              'Asesoramiento',
-                                                                                              textAlign: TextAlign.center,
-                                                                                              style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                                    font: GoogleFonts.plusJakartaSans(
-                                                                                                      fontWeight: FontWeight.w500,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                    ),
-                                                                                                    color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                    fontSize: 14.0,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FontWeight.w500,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                    lineHeight: 1.0,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ),
-                                                                                        ],
-                                                                                      ),
-                                                                                      Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                                                                                        child: Row(
-                                                                                          mainAxisSize: MainAxisSize.max,
-                                                                                          mainAxisAlignment: MainAxisAlignment.center,
-                                                                                          crossAxisAlignment: CrossAxisAlignment.end,
-                                                                                          children: [
-                                                                                            Text(
-                                                                                              valueOrDefault<String>(
-                                                                                                containerVistaResumenIngresosPorZonaRow?.ingresosAsesoramiento?.toString(),
-                                                                                                '0',
-                                                                                              ),
-                                                                                              style: FlutterFlowTheme.of(context).displaySmall.override(
-                                                                                                    font: GoogleFonts.outfit(
-                                                                                                      fontWeight: FontWeight.w600,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                                    ),
-                                                                                                    color: Color(0xFF14181B),
-                                                                                                    fontSize: 25.0,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FontWeight.w600,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ],
-                                                                                        ),
-                                                                                      ),
-                                                                                    ],
-                                                                                  ),
-                                                                                ),
-                                                                              ),
-                                                                            ),
-                                                                            Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
-                                                                              child: Container(
-                                                                                width: 110.0,
-                                                                                height: 80.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: Colors.white,
-                                                                                  boxShadow: [
-                                                                                    BoxShadow(
-                                                                                      blurRadius: 4.0,
-                                                                                      color: Color(0x2B202529),
-                                                                                      offset: Offset(
-                                                                                        0.0,
-                                                                                        2.0,
-                                                                                      ),
-                                                                                    )
-                                                                                  ],
-                                                                                  borderRadius: BorderRadius.circular(12.0),
-                                                                                ),
-                                                                                child: Padding(
-                                                                                  padding: EdgeInsets.all(12.0),
-                                                                                  child: Column(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                                                                    children: [
-                                                                                      Row(
-                                                                                        mainAxisSize: MainAxisSize.max,
-                                                                                        mainAxisAlignment: MainAxisAlignment.center,
-                                                                                        children: [
-                                                                                          Expanded(
-                                                                                            child: Text(
-                                                                                              'Solicitudes a SENAF',
-                                                                                              textAlign: TextAlign.center,
-                                                                                              style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                                    font: GoogleFonts.plusJakartaSans(
-                                                                                                      fontWeight: FontWeight.w500,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                    ),
-                                                                                                    color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                    fontSize: 14.0,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FontWeight.w500,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                    lineHeight: 1.0,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ),
-                                                                                        ],
-                                                                                      ),
-                                                                                      Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                                                                                        child: Row(
-                                                                                          mainAxisSize: MainAxisSize.max,
-                                                                                          mainAxisAlignment: MainAxisAlignment.center,
-                                                                                          crossAxisAlignment: CrossAxisAlignment.end,
-                                                                                          children: [
-                                                                                            Text(
-                                                                                              valueOrDefault<String>(
-                                                                                                containerVistaResumenIngresosPorZonaRow?.ingresosConSolicitudMedidaExcepcional?.toString(),
-                                                                                                '0',
-                                                                                              ),
-                                                                                              style: FlutterFlowTheme.of(context).displaySmall.override(
-                                                                                                    font: GoogleFonts.outfit(
-                                                                                                      fontWeight: FontWeight.w600,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                                    ),
-                                                                                                    color: Color(0xFF14181B),
-                                                                                                    fontSize: 25.0,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FontWeight.w600,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ],
-                                                                                        ),
-                                                                                      ),
-                                                                                    ],
-                                                                                  ),
-                                                                                ),
-                                                                              ),
-                                                                            ),
-                                                                            Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
-                                                                              child: Container(
-                                                                                width: 110.0,
-                                                                                height: 80.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: Colors.white,
-                                                                                  boxShadow: [
-                                                                                    BoxShadow(
-                                                                                      blurRadius: 4.0,
-                                                                                      color: Color(0x2B202529),
-                                                                                      offset: Offset(
-                                                                                        0.0,
-                                                                                        2.0,
-                                                                                      ),
-                                                                                    )
-                                                                                  ],
-                                                                                  borderRadius: BorderRadius.circular(12.0),
-                                                                                ),
-                                                                                child: Padding(
-                                                                                  padding: EdgeInsets.all(12.0),
-                                                                                  child: Column(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                                                                    children: [
-                                                                                      Row(
-                                                                                        mainAxisSize: MainAxisSize.max,
-                                                                                        mainAxisAlignment: MainAxisAlignment.center,
-                                                                                        children: [
-                                                                                          Expanded(
-                                                                                            child: Text(
-                                                                                              'Casos 30 dias',
-                                                                                              textAlign: TextAlign.center,
-                                                                                              style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                                    font: GoogleFonts.plusJakartaSans(
-                                                                                                      fontWeight: FontWeight.w500,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                    ),
-                                                                                                    color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                    fontSize: 12.0,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FontWeight.w500,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                    lineHeight: 1.0,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ),
-                                                                                        ],
-                                                                                      ),
-                                                                                      Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                                                                                        child: Row(
-                                                                                          mainAxisSize: MainAxisSize.max,
-                                                                                          mainAxisAlignment: MainAxisAlignment.center,
-                                                                                          crossAxisAlignment: CrossAxisAlignment.end,
-                                                                                          children: [
-                                                                                            Text(
-                                                                                              valueOrDefault<String>(
-                                                                                                containerVistaResumenIngresosPorZonaRow?.ingresosUltimos30Dias?.toString(),
-                                                                                                '0',
-                                                                                              ),
-                                                                                              style: FlutterFlowTheme.of(context).displaySmall.override(
-                                                                                                    font: GoogleFonts.outfit(
-                                                                                                      fontWeight: FontWeight.w600,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                                    ),
-                                                                                                    color: Color(0xFF14181B),
-                                                                                                    fontSize: 25.0,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FontWeight.w600,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ],
-                                                                                        ),
-                                                                                      ),
-                                                                                    ],
-                                                                                  ),
-                                                                                ),
-                                                                              ),
-                                                                            ),
-                                                                          ],
                                                                         ),
                                                                       ),
                                                                     );
-                                                                  },
-                                                                ),
+                                                                  } else {
+                                                                    return Container(
+                                                                      width:
+                                                                          400.0,
+                                                                      height:
+                                                                          50.0,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryBackground,
+                                                                      ),
+                                                                      child:
+                                                                          Align(
+                                                                        alignment: AlignmentDirectional(
+                                                                            0.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Text(
+                                                                          'Sin rol asignado',
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                font: GoogleFonts.notoSansJp(
+                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                ),
+                                                                                letterSpacing: 0.0,
+                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                              ),
+                                                                        ),
+                                                                      ),
+                                                                    );
+                                                                  }
+                                                                },
                                                               ),
                                                             ),
-                                                          if (containerVistaUsuariosRolesRow
-                                                                  ?.rolId ==
-                                                              3)
-                                                            Expanded(
-                                                              child: Align(
-                                                                alignment:
-                                                                    AlignmentDirectional(
-                                                                        0.0,
-                                                                        -1.0),
-                                                                child:
-                                                                    Container(
-                                                                  decoration:
-                                                                      BoxDecoration(),
-                                                                  child:
-                                                                      SingleChildScrollView(
-                                                                    scrollDirection:
-                                                                        Axis.horizontal,
-                                                                    child: Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      children: [
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              12.0,
-                                                                              12.0,
-                                                                              0.0,
-                                                                              12.0),
-                                                                          child:
-                                                                              Container(
-                                                                            width:
-                                                                                110.0,
-                                                                            height:
-                                                                                100.0,
-                                                                            decoration:
-                                                                                BoxDecoration(
-                                                                              color: Colors.white,
-                                                                              boxShadow: [
-                                                                                BoxShadow(
-                                                                                  blurRadius: 4.0,
-                                                                                  color: Color(0x2B202529),
-                                                                                  offset: Offset(
-                                                                                    0.0,
-                                                                                    2.0,
-                                                                                  ),
-                                                                                )
-                                                                              ],
-                                                                              borderRadius: BorderRadius.circular(12.0),
-                                                                            ),
-                                                                            child:
-                                                                                Padding(
-                                                                              padding: EdgeInsets.all(12.0),
-                                                                              child: Column(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                                                                children: [
-                                                                                  Row(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    mainAxisAlignment: MainAxisAlignment.center,
-                                                                                    children: [
-                                                                                      Expanded(
-                                                                                        child: Text(
-                                                                                          'Expedientes',
-                                                                                          textAlign: TextAlign.center,
-                                                                                          style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                                font: GoogleFonts.plusJakartaSans(
-                                                                                                  fontWeight: FontWeight.w500,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                ),
-                                                                                                color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                fontSize: 10.0,
-                                                                                                letterSpacing: 0.0,
-                                                                                                fontWeight: FontWeight.w500,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                              ),
-                                                                                        ),
-                                                                                      ),
-                                                                                    ],
-                                                                                  ),
-                                                                                  Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                                                                                    child: Row(
-                                                                                      mainAxisSize: MainAxisSize.max,
-                                                                                      mainAxisAlignment: MainAxisAlignment.center,
-                                                                                      crossAxisAlignment: CrossAxisAlignment.end,
-                                                                                      children: [
-                                                                                        Text(
-                                                                                          valueOrDefault<String>(
-                                                                                            containerVistaResumenIngresosPorSpdRow?.totalExpedientes?.toString(),
-                                                                                            '0',
-                                                                                          ),
-                                                                                          style: FlutterFlowTheme.of(context).displaySmall.override(
-                                                                                                font: GoogleFonts.outfit(
-                                                                                                  fontWeight: FontWeight.w600,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                                ),
-                                                                                                color: Color(0xFF14181B),
-                                                                                                fontSize: 25.0,
-                                                                                                letterSpacing: 0.0,
-                                                                                                fontWeight: FontWeight.w600,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                              ),
-                                                                                        ),
-                                                                                      ],
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              12.0,
-                                                                              12.0,
-                                                                              0.0,
-                                                                              12.0),
-                                                                          child:
-                                                                              Container(
-                                                                            width:
-                                                                                110.0,
-                                                                            height:
-                                                                                80.0,
-                                                                            decoration:
-                                                                                BoxDecoration(
-                                                                              color: Colors.white,
-                                                                              boxShadow: [
-                                                                                BoxShadow(
-                                                                                  blurRadius: 4.0,
-                                                                                  color: Color(0x2B202529),
-                                                                                  offset: Offset(
-                                                                                    0.0,
-                                                                                    2.0,
-                                                                                  ),
-                                                                                )
-                                                                              ],
-                                                                              borderRadius: BorderRadius.circular(12.0),
-                                                                            ),
-                                                                            child:
-                                                                                Padding(
-                                                                              padding: EdgeInsets.all(12.0),
-                                                                              child: Column(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                                                                children: [
-                                                                                  Row(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    mainAxisAlignment: MainAxisAlignment.center,
-                                                                                    children: [
-                                                                                      Expanded(
-                                                                                        child: Text(
-                                                                                          'Demandas totales',
-                                                                                          textAlign: TextAlign.center,
-                                                                                          style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                                font: GoogleFonts.plusJakartaSans(
-                                                                                                  fontWeight: FontWeight.w500,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                ),
-                                                                                                color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                fontSize: 12.0,
-                                                                                                letterSpacing: 0.0,
-                                                                                                fontWeight: FontWeight.w500,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                              ),
-                                                                                        ),
-                                                                                      ),
-                                                                                    ],
-                                                                                  ),
-                                                                                  Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                                                                                    child: Row(
-                                                                                      mainAxisSize: MainAxisSize.max,
-                                                                                      mainAxisAlignment: MainAxisAlignment.center,
-                                                                                      crossAxisAlignment: CrossAxisAlignment.end,
-                                                                                      children: [
-                                                                                        Text(
-                                                                                          valueOrDefault<String>(
-                                                                                            containerVistaResumenIngresosPorSpdRow?.totalIngresos?.toString(),
-                                                                                            '0',
-                                                                                          ),
-                                                                                          style: FlutterFlowTheme.of(context).displaySmall.override(
-                                                                                                font: GoogleFonts.outfit(
-                                                                                                  fontWeight: FontWeight.w600,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                                ),
-                                                                                                color: Color(0xFF14181B),
-                                                                                                fontSize: 25.0,
-                                                                                                letterSpacing: 0.0,
-                                                                                                fontWeight: FontWeight.w600,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                              ),
-                                                                                        ),
-                                                                                      ],
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              12.0,
-                                                                              12.0,
-                                                                              0.0,
-                                                                              12.0),
-                                                                          child:
-                                                                              Container(
-                                                                            width:
-                                                                                110.0,
-                                                                            height:
-                                                                                80.0,
-                                                                            decoration:
-                                                                                BoxDecoration(
-                                                                              color: Colors.white,
-                                                                              boxShadow: [
-                                                                                BoxShadow(
-                                                                                  blurRadius: 4.0,
-                                                                                  color: Color(0x2B202529),
-                                                                                  offset: Offset(
-                                                                                    0.0,
-                                                                                    2.0,
-                                                                                  ),
-                                                                                )
-                                                                              ],
-                                                                              borderRadius: BorderRadius.circular(12.0),
-                                                                            ),
-                                                                            child:
-                                                                                Padding(
-                                                                              padding: EdgeInsets.all(12.0),
-                                                                              child: Column(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                                                                children: [
-                                                                                  Row(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    mainAxisAlignment: MainAxisAlignment.center,
-                                                                                    children: [
-                                                                                      Expanded(
-                                                                                        child: Text(
-                                                                                          'Casos Abiertos',
-                                                                                          textAlign: TextAlign.center,
-                                                                                          style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                                font: GoogleFonts.plusJakartaSans(
-                                                                                                  fontWeight: FontWeight.w500,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                ),
-                                                                                                color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                fontSize: 12.0,
-                                                                                                letterSpacing: 0.0,
-                                                                                                fontWeight: FontWeight.w500,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                              ),
-                                                                                        ),
-                                                                                      ),
-                                                                                    ],
-                                                                                  ),
-                                                                                  Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                                                                                    child: Row(
-                                                                                      mainAxisSize: MainAxisSize.max,
-                                                                                      mainAxisAlignment: MainAxisAlignment.center,
-                                                                                      crossAxisAlignment: CrossAxisAlignment.end,
-                                                                                      children: [
-                                                                                        Text(
-                                                                                          valueOrDefault<String>(
-                                                                                            containerVistaResumenIngresosPorSpdRow?.ingresosApertura?.toString(),
-                                                                                            '0',
-                                                                                          ),
-                                                                                          style: FlutterFlowTheme.of(context).displaySmall.override(
-                                                                                                font: GoogleFonts.outfit(
-                                                                                                  fontWeight: FontWeight.w600,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                                ),
-                                                                                                color: Color(0xFF14181B),
-                                                                                                fontSize: 25.0,
-                                                                                                letterSpacing: 0.0,
-                                                                                                fontWeight: FontWeight.w600,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                              ),
-                                                                                        ),
-                                                                                      ],
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              12.0,
-                                                                              12.0,
-                                                                              0.0,
-                                                                              12.0),
-                                                                          child:
-                                                                              Container(
-                                                                            width:
-                                                                                110.0,
-                                                                            height:
-                                                                                80.0,
-                                                                            decoration:
-                                                                                BoxDecoration(
-                                                                              color: Colors.white,
-                                                                              boxShadow: [
-                                                                                BoxShadow(
-                                                                                  blurRadius: 4.0,
-                                                                                  color: Color(0x2B202529),
-                                                                                  offset: Offset(
-                                                                                    0.0,
-                                                                                    2.0,
-                                                                                  ),
-                                                                                )
-                                                                              ],
-                                                                              borderRadius: BorderRadius.circular(12.0),
-                                                                            ),
-                                                                            child:
-                                                                                Padding(
-                                                                              padding: EdgeInsets.all(12.0),
-                                                                              child: Column(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                                                                children: [
-                                                                                  Row(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    mainAxisAlignment: MainAxisAlignment.center,
-                                                                                    children: [
-                                                                                      Expanded(
-                                                                                        child: Text(
-                                                                                          'Asesoramiento',
-                                                                                          textAlign: TextAlign.center,
-                                                                                          style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                                font: GoogleFonts.plusJakartaSans(
-                                                                                                  fontWeight: FontWeight.w500,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                ),
-                                                                                                color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                fontSize: 14.0,
-                                                                                                letterSpacing: 0.0,
-                                                                                                fontWeight: FontWeight.w500,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                lineHeight: 1.0,
-                                                                                              ),
-                                                                                        ),
-                                                                                      ),
-                                                                                    ],
-                                                                                  ),
-                                                                                  Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                                                                                    child: Row(
-                                                                                      mainAxisSize: MainAxisSize.max,
-                                                                                      mainAxisAlignment: MainAxisAlignment.center,
-                                                                                      crossAxisAlignment: CrossAxisAlignment.end,
-                                                                                      children: [
-                                                                                        Text(
-                                                                                          valueOrDefault<String>(
-                                                                                            containerVistaResumenIngresosPorSpdRow?.ingresosAsesoramiento?.toString(),
-                                                                                            '0',
-                                                                                          ),
-                                                                                          style: FlutterFlowTheme.of(context).displaySmall.override(
-                                                                                                font: GoogleFonts.outfit(
-                                                                                                  fontWeight: FontWeight.w600,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                                ),
-                                                                                                color: Color(0xFF14181B),
-                                                                                                fontSize: 25.0,
-                                                                                                letterSpacing: 0.0,
-                                                                                                fontWeight: FontWeight.w600,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                              ),
-                                                                                        ),
-                                                                                      ],
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              12.0,
-                                                                              12.0,
-                                                                              0.0,
-                                                                              12.0),
-                                                                          child:
-                                                                              Container(
-                                                                            width:
-                                                                                110.0,
-                                                                            height:
-                                                                                80.0,
-                                                                            decoration:
-                                                                                BoxDecoration(
-                                                                              color: Colors.white,
-                                                                              boxShadow: [
-                                                                                BoxShadow(
-                                                                                  blurRadius: 4.0,
-                                                                                  color: Color(0x2B202529),
-                                                                                  offset: Offset(
-                                                                                    0.0,
-                                                                                    2.0,
-                                                                                  ),
-                                                                                )
-                                                                              ],
-                                                                              borderRadius: BorderRadius.circular(12.0),
-                                                                            ),
-                                                                            child:
-                                                                                Padding(
-                                                                              padding: EdgeInsets.all(12.0),
-                                                                              child: Column(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                                                                children: [
-                                                                                  Row(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    mainAxisAlignment: MainAxisAlignment.center,
-                                                                                    children: [
-                                                                                      Expanded(
-                                                                                        child: Text(
-                                                                                          'Solicitudes a SENAF',
-                                                                                          textAlign: TextAlign.center,
-                                                                                          style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                                font: GoogleFonts.plusJakartaSans(
-                                                                                                  fontWeight: FontWeight.w500,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                ),
-                                                                                                color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                fontSize: 14.0,
-                                                                                                letterSpacing: 0.0,
-                                                                                                fontWeight: FontWeight.w500,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                lineHeight: 1.0,
-                                                                                              ),
-                                                                                        ),
-                                                                                      ),
-                                                                                    ],
-                                                                                  ),
-                                                                                  Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                                                                                    child: Row(
-                                                                                      mainAxisSize: MainAxisSize.max,
-                                                                                      mainAxisAlignment: MainAxisAlignment.center,
-                                                                                      crossAxisAlignment: CrossAxisAlignment.end,
-                                                                                      children: [
-                                                                                        Text(
-                                                                                          valueOrDefault<String>(
-                                                                                            containerVistaResumenIngresosPorSpdRow?.ingresosConSolicitudMedidaExcepcional?.toString(),
-                                                                                            '0',
-                                                                                          ),
-                                                                                          style: FlutterFlowTheme.of(context).displaySmall.override(
-                                                                                                font: GoogleFonts.outfit(
-                                                                                                  fontWeight: FontWeight.w600,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                                ),
-                                                                                                color: Color(0xFF14181B),
-                                                                                                fontSize: 25.0,
-                                                                                                letterSpacing: 0.0,
-                                                                                                fontWeight: FontWeight.w600,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                              ),
-                                                                                        ),
-                                                                                      ],
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              12.0,
-                                                                              12.0,
-                                                                              0.0,
-                                                                              12.0),
-                                                                          child:
-                                                                              Container(
-                                                                            width:
-                                                                                110.0,
-                                                                            height:
-                                                                                80.0,
-                                                                            decoration:
-                                                                                BoxDecoration(
-                                                                              color: Colors.white,
-                                                                              boxShadow: [
-                                                                                BoxShadow(
-                                                                                  blurRadius: 4.0,
-                                                                                  color: Color(0x2B202529),
-                                                                                  offset: Offset(
-                                                                                    0.0,
-                                                                                    2.0,
-                                                                                  ),
-                                                                                )
-                                                                              ],
-                                                                              borderRadius: BorderRadius.circular(12.0),
-                                                                            ),
-                                                                            child:
-                                                                                Padding(
-                                                                              padding: EdgeInsets.all(12.0),
-                                                                              child: Column(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                                                                children: [
-                                                                                  Row(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    mainAxisAlignment: MainAxisAlignment.center,
-                                                                                    children: [
-                                                                                      Expanded(
-                                                                                        child: Text(
-                                                                                          'Casos 30 dias',
-                                                                                          textAlign: TextAlign.center,
-                                                                                          style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                                font: GoogleFonts.plusJakartaSans(
-                                                                                                  fontWeight: FontWeight.w500,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                ),
-                                                                                                color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                fontSize: 12.0,
-                                                                                                letterSpacing: 0.0,
-                                                                                                fontWeight: FontWeight.w500,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                                lineHeight: 1.0,
-                                                                                              ),
-                                                                                        ),
-                                                                                      ),
-                                                                                    ],
-                                                                                  ),
-                                                                                  Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                                                                                    child: Row(
-                                                                                      mainAxisSize: MainAxisSize.max,
-                                                                                      mainAxisAlignment: MainAxisAlignment.center,
-                                                                                      crossAxisAlignment: CrossAxisAlignment.end,
-                                                                                      children: [
-                                                                                        Text(
-                                                                                          valueOrDefault<String>(
-                                                                                            containerVistaResumenIngresosPorSpdRow?.ingresosUltimos30Dias?.toString(),
-                                                                                            '0',
-                                                                                          ),
-                                                                                          style: FlutterFlowTheme.of(context).displaySmall.override(
-                                                                                                font: GoogleFonts.outfit(
-                                                                                                  fontWeight: FontWeight.w600,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                                ),
-                                                                                                color: Color(0xFF14181B),
-                                                                                                fontSize: 25.0,
-                                                                                                letterSpacing: 0.0,
-                                                                                                fontWeight: FontWeight.w600,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                              ),
-                                                                                        ),
-                                                                                      ],
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
+                                                          ),
                                                           Padding(
                                                             padding:
                                                                 EdgeInsetsDirectional
@@ -3521,7 +3489,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                                 IngresosWidget.routeName,
                                                                                 queryParameters: {
                                                                                   'idexp': serializeParam(
-                                                                                    lista2Item.id,
+                                                                                    _model.query2?.firstOrNull?.id,
                                                                                     ParamType.int,
                                                                                   ),
                                                                                   'usuariorow': serializeParam(
@@ -3534,10 +3502,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                                   ),
                                                                                   'usuariorol': serializeParam(
                                                                                     containerVistaUsuariosRolesRow,
-                                                                                    ParamType.SupabaseRow,
-                                                                                  ),
-                                                                                  'idexpediente': serializeParam(
-                                                                                    _model.query2?.firstOrNull,
                                                                                     ParamType.SupabaseRow,
                                                                                   ),
                                                                                   'idcarpeta': serializeParam(

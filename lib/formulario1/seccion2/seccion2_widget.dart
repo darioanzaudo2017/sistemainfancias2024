@@ -315,11 +315,19 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                           chipSpacing: 8.0,
                                           rowSpacing: 8.0,
                                           multiselect: false,
+                                          initialized:
+                                              _model.choiceChipsValue != null,
                                           alignment: WrapAlignment.start,
                                           controller: _model
                                                   .choiceChipsValueController ??=
                                               FormFieldController<List<String>>(
-                                            [],
+                                            [
+                                              valueOrDefault<String>(
+                                                stackSeccion2Row
+                                                    ?.tipoSolicitante,
+                                                'Institucional',
+                                              )
+                                            ],
                                           ),
                                           wrapped: true,
                                         ),
@@ -2911,6 +2919,8 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                                 _model.textController5.text,
                                             'resevaindentidad':
                                                 _model.radioButtonresidenValue,
+                                            'tipo_solicitante':
+                                                _model.choiceChipsValue,
                                           });
                                           await IngresosTable().update(
                                             data: {
@@ -2982,6 +2992,8 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                                   stackSeccion2Row?.referente,
                                               'resevaindentidad': _model
                                                   .radioButtonresidenValue,
+                                              'tipo_solicitante':
+                                                  _model.choiceChipsValue,
                                             },
                                             matchingRows: (rows) =>
                                                 rows.eqOrNull(

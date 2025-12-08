@@ -15,10 +15,14 @@ class ListadodeadjuntosWidget extends StatefulWidget {
     super.key,
     required this.expedienterow,
     required this.ingresorow,
+    required this.idexp,
+    required this.idingreso,
   });
 
   final VistaExpedientesUltimoEstadoRow? expedienterow;
   final IngresosRow? ingresorow;
+  final int? idexp;
+  final int? idingreso;
 
   @override
   State<ListadodeadjuntosWidget> createState() =>
@@ -131,9 +135,10 @@ class _ListadodeadjuntosWidgetState extends State<ListadodeadjuntosWidget> {
                                   child: Padding(
                                     padding: MediaQuery.viewInsetsOf(context),
                                     child: AdjuntardocumentoWidget(
-                                      exprow: widget.expedienterow,
                                       ingrow: widget.ingresorow,
                                       idampliacion: 0,
+                                      idexp: 0,
+                                      idingreso: 0,
                                     ),
                                   ),
                                 );

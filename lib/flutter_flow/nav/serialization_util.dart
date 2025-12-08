@@ -316,6 +316,8 @@ dynamic deserializeParam<T>(
             return GrupoConvivienteRow(data);
           case ResuestasForm6Row:
             return ResuestasForm6Row(data);
+          case VistaResumenEtapasRow:
+            return VistaResumenEtapasRow(data);
           case VistaHistorialMovimientosSolicitudsenafRow:
             return VistaHistorialMovimientosSolicitudsenafRow(data);
           case NNyAExpGruRow:

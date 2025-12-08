@@ -2849,63 +2849,7 @@ class _HomestitchWidgetState extends State<HomestitchWidget> {
                                                                     Colors
                                                                         .transparent,
                                                                 onTap:
-                                                                    () async {
-                                                                  _model.query10 =
-                                                                      await VistaExpedientesUltimoEstadoTable()
-                                                                          .queryRows(
-                                                                    queryFn: (q) =>
-                                                                        q.eqOrNull(
-                                                                      'id',
-                                                                      tabla2Item
-                                                                          .id,
-                                                                    ),
-                                                                  );
-
-                                                                  context
-                                                                      .pushNamed(
-                                                                    IngresosWidget
-                                                                        .routeName,
-                                                                    queryParameters:
-                                                                        {
-                                                                      'idexpediente':
-                                                                          serializeParam(
-                                                                        _model
-                                                                            .query10
-                                                                            ?.firstOrNull,
-                                                                        ParamType
-                                                                            .SupabaseRow,
-                                                                      ),
-                                                                      'idexp':
-                                                                          serializeParam(
-                                                                        tabla2Item
-                                                                            .id,
-                                                                        ParamType
-                                                                            .int,
-                                                                      ),
-                                                                      'usuariorow':
-                                                                          serializeParam(
-                                                                        containerUsuariosRow,
-                                                                        ParamType
-                                                                            .SupabaseRow,
-                                                                      ),
-                                                                      'spd':
-                                                                          serializeParam(
-                                                                        containerSpdRow,
-                                                                        ParamType
-                                                                            .SupabaseRow,
-                                                                      ),
-                                                                      'usuariorol':
-                                                                          serializeParam(
-                                                                        homestitchVistaUsuariosRolesRow,
-                                                                        ParamType
-                                                                            .SupabaseRow,
-                                                                      ),
-                                                                    }.withoutNulls,
-                                                                  );
-
-                                                                  safeSetState(
-                                                                      () {});
-                                                                },
+                                                                    () async {},
                                                                 child: Text(
                                                                   'Ir a expedientes',
                                                                   style: FlutterFlowTheme.of(

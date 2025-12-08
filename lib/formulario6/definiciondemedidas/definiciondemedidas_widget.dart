@@ -119,6 +119,10 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                     widget.usuariosrol,
                     ParamType.SupabaseRow,
                   ),
+                  'idexp': serializeParam(
+                    widget.rowexp?.id,
+                    ParamType.int,
+                  ),
                 }.withoutNulls,
               );
             },
@@ -271,7 +275,6 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                       model: _model.barradeNavegacionModel,
                                       updateCallback: () => safeSetState(() {}),
                                       child: BarradeNavegacionWidget(
-                                        exprow: widget.rowexp!,
                                         idexp: widget.rowexp?.id,
                                         usuariorow: widget.usuariorow!,
                                         parameter4: widget.rowexp?.spd,
@@ -377,7 +380,6 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                       editarcaratula: true,
                                       contactosref: true,
                                       cambia: true,
-                                      exprow: widget.rowexp!,
                                       ingresorow: widget.ingresorow,
                                       usuariorow: widget.usuariorow!,
                                     ),

@@ -364,76 +364,149 @@ class _ListareunioninterinstitucionalWidgetState
                                             ),
                                             Row(
                                               mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
                                               children: [
-                                                if (optionsVarItem.linkdoc !=
-                                                        null &&
-                                                    optionsVarItem.linkdoc !=
-                                                        '')
-                                                  FlutterFlowIconButton(
-                                                    borderRadius: 8.0,
-                                                    buttonSize: 40.0,
-                                                    icon: Icon(
-                                                      Icons
-                                                          .document_scanner_outlined,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    if (optionsVarItem
+                                                                .linkdoc !=
+                                                            null &&
+                                                        optionsVarItem
+                                                                .linkdoc !=
+                                                            '')
+                                                      FlutterFlowIconButton(
+                                                        borderRadius: 8.0,
+                                                        buttonSize: 40.0,
+                                                        icon: Icon(
+                                                          Icons
+                                                              .document_scanner_outlined,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .primary,
-                                                      size: 24.0,
-                                                    ),
-                                                    onPressed: () async {
-                                                      await launchURL(
-                                                          optionsVarItem
-                                                              .linkdoc!);
-                                                      await launchURL(
-                                                          'https://view.officeapps.live.com/op/embed.aspx?src=${optionsVarItem.linkdoc}');
-                                                    },
-                                                  ),
-                                                if (optionsVarItem.linkdoc !=
-                                                        null &&
-                                                    optionsVarItem.linkdoc !=
-                                                        '')
-                                                  FlutterFlowIconButton(
-                                                    borderRadius: 8.0,
-                                                    buttonSize: 40.0,
-                                                    icon: FaIcon(
-                                                      FontAwesomeIcons.fileWord,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                          size: 24.0,
+                                                        ),
+                                                        onPressed: () async {
+                                                          await launchURL(
+                                                              optionsVarItem
+                                                                  .linkdoc!);
+                                                          await launchURL(
+                                                              'https://view.officeapps.live.com/op/embed.aspx?src=${optionsVarItem.linkdoc}');
+                                                        },
+                                                      ),
+                                                    if (optionsVarItem
+                                                                .linkdoc !=
+                                                            null &&
+                                                        optionsVarItem
+                                                                .linkdoc !=
+                                                            '')
+                                                      FlutterFlowIconButton(
+                                                        borderRadius: 8.0,
+                                                        buttonSize: 40.0,
+                                                        icon: FaIcon(
+                                                          FontAwesomeIcons
+                                                              .fileWord,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .primary,
-                                                      size: 24.0,
-                                                    ),
-                                                    onPressed: () async {
-                                                      await launchURL(
-                                                          optionsVarItem
-                                                              .linkdoc!);
-                                                    },
-                                                  ),
-                                                if (optionsVarItem
-                                                            .linkadjunto !=
-                                                        null &&
-                                                    optionsVarItem
-                                                            .linkadjunto !=
-                                                        '')
-                                                  FlutterFlowIconButton(
-                                                    borderRadius: 8.0,
-                                                    buttonSize: 40.0,
-                                                    icon: Icon(
-                                                      Icons.attach_file,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                          size: 24.0,
+                                                        ),
+                                                        onPressed: () async {
+                                                          await launchURL(
+                                                              optionsVarItem
+                                                                  .linkdoc!);
+                                                        },
+                                                      ),
+                                                    if (optionsVarItem
+                                                                .linkadjunto !=
+                                                            null &&
+                                                        optionsVarItem
+                                                                .linkadjunto !=
+                                                            '')
+                                                      FlutterFlowIconButton(
+                                                        borderRadius: 8.0,
+                                                        buttonSize: 40.0,
+                                                        icon: Icon(
+                                                          Icons.attach_file,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .primary,
-                                                      size: 24.0,
-                                                    ),
-                                                    onPressed: () async {
-                                                      await launchURL(
-                                                          optionsVarItem
-                                                              .linkadjunto!);
-                                                    },
+                                                          size: 24.0,
+                                                        ),
+                                                        onPressed: () async {
+                                                          await launchURL(
+                                                              optionsVarItem
+                                                                  .linkadjunto!);
+                                                        },
+                                                      ),
+                                                  ].divide(
+                                                      SizedBox(width: 10.0)),
+                                                ),
+                                                FlutterFlowIconButton(
+                                                  borderRadius: 8.0,
+                                                  buttonSize: 40.0,
+                                                  icon: Icon(
+                                                    Icons.delete_rounded,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .error,
+                                                    size: 24.0,
                                                   ),
-                                              ].divide(SizedBox(width: 10.0)),
+                                                  onPressed: () async {
+                                                    var confirmDialogResponse =
+                                                        await showDialog<bool>(
+                                                              context: context,
+                                                              builder:
+                                                                  (alertDialogContext) {
+                                                                return WebViewAware(
+                                                                  child:
+                                                                      AlertDialog(
+                                                                    title: Text(
+                                                                        'Borrar solicitud de reunion interinstitucional'),
+                                                                    content: Text(
+                                                                        'Desea borrar?'),
+                                                                    actions: [
+                                                                      TextButton(
+                                                                        onPressed: () => Navigator.pop(
+                                                                            alertDialogContext,
+                                                                            false),
+                                                                        child: Text(
+                                                                            'Cancelar'),
+                                                                      ),
+                                                                      TextButton(
+                                                                        onPressed: () => Navigator.pop(
+                                                                            alertDialogContext,
+                                                                            true),
+                                                                        child: Text(
+                                                                            'Confirmar'),
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                                );
+                                                              },
+                                                            ) ??
+                                                            false;
+                                                    if (confirmDialogResponse) {
+                                                      await Anexo4RequerimientoaccionesTable()
+                                                          .delete(
+                                                        matchingRows: (rows) =>
+                                                            rows.eqOrNull(
+                                                          'id',
+                                                          optionsVarItem.id,
+                                                        ),
+                                                      );
+                                                      safeSetState(() => _model
+                                                              .requestCompleter =
+                                                          null);
+                                                      await _model
+                                                          .waitForRequestCompleted();
+                                                    }
+                                                  },
+                                                ),
+                                              ],
                                             ),
                                           ],
                                         ),

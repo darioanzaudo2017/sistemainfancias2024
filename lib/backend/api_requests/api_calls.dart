@@ -1306,6 +1306,263 @@ class CambiospdCall {
   }
 }
 
+class IngresosperfilCall {
+  static Future<ApiCallResponse> call({
+    String? token =
+        'eyJhbGciOiJIUzI1NiIsImtpZCI6Ik1jUzFaOUhyblIvelF4SmkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2xpYXZpcmJ3ZnRvcHZyY2p5cHJyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJmOWI4YTFhYi05MGNiLTRjMGMtYTYzNC01NjczYzQ3NGU4MDgiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY0MzM4NzY5LCJpYXQiOjE3NjQzMzUxNjksImVtYWlsIjoiZGFyaW9AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6ImRhcmlvQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaG9uZV92ZXJpZmllZCI6ZmFsc2UsInN1YiI6ImY5YjhhMWFiLTkwY2ItNGMwYy1hNjM0LTU2NzNjNDc0ZTgwOCJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzY0MzM1MTY5fV0sInNlc3Npb25faWQiOiI0MmI2MTk0ZC03MTA2LTRmZjgtYmVhZC0zYjJlNDliMDE4OTciLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.cmvX1GvGvSAUwN4kK7bdc7LyyhYVErhX1sB7AApRXiY',
+    int? id = 393,
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'ingresosperfil',
+      apiUrl:
+          'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/ingresos?select=*,expediente(*,NNyA(*)),AnexoAForm1(*),seccion9(*),grupo_conviviente(*)&id=eq.393',
+      callType: ApiCallType.GET,
+      headers: {
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
+        'Authorization': 'Bearer ${token}',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class ExpedientennyaspdCall {
+  static Future<ApiCallResponse> call({
+    String? token =
+        'eyJhbGciOiJIUzI1NiIsImtpZCI6Ik1jUzFaOUhyblIvelF4SmkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2xpYXZpcmJ3ZnRvcHZyY2p5cHJyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJmOWI4YTFhYi05MGNiLTRjMGMtYTYzNC01NjczYzQ3NGU4MDgiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY0MzM4NzY5LCJpYXQiOjE3NjQzMzUxNjksImVtYWlsIjoiZGFyaW9AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6ImRhcmlvQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaG9uZV92ZXJpZmllZCI6ZmFsc2UsInN1YiI6ImY5YjhhMWFiLTkwY2ItNGMwYy1hNjM0LTU2NzNjNDc0ZTgwOCJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzY0MzM1MTY5fV0sInNlc3Npb25faWQiOiI0MmI2MTk0ZC03MTA2LTRmZjgtYmVhZC0zYjJlNDliMDE4OTciLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.cmvX1GvGvSAUwN4kK7bdc7LyyhYVErhX1sB7AApRXiY',
+    int? id = 531,
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'expedientennyaspd',
+      apiUrl:
+          'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/expediente?select=*,NNyA(*)&id=eq.${id}',
+      callType: ApiCallType.GET,
+      headers: {
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
+        'Authorization': 'Bearer ${token}',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class SeccionygrupoconvivienteCall {
+  static Future<ApiCallResponse> call({
+    String? token =
+        'eyJhbGciOiJIUzI1NiIsImtpZCI6Ik1jUzFaOUhyblIvelF4SmkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2xpYXZpcmJ3ZnRvcHZyY2p5cHJyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJmOWI4YTFhYi05MGNiLTRjMGMtYTYzNC01NjczYzQ3NGU4MDgiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY0NTY1NzY1LCJpYXQiOjE3NjQ1NjIxNjUsImVtYWlsIjoiZGFyaW9AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6ImRhcmlvQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaG9uZV92ZXJpZmllZCI6ZmFsc2UsInN1YiI6ImY5YjhhMWFiLTkwY2ItNGMwYy1hNjM0LTU2NzNjNDc0ZTgwOCJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzY0NTYyMTY1fV0sInNlc3Npb25faWQiOiI3MTc3NjNkYy1lOGYxLTRmZjYtYmQ5ZC0wODU2MWNhYmFkZTkiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.hJ60wYHZoB8liV_Bejf4iH5UvV9V1yj1S6kZ7ybBjPs',
+    int? id = 359,
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'seccionygrupoconviviente',
+      apiUrl:
+          'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/seccion8?select=*,grupo_conviviente(*)&idIngreso=eq.${id}',
+      callType: ApiCallType.GET,
+      headers: {
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
+        'Authorization': 'Bearer ${token}',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class CrearyverificarexpedienteCall {
+  static Future<ApiCallResponse> call({
+    String? token =
+        'eyJhbGciOiJIUzI1NiIsImtpZCI6Ik1jUzFaOUhyblIvelF4SmkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2xpYXZpcmJ3ZnRvcHZyY2p5cHJyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJmOWI4YTFhYi05MGNiLTRjMGMtYTYzNC01NjczYzQ3NGU4MDgiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY0ODYwNDY3LCJpYXQiOjE3NjQ4NTY4NjcsImVtYWlsIjoiZGFyaW9AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6ImRhcmlvQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaG9uZV92ZXJpZmllZCI6ZmFsc2UsInN1YiI6ImY5YjhhMWFiLTkwY2ItNGMwYy1hNjM0LTU2NzNjNDc0ZTgwOCJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzY0ODU2ODY3fV0sInNlc3Npb25faWQiOiIxOWUyYjA0MC0yNjdmLTQwZGMtYTEwNC0yMGY5YTlkZGRiNTEiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.vh6vHWukhW-ucEXuL0cP12PKLu9Zr7PG2-tPHY-KAWY',
+    String? pNombres = 'dario',
+    String? pApellidos = 'perez',
+    int? pDni = 31450556,
+    int? pEdad = 12,
+    String? pFechaNac = '12/12/2021',
+    String? pSpd = 'SPD Colón',
+    String? pFechaIngreso = '04/12/2025',
+    int? pZona = 4,
+    String? pIduser = 'f9b8a1ab-90cb-4c0c-a634-5673c474e808',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "p_nombres": "${escapeStringForJson(pNombres)}",
+  "p_apellidos": "${escapeStringForJson(pApellidos)}",
+  "p_dni": ${pDni},
+  "p_edad": ${pEdad},
+  "p_fecha_nac": "${escapeStringForJson(pFechaNac)}",
+  "p_spd": "${escapeStringForJson(pSpd)}",
+  "p_fecha_ingreso": "${escapeStringForJson(pFechaIngreso)}",
+  "p_zona": ${pZona},
+  "p_iduser": "${escapeStringForJson(pIduser)}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'crearyverificarexpediente',
+      apiUrl:
+          'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/rpc/crear_expediente_nnya',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
+        'Authorization': 'Bearer ${token}',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class AgregarGrupoConvivienteCall {
+  static Future<ApiCallResponse> call({
+    String? token =
+        'eyJhbGciOiJIUzI1NiIsImtpZCI6Ik1jUzFaOUhyblIvelF4SmkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2xpYXZpcmJ3ZnRvcHZyY2p5cHJyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJmOWI4YTFhYi05MGNiLTRjMGMtYTYzNC01NjczYzQ3NGU4MDgiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY0OTU0NTIwLCJpYXQiOjE3NjQ5NTA5MjAsImVtYWlsIjoiZGFyaW9AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6ImRhcmlvQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaG9uZV92ZXJpZmllZCI6ZmFsc2UsInN1YiI6ImY5YjhhMWFiLTkwY2ItNGMwYy1hNjM0LTU2NzNjNDc0ZTgwOCJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzY0MjcwNDk1fV0sInNlc3Npb25faWQiOiJiMDdmY2E1OS1lODE5LTQzZDItYTRlYS0zMTM5NGI4MTE5ZDIiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.0qHZSAxPpp3J1W97xuPuT4ptPULGYyCRNba6ZoOfySk',
+    int? pIdexpediente = 581,
+    int? pIdingreso = 397,
+    int? pDni = 65897451,
+    String? pNombre = 'carlos',
+    String? pApellido = 'perez',
+    int? pEdad = 12,
+    String? pFechaNac = '2021-12-25',
+    String? pVinculo = 'MADRE',
+    String? pVinculoObs = 'ert',
+    String? pTelefono = '5345345354',
+    String? pDireccion = 'San martin',
+    String? pObservaciones = 'sdf',
+    String? pConviviente = 'Si',
+    bool? pUsarDireccionExpediente,
+    String? pIduser = 'f9b8a1ab-90cb-4c0c-a634-5673c474e808',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "p_apellido": "${escapeStringForJson(pApellido)}",
+  "p_conviviente": "${escapeStringForJson(pConviviente)}",
+  "p_direccion": "${escapeStringForJson(pDireccion)}",
+  "p_dni": ${pDni},
+  "p_edad": ${pEdad},
+  "p_fecha_nac": "${escapeStringForJson(pFechaNac)}",
+  "p_idexpediente": ${pIdexpediente},
+  "p_idingreso": ${pIdingreso},
+  "p_iduser": "${escapeStringForJson(pIduser)}",
+  "p_nombre": "${escapeStringForJson(pNombre)}",
+  "p_observaciones": "${escapeStringForJson(pObservaciones)}",
+  "p_telefono": ${escapeStringForJson(pTelefono)},
+  "p_usar_direccion_expediente": ${pUsarDireccionExpediente},
+  "p_vinculo": "${escapeStringForJson(pVinculo)}",
+  "p_vinculo_obs": "${escapeStringForJson(pVinculoObs)}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Agregar grupo conviviente',
+      apiUrl:
+          'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/rpc/agregar_conviviente_expediente',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
+        'Authorization': 'Bearer ${token}',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class ActualizarGrupoConvivienteCall {
+  static Future<ApiCallResponse> call({
+    String? token =
+        'eyJhbGciOiJIUzI1NiIsImtpZCI6Ik1jUzFaOUhyblIvelF4SmkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2xpYXZpcmJ3ZnRvcHZyY2p5cHJyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJmOWI4YTFhYi05MGNiLTRjMGMtYTYzNC01NjczYzQ3NGU4MDgiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY0OTU4MDk2LCJpYXQiOjE3NjQ5NTQ0OTYsImVtYWlsIjoiZGFyaW9AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6ImRhcmlvQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaG9uZV92ZXJpZmllZCI6ZmFsc2UsInN1YiI6ImY5YjhhMWFiLTkwY2ItNGMwYy1hNjM0LTU2NzNjNDc0ZTgwOCJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzY0MjcwNDk1fV0sInNlc3Npb25faWQiOiJiMDdmY2E1OS1lODE5LTQzZDItYTRlYS0zMTM5NGI4MTE5ZDIiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.42I508WxhRrNrWbpXztxMbIKppLL5hvtx4ZP0PMX-y4',
+    int? pIdexpediente = 581,
+    int? pIdingreso = 397,
+    int? pDni = 65897451,
+    String? pNombre = 'carlos',
+    String? pApellido = 'perez actualizado',
+    int? pEdad = 12,
+    String? pFechaNac = '2021-12-25',
+    String? pVinculo = 'MADRE',
+    String? pVinculoObs = 'ert',
+    String? pTelefono = '5345345354',
+    String? pDireccion = 'San martin',
+    String? pObservaciones = 'sdf',
+    String? pConviviente = 'Si',
+    bool? pUsarDireccionExpediente,
+    String? pIduser = 'f9b8a1ab-90cb-4c0c-a634-5673c474e808',
+    int? pIdGrupoconviviente = 611,
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "p_apellido": "${escapeStringForJson(pApellido)}",
+  "p_conviviente": "${escapeStringForJson(pConviviente)}",
+  "p_direccion": "${escapeStringForJson(pDireccion)}",
+  "p_dni": ${pDni},
+  "p_edad": ${pEdad},
+  "p_fecha_nac": "${escapeStringForJson(pFechaNac)}",
+  "p_id_grupoconviviente": ${pIdGrupoconviviente},
+  "p_idexpediente": ${pIdexpediente},
+  "p_idingreso": ${pIdingreso},
+  "p_iduser": "${escapeStringForJson(pIduser)}",
+  "p_nombre": "${escapeStringForJson(pNombre)}",
+  "p_observaciones": "${escapeStringForJson(pObservaciones)}",
+  "p_telefono": "${escapeStringForJson(pTelefono)}",
+  "p_usar_direccion_expediente": ${pUsarDireccionExpediente},
+  "p_vinculo": "${escapeStringForJson(pVinculo)}",
+  "p_vinculo_obs": "${escapeStringForJson(pVinculoObs)}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Actualizar grupo conviviente ',
+      apiUrl:
+          'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/rpc/actualizar_conviviente_expediente',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
+        'Authorization': 'Bearer ${token}',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
 class ApiPagingParams {
   int nextPageNumber = 0;
   int numItems = 0;

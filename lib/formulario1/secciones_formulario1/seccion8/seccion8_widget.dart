@@ -566,7 +566,7 @@ class _Seccion8WidgetState extends State<Seccion8Widget> {
                                             ),
                                             Text(
                                               valueOrDefault<String>(
-                                                listItem.telefono?.toString(),
+                                                listItem.telefono,
                                                 'Sin dato',
                                               ),
                                               style: FlutterFlowTheme.of(

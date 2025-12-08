@@ -1,4 +1,6 @@
 import '/auth/supabase_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
+import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/adjuntardocumento_widget.dart';
 import '/flutter_flow/flutter_flow_data_table.dart';
@@ -36,6 +38,8 @@ class AmpliacioninformacionWidget extends StatefulWidget {
     this.tipoampliacion,
     required this.spd,
     required this.idampliacionhistorial,
+    this.idexp,
+    this.idingreso2,
   });
 
   final IngresosRow? idingreso;
@@ -48,6 +52,8 @@ class AmpliacioninformacionWidget extends StatefulWidget {
   final String? tipoampliacion;
   final SpdRow? spd;
   final int? idampliacionhistorial;
+  final int? idexp;
+  final int? idingreso2;
 
   @override
   State<AmpliacioninformacionWidget> createState() =>
@@ -184,14 +190,12 @@ class _AmpliacioninformacionWidgetState
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 borderRadius: BorderRadius.circular(10.0),
               ),
-              child: FutureBuilder<List<Seccion8Row>>(
+              child: FutureBuilder<ApiCallResponse>(
                 future:
-                    (_model.requestCompleter ??= Completer<List<Seccion8Row>>()
-                          ..complete(Seccion8Table().queryRows(
-                            queryFn: (q) => q.eqOrNull(
-                              'idIngreso',
-                              widget.idingreso?.id,
-                            ),
+                    (_model.apiRequestCompleter ??= Completer<ApiCallResponse>()
+                          ..complete(SeccionygrupoconvivienteCall.call(
+                            token: currentJwtToken,
+                            id: widget.idingreso?.id,
                           )))
                         .future,
                 builder: (context, snapshot) {
@@ -209,7 +213,7 @@ class _AmpliacioninformacionWidgetState
                       ),
                     );
                   }
-                  List<Seccion8Row> containerseccion8Seccion8RowList =
+                  final containerseccion8SeccionygrupoconvivienteResponse =
                       snapshot.data!;
 
                   return Container(
@@ -750,10 +754,10 @@ class _AmpliacioninformacionWidgetState
                                                                   if (_model
                                                                       .creopersonaampliar!) {
                                                                     safeSetState(() =>
-                                                                        _model.requestCompleter =
+                                                                        _model.apiRequestCompleter =
                                                                             null);
                                                                     await _model
-                                                                        .waitForRequestCompleted();
+                                                                        .waitForApiRequestCompleted();
                                                                   }
 
                                                                   safeSetState(
@@ -824,7 +828,7 @@ class _AmpliacioninformacionWidgetState
                                                               ),
                                                             ),
                                                             Container(
-                                                              height: 310.1,
+                                                              height: 371.4,
                                                               decoration:
                                                                   BoxDecoration(
                                                                 color: FlutterFlowTheme.of(
@@ -834,12 +838,17 @@ class _AmpliacioninformacionWidgetState
                                                               child: Builder(
                                                                 builder:
                                                                     (context) {
-                                                                  final list =
-                                                                      containerseccion8Seccion8RowList
-                                                                          .toList();
+                                                                  final list = (containerseccion8SeccionygrupoconvivienteResponse
+                                                                              .jsonBody
+                                                                              .toList()
+                                                                              .map<Seccion8GrupoconvivienteStruct?>(Seccion8GrupoconvivienteStruct.maybeFromMap)
+                                                                              .toList() as Iterable<Seccion8GrupoconvivienteStruct?>)
+                                                                          .withoutNulls
+                                                                          .toList() ??
+                                                                      [];
 
                                                                   return FlutterFlowDataTable<
-                                                                      Seccion8Row>(
+                                                                      Seccion8GrupoconvivienteStruct>(
                                                                     controller:
                                                                         _model
                                                                             .paginatedDataTableController1,
@@ -1032,12 +1041,49 @@ class _AmpliacioninformacionWidgetState
                                                                             : FlutterFlowTheme.of(context).primaryBackground,
                                                                       ),
                                                                       cells: [
+                                                                        Column(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          mainAxisAlignment:
+                                                                              MainAxisAlignment.center,
+                                                                          crossAxisAlignment:
+                                                                              CrossAxisAlignment.start,
+                                                                          children: [
+                                                                            Text(
+                                                                              () {
+                                                                                if (!listItem.hasIdGrupoconviviente()) {
+                                                                                  return listItem.nombre;
+                                                                                } else if (listItem.hasIdGrupoconviviente()) {
+                                                                                  return listItem.grupoConviviente.nombre;
+                                                                                } else {
+                                                                                  return 'sin dato';
+                                                                                }
+                                                                              }(),
+                                                                              textAlign: TextAlign.start,
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    font: GoogleFonts.notoSansJp(
+                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                    ),
+                                                                                    letterSpacing: 0.0,
+                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                  ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
                                                                         Text(
-                                                                          valueOrDefault<
-                                                                              String>(
-                                                                            listItem.nombre,
-                                                                            'Sin dato',
-                                                                          ),
+                                                                          () {
+                                                                            if (!listItem.hasIdGrupoconviviente()) {
+                                                                              return listItem.apellido;
+                                                                            } else if (listItem.hasIdGrupoconviviente()) {
+                                                                              return listItem.grupoConviviente.apellido;
+                                                                            } else {
+                                                                              return 'sin dato';
+                                                                            }
+                                                                          }(),
+                                                                          textAlign:
+                                                                              TextAlign.start,
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
@@ -1051,11 +1097,17 @@ class _AmpliacioninformacionWidgetState
                                                                               ),
                                                                         ),
                                                                         Text(
-                                                                          valueOrDefault<
-                                                                              String>(
-                                                                            listItem.apellido,
-                                                                            'Sin dato',
-                                                                          ),
+                                                                          () {
+                                                                            if (!listItem.hasIdGrupoconviviente()) {
+                                                                              return listItem.vinculo;
+                                                                            } else if (listItem.hasIdGrupoconviviente()) {
+                                                                              return listItem.grupoConviviente.vinculo;
+                                                                            } else {
+                                                                              return 'sin dato';
+                                                                            }
+                                                                          }(),
+                                                                          textAlign:
+                                                                              TextAlign.start,
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
@@ -1069,11 +1121,17 @@ class _AmpliacioninformacionWidgetState
                                                                               ),
                                                                         ),
                                                                         Text(
-                                                                          valueOrDefault<
-                                                                              String>(
-                                                                            listItem.Vinculo,
-                                                                            'Sin dato',
-                                                                          ),
+                                                                          () {
+                                                                            if (!listItem.hasIdGrupoconviviente()) {
+                                                                              return listItem.telefono;
+                                                                            } else if (listItem.hasIdGrupoconviviente()) {
+                                                                              return listItem.grupoConviviente.telefono;
+                                                                            } else {
+                                                                              return 'sin dato';
+                                                                            }
+                                                                          }(),
+                                                                          textAlign:
+                                                                              TextAlign.start,
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
@@ -1087,29 +1145,17 @@ class _AmpliacioninformacionWidgetState
                                                                               ),
                                                                         ),
                                                                         Text(
-                                                                          valueOrDefault<
-                                                                              String>(
-                                                                            listItem.telefono?.toString(),
-                                                                            'Sin dato',
-                                                                          ),
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                font: GoogleFonts.notoSansJp(
-                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                ),
-                                                                                letterSpacing: 0.0,
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                              ),
-                                                                        ),
-                                                                        Text(
-                                                                          valueOrDefault<
-                                                                              String>(
-                                                                            listItem.direccion,
-                                                                            'Sin dato',
-                                                                          ),
+                                                                          () {
+                                                                            if (!listItem.hasIdGrupoconviviente()) {
+                                                                              return listItem.direccion;
+                                                                            } else if (listItem.hasIdGrupoconviviente()) {
+                                                                              return listItem.grupoConviviente.direccion;
+                                                                            } else {
+                                                                              return 'sin dato';
+                                                                            }
+                                                                          }(),
+                                                                          textAlign:
+                                                                              TextAlign.start,
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
@@ -1170,8 +1216,8 @@ class _AmpliacioninformacionWidgetState
                                                                                       listItem.idSec3,
                                                                                     ),
                                                                                   );
-                                                                                  safeSetState(() => _model.requestCompleter = null);
-                                                                                  await _model.waitForRequestCompleted();
+                                                                                  safeSetState(() => _model.apiRequestCompleter = null);
+                                                                                  await _model.waitForApiRequestCompleted();
                                                                                 }
                                                                               },
                                                                             ),
@@ -1204,8 +1250,8 @@ class _AmpliacioninformacionWidgetState
                                                                                 ).then((value) => safeSetState(() => _model.editopersonarelacionada = value));
 
                                                                                 if (_model.editopersonarelacionada!) {
-                                                                                  safeSetState(() => _model.requestCompleter = null);
-                                                                                  await _model.waitForRequestCompleted();
+                                                                                  safeSetState(() => _model.apiRequestCompleter = null);
+                                                                                  await _model.waitForApiRequestCompleted();
                                                                                 }
 
                                                                                 safeSetState(() {});
@@ -1232,7 +1278,7 @@ class _AmpliacioninformacionWidgetState
                                                                             ),
                                                                             child:
                                                                                 Checkbox(
-                                                                              value: _model.checkboxValueMap[listItem] ??= listItem.entrevistado!,
+                                                                              value: _model.checkboxValueMap[listItem] ??= false,
                                                                               onChanged: (newValue) async {
                                                                                 safeSetState(() => _model.checkboxValueMap[listItem] = newValue!);
                                                                                 if (newValue!) {
@@ -1276,8 +1322,7 @@ class _AmpliacioninformacionWidgetState
                                                                           mainAxisSize:
                                                                               MainAxisSize.max,
                                                                           children: [
-                                                                            if (listItem.entrevistado ??
-                                                                                true)
+                                                                            if (listItem.entrevistado)
                                                                               FlutterFlowIconButton(
                                                                                 borderRadius: 8.0,
                                                                                 buttonSize: 40.0,
@@ -1290,7 +1335,7 @@ class _AmpliacioninformacionWidgetState
                                                                                   print('IconButton pressed ...');
                                                                                 },
                                                                               ),
-                                                                            if (!listItem.entrevistado!)
+                                                                            if (!listItem.entrevistado)
                                                                               FlutterFlowIconButton(
                                                                                 borderRadius: 8.0,
                                                                                 buttonSize: 40.0,
@@ -1321,7 +1366,7 @@ class _AmpliacioninformacionWidgetState
                                                                     headingRowHeight:
                                                                         56.0,
                                                                     dataRowHeight:
-                                                                        48.0,
+                                                                        80.0,
                                                                     columnSpacing:
                                                                         20.0,
                                                                     headingRowColor:
@@ -2945,12 +2990,14 @@ class _AmpliacioninformacionWidgetState
                                                                               MediaQuery.viewInsetsOf(context),
                                                                           child:
                                                                               AdjuntardocumentoWidget(
-                                                                            exprow:
-                                                                                widget.rowexp,
                                                                             ingrow:
                                                                                 widget.idingreso,
                                                                             idampliacion:
                                                                                 widget.idampliacion,
+                                                                            idexp:
+                                                                                widget.idexp!,
+                                                                            idingreso:
+                                                                                widget.idingreso2!,
                                                                           ),
                                                                         ),
                                                                       );
@@ -5778,6 +5825,7 @@ class _AmpliacioninformacionWidgetState
                                     'updated_at': supaSerialize<DateTime>(
                                         getCurrentTimestamp),
                                     'form5completo': false,
+                                    'iduser': currentUserUid,
                                   },
                                   matchingRows: (rows) => rows.eqOrNull(
                                     'id',
@@ -5800,9 +5848,16 @@ class _AmpliacioninformacionWidgetState
                                     await Seccion8Table().queryRows(
                                   queryFn: (q) => q.eqOrNull(
                                     'idSec3',
-                                    containerseccion8Seccion8RowList
-                                        .where((e) => e.entrevistado!)
-                                        .toList()
+                                    (containerseccion8SeccionygrupoconvivienteResponse
+                                                .jsonBody
+                                                .toList()
+                                                .map<Seccion8GrupoconvivienteStruct?>(
+                                                    Seccion8GrupoconvivienteStruct
+                                                        .maybeFromMap)
+                                                .toList()
+                                            as Iterable<
+                                                Seccion8GrupoconvivienteStruct?>)
+                                        .withoutNulls
                                         .firstOrNull
                                         ?.idSec3,
                                   ),
@@ -5816,8 +5871,7 @@ class _AmpliacioninformacionWidgetState
                                     'ocuent': _model.personaentrevistada
                                         ?.firstOrNull?.ocupacion,
                                     'telent': _model.personaentrevistada
-                                        ?.firstOrNull?.telefono
-                                        ?.toString(),
+                                        ?.firstOrNull?.telefono,
                                     'dirent': _model.personaentrevistada
                                         ?.firstOrNull?.direccion,
                                     'refent': _model.personaentrevistada

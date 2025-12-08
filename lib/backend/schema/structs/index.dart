@@ -1,7 +1,14 @@
 export '/backend/schema/util/schema_util.dart';
 
 export 'datospersonas_struct.dart';
+export 'n_ny_a_struct.dart';
 export 'apiexpediente6_struct.dart';
 export 'grafico_struct.dart';
+export 'grupo_conviviente_struct.dart';
 export 'grupoconviviente_struct.dart';
+export 'ingresos_perfil_struct.dart';
 export 'personasactas_struct.dart';
+export 'seccion8_grupoconviviente_struct.dart';
+export 'seccion9_struct.dart';
+export 'vistaexpnnyazona_struct.dart';
+export 'zona_struct.dart';

@@ -1089,6 +1089,11 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                                     widget.usuariorow,
                                                     ParamType.SupabaseRow,
                                                   ),
+                                                  'idexp': serializeParam(
+                                                    _model.vistaexpe
+                                                        ?.firstOrNull?.id,
+                                                    ParamType.int,
+                                                  ),
                                                 }.withoutNulls,
                                               );
 

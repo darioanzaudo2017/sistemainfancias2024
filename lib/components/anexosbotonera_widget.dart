@@ -1,5 +1,4 @@
 import '/backend/supabase/supabase.dart';
-import '/components/adjuntardocumento_widget.dart';
 import '/components/listareunioninterinstitucional_widget.dart';
 import '/entrevistas/anexo5requerimientoacciones/anexo5requerimientoacciones_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -31,6 +30,7 @@ class AnexosbotoneraWidget extends StatefulWidget {
     this.editar,
     this.usuariorol,
     required this.spd,
+    this.idexp,
   });
 
   final IngresosRow? ingresorow;
@@ -51,6 +51,7 @@ class AnexosbotoneraWidget extends StatefulWidget {
 
   final VistaUsuariosRolesRow? usuariorol;
   final SpdRow? spd;
+  final int? idexp;
 
   @override
   State<AnexosbotoneraWidget> createState() => _AnexosbotoneraWidgetState();
@@ -808,93 +809,6 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                   ),
                                 );
                               },
-                            ),
-                          ),
-                          Align(
-                            alignment: AlignmentDirectional(-1.0, 0.0),
-                            child: InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                await showModalBottomSheet(
-                                  isScrollControlled: true,
-                                  backgroundColor: Colors.transparent,
-                                  enableDrag: false,
-                                  context: context,
-                                  builder: (context) {
-                                    return WebViewAware(
-                                      child: Padding(
-                                        padding:
-                                            MediaQuery.viewInsetsOf(context),
-                                        child: AdjuntardocumentoWidget(
-                                          exprow: widget.exorow,
-                                          ingrow: widget.ingresorow,
-                                        ),
-                                      ),
-                                    );
-                                  },
-                                ).then((value) => safeSetState(() {}));
-                              },
-                              child: AnimatedContainer(
-                                duration: Duration(milliseconds: 200),
-                                curve: Curves.easeInOut,
-                                width: double.infinity,
-                                height: 44.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context).accent1,
-                                  borderRadius: BorderRadius.circular(12.0),
-                                  shape: BoxShape.rectangle,
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      8.0, 0.0, 8.0, 0.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Icon(
-                                        Icons.upload_file,
-                                        color: Color(0xFF15161E),
-                                        size: 24.0,
-                                      ),
-                                      Expanded(
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  12.0, 0.0, 0.0, 0.0),
-                                          child: Text(
-                                            'Adjuntar documentos',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  font: GoogleFonts
-                                                      .plusJakartaSans(
-                                                    fontWeight: FontWeight.w500,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
-                                                  color: Color(0xFF15161E),
-                                                  fontSize: 14.0,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w500,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
-                                                ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
                             ),
                           ),
                         ].divide(SizedBox(height: 5.0)),

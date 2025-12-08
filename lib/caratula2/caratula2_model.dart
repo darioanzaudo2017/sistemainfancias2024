@@ -63,44 +63,8 @@ class Caratula2Model extends FlutterFlowModel<Caratula2Widget> {
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
   DateTime? datePicked2;
-  // Stores action output result for [Backend Call - API (ExisteDNIexpediente)] action in Button widget.
-  ApiCallResponse? checkdnifuncion;
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  ExpedienteRow? crearexpnnya2;
-  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
-  List<SpdRow>? spddrop;
-  // Stores action output result for [Backend Call - API (ExisteDNInnya)] action in Button widget.
-  ApiCallResponse? checkdnifuncionnnya;
-  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
-  List<NNyARow>? querynnyaexistente;
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  NNyAExpGruRow? crearexpgrupo3;
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  GrupofamiliarRow? grupofmiliar3;
-  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
-  List<VistaExpedientesUltimoEstadoRow>? vistaExpediente1;
-  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
-  List<ImpresionesExpedientesRow>? idcarptea1;
-  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
-  List<SpdRow>? spdseleccionado1;
-  // Stores action output result for [Backend Call - API (carpeta del expediente)] action in Button widget.
-  ApiCallResponse? apiResult42y21;
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  NNyARow? crearNNyA2;
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  NNyAExpGruRow? crearexpgrupo2;
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  GrupofamiliarRow? grupofmiliar2;
-  // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
-  List<ExpedienteRow>? expedienteactualizado;
-  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
-  List<VistaExpedientesUltimoEstadoRow>? vistaExpediente;
-  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
-  List<ImpresionesExpedientesRow>? idcarptea;
-  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
-  List<SpdRow>? spdseleccionado;
-  // Stores action output result for [Backend Call - API (carpeta del expediente)] action in Button widget.
-  ApiCallResponse? apiResult42y2;
+  // Stores action output result for [Backend Call - API (crearyverificarexpediente)] action in Button widget.
+  ApiCallResponse? apiResultbjl;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
   TextEditingController? textController5;

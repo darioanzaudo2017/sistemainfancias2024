@@ -959,8 +959,7 @@ class _AgregarPersonaRelacionadaWidgetState
                                     'vinculo': _model.dropDownValue != 'Otros'
                                         ? _model.dropDownValue
                                         : _model.textController6.text,
-                                    'telefono': double.tryParse(
-                                        _model.textController3.text),
+                                    'telefono': _model.textController3.text,
                                     'direccion': _model.textController4.text,
                                     'idIngreso': widget.rowingreso?.id,
                                     'idExpediente': widget.idexp?.id,

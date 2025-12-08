@@ -18,7 +18,6 @@ export 'ingresos_model.dart';
 class IngresosWidget extends StatefulWidget {
   const IngresosWidget({
     super.key,
-    this.idexpediente,
     this.idexp,
     required this.usuariorow,
     this.spd,
@@ -26,7 +25,6 @@ class IngresosWidget extends StatefulWidget {
     this.usuariorol,
   });
 
-  final VistaExpedientesUltimoEstadoRow? idexpediente;
   final int? idexp;
   final UsuariosRow? usuariorow;
   final SpdRow? spd;
@@ -147,85 +145,81 @@ class _IngresosWidgetState extends State<IngresosWidget> {
             ),
             body: SafeArea(
               top: true,
-              child: Container(
-                decoration: BoxDecoration(),
-                child: Container(
-                  decoration: BoxDecoration(),
-                  child: Container(
+              child: FutureBuilder<List<VistaExpedientesUltimoEstadoRow>>(
+                future: (_model.requestCompleter1 ??=
+                        Completer<List<VistaExpedientesUltimoEstadoRow>>()
+                          ..complete(VistaExpedientesUltimoEstadoTable()
+                              .querySingleRow(
+                            queryFn: (q) => q.eqOrNull(
+                              'id',
+                              widget.idexp,
+                            ),
+                          )))
+                    .future,
+                builder: (context, snapshot) {
+                  // Customize what your widget looks like when it's loading.
+                  if (!snapshot.hasData) {
+                    return Center(
+                      child: SizedBox(
+                        width: 50.0,
+                        height: 50.0,
+                        child: CircularProgressIndicator(
+                          valueColor: AlwaysStoppedAnimation<Color>(
+                            FlutterFlowTheme.of(context).primary,
+                          ),
+                        ),
+                      ),
+                    );
+                  }
+                  List<VistaExpedientesUltimoEstadoRow>
+                      containerexpVistaExpedientesUltimoEstadoRowList =
+                      snapshot.data!;
+
+                  final containerexpVistaExpedientesUltimoEstadoRow =
+                      containerexpVistaExpedientesUltimoEstadoRowList.isNotEmpty
+                          ? containerexpVistaExpedientesUltimoEstadoRowList
+                              .first
+                          : null;
+
+                  return Container(
                     decoration: BoxDecoration(),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Expanded(
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              wrapWithModel(
-                                model: _model.barradeNavegacionModel,
-                                updateCallback: () => safeSetState(() {}),
-                                child: BarradeNavegacionWidget(
-                                  idexp: widget.idexpediente?.id,
-                                  parameter10: false,
-                                  urlcarpetadrive: widget.idcarpeta,
-                                  adjuntar: false,
-                                  imprimir: true,
-                                  carpeta: true,
-                                  ingreso: false,
-                                  perfil: false,
-                                  exprow: widget.idexpediente!,
-                                  usuariorow: widget.usuariorow!,
-                                  fechaExp: widget.idexpediente?.fecha,
-                                ),
-                              ),
-                              Expanded(
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    FutureBuilder<
-                                        List<VistaExpedientesUltimoEstadoRow>>(
-                                      future: (_model.requestCompleter1 ??= Completer<
-                                              List<
-                                                  VistaExpedientesUltimoEstadoRow>>()
-                                            ..complete(
-                                                VistaExpedientesUltimoEstadoTable()
-                                                    .querySingleRow(
-                                              queryFn: (q) => q.eqOrNull(
-                                                'id',
-                                                widget.idexp,
-                                              ),
-                                            )))
-                                          .future,
-                                      builder: (context, snapshot) {
-                                        // Customize what your widget looks like when it's loading.
-                                        if (!snapshot.hasData) {
-                                          return Center(
-                                            child: SizedBox(
-                                              width: 50.0,
-                                              height: 50.0,
-                                              child: CircularProgressIndicator(
-                                                valueColor:
-                                                    AlwaysStoppedAnimation<
-                                                        Color>(
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                                ),
-                                              ),
-                                            ),
-                                          );
-                                        }
-                                        List<VistaExpedientesUltimoEstadoRow>
-                                            containerVistaExpedientesUltimoEstadoRowList =
-                                            snapshot.data!;
-
-                                        final containerVistaExpedientesUltimoEstadoRow =
-                                            containerVistaExpedientesUltimoEstadoRowList
-                                                    .isNotEmpty
-                                                ? containerVistaExpedientesUltimoEstadoRowList
-                                                    .first
-                                                : null;
-
-                                        return SafeArea(
+                    child: Container(
+                      decoration: BoxDecoration(),
+                      child: Container(
+                        decoration: BoxDecoration(),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Expanded(
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  wrapWithModel(
+                                    model: _model.barradeNavegacionModel,
+                                    updateCallback: () => safeSetState(() {}),
+                                    child: BarradeNavegacionWidget(
+                                      idexp: widget.idexp,
+                                      parameter10: false,
+                                      urlcarpetadrive: widget.idcarpeta,
+                                      adjuntar: false,
+                                      imprimir: true,
+                                      carpeta: true,
+                                      ingreso: false,
+                                      perfil: false,
+                                      usuariorow: widget.usuariorow!,
+                                      fechaExp:
+                                          containerexpVistaExpedientesUltimoEstadoRow
+                                              ?.fecha,
+                                      usuariorol: widget.usuariorol,
+                                      spd: widget.spd,
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        SafeArea(
                                           child: Container(
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
@@ -293,11 +287,12 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                   contactosref:
                                                                       false,
                                                                   cambia: true,
-                                                                  exprow:
-                                                                      containerVistaExpedientesUltimoEstadoRow!,
                                                                   usuariorow:
                                                                       widget
                                                                           .usuariorow!,
+                                                                  idexpediente:
+                                                                      widget
+                                                                          .idexp,
                                                                 ),
                                                               ),
                                                               Flex(
@@ -340,7 +335,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                 padding: MediaQuery.viewInsetsOf(context),
                                                                                 child: FormcaratulaWidget(
                                                                                   usuariorow: widget.usuariorow!,
-                                                                                  idexp: widget.idexpediente?.id,
+                                                                                  idexp: widget.idexp,
                                                                                   editar: true,
                                                                                   dniok: false,
                                                                                   usuariorol: widget.usuariorol!,
@@ -497,7 +492,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                             queryFn: (q) =>
                                                                                 q.eqOrNull(
                                                                               'idexpediente',
-                                                                              widget.idexpediente?.id,
+                                                                              widget.idexp,
                                                                             ),
                                                                           );
                                                                           _model.crearingreso =
@@ -1239,6 +1234,13 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                       alignment: AlignmentDirectional(0.0, 1.0),
                                                                                                       child: FFButtonWidget(
                                                                                                         onPressed: () async {
+                                                                                                          _model.expvista = await VistaExpedientesUltimoEstadoTable().queryRows(
+                                                                                                            queryFn: (q) => q.eqOrNull(
+                                                                                                              'id',
+                                                                                                              widget.idexp,
+                                                                                                            ),
+                                                                                                          );
+
                                                                                                           context.pushNamed(
                                                                                                             PerfilWidget.routeName,
                                                                                                             queryParameters: {
@@ -1247,7 +1249,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                 ParamType.int,
                                                                                                               ),
                                                                                                               'rowexp': serializeParam(
-                                                                                                                widget.idexpediente,
+                                                                                                                _model.expvista?.firstOrNull,
                                                                                                                 ParamType.SupabaseRow,
                                                                                                               ),
                                                                                                               'usuariorow': serializeParam(
@@ -1262,8 +1264,14 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                                 widget.usuariorol,
                                                                                                                 ParamType.SupabaseRow,
                                                                                                               ),
+                                                                                                              'idexp': serializeParam(
+                                                                                                                widget.idexp,
+                                                                                                                ParamType.int,
+                                                                                                              ),
                                                                                                             }.withoutNulls,
                                                                                                           );
+
+                                                                                                          safeSetState(() {});
                                                                                                         },
                                                                                                         text: 'Iniciar carga',
                                                                                                         options: FFButtonOptions(
@@ -1326,19 +1334,19 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                               ),
                                             ),
                                           ),
-                                        );
-                                      },
+                                        ),
+                                      ],
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
-                  ),
-                ),
+                  );
+                },
               ),
             ),
           ),

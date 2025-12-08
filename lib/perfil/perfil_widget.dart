@@ -33,17 +33,19 @@ class PerfilWidget extends StatefulWidget {
   const PerfilWidget({
     super.key,
     required this.idingreso,
-    required this.rowexp,
     required this.usuariorow,
     this.spd,
     this.usuariorol,
+    required this.rowexp,
+    required this.idexp,
   });
 
   final int? idingreso;
-  final VistaExpedientesUltimoEstadoRow? rowexp;
   final UsuariosRow? usuariorow;
   final SpdRow? spd;
   final VistaUsuariosRolesRow? usuariorol;
+  final VistaExpedientesUltimoEstadoRow? rowexp;
+  final int? idexp;
 
   static String routeName = 'perfil';
   static String routePath = '/perfil';
@@ -338,7 +340,6 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                               updateCallback: () =>
                                                   safeSetState(() {}),
                                               child: BarradeNavegacionWidget(
-                                                exprow: widget.rowexp!,
                                                 idexp: widget.rowexp?.id,
                                                 usuariorow: widget.usuariorow!,
                                                 parameter4: widget.rowexp?.spd,
@@ -796,10 +797,6 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                     context.pushNamed(
                                                                                       IngresosWidget.routeName,
                                                                                       queryParameters: {
-                                                                                        'idexpediente': serializeParam(
-                                                                                          _model.exp?.firstOrNull,
-                                                                                          ParamType.SupabaseRow,
-                                                                                        ),
                                                                                         'idexp': serializeParam(
                                                                                           _model.exp?.firstOrNull?.id,
                                                                                           ParamType.int,
@@ -885,6 +882,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                     child: Padding(
                                       padding: EdgeInsets.all(10.0),
                                       child: Container(
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                0.7,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
@@ -906,7 +906,6 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                 updateCallback: () =>
                                                     safeSetState(() {}),
                                                 child: TarjetaencabezadoWidget(
-                                                  exprow: widget.rowexp!,
                                                   ingresorow:
                                                       containeringresosIngresosRow,
                                                   usuariorow:
@@ -914,6 +913,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                   editarcaratula: true,
                                                   contactosref: true,
                                                   cambia: true,
+                                                  idexpediente: widget.idexp,
                                                 ),
                                               ),
                                               Flex(
@@ -2161,6 +2161,11 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                               EdgeInsets.all(
                                                                   5.0),
                                                           child: Container(
+                                                            width: MediaQuery
+                                                                        .sizeOf(
+                                                                            context)
+                                                                    .width *
+                                                                0.7,
                                                             decoration:
                                                                 BoxDecoration(
                                                               color: FlutterFlowTheme
@@ -2299,7 +2304,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
 
                                                                         return Container(
                                                                           width:
-                                                                              MediaQuery.sizeOf(context).width * 0.7,
+                                                                              MediaQuery.sizeOf(context).width * 0.65,
                                                                           decoration:
                                                                               BoxDecoration(),
                                                                           child:
@@ -2350,7 +2355,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                       children: [
                                                                                         Flex(
                                                                                           direction: (MediaQuery.sizeOf(context).width > 800.0) ? Axis.horizontal : Axis.vertical,
-                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisSize: MainAxisSize.min,
                                                                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                           children: [
                                                                                             Row(

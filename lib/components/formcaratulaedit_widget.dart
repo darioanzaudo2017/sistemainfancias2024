@@ -2724,12 +2724,6 @@ class _FormcaratulaeditWidgetState extends State<FormcaratulaeditWidget> {
                                                     _model.crearexpnnya1?.id,
                                                     ParamType.int,
                                                   ),
-                                                  'idexpediente':
-                                                      serializeParam(
-                                                    _model.vistaExpediente
-                                                        ?.firstOrNull,
-                                                    ParamType.SupabaseRow,
-                                                  ),
                                                   'usuariorow': serializeParam(
                                                     widget.usuariorow,
                                                     ParamType.SupabaseRow,

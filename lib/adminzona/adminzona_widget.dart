@@ -2137,6 +2137,13 @@ class _AdminzonaWidgetState extends State<AdminzonaWidget>
                                                                       ParamType
                                                                           .SupabaseRow,
                                                                     ),
+                                                                    'idexp':
+                                                                        serializeParam(
+                                                                      expdientesenafItem
+                                                                          .expedienteId,
+                                                                      ParamType
+                                                                          .int,
+                                                                    ),
                                                                   }.withoutNulls,
                                                                 );
 

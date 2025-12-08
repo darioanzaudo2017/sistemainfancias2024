@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'flutter_flow/request_manager.dart';
 import '/backend/schema/structs/index.dart';
+import 'backend/supabase/supabase.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'dart:convert';
@@ -333,6 +335,38 @@ class FFAppState extends ChangeNotifier {
   set json(dynamic value) {
     _json = value;
   }
+
+  final _usuariosrolesManager =
+      FutureRequestManager<List<VistaUsuariosRolesRow>>();
+  Future<List<VistaUsuariosRolesRow>> usuariosroles({
+    String? uniqueQueryKey,
+    bool? overrideCache,
+    required Future<List<VistaUsuariosRolesRow>> Function() requestFn,
+  }) =>
+      _usuariosrolesManager.performRequest(
+        uniqueQueryKey: uniqueQueryKey,
+        overrideCache: overrideCache,
+        requestFn: requestFn,
+      );
+  void clearUsuariosrolesCache() => _usuariosrolesManager.clear();
+  void clearUsuariosrolesCacheKey(String? uniqueKey) =>
+      _usuariosrolesManager.clearRequest(uniqueKey);
+
+  final _listaexpedientesNNyAManager =
+      FutureRequestManager<List<VistaNnyaexpgruRow>>();
+  Future<List<VistaNnyaexpgruRow>> listaexpedientesNNyA({
+    String? uniqueQueryKey,
+    bool? overrideCache,
+    required Future<List<VistaNnyaexpgruRow>> Function() requestFn,
+  }) =>
+      _listaexpedientesNNyAManager.performRequest(
+        uniqueQueryKey: uniqueQueryKey,
+        overrideCache: overrideCache,
+        requestFn: requestFn,
+      );
+  void clearListaexpedientesNNyACache() => _listaexpedientesNNyAManager.clear();
+  void clearListaexpedientesNNyACacheKey(String? uniqueKey) =>
+      _listaexpedientesNNyAManager.clearRequest(uniqueKey);
 }
 
 void _safeInit(Function() initializeField) {
