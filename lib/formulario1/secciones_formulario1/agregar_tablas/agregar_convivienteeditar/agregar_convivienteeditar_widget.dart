@@ -61,8 +61,7 @@ class _AgregarConvivienteeditarWidgetState
     _model.textFieldDniFocusNode ??= FocusNode();
 
     _model.textFieldDniMask = MaskTextInputFormatter(mask: '########');
-    _model.textController4 ??=
-        TextEditingController(text: _model.anos?.toString());
+
     _model.textFieldFocusNode3 ??= FocusNode();
 
     _model.textFieldvinculoFocusNode ??= FocusNode();
@@ -1082,7 +1081,13 @@ class _AgregarConvivienteeditarWidgetState
                                         child: Container(
                                           width: 100.0,
                                           child: TextFormField(
-                                            controller: _model.textController4,
+                                            controller:
+                                                _model.textController4 ??=
+                                                    TextEditingController(
+                                              text: containerGrupoConvivienteRow
+                                                  ?.edad
+                                                  ?.toString(),
+                                            ),
                                             focusNode:
                                                 _model.textFieldFocusNode3,
                                             autofocus: false,
@@ -2165,6 +2170,16 @@ class _AgregarConvivienteeditarWidgetState
                                       ),
                                       FFButtonWidget(
                                         onPressed: () async {
+                                          if (_model.formKey.currentState ==
+                                                  null ||
+                                              !_model.formKey.currentState!
+                                                  .validate()) {
+                                            return;
+                                          }
+                                          if (_model.radioButtoncudValue ==
+                                              null) {
+                                            return;
+                                          }
                                           _model.apiResultyu =
                                               await ActualizarGrupoConvivienteCall
                                                   .call(
@@ -2187,8 +2202,22 @@ class _AgregarConvivienteeditarWidgetState
                                             pVinculo: (String value) {
                                               return value != "" ? value : null;
                                             }(_model.dropDownValue!),
-                                            pFechaNac:
-                                                _model.datePicked?.toString(),
+                                            pFechaNac: () {
+                                              if (_model.datePicked != null) {
+                                                return _model.datePicked
+                                                    ?.toString();
+                                              } else if ((_model.datePicked ==
+                                                      null) &&
+                                                  (containerGrupoConvivienteRow
+                                                          ?.fechaNacimiento !=
+                                                      null)) {
+                                                return containerGrupoConvivienteRow
+                                                    ?.fechaNacimiento
+                                                    ?.toString();
+                                              } else {
+                                                return null;
+                                              }
+                                            }(),
                                             pVinculoObs: (String value) {
                                               return value != "" ? value : null;
                                             }(_model
@@ -2220,7 +2249,7 @@ class _AgregarConvivienteeditarWidgetState
                                                 return WebViewAware(
                                                   child: AlertDialog(
                                                     title: Text(
-                                                        'Se creo e registro!'),
+                                                        'Se edito e registro!'),
                                                     actions: [
                                                       TextButton(
                                                         onPressed: () =>

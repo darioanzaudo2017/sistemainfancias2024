@@ -3,6 +3,7 @@ import '/entrevistas/anexoeducacionsolicitud/anexoeducacionsolicitud_widget.dart
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
@@ -111,7 +112,15 @@ class _ListasolicitudaeducacionWidgetState
                       ),
                     );
                   },
-                ).then((value) => safeSetState(() {}));
+                ).then((value) =>
+                    safeSetState(() => _model.solicitudeducacion = value));
+
+                if (_model.solicitudeducacion!) {
+                  safeSetState(() => _model.requestCompleter = null);
+                  await _model.waitForRequestCompleted();
+                }
+
+                safeSetState(() {});
               },
               text: 'Solicitud informacion Educacion',
               options: FFButtonOptions(
@@ -140,14 +149,17 @@ class _ListasolicitudaeducacionWidgetState
             Align(
               alignment: AlignmentDirectional(0.0, 0.0),
               child: FutureBuilder<List<AnexoinstitucioneeducacionRow>>(
-                future: AnexoinstitucioneeducacionTable().queryRows(
-                  queryFn: (q) => q
-                      .eqOrNull(
-                        'idingreso',
-                        widget.idingreso,
-                      )
-                      .order('fecha'),
-                ),
+                future: (_model.requestCompleter ??= Completer<
+                        List<AnexoinstitucioneeducacionRow>>()
+                      ..complete(AnexoinstitucioneeducacionTable().queryRows(
+                        queryFn: (q) => q
+                            .eqOrNull(
+                              'idingreso',
+                              widget.idingreso,
+                            )
+                            .order('fecha'),
+                      )))
+                    .future,
                 builder: (context, snapshot) {
                   // Customize what your widget looks like when it's loading.
                   if (!snapshot.hasData) {

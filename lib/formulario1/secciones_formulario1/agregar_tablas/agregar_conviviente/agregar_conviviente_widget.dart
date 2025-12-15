@@ -1,7 +1,6 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
-import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_radio_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -75,7 +74,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
     _model.textFieldFocusNode4 ??= FocusNode();
 
     _model.textFieldMask4 = MaskTextInputFormatter(mask: '##########');
-
+    _model.textController7 ??= TextEditingController();
     _model.textFieldFocusNode5 ??= FocusNode();
 
     _model.textController8 ??= TextEditingController();
@@ -280,7 +279,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                         options: ['Si', 'No'].toList(),
                                         onChanged: (val) => safeSetState(() {}),
                                         controller: _model
-                                                .radioButtoncudValueController ??=
+                                                .radioButtonconvivienteValueController ??=
                                             FormFieldController<String>(
                                                 valueOrDefault<String>(
                                           containerGrupoConvivienteRow
@@ -1594,156 +1593,14 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                               Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Text(
-                                        'Usar la misma direccion del NNyA Del expediente',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              font: GoogleFonts.notoSansJp(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                      ),
-                                      Container(
-                                        width: 200.0,
-                                        child: FlutterFlowChoiceChips(
-                                          options: [
-                                            ChipData('Si'),
-                                            ChipData('No')
-                                          ],
-                                          onChanged: (val) => safeSetState(() =>
-                                              _model.choiceChipsValue =
-                                                  val?.firstOrNull),
-                                          selectedChipStyle: ChipStyle(
-                                            backgroundColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primary,
-                                            textStyle: FlutterFlowTheme.of(
-                                                    context)
-                                                .bodyMedium
-                                                .override(
-                                                  font: GoogleFonts.notoSansJp(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .info,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
-                                                ),
-                                            iconColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .info,
-                                            iconSize: 16.0,
-                                            elevation: 0.0,
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          unselectedChipStyle: ChipStyle(
-                                            backgroundColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .secondaryBackground,
-                                            textStyle: FlutterFlowTheme.of(
-                                                    context)
-                                                .bodyMedium
-                                                .override(
-                                                  font: GoogleFonts.notoSansJp(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryText,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
-                                                ),
-                                            iconColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .secondaryText,
-                                            iconSize: 16.0,
-                                            elevation: 0.0,
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          chipSpacing: 8.0,
-                                          rowSpacing: 8.0,
-                                          multiselect: false,
-                                          alignment: WrapAlignment.start,
-                                          controller: _model
-                                                  .choiceChipsValueController ??=
-                                              FormFieldController<List<String>>(
-                                            [],
-                                          ),
-                                          wrapped: true,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  if (_model.choiceChipsValue == 'No')
+                                  if (_model.radioButtonconvivienteValue ==
+                                      'No')
                                     Expanded(
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 8.0, 0.0),
                                         child: TextFormField(
-                                          controller: _model.textController7 ??=
-                                              TextEditingController(
-                                            text:
-                                                containerSeccion1Row?.domicilio,
-                                          ),
+                                          controller: _model.textController7,
                                           focusNode: _model.textFieldFocusNode5,
                                           autofocus: false,
                                           obscureText: false,
@@ -2092,7 +1949,7 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                                   return;
                                                 }
                                                 if (_model
-                                                        .radioButtoncudValue ==
+                                                        .radioButtonconvivienteValue ==
                                                     null) {
                                                   return;
                                                 }
@@ -2141,21 +1998,14 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                                       ?.edad,
                                                   'telefono': _model
                                                       .textController6.text,
-                                                  'direccion':
-                                                      _model.choiceChipsValue ==
-                                                              'Si'
-                                                          ? containerSeccion1Row
-                                                              ?.domicilio
-                                                          : _model
-                                                              .textController7
-                                                              .text,
+                                                  'direccion': '',
                                                   'observaciones': _model
                                                       .textController8.text,
                                                   'idingreso':
                                                       widget.rowingreso?.id,
                                                   'idexpe': widget.idexp?.id,
                                                   'conviviente': _model
-                                                      .radioButtoncudValue,
+                                                      .radioButtonconvivienteValue,
                                                   'idnnya': _model
                                                       .busquedapersonadni
                                                       ?.firstOrNull
@@ -2216,7 +2066,8 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                                       .validate()) {
                                                 return;
                                               }
-                                              if (_model.radioButtoncudValue ==
+                                              if (_model
+                                                      .radioButtonconvivienteValue ==
                                                   null) {
                                                 return;
                                               }
@@ -2266,20 +2117,14 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                                     : _model.anosgc,
                                                 'telefono':
                                                     _model.textController6.text,
-                                                'direccion':
-                                                    _model.choiceChipsValue ==
-                                                            'Si'
-                                                        ? containerSeccion1Row
-                                                            ?.domicilio
-                                                        : _model.textController7
-                                                            .text,
+                                                'direccion': '',
                                                 'observaciones':
                                                     _model.textController8.text,
                                                 'idingreso':
                                                     widget.rowingreso?.id,
                                                 'idexpe': widget.idexp?.id,
-                                                'conviviente':
-                                                    _model.radioButtoncudValue,
+                                                'conviviente': _model
+                                                    .radioButtonconvivienteValue,
                                                 'idnnya':
                                                     _model.crearnnyanuevo?.id,
                                                 'vinculo_obs': _model
@@ -2421,15 +2266,29 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                         ),
                                       FFButtonWidget(
                                         onPressed: () async {
+                                          if (_model.formKey.currentState ==
+                                                  null ||
+                                              !_model.formKey.currentState!
+                                                  .validate()) {
+                                            return;
+                                          }
+                                          if (_model
+                                                  .radioButtonconvivienteValue ==
+                                              null) {
+                                            return;
+                                          }
                                           _model.apiResultyuv =
                                               await AgregarGrupoConvivienteCall
                                                   .call(
                                             token: currentJwtToken,
                                             pIdexpediente: widget.idexp?.id,
                                             pIdingreso: widget.rowingreso?.id,
-                                            pDni: int.tryParse(_model
-                                                .textFieldDniTextController
-                                                .text),
+                                            pDni: valueOrDefault<int>(
+                                              int.tryParse(_model
+                                                  .textFieldDniTextController
+                                                  .text),
+                                              0,
+                                            ),
                                             pNombre: (String value) {
                                               return value != "" ? value : null;
                                             }(_model.textController1.text),
@@ -2442,8 +2301,9 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                                 ? int.tryParse(
                                                     _model.textController4.text)
                                                 : _model.anosgc,
-                                            pFechaNac:
-                                                _model.datePicked?.toString(),
+                                            pFechaNac: _model.datePicked != null
+                                                ? _model.datePicked?.toString()
+                                                : null,
                                             pVinculo: _model.dropDownValue,
                                             pVinculoObs: (String value) {
                                               return value != "" ? value : null;
@@ -2459,10 +2319,11 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                             pObservaciones: (String value) {
                                               return value != "" ? value : null;
                                             }(_model.textController8.text),
-                                            pConviviente:
-                                                _model.radioButtoncudValue,
+                                            pConviviente: _model
+                                                .radioButtonconvivienteValue,
                                             pUsarDireccionExpediente:
-                                                _model.choiceChipsValue == 'Si'
+                                                _model.radioButtonconvivienteValue ==
+                                                        'Si'
                                                     ? true
                                                     : false,
                                             pIduser: currentUserUid,

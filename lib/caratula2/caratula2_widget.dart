@@ -1989,7 +1989,10 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                             .textFieldedadTextController.text),
                                         pFechaNac:
                                             _model.datePicked1?.toString(),
-                                        pSpd: widget.spd?.nombrespd,
+                                        pSpd: (widget.usuriorol?.rolId == 1) ||
+                                                (widget.usuriorol?.rolId == 2)
+                                            ? _model.dropDownValue
+                                            : widget.spd?.nombrespd,
                                         pFechaIngreso:
                                             _model.datePicked2?.toString(),
                                         pZona: widget.usuriorol?.zonaUsuario,
