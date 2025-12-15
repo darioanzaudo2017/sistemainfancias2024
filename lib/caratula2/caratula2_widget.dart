@@ -21,14 +21,14 @@ export 'caratula2_model.dart';
 class Caratula2Widget extends StatefulWidget {
   const Caratula2Widget({
     super.key,
-    required this.usuario,
-    required this.spd,
-    required this.usuriorol,
+    required this.spdnombre,
+    required this.idzona,
+    required this.idrol,
   });
 
-  final UsuariosRow? usuario;
-  final SpdRow? spd;
-  final VistaUsuariosRolesRow? usuriorol;
+  final String? spdnombre;
+  final int? idzona;
+  final int? idrol;
 
   static String routeName = 'caratula2';
   static String routePath = '/caratula2';
@@ -1547,8 +1547,8 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                               FormFieldController<
                                                                   String>(
                                                             _model.dropDownValue ??=
-                                                                widget.spd
-                                                                    ?.nombrespd,
+                                                                widget
+                                                                    .spdnombre,
                                                           ),
                                                           options:
                                                               dropDownSpdRowList
@@ -1610,10 +1610,9 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                                       12.0,
                                                                       0.0),
                                                           hidesUnderline: true,
-                                                          disabled: widget
-                                                                  .usuriorol
-                                                                  ?.rolId ==
-                                                              3,
+                                                          disabled:
+                                                              widget.idrol ==
+                                                                  3,
                                                           isOverButton: false,
                                                           isSearchable: false,
                                                           isMultiSelect: false,
@@ -1896,76 +1895,6 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                       SizedBox(height: 10.0)),
                                                 ),
                                               ),
-                                              if (currentUserEmail == '1')
-                                                Align(
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          0.0, 0.0),
-                                                  child: FFButtonWidget(
-                                                    onPressed: () async {},
-                                                    text:
-                                                        'verificar NNyA y crear expediente',
-                                                    options: FFButtonOptions(
-                                                      height: 40.0,
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  24.0,
-                                                                  0.0,
-                                                                  24.0,
-                                                                  0.0),
-                                                      iconPadding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondary,
-                                                      textStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .notoSansJp(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleSmall
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleSmall
-                                                                      .fontStyle,
-                                                                ),
-                                                                color: Colors
-                                                                    .white,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .fontStyle,
-                                                              ),
-                                                      elevation: 3.0,
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            Colors.transparent,
-                                                        width: 1.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                  ),
-                                                ),
                                             ].divide(SizedBox(height: 10.0)),
                                           ),
                                         ),
@@ -1989,13 +1918,13 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                             .textFieldedadTextController.text),
                                         pFechaNac:
                                             _model.datePicked1?.toString(),
-                                        pSpd: (widget.usuriorol?.rolId == 1) ||
-                                                (widget.usuriorol?.rolId == 2)
+                                        pSpd: (widget.idrol == 1) ||
+                                                (widget.idrol == 2)
                                             ? _model.dropDownValue
-                                            : widget.spd?.nombrespd,
+                                            : widget.spdnombre,
                                         pFechaIngreso:
                                             _model.datePicked2?.toString(),
-                                        pZona: widget.usuriorol?.zonaUsuario,
+                                        pZona: widget.idzona,
                                         pIduser: currentUserUid,
                                         token: currentJwtToken,
                                       );
@@ -2021,6 +1950,28 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                             );
                                           },
                                         );
+                                        _model.usuario11 =
+                                            await UsuariosTable().queryRows(
+                                          queryFn: (q) => q.eqOrNull(
+                                            'id',
+                                            currentUserUid,
+                                          ),
+                                        );
+                                        _model.spd11 =
+                                            await SpdTable().queryRows(
+                                          queryFn: (q) => q.eqOrNull(
+                                            'nombrespd',
+                                            widget.spdnombre,
+                                          ),
+                                        );
+                                        _model.userrol11 =
+                                            await VistaUsuariosRolesTable()
+                                                .queryRows(
+                                          queryFn: (q) => q.eqOrNull(
+                                            'id',
+                                            currentUserUid,
+                                          ),
+                                        );
 
                                         context.pushNamed(
                                           IngresosWidget.routeName,
@@ -2031,15 +1982,15 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                               ParamType.int,
                                             ),
                                             'usuariorow': serializeParam(
-                                              widget.usuario,
+                                              _model.usuario11?.firstOrNull,
                                               ParamType.SupabaseRow,
                                             ),
                                             'spd': serializeParam(
-                                              widget.spd,
+                                              _model.spd11?.firstOrNull,
                                               ParamType.SupabaseRow,
                                             ),
                                             'usuariorol': serializeParam(
-                                              widget.usuriorol,
+                                              _model.userrol?.firstOrNull,
                                               ParamType.SupabaseRow,
                                             ),
                                           }.withoutNulls,
@@ -2733,9 +2684,8 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                         ),
                                               ),
                                               Visibility(
-                                                visible:
-                                                    widget.spd?.nombrespd ==
-                                                        tabla2Item.spd,
+                                                visible: widget.spdnombre ==
+                                                    tabla2Item.spd,
                                                 child: Align(
                                                   alignment:
                                                       AlignmentDirectional(
@@ -2759,6 +2709,33 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                           tabla2Item.id,
                                                         ),
                                                       );
+                                                      _model.usuario =
+                                                          await UsuariosTable()
+                                                              .queryRows(
+                                                        queryFn: (q) =>
+                                                            q.eqOrNull(
+                                                          'id',
+                                                          currentUserUid,
+                                                        ),
+                                                      );
+                                                      _model.spd =
+                                                          await SpdTable()
+                                                              .queryRows(
+                                                        queryFn: (q) =>
+                                                            q.eqOrNull(
+                                                          'nombrespd',
+                                                          widget.spdnombre,
+                                                        ),
+                                                      );
+                                                      _model.userrol =
+                                                          await VistaUsuariosRolesTable()
+                                                              .queryRows(
+                                                        queryFn: (q) =>
+                                                            q.eqOrNull(
+                                                          'id',
+                                                          currentUserUid,
+                                                        ),
+                                                      );
 
                                                       context.pushNamed(
                                                         IngresosWidget
@@ -2771,18 +2748,21 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                           ),
                                                           'usuariorow':
                                                               serializeParam(
-                                                            widget.usuario,
+                                                            _model.usuario
+                                                                ?.firstOrNull,
                                                             ParamType
                                                                 .SupabaseRow,
                                                           ),
                                                           'spd': serializeParam(
-                                                            widget.spd,
+                                                            _model.spd
+                                                                ?.firstOrNull,
                                                             ParamType
                                                                 .SupabaseRow,
                                                           ),
                                                           'usuariorol':
                                                               serializeParam(
-                                                            widget.usuriorol,
+                                                            _model.userrol
+                                                                ?.firstOrNull,
                                                             ParamType
                                                                 .SupabaseRow,
                                                           ),

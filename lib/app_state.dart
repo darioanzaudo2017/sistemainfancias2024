@@ -336,6 +336,24 @@ class FFAppState extends ChangeNotifier {
     _json = value;
   }
 
+  bool _spdload = false;
+  bool get spdload => _spdload;
+  set spdload(bool value) {
+    _spdload = value;
+  }
+
+  ListaexoedientespageStruct _listaexpedientespage =
+      ListaexoedientespageStruct();
+  ListaexoedientespageStruct get listaexpedientespage => _listaexpedientespage;
+  set listaexpedientespage(ListaexoedientespageStruct value) {
+    _listaexpedientespage = value;
+  }
+
+  void updateListaexpedientespageStruct(
+      Function(ListaexoedientespageStruct) updateFn) {
+    updateFn(_listaexpedientespage);
+  }
+
   final _usuariosrolesManager =
       FutureRequestManager<List<VistaUsuariosRolesRow>>();
   Future<List<VistaUsuariosRolesRow>> usuariosroles({

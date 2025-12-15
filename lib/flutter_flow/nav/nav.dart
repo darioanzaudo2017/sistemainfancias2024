@@ -334,17 +334,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: Caratula2Widget.routeName,
           path: Caratula2Widget.routePath,
           builder: (context, params) => Caratula2Widget(
-            usuario: params.getParam<UsuariosRow>(
-              'usuario',
-              ParamType.SupabaseRow,
+            spdnombre: params.getParam(
+              'spdnombre',
+              ParamType.String,
             ),
-            spd: params.getParam<SpdRow>(
-              'spd',
-              ParamType.SupabaseRow,
+            idzona: params.getParam(
+              'idzona',
+              ParamType.int,
             ),
-            usuriorol: params.getParam<VistaUsuariosRolesRow>(
-              'usuriorol',
-              ParamType.SupabaseRow,
+            idrol: params.getParam(
+              'idrol',
+              ParamType.int,
             ),
           ),
         ),
@@ -416,11 +416,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: Auth2ForgotPasswordCopyWidget.routeName,
           path: Auth2ForgotPasswordCopyWidget.routePath,
           builder: (context, params) => Auth2ForgotPasswordCopyWidget(),
-        ),
-        FFRoute(
-          name: HomestitchWidget.routeName,
-          path: HomestitchWidget.routePath,
-          builder: (context, params) => HomestitchWidget(),
         ),
         FFRoute(
           name: AdminzonaWidget.routeName,
