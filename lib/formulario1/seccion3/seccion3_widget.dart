@@ -111,7 +111,7 @@ class _Seccion3WidgetState extends State<Seccion3Widget> {
                   alignment: AlignmentDirectional(0.0, 0.0),
                   child: Form(
                     key: _model.formKey,
-                    autovalidateMode: AutovalidateMode.disabled,
+                    autovalidateMode: AutovalidateMode.always,
                     child: Align(
                       alignment: AlignmentDirectional(0.0, -1.0),
                       child: Padding(

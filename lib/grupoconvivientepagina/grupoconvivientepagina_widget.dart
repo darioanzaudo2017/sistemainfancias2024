@@ -72,8 +72,22 @@ class _GrupoconvivientepaginaWidgetState
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
+          leading: FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30.0,
+            borderWidth: 1.0,
+            buttonSize: 60.0,
+            icon: Icon(
+              Icons.arrow_back_rounded,
+              color: Colors.white,
+              size: 30.0,
+            ),
+            onPressed: () async {
+              context.pop();
+            },
+          ),
           title: Text(
-            'Page Title',
+            'Grupo conviviente y no conviviente',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   font: GoogleFonts.notoSansJp(
                     fontWeight:
@@ -91,7 +105,7 @@ class _GrupoconvivientepaginaWidgetState
                 ),
           ),
           actions: [],
-          centerTitle: false,
+          centerTitle: true,
           elevation: 2.0,
         ),
         body: SafeArea(

@@ -3,6 +3,7 @@ import '/entrevistas/anexoinstitucionsalud/anexoinstitucionsalud_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
@@ -135,7 +136,15 @@ class _ListasolicitudasaludWidgetState
                           ),
                         );
                       },
-                    ).then((value) => safeSetState(() {}));
+                    ).then((value) =>
+                        safeSetState(() => _model.solicitudsalud = value));
+
+                    if (_model.solicitudsalud!) {
+                      safeSetState(() => _model.requestCompleter = null);
+                      await _model.waitForRequestCompleted();
+                    }
+
+                    safeSetState(() {});
                   },
                   text: 'Solicitud informacion Salud',
                   options: FFButtonOptions(
@@ -169,14 +178,17 @@ class _ListasolicitudasaludWidgetState
                 Align(
                   alignment: AlignmentDirectional(0.0, 0.0),
                   child: FutureBuilder<List<AnexoinstitucionesaludRow>>(
-                    future: AnexoinstitucionesaludTable().queryRows(
-                      queryFn: (q) => q
-                          .eqOrNull(
-                            'idingreso',
-                            widget.ingresorow?.id,
-                          )
-                          .order('fecha'),
-                    ),
+                    future: (_model.requestCompleter ??= Completer<
+                            List<AnexoinstitucionesaludRow>>()
+                          ..complete(AnexoinstitucionesaludTable().queryRows(
+                            queryFn: (q) => q
+                                .eqOrNull(
+                                  'idingreso',
+                                  widget.ingresorow?.id,
+                                )
+                                .order('fecha'),
+                          )))
+                        .future,
                     builder: (context, snapshot) {
                       // Customize what your widget looks like when it's loading.
                       if (!snapshot.hasData) {

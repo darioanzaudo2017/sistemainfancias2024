@@ -1122,25 +1122,21 @@ class _AvisoVisitaNNyAWidgetState extends State<AvisoVisitaNNyAWidget> {
                                     widget.idampliacion,
                                   ),
                                 );
-                                await showDialog(
-                                  context: context,
-                                  builder: (alertDialogContext) {
-                                    return WebViewAware(
-                                      child: AlertDialog(
-                                        title: Text('Carga correcta'),
-                                        content: Text(
-                                            'La informacion se guardo correctamente!!'),
-                                        actions: [
-                                          TextButton(
-                                            onPressed: () => Navigator.pop(
-                                                alertDialogContext),
-                                            child: Text('Ok'),
-                                          ),
-                                        ],
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      'La informacion se guardo correctamente!!',
+                                      style: TextStyle(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
                                       ),
-                                    );
-                                  },
+                                    ),
+                                    duration: Duration(milliseconds: 4000),
+                                    backgroundColor:
+                                        FlutterFlowTheme.of(context).secondary,
+                                  ),
                                 );
+                                Navigator.pop(context, true);
 
                                 safeSetState(() {});
                               },

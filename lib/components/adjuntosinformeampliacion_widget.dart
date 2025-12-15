@@ -348,6 +348,38 @@ class _AdjuntosinformeampliacionWidgetState
                 );
               },
             ),
+            FFButtonWidget(
+              onPressed: () {
+                print('Button pressed ...');
+              },
+              text: 'Cerrar',
+              icon: Icon(
+                Icons.cancel_outlined,
+                size: 15.0,
+              ),
+              options: FFButtonOptions(
+                height: 40.0,
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                color: FlutterFlowTheme.of(context).primary,
+                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                      font: GoogleFonts.notoSansJp(
+                        fontWeight:
+                            FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                      ),
+                      color: Colors.white,
+                      letterSpacing: 0.0,
+                      fontWeight:
+                          FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                    ),
+                elevation: 0.0,
+                borderRadius: BorderRadius.circular(8.0),
+              ),
+            ),
           ].divide(SizedBox(height: 5.0)).around(SizedBox(height: 5.0)),
         ),
       ),

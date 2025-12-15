@@ -21,8 +21,8 @@ class AgregarConvivienteModel
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();
-  // State field(s) for RadioButtoncud widget.
-  FormFieldController<String>? radioButtoncudValueController;
+  // State field(s) for RadioButtonconviviente widget.
+  FormFieldController<String>? radioButtonconvivienteValueController;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
   TextEditingController? textController1;
@@ -72,12 +72,6 @@ class AgregarConvivienteModel
   TextEditingController? textController6;
   late MaskTextInputFormatter textFieldMask4;
   String? Function(BuildContext, String?)? textController6Validator;
-  // State field(s) for ChoiceChips widget.
-  FormFieldController<List<String>>? choiceChipsValueController;
-  String? get choiceChipsValue =>
-      choiceChipsValueController?.value?.firstOrNull;
-  set choiceChipsValue(String? val) =>
-      choiceChipsValueController?.value = val != null ? [val] : [];
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode5;
   TextEditingController? textController7;
@@ -133,5 +127,6 @@ class AgregarConvivienteModel
   }
 
   /// Additional helper methods.
-  String? get radioButtoncudValue => radioButtoncudValueController?.value;
+  String? get radioButtonconvivienteValue =>
+      radioButtonconvivienteValueController?.value;
 }
