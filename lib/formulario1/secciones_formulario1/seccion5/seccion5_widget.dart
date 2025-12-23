@@ -13,14 +13,14 @@ export 'seccion5_model.dart';
 class Seccion5Widget extends StatefulWidget {
   const Seccion5Widget({
     super.key,
-    required this.rowingreso,
-    required this.rowexp,
     this.editar,
+    required this.idingreso,
+    required this.idexp,
   });
 
-  final IngresosRow? rowingreso;
-  final VistaExpedientesUltimoEstadoRow? rowexp;
   final bool? editar;
+  final int? idingreso;
+  final int? idexp;
 
   @override
   State<Seccion5Widget> createState() => _Seccion5WidgetState();
@@ -60,7 +60,7 @@ class _Seccion5WidgetState extends State<Seccion5Widget> {
       future: Seccion5Table().querySingleRow(
         queryFn: (q) => q.eqOrNull(
           'idIngreso',
-          widget.rowingreso?.id,
+          widget.idingreso,
         ),
       ),
       builder: (context, snapshot) {
@@ -446,10 +446,8 @@ class _Seccion5WidgetState extends State<Seccion5Widget> {
                                               'resena': _model
                                                   .textFieldresenaTextController
                                                   .text,
-                                              'idIngreso':
-                                                  widget.rowingreso?.id,
-                                              'idExpediente':
-                                                  widget.rowexp?.id,
+                                              'idIngreso': widget.idingreso,
+                                              'idExpediente': widget.idexp,
                                               'iduser': currentUserUid,
                                             });
                                             await IngresosTable().update(
@@ -463,29 +461,26 @@ class _Seccion5WidgetState extends State<Seccion5Widget> {
                                               matchingRows: (rows) =>
                                                   rows.eqOrNull(
                                                 'id',
-                                                widget.rowingreso?.id,
+                                                widget.idingreso,
                                               ),
                                             );
-                                            await showDialog(
-                                              context: context,
-                                              builder: (alertDialogContext) {
-                                                return WebViewAware(
-                                                  child: AlertDialog(
-                                                    title:
-                                                        Text('Carga correcta'),
-                                                    content: Text(
-                                                        'La informacion se guardo correctamente!!'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: Text('Ok'),
-                                                      ),
-                                                    ],
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(
+                                              SnackBar(
+                                                content: Text(
+                                                  'Se guardo con exito!!',
+                                                  style: TextStyle(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
                                                   ),
-                                                );
-                                              },
+                                                ),
+                                                duration: Duration(
+                                                    milliseconds: 4000),
+                                                backgroundColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondary,
+                                              ),
                                             );
                                             Navigator.pop(context, true);
                                           } else {
@@ -502,7 +497,7 @@ class _Seccion5WidgetState extends State<Seccion5Widget> {
                                               matchingRows: (rows) =>
                                                   rows.eqOrNull(
                                                 'idIngreso',
-                                                widget.rowingreso?.id,
+                                                widget.idingreso,
                                               ),
                                             );
                                             await IngresosTable().update(
@@ -515,29 +510,26 @@ class _Seccion5WidgetState extends State<Seccion5Widget> {
                                               matchingRows: (rows) =>
                                                   rows.eqOrNull(
                                                 'id',
-                                                widget.rowingreso?.id,
+                                                widget.idingreso,
                                               ),
                                             );
-                                            await showDialog(
-                                              context: context,
-                                              builder: (alertDialogContext) {
-                                                return WebViewAware(
-                                                  child: AlertDialog(
-                                                    title:
-                                                        Text('Carga correcta'),
-                                                    content: Text(
-                                                        'La informacion se edito correctamente!!'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: Text('Ok'),
-                                                      ),
-                                                    ],
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(
+                                              SnackBar(
+                                                content: Text(
+                                                  'Se guardo con exito!!',
+                                                  style: TextStyle(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
                                                   ),
-                                                );
-                                              },
+                                                ),
+                                                duration: Duration(
+                                                    milliseconds: 4000),
+                                                backgroundColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondary,
+                                              ),
                                             );
                                             Navigator.pop(context);
                                           }
@@ -604,7 +596,7 @@ class _Seccion5WidgetState extends State<Seccion5Widget> {
                                     .querySingleRow(
                                   queryFn: (q) => q.eqOrNull(
                                     'idexpediente',
-                                    widget.rowexp?.id,
+                                    widget.idexp,
                                   ),
                                 ),
                                 builder: (context, snapshot) {
@@ -667,27 +659,27 @@ class _Seccion5WidgetState extends State<Seccion5Widget> {
                                                 .seccion5?.firstOrNull?.motivo,
                                             'resena': _model
                                                 .seccion5?.firstOrNull?.resena,
-                                            'idIngreso': widget.rowingreso?.id,
-                                            'idExpediente': widget.rowexp?.id,
+                                            'idIngreso': widget.idingreso,
+                                            'idExpediente': widget.idexp,
                                             'iduser': currentUserUid,
                                           });
-                                          await showDialog(
-                                            context: context,
-                                            builder: (alertDialogContext) {
-                                              return WebViewAware(
-                                                child: AlertDialog(
-                                                  title: Text('3'),
-                                                  actions: [
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext),
-                                                      child: Text('Ok'),
-                                                    ),
-                                                  ],
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                'Se guardo con exito!!',
+                                                style: TextStyle(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
                                                 ),
-                                              );
-                                            },
+                                              ),
+                                              duration:
+                                                  Duration(milliseconds: 4000),
+                                              backgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondary,
+                                            ),
                                           );
                                           await IngresosTable().update(
                                             data: {
@@ -700,7 +692,7 @@ class _Seccion5WidgetState extends State<Seccion5Widget> {
                                             matchingRows: (rows) =>
                                                 rows.eqOrNull(
                                               'id',
-                                              widget.rowingreso?.id,
+                                              widget.idingreso,
                                             ),
                                           );
                                           await showDialog(

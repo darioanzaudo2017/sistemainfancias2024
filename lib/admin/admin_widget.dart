@@ -22,10 +22,12 @@ class AdminWidget extends StatefulWidget {
     super.key,
     required this.usuariosroles,
     required this.usuariorow,
+    this.idnnya,
   });
 
   final VistaUsuariosRolesRow? usuariosroles;
   final UsuariosRow? usuariorow;
+  final int? idnnya;
 
   static String routeName = 'Admin';
   static String routePath = '/admin';
@@ -2188,6 +2190,13 @@ class _AdminWidgetState extends State<AdminWidget>
                                                                       ParamType
                                                                           .int,
                                                                     ),
+                                                                    'idnnya':
+                                                                        serializeParam(
+                                                                      widget
+                                                                          .idnnya,
+                                                                      ParamType
+                                                                          .int,
+                                                                    ),
                                                                   }.withoutNulls,
                                                                 );
 
@@ -2628,6 +2637,12 @@ class _AdminWidgetState extends State<AdminWidget>
                                                                           .SupabaseRow,
                                                                     ),
                                                                     'idexp':
+                                                                        serializeParam(
+                                                                      0,
+                                                                      ParamType
+                                                                          .int,
+                                                                    ),
+                                                                    'idnnya':
                                                                         serializeParam(
                                                                       0,
                                                                       ParamType

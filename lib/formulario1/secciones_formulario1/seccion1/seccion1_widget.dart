@@ -22,6 +22,10 @@ class Seccion1Widget extends StatefulWidget {
     this.editar,
     required this.usuariorow,
     required this.usuariorol,
+    required this.idingreso2,
+    required this.idexp,
+    required this.iduser,
+    required this.idrol,
   });
 
   final IngresosRow? idingreso;
@@ -29,6 +33,10 @@ class Seccion1Widget extends StatefulWidget {
   final bool? editar;
   final UsuariosRow? usuariorow;
   final VistaUsuariosRolesRow? usuariorol;
+  final int? idingreso2;
+  final int? idexp;
+  final String? iduser;
+  final int? idrol;
 
   @override
   State<Seccion1Widget> createState() => _Seccion1WidgetState();

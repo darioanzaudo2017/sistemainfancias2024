@@ -2728,6 +2728,11 @@ class _FormcaratulaeditWidgetState extends State<FormcaratulaeditWidget> {
                                                     widget.usuariorow,
                                                     ParamType.SupabaseRow,
                                                   ),
+                                                  'idnnya': serializeParam(
+                                                    containerExpedienteRow
+                                                        ?.idNNyA,
+                                                    ParamType.int,
+                                                  ),
                                                 }.withoutNulls,
                                               );
                                             } else {

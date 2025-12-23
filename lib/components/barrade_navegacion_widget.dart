@@ -30,6 +30,7 @@ class BarradeNavegacionWidget extends StatefulWidget {
     required this.perfil,
     this.spd,
     this.usuariorol,
+    this.idnnya,
   });
 
   final int? idexp;
@@ -49,6 +50,7 @@ class BarradeNavegacionWidget extends StatefulWidget {
   final bool? perfil;
   final SpdRow? spd;
   final VistaUsuariosRolesRow? usuariorol;
+  final int? idnnya;
 
   @override
   State<BarradeNavegacionWidget> createState() =>
@@ -197,6 +199,10 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                       'usuariorol': serializeParam(
                         widget.usuariorol,
                         ParamType.SupabaseRow,
+                      ),
+                      'idnnya': serializeParam(
+                        widget.idnnya,
+                        ParamType.int,
                       ),
                     }.withoutNulls,
                   );

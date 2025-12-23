@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'flutter_flow/request_manager.dart';
 import '/backend/schema/structs/index.dart';
-import 'backend/supabase/supabase.dart';
+import '/backend/api_requests/api_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'dart:convert';
@@ -354,21 +354,40 @@ class FFAppState extends ChangeNotifier {
     updateFn(_listaexpedientespage);
   }
 
-  final _usuariosrolesManager =
-      FutureRequestManager<List<VistaUsuariosRolesRow>>();
-  Future<List<VistaUsuariosRolesRow>> usuariosroles({
+  String _nombreusuario = '';
+  String get nombreusuario => _nombreusuario;
+  set nombreusuario(String value) {
+    _nombreusuario = value;
+  }
+
+  int _idexp = 0;
+  int get idexp => _idexp;
+  set idexp(int value) {
+    _idexp = value;
+  }
+
+  int _idingreso = 0;
+  int get idingreso => _idingreso;
+  set idingreso(int value) {
+    _idingreso = value;
+  }
+
+  final _tarjetaexpedientecacheManager =
+      FutureRequestManager<ApiCallResponse>();
+  Future<ApiCallResponse> tarjetaexpedientecache({
     String? uniqueQueryKey,
     bool? overrideCache,
-    required Future<List<VistaUsuariosRolesRow>> Function() requestFn,
+    required Future<ApiCallResponse> Function() requestFn,
   }) =>
-      _usuariosrolesManager.performRequest(
+      _tarjetaexpedientecacheManager.performRequest(
         uniqueQueryKey: uniqueQueryKey,
         overrideCache: overrideCache,
         requestFn: requestFn,
       );
-  void clearUsuariosrolesCache() => _usuariosrolesManager.clear();
-  void clearUsuariosrolesCacheKey(String? uniqueKey) =>
-      _usuariosrolesManager.clearRequest(uniqueKey);
+  void clearTarjetaexpedientecacheCache() =>
+      _tarjetaexpedientecacheManager.clear();
+  void clearTarjetaexpedientecacheCacheKey(String? uniqueKey) =>
+      _tarjetaexpedientecacheManager.clearRequest(uniqueKey);
 }
 
 void _safeInit(Function() initializeField) {

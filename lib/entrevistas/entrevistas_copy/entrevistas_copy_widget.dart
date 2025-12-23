@@ -19,6 +19,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'entrevistas_copy_model.dart';
 export 'entrevistas_copy_model.dart';
@@ -26,18 +27,22 @@ export 'entrevistas_copy_model.dart';
 class EntrevistasCopyWidget extends StatefulWidget {
   const EntrevistasCopyWidget({
     super.key,
-    required this.ingresorow,
+    required this.idingreso,
     required this.rowexp,
     required this.usuariorow,
     required this.usuariorol,
     required this.spd,
+    required this.idnnya,
+    required this.idexp,
   });
 
-  final int? ingresorow;
+  final int? idingreso;
   final VistaExpedientesUltimoEstadoRow? rowexp;
   final UsuariosRow? usuariorow;
   final VistaUsuariosRolesRow? usuariorol;
   final SpdRow? spd;
+  final int? idnnya;
+  final int? idexp;
 
   static String routeName = 'EntrevistasCopy';
   static String routePath = '/entrevistasCopy';
@@ -68,6 +73,8 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
@@ -94,7 +101,7 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                 PerfilWidget.routeName,
                 queryParameters: {
                   'idingreso': serializeParam(
-                    widget.ingresorow,
+                    widget.idingreso,
                     ParamType.int,
                   ),
                   'rowexp': serializeParam(
@@ -115,6 +122,10 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                   ),
                   'idexp': serializeParam(
                     widget.rowexp?.id,
+                    ParamType.int,
+                  ),
+                  'idnnya': serializeParam(
+                    widget.idnnya,
                     ParamType.int,
                   ),
                 }.withoutNulls,
@@ -149,7 +160,7 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
             future: IngresosTable().querySingleRow(
               queryFn: (q) => q.eqOrNull(
                 'id',
-                widget.ingresorow,
+                widget.idingreso,
               ),
             ),
             builder: (context, snapshot) {
@@ -212,11 +223,6 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                             updateCallback: () =>
                                                 safeSetState(() {}),
                                             child: TarjetaencabezadoWidget(
-                                              editarcaratula: false,
-                                              contactosref: false,
-                                              cambia: false,
-                                              ingresorow: containerIngresosRow,
-                                              usuariorow: widget.usuariorow!,
                                               idexpediente: widget.rowexp?.id,
                                               idnnya: widget.rowexp?.idNNyA,
                                               rowspd: widget.spd,
@@ -272,7 +278,7 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                               q.eqOrNull(
                                                                         'idingreso',
                                                                         widget
-                                                                            .ingresorow,
+                                                                            .idingreso,
                                                                       ),
                                                                     )))
                                                               .future,
@@ -411,12 +417,12 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                                                 child: Padding(
                                                                                                   padding: MediaQuery.viewInsetsOf(context),
                                                                                                   child: AmpliacionactividadplanificacionWidget(
-                                                                                                    idingreso: containerIngresosRow!,
-                                                                                                    exprow: widget.rowexp!,
                                                                                                     formulario: 'Ampliacion de informacion',
                                                                                                     planificacion: 'si',
                                                                                                     idamplaiacion: 0,
                                                                                                     idampliacionhistorial: 0,
+                                                                                                    idingreso1: widget.idingreso!,
+                                                                                                    idexp: widget.idexp!,
                                                                                                   ),
                                                                                                 ),
                                                                                               ),
@@ -674,9 +680,9 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                                                   child: Padding(
                                                                                                     padding: MediaQuery.viewInsetsOf(context),
                                                                                                     child: AmpliacionactividadWidget(
-                                                                                                      idingreso: containerIngresosRow!,
-                                                                                                      exprow: widget.rowexp!,
                                                                                                       formulario: 'Ampliacion de informacion',
+                                                                                                      idingreso1: widget.idingreso!,
+                                                                                                      idexp: widget.idexp!,
                                                                                                     ),
                                                                                                   ),
                                                                                                 ),
@@ -1078,6 +1084,8 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                                                                 formulario: 'Ampliacion de informacion',
                                                                                                                 spd: widget.spd!,
                                                                                                                 idampliacionhistorial: ampliaciondeinformacionItem.historialId!,
+                                                                                                                idexp: 0,
+                                                                                                                idingreso2: widget.idingreso!,
                                                                                                               ),
                                                                                                             ),
                                                                                                           ),
@@ -1151,12 +1159,12 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                                                             child: Padding(
                                                                                                               padding: MediaQuery.viewInsetsOf(context),
                                                                                                               child: AmpliacionactividadplanificacionWidget(
-                                                                                                                idingreso: containerIngresosRow!,
-                                                                                                                exprow: widget.rowexp!,
                                                                                                                 formulario: 'Ampliacion de informacion',
                                                                                                                 planificacion: 'si',
                                                                                                                 idamplaiacion: ampliaciondeinformacionItem.ampliacionId,
                                                                                                                 idampliacionhistorial: ampliaciondeinformacionItem.historialId,
+                                                                                                                idingreso1: widget.idingreso!,
+                                                                                                                idexp: widget.idexp!,
                                                                                                               ),
                                                                                                             ),
                                                                                                           ),
@@ -1362,12 +1370,14 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                                                         child: Padding(
                                                                                                           padding: MediaQuery.viewInsetsOf(context),
                                                                                                           child: ListaconvocatoriaNNyAWidget(
-                                                                                                            idingreso: widget.ingresorow,
+                                                                                                            idingreso: widget.idingreso,
                                                                                                             ingresorow: containerIngresosRow,
                                                                                                             exprow: widget.rowexp,
                                                                                                             idampliacionrow: ampliaciondeinformacionItem.ampliacionId,
                                                                                                             amplaicionrowvista: ampliaciondeinformacionItem,
                                                                                                             spdrow: widget.spd!,
+                                                                                                            idexp: widget.idexp!,
+                                                                                                            spd: FFAppState().spd,
                                                                                                           ),
                                                                                                         ),
                                                                                                       ),
@@ -1402,7 +1412,7 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                                                         child: Padding(
                                                                                                           padding: MediaQuery.viewInsetsOf(context),
                                                                                                           child: ListaconvocatoriasyvisitasWidget(
-                                                                                                            idingreso: widget.ingresorow,
+                                                                                                            idingreso: widget.idingreso,
                                                                                                             ingresorow: containerIngresosRow,
                                                                                                             exprow: widget.rowexp,
                                                                                                             idampliacionrow: ampliaciondeinformacionItem.ampliacionId,
@@ -1441,7 +1451,7 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                                                         child: Padding(
                                                                                                           padding: MediaQuery.viewInsetsOf(context),
                                                                                                           child: ListasolicitudaeducacionWidget(
-                                                                                                            idingreso: widget.ingresorow,
+                                                                                                            idingreso: widget.idingreso,
                                                                                                             ingresorow: containerIngresosRow,
                                                                                                             rowexp: widget.rowexp,
                                                                                                             idampliacion: ampliaciondeinformacionItem,

@@ -39,3 +39,4 @@ export '/paginapruebaquery/paginapruebaquery_widget.dart'
     show PaginapruebaqueryWidget;
 export '/grupoconvivientepagina/grupoconvivientepagina_widget.dart'
     show GrupoconvivientepaginaWidget;
+export '/perfil_copy/perfil_copy_widget.dart' show PerfilCopyWidget;

@@ -1,5 +1,4 @@
 import '/backend/api_requests/api_calls.dart';
-import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'agregar_conviviente_widget.dart' show AgregarConvivienteWidget;
@@ -80,16 +79,6 @@ class AgregarConvivienteModel
   FocusNode? textFieldFocusNode6;
   TextEditingController? textController8;
   String? Function(BuildContext, String?)? textController8Validator;
-  // Stores action output result for [Backend Call - API (ExisteDNInnya)] action in Button widget.
-  ApiCallResponse? chekdnigrupo;
-  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
-  List<NNyARow>? busquedapersonadni;
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  GrupoConvivienteRow? aaa;
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  NNyARow? crearnnyanuevo;
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  GrupoConvivienteRow? creargrupo;
   // Stores action output result for [Backend Call - API (Agregar grupo conviviente)] action in Button widget.
   ApiCallResponse? apiResultyuv;
 

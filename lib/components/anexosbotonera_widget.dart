@@ -31,6 +31,7 @@ class AnexosbotoneraWidget extends StatefulWidget {
     this.usuariorol,
     required this.spd,
     this.idexp,
+    required this.idnnya,
   });
 
   final IngresosRow? ingresorow;
@@ -52,6 +53,7 @@ class AnexosbotoneraWidget extends StatefulWidget {
   final VistaUsuariosRolesRow? usuariorol;
   final SpdRow? spd;
   final int? idexp;
+  final int? idnnya;
 
   @override
   State<AnexosbotoneraWidget> createState() => _AnexosbotoneraWidgetState();
@@ -626,7 +628,7 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                       context.pushNamed(
                                         EntrevistasCopyWidget.routeName,
                                         queryParameters: {
-                                          'ingresorow': serializeParam(
+                                          'idingreso': serializeParam(
                                             widget.ingresorow?.id,
                                             ParamType.int,
                                           ),
@@ -646,6 +648,14 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                             widget.spd,
                                             ParamType.SupabaseRow,
                                           ),
+                                          'idnnya': serializeParam(
+                                            widget.idnnya,
+                                            ParamType.int,
+                                          ),
+                                          'idexp': serializeParam(
+                                            widget.idexp,
+                                            ParamType.int,
+                                          ),
                                         }.withoutNulls,
                                       );
                                     },
@@ -663,7 +673,7 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                       EntrevistasCopyWidget
                                                           .routeName,
                                                       queryParameters: {
-                                                        'ingresorow':
+                                                        'idingreso':
                                                             serializeParam(
                                                           widget
                                                               .ingresorow?.id,
@@ -687,6 +697,15 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                         'spd': serializeParam(
                                                           widget.spd,
                                                           ParamType.SupabaseRow,
+                                                        ),
+                                                        'idnnya':
+                                                            serializeParam(
+                                                          widget.idnnya,
+                                                          ParamType.int,
+                                                        ),
+                                                        'idexp': serializeParam(
+                                                          widget.idexp,
+                                                          ParamType.int,
                                                         ),
                                                       }.withoutNulls,
                                                     );

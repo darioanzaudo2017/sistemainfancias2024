@@ -34,6 +34,7 @@ class SenafWidget extends StatefulWidget {
     required this.spdrow,
     this.idexp,
     this.idingreso,
+    required this.idnnya,
   });
 
   final IngresosRow? ingrow;
@@ -43,6 +44,7 @@ class SenafWidget extends StatefulWidget {
   final SpdRow? spdrow;
   final int? idexp;
   final int? idingreso;
+  final int? idnnya;
 
   static String routeName = 'Senaf';
   static String routePath = '/senaf';
@@ -1089,6 +1091,19 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                           .spdrow,
                                                                       ParamType
                                                                           .SupabaseRow,
+                                                                    ),
+                                                                    'idnnya':
+                                                                        serializeParam(
+                                                                      0,
+                                                                      ParamType
+                                                                          .int,
+                                                                    ),
+                                                                    'idexp':
+                                                                        serializeParam(
+                                                                      widget
+                                                                          .idexp,
+                                                                      ParamType
+                                                                          .int,
                                                                     ),
                                                                   }.withoutNulls,
                                                                 );

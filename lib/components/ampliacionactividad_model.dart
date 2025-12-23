@@ -1,4 +1,3 @@
-import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'ampliacionactividad_widget.dart' show AmpliacionactividadWidget;
@@ -23,8 +22,6 @@ class AmpliacionactividadModel
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  AmpliaciondeinformacionRow? crearampliacion;
 
   @override
   void initState(BuildContext context) {}

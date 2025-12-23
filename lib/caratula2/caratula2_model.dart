@@ -86,6 +86,8 @@ class Caratula2Model extends FlutterFlowModel<Caratula2Widget> {
   List<SpdRow>? spd;
   // Stores action output result for [Backend Call - Query Rows] action in Text widget.
   List<VistaUsuariosRolesRow>? userrol;
+  // Stores action output result for [Backend Call - Query Rows] action in Text widget.
+  List<VistaExpedientesUltimoEstadoRow>? expediente;
 
   @override
   void initState(BuildContext context) {

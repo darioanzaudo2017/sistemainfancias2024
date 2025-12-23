@@ -26,13 +26,15 @@ export 'formulario5_pagina_model.dart';
 class Formulario5PaginaWidget extends StatefulWidget {
   const Formulario5PaginaWidget({
     super.key,
-    this.idingreso,
+    required this.idingreso,
     this.rowexpediente,
     this.rowingreso,
     this.edit,
     required this.usuariorow,
     required this.usuariorol,
     required this.spd,
+    required this.idnnya,
+    required this.idexp,
   });
 
   final int? idingreso;
@@ -42,6 +44,8 @@ class Formulario5PaginaWidget extends StatefulWidget {
   final UsuariosRow? usuariorow;
   final VistaUsuariosRolesRow? usuariorol;
   final SpdRow? spd;
+  final int? idnnya;
+  final int? idexp;
 
   static String routeName = 'formulario5Pagina';
   static String routePath = '/formulario5Pagina';
@@ -137,6 +141,10 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                   ),
                   'idexp': serializeParam(
                     widget.rowexpediente?.id,
+                    ParamType.int,
+                  ),
+                  'idnnya': serializeParam(
+                    0,
                     ParamType.int,
                   ),
                 }.withoutNulls,
@@ -528,7 +536,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                                   context.pushNamed(
                                                                                     EntrevistasCopyWidget.routeName,
                                                                                     queryParameters: {
-                                                                                      'ingresorow': serializeParam(
+                                                                                      'idingreso': serializeParam(
                                                                                         widget.rowingreso?.id,
                                                                                         ParamType.int,
                                                                                       ),
@@ -547,6 +555,14 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                                                                       'spd': serializeParam(
                                                                                         widget.spd,
                                                                                         ParamType.SupabaseRow,
+                                                                                      ),
+                                                                                      'idnnya': serializeParam(
+                                                                                        widget.idnnya,
+                                                                                        ParamType.int,
+                                                                                      ),
+                                                                                      'idexp': serializeParam(
+                                                                                        0,
+                                                                                        ParamType.int,
                                                                                       ),
                                                                                     }.withoutNulls,
                                                                                   );
@@ -631,11 +647,6 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                             updateCallback: () =>
                                                 safeSetState(() {}),
                                             child: TarjetaencabezadoWidget(
-                                              editarcaratula: false,
-                                              contactosref: false,
-                                              cambia: false,
-                                              ingresorow: widget.rowingreso,
-                                              usuariorow: widget.usuariorow!,
                                               idexpediente:
                                                   widget.rowexpediente?.id,
                                               idnnya:
@@ -5720,6 +5731,7 @@ class _Formulario5PaginaWidgetState extends State<Formulario5PaginaWidget> {
                                               editar: false,
                                               usuariorol: widget.usuariorol,
                                               spd: widget.spd!,
+                                              idnnya: widget.idnnya!,
                                             ),
                                           ),
                                           Text(
