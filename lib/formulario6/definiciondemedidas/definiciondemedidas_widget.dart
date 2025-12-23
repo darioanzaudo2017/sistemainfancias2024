@@ -34,6 +34,7 @@ class DefiniciondemedidasWidget extends StatefulWidget {
     required this.usuariorow,
     required this.usuariosrol,
     required this.spd,
+    required this.idnnya,
   });
 
   final IngresosRow? ingresorow;
@@ -41,6 +42,7 @@ class DefiniciondemedidasWidget extends StatefulWidget {
   final UsuariosRow? usuariorow;
   final VistaUsuariosRolesRow? usuariosrol;
   final SpdRow? spd;
+  final int? idnnya;
 
   static String routeName = 'Definiciondemedidas';
   static String routePath = '/definiciondemedidas';
@@ -121,6 +123,10 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                   ),
                   'idexp': serializeParam(
                     widget.rowexp?.id,
+                    ParamType.int,
+                  ),
+                  'idnnya': serializeParam(
+                    widget.idnnya,
                     ParamType.int,
                   ),
                 }.withoutNulls,
@@ -314,6 +320,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                         editar: false,
                                         usuariorol: widget.usuariosrol,
                                         spd: widget.spd!,
+                                        idnnya: widget.idnnya!,
                                       ),
                                     ),
                                   ].divide(SizedBox(height: 5.0)),
@@ -377,11 +384,6 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                     model: _model.tarjetaencabezadoModel,
                                     updateCallback: () => safeSetState(() {}),
                                     child: TarjetaencabezadoWidget(
-                                      editarcaratula: true,
-                                      contactosref: true,
-                                      cambia: true,
-                                      ingresorow: widget.ingresorow,
-                                      usuariorow: widget.usuariorow!,
                                       idexpediente: widget.rowexp?.id,
                                       idnnya: widget.rowexp?.idNNyA,
                                       rowspd: widget.spd,

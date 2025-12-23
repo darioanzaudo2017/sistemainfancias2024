@@ -15,14 +15,14 @@ export 'seccion4_model.dart';
 class Seccion4Widget extends StatefulWidget {
   const Seccion4Widget({
     super.key,
-    required this.rowingreso,
-    required this.rowexp,
     this.edit,
+    required this.idingreso,
+    required this.idexpediente,
   });
 
-  final IngresosRow? rowingreso;
-  final VistaExpedientesUltimoEstadoRow? rowexp;
   final bool? edit;
+  final int? idingreso;
+  final int? idexpediente;
 
   @override
   State<Seccion4Widget> createState() => _Seccion4WidgetState();
@@ -80,7 +80,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
       future: Seccion4Table().querySingleRow(
         queryFn: (q) => q.eqOrNull(
           'idIngreso',
-          widget.rowingreso?.id,
+          widget.idingreso,
         ),
       ),
       builder: (context, snapshot) {
@@ -3231,10 +3231,9 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                               'ssp': _model.checkboxValue8,
                                               'sspObs':
                                                   _model.textController11.text,
-                                              'idIngreso':
-                                                  widget.rowingreso?.id,
+                                              'idIngreso': widget.idingreso,
                                               'idExpediente':
-                                                  widget.rowexp?.id,
+                                                  widget.idexpediente,
                                               'paicor':
                                                   _model.radioButtonPaicorValue,
                                               'auh': _model.radioButtonAUHValue,
@@ -3255,29 +3254,26 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                               matchingRows: (rows) =>
                                                   rows.eqOrNull(
                                                 'id',
-                                                widget.rowingreso?.id,
+                                                widget.idingreso,
                                               ),
                                             );
-                                            await showDialog(
-                                              context: context,
-                                              builder: (alertDialogContext) {
-                                                return WebViewAware(
-                                                  child: AlertDialog(
-                                                    title:
-                                                        Text('Carga correcta'),
-                                                    content: Text(
-                                                        'La informacion se guardo correctamente!!'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: Text('Ok'),
-                                                      ),
-                                                    ],
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(
+                                              SnackBar(
+                                                content: Text(
+                                                  'Se guardo con exito!!',
+                                                  style: TextStyle(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
                                                   ),
-                                                );
-                                              },
+                                                ),
+                                                duration: Duration(
+                                                    milliseconds: 4000),
+                                                backgroundColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondary,
+                                              ),
                                             );
                                             Navigator.pop(context, true);
                                           } else {
@@ -3316,10 +3312,9 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                                 'ssp': _model.checkboxValue8,
                                                 'sspObs': _model
                                                     .textController11.text,
-                                                'idIngreso':
-                                                    widget.rowingreso?.id,
+                                                'idIngreso': widget.idingreso,
                                                 'idExpediente':
-                                                    widget.rowexp?.id,
+                                                    widget.idexpediente,
                                                 'paicor': _model
                                                     .radioButtonPaicorValue,
                                                 'auh':
@@ -3333,7 +3328,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                               matchingRows: (rows) =>
                                                   rows.eqOrNull(
                                                 'idIngreso',
-                                                widget.rowingreso?.id,
+                                                widget.idingreso,
                                               ),
                                             );
                                             await IngresosTable().update(
@@ -3347,29 +3342,26 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                               matchingRows: (rows) =>
                                                   rows.eqOrNull(
                                                 'id',
-                                                widget.rowingreso?.id,
+                                                widget.idingreso,
                                               ),
                                             );
-                                            await showDialog(
-                                              context: context,
-                                              builder: (alertDialogContext) {
-                                                return WebViewAware(
-                                                  child: AlertDialog(
-                                                    title:
-                                                        Text('Carga correcta'),
-                                                    content: Text(
-                                                        'La informacion se guardo correctamente!!'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: Text('Ok'),
-                                                      ),
-                                                    ],
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(
+                                              SnackBar(
+                                                content: Text(
+                                                  'Se guardo con exito!!',
+                                                  style: TextStyle(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
                                                   ),
-                                                );
-                                              },
+                                                ),
+                                                duration: Duration(
+                                                    milliseconds: 4000),
+                                                backgroundColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondary,
+                                              ),
                                             );
                                             Navigator.pop(context);
                                           }
@@ -3436,7 +3428,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                     .querySingleRow(
                                   queryFn: (q) => q.eqOrNull(
                                     'idexpediente',
-                                    widget.rowexp?.id,
+                                    widget.idexpediente,
                                   ),
                                 ),
                                 builder: (context, snapshot) {
@@ -3533,8 +3525,9 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                                 .seccion4?.firstOrNull?.ssp,
                                             'sspObs': _model
                                                 .seccion4?.firstOrNull?.sspObs,
-                                            'idIngreso': widget.rowingreso?.id,
-                                            'idExpediente': widget.rowexp?.id,
+                                            'idIngreso': widget.idingreso,
+                                            'idExpediente':
+                                                widget.idexpediente,
                                             'paicor': _model
                                                 .seccion4?.firstOrNull?.paicor,
                                             'auh': _model
@@ -3555,7 +3548,7 @@ class _Seccion4WidgetState extends State<Seccion4Widget> {
                                             matchingRows: (rows) =>
                                                 rows.eqOrNull(
                                               'id',
-                                              widget.rowingreso?.id,
+                                              widget.idingreso,
                                             ),
                                           );
                                           await showDialog(

@@ -21,6 +21,9 @@ class AsesoramientoAnexoAWidget extends StatefulWidget {
     this.usuariorow,
     this.spd,
     this.usuariorol,
+    required this.idnnya,
+    required this.idingreso,
+    required this.idexp,
   }) : this.edit = edit ?? false;
 
   final IngresosRow? rowingreso;
@@ -30,6 +33,9 @@ class AsesoramientoAnexoAWidget extends StatefulWidget {
   final UsuariosRow? usuariorow;
   final SpdRow? spd;
   final VistaUsuariosRolesRow? usuariorol;
+  final int? idnnya;
+  final int? idingreso;
+  final int? idexp;
 
   @override
   State<AsesoramientoAnexoAWidget> createState() =>
@@ -1248,13 +1254,13 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                                           },
                                           matchingRows: (rows) => rows.eqOrNull(
                                             'idingreso',
-                                            widget.rowingreso?.id,
+                                            widget.idingreso,
                                           ),
                                         );
                                         _model.apiResulto6s =
                                             await AnexoformasesoramientoCall
                                                 .call(
-                                          idingreso: widget.rowingreso?.id,
+                                          idingreso: widget.idingreso,
                                           expediente:
                                               widget.rowexpediente?.expediente,
                                           profesional:
@@ -1344,9 +1350,8 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                                               _model.textController4.text,
                                           'tipoIntervencion':
                                               _model.textController5.text,
-                                          'idingreso': widget.rowingreso?.id,
-                                          'idexpediente':
-                                              widget.rowexpediente?.id,
+                                          'idingreso': widget.idingreso,
+                                          'idexpediente': widget.idexp,
                                           'telefono':
                                               _model.textController6.text,
                                           'correo': _model.textController7.text,
@@ -1472,6 +1477,14 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                                               'usuariorol': serializeParam(
                                                 widget.usuariorol,
                                                 ParamType.SupabaseRow,
+                                              ),
+                                              'idcarpeta': serializeParam(
+                                                '',
+                                                ParamType.String,
+                                              ),
+                                              'idnnya': serializeParam(
+                                                widget.idnnya,
+                                                ParamType.int,
                                               ),
                                             }.withoutNulls,
                                           );

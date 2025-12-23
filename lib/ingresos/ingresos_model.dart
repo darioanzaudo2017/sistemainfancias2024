@@ -16,14 +16,15 @@ class IngresosModel extends FlutterFlowModel<IngresosWidget> {
   late TarjetaencabezadoModel tarjetaencabezadoModel;
   // Stores action output result for [Bottom Sheet - formcaratula] action in Button widget.
   bool? editocaratural;
-  Completer<List<VistaExpedientesUltimoEstadoRow>>? requestCompleter1;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
   List<ImpresionesExpedientesRow>? caprtetaexp;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   IngresosRow? crearingreso;
-  Completer<List<VistaIngresosDiasRow>>? requestCompleter2;
+  Completer<List<VistaIngresosDiasRow>>? requestCompleter;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
   List<VistaExpedientesUltimoEstadoRow>? expvista;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<VistaExpedientesUltimoEstadoRow>? expvista1;
 
   @override
   void initState(BuildContext context) {
@@ -40,7 +41,7 @@ class IngresosModel extends FlutterFlowModel<IngresosWidget> {
   }
 
   /// Additional helper methods.
-  Future waitForRequestCompleted1({
+  Future waitForRequestCompleted({
     double minWait = 0,
     double maxWait = double.infinity,
   }) async {
@@ -48,22 +49,7 @@ class IngresosModel extends FlutterFlowModel<IngresosWidget> {
     while (true) {
       await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = requestCompleter1?.isCompleted ?? false;
-      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
-        break;
-      }
-    }
-  }
-
-  Future waitForRequestCompleted2({
-    double minWait = 0,
-    double maxWait = double.infinity,
-  }) async {
-    final stopwatch = Stopwatch()..start();
-    while (true) {
-      await Future.delayed(Duration(milliseconds: 50));
-      final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = requestCompleter2?.isCompleted ?? false;
+      final requestComplete = requestCompleter?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
         break;
       }

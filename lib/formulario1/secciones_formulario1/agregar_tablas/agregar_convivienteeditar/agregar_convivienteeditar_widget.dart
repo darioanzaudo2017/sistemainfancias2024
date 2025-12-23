@@ -12,27 +12,26 @@ import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'agregar_convivienteeditar_model.dart';
 export 'agregar_convivienteeditar_model.dart';
 
 class AgregarConvivienteeditarWidget extends StatefulWidget {
   const AgregarConvivienteeditarWidget({
     super.key,
-    required this.rowingreso,
-    required this.idexp,
     int? idgrupoconviviente,
     this.editar,
     this.idnnya,
     required this.idseccion1,
+    required this.idingreso,
+    required this.idexp,
   }) : this.idgrupoconviviente = idgrupoconviviente ?? 0;
 
-  final IngresosRow? rowingreso;
-  final VistaExpedientesUltimoEstadoRow? idexp;
   final int idgrupoconviviente;
   final bool? editar;
   final int? idnnya;
   final int? idseccion1;
+  final int? idingreso;
+  final int? idexp;
 
   @override
   State<AgregarConvivienteeditarWidget> createState() =>
@@ -2054,138 +2053,12 @@ class _AgregarConvivienteeditarWidgetState
                                               null) {
                                             return;
                                           }
-                                          await GrupoConvivienteTable().update(
-                                            data: {
-                                              'nombre':
-                                                  _model.textController1.text,
-                                              'apellido':
-                                                  _model.textController2.text,
-                                              'vinculo': _model.dropDownValue,
-                                              'dni': int.tryParse(_model
-                                                  .textFieldDniTextController
-                                                  .text),
-                                              'fecha_nacimiento': supaSerialize<
-                                                  DateTime>(_model.datePicked !=
-                                                      null
-                                                  ? _model.datePicked
-                                                  : containerGrupoConvivienteRow
-                                                      ?.fechaNacimiento),
-                                              'edad': int.tryParse(
-                                                  _model.textController4.text),
-                                              'telefono':
-                                                  _model.textController6.text,
-                                              'direccion':
-                                                  _model.textController7.text,
-                                              'observaciones':
-                                                  _model.textController8.text,
-                                              'idingreso':
-                                                  widget.rowingreso?.id,
-                                              'idexpe': widget.idexp?.id,
-                                              'conviviente':
-                                                  _model.radioButtoncudValue,
-                                              'vinculo_obs': _model
-                                                  .textFieldvinculoTextController
-                                                  .text,
-                                            },
-                                            matchingRows: (rows) =>
-                                                rows.eqOrNull(
-                                              'id',
-                                              widget.idgrupoconviviente,
-                                            ),
-                                          );
-                                          await NNyATable().update(
-                                            data: {
-                                              'Nombre':
-                                                  _model.textController1.text,
-                                              'Apellido':
-                                                  _model.textController2.text,
-                                              'DNI': int.tryParse(_model
-                                                  .textFieldDniTextController
-                                                  .text),
-                                              'edad': int.tryParse(
-                                                  _model.textController4.text),
-                                            },
-                                            matchingRows: (rows) =>
-                                                rows.eqOrNull(
-                                              'id',
-                                              widget.idnnya,
-                                            ),
-                                          );
-                                          Navigator.pop(context, true);
-
-                                          safeSetState(() {});
-                                        },
-                                        text: 'Guardar',
-                                        icon: Icon(
-                                          Icons.save,
-                                          size: 15.0,
-                                        ),
-                                        options: FFButtonOptions(
-                                          width: 250.0,
-                                          height: 40.0,
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  24.0, 0.0, 24.0, 0.0),
-                                          iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          textStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .titleSmall
-                                              .override(
-                                                font: GoogleFonts.notoSansJp(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall
-                                                          .fontStyle,
-                                                ),
-                                                color: Colors.white,
-                                                letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .fontStyle,
-                                              ),
-                                          elevation: 2.0,
-                                          borderSide: BorderSide(
-                                            color: Colors.transparent,
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(20.0),
-                                          hoverElevation: 4.0,
-                                        ),
-                                      ),
-                                      FFButtonWidget(
-                                        onPressed: () async {
-                                          if (_model.formKey.currentState ==
-                                                  null ||
-                                              !_model.formKey.currentState!
-                                                  .validate()) {
-                                            return;
-                                          }
-                                          if (_model.radioButtoncudValue ==
-                                              null) {
-                                            return;
-                                          }
                                           _model.apiResultyu =
                                               await ActualizarGrupoConvivienteCall
                                                   .call(
                                             token: currentJwtToken,
-                                            pIdexpediente: widget.idexp?.id,
-                                            pIdingreso: widget.rowingreso?.id,
+                                            pIdexpediente: widget.idexp,
+                                            pIdingreso: widget.idingreso,
                                             pIdGrupoconviviente:
                                                 widget.idgrupoconviviente,
                                             pNombre: (String value) {
@@ -2226,9 +2099,8 @@ class _AgregarConvivienteeditarWidgetState
                                             pTelefono: (String value) {
                                               return value != "" ? value : null;
                                             }(_model.textController6.text),
-                                            pDireccion: (String value) {
-                                              return value != "" ? value : null;
-                                            }(_model.textController7.text),
+                                            pDireccion:
+                                                _model.textController7.text,
                                             pObservaciones: (String value) {
                                               return value != "" ? value : null;
                                             }(_model.textController8.text),
@@ -2243,25 +2115,25 @@ class _AgregarConvivienteeditarWidgetState
 
                                           if ((_model.apiResultyu?.succeeded ??
                                               true)) {
-                                            await showDialog(
-                                              context: context,
-                                              builder: (alertDialogContext) {
-                                                return WebViewAware(
-                                                  child: AlertDialog(
-                                                    title: Text(
-                                                        'Se edito e registro!'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: Text('Ok'),
-                                                      ),
-                                                    ],
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(
+                                              SnackBar(
+                                                content: Text(
+                                                  'Se guardo con exito!!',
+                                                  style: TextStyle(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
                                                   ),
-                                                );
-                                              },
+                                                ),
+                                                duration: Duration(
+                                                    milliseconds: 4000),
+                                                backgroundColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondary,
+                                              ),
                                             );
+                                            Navigator.pop(context);
                                           }
 
                                           safeSetState(() {});

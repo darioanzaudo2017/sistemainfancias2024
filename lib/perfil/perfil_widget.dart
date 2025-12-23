@@ -37,6 +37,7 @@ class PerfilWidget extends StatefulWidget {
     this.usuariorol,
     required this.rowexp,
     required this.idexp,
+    required this.idnnya,
   });
 
   final int? idingreso;
@@ -45,6 +46,7 @@ class PerfilWidget extends StatefulWidget {
   final VistaUsuariosRolesRow? usuariorol;
   final VistaExpedientesUltimoEstadoRow? rowexp;
   final int? idexp;
+  final int? idnnya;
 
   static String routeName = 'perfil';
   static String routePath = '/perfil';
@@ -417,6 +419,10 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                               usuariorol: widget
                                                                   .usuariorol,
                                                               spd: widget.spd!,
+                                                              idexp:
+                                                                  widget.idexp,
+                                                              idnnya: widget
+                                                                  .idnnya!,
                                                             ),
                                                           ),
                                                         ),
@@ -812,6 +818,14 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                           widget.usuariorol,
                                                                                           ParamType.SupabaseRow,
                                                                                         ),
+                                                                                        'idcarpeta': serializeParam(
+                                                                                          '',
+                                                                                          ParamType.String,
+                                                                                        ),
+                                                                                        'idnnya': serializeParam(
+                                                                                          0,
+                                                                                          ParamType.int,
+                                                                                        ),
                                                                                       }.withoutNulls,
                                                                                     );
 
@@ -905,13 +919,6 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                 updateCallback: () =>
                                                     safeSetState(() {}),
                                                 child: TarjetaencabezadoWidget(
-                                                  ingresorow:
-                                                      containeringresosIngresosRow,
-                                                  usuariorow:
-                                                      widget.usuariorow!,
-                                                  editarcaratula: true,
-                                                  contactosref: true,
-                                                  cambia: true,
                                                   idexpediente: widget.idexp,
                                                   idnnya:
                                                       widget.rowexp?.idNNyA,
@@ -1386,6 +1393,10 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                 widget.spd,
                                                                                                 ParamType.SupabaseRow,
                                                                                               ),
+                                                                                              'idnnya': serializeParam(
+                                                                                                widget.idnnya,
+                                                                                                ParamType.int,
+                                                                                              ),
                                                                                             }.withoutNulls,
                                                                                           );
                                                                                         },
@@ -1442,6 +1453,10 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                               'spdrow': serializeParam(
                                                                                                 widget.spd,
                                                                                                 ParamType.SupabaseRow,
+                                                                                              ),
+                                                                                              'idnnya': serializeParam(
+                                                                                                widget.idnnya,
+                                                                                                ParamType.int,
                                                                                               ),
                                                                                             }.withoutNulls,
                                                                                           );
@@ -1640,6 +1655,10 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                         'spd': serializeParam(
                                                                                           widget.spd,
                                                                                           ParamType.SupabaseRow,
+                                                                                        ),
+                                                                                        'idnnya': serializeParam(
+                                                                                          widget.idnnya,
+                                                                                          ParamType.int,
                                                                                         ),
                                                                                       }.withoutNulls,
                                                                                     );
@@ -1846,6 +1865,14 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                             containeringresosIngresosRow,
                                                                                             ParamType.SupabaseRow,
                                                                                           ),
+                                                                                          'idnnya': serializeParam(
+                                                                                            widget.idnnya,
+                                                                                            ParamType.int,
+                                                                                          ),
+                                                                                          'idexp': serializeParam(
+                                                                                            widget.idexp,
+                                                                                            ParamType.int,
+                                                                                          ),
                                                                                         }.withoutNulls,
                                                                                       );
                                                                                     },
@@ -1910,6 +1937,14 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                           'spd': serializeParam(
                                                                                             widget.spd,
                                                                                             ParamType.SupabaseRow,
+                                                                                          ),
+                                                                                          'idnnya': serializeParam(
+                                                                                            widget.idnnya,
+                                                                                            ParamType.int,
+                                                                                          ),
+                                                                                          'idexp': serializeParam(
+                                                                                            widget.idexp,
+                                                                                            ParamType.int,
                                                                                           ),
                                                                                         }.withoutNulls,
                                                                                       );
@@ -2087,7 +2122,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                     context.pushNamed(
                                                                                       EntrevistasCopyWidget.routeName,
                                                                                       queryParameters: {
-                                                                                        'ingresorow': serializeParam(
+                                                                                        'idingreso': serializeParam(
                                                                                           containeringresosIngresosRow.id,
                                                                                           ParamType.int,
                                                                                         ),
@@ -2106,6 +2141,14 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                         'spd': serializeParam(
                                                                                           widget.spd,
                                                                                           ParamType.SupabaseRow,
+                                                                                        ),
+                                                                                        'idnnya': serializeParam(
+                                                                                          widget.idnnya,
+                                                                                          ParamType.int,
+                                                                                        ),
+                                                                                        'idexp': serializeParam(
+                                                                                          widget.idexp,
+                                                                                          ParamType.int,
                                                                                         ),
                                                                                       }.withoutNulls,
                                                                                     );
@@ -2424,6 +2467,10 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                                             editar: false,
                                                                                                                             usuariorow: widget.usuariorow!,
                                                                                                                             usuariorol: widget.usuariorol!,
+                                                                                                                            idingreso2: widget.idingreso!,
+                                                                                                                            idexp: widget.idexp!,
+                                                                                                                            iduser: currentUserUid,
+                                                                                                                            idrol: FFAppState().idrol,
                                                                                                                           ),
                                                                                                                         ),
                                                                                                                       ),
@@ -2501,6 +2548,10 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                                             editar: true,
                                                                                                                             usuariorow: widget.usuariorow!,
                                                                                                                             usuariorol: widget.usuariorol!,
+                                                                                                                            idingreso2: widget.idingreso!,
+                                                                                                                            idexp: widget.idexp!,
+                                                                                                                            iduser: currentUserUid,
+                                                                                                                            idrol: FFAppState().idrol,
                                                                                                                           ),
                                                                                                                         ),
                                                                                                                       ),
@@ -2604,10 +2655,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                                       child: Padding(
                                                                                                                         padding: MediaQuery.viewInsetsOf(context),
                                                                                                                         child: Seccion2Widget(
-                                                                                                                          rowingreso: containeringresosIngresosRow,
-                                                                                                                          rowexp: widget.rowexp!,
                                                                                                                           editar: false,
-                                                                                                                          usuariorow: widget.usuariorol!,
+                                                                                                                          idingreso: widget.idingreso!,
+                                                                                                                          idexp: widget.idexp!,
                                                                                                                         ),
                                                                                                                       ),
                                                                                                                     ),
@@ -2680,10 +2730,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                                       child: Padding(
                                                                                                                         padding: MediaQuery.viewInsetsOf(context),
                                                                                                                         child: Seccion2Widget(
-                                                                                                                          rowingreso: containeringresosIngresosRow,
-                                                                                                                          rowexp: widget.rowexp!,
                                                                                                                           editar: true,
-                                                                                                                          usuariorow: widget.usuariorol!,
+                                                                                                                          idingreso: widget.idingreso!,
+                                                                                                                          idexp: widget.idexp!,
                                                                                                                         ),
                                                                                                                       ),
                                                                                                                     ),
@@ -2790,14 +2839,6 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                                     widget.idexp,
                                                                                                                     ParamType.int,
                                                                                                                   ),
-                                                                                                                  'rowingreso': serializeParam(
-                                                                                                                    containeringresosIngresosRow,
-                                                                                                                    ParamType.SupabaseRow,
-                                                                                                                  ),
-                                                                                                                  'rowexp': serializeParam(
-                                                                                                                    widget.rowexp,
-                                                                                                                    ParamType.SupabaseRow,
-                                                                                                                  ),
                                                                                                                   'idseccion1': serializeParam(
                                                                                                                     _model.seccion111Copy?.firstOrNull?.idSec1,
                                                                                                                     ParamType.int,
@@ -2871,14 +2912,6 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                                   'idexpediente': serializeParam(
                                                                                                                     widget.idexp,
                                                                                                                     ParamType.int,
-                                                                                                                  ),
-                                                                                                                  'rowingreso': serializeParam(
-                                                                                                                    containeringresosIngresosRow,
-                                                                                                                    ParamType.SupabaseRow,
-                                                                                                                  ),
-                                                                                                                  'rowexp': serializeParam(
-                                                                                                                    widget.rowexp,
-                                                                                                                    ParamType.SupabaseRow,
                                                                                                                   ),
                                                                                                                   'idseccion1': serializeParam(
                                                                                                                     _model.seccion1?.firstOrNull?.idSec1,
@@ -2988,9 +3021,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                                       child: Padding(
                                                                                                                         padding: MediaQuery.viewInsetsOf(context),
                                                                                                                         child: Seccion4Widget(
-                                                                                                                          rowingreso: containeringresosIngresosRow,
-                                                                                                                          rowexp: widget.rowexp!,
                                                                                                                           edit: true,
+                                                                                                                          idingreso: widget.idingreso!,
+                                                                                                                          idexpediente: widget.idexp!,
                                                                                                                         ),
                                                                                                                       ),
                                                                                                                     ),
@@ -3063,9 +3096,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                                       child: Padding(
                                                                                                                         padding: MediaQuery.viewInsetsOf(context),
                                                                                                                         child: Seccion4Widget(
-                                                                                                                          rowingreso: containeringresosIngresosRow,
-                                                                                                                          rowexp: widget.rowexp!,
                                                                                                                           edit: false,
+                                                                                                                          idingreso: widget.idingreso!,
+                                                                                                                          idexpediente: widget.idexp!,
                                                                                                                         ),
                                                                                                                       ),
                                                                                                                     ),
@@ -3175,9 +3208,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                                       child: Padding(
                                                                                                                         padding: MediaQuery.viewInsetsOf(context),
                                                                                                                         child: Seccion5Widget(
-                                                                                                                          rowingreso: containeringresosIngresosRow,
-                                                                                                                          rowexp: widget.rowexp!,
                                                                                                                           editar: true,
+                                                                                                                          idingreso: widget.idingreso!,
+                                                                                                                          idexp: widget.idexp!,
                                                                                                                         ),
                                                                                                                       ),
                                                                                                                     ),
@@ -3243,9 +3276,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                                       child: Padding(
                                                                                                                         padding: MediaQuery.viewInsetsOf(context),
                                                                                                                         child: Seccion5Widget(
-                                                                                                                          rowingreso: containeringresosIngresosRow,
-                                                                                                                          rowexp: widget.rowexp!,
                                                                                                                           editar: false,
+                                                                                                                          idingreso: widget.idingreso!,
+                                                                                                                          idexp: widget.idexp!,
                                                                                                                         ),
                                                                                                                       ),
                                                                                                                     ),
@@ -3355,9 +3388,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                                       child: Padding(
                                                                                                                         padding: MediaQuery.viewInsetsOf(context),
                                                                                                                         child: Seccion6Widget(
-                                                                                                                          rowingreso: containeringresosIngresosRow,
-                                                                                                                          rowexp: widget.rowexp,
                                                                                                                           edit: true,
+                                                                                                                          idingresi: widget.idingreso!,
+                                                                                                                          idexpediente: widget.idexp!,
                                                                                                                         ),
                                                                                                                       ),
                                                                                                                     ),
@@ -3423,9 +3456,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                                       child: Padding(
                                                                                                                         padding: MediaQuery.viewInsetsOf(context),
                                                                                                                         child: Seccion6Widget(
-                                                                                                                          rowingreso: containeringresosIngresosRow,
-                                                                                                                          rowexp: widget.rowexp,
                                                                                                                           edit: false,
+                                                                                                                          idingresi: widget.idingreso!,
+                                                                                                                          idexpediente: widget.idexp!,
                                                                                                                         ),
                                                                                                                       ),
                                                                                                                     ),
@@ -3535,9 +3568,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                                       child: Padding(
                                                                                                                         padding: MediaQuery.viewInsetsOf(context),
                                                                                                                         child: Seccion7Widget(
-                                                                                                                          rowingreso: containeringresosIngresosRow,
-                                                                                                                          rowexp: widget.rowexp!,
                                                                                                                           editar: true,
+                                                                                                                          idingreso: widget.idingreso!,
+                                                                                                                          idexp: widget.idexp!,
                                                                                                                         ),
                                                                                                                       ),
                                                                                                                     ),
@@ -3603,9 +3636,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                                       child: Padding(
                                                                                                                         padding: MediaQuery.viewInsetsOf(context),
                                                                                                                         child: Seccion7Widget(
-                                                                                                                          rowingreso: containeringresosIngresosRow,
-                                                                                                                          rowexp: widget.rowexp!,
                                                                                                                           editar: false,
+                                                                                                                          idingreso: widget.idingreso!,
+                                                                                                                          idexp: widget.idexp!,
                                                                                                                         ),
                                                                                                                       ),
                                                                                                                     ),
@@ -3711,8 +3744,8 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                                 child: Padding(
                                                                                                                   padding: MediaQuery.viewInsetsOf(context),
                                                                                                                   child: Seccion8Widget(
-                                                                                                                    idingreso: containeringresosIngresosRow,
-                                                                                                                    idexp: widget.rowexp!,
+                                                                                                                    idingreso1: widget.idingreso!,
+                                                                                                                    idexpediente: widget.idexp!,
                                                                                                                   ),
                                                                                                                 ),
                                                                                                               ),
@@ -3842,8 +3875,8 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                               await _model.waitForRequestCompleted1();
                                                                                                             } else {
                                                                                                               _model.seccion9 = await Seccion9Table().insert({
-                                                                                                                'idIngreso': containeringresosIngresosRow.id,
-                                                                                                                'idExpediente': widget.rowexp?.id,
+                                                                                                                'idIngreso': widget.idingreso,
+                                                                                                                'idExpediente': widget.idexp,
                                                                                                                 'Desicion': 'Apertura',
                                                                                                                 'iduser': currentUserUid,
                                                                                                               });
@@ -3854,25 +3887,20 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                                 },
                                                                                                                 matchingRows: (rows) => rows.eqOrNull(
                                                                                                                   'id',
-                                                                                                                  containeringresosIngresosRow.id,
+                                                                                                                  widget.idingreso,
                                                                                                                 ),
                                                                                                               );
-                                                                                                              await showDialog(
-                                                                                                                context: context,
-                                                                                                                builder: (alertDialogContext) {
-                                                                                                                  return WebViewAware(
-                                                                                                                    child: AlertDialog(
-                                                                                                                      title: Text('Carga correcta'),
-                                                                                                                      content: Text('La informacion se guardo correctamente com \"Apertura de legajo\"!!'),
-                                                                                                                      actions: [
-                                                                                                                        TextButton(
-                                                                                                                          onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                                          child: Text('Ok'),
-                                                                                                                        ),
-                                                                                                                      ],
+                                                                                                              ScaffoldMessenger.of(context).showSnackBar(
+                                                                                                                SnackBar(
+                                                                                                                  content: Text(
+                                                                                                                    'Carga correcta',
+                                                                                                                    style: TextStyle(
+                                                                                                                      color: FlutterFlowTheme.of(context).primaryText,
                                                                                                                     ),
-                                                                                                                  );
-                                                                                                                },
+                                                                                                                  ),
+                                                                                                                  duration: Duration(milliseconds: 4000),
+                                                                                                                  backgroundColor: FlutterFlowTheme.of(context).secondary,
+                                                                                                                ),
                                                                                                               );
                                                                                                               safeSetState(() => _model.requestCompleter1 = null);
                                                                                                               await _model.waitForRequestCompleted1();
@@ -3946,6 +3974,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                                           usuariorow: widget.usuariorow,
                                                                                                                           spd: widget.spd,
                                                                                                                           usuariorol: widget.usuariorol,
+                                                                                                                          idnnya: widget.idnnya!,
+                                                                                                                          idingreso: widget.idingreso!,
+                                                                                                                          idexp: widget.idexp!,
                                                                                                                         ),
                                                                                                                       ),
                                                                                                                     ),
@@ -3961,8 +3992,8 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                               }
                                                                                                             } else {
                                                                                                               _model.seccion9Copy = await Seccion9Table().insert({
-                                                                                                                'idIngreso': containeringresosIngresosRow.id,
-                                                                                                                'idExpediente': widget.rowexp?.id,
+                                                                                                                'idIngreso': widget.idingreso,
+                                                                                                                'idExpediente': widget.idexp,
                                                                                                                 'Desicion': 'Asesoramiento',
                                                                                                                 'iduser': currentUserUid,
                                                                                                               });
@@ -3976,25 +4007,20 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                                 },
                                                                                                                 matchingRows: (rows) => rows.eqOrNull(
                                                                                                                   'id',
-                                                                                                                  containeringresosIngresosRow.id,
+                                                                                                                  widget.idingreso,
                                                                                                                 ),
                                                                                                               );
-                                                                                                              await showDialog(
-                                                                                                                context: context,
-                                                                                                                builder: (alertDialogContext) {
-                                                                                                                  return WebViewAware(
-                                                                                                                    child: AlertDialog(
-                                                                                                                      title: Text('Carga correcta'),
-                                                                                                                      content: Text('La informacion se guardo correctamente!!'),
-                                                                                                                      actions: [
-                                                                                                                        TextButton(
-                                                                                                                          onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                                          child: Text('Ok'),
-                                                                                                                        ),
-                                                                                                                      ],
+                                                                                                              ScaffoldMessenger.of(context).showSnackBar(
+                                                                                                                SnackBar(
+                                                                                                                  content: Text(
+                                                                                                                    'Carga cor',
+                                                                                                                    style: TextStyle(
+                                                                                                                      color: FlutterFlowTheme.of(context).primaryText,
                                                                                                                     ),
-                                                                                                                  );
-                                                                                                                },
+                                                                                                                  ),
+                                                                                                                  duration: Duration(milliseconds: 4000),
+                                                                                                                  backgroundColor: FlutterFlowTheme.of(context).secondary,
+                                                                                                                ),
                                                                                                               );
                                                                                                               safeSetState(() => _model.requestCompleter1 = null);
                                                                                                               await _model.waitForRequestCompleted1();
@@ -4019,6 +4045,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                                                           usuariorow: widget.usuariorow,
                                                                                                                           spd: widget.spd,
                                                                                                                           usuariorol: widget.usuariorol,
+                                                                                                                          idnnya: widget.idnnya!,
+                                                                                                                          idingreso: widget.idingreso!,
+                                                                                                                          idexp: widget.idexp!,
                                                                                                                         ),
                                                                                                                       ),
                                                                                                                     ),

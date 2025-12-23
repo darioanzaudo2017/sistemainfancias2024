@@ -39,8 +39,8 @@ class AmpliacioninformacionWidget extends StatefulWidget {
     this.tipoampliacion,
     required this.spd,
     required this.idampliacionhistorial,
-    this.idexp,
-    this.idingreso2,
+    required this.idexp,
+    required this.idingreso2,
   });
 
   final IngresosRow? idingreso;
@@ -739,10 +739,10 @@ class _AmpliacioninformacionWidgetState
                                                                               MediaQuery.viewInsetsOf(context),
                                                                           child:
                                                                               AgregarPersonaRelacionadaWidget(
-                                                                            rowingreso:
-                                                                                widget.idingreso!,
-                                                                            idexp:
-                                                                                widget.rowexp!,
+                                                                            idingreso:
+                                                                                widget.idingreso2!,
+                                                                            idexpediente:
+                                                                                widget.idexp!,
                                                                           ),
                                                                         ),
                                                                       );
@@ -2715,8 +2715,8 @@ class _AmpliacioninformacionWidgetState
                                                                                 Padding(
                                                                               padding: MediaQuery.viewInsetsOf(context),
                                                                               child: Seccion8Widget(
-                                                                                idingreso: widget.idingreso!,
-                                                                                idexp: widget.rowexp!,
+                                                                                idingreso1: widget.idingreso2!,
+                                                                                idexpediente: widget.idexp!,
                                                                               ),
                                                                             ),
                                                                           );

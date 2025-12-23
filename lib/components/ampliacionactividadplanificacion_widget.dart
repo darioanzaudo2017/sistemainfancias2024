@@ -11,20 +11,20 @@ export 'ampliacionactividadplanificacion_model.dart';
 class AmpliacionactividadplanificacionWidget extends StatefulWidget {
   const AmpliacionactividadplanificacionWidget({
     super.key,
-    required this.idingreso,
-    required this.exprow,
     this.formulario,
     this.planificacion,
     this.idamplaiacion,
     this.idampliacionhistorial,
+    required this.idingreso1,
+    required this.idexp,
   });
 
-  final IngresosRow? idingreso;
-  final VistaExpedientesUltimoEstadoRow? exprow;
   final String? formulario;
   final String? planificacion;
   final int? idamplaiacion;
   final int? idampliacionhistorial;
+  final int? idingreso1;
+  final int? idexp;
 
   @override
   State<AmpliacionactividadplanificacionWidget> createState() =>
@@ -597,8 +597,8 @@ class _AmpliacionactividadplanificacionWidgetState
                                       'fecha': supaSerialize<DateTime>(
                                           getCurrentTimestamp),
                                       'formulario': 'Ampliacion de informacion',
-                                      'idexpediente': widget.exprow?.id,
-                                      'idingreso': widget.idingreso?.id,
+                                      'idexpediente': widget.idexp,
+                                      'idingreso': widget.idingreso1,
                                       'tipoampliacion':
                                           'Planificacion estrategica de ampliacion de informacion',
                                       'etapa': widget.formulario,
@@ -613,7 +613,7 @@ class _AmpliacionactividadplanificacionWidgetState
                                       'idampliacion': _model
                                           .crearampliacionplanificacion
                                           ?.idampliacion,
-                                      'idingreso': widget.idingreso?.id,
+                                      'idingreso': widget.idingreso1,
                                       'Observaciones':
                                           _model.textController.text,
                                     });

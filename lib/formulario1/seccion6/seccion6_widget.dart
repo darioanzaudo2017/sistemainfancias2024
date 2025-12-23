@@ -16,14 +16,14 @@ export 'seccion6_model.dart';
 class Seccion6Widget extends StatefulWidget {
   const Seccion6Widget({
     super.key,
-    this.rowingreso,
-    this.rowexp,
     this.edit,
+    required this.idingresi,
+    required this.idexpediente,
   });
 
-  final IngresosRow? rowingreso;
-  final VistaExpedientesUltimoEstadoRow? rowexp;
   final bool? edit;
+  final int? idingresi;
+  final int? idexpediente;
 
   @override
   State<Seccion6Widget> createState() => _Seccion6WidgetState();
@@ -73,7 +73,7 @@ class _Seccion6WidgetState extends State<Seccion6Widget> {
                   ..complete(Seccion6Table().queryRows(
                     queryFn: (q) => q.eqOrNull(
                       'idIngreso',
-                      widget.rowingreso?.id,
+                      widget.idingresi,
                     ),
                   )))
                 .future,
@@ -736,10 +736,9 @@ class _Seccion6WidgetState extends State<Seccion6Widget> {
                                                   _model.textController1.text,
                                               'resultado':
                                                   _model.textController3.text,
-                                              'idIngreso':
-                                                  widget.rowingreso?.id,
+                                              'idIngreso': widget.idingresi,
                                               'idExpediente':
-                                                  widget.rowexp?.id,
+                                                  widget.idexpediente,
                                               'acciones':
                                                   _model.textController2.text,
                                             });
@@ -754,7 +753,7 @@ class _Seccion6WidgetState extends State<Seccion6Widget> {
                                               matchingRows: (rows) =>
                                                   rows.eqOrNull(
                                                 'id',
-                                                widget.rowingreso?.id,
+                                                widget.idingresi,
                                               ),
                                             );
                                             safeSetState(() {

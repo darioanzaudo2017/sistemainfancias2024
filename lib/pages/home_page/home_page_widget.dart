@@ -43,6 +43,21 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         token: currentJwtToken,
       );
 
+      FFAppState().spd =
+          ContextoinicialStruct.maybeFromMap((_model.contexto?.jsonBody ?? ''))!
+              .usuario
+              .spd;
+      FFAppState().user =
+          ContextoinicialStruct.maybeFromMap((_model.contexto?.jsonBody ?? ''))!
+              .usuario
+              .id;
+      FFAppState().idrol =
+          ContextoinicialStruct.maybeFromMap((_model.contexto?.jsonBody ?? ''))!
+              .usuario
+              .roles
+              .firstOrNull!
+              .idrol;
+      safeSetState(() {});
       _model.apiResult88v1 = await SearchExpedientesPageCall.call(
         token: currentJwtToken,
         pLimit: 20,
@@ -2553,6 +2568,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                         '',
                                                                         ParamType
                                                                             .String,
+                                                                      ),
+                                                                      'idnnya':
+                                                                          serializeParam(
+                                                                        lista2Item
+                                                                            .idNNyA,
+                                                                        ParamType
+                                                                            .int,
                                                                       ),
                                                                     }.withoutNulls,
                                                                   );

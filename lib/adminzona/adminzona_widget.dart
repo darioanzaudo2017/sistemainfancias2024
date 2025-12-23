@@ -2144,6 +2144,13 @@ class _AdminzonaWidgetState extends State<AdminzonaWidget>
                                                                       ParamType
                                                                           .int,
                                                                     ),
+                                                                    'idnnya':
+                                                                        serializeParam(
+                                                                      expdientesenafItem
+                                                                          .idNNyA,
+                                                                      ParamType
+                                                                          .int,
+                                                                    ),
                                                                   }.withoutNulls,
                                                                 );
 

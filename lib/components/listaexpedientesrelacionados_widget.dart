@@ -2,7 +2,6 @@ import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'listaexpedientesrelacionados_model.dart';
@@ -12,16 +11,10 @@ class ListaexpedientesrelacionadosWidget extends StatefulWidget {
   const ListaexpedientesrelacionadosWidget({
     super.key,
     this.idexpedientepropio,
-    required this.rowusuario,
-    this.rowspd,
-    this.rowusuariosroles,
     this.idnnya,
   });
 
   final int? idexpedientepropio;
-  final UsuariosRow? rowusuario;
-  final SpdRow? rowspd;
-  final VistaUsuariosRolesRow? rowusuariosroles;
   final int? idnnya;
 
   @override
@@ -133,45 +126,7 @@ class _ListaexpedientesrelacionadosWidgetState
                                         focusColor: Colors.transparent,
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          _model.vistaexp =
-                                              await VistaExpedientesUltimoEstadoTable()
-                                                  .queryRows(
-                                            queryFn: (q) => q.eqOrNull(
-                                              'id',
-                                              nnyaexpgrupItem.idExpediente,
-                                            ),
-                                          );
-
-                                          context.pushNamed(
-                                            IngresosWidget.routeName,
-                                            queryParameters: {
-                                              'idexp': serializeParam(
-                                                _model
-                                                    .vistaexp?.firstOrNull?.id,
-                                                ParamType.int,
-                                              ),
-                                              'usuariorow': serializeParam(
-                                                widget.rowusuario,
-                                                ParamType.SupabaseRow,
-                                              ),
-                                              'spd': serializeParam(
-                                                widget.rowspd,
-                                                ParamType.SupabaseRow,
-                                              ),
-                                              'idcarpeta': serializeParam(
-                                                '',
-                                                ParamType.String,
-                                              ),
-                                              'usuariorol': serializeParam(
-                                                widget.rowusuariosroles,
-                                                ParamType.SupabaseRow,
-                                              ),
-                                            }.withoutNulls,
-                                          );
-
-                                          safeSetState(() {});
-                                        },
+                                        onTap: () async {},
                                         child: Container(
                                           width: double.infinity,
                                           decoration: BoxDecoration(

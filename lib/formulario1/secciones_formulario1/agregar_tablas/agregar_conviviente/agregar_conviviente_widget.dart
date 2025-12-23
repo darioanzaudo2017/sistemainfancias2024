@@ -8,31 +8,29 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
-import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'agregar_conviviente_model.dart';
 export 'agregar_conviviente_model.dart';
 
 class AgregarConvivienteWidget extends StatefulWidget {
   const AgregarConvivienteWidget({
     super.key,
-    required this.rowingreso,
-    required this.idexp,
     int? idgrupoconviviente,
     this.editar,
     this.idnnya,
     required this.idseccion1,
+    required this.idingreso,
+    required this.idexpediente,
   }) : this.idgrupoconviviente = idgrupoconviviente ?? 0;
 
-  final IngresosRow? rowingreso;
-  final VistaExpedientesUltimoEstadoRow? idexp;
   final int idgrupoconviviente;
   final bool? editar;
   final int? idnnya;
   final int? idseccion1;
+  final int? idingreso;
+  final int? idexpediente;
 
   @override
   State<AgregarConvivienteWidget> createState() =>
@@ -1869,401 +1867,6 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      if (widget.idexp?.id == 1)
-                                        FFButtonWidget(
-                                          onPressed: () async {
-                                            _model.chekdnigrupo =
-                                                await ExisteDNInnyaCall.call(
-                                              dni: _model
-                                                  .textFieldDniTextController
-                                                  .text,
-                                            );
-
-                                            if (ExisteDNInnyaCall.check(
-                                              (_model.chekdnigrupo?.jsonBody ??
-                                                  ''),
-                                            )!) {
-                                              _model.busquedapersonadni =
-                                                  await NNyATable().queryRows(
-                                                queryFn: (q) => q.eqOrNull(
-                                                  'DNI',
-                                                  int.tryParse(_model
-                                                      .textFieldDniTextController
-                                                      .text),
-                                                ),
-                                              );
-                                              _model.nombre = _model
-                                                  .busquedapersonadni
-                                                  ?.firstOrNull
-                                                  ?.nombre;
-                                              _model.apellido = _model
-                                                  .busquedapersonadni
-                                                  ?.firstOrNull
-                                                  ?.apellido;
-                                              _model.dni = _model
-                                                  .busquedapersonadni
-                                                  ?.firstOrNull
-                                                  ?.dni;
-                                              safeSetState(() {});
-                                              var confirmDialogResponse =
-                                                  await showDialog<bool>(
-                                                        context: context,
-                                                        builder:
-                                                            (alertDialogContext) {
-                                                          return WebViewAware(
-                                                            child: AlertDialog(
-                                                              title: Text(
-                                                                  'El DNI esta duplicado'),
-                                                              content: Text(
-                                                                  'Desea guardar como grupo conviviente a:${_model.nombre}, ${_model.apellido}, DNI: ${_model.dni?.toString()}'),
-                                                              actions: [
-                                                                TextButton(
-                                                                  onPressed: () =>
-                                                                      Navigator.pop(
-                                                                          alertDialogContext,
-                                                                          false),
-                                                                  child: Text(
-                                                                      'Cancel'),
-                                                                ),
-                                                                TextButton(
-                                                                  onPressed: () =>
-                                                                      Navigator.pop(
-                                                                          alertDialogContext,
-                                                                          true),
-                                                                  child: Text(
-                                                                      'Confirm'),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          );
-                                                        },
-                                                      ) ??
-                                                      false;
-                                              if (confirmDialogResponse) {
-                                                if (_model.formKey
-                                                            .currentState ==
-                                                        null ||
-                                                    !_model
-                                                        .formKey.currentState!
-                                                        .validate()) {
-                                                  return;
-                                                }
-                                                if (_model
-                                                        .radioButtonconvivienteValue ==
-                                                    null) {
-                                                  return;
-                                                }
-                                                await NNyAExpGruTable().insert({
-                                                  'idNNyA': _model
-                                                      .busquedapersonadni
-                                                      ?.firstOrNull
-                                                      ?.id,
-                                                  'idExp': widget.idexp?.id,
-                                                  'detalle':
-                                                      'Grupo Conviviente',
-                                                });
-                                                await IngresosTable().update(
-                                                  data: {
-                                                    'form1seccion3': true,
-                                                  },
-                                                  matchingRows: (rows) =>
-                                                      rows.eqOrNull(
-                                                    'id',
-                                                    widget.rowingreso?.id,
-                                                  ),
-                                                );
-                                                _model.aaa =
-                                                    await GrupoConvivienteTable()
-                                                        .insert({
-                                                  'nombre': _model
-                                                      .busquedapersonadni
-                                                      ?.firstOrNull
-                                                      ?.nombre,
-                                                  'apellido': _model
-                                                      .busquedapersonadni
-                                                      ?.firstOrNull
-                                                      ?.apellido,
-                                                  'vinculo':
-                                                      _model.dropDownValue,
-                                                  'dni': _model
-                                                      .busquedapersonadni
-                                                      ?.firstOrNull
-                                                      ?.dni,
-                                                  'fecha_nacimiento':
-                                                      supaSerialize<DateTime>(
-                                                          _model.datePicked),
-                                                  'edad': _model
-                                                      .busquedapersonadni
-                                                      ?.firstOrNull
-                                                      ?.edad,
-                                                  'telefono': _model
-                                                      .textController6.text,
-                                                  'direccion': '',
-                                                  'observaciones': _model
-                                                      .textController8.text,
-                                                  'idingreso':
-                                                      widget.rowingreso?.id,
-                                                  'idexpe': widget.idexp?.id,
-                                                  'conviviente': _model
-                                                      .radioButtonconvivienteValue,
-                                                  'idnnya': _model
-                                                      .busquedapersonadni
-                                                      ?.firstOrNull
-                                                      ?.id,
-                                                });
-                                                await Seccion8Table().insert({
-                                                  'nombre': _model
-                                                      .busquedapersonadni
-                                                      ?.firstOrNull
-                                                      ?.nombre,
-                                                  'apellido': _model
-                                                      .busquedapersonadni
-                                                      ?.firstOrNull
-                                                      ?.apellido,
-                                                  'vinculo':
-                                                      _model.dropDownValue,
-                                                  'telefono': _model
-                                                      .textController6.text,
-                                                  'direccion': _model
-                                                      .textController7.text,
-                                                  'idIngreso':
-                                                      widget.rowingreso?.id,
-                                                  'idExpediente':
-                                                      widget.idexp?.id,
-                                                  'updated_at':
-                                                      supaSerialize<DateTime>(
-                                                          getCurrentTimestamp),
-                                                  'entrevistado': false,
-                                                  'id_grupoconviviente':
-                                                      _model.aaa?.id,
-                                                });
-                                                await GrupoConvivienteTable()
-                                                    .update(
-                                                  data: {
-                                                    'idnnyaGrupo': _model
-                                                        .busquedapersonadni
-                                                        ?.firstOrNull
-                                                        ?.id,
-                                                  },
-                                                  matchingRows: (rows) =>
-                                                      rows.eqOrNull(
-                                                    'id',
-                                                    _model.aaa?.id,
-                                                  ),
-                                                );
-                                                Navigator.pop(context, true);
-                                              } else {
-                                                safeSetState(() {
-                                                  _model
-                                                      .textFieldDniTextController
-                                                      ?.clear();
-                                                });
-                                              }
-                                            } else {
-                                              if (_model.formKey.currentState ==
-                                                      null ||
-                                                  !_model.formKey.currentState!
-                                                      .validate()) {
-                                                return;
-                                              }
-                                              if (_model
-                                                      .radioButtonconvivienteValue ==
-                                                  null) {
-                                                return;
-                                              }
-                                              _model.crearnnyanuevo =
-                                                  await NNyATable().insert({
-                                                'Nombre': functions.mayusculas(
-                                                    _model
-                                                        .textController1.text),
-                                                'Apellido':
-                                                    functions.mayusculas(_model
-                                                        .textController2.text),
-                                                'DNI': int.tryParse(_model
-                                                    .textFieldDniTextController
-                                                    .text),
-                                                'edad': _model.textController4
-                                                                .text !=
-                                                            ''
-                                                    ? int.tryParse(_model
-                                                        .textController4.text)
-                                                    : _model.anosgc,
-                                                'updated_at':
-                                                    supaSerialize<DateTime>(
-                                                        getCurrentTimestamp),
-                                                'iduser': currentUserUid,
-                                              });
-                                              _model.creargrupo =
-                                                  await GrupoConvivienteTable()
-                                                      .insert({
-                                                'nombre': functions.mayusculas(
-                                                    _model
-                                                        .textController1.text),
-                                                'apellido':
-                                                    functions.mayusculas(_model
-                                                        .textController2.text),
-                                                'vinculo': _model.dropDownValue,
-                                                'dni': int.tryParse(_model
-                                                    .textFieldDniTextController
-                                                    .text),
-                                                'fecha_nacimiento':
-                                                    supaSerialize<DateTime>(
-                                                        _model.datePicked),
-                                                'edad': _model.textController4
-                                                                .text !=
-                                                            ''
-                                                    ? int.tryParse(_model
-                                                        .textController4.text)
-                                                    : _model.anosgc,
-                                                'telefono':
-                                                    _model.textController6.text,
-                                                'direccion': '',
-                                                'observaciones':
-                                                    _model.textController8.text,
-                                                'idingreso':
-                                                    widget.rowingreso?.id,
-                                                'idexpe': widget.idexp?.id,
-                                                'conviviente': _model
-                                                    .radioButtonconvivienteValue,
-                                                'idnnya':
-                                                    _model.crearnnyanuevo?.id,
-                                                'vinculo_obs': _model
-                                                    .textFieldvinculoTextController
-                                                    .text,
-                                              });
-                                              await NNyAExpGruTable().insert({
-                                                'idNNyA':
-                                                    _model.crearnnyanuevo?.id,
-                                                'idExp': widget.idexp?.id,
-                                                'detalle': 'Grupo Conviviente',
-                                              });
-                                              await GrupoConvivienteTable()
-                                                  .update(
-                                                data: {
-                                                  'idnnyaGrupo':
-                                                      _model.crearnnyanuevo?.id,
-                                                },
-                                                matchingRows: (rows) =>
-                                                    rows.eqOrNull(
-                                                  'id',
-                                                  _model.creargrupo?.id,
-                                                ),
-                                              );
-                                              await IngresosTable().update(
-                                                data: {
-                                                  'form1seccion3': true,
-                                                },
-                                                matchingRows: (rows) =>
-                                                    rows.eqOrNull(
-                                                  'id',
-                                                  widget.rowingreso?.id,
-                                                ),
-                                              );
-                                              await Seccion8Table().insert({
-                                                'nombre': functions.mayusculas(
-                                                    _model
-                                                        .textController1.text),
-                                                'apellido':
-                                                    _model.textController2.text,
-                                                'vinculo': _model.dropDownValue,
-                                                'telefono':
-                                                    _model.textController6.text,
-                                                'direccion':
-                                                    _model.textController7.text,
-                                                'idIngreso':
-                                                    widget.rowingreso?.id,
-                                                'idExpediente':
-                                                    widget.idexp?.id,
-                                                'updated_at':
-                                                    supaSerialize<DateTime>(
-                                                        getCurrentTimestamp),
-                                                'entrevistado': false,
-                                                'idNNyA':
-                                                    _model.crearnnyanuevo?.id,
-                                                'id_grupoconviviente':
-                                                    _model.creargrupo?.id,
-                                              });
-                                              await showDialog(
-                                                context: context,
-                                                builder: (alertDialogContext) {
-                                                  return WebViewAware(
-                                                    child: AlertDialog(
-                                                      title: Text(
-                                                          'Se guardo correctamente'),
-                                                      content: Text(
-                                                          'Se gardo correctamente la informacion'),
-                                                      actions: [
-                                                        TextButton(
-                                                          onPressed: () =>
-                                                              Navigator.pop(
-                                                                  alertDialogContext),
-                                                          child: Text('Ok'),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  );
-                                                },
-                                              );
-                                              Navigator.pop(context, true);
-                                            }
-
-                                            safeSetState(() {});
-                                          },
-                                          text: 'Guardar',
-                                          icon: Icon(
-                                            Icons.save,
-                                            size: 15.0,
-                                          ),
-                                          options: FFButtonOptions(
-                                            width: 250.0,
-                                            height: 40.0,
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    24.0, 0.0, 24.0, 0.0),
-                                            iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            textStyle: FlutterFlowTheme.of(
-                                                    context)
-                                                .titleSmall
-                                                .override(
-                                                  font: GoogleFonts.notoSansJp(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleSmall
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleSmall
-                                                            .fontStyle,
-                                                  ),
-                                                  color: Colors.white,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall
-                                                          .fontStyle,
-                                                ),
-                                            elevation: 2.0,
-                                            borderSide: BorderSide(
-                                              color: Colors.transparent,
-                                              width: 1.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(20.0),
-                                            hoverElevation: 4.0,
-                                          ),
-                                        ),
                                       FFButtonWidget(
                                         onPressed: () async {
                                           if (_model.formKey.currentState ==
@@ -2281,8 +1884,8 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
                                               await AgregarGrupoConvivienteCall
                                                   .call(
                                             token: currentJwtToken,
-                                            pIdexpediente: widget.idexp?.id,
-                                            pIdingreso: widget.rowingreso?.id,
+                                            pIdexpediente: widget.idexpediente,
+                                            pIdingreso: widget.idingreso,
                                             pDni: valueOrDefault<int>(
                                               int.tryParse(_model
                                                   .textFieldDniTextController
@@ -2331,24 +1934,23 @@ class _AgregarConvivienteWidgetState extends State<AgregarConvivienteWidget> {
 
                                           if ((_model.apiResultyuv?.succeeded ??
                                               true)) {
-                                            await showDialog(
-                                              context: context,
-                                              builder: (alertDialogContext) {
-                                                return WebViewAware(
-                                                  child: AlertDialog(
-                                                    title: Text(
-                                                        'Se creo e registro!'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: Text('Ok'),
-                                                      ),
-                                                    ],
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(
+                                              SnackBar(
+                                                content: Text(
+                                                  'Se guardo con exito!',
+                                                  style: TextStyle(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
                                                   ),
-                                                );
-                                              },
+                                                ),
+                                                duration: Duration(
+                                                    milliseconds: 4000),
+                                                backgroundColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondary,
+                                              ),
                                             );
                                             Navigator.pop(context);
                                           }

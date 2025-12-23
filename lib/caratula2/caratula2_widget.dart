@@ -1993,6 +1993,10 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                               _model.userrol?.firstOrNull,
                                               ParamType.SupabaseRow,
                                             ),
+                                            'idnnya': serializeParam(
+                                              0,
+                                              ParamType.int,
+                                            ),
                                           }.withoutNulls,
                                         );
                                       } else {
@@ -2736,6 +2740,17 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                           currentUserUid,
                                                         ),
                                                       );
+                                                      _model.expediente =
+                                                          await VistaExpedientesUltimoEstadoTable()
+                                                              .queryRows(
+                                                        queryFn: (q) =>
+                                                            q.eqOrNull(
+                                                          'id',
+                                                          (_model.apiResultbjl
+                                                                  ?.jsonBody ??
+                                                              ''),
+                                                        ),
+                                                      );
 
                                                       context.pushNamed(
                                                         IngresosWidget
@@ -2765,6 +2780,14 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                                 ?.firstOrNull,
                                                             ParamType
                                                                 .SupabaseRow,
+                                                          ),
+                                                          'idnnya':
+                                                              serializeParam(
+                                                            _model
+                                                                .expediente
+                                                                ?.firstOrNull
+                                                                ?.idNNyA,
+                                                            ParamType.int,
                                                           ),
                                                         }.withoutNulls,
                                                       );

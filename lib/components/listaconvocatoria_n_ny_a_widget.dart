@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'listaconvocatoria_n_ny_a_model.dart';
 export 'listaconvocatoria_n_ny_a_model.dart';
@@ -21,6 +22,8 @@ class ListaconvocatoriaNNyAWidget extends StatefulWidget {
     this.idampliacionrow,
     this.amplaicionrowvista,
     required this.spdrow,
+    required this.idexp,
+    required this.spd,
   });
 
   final int? idingreso;
@@ -29,6 +32,11 @@ class ListaconvocatoriaNNyAWidget extends StatefulWidget {
   final int? idampliacionrow;
   final VistaAmpliacionInformacionRow? amplaicionrowvista;
   final SpdRow? spdrow;
+
+  /// idexp
+  final int? idexp;
+
+  final String? spd;
 
   @override
   State<ListaconvocatoriaNNyAWidget> createState() =>
@@ -62,6 +70,8 @@ class _ListaconvocatoriaNNyAWidgetState
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Align(
       alignment: AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<VistaAmpliacionInformacionRow>>(
@@ -177,11 +187,13 @@ class _ListaconvocatoriaNNyAWidgetState
                                     child: Padding(
                                       padding: MediaQuery.viewInsetsOf(context),
                                       child: AvisoVisitaNNyAWidget(
-                                        rowingreso: widget.ingresorow!,
-                                        rowexp: widget.exprow!,
                                         editar: false,
                                         idampliacion: widget.idampliacionrow,
                                         spdrow: widget.spdrow!,
+                                        idconvocatoriaNNyA: 0,
+                                        idexp: widget.idexp!,
+                                        idingreso: widget.idingreso!,
+                                        spd: FFAppState().spd,
                                       ),
                                     ),
                                   );
