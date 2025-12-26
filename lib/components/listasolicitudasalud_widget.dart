@@ -15,14 +15,14 @@ export 'listasolicitudasalud_model.dart';
 class ListasolicitudasaludWidget extends StatefulWidget {
   const ListasolicitudasaludWidget({
     super.key,
-    this.ingresorow,
     this.rowampliacion,
-    this.rowexp,
+    required this.idingreso,
+    required this.idexp,
   });
 
-  final IngresosRow? ingresorow;
   final VistaAmpliacionInformacionRow? rowampliacion;
-  final VistaExpedientesUltimoEstadoRow? rowexp;
+  final int? idingreso;
+  final int? idexp;
 
   @override
   State<ListasolicitudasaludWidget> createState() =>
@@ -129,9 +129,9 @@ class _ListasolicitudasaludWidgetState
                           child: Padding(
                             padding: MediaQuery.viewInsetsOf(context),
                             child: AnexoinstitucionsaludWidget(
-                              rowingreso: widget.ingresorow!,
-                              rowexp: widget.rowexp!,
                               idampliacion: widget.rowampliacion?.ampliacionId,
+                              idingreso: widget.idingreso!,
+                              idexp: widget.idexp!,
                             ),
                           ),
                         );
@@ -184,7 +184,7 @@ class _ListasolicitudasaludWidgetState
                             queryFn: (q) => q
                                 .eqOrNull(
                                   'idingreso',
-                                  widget.ingresorow?.id,
+                                  widget.idingreso,
                                 )
                                 .order('fecha'),
                           )))

@@ -1,6 +1,5 @@
 import '/components/tarjetaencabezado_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/index.dart';
 import 'perfil_copy_widget.dart' show PerfilCopyWidget;
 import 'package:flutter/material.dart';
 

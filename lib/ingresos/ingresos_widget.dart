@@ -166,15 +166,13 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                 updateCallback: () => safeSetState(() {}),
                                 child: BarradeNavegacionWidget(
                                   idexp: widget.idexp,
-                                  parameter10: false,
-                                  urlcarpetadrive: widget.idcarpeta,
                                   adjuntar: false,
                                   imprimir: true,
                                   carpeta: true,
                                   ingreso: false,
                                   perfil: false,
                                   usuariorow: widget.usuariorow!,
-                                  fechaExp: getCurrentTimestamp,
+                                  fechaExp: getCurrentTimestamp.toString(),
                                   usuariorol: widget.usuariorol,
                                   spd: widget.spd,
                                 ),
@@ -1247,10 +1245,6 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                           'idingreso': serializeParam(
                                                                                                             containerVarItem.id,
                                                                                                             ParamType.int,
-                                                                                                          ),
-                                                                                                          'rowexp': serializeParam(
-                                                                                                            _model.expvista?.firstOrNull,
-                                                                                                            ParamType.SupabaseRow,
                                                                                                           ),
                                                                                                           'usuariorow': serializeParam(
                                                                                                             widget.usuariorow,

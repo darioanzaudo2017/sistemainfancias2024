@@ -114,10 +114,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'usuariorol',
               ParamType.SupabaseRow,
             ),
-            rowexp: params.getParam<VistaExpedientesUltimoEstadoRow>(
-              'rowexp',
-              ParamType.SupabaseRow,
-            ),
             idexp: params.getParam(
               'idexp',
               ParamType.int,
@@ -163,14 +159,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: DefiniciondemedidasWidget.routeName,
           path: DefiniciondemedidasWidget.routePath,
           builder: (context, params) => DefiniciondemedidasWidget(
-            ingresorow: params.getParam<IngresosRow>(
-              'ingresorow',
-              ParamType.SupabaseRow,
-            ),
-            rowexp: params.getParam<VistaExpedientesUltimoEstadoRow>(
-              'rowexp',
-              ParamType.SupabaseRow,
-            ),
             usuariorow: params.getParam<UsuariosRow>(
               'usuariorow',
               ParamType.SupabaseRow,
@@ -185,6 +173,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             ),
             idnnya: params.getParam(
               'idnnya',
+              ParamType.int,
+            ),
+            idingreso: params.getParam(
+              'idingreso',
+              ParamType.int,
+            ),
+            idexp: params.getParam(
+              'idexp',
               ParamType.int,
             ),
           ),
@@ -232,14 +228,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'idingreso',
               ParamType.int,
             ),
-            rowexpediente: params.getParam<VistaExpedientesUltimoEstadoRow>(
-              'rowexpediente',
-              ParamType.SupabaseRow,
-            ),
-            rowingreso: params.getParam<IngresosRow>(
-              'rowingreso',
-              ParamType.SupabaseRow,
-            ),
             edit: params.getParam(
               'edit',
               ParamType.bool,
@@ -270,14 +258,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: SenafWidget.routeName,
           path: SenafWidget.routePath,
           builder: (context, params) => SenafWidget(
-            ingrow: params.getParam<IngresosRow>(
-              'ingrow',
-              ParamType.SupabaseRow,
-            ),
-            expediente: params.getParam<VistaExpedientesUltimoEstadoRow>(
-              'expediente',
-              ParamType.SupabaseRow,
-            ),
             usuariorow: params.getParam<UsuariosRow>(
               'usuariorow',
               ParamType.SupabaseRow,
@@ -416,10 +396,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             idingreso: params.getParam(
               'idingreso',
               ParamType.int,
-            ),
-            rowexp: params.getParam<VistaExpedientesUltimoEstadoRow>(
-              'rowexp',
-              ParamType.SupabaseRow,
             ),
             usuariorow: params.getParam<UsuariosRow>(
               'usuariorow',

@@ -12,19 +12,19 @@ class ComentariosolicitudsenafWidget extends StatefulWidget {
   const ComentariosolicitudsenafWidget({
     super.key,
     required this.idhistorial,
-    required this.ingresorow,
-    this.exprow,
     required this.idform9,
     required this.responsable,
     required this.estado,
+    required this.idingreso,
+    required this.idexp,
   });
 
   final int? idhistorial;
-  final IngresosRow? ingresorow;
-  final VistaExpedientesUltimoEstadoRow? exprow;
   final int? idform9;
   final String? responsable;
   final String? estado;
+  final int? idingreso;
+  final int? idexp;
 
   @override
   State<ComentariosolicitudsenafWidget> createState() =>
@@ -207,8 +207,8 @@ class _ComentariosolicitudsenafWidgetState
                       'reponsable': widget.responsable,
                       'iduser': currentUserUid,
                       'update_ad': supaSerialize<DateTime>(getCurrentTimestamp),
-                      'idingreso': widget.ingresorow?.id,
-                      'idexpediente': widget.exprow?.id,
+                      'idingreso': widget.idingreso,
+                      'idexpediente': widget.idexp,
                       'idform9': widget.idform9,
                       'leido': false,
                       'enviado': false,

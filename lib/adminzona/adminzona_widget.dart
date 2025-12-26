@@ -2107,14 +2107,6 @@ class _AdminzonaWidgetState extends State<AdminzonaWidget>
                                                                       ParamType
                                                                           .int,
                                                                     ),
-                                                                    'rowexp':
-                                                                        serializeParam(
-                                                                      _model
-                                                                          .vistaexpe
-                                                                          ?.firstOrNull,
-                                                                      ParamType
-                                                                          .SupabaseRow,
-                                                                    ),
                                                                     'usuariorow':
                                                                         serializeParam(
                                                                       widget

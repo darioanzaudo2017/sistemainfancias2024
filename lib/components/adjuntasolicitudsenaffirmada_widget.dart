@@ -14,14 +14,14 @@ export 'adjuntasolicitudsenaffirmada_model.dart';
 class AdjuntasolicitudsenaffirmadaWidget extends StatefulWidget {
   const AdjuntasolicitudsenaffirmadaWidget({
     super.key,
-    this.exprow,
-    this.ingrow,
     this.idform9,
+    required this.idexp,
+    required this.idingreso,
   });
 
-  final VistaExpedientesUltimoEstadoRow? exprow;
-  final IngresosRow? ingrow;
   final int? idform9;
+  final int? idexp;
+  final int? idingreso;
 
   @override
   State<AdjuntasolicitudsenaffirmadaWidget> createState() =>
@@ -314,8 +314,8 @@ class _AdjuntasolicitudsenaffirmadaWidgetState
                   child: FFButtonWidget(
                     onPressed: () async {
                       await DocumentosadjuntosTable().insert({
-                        'idexpdoc': widget.exprow?.id?.toDouble(),
-                        'idingresodoc': widget.ingrow?.id,
+                        'idexpdoc': widget.idexp?.toDouble(),
+                        'idingresodoc': widget.idingreso,
                         'documentopdf': _model
                             .uploadedFileUrl_uploadData9zvsolicitudfirmada,
                         'tipodocumento':

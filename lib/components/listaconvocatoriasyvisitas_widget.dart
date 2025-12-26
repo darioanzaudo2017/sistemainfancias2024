@@ -15,18 +15,16 @@ export 'listaconvocatoriasyvisitas_model.dart';
 class ListaconvocatoriasyvisitasWidget extends StatefulWidget {
   const ListaconvocatoriasyvisitasWidget({
     super.key,
-    this.idingreso,
-    this.ingresorow,
-    this.exprow,
+    required this.idingreso,
     this.idampliacionrow,
     required this.spd,
+    required this.idexp,
   });
 
   final int? idingreso;
-  final IngresosRow? ingresorow;
-  final VistaExpedientesUltimoEstadoRow? exprow;
   final int? idampliacionrow;
   final SpdRow? spd;
+  final int? idexp;
 
   @override
   State<ListaconvocatoriasyvisitasWidget> createState() =>
@@ -143,11 +141,12 @@ class _ListaconvocatoriasyvisitasWidgetState
                                   child: Padding(
                                     padding: MediaQuery.viewInsetsOf(context),
                                     child: AvisoconcurrenciaadultoWidget(
-                                      rowingreso: widget.ingresorow!,
-                                      rowexp: widget.exprow!,
                                       editar: false,
                                       idampliacion: widget.idampliacionrow,
                                       spd: widget.spd!,
+                                      idavisoconcurrencia: 0,
+                                      idingreso: widget.idingreso!,
+                                      idexp: widget.idexp!,
                                     ),
                                   ),
                                 );

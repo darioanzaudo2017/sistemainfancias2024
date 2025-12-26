@@ -17,16 +17,16 @@ class ListasolicitudaeducacionWidget extends StatefulWidget {
     super.key,
     this.idingreso,
     this.ingresorow,
-    this.rowexp,
     required this.idampliacion,
     required this.spd,
+    required this.idexp,
   });
 
   final int? idingreso;
   final IngresosRow? ingresorow;
-  final VistaExpedientesUltimoEstadoRow? rowexp;
   final VistaAmpliacionInformacionRow? idampliacion;
   final SpdRow? spd;
+  final int? idexp;
 
   @override
   State<ListasolicitudaeducacionWidget> createState() =>
@@ -102,12 +102,12 @@ class _ListasolicitudaeducacionWidgetState
                       child: Padding(
                         padding: MediaQuery.viewInsetsOf(context),
                         child: AnexoeducacionsolicitudWidget(
-                          rowingreso: widget.ingresorow!,
-                          rowexp: widget.rowexp!,
                           editar: false,
                           idanexosalud: 0,
                           idampliacion: widget.idampliacion!,
                           spd: widget.spd!,
+                          idingreso: widget.idingreso!,
+                          idexp: widget.idexp!,
                         ),
                       ),
                     );
