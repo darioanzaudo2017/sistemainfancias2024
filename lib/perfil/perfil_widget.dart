@@ -3694,328 +3694,301 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                     thickness: 2.0,
                                                                                     color: FlutterFlowTheme.of(context).alternate,
                                                                                   ),
-                                                                                  FutureBuilder<List<Seccion9Row>>(
-                                                                                    future: Seccion9Table().querySingleRow(
-                                                                                      queryFn: (q) => q.eqOrNull(
-                                                                                        'idIngreso',
-                                                                                        widget.idingreso,
-                                                                                      ),
-                                                                                    ),
-                                                                                    builder: (context, snapshot) {
-                                                                                      // Customize what your widget looks like when it's loading.
-                                                                                      if (!snapshot.hasData) {
-                                                                                        return Center(
-                                                                                          child: SizedBox(
-                                                                                            width: 50.0,
-                                                                                            height: 50.0,
-                                                                                            child: CircularProgressIndicator(
-                                                                                              valueColor: AlwaysStoppedAnimation<Color>(
-                                                                                                FlutterFlowTheme.of(context).primary,
-                                                                                              ),
-                                                                                            ),
-                                                                                          ),
-                                                                                        );
-                                                                                      }
-                                                                                      List<Seccion9Row> containerSeccion9RowList = snapshot.data!;
-
-                                                                                      final containerSeccion9Row = containerSeccion9RowList.isNotEmpty ? containerSeccion9RowList.first : null;
-
-                                                                                      return Container(
-                                                                                        decoration: BoxDecoration(),
-                                                                                        child: Row(
+                                                                                  Container(
+                                                                                    decoration: BoxDecoration(),
+                                                                                    child: Row(
+                                                                                      mainAxisSize: MainAxisSize.max,
+                                                                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                      children: [
+                                                                                        Row(
                                                                                           mainAxisSize: MainAxisSize.max,
-                                                                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                           children: [
-                                                                                            Row(
-                                                                                              mainAxisSize: MainAxisSize.max,
-                                                                                              children: [
-                                                                                                Icon(
-                                                                                                  Icons.check_circle,
-                                                                                                  color: PerfilcompletopaginaStruct.maybeFromMap(perfilPerfilCompletoPaginaResponse.jsonBody)?.perfilIngreso.form1seccion9 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
-                                                                                                  size: 24.0,
-                                                                                                ),
-                                                                                                Text(
-                                                                                                  'Apertura de expediente / Asesoramiento',
-                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        font: GoogleFonts.notoSansJp(
-                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                        ),
-                                                                                                        letterSpacing: 0.0,
-                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                      ),
-                                                                                                ),
-                                                                                              ],
+                                                                                            Icon(
+                                                                                              Icons.check_circle,
+                                                                                              color: PerfilcompletopaginaStruct.maybeFromMap(perfilPerfilCompletoPaginaResponse.jsonBody)?.perfilIngreso.form1seccion9 == false ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).success,
+                                                                                              size: 24.0,
                                                                                             ),
-                                                                                            FFButtonWidget(
-                                                                                              onPressed: !() {
-                                                                                                if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == PerfilcompletopaginaStruct.maybeFromMap(perfilPerfilCompletoPaginaResponse.jsonBody)?.perfilExpediente.spd)) {
-                                                                                                  return true;
-                                                                                                } else if (widget.usuariorol?.rolId == 1) {
-                                                                                                  return true;
-                                                                                                } else if (widget.usuariorol?.rolId == 2) {
-                                                                                                  return true;
-                                                                                                } else {
-                                                                                                  return false;
-                                                                                                }
-                                                                                              }()
-                                                                                                  ? null
-                                                                                                  : () async {
-                                                                                                      if (containerSeccion9Row?.idSec9 != null) {
-                                                                                                        await Seccion9Table().update(
-                                                                                                          data: {
-                                                                                                            'Desicion': 'Apertura',
-                                                                                                            'iduser': currentUserUid,
-                                                                                                          },
-                                                                                                          matchingRows: (rows) => rows.eqOrNull(
-                                                                                                            'idIngreso',
-                                                                                                            widget.idingreso,
-                                                                                                          ),
-                                                                                                        );
-                                                                                                        if (PerfilcompletopaginaStruct.maybeFromMap(perfilPerfilCompletoPaginaResponse.jsonBody)!.perfilPuedeAvanzar) {
-                                                                                                          await IngresosTable().update(
-                                                                                                            data: {
-                                                                                                              'form1completo': true,
-                                                                                                              'Ampliacioncompleto': false,
-                                                                                                              'Ampliacion': true,
-                                                                                                            },
-                                                                                                            matchingRows: (rows) => rows.eqOrNull(
-                                                                                                              'id',
-                                                                                                              PerfilcompletopaginaStruct.maybeFromMap(perfilPerfilCompletoPaginaResponse.jsonBody)?.perfilIngreso.id,
-                                                                                                            ),
-                                                                                                          );
-                                                                                                        }
-                                                                                                        safeSetState(() => _model.apiRequestCompleter = null);
-                                                                                                        await _model.waitForApiRequestCompleted();
-                                                                                                        safeSetState(() => _model.apiRequestCompleter = null);
-                                                                                                        await _model.waitForApiRequestCompleted();
-                                                                                                      } else {
-                                                                                                        _model.seccion9 = await Seccion9Table().insert({
-                                                                                                          'idIngreso': widget.idingreso,
-                                                                                                          'idExpediente': widget.idexp,
-                                                                                                          'Desicion': 'Apertura',
-                                                                                                          'iduser': currentUserUid,
-                                                                                                        });
-                                                                                                        await IngresosTable().update(
-                                                                                                          data: {
-                                                                                                            'form1seccion9': true,
-                                                                                                            'updated_at': supaSerialize<DateTime>(getCurrentTimestamp),
-                                                                                                          },
-                                                                                                          matchingRows: (rows) => rows.eqOrNull(
-                                                                                                            'id',
-                                                                                                            widget.idingreso,
-                                                                                                          ),
-                                                                                                        );
-                                                                                                        ScaffoldMessenger.of(context).showSnackBar(
-                                                                                                          SnackBar(
-                                                                                                            content: Text(
-                                                                                                              'Carga correcta',
-                                                                                                              style: TextStyle(
-                                                                                                                color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                              ),
-                                                                                                            ),
-                                                                                                            duration: Duration(milliseconds: 4000),
-                                                                                                            backgroundColor: FlutterFlowTheme.of(context).secondary,
-                                                                                                          ),
-                                                                                                        );
-                                                                                                        if (PerfilcompletopaginaStruct.maybeFromMap(perfilPerfilCompletoPaginaResponse.jsonBody)!.perfilPuedeAvanzar) {
-                                                                                                          await IngresosTable().update(
-                                                                                                            data: {
-                                                                                                              'form1completo': true,
-                                                                                                              'Ampliacioncompleto': false,
-                                                                                                              'Ampliacion': true,
-                                                                                                            },
-                                                                                                            matchingRows: (rows) => rows.eqOrNull(
-                                                                                                              'id',
-                                                                                                              PerfilcompletopaginaStruct.maybeFromMap(perfilPerfilCompletoPaginaResponse.jsonBody)?.perfilIngreso.id,
-                                                                                                            ),
-                                                                                                          );
-                                                                                                        }
-                                                                                                        safeSetState(() => _model.apiRequestCompleter = null);
-                                                                                                        await _model.waitForApiRequestCompleted();
-                                                                                                        safeSetState(() => _model.apiRequestCompleter = null);
-                                                                                                        await _model.waitForApiRequestCompleted();
-                                                                                                      }
-
-                                                                                                      safeSetState(() {});
-                                                                                                    },
-                                                                                              text: 'Apertura de expediente',
-                                                                                              options: FFButtonOptions(
-                                                                                                height: 40.0,
-                                                                                                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                color: containerSeccion9Row?.desicion == 'Apertura' ? FlutterFlowTheme.of(context).success : FlutterFlowTheme.of(context).primary,
-                                                                                                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                      font: GoogleFonts.notoSansJp(
-                                                                                                        fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                        fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                      ),
-                                                                                                      color: Colors.white,
-                                                                                                      letterSpacing: 0.0,
-                                                                                                      fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                            Text(
+                                                                                              'Apertura de expediente / Asesoramiento',
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    font: GoogleFonts.notoSansJp(
+                                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                     ),
-                                                                                                elevation: 0.0,
-                                                                                                borderRadius: BorderRadius.circular(8.0),
-                                                                                                disabledColor: FlutterFlowTheme.of(context).alternate,
-                                                                                              ),
-                                                                                            ),
-                                                                                            FFButtonWidget(
-                                                                                              onPressed: !() {
-                                                                                                if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == PerfilcompletopaginaStruct.maybeFromMap(perfilPerfilCompletoPaginaResponse.jsonBody)?.perfilExpediente.spd)) {
-                                                                                                  return true;
-                                                                                                } else if (widget.usuariorol?.rolId == 1) {
-                                                                                                  return true;
-                                                                                                } else if (widget.usuariorol?.rolId == 2) {
-                                                                                                  return true;
-                                                                                                } else {
-                                                                                                  return false;
-                                                                                                }
-                                                                                              }()
-                                                                                                  ? null
-                                                                                                  : () async {
-                                                                                                      if (containerSeccion9Row?.idSec9 != null) {
-                                                                                                        await Seccion9Table().update(
-                                                                                                          data: {
-                                                                                                            'Desicion': 'Asesoramiento',
-                                                                                                          },
-                                                                                                          matchingRows: (rows) => rows.eqOrNull(
-                                                                                                            'idIngreso',
-                                                                                                            widget.idingreso,
-                                                                                                          ),
-                                                                                                        );
-                                                                                                        await showModalBottomSheet(
-                                                                                                          isScrollControlled: true,
-                                                                                                          backgroundColor: Colors.transparent,
-                                                                                                          enableDrag: false,
-                                                                                                          context: context,
-                                                                                                          builder: (context) {
-                                                                                                            return WebViewAware(
-                                                                                                              child: GestureDetector(
-                                                                                                                onTap: () {
-                                                                                                                  FocusScope.of(context).unfocus();
-                                                                                                                  FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                                },
-                                                                                                                child: Padding(
-                                                                                                                  padding: MediaQuery.viewInsetsOf(context),
-                                                                                                                  child: AsesoramientoAnexoAWidget(
-                                                                                                                    rowseccion9: containerSeccion9Row,
-                                                                                                                    usuariorow: widget.usuariorow,
-                                                                                                                    spd: widget.spd,
-                                                                                                                    usuariorol: widget.usuariorol,
-                                                                                                                    idnnya: widget.idnnya!,
-                                                                                                                    idingreso: widget.idingreso!,
-                                                                                                                    idexp: widget.idexp!,
-                                                                                                                  ),
-                                                                                                                ),
-                                                                                                              ),
-                                                                                                            );
-                                                                                                          },
-                                                                                                        ).then((value) => safeSetState(() => _model.creoasesoramiento1 = value));
-
-                                                                                                        if (_model.creoasesoramiento1!) {
-                                                                                                          safeSetState(() => _model.apiRequestCompleter = null);
-                                                                                                          await _model.waitForApiRequestCompleted();
-                                                                                                        }
-                                                                                                      } else {
-                                                                                                        _model.seccion9Copy = await Seccion9Table().insert({
-                                                                                                          'idIngreso': widget.idingreso,
-                                                                                                          'idExpediente': widget.idexp,
-                                                                                                          'Desicion': 'Asesoramiento',
-                                                                                                          'iduser': currentUserUid,
-                                                                                                        });
-                                                                                                        await IngresosTable().update(
-                                                                                                          data: {
-                                                                                                            'form1seccion9': true,
-                                                                                                            'Estado': 'Cerrado',
-                                                                                                            'fechacierre': supaSerialize<DateTime>(getCurrentTimestamp),
-                                                                                                            'Motivocierre': 'Asesoramiento',
-                                                                                                            'updated_at': supaSerialize<DateTime>(getCurrentTimestamp),
-                                                                                                          },
-                                                                                                          matchingRows: (rows) => rows.eqOrNull(
-                                                                                                            'id',
-                                                                                                            widget.idingreso,
-                                                                                                          ),
-                                                                                                        );
-                                                                                                        ScaffoldMessenger.of(context).showSnackBar(
-                                                                                                          SnackBar(
-                                                                                                            content: Text(
-                                                                                                              'Carga cor',
-                                                                                                              style: TextStyle(
-                                                                                                                color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                              ),
-                                                                                                            ),
-                                                                                                            duration: Duration(milliseconds: 4000),
-                                                                                                            backgroundColor: FlutterFlowTheme.of(context).secondary,
-                                                                                                          ),
-                                                                                                        );
-                                                                                                        safeSetState(() => _model.apiRequestCompleter = null);
-                                                                                                        await _model.waitForApiRequestCompleted();
-                                                                                                        await showModalBottomSheet(
-                                                                                                          isScrollControlled: true,
-                                                                                                          backgroundColor: Colors.transparent,
-                                                                                                          enableDrag: false,
-                                                                                                          context: context,
-                                                                                                          builder: (context) {
-                                                                                                            return WebViewAware(
-                                                                                                              child: GestureDetector(
-                                                                                                                onTap: () {
-                                                                                                                  FocusScope.of(context).unfocus();
-                                                                                                                  FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                                },
-                                                                                                                child: Padding(
-                                                                                                                  padding: MediaQuery.viewInsetsOf(context),
-                                                                                                                  child: AsesoramientoAnexoAWidget(
-                                                                                                                    rowseccion9: _model.seccion9Copy,
-                                                                                                                    usuariorow: widget.usuariorow,
-                                                                                                                    spd: widget.spd,
-                                                                                                                    usuariorol: widget.usuariorol,
-                                                                                                                    idnnya: widget.idnnya!,
-                                                                                                                    idingreso: widget.idingreso!,
-                                                                                                                    idexp: widget.idexp!,
-                                                                                                                  ),
-                                                                                                                ),
-                                                                                                              ),
-                                                                                                            );
-                                                                                                          },
-                                                                                                        ).then((value) => safeSetState(() {}));
-
-                                                                                                        if (_model.creoasesoramiento1!) {
-                                                                                                          safeSetState(() => _model.apiRequestCompleter = null);
-                                                                                                          await _model.waitForApiRequestCompleted();
-                                                                                                          safeSetState(() => _model.apiRequestCompleter = null);
-                                                                                                          await _model.waitForApiRequestCompleted();
-                                                                                                        }
-                                                                                                      }
-
-                                                                                                      safeSetState(() {});
-                                                                                                    },
-                                                                                              text: 'Asesoramiento',
-                                                                                              options: FFButtonOptions(
-                                                                                                height: 40.0,
-                                                                                                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                color: containerSeccion9Row?.desicion == 'Asesoramiento' ? FlutterFlowTheme.of(context).success : FlutterFlowTheme.of(context).primary,
-                                                                                                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                      font: GoogleFonts.notoSansJp(
-                                                                                                        fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                        fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                      ),
-                                                                                                      color: Colors.white,
-                                                                                                      letterSpacing: 0.0,
-                                                                                                      fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                    ),
-                                                                                                elevation: 0.0,
-                                                                                                borderRadius: BorderRadius.circular(8.0),
-                                                                                                disabledColor: FlutterFlowTheme.of(context).alternate,
-                                                                                              ),
+                                                                                                    letterSpacing: 0.0,
+                                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                  ),
                                                                                             ),
                                                                                           ],
                                                                                         ),
-                                                                                      );
-                                                                                    },
+                                                                                        FFButtonWidget(
+                                                                                          onPressed: !() {
+                                                                                            if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == PerfilcompletopaginaStruct.maybeFromMap(perfilPerfilCompletoPaginaResponse.jsonBody)?.perfilExpediente.spd)) {
+                                                                                              return true;
+                                                                                            } else if (widget.usuariorol?.rolId == 1) {
+                                                                                              return true;
+                                                                                            } else if (widget.usuariorol?.rolId == 2) {
+                                                                                              return true;
+                                                                                            } else {
+                                                                                              return false;
+                                                                                            }
+                                                                                          }()
+                                                                                              ? null
+                                                                                              : () async {
+                                                                                                  if (PerfilcompletopaginaStruct.maybeFromMap(perfilPerfilCompletoPaginaResponse.jsonBody)?.perfilSecciones.seccion9.idSec9 != null) {
+                                                                                                    await Seccion9Table().update(
+                                                                                                      data: {
+                                                                                                        'Desicion': 'Apertura',
+                                                                                                        'iduser': currentUserUid,
+                                                                                                      },
+                                                                                                      matchingRows: (rows) => rows.eqOrNull(
+                                                                                                        'idIngreso',
+                                                                                                        widget.idingreso,
+                                                                                                      ),
+                                                                                                    );
+                                                                                                    if (PerfilcompletopaginaStruct.maybeFromMap(perfilPerfilCompletoPaginaResponse.jsonBody)!.perfilPuedeAvanzar) {
+                                                                                                      await IngresosTable().update(
+                                                                                                        data: {
+                                                                                                          'form1completo': true,
+                                                                                                          'Ampliacioncompleto': false,
+                                                                                                          'Ampliacion': true,
+                                                                                                        },
+                                                                                                        matchingRows: (rows) => rows.eqOrNull(
+                                                                                                          'id',
+                                                                                                          PerfilcompletopaginaStruct.maybeFromMap(perfilPerfilCompletoPaginaResponse.jsonBody)?.perfilIngreso.id,
+                                                                                                        ),
+                                                                                                      );
+                                                                                                    }
+                                                                                                    safeSetState(() => _model.apiRequestCompleter = null);
+                                                                                                    await _model.waitForApiRequestCompleted();
+                                                                                                    safeSetState(() => _model.apiRequestCompleter = null);
+                                                                                                    await _model.waitForApiRequestCompleted();
+                                                                                                  } else {
+                                                                                                    _model.seccion9 = await Seccion9Table().insert({
+                                                                                                      'idIngreso': widget.idingreso,
+                                                                                                      'idExpediente': widget.idexp,
+                                                                                                      'Desicion': 'Apertura',
+                                                                                                      'iduser': currentUserUid,
+                                                                                                    });
+                                                                                                    await IngresosTable().update(
+                                                                                                      data: {
+                                                                                                        'form1seccion9': true,
+                                                                                                        'updated_at': supaSerialize<DateTime>(getCurrentTimestamp),
+                                                                                                      },
+                                                                                                      matchingRows: (rows) => rows.eqOrNull(
+                                                                                                        'id',
+                                                                                                        widget.idingreso,
+                                                                                                      ),
+                                                                                                    );
+                                                                                                    ScaffoldMessenger.of(context).showSnackBar(
+                                                                                                      SnackBar(
+                                                                                                        content: Text(
+                                                                                                          'Carga correcta',
+                                                                                                          style: TextStyle(
+                                                                                                            color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                          ),
+                                                                                                        ),
+                                                                                                        duration: Duration(milliseconds: 4000),
+                                                                                                        backgroundColor: FlutterFlowTheme.of(context).secondary,
+                                                                                                      ),
+                                                                                                    );
+                                                                                                    if (PerfilcompletopaginaStruct.maybeFromMap(perfilPerfilCompletoPaginaResponse.jsonBody)!.perfilPuedeAvanzar) {
+                                                                                                      await IngresosTable().update(
+                                                                                                        data: {
+                                                                                                          'form1completo': true,
+                                                                                                          'Ampliacioncompleto': false,
+                                                                                                          'Ampliacion': true,
+                                                                                                        },
+                                                                                                        matchingRows: (rows) => rows.eqOrNull(
+                                                                                                          'id',
+                                                                                                          PerfilcompletopaginaStruct.maybeFromMap(perfilPerfilCompletoPaginaResponse.jsonBody)?.perfilIngreso.id,
+                                                                                                        ),
+                                                                                                      );
+                                                                                                    }
+                                                                                                    safeSetState(() => _model.apiRequestCompleter = null);
+                                                                                                    await _model.waitForApiRequestCompleted();
+                                                                                                    safeSetState(() => _model.apiRequestCompleter = null);
+                                                                                                    await _model.waitForApiRequestCompleted();
+                                                                                                  }
+
+                                                                                                  safeSetState(() {});
+                                                                                                },
+                                                                                          text: 'Apertura de expediente',
+                                                                                          options: FFButtonOptions(
+                                                                                            height: 40.0,
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                            color: PerfilcompletopaginaStruct.maybeFromMap(perfilPerfilCompletoPaginaResponse.jsonBody)?.perfilSecciones.seccion9.desicion == 'Apertura' ? FlutterFlowTheme.of(context).success : FlutterFlowTheme.of(context).primary,
+                                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                  font: GoogleFonts.notoSansJp(
+                                                                                                    fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                    fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                  ),
+                                                                                                  color: Colors.white,
+                                                                                                  letterSpacing: 0.0,
+                                                                                                  fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                ),
+                                                                                            elevation: 0.0,
+                                                                                            borderRadius: BorderRadius.circular(8.0),
+                                                                                            disabledColor: FlutterFlowTheme.of(context).alternate,
+                                                                                          ),
+                                                                                        ),
+                                                                                        FFButtonWidget(
+                                                                                          onPressed: !() {
+                                                                                            if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == PerfilcompletopaginaStruct.maybeFromMap(perfilPerfilCompletoPaginaResponse.jsonBody)?.perfilExpediente.spd)) {
+                                                                                              return true;
+                                                                                            } else if (widget.usuariorol?.rolId == 1) {
+                                                                                              return true;
+                                                                                            } else if (widget.usuariorol?.rolId == 2) {
+                                                                                              return true;
+                                                                                            } else {
+                                                                                              return false;
+                                                                                            }
+                                                                                          }()
+                                                                                              ? null
+                                                                                              : () async {
+                                                                                                  if (PerfilcompletopaginaStruct.maybeFromMap(perfilPerfilCompletoPaginaResponse.jsonBody)?.perfilSecciones.seccion9.idSec9 != null) {
+                                                                                                    await Seccion9Table().update(
+                                                                                                      data: {
+                                                                                                        'Desicion': 'Asesoramiento',
+                                                                                                      },
+                                                                                                      matchingRows: (rows) => rows.eqOrNull(
+                                                                                                        'idIngreso',
+                                                                                                        widget.idingreso,
+                                                                                                      ),
+                                                                                                    );
+                                                                                                    await showModalBottomSheet(
+                                                                                                      isScrollControlled: true,
+                                                                                                      backgroundColor: Colors.transparent,
+                                                                                                      enableDrag: false,
+                                                                                                      context: context,
+                                                                                                      builder: (context) {
+                                                                                                        return WebViewAware(
+                                                                                                          child: GestureDetector(
+                                                                                                            onTap: () {
+                                                                                                              FocusScope.of(context).unfocus();
+                                                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                            },
+                                                                                                            child: Padding(
+                                                                                                              padding: MediaQuery.viewInsetsOf(context),
+                                                                                                              child: AsesoramientoAnexoAWidget(
+                                                                                                                usuariorow: widget.usuariorow,
+                                                                                                                spd: widget.spd,
+                                                                                                                usuariorol: widget.usuariorol,
+                                                                                                                idnnya: widget.idnnya!,
+                                                                                                                idingreso: widget.idingreso!,
+                                                                                                                idexp: widget.idexp!,
+                                                                                                                edit: false,
+                                                                                                                idseccion9: PerfilcompletopaginaStruct.maybeFromMap(perfilPerfilCompletoPaginaResponse.jsonBody)!.perfilSecciones.seccion9.idSec9,
+                                                                                                              ),
+                                                                                                            ),
+                                                                                                          ),
+                                                                                                        );
+                                                                                                      },
+                                                                                                    ).then((value) => safeSetState(() => _model.creoasesoramiento1 = value));
+
+                                                                                                    if (_model.creoasesoramiento1!) {
+                                                                                                      safeSetState(() => _model.apiRequestCompleter = null);
+                                                                                                      await _model.waitForApiRequestCompleted();
+                                                                                                    }
+                                                                                                  } else {
+                                                                                                    _model.seccion9Copy = await Seccion9Table().insert({
+                                                                                                      'idIngreso': widget.idingreso,
+                                                                                                      'idExpediente': widget.idexp,
+                                                                                                      'Desicion': 'Asesoramiento',
+                                                                                                      'iduser': currentUserUid,
+                                                                                                    });
+                                                                                                    await IngresosTable().update(
+                                                                                                      data: {
+                                                                                                        'form1seccion9': true,
+                                                                                                        'Estado': 'Cerrado',
+                                                                                                        'fechacierre': supaSerialize<DateTime>(getCurrentTimestamp),
+                                                                                                        'Motivocierre': 'Asesoramiento',
+                                                                                                        'updated_at': supaSerialize<DateTime>(getCurrentTimestamp),
+                                                                                                      },
+                                                                                                      matchingRows: (rows) => rows.eqOrNull(
+                                                                                                        'id',
+                                                                                                        widget.idingreso,
+                                                                                                      ),
+                                                                                                    );
+                                                                                                    ScaffoldMessenger.of(context).showSnackBar(
+                                                                                                      SnackBar(
+                                                                                                        content: Text(
+                                                                                                          'Carga cor',
+                                                                                                          style: TextStyle(
+                                                                                                            color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                          ),
+                                                                                                        ),
+                                                                                                        duration: Duration(milliseconds: 4000),
+                                                                                                        backgroundColor: FlutterFlowTheme.of(context).secondary,
+                                                                                                      ),
+                                                                                                    );
+                                                                                                    safeSetState(() => _model.apiRequestCompleter = null);
+                                                                                                    await _model.waitForApiRequestCompleted();
+                                                                                                    await showModalBottomSheet(
+                                                                                                      isScrollControlled: true,
+                                                                                                      backgroundColor: Colors.transparent,
+                                                                                                      enableDrag: false,
+                                                                                                      context: context,
+                                                                                                      builder: (context) {
+                                                                                                        return WebViewAware(
+                                                                                                          child: GestureDetector(
+                                                                                                            onTap: () {
+                                                                                                              FocusScope.of(context).unfocus();
+                                                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                            },
+                                                                                                            child: Padding(
+                                                                                                              padding: MediaQuery.viewInsetsOf(context),
+                                                                                                              child: AsesoramientoAnexoAWidget(
+                                                                                                                usuariorow: widget.usuariorow,
+                                                                                                                spd: widget.spd,
+                                                                                                                usuariorol: widget.usuariorol,
+                                                                                                                idnnya: widget.idnnya!,
+                                                                                                                idingreso: widget.idingreso!,
+                                                                                                                idexp: widget.idexp!,
+                                                                                                                idseccion9: PerfilcompletopaginaStruct.maybeFromMap(perfilPerfilCompletoPaginaResponse.jsonBody)!.perfilSecciones.seccion9.idSec9,
+                                                                                                              ),
+                                                                                                            ),
+                                                                                                          ),
+                                                                                                        );
+                                                                                                      },
+                                                                                                    ).then((value) => safeSetState(() {}));
+
+                                                                                                    if (_model.creoasesoramiento1!) {
+                                                                                                      safeSetState(() => _model.apiRequestCompleter = null);
+                                                                                                      await _model.waitForApiRequestCompleted();
+                                                                                                      safeSetState(() => _model.apiRequestCompleter = null);
+                                                                                                      await _model.waitForApiRequestCompleted();
+                                                                                                    }
+                                                                                                  }
+
+                                                                                                  safeSetState(() {});
+                                                                                                },
+                                                                                          text: 'Asesoramiento',
+                                                                                          options: FFButtonOptions(
+                                                                                            height: 40.0,
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                            color: PerfilcompletopaginaStruct.maybeFromMap(perfilPerfilCompletoPaginaResponse.jsonBody)?.perfilSecciones.seccion9.desicion == 'Asesoramiento' ? FlutterFlowTheme.of(context).success : FlutterFlowTheme.of(context).primary,
+                                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                  font: GoogleFonts.notoSansJp(
+                                                                                                    fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                    fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                  ),
+                                                                                                  color: Colors.white,
+                                                                                                  letterSpacing: 0.0,
+                                                                                                  fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                ),
+                                                                                            elevation: 0.0,
+                                                                                            borderRadius: BorderRadius.circular(8.0),
+                                                                                            disabledColor: FlutterFlowTheme.of(context).alternate,
+                                                                                          ),
+                                                                                        ),
+                                                                                      ],
+                                                                                    ),
                                                                                   ),
                                                                                 ].divide(SizedBox(height: 3.0)),
                                                                               ),

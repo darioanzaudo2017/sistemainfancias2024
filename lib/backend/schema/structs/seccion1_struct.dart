@@ -10,7 +10,7 @@ class Seccion1Struct extends BaseStruct {
     int? idSec1,
     String? lugarNac,
     String? domicilio,
-    String? telefono,
+    int? telefono,
     String? genero,
     String? adultoRes,
     String? rnp,
@@ -21,7 +21,7 @@ class Seccion1Struct extends BaseStruct {
     String? escuela,
     String? cursoEsc,
     String? domEsc,
-    String? telEsc,
+    int? telEsc,
     String? cocurrenciaEsc,
     String? nivelAlcanzado,
     String? referente,
@@ -100,9 +100,11 @@ class Seccion1Struct extends BaseStruct {
   bool hasDomicilio() => _domicilio != null;
 
   // "telefono" field.
-  String? _telefono;
-  String get telefono => _telefono ?? '';
-  set telefono(String? val) => _telefono = val;
+  int? _telefono;
+  int get telefono => _telefono ?? 0;
+  set telefono(int? val) => _telefono = val;
+
+  void incrementTelefono(int amount) => telefono = telefono + amount;
 
   bool hasTelefono() => _telefono != null;
 
@@ -177,9 +179,11 @@ class Seccion1Struct extends BaseStruct {
   bool hasDomEsc() => _domEsc != null;
 
   // "telEsc" field.
-  String? _telEsc;
-  String get telEsc => _telEsc ?? '';
-  set telEsc(String? val) => _telEsc = val;
+  int? _telEsc;
+  int get telEsc => _telEsc ?? 0;
+  set telEsc(int? val) => _telEsc = val;
+
+  void incrementTelEsc(int amount) => telEsc = telEsc + amount;
 
   bool hasTelEsc() => _telEsc != null;
 
@@ -329,7 +333,7 @@ class Seccion1Struct extends BaseStruct {
         idSec1: castToType<int>(data['idSec1']),
         lugarNac: data['lugarNac'] as String?,
         domicilio: data['domicilio'] as String?,
-        telefono: data['telefono'] as String?,
+        telefono: castToType<int>(data['telefono']),
         genero: data['genero'] as String?,
         adultoRes: data['adultoRes'] as String?,
         rnp: data['rnp'] as String?,
@@ -340,7 +344,7 @@ class Seccion1Struct extends BaseStruct {
         escuela: data['escuela'] as String?,
         cursoEsc: data['cursoEsc'] as String?,
         domEsc: data['domEsc'] as String?,
-        telEsc: data['telEsc'] as String?,
+        telEsc: castToType<int>(data['telEsc']),
         cocurrenciaEsc: data['cocurrenciaEsc'] as String?,
         nivelAlcanzado: data['nivelAlcanzado'] as String?,
         referente: data['referente'] as String?,
@@ -418,7 +422,7 @@ class Seccion1Struct extends BaseStruct {
         ),
         'telefono': serializeParam(
           _telefono,
-          ParamType.String,
+          ParamType.int,
         ),
         'genero': serializeParam(
           _genero,
@@ -462,7 +466,7 @@ class Seccion1Struct extends BaseStruct {
         ),
         'telEsc': serializeParam(
           _telEsc,
-          ParamType.String,
+          ParamType.int,
         ),
         'cocurrenciaEsc': serializeParam(
           _cocurrenciaEsc,
@@ -562,7 +566,7 @@ class Seccion1Struct extends BaseStruct {
         ),
         telefono: deserializeParam(
           data['telefono'],
-          ParamType.String,
+          ParamType.int,
           false,
         ),
         genero: deserializeParam(
@@ -617,7 +621,7 @@ class Seccion1Struct extends BaseStruct {
         ),
         telEsc: deserializeParam(
           data['telEsc'],
-          ParamType.String,
+          ParamType.int,
           false,
         ),
         cocurrenciaEsc: deserializeParam(
@@ -803,7 +807,7 @@ Seccion1Struct createSeccion1Struct({
   int? idSec1,
   String? lugarNac,
   String? domicilio,
-  String? telefono,
+  int? telefono,
   String? genero,
   String? adultoRes,
   String? rnp,
@@ -814,7 +818,7 @@ Seccion1Struct createSeccion1Struct({
   String? escuela,
   String? cursoEsc,
   String? domEsc,
-  String? telEsc,
+  int? telEsc,
   String? cocurrenciaEsc,
   String? nivelAlcanzado,
   String? referente,

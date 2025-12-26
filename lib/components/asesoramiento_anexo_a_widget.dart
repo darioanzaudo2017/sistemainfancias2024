@@ -15,23 +15,23 @@ class AsesoramientoAnexoAWidget extends StatefulWidget {
   const AsesoramientoAnexoAWidget({
     super.key,
     bool? edit,
-    this.rowseccion9,
     this.usuariorow,
     this.spd,
     this.usuariorol,
     required this.idnnya,
     required this.idingreso,
     required this.idexp,
+    required this.idseccion9,
   }) : this.edit = edit ?? false;
 
   final bool edit;
-  final Seccion9Row? rowseccion9;
   final UsuariosRow? usuariorow;
   final SpdRow? spd;
   final VistaUsuariosRolesRow? usuariorol;
   final int? idnnya;
   final int? idingreso;
   final int? idexp;
+  final int? idseccion9;
 
   @override
   State<AsesoramientoAnexoAWidget> createState() =>
@@ -1519,7 +1519,7 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                                                 matchingRows: (rows) =>
                                                     rows.eqOrNull(
                                                   'idSec9',
-                                                  widget.rowseccion9?.idSec9,
+                                                  widget.idseccion9,
                                                 ),
                                               );
                                               if ((_model.apiResulto6s
@@ -1587,7 +1587,7 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                                                 matchingRows: (rows) =>
                                                     rows.eqOrNull(
                                                   'idSec9',
-                                                  widget.rowseccion9?.idSec9,
+                                                  widget.idseccion9,
                                                 ),
                                               );
                                               _model.apiResulto6sinsert =
