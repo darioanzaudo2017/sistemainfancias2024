@@ -17,8 +17,6 @@ class ListaconvocatoriaNNyAWidget extends StatefulWidget {
   const ListaconvocatoriaNNyAWidget({
     super.key,
     this.idingreso,
-    this.ingresorow,
-    this.exprow,
     this.idampliacionrow,
     this.amplaicionrowvista,
     required this.spdrow,
@@ -27,8 +25,6 @@ class ListaconvocatoriaNNyAWidget extends StatefulWidget {
   });
 
   final int? idingreso;
-  final IngresosRow? ingresorow;
-  final VistaExpedientesUltimoEstadoRow? exprow;
   final int? idampliacionrow;
   final VistaAmpliacionInformacionRow? amplaicionrowvista;
   final SpdRow? spdrow;

@@ -28,7 +28,6 @@ class EntrevistasCopyWidget extends StatefulWidget {
   const EntrevistasCopyWidget({
     super.key,
     required this.idingreso,
-    required this.rowexp,
     required this.usuariorow,
     required this.usuariorol,
     required this.spd,
@@ -37,7 +36,6 @@ class EntrevistasCopyWidget extends StatefulWidget {
   });
 
   final int? idingreso;
-  final VistaExpedientesUltimoEstadoRow? rowexp;
   final UsuariosRow? usuariorow;
   final VistaUsuariosRolesRow? usuariorol;
   final SpdRow? spd;
@@ -104,10 +102,6 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                     widget.idingreso,
                     ParamType.int,
                   ),
-                  'rowexp': serializeParam(
-                    widget.rowexp,
-                    ParamType.SupabaseRow,
-                  ),
                   'usuariorow': serializeParam(
                     widget.usuariorow,
                     ParamType.SupabaseRow,
@@ -121,7 +115,7 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                     ParamType.SupabaseRow,
                   ),
                   'idexp': serializeParam(
-                    widget.rowexp?.id,
+                    widget.idexp,
                     ParamType.int,
                   ),
                   'idnnya': serializeParam(
@@ -199,75 +193,112 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                           child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 0.0, 0.0),
-                            child: Container(
-                              height: MediaQuery.sizeOf(context).height * 1.0,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
+                            child: FutureBuilder<
+                                List<VistaExpedientesUltimoEstadoRow>>(
+                              future: VistaExpedientesUltimoEstadoTable()
+                                  .querySingleRow(
+                                queryFn: (q) => q.eqOrNull(
+                                  'id',
+                                  widget.idexp,
+                                ),
                               ),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 0.0, 0.0, 0.0),
-                                child: SingleChildScrollView(
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: CircularProgressIndicator(
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                          FlutterFlowTheme.of(context).primary,
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                }
+                                List<VistaExpedientesUltimoEstadoRow>
+                                    containerVistaExpedientesUltimoEstadoRowList =
+                                    snapshot.data!;
+
+                                final containerVistaExpedientesUltimoEstadoRow =
+                                    containerVistaExpedientesUltimoEstadoRowList
+                                            .isNotEmpty
+                                        ? containerVistaExpedientesUltimoEstadoRowList
+                                            .first
+                                        : null;
+
+                                return Container(
+                                  height:
+                                      MediaQuery.sizeOf(context).height * 1.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        10.0, 0.0, 0.0, 0.0),
+                                    child: SingleChildScrollView(
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
                                         children: [
-                                          wrapWithModel(
-                                            model:
-                                                _model.tarjetaencabezadoModel,
-                                            updateCallback: () =>
-                                                safeSetState(() {}),
-                                            child: TarjetaencabezadoWidget(
-                                              idexpediente: widget.rowexp?.id,
-                                              idnnya: widget.rowexp?.idNNyA,
-                                              rowspd: widget.spd,
-                                            ),
-                                          ),
-                                          Container(
-                                            decoration: BoxDecoration(),
-                                            child: Container(
-                                              width: MediaQuery.sizeOf(context)
-                                                      .width *
-                                                  1.0,
-                                              decoration: BoxDecoration(),
-                                              child: Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
+                                          Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              wrapWithModel(
+                                                model: _model
+                                                    .tarjetaencabezadoModel,
+                                                updateCallback: () =>
+                                                    safeSetState(() {}),
+                                                child: TarjetaencabezadoWidget(
+                                                  idexpediente: widget.idexp,
+                                                  idnnya: widget.idnnya,
+                                                  rowspd: widget.spd,
+                                                ),
+                                              ),
+                                              Container(
+                                                decoration: BoxDecoration(),
                                                 child: Container(
                                                   width:
                                                       MediaQuery.sizeOf(context)
                                                               .width *
-                                                          0.789,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryBackground,
-                                                  ),
+                                                          1.0,
+                                                  decoration: BoxDecoration(),
                                                   child: Align(
                                                     alignment:
                                                         AlignmentDirectional(
                                                             0.0, 0.0),
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                      children: [
-                                                        FutureBuilder<
-                                                            List<
-                                                                VistaAmpliacionInformacionRow>>(
-                                                          future: (_model
-                                                                      .requestCompleter ??=
-                                                                  Completer<
+                                                    child: Container(
+                                                      width: MediaQuery.sizeOf(
+                                                                  context)
+                                                              .width *
+                                                          0.789,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                      ),
+                                                      child: Align(
+                                                        alignment:
+                                                            AlignmentDirectional(
+                                                                0.0, 0.0),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            FutureBuilder<
+                                                                List<
+                                                                    VistaAmpliacionInformacionRow>>(
+                                                              future: (_model.requestCompleter ??= Completer<
                                                                       List<
                                                                           VistaAmpliacionInformacionRow>>()
                                                                     ..complete(
@@ -281,1017 +312,109 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                             .idingreso,
                                                                       ),
                                                                     )))
-                                                              .future,
-                                                          builder: (context,
-                                                              snapshot) {
-                                                            // Customize what your widget looks like when it's loading.
-                                                            if (!snapshot
-                                                                .hasData) {
-                                                              return Center(
-                                                                child: SizedBox(
-                                                                  width: 50.0,
-                                                                  height: 50.0,
-                                                                  child:
-                                                                      CircularProgressIndicator(
-                                                                    valueColor:
-                                                                        AlwaysStoppedAnimation<
-                                                                            Color>(
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primary,
+                                                                  .future,
+                                                              builder: (context,
+                                                                  snapshot) {
+                                                                // Customize what your widget looks like when it's loading.
+                                                                if (!snapshot
+                                                                    .hasData) {
+                                                                  return Center(
+                                                                    child:
+                                                                        SizedBox(
+                                                                      width:
+                                                                          50.0,
+                                                                      height:
+                                                                          50.0,
+                                                                      child:
+                                                                          CircularProgressIndicator(
+                                                                        valueColor:
+                                                                            AlwaysStoppedAnimation<Color>(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .primary,
+                                                                        ),
+                                                                      ),
                                                                     ),
-                                                                  ),
-                                                                ),
-                                                              );
-                                                            }
-                                                            List<VistaAmpliacionInformacionRow>
-                                                                containerampliacionVistaAmpliacionInformacionRowList =
-                                                                snapshot.data!;
+                                                                  );
+                                                                }
+                                                                List<VistaAmpliacionInformacionRow>
+                                                                    containerampliacionVistaAmpliacionInformacionRowList =
+                                                                    snapshot
+                                                                        .data!;
 
-                                                            return Container(
-                                                              width: MediaQuery
-                                                                          .sizeOf(
+                                                                return Container(
+                                                                  width: MediaQuery.sizeOf(
                                                                               context)
-                                                                      .width *
-                                                                  0.85,
-                                                              height: 1200.0,
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryBackground,
-                                                              ),
-                                                              child: Column(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                children: [
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
+                                                                          .width *
+                                                                      0.85,
+                                                                  height:
+                                                                      1200.0,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryBackground,
+                                                                  ),
+                                                                  child: Column(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    children: [
+                                                                      Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             16.0,
                                                                             10.0,
                                                                             16.0,
                                                                             10.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width: MediaQuery.sizeOf(context)
-                                                                              .width *
-                                                                          0.7,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        boxShadow: [
-                                                                          BoxShadow(
-                                                                            blurRadius:
-                                                                                3.0,
-                                                                            color:
-                                                                                Color(0x33000000),
-                                                                            offset:
-                                                                                Offset(
-                                                                              0.0,
-                                                                              1.0,
-                                                                            ),
-                                                                            spreadRadius:
-                                                                                0.0,
-                                                                          )
-                                                                        ],
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(12.0),
-                                                                      ),
-                                                                      child:
-                                                                          Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            16.0,
-                                                                            16.0,
-                                                                            16.0,
-                                                                            16.0),
                                                                         child:
-                                                                            Column(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.min,
-                                                                          crossAxisAlignment:
-                                                                              CrossAxisAlignment.center,
-                                                                          children:
-                                                                              [
-                                                                            Text(
-                                                                              'Etapas de Ampliacion de informacion',
-                                                                              style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                    font: GoogleFonts.notoSansJp(
-                                                                                      fontWeight: FlutterFlowTheme.of(context).headlineSmall.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
-                                                                                    ),
-                                                                                    letterSpacing: 0.0,
-                                                                                    fontWeight: FlutterFlowTheme.of(context).headlineSmall.fontWeight,
-                                                                                    fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
-                                                                                  ),
-                                                                            ),
-                                                                            if (!(containerampliacionVistaAmpliacionInformacionRowList.isNotEmpty))
-                                                                              FFButtonWidget(
-                                                                                onPressed: !() {
-                                                                                  if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
-                                                                                    return true;
-                                                                                  } else if (widget.usuariorol?.rolId == 1) {
-                                                                                    return true;
-                                                                                  } else if (widget.usuariorol?.rolId == 2) {
-                                                                                    return true;
-                                                                                  } else {
-                                                                                    return false;
-                                                                                  }
-                                                                                }()
-                                                                                    ? null
-                                                                                    : () async {
-                                                                                        await showModalBottomSheet(
-                                                                                          isScrollControlled: true,
-                                                                                          backgroundColor: Colors.transparent,
-                                                                                          enableDrag: false,
-                                                                                          context: context,
-                                                                                          builder: (context) {
-                                                                                            return WebViewAware(
-                                                                                              child: GestureDetector(
-                                                                                                onTap: () {
-                                                                                                  FocusScope.of(context).unfocus();
-                                                                                                  FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                },
-                                                                                                child: Padding(
-                                                                                                  padding: MediaQuery.viewInsetsOf(context),
-                                                                                                  child: AmpliacionactividadplanificacionWidget(
-                                                                                                    formulario: 'Ampliacion de informacion',
-                                                                                                    planificacion: 'si',
-                                                                                                    idamplaiacion: 0,
-                                                                                                    idampliacionhistorial: 0,
-                                                                                                    idingreso1: widget.idingreso!,
-                                                                                                    idexp: widget.idexp!,
-                                                                                                  ),
-                                                                                                ),
-                                                                                              ),
-                                                                                            );
-                                                                                          },
-                                                                                        ).then((value) => safeSetState(() => _model.crearplanificacion = value));
-
-                                                                                        if (_model.crearplanificacion!) {
-                                                                                          safeSetState(() => _model.requestCompleter = null);
-                                                                                          await _model.waitForRequestCompleted();
-                                                                                        }
-
-                                                                                        safeSetState(() {});
-                                                                                      },
-                                                                                text: '1. Agregar PLanificacion estrategica de ampliacion de informacion',
-                                                                                options: FFButtonOptions(
-                                                                                  height: 40.0,
-                                                                                  padding: EdgeInsets.all(8.0),
-                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  color: FlutterFlowTheme.of(context).primary,
-                                                                                  textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        font: GoogleFonts.notoSansJp(
-                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                        ),
-                                                                                        color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                        letterSpacing: 0.0,
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
-                                                                                  elevation: 0.0,
-                                                                                  borderSide: BorderSide(
-                                                                                    color: Colors.transparent,
-                                                                                    width: 1.0,
-                                                                                  ),
-                                                                                  borderRadius: BorderRadius.circular(20.0),
-                                                                                  disabledColor: FlutterFlowTheme.of(context).alternate,
-                                                                                ),
-                                                                              ),
                                                                             Container(
-                                                                              decoration: BoxDecoration(),
-                                                                              child: Builder(
-                                                                                builder: (context) {
-                                                                                  final planificacion = containerampliacionVistaAmpliacionInformacionRowList.where((e) => e.tipoampliacion == 'Planificacion estrategica de ampliacion de informacion').toList();
-
-                                                                                  return ListView.builder(
-                                                                                    padding: EdgeInsets.zero,
-                                                                                    shrinkWrap: true,
-                                                                                    scrollDirection: Axis.vertical,
-                                                                                    itemCount: planificacion.length,
-                                                                                    itemBuilder: (context, planificacionIndex) {
-                                                                                      final planificacionItem = planificacion[planificacionIndex];
-                                                                                      return RichText(
-                                                                                        textScaler: MediaQuery.of(context).textScaler,
-                                                                                        text: TextSpan(
-                                                                                          children: [
-                                                                                            TextSpan(
-                                                                                              text: valueOrDefault<String>(
-                                                                                                planificacionItem.tipoampliacion,
-                                                                                                'Sin dato',
-                                                                                              ),
-                                                                                              style: FlutterFlowTheme.of(context).titleLarge.override(
-                                                                                                    font: GoogleFonts.notoSansJp(
-                                                                                                      fontWeight: FlutterFlowTheme.of(context).titleLarge.fontWeight,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).titleLarge.fontStyle,
-                                                                                                    ),
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FlutterFlowTheme.of(context).titleLarge.fontWeight,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).titleLarge.fontStyle,
-                                                                                                    decoration: TextDecoration.underline,
-                                                                                                  ),
-                                                                                            ),
-                                                                                            TextSpan(
-                                                                                              text: ': ',
-                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                    font: GoogleFonts.notoSansJp(
-                                                                                                      fontWeight: FontWeight.bold,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                    ),
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FontWeight.bold,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                  ),
-                                                                                            ),
-                                                                                            TextSpan(
-                                                                                              text: valueOrDefault<String>(
-                                                                                                planificacionItem.destinatarios,
-                                                                                                'Sin dato',
-                                                                                              ),
-                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                    font: GoogleFonts.notoSansJp(
-                                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                    ),
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                  ),
-                                                                                            )
-                                                                                          ],
-                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                font: GoogleFonts.notoSansJp(
-                                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                ),
-                                                                                                letterSpacing: 0.0,
-                                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                              ),
-                                                                                        ),
-                                                                                        textAlign: TextAlign.justify,
-                                                                                      );
-                                                                                    },
-                                                                                  );
-                                                                                },
-                                                                              ),
-                                                                            ),
-                                                                          ].divide(SizedBox(height: 16.0)),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                  if (containerampliacionVistaAmpliacionInformacionRowList
-                                                                      .isNotEmpty)
-                                                                    Container(
-                                                                      width:
-                                                                          1013.7,
-                                                                      height:
-                                                                          153.85,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primaryBackground,
-                                                                      ),
-                                                                      child:
-                                                                          Column(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        children:
-                                                                            [
-                                                                          Row(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.spaceBetween,
-                                                                            children: [
-                                                                              Align(
-                                                                                alignment: AlignmentDirectional(-1.0, 0.0),
-                                                                                child: Container(
-                                                                                  width: 600.0,
-                                                                                  decoration: BoxDecoration(),
-                                                                                  child: Column(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                    children: [
-                                                                                      Align(
-                                                                                        alignment: AlignmentDirectional(-1.0, 0.0),
-                                                                                        child: FFButtonWidget(
-                                                                                          onPressed: () async {
-                                                                                            safeSetState(() => _model.requestCompleter = null);
-                                                                                            await _model.waitForRequestCompleted();
-                                                                                          },
-                                                                                          text: 'Refrescar',
-                                                                                          icon: Icon(
-                                                                                            Icons.update_outlined,
-                                                                                            size: 15.0,
-                                                                                          ),
-                                                                                          options: FFButtonOptions(
-                                                                                            height: 40.0,
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                            color: FlutterFlowTheme.of(context).primary,
-                                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: GoogleFonts.notoSansJp(
-                                                                                                    fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                  ),
-                                                                                                  color: Colors.white,
-                                                                                                  letterSpacing: 0.0,
-                                                                                                  fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                ),
-                                                                                            elevation: 3.0,
-                                                                                            borderSide: BorderSide(
-                                                                                              color: Colors.transparent,
-                                                                                              width: 1.0,
-                                                                                            ),
-                                                                                            borderRadius: BorderRadius.circular(8.0),
-                                                                                          ),
-                                                                                        ),
-                                                                                      ),
-                                                                                      Row(
-                                                                                        mainAxisSize: MainAxisSize.max,
-                                                                                        children: [
-                                                                                          FlutterFlowIconButton(
-                                                                                            borderRadius: 8.0,
-                                                                                            buttonSize: 40.0,
-                                                                                            icon: Icon(
-                                                                                              Icons.info_outline,
-                                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                                              size: 24.0,
-                                                                                            ),
-                                                                                            onPressed: () {
-                                                                                              print('IconButton pressed ...');
-                                                                                            },
-                                                                                          ),
-                                                                                          Flexible(
-                                                                                            child: Text(
-                                                                                              'Apretar este boton para que aparezcan los documentos generados de convocatorias, avisos u otros anexos',
-                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                    font: GoogleFonts.notoSansJp(
-                                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                    ),
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ),
-                                                                                        ],
-                                                                                      ),
-                                                                                    ],
-                                                                                  ),
+                                                                          width:
+                                                                              MediaQuery.sizeOf(context).width * 0.7,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            boxShadow: [
+                                                                              BoxShadow(
+                                                                                blurRadius: 3.0,
+                                                                                color: Color(0x33000000),
+                                                                                offset: Offset(
+                                                                                  0.0,
+                                                                                  1.0,
                                                                                 ),
-                                                                              ),
-                                                                              Align(
-                                                                                alignment: AlignmentDirectional(1.0, -1.0),
-                                                                                child: FFButtonWidget(
-                                                                                  onPressed: !() {
-                                                                                    if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
-                                                                                      return true;
-                                                                                    } else if (widget.usuariorol?.rolId == 1) {
-                                                                                      return true;
-                                                                                    } else if (widget.usuariorol?.rolId == 2) {
-                                                                                      return true;
-                                                                                    } else {
-                                                                                      return false;
-                                                                                    }
-                                                                                  }()
-                                                                                      ? null
-                                                                                      : () async {
-                                                                                          await showModalBottomSheet(
-                                                                                            isScrollControlled: true,
-                                                                                            backgroundColor: Colors.transparent,
-                                                                                            enableDrag: false,
-                                                                                            context: context,
-                                                                                            builder: (context) {
-                                                                                              return WebViewAware(
-                                                                                                child: GestureDetector(
-                                                                                                  onTap: () {
-                                                                                                    FocusScope.of(context).unfocus();
-                                                                                                    FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                  },
-                                                                                                  child: Padding(
-                                                                                                    padding: MediaQuery.viewInsetsOf(context),
-                                                                                                    child: AmpliacionactividadWidget(
-                                                                                                      formulario: 'Ampliacion de informacion',
-                                                                                                      idingreso1: widget.idingreso!,
-                                                                                                      idexp: widget.idexp!,
-                                                                                                    ),
-                                                                                                  ),
-                                                                                                ),
-                                                                                              );
-                                                                                            },
-                                                                                          ).then((value) => safeSetState(() => _model.creaoampliacionhistorial = value));
-
-                                                                                          if (_model.creaoampliacionhistorial!) {
-                                                                                            safeSetState(() => _model.requestCompleter = null);
-                                                                                            await _model.waitForRequestCompleted();
-                                                                                          }
-
-                                                                                          safeSetState(() {});
-                                                                                        },
-                                                                                  text: 'Agregar ampliacion de informacion',
-                                                                                  options: FFButtonOptions(
-                                                                                    height: 40.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    color: FlutterFlowTheme.of(context).primary,
-                                                                                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                          font: GoogleFonts.notoSansJp(
-                                                                                            fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                            fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                          ),
-                                                                                          color: Colors.white,
-                                                                                          letterSpacing: 0.0,
-                                                                                          fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                          fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                        ),
-                                                                                    elevation: 3.0,
-                                                                                    borderSide: BorderSide(
-                                                                                      color: Colors.transparent,
-                                                                                      width: 1.0,
-                                                                                    ),
-                                                                                    borderRadius: BorderRadius.circular(8.0),
-                                                                                    disabledColor: FlutterFlowTheme.of(context).alternate,
-                                                                                  ),
-                                                                                ),
-                                                                              ),
+                                                                                spreadRadius: 0.0,
+                                                                              )
                                                                             ],
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(12.0),
                                                                           ),
-                                                                          Align(
-                                                                            alignment:
-                                                                                AlignmentDirectional(1.0, 0.0),
+                                                                          child:
+                                                                              Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                16.0,
+                                                                                16.0,
+                                                                                16.0,
+                                                                                16.0),
                                                                             child:
-                                                                                Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 10.0, 0.0),
-                                                                              child: FutureBuilder<List<GrupofamiliarexpedientesRow>>(
-                                                                                future: GrupofamiliarexpedientesTable().querySingleRow(
-                                                                                  queryFn: (q) => q.eqOrNull(
-                                                                                    'idexpediente',
-                                                                                    widget.rowexp?.id,
-                                                                                  ),
+                                                                                Column(
+                                                                              mainAxisSize: MainAxisSize.min,
+                                                                              crossAxisAlignment: CrossAxisAlignment.center,
+                                                                              children: [
+                                                                                Text(
+                                                                                  'Etapas de Ampliacion de informacion',
+                                                                                  style: FlutterFlowTheme.of(context).headlineSmall.override(
+                                                                                        font: GoogleFonts.notoSansJp(
+                                                                                          fontWeight: FlutterFlowTheme.of(context).headlineSmall.fontWeight,
+                                                                                          fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
+                                                                                        ),
+                                                                                        letterSpacing: 0.0,
+                                                                                        fontWeight: FlutterFlowTheme.of(context).headlineSmall.fontWeight,
+                                                                                        fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
+                                                                                      ),
                                                                                 ),
-                                                                                builder: (context, snapshot) {
-                                                                                  // Customize what your widget looks like when it's loading.
-                                                                                  if (!snapshot.hasData) {
-                                                                                    return Center(
-                                                                                      child: SizedBox(
-                                                                                        width: 50.0,
-                                                                                        height: 50.0,
-                                                                                        child: CircularProgressIndicator(
-                                                                                          valueColor: AlwaysStoppedAnimation<Color>(
-                                                                                            FlutterFlowTheme.of(context).primary,
-                                                                                          ),
-                                                                                        ),
-                                                                                      ),
-                                                                                    );
-                                                                                  }
-                                                                                  List<GrupofamiliarexpedientesRow> containerGrupofamiliarexpedientesRowList = snapshot.data!;
-
-                                                                                  final containerGrupofamiliarexpedientesRow = containerGrupofamiliarexpedientesRowList.isNotEmpty ? containerGrupofamiliarexpedientesRowList.first : null;
-
-                                                                                  return Container(
-                                                                                    decoration: BoxDecoration(),
-                                                                                  );
-                                                                                },
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ].divide(SizedBox(height: 10.0)),
-                                                                      ),
-                                                                    ),
-                                                                  Expanded(
-                                                                    child:
-                                                                        Container(
-                                                                      width: MediaQuery.sizeOf(context)
-                                                                              .width *
-                                                                          0.9,
-                                                                      decoration:
-                                                                          BoxDecoration(),
-                                                                      child:
-                                                                          Align(
-                                                                        alignment: AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Builder(
-                                                                          builder:
-                                                                              (context) {
-                                                                            final ampliaciondeinformacion =
-                                                                                containerampliacionVistaAmpliacionInformacionRowList.sortedList(keyOf: (e) => e.fecha!, desc: true).toList();
-
-                                                                            return FlutterFlowDataTable<VistaAmpliacionInformacionRow>(
-                                                                              controller: _model.paginatedDataTableController,
-                                                                              data: ampliaciondeinformacion,
-                                                                              columnsBuilder: (onSortChanged) => [
-                                                                                DataColumn2(
-                                                                                  label: DefaultTextStyle.merge(
-                                                                                    softWrap: true,
-                                                                                    child: Text(
-                                                                                      'Fecha',
-                                                                                      style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                            font: GoogleFonts.notoSansJp(
-                                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                                            ),
-                                                                                            color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                            letterSpacing: 0.0,
-                                                                                            fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                            fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                                          ),
-                                                                                    ),
-                                                                                  ),
-                                                                                  fixedWidth: MediaQuery.sizeOf(context).width * 0.1,
-                                                                                ),
-                                                                                DataColumn2(
-                                                                                  label: DefaultTextStyle.merge(
-                                                                                    softWrap: true,
-                                                                                    child: Align(
-                                                                                      alignment: AlignmentDirectional(0.0, 0.0),
-                                                                                      child: Text(
-                                                                                        'Tipo de ampliacion',
-                                                                                        style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                              font: GoogleFonts.notoSansJp(
-                                                                                                fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                                              ),
-                                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                              letterSpacing: 0.0,
-                                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                                            ),
-                                                                                      ),
-                                                                                    ),
-                                                                                  ),
-                                                                                  fixedWidth: MediaQuery.sizeOf(context).width * 0.12,
-                                                                                ),
-                                                                                DataColumn2(
-                                                                                  label: DefaultTextStyle.merge(
-                                                                                    softWrap: true,
-                                                                                    child: Align(
-                                                                                      alignment: AlignmentDirectional(0.0, 0.0),
-                                                                                      child: Text(
-                                                                                        'Observaciones',
-                                                                                        style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                              font: GoogleFonts.notoSansJp(
-                                                                                                fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                                              ),
-                                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                              letterSpacing: 0.0,
-                                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                                            ),
-                                                                                      ),
-                                                                                    ),
-                                                                                  ),
-                                                                                  fixedWidth: MediaQuery.sizeOf(context).width * 0.25,
-                                                                                ),
-                                                                                DataColumn2(
-                                                                                  label: DefaultTextStyle.merge(
-                                                                                    softWrap: true,
-                                                                                    child: Text(
-                                                                                      'Persona institucion',
-                                                                                      textAlign: TextAlign.center,
-                                                                                      style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                            font: GoogleFonts.notoSansJp(
-                                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                                            ),
-                                                                                            color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                            fontSize: 12.0,
-                                                                                            letterSpacing: 0.0,
-                                                                                            fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                            fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                                          ),
-                                                                                    ),
-                                                                                  ),
-                                                                                  fixedWidth: MediaQuery.sizeOf(context).width * 0.12,
-                                                                                ),
-                                                                                DataColumn2(
-                                                                                  label: DefaultTextStyle.merge(
-                                                                                    softWrap: true,
-                                                                                    child: Align(
-                                                                                      alignment: AlignmentDirectional(0.0, 0.0),
-                                                                                      child: Text(
-                                                                                        'Entrevistas',
-                                                                                        style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                              font: GoogleFonts.notoSansJp(
-                                                                                                fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                                              ),
-                                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                              letterSpacing: 0.0,
-                                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                                            ),
-                                                                                      ),
-                                                                                    ),
-                                                                                  ),
-                                                                                  fixedWidth: MediaQuery.sizeOf(context).width * 0.08,
-                                                                                ),
-                                                                                DataColumn2(
-                                                                                  label: DefaultTextStyle.merge(
-                                                                                    softWrap: true,
-                                                                                    child: Text(
-                                                                                      'Anexos e informes',
-                                                                                      style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                            font: GoogleFonts.notoSansJp(
-                                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                                            ),
-                                                                                            color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                            letterSpacing: 0.0,
-                                                                                            fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                            fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                                          ),
-                                                                                    ),
-                                                                                  ),
-                                                                                  fixedWidth: MediaQuery.sizeOf(context).width * 0.1,
-                                                                                ),
-                                                                              ],
-                                                                              dataRowBuilder: (ampliaciondeinformacionItem, ampliaciondeinformacionIndex, selected, onSelectChanged) => DataRow(
-                                                                                color: WidgetStateProperty.all(
-                                                                                  ampliaciondeinformacionIndex % 2 == 0 ? FlutterFlowTheme.of(context).secondaryBackground : FlutterFlowTheme.of(context).primaryBackground,
-                                                                                ),
-                                                                                cells: [
-                                                                                  Column(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    mainAxisAlignment: MainAxisAlignment.center,
-                                                                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                    children: [
-                                                                                      Text(
-                                                                                        valueOrDefault<String>(
-                                                                                          dateTimeFormat(
-                                                                                            "d/M/y",
-                                                                                            ampliaciondeinformacionItem.fecha,
-                                                                                            locale: FFLocalizations.of(context).languageCode,
-                                                                                          ),
-                                                                                          'Sin dato',
-                                                                                        ),
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              font: GoogleFonts.notoSansJp(
-                                                                                                fontWeight: FontWeight.w500,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                              ),
-                                                                                              fontSize: 18.0,
-                                                                                              letterSpacing: 0.0,
-                                                                                              fontWeight: FontWeight.w500,
-                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                            ),
-                                                                                      ),
-                                                                                    ],
-                                                                                  ),
-                                                                                  Align(
-                                                                                    alignment: AlignmentDirectional(0.0, 0.0),
-                                                                                    child: Column(
-                                                                                      mainAxisSize: MainAxisSize.max,
-                                                                                      mainAxisAlignment: MainAxisAlignment.center,
-                                                                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                      children: [
-                                                                                        Flexible(
-                                                                                          child: Text(
-                                                                                            valueOrDefault<String>(
-                                                                                              ampliaciondeinformacionItem.tipoampliacion,
-                                                                                              'Sin dato',
-                                                                                            ),
-                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  font: GoogleFonts.notoSansJp(
-                                                                                                    fontWeight: FontWeight.w500,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                  ),
-                                                                                                  letterSpacing: 0.0,
-                                                                                                  fontWeight: FontWeight.w500,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                ),
-                                                                                          ),
-                                                                                        ),
-                                                                                      ],
-                                                                                    ),
-                                                                                  ),
-                                                                                  Column(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    mainAxisAlignment: MainAxisAlignment.center,
-                                                                                    children: [
-                                                                                      Flexible(
-                                                                                        child: Align(
-                                                                                          alignment: AlignmentDirectional(0.0, 0.0),
-                                                                                          child: Text(
-                                                                                            valueOrDefault<String>(
-                                                                                              ampliaciondeinformacionItem.destinatarios,
-                                                                                              'Sin dato',
-                                                                                            ),
-                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  font: GoogleFonts.notoSansJp(
-                                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                  ),
-                                                                                                  letterSpacing: 0.0,
-                                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                ),
-                                                                                          ),
-                                                                                        ),
-                                                                                      ),
-                                                                                    ],
-                                                                                  ),
-                                                                                  Column(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    mainAxisAlignment: MainAxisAlignment.center,
-                                                                                    children: [
-                                                                                      Text(
-                                                                                        valueOrDefault<String>(
-                                                                                          ampliaciondeinformacionItem.noment,
-                                                                                          'Sin dato',
-                                                                                        ),
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              font: GoogleFonts.notoSansJp(
-                                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                              ),
-                                                                                              letterSpacing: 0.0,
-                                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                            ),
-                                                                                      ),
-                                                                                      Text(
-                                                                                        valueOrDefault<String>(
-                                                                                          ampliaciondeinformacionItem.apeent,
-                                                                                          'Sin dato',
-                                                                                        ),
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              font: GoogleFonts.notoSansJp(
-                                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                              ),
-                                                                                              letterSpacing: 0.0,
-                                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                            ),
-                                                                                      ),
-                                                                                    ],
-                                                                                  ),
-                                                                                  Column(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    mainAxisAlignment: MainAxisAlignment.center,
-                                                                                    children: [
-                                                                                      if ((ampliaciondeinformacionItem.tipoampliacion == 'Entrevista a la familia') || (ampliaciondeinformacionItem.tipoampliacion == 'Entrevista al NNyA') || (ampliaciondeinformacionItem.tipoampliacion == 'Entrevistas a otros'))
-                                                                                        Align(
-                                                                                          alignment: AlignmentDirectional(0.0, 0.0),
-                                                                                          child: FFButtonWidget(
-                                                                                            onPressed: !() {
-                                                                                              if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
-                                                                                                return true;
-                                                                                              } else if (widget.usuariorol?.rolId == 1) {
-                                                                                                return true;
-                                                                                              } else if (widget.usuariorol?.rolId == 2) {
-                                                                                                return true;
-                                                                                              } else {
-                                                                                                return false;
-                                                                                              }
-                                                                                            }()
-                                                                                                ? null
-                                                                                                : () async {
-                                                                                                    await showModalBottomSheet(
-                                                                                                      isScrollControlled: true,
-                                                                                                      backgroundColor: Colors.transparent,
-                                                                                                      enableDrag: false,
-                                                                                                      context: context,
-                                                                                                      builder: (context) {
-                                                                                                        return WebViewAware(
-                                                                                                          child: GestureDetector(
-                                                                                                            onTap: () {
-                                                                                                              FocusScope.of(context).unfocus();
-                                                                                                              FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                            },
-                                                                                                            child: Padding(
-                                                                                                              padding: MediaQuery.viewInsetsOf(context),
-                                                                                                              child: AmpliacioninformacionWidget(
-                                                                                                                idingreso: containerIngresosRow!,
-                                                                                                                rowexp: widget.rowexp!,
-                                                                                                                usuariorow: widget.usuariorow!,
-                                                                                                                usuariorol: widget.usuariorol!,
-                                                                                                                idampliacion: ampliaciondeinformacionItem.ampliacionId,
-                                                                                                                editar: true,
-                                                                                                                tipoampliacion: ampliaciondeinformacionItem.tipoampliacion,
-                                                                                                                formulario: 'Ampliacion de informacion',
-                                                                                                                spd: widget.spd!,
-                                                                                                                idampliacionhistorial: ampliaciondeinformacionItem.historialId!,
-                                                                                                                idexp: 0,
-                                                                                                                idingreso2: widget.idingreso!,
-                                                                                                              ),
-                                                                                                            ),
-                                                                                                          ),
-                                                                                                        );
-                                                                                                      },
-                                                                                                    ).then((value) => safeSetState(() => _model.editoentrevistas = value));
-
-                                                                                                    if (_model.editoentrevistas == 1) {
-                                                                                                      safeSetState(() => _model.requestCompleter = null);
-                                                                                                      await _model.waitForRequestCompleted();
-                                                                                                    }
-
-                                                                                                    safeSetState(() {});
-                                                                                                  },
-                                                                                            text: 'Editar entrevista',
-                                                                                            icon: Icon(
-                                                                                              Icons.edit_rounded,
-                                                                                              size: 15.0,
-                                                                                            ),
-                                                                                            options: FFButtonOptions(
-                                                                                              width: 150.0,
-                                                                                              height: 40.0,
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                                              textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: GoogleFonts.notoSansJp(
-                                                                                                      fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                    ),
-                                                                                                    color: Colors.white,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                  ),
-                                                                                              elevation: 0.0,
-                                                                                              borderRadius: BorderRadius.circular(8.0),
-                                                                                              disabledColor: FlutterFlowTheme.of(context).alternate,
-                                                                                            ),
-                                                                                          ),
-                                                                                        ),
-                                                                                      if (ampliaciondeinformacionItem.tipoampliacion == 'Planificacion estrategica de ampliacion de informacion')
-                                                                                        Align(
-                                                                                          alignment: AlignmentDirectional(0.0, 0.0),
-                                                                                          child: FFButtonWidget(
-                                                                                            onPressed: !() {
-                                                                                              if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
-                                                                                                return true;
-                                                                                              } else if (widget.usuariorol?.rolId == 1) {
-                                                                                                return true;
-                                                                                              } else if (widget.usuariorol?.rolId == 2) {
-                                                                                                return true;
-                                                                                              } else {
-                                                                                                return false;
-                                                                                              }
-                                                                                            }()
-                                                                                                ? null
-                                                                                                : () async {
-                                                                                                    await showModalBottomSheet(
-                                                                                                      isScrollControlled: true,
-                                                                                                      backgroundColor: Colors.transparent,
-                                                                                                      enableDrag: false,
-                                                                                                      context: context,
-                                                                                                      builder: (context) {
-                                                                                                        return WebViewAware(
-                                                                                                          child: GestureDetector(
-                                                                                                            onTap: () {
-                                                                                                              FocusScope.of(context).unfocus();
-                                                                                                              FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                            },
-                                                                                                            child: Padding(
-                                                                                                              padding: MediaQuery.viewInsetsOf(context),
-                                                                                                              child: AmpliacionactividadplanificacionWidget(
-                                                                                                                formulario: 'Ampliacion de informacion',
-                                                                                                                planificacion: 'si',
-                                                                                                                idamplaiacion: ampliaciondeinformacionItem.ampliacionId,
-                                                                                                                idampliacionhistorial: ampliaciondeinformacionItem.historialId,
-                                                                                                                idingreso1: widget.idingreso!,
-                                                                                                                idexp: widget.idexp!,
-                                                                                                              ),
-                                                                                                            ),
-                                                                                                          ),
-                                                                                                        );
-                                                                                                      },
-                                                                                                    ).then((value) => safeSetState(() => _model.editarplanificacion = value));
-
-                                                                                                    if (_model.editarplanificacion!) {
-                                                                                                      safeSetState(() => _model.requestCompleter = null);
-                                                                                                      await _model.waitForRequestCompleted();
-                                                                                                    }
-
-                                                                                                    safeSetState(() {});
-                                                                                                  },
-                                                                                            text: '',
-                                                                                            icon: Icon(
-                                                                                              Icons.edit_rounded,
-                                                                                              size: 15.0,
-                                                                                            ),
-                                                                                            options: FFButtonOptions(
-                                                                                              height: 40.0,
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                              color: FlutterFlowTheme.of(context).secondary,
-                                                                                              textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: GoogleFonts.notoSansJp(
-                                                                                                      fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                    ),
-                                                                                                    color: Colors.white,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                  ),
-                                                                                              elevation: 0.0,
-                                                                                              borderRadius: BorderRadius.circular(8.0),
-                                                                                              disabledColor: FlutterFlowTheme.of(context).alternate,
-                                                                                            ),
-                                                                                          ),
-                                                                                        ),
-                                                                                      FlutterFlowIconButton(
-                                                                                        borderRadius: 8.0,
-                                                                                        buttonSize: 40.0,
-                                                                                        icon: Icon(
-                                                                                          Icons.delete_rounded,
-                                                                                          color: FlutterFlowTheme.of(context).error,
-                                                                                          size: 24.0,
-                                                                                        ),
-                                                                                        onPressed: () async {
-                                                                                          var confirmDialogResponse = await showDialog<bool>(
-                                                                                                context: context,
-                                                                                                builder: (alertDialogContext) {
-                                                                                                  return WebViewAware(
-                                                                                                    child: AlertDialog(
-                                                                                                      title: Text('Desea borrar esta amplaiacion?'),
-                                                                                                      actions: [
-                                                                                                        TextButton(
-                                                                                                          onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                                          child: Text('Cancelar'),
-                                                                                                        ),
-                                                                                                        TextButton(
-                                                                                                          onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                                          child: Text('Confirmar'),
-                                                                                                        ),
-                                                                                                      ],
-                                                                                                    ),
-                                                                                                  );
-                                                                                                },
-                                                                                              ) ??
-                                                                                              false;
-                                                                                          if (confirmDialogResponse) {
-                                                                                            _model.listaentrevistados = await AmplaicionSeccion8Table().queryRows(
-                                                                                              queryFn: (q) => q.eqOrNull(
-                                                                                                'idamplaicion',
-                                                                                                ampliaciondeinformacionItem.ampliacionId,
-                                                                                              ),
-                                                                                            );
-                                                                                            while (_model.contador! < _model.listaentrevistados!.length) {
-                                                                                              await AmplaicionSeccion8Table().delete(
-                                                                                                matchingRows: (rows) => rows.eqOrNull(
-                                                                                                  'id',
-                                                                                                  _model.listaentrevistados?.elementAtOrNull(_model.contador!)?.id,
-                                                                                                ),
-                                                                                              );
-                                                                                              await showDialog(
-                                                                                                context: context,
-                                                                                                builder: (alertDialogContext) {
-                                                                                                  return WebViewAware(
-                                                                                                    child: AlertDialog(
-                                                                                                      title: Text(_model.contador!.toString()),
-                                                                                                      actions: [
-                                                                                                        TextButton(
-                                                                                                          onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                          child: Text('Ok'),
-                                                                                                        ),
-                                                                                                      ],
-                                                                                                    ),
-                                                                                                  );
-                                                                                                },
-                                                                                              );
-                                                                                              _model.contador = _model.contador! + 1;
-                                                                                              safeSetState(() {});
-                                                                                            }
-                                                                                            await AmpliaciondeinformacionTable().delete(
-                                                                                              matchingRows: (rows) => rows.eqOrNull(
-                                                                                                'idampliacion',
-                                                                                                ampliaciondeinformacionItem.ampliacionId,
-                                                                                              ),
-                                                                                            );
-                                                                                            await AmpliaciondeinformacionhistorialTable().delete(
-                                                                                              matchingRows: (rows) => rows.eqOrNull(
-                                                                                                'id',
-                                                                                                ampliaciondeinformacionItem.historialId,
-                                                                                              ),
-                                                                                            );
-                                                                                            safeSetState(() => _model.requestCompleter = null);
-                                                                                            await _model.waitForRequestCompleted();
-                                                                                          }
-
-                                                                                          safeSetState(() {});
-                                                                                        },
-                                                                                      ),
-                                                                                    ],
-                                                                                  ),
-                                                                                  Visibility(
-                                                                                    visible: () {
-                                                                                      if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == widget.rowexp?.spd)) {
+                                                                                if (!(containerampliacionVistaAmpliacionInformacionRowList.isNotEmpty))
+                                                                                  FFButtonWidget(
+                                                                                    onPressed: !() {
+                                                                                      if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == containerVistaExpedientesUltimoEstadoRow?.spd)) {
                                                                                         return true;
                                                                                       } else if (widget.usuariorol?.rolId == 1) {
                                                                                         return true;
@@ -1300,295 +423,1184 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                                       } else {
                                                                                         return false;
                                                                                       }
-                                                                                    }(),
-                                                                                    child: Align(
-                                                                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                    }()
+                                                                                        ? null
+                                                                                        : () async {
+                                                                                            await showModalBottomSheet(
+                                                                                              isScrollControlled: true,
+                                                                                              backgroundColor: Colors.transparent,
+                                                                                              enableDrag: false,
+                                                                                              context: context,
+                                                                                              builder: (context) {
+                                                                                                return WebViewAware(
+                                                                                                  child: GestureDetector(
+                                                                                                    onTap: () {
+                                                                                                      FocusScope.of(context).unfocus();
+                                                                                                      FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                    },
+                                                                                                    child: Padding(
+                                                                                                      padding: MediaQuery.viewInsetsOf(context),
+                                                                                                      child: AmpliacionactividadplanificacionWidget(
+                                                                                                        formulario: 'Ampliacion de informacion',
+                                                                                                        planificacion: 'si',
+                                                                                                        idamplaiacion: 0,
+                                                                                                        idampliacionhistorial: 0,
+                                                                                                        idingreso1: widget.idingreso!,
+                                                                                                        idexp: widget.idexp!,
+                                                                                                      ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                );
+                                                                                              },
+                                                                                            ).then((value) => safeSetState(() => _model.crearplanificacion = value));
+
+                                                                                            if (_model.crearplanificacion!) {
+                                                                                              safeSetState(() => _model.requestCompleter = null);
+                                                                                              await _model.waitForRequestCompleted();
+                                                                                            }
+
+                                                                                            safeSetState(() {});
+                                                                                          },
+                                                                                    text: '1. Agregar PLanificacion estrategica de ampliacion de informacion',
+                                                                                    options: FFButtonOptions(
+                                                                                      height: 40.0,
+                                                                                      padding: EdgeInsets.all(8.0),
+                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      color: FlutterFlowTheme.of(context).primary,
+                                                                                      textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                            font: GoogleFonts.notoSansJp(
+                                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                            ),
+                                                                                            color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                            letterSpacing: 0.0,
+                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                          ),
+                                                                                      elevation: 0.0,
+                                                                                      borderSide: BorderSide(
+                                                                                        color: Colors.transparent,
+                                                                                        width: 1.0,
+                                                                                      ),
+                                                                                      borderRadius: BorderRadius.circular(20.0),
+                                                                                      disabledColor: FlutterFlowTheme.of(context).alternate,
+                                                                                    ),
+                                                                                  ),
+                                                                                Container(
+                                                                                  decoration: BoxDecoration(),
+                                                                                  child: Builder(
+                                                                                    builder: (context) {
+                                                                                      final planificacion = containerampliacionVistaAmpliacionInformacionRowList.where((e) => e.tipoampliacion == 'Planificacion estrategica de ampliacion de informacion').toList();
+
+                                                                                      return ListView.builder(
+                                                                                        padding: EdgeInsets.zero,
+                                                                                        shrinkWrap: true,
+                                                                                        scrollDirection: Axis.vertical,
+                                                                                        itemCount: planificacion.length,
+                                                                                        itemBuilder: (context, planificacionIndex) {
+                                                                                          final planificacionItem = planificacion[planificacionIndex];
+                                                                                          return RichText(
+                                                                                            textScaler: MediaQuery.of(context).textScaler,
+                                                                                            text: TextSpan(
+                                                                                              children: [
+                                                                                                TextSpan(
+                                                                                                  text: valueOrDefault<String>(
+                                                                                                    planificacionItem.tipoampliacion,
+                                                                                                    'Sin dato',
+                                                                                                  ),
+                                                                                                  style: FlutterFlowTheme.of(context).titleLarge.override(
+                                                                                                        font: GoogleFonts.notoSansJp(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                                                                                                        ),
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                                                                                                        decoration: TextDecoration.underline,
+                                                                                                      ),
+                                                                                                ),
+                                                                                                TextSpan(
+                                                                                                  text: ': ',
+                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                        font: GoogleFonts.notoSansJp(
+                                                                                                          fontWeight: FontWeight.bold,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FontWeight.bold,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                      ),
+                                                                                                ),
+                                                                                                TextSpan(
+                                                                                                  text: valueOrDefault<String>(
+                                                                                                    planificacionItem.destinatarios,
+                                                                                                    'Sin dato',
+                                                                                                  ),
+                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                        font: GoogleFonts.notoSansJp(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                        ),
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                      ),
+                                                                                                )
+                                                                                              ],
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    font: GoogleFonts.notoSansJp(
+                                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                    ),
+                                                                                                    letterSpacing: 0.0,
+                                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                  ),
+                                                                                            ),
+                                                                                            textAlign: TextAlign.justify,
+                                                                                          );
+                                                                                        },
+                                                                                      );
+                                                                                    },
+                                                                                  ),
+                                                                                ),
+                                                                              ].divide(SizedBox(height: 16.0)),
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                      if (containerampliacionVistaAmpliacionInformacionRowList
+                                                                          .isNotEmpty)
+                                                                        Container(
+                                                                          width:
+                                                                              1013.7,
+                                                                          height:
+                                                                              153.85,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primaryBackground,
+                                                                          ),
+                                                                          child:
+                                                                              Column(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            children:
+                                                                                [
+                                                                              Row(
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                children: [
+                                                                                  Align(
+                                                                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                    child: Container(
+                                                                                      width: 600.0,
+                                                                                      decoration: BoxDecoration(),
                                                                                       child: Column(
                                                                                         mainAxisSize: MainAxisSize.max,
-                                                                                        mainAxisAlignment: MainAxisAlignment.center,
+                                                                                        crossAxisAlignment: CrossAxisAlignment.start,
                                                                                         children: [
-                                                                                          if (ampliaciondeinformacionItem.tipoampliacion == 'Informe recibido')
-                                                                                            FlutterFlowIconButton(
-                                                                                              borderRadius: 8.0,
-                                                                                              buttonSize: 40.0,
-                                                                                              fillColor: FlutterFlowTheme.of(context).primary,
+                                                                                          Align(
+                                                                                            alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                            child: FFButtonWidget(
+                                                                                              onPressed: () async {
+                                                                                                safeSetState(() => _model.requestCompleter = null);
+                                                                                                await _model.waitForRequestCompleted();
+                                                                                              },
+                                                                                              text: 'Refrescar',
                                                                                               icon: Icon(
-                                                                                                Icons.file_upload_outlined,
-                                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                                size: 24.0,
+                                                                                                Icons.update_outlined,
+                                                                                                size: 15.0,
                                                                                               ),
-                                                                                              onPressed: () async {
-                                                                                                await showModalBottomSheet(
-                                                                                                  isScrollControlled: true,
-                                                                                                  backgroundColor: Colors.transparent,
-                                                                                                  enableDrag: false,
-                                                                                                  context: context,
-                                                                                                  builder: (context) {
-                                                                                                    return WebViewAware(
-                                                                                                      child: GestureDetector(
-                                                                                                        onTap: () {
-                                                                                                          FocusScope.of(context).unfocus();
-                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                        },
-                                                                                                        child: Padding(
-                                                                                                          padding: MediaQuery.viewInsetsOf(context),
-                                                                                                          child: AdjuntosinformeampliacionWidget(
-                                                                                                            exprow: widget.rowexp!,
-                                                                                                            ingrow: containerIngresosRow!,
-                                                                                                            idampliacion: ampliaciondeinformacionItem.ampliacionId!,
-                                                                                                          ),
-                                                                                                        ),
+                                                                                              options: FFButtonOptions(
+                                                                                                height: 40.0,
+                                                                                                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                      font: GoogleFonts.notoSansJp(
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
                                                                                                       ),
-                                                                                                    );
-                                                                                                  },
-                                                                                                ).then((value) => safeSetState(() {}));
-                                                                                              },
-                                                                                            ),
-                                                                                          if (ampliaciondeinformacionItem.tipoampliacion == 'convocatoria NNyA')
-                                                                                            FlutterFlowIconButton(
-                                                                                              borderRadius: 8.0,
-                                                                                              buttonSize: 40.0,
-                                                                                              fillColor: FlutterFlowTheme.of(context).primary,
-                                                                                              icon: Icon(
-                                                                                                Icons.child_care,
-                                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                                size: 24.0,
+                                                                                                      color: Colors.white,
+                                                                                                      letterSpacing: 0.0,
+                                                                                                      fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                      fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                    ),
+                                                                                                elevation: 3.0,
+                                                                                                borderSide: BorderSide(
+                                                                                                  color: Colors.transparent,
+                                                                                                  width: 1.0,
+                                                                                                ),
+                                                                                                borderRadius: BorderRadius.circular(8.0),
                                                                                               ),
-                                                                                              onPressed: () async {
-                                                                                                await showModalBottomSheet(
-                                                                                                  isScrollControlled: true,
-                                                                                                  backgroundColor: Colors.transparent,
-                                                                                                  enableDrag: false,
-                                                                                                  context: context,
-                                                                                                  builder: (context) {
-                                                                                                    return WebViewAware(
-                                                                                                      child: GestureDetector(
-                                                                                                        onTap: () {
-                                                                                                          FocusScope.of(context).unfocus();
-                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                        },
-                                                                                                        child: Padding(
-                                                                                                          padding: MediaQuery.viewInsetsOf(context),
-                                                                                                          child: ListaconvocatoriaNNyAWidget(
-                                                                                                            idingreso: widget.idingreso,
-                                                                                                            ingresorow: containerIngresosRow,
-                                                                                                            exprow: widget.rowexp,
-                                                                                                            idampliacionrow: ampliaciondeinformacionItem.ampliacionId,
-                                                                                                            amplaicionrowvista: ampliaciondeinformacionItem,
-                                                                                                            spdrow: widget.spd!,
-                                                                                                            idexp: widget.idexp!,
-                                                                                                            spd: FFAppState().spd,
-                                                                                                          ),
-                                                                                                        ),
-                                                                                                      ),
-                                                                                                    );
-                                                                                                  },
-                                                                                                ).then((value) => safeSetState(() {}));
-                                                                                              },
                                                                                             ),
-                                                                                          if (ampliaciondeinformacionItem.tipoampliacion == 'Convocatoria adultos')
-                                                                                            FlutterFlowIconButton(
-                                                                                              borderRadius: 8.0,
-                                                                                              buttonSize: 40.0,
-                                                                                              fillColor: FlutterFlowTheme.of(context).primary,
-                                                                                              icon: FaIcon(
-                                                                                                FontAwesomeIcons.userAlt,
-                                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                                size: 24.0,
+                                                                                          ),
+                                                                                          Row(
+                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                            children: [
+                                                                                              FlutterFlowIconButton(
+                                                                                                borderRadius: 8.0,
+                                                                                                buttonSize: 40.0,
+                                                                                                icon: Icon(
+                                                                                                  Icons.info_outline,
+                                                                                                  color: FlutterFlowTheme.of(context).primary,
+                                                                                                  size: 24.0,
+                                                                                                ),
+                                                                                                onPressed: () {
+                                                                                                  print('IconButton pressed ...');
+                                                                                                },
                                                                                               ),
-                                                                                              onPressed: () async {
-                                                                                                await showModalBottomSheet(
-                                                                                                  isScrollControlled: true,
-                                                                                                  backgroundColor: Colors.transparent,
-                                                                                                  enableDrag: false,
-                                                                                                  context: context,
-                                                                                                  builder: (context) {
-                                                                                                    return WebViewAware(
-                                                                                                      child: GestureDetector(
-                                                                                                        onTap: () {
-                                                                                                          FocusScope.of(context).unfocus();
-                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                        },
-                                                                                                        child: Padding(
-                                                                                                          padding: MediaQuery.viewInsetsOf(context),
-                                                                                                          child: ListaconvocatoriasyvisitasWidget(
-                                                                                                            idingreso: widget.idingreso,
-                                                                                                            ingresorow: containerIngresosRow,
-                                                                                                            exprow: widget.rowexp,
-                                                                                                            idampliacionrow: ampliaciondeinformacionItem.ampliacionId,
-                                                                                                            spd: widget.spd!,
-                                                                                                          ),
+                                                                                              Flexible(
+                                                                                                child: Text(
+                                                                                                  'Apretar este boton para que aparezcan los documentos generados de convocatorias, avisos u otros anexos',
+                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                        font: GoogleFonts.notoSansJp(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                         ),
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                                       ),
-                                                                                                    );
-                                                                                                  },
-                                                                                                ).then((value) => safeSetState(() {}));
-                                                                                              },
-                                                                                            ),
-                                                                                          if (ampliaciondeinformacionItem.tipoampliacion == 'Solicitud informes de Educacion')
-                                                                                            FlutterFlowIconButton(
-                                                                                              borderRadius: 8.0,
-                                                                                              buttonSize: 40.0,
-                                                                                              fillColor: FlutterFlowTheme.of(context).primary,
-                                                                                              icon: Icon(
-                                                                                                Icons.school,
-                                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                                size: 24.0,
+                                                                                                ),
                                                                                               ),
-                                                                                              onPressed: () async {
-                                                                                                await showModalBottomSheet(
-                                                                                                  isScrollControlled: true,
-                                                                                                  backgroundColor: Colors.transparent,
-                                                                                                  enableDrag: false,
-                                                                                                  context: context,
-                                                                                                  builder: (context) {
-                                                                                                    return WebViewAware(
-                                                                                                      child: GestureDetector(
-                                                                                                        onTap: () {
-                                                                                                          FocusScope.of(context).unfocus();
-                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                        },
-                                                                                                        child: Padding(
-                                                                                                          padding: MediaQuery.viewInsetsOf(context),
-                                                                                                          child: ListasolicitudaeducacionWidget(
-                                                                                                            idingreso: widget.idingreso,
-                                                                                                            ingresorow: containerIngresosRow,
-                                                                                                            rowexp: widget.rowexp,
-                                                                                                            idampliacion: ampliaciondeinformacionItem,
-                                                                                                            spd: widget.spd!,
-                                                                                                          ),
-                                                                                                        ),
-                                                                                                      ),
-                                                                                                    );
-                                                                                                  },
-                                                                                                ).then((value) => safeSetState(() {}));
-                                                                                              },
-                                                                                            ),
-                                                                                          if (ampliaciondeinformacionItem.tipoampliacion == 'Solicitud informes de Salud')
-                                                                                            FlutterFlowIconButton(
-                                                                                              borderRadius: 8.0,
-                                                                                              buttonSize: 40.0,
-                                                                                              fillColor: FlutterFlowTheme.of(context).primary,
-                                                                                              icon: Icon(
-                                                                                                Icons.health_and_safety_outlined,
-                                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                                size: 24.0,
-                                                                                              ),
-                                                                                              onPressed: () async {
-                                                                                                await showModalBottomSheet(
-                                                                                                  isScrollControlled: true,
-                                                                                                  backgroundColor: Colors.transparent,
-                                                                                                  enableDrag: false,
-                                                                                                  context: context,
-                                                                                                  builder: (context) {
-                                                                                                    return WebViewAware(
-                                                                                                      child: GestureDetector(
-                                                                                                        onTap: () {
-                                                                                                          FocusScope.of(context).unfocus();
-                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                        },
-                                                                                                        child: Padding(
-                                                                                                          padding: MediaQuery.viewInsetsOf(context),
-                                                                                                          child: ListasolicitudasaludWidget(
-                                                                                                            ingresorow: containerIngresosRow,
-                                                                                                            rowampliacion: ampliaciondeinformacionItem,
-                                                                                                            rowexp: widget.rowexp,
-                                                                                                          ),
-                                                                                                        ),
-                                                                                                      ),
-                                                                                                    );
-                                                                                                  },
-                                                                                                ).then((value) => safeSetState(() {}));
-                                                                                              },
-                                                                                            ),
-                                                                                          if (ampliaciondeinformacionItem.tipoampliacion == 'Reunion interinstitucional')
-                                                                                            FlutterFlowIconButton(
-                                                                                              borderRadius: 8.0,
-                                                                                              buttonSize: 40.0,
-                                                                                              fillColor: FlutterFlowTheme.of(context).primary,
-                                                                                              icon: Icon(
-                                                                                                Icons.turned_in,
-                                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                                size: 24.0,
-                                                                                              ),
-                                                                                              onPressed: () async {
-                                                                                                await showModalBottomSheet(
-                                                                                                  isScrollControlled: true,
-                                                                                                  backgroundColor: Colors.transparent,
-                                                                                                  enableDrag: false,
-                                                                                                  context: context,
-                                                                                                  builder: (context) {
-                                                                                                    return WebViewAware(
-                                                                                                      child: GestureDetector(
-                                                                                                        onTap: () {
-                                                                                                          FocusScope.of(context).unfocus();
-                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                        },
-                                                                                                        child: Padding(
-                                                                                                          padding: MediaQuery.viewInsetsOf(context),
-                                                                                                          child: ListareunioninterinstitucionalWidget(
-                                                                                                            idingres: containerIngresosRow!,
-                                                                                                            idexprow: widget.rowexp!,
-                                                                                                            formulario: 'Ampliacion de informacion',
-                                                                                                            idingreso: containerIngresosRow.id,
-                                                                                                            spd: widget.spd!,
-                                                                                                          ),
-                                                                                                        ),
-                                                                                                      ),
-                                                                                                    );
-                                                                                                  },
-                                                                                                ).then((value) => safeSetState(() {}));
-                                                                                              },
-                                                                                            ),
-                                                                                        ].divide(SizedBox(height: 3.0)),
+                                                                                            ],
+                                                                                          ),
+                                                                                        ],
                                                                                       ),
                                                                                     ),
                                                                                   ),
-                                                                                ].map((c) => DataCell(c)).toList(),
+                                                                                  Align(
+                                                                                    alignment: AlignmentDirectional(1.0, -1.0),
+                                                                                    child: FFButtonWidget(
+                                                                                      onPressed: !() {
+                                                                                        if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == containerVistaExpedientesUltimoEstadoRow?.spd)) {
+                                                                                          return true;
+                                                                                        } else if (widget.usuariorol?.rolId == 1) {
+                                                                                          return true;
+                                                                                        } else if (widget.usuariorol?.rolId == 2) {
+                                                                                          return true;
+                                                                                        } else {
+                                                                                          return false;
+                                                                                        }
+                                                                                      }()
+                                                                                          ? null
+                                                                                          : () async {
+                                                                                              await showModalBottomSheet(
+                                                                                                isScrollControlled: true,
+                                                                                                backgroundColor: Colors.transparent,
+                                                                                                enableDrag: false,
+                                                                                                context: context,
+                                                                                                builder: (context) {
+                                                                                                  return WebViewAware(
+                                                                                                    child: GestureDetector(
+                                                                                                      onTap: () {
+                                                                                                        FocusScope.of(context).unfocus();
+                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                      },
+                                                                                                      child: Padding(
+                                                                                                        padding: MediaQuery.viewInsetsOf(context),
+                                                                                                        child: AmpliacionactividadWidget(
+                                                                                                          formulario: 'Ampliacion de informacion',
+                                                                                                          idingreso1: widget.idingreso!,
+                                                                                                          idexp: widget.idexp!,
+                                                                                                        ),
+                                                                                                      ),
+                                                                                                    ),
+                                                                                                  );
+                                                                                                },
+                                                                                              ).then((value) => safeSetState(() => _model.creaoampliacionhistorial = value));
+
+                                                                                              if (_model.creaoampliacionhistorial!) {
+                                                                                                safeSetState(() => _model.requestCompleter = null);
+                                                                                                await _model.waitForRequestCompleted();
+                                                                                              }
+
+                                                                                              safeSetState(() {});
+                                                                                            },
+                                                                                      text: 'Agregar ampliacion de informacion',
+                                                                                      options: FFButtonOptions(
+                                                                                        height: 40.0,
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                        color: FlutterFlowTheme.of(context).primary,
+                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                              font: GoogleFonts.notoSansJp(
+                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                              ),
+                                                                                              color: Colors.white,
+                                                                                              letterSpacing: 0.0,
+                                                                                              fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                              fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                            ),
+                                                                                        elevation: 3.0,
+                                                                                        borderSide: BorderSide(
+                                                                                          color: Colors.transparent,
+                                                                                          width: 1.0,
+                                                                                        ),
+                                                                                        borderRadius: BorderRadius.circular(8.0),
+                                                                                        disabledColor: FlutterFlowTheme.of(context).alternate,
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ],
                                                                               ),
-                                                                              paginated: true,
-                                                                              selectable: false,
-                                                                              hidePaginator: false,
-                                                                              showFirstLastButtons: false,
-                                                                              headingRowHeight: 56.0,
-                                                                              dataRowHeight: 80.0,
-                                                                              columnSpacing: 20.0,
-                                                                              headingRowColor: FlutterFlowTheme.of(context).primary,
-                                                                              borderRadius: BorderRadius.circular(8.0),
-                                                                              addHorizontalDivider: true,
-                                                                              addTopAndBottomDivider: false,
-                                                                              hideDefaultHorizontalDivider: true,
-                                                                              horizontalDividerColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              horizontalDividerThickness: 1.0,
-                                                                              addVerticalDivider: false,
-                                                                            );
-                                                                          },
+                                                                              Align(
+                                                                                alignment: AlignmentDirectional(1.0, 0.0),
+                                                                                child: Padding(
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 10.0, 0.0),
+                                                                                  child: FutureBuilder<List<GrupofamiliarexpedientesRow>>(
+                                                                                    future: GrupofamiliarexpedientesTable().querySingleRow(
+                                                                                      queryFn: (q) => q.eqOrNull(
+                                                                                        'idexpediente',
+                                                                                        widget.idexp,
+                                                                                      ),
+                                                                                    ),
+                                                                                    builder: (context, snapshot) {
+                                                                                      // Customize what your widget looks like when it's loading.
+                                                                                      if (!snapshot.hasData) {
+                                                                                        return Center(
+                                                                                          child: SizedBox(
+                                                                                            width: 50.0,
+                                                                                            height: 50.0,
+                                                                                            child: CircularProgressIndicator(
+                                                                                              valueColor: AlwaysStoppedAnimation<Color>(
+                                                                                                FlutterFlowTheme.of(context).primary,
+                                                                                              ),
+                                                                                            ),
+                                                                                          ),
+                                                                                        );
+                                                                                      }
+                                                                                      List<GrupofamiliarexpedientesRow> containerGrupofamiliarexpedientesRowList = snapshot.data!;
+
+                                                                                      final containerGrupofamiliarexpedientesRow = containerGrupofamiliarexpedientesRowList.isNotEmpty ? containerGrupofamiliarexpedientesRowList.first : null;
+
+                                                                                      return Container(
+                                                                                        decoration: BoxDecoration(),
+                                                                                      );
+                                                                                    },
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ].divide(SizedBox(height: 10.0)),
+                                                                          ),
+                                                                        ),
+                                                                      Expanded(
+                                                                        child:
+                                                                            Container(
+                                                                          width:
+                                                                              MediaQuery.sizeOf(context).width * 0.9,
+                                                                          decoration:
+                                                                              BoxDecoration(),
+                                                                          child:
+                                                                              Align(
+                                                                            alignment:
+                                                                                AlignmentDirectional(0.0, 0.0),
+                                                                            child:
+                                                                                Builder(
+                                                                              builder: (context) {
+                                                                                final ampliaciondeinformacion = containerampliacionVistaAmpliacionInformacionRowList.sortedList(keyOf: (e) => e.fecha!, desc: true).toList();
+
+                                                                                return FlutterFlowDataTable<VistaAmpliacionInformacionRow>(
+                                                                                  controller: _model.paginatedDataTableController,
+                                                                                  data: ampliaciondeinformacion,
+                                                                                  columnsBuilder: (onSortChanged) => [
+                                                                                    DataColumn2(
+                                                                                      label: DefaultTextStyle.merge(
+                                                                                        softWrap: true,
+                                                                                        child: Text(
+                                                                                          'Fecha',
+                                                                                          style: FlutterFlowTheme.of(context).labelLarge.override(
+                                                                                                font: GoogleFonts.notoSansJp(
+                                                                                                  fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                                                  fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                                                ),
+                                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                letterSpacing: 0.0,
+                                                                                                fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                                                fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                                              ),
+                                                                                        ),
+                                                                                      ),
+                                                                                      fixedWidth: MediaQuery.sizeOf(context).width * 0.1,
+                                                                                    ),
+                                                                                    DataColumn2(
+                                                                                      label: DefaultTextStyle.merge(
+                                                                                        softWrap: true,
+                                                                                        child: Align(
+                                                                                          alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                          child: Text(
+                                                                                            'Tipo de ampliacion',
+                                                                                            style: FlutterFlowTheme.of(context).labelLarge.override(
+                                                                                                  font: GoogleFonts.notoSansJp(
+                                                                                                    fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                                                    fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                                                  ),
+                                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                  letterSpacing: 0.0,
+                                                                                                  fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                                                  fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                                                ),
+                                                                                          ),
+                                                                                        ),
+                                                                                      ),
+                                                                                      fixedWidth: MediaQuery.sizeOf(context).width * 0.12,
+                                                                                    ),
+                                                                                    DataColumn2(
+                                                                                      label: DefaultTextStyle.merge(
+                                                                                        softWrap: true,
+                                                                                        child: Align(
+                                                                                          alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                          child: Text(
+                                                                                            'Observaciones',
+                                                                                            style: FlutterFlowTheme.of(context).labelLarge.override(
+                                                                                                  font: GoogleFonts.notoSansJp(
+                                                                                                    fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                                                    fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                                                  ),
+                                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                  letterSpacing: 0.0,
+                                                                                                  fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                                                  fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                                                ),
+                                                                                          ),
+                                                                                        ),
+                                                                                      ),
+                                                                                      fixedWidth: MediaQuery.sizeOf(context).width * 0.25,
+                                                                                    ),
+                                                                                    DataColumn2(
+                                                                                      label: DefaultTextStyle.merge(
+                                                                                        softWrap: true,
+                                                                                        child: Text(
+                                                                                          'Persona institucion',
+                                                                                          textAlign: TextAlign.center,
+                                                                                          style: FlutterFlowTheme.of(context).labelLarge.override(
+                                                                                                font: GoogleFonts.notoSansJp(
+                                                                                                  fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                                                  fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                                                ),
+                                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                fontSize: 12.0,
+                                                                                                letterSpacing: 0.0,
+                                                                                                fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                                                fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                                              ),
+                                                                                        ),
+                                                                                      ),
+                                                                                      fixedWidth: MediaQuery.sizeOf(context).width * 0.12,
+                                                                                    ),
+                                                                                    DataColumn2(
+                                                                                      label: DefaultTextStyle.merge(
+                                                                                        softWrap: true,
+                                                                                        child: Align(
+                                                                                          alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                          child: Text(
+                                                                                            'Entrevistas',
+                                                                                            style: FlutterFlowTheme.of(context).labelLarge.override(
+                                                                                                  font: GoogleFonts.notoSansJp(
+                                                                                                    fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                                                    fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                                                  ),
+                                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                  letterSpacing: 0.0,
+                                                                                                  fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                                                  fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                                                ),
+                                                                                          ),
+                                                                                        ),
+                                                                                      ),
+                                                                                      fixedWidth: MediaQuery.sizeOf(context).width * 0.08,
+                                                                                    ),
+                                                                                    DataColumn2(
+                                                                                      label: DefaultTextStyle.merge(
+                                                                                        softWrap: true,
+                                                                                        child: Text(
+                                                                                          'Anexos e informes',
+                                                                                          style: FlutterFlowTheme.of(context).labelLarge.override(
+                                                                                                font: GoogleFonts.notoSansJp(
+                                                                                                  fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                                                  fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                                                ),
+                                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                letterSpacing: 0.0,
+                                                                                                fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                                                fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                                              ),
+                                                                                        ),
+                                                                                      ),
+                                                                                      fixedWidth: MediaQuery.sizeOf(context).width * 0.1,
+                                                                                    ),
+                                                                                  ],
+                                                                                  dataRowBuilder: (ampliaciondeinformacionItem, ampliaciondeinformacionIndex, selected, onSelectChanged) => DataRow(
+                                                                                    color: WidgetStateProperty.all(
+                                                                                      ampliaciondeinformacionIndex % 2 == 0 ? FlutterFlowTheme.of(context).secondaryBackground : FlutterFlowTheme.of(context).primaryBackground,
+                                                                                    ),
+                                                                                    cells: [
+                                                                                      Column(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        mainAxisAlignment: MainAxisAlignment.center,
+                                                                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                        children: [
+                                                                                          Text(
+                                                                                            valueOrDefault<String>(
+                                                                                              dateTimeFormat(
+                                                                                                "d/M/y",
+                                                                                                ampliaciondeinformacionItem.fecha,
+                                                                                                locale: FFLocalizations.of(context).languageCode,
+                                                                                              ),
+                                                                                              'Sin dato',
+                                                                                            ),
+                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                  font: GoogleFonts.notoSansJp(
+                                                                                                    fontWeight: FontWeight.w500,
+                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                  ),
+                                                                                                  fontSize: 18.0,
+                                                                                                  letterSpacing: 0.0,
+                                                                                                  fontWeight: FontWeight.w500,
+                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                ),
+                                                                                          ),
+                                                                                        ],
+                                                                                      ),
+                                                                                      Align(
+                                                                                        alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                        child: Column(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.center,
+                                                                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                          children: [
+                                                                                            Flexible(
+                                                                                              child: Text(
+                                                                                                valueOrDefault<String>(
+                                                                                                  ampliaciondeinformacionItem.tipoampliacion,
+                                                                                                  'Sin dato',
+                                                                                                ),
+                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                      font: GoogleFonts.notoSansJp(
+                                                                                                        fontWeight: FontWeight.w500,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                      ),
+                                                                                                      letterSpacing: 0.0,
+                                                                                                      fontWeight: FontWeight.w500,
+                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                    ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                      ),
+                                                                                      Column(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        mainAxisAlignment: MainAxisAlignment.center,
+                                                                                        children: [
+                                                                                          Flexible(
+                                                                                            child: Align(
+                                                                                              alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                              child: Text(
+                                                                                                valueOrDefault<String>(
+                                                                                                  ampliaciondeinformacionItem.destinatarios,
+                                                                                                  'Sin dato',
+                                                                                                ),
+                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                      font: GoogleFonts.notoSansJp(
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                      ),
+                                                                                                      letterSpacing: 0.0,
+                                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                    ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          ),
+                                                                                        ],
+                                                                                      ),
+                                                                                      Column(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        mainAxisAlignment: MainAxisAlignment.center,
+                                                                                        children: [
+                                                                                          Text(
+                                                                                            valueOrDefault<String>(
+                                                                                              ampliaciondeinformacionItem.noment,
+                                                                                              'Sin dato',
+                                                                                            ),
+                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                  font: GoogleFonts.notoSansJp(
+                                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                  ),
+                                                                                                  letterSpacing: 0.0,
+                                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                ),
+                                                                                          ),
+                                                                                          Text(
+                                                                                            valueOrDefault<String>(
+                                                                                              ampliaciondeinformacionItem.apeent,
+                                                                                              'Sin dato',
+                                                                                            ),
+                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                  font: GoogleFonts.notoSansJp(
+                                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                  ),
+                                                                                                  letterSpacing: 0.0,
+                                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                ),
+                                                                                          ),
+                                                                                        ],
+                                                                                      ),
+                                                                                      Column(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        mainAxisAlignment: MainAxisAlignment.center,
+                                                                                        children: [
+                                                                                          if ((ampliaciondeinformacionItem.tipoampliacion == 'Entrevista a la familia') || (ampliaciondeinformacionItem.tipoampliacion == 'Entrevista al NNyA') || (ampliaciondeinformacionItem.tipoampliacion == 'Entrevistas a otros'))
+                                                                                            Align(
+                                                                                              alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                              child: FFButtonWidget(
+                                                                                                onPressed: !() {
+                                                                                                  if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == containerVistaExpedientesUltimoEstadoRow?.spd)) {
+                                                                                                    return true;
+                                                                                                  } else if (widget.usuariorol?.rolId == 1) {
+                                                                                                    return true;
+                                                                                                  } else if (widget.usuariorol?.rolId == 2) {
+                                                                                                    return true;
+                                                                                                  } else {
+                                                                                                    return false;
+                                                                                                  }
+                                                                                                }()
+                                                                                                    ? null
+                                                                                                    : () async {
+                                                                                                        await showModalBottomSheet(
+                                                                                                          isScrollControlled: true,
+                                                                                                          backgroundColor: Colors.transparent,
+                                                                                                          enableDrag: false,
+                                                                                                          context: context,
+                                                                                                          builder: (context) {
+                                                                                                            return WebViewAware(
+                                                                                                              child: GestureDetector(
+                                                                                                                onTap: () {
+                                                                                                                  FocusScope.of(context).unfocus();
+                                                                                                                  FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                                },
+                                                                                                                child: Padding(
+                                                                                                                  padding: MediaQuery.viewInsetsOf(context),
+                                                                                                                  child: AmpliacioninformacionWidget(
+                                                                                                                    usuariorow: widget.usuariorow!,
+                                                                                                                    usuariorol: widget.usuariorol!,
+                                                                                                                    idampliacion: ampliaciondeinformacionItem.ampliacionId,
+                                                                                                                    editar: true,
+                                                                                                                    tipoampliacion: ampliaciondeinformacionItem.tipoampliacion,
+                                                                                                                    formulario: 'Ampliacion de informacion',
+                                                                                                                    spd: widget.spd!,
+                                                                                                                    idampliacionhistorial: ampliaciondeinformacionItem.historialId!,
+                                                                                                                    idexp: 0,
+                                                                                                                    idingreso2: widget.idingreso!,
+                                                                                                                  ),
+                                                                                                                ),
+                                                                                                              ),
+                                                                                                            );
+                                                                                                          },
+                                                                                                        ).then((value) => safeSetState(() => _model.editoentrevistas = value));
+
+                                                                                                        if (_model.editoentrevistas == 1) {
+                                                                                                          safeSetState(() => _model.requestCompleter = null);
+                                                                                                          await _model.waitForRequestCompleted();
+                                                                                                        }
+
+                                                                                                        safeSetState(() {});
+                                                                                                      },
+                                                                                                text: 'Editar entrevista',
+                                                                                                icon: Icon(
+                                                                                                  Icons.edit_rounded,
+                                                                                                  size: 15.0,
+                                                                                                ),
+                                                                                                options: FFButtonOptions(
+                                                                                                  width: 150.0,
+                                                                                                  height: 40.0,
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                  color: FlutterFlowTheme.of(context).primary,
+                                                                                                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                        font: GoogleFonts.notoSansJp(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                        ),
+                                                                                                        color: Colors.white,
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                      ),
+                                                                                                  elevation: 0.0,
+                                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                                  disabledColor: FlutterFlowTheme.of(context).alternate,
+                                                                                                ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          if (ampliaciondeinformacionItem.tipoampliacion == 'Planificacion estrategica de ampliacion de informacion')
+                                                                                            Align(
+                                                                                              alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                              child: FFButtonWidget(
+                                                                                                onPressed: !() {
+                                                                                                  if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == containerVistaExpedientesUltimoEstadoRow?.spd)) {
+                                                                                                    return true;
+                                                                                                  } else if (widget.usuariorol?.rolId == 1) {
+                                                                                                    return true;
+                                                                                                  } else if (widget.usuariorol?.rolId == 2) {
+                                                                                                    return true;
+                                                                                                  } else {
+                                                                                                    return false;
+                                                                                                  }
+                                                                                                }()
+                                                                                                    ? null
+                                                                                                    : () async {
+                                                                                                        await showModalBottomSheet(
+                                                                                                          isScrollControlled: true,
+                                                                                                          backgroundColor: Colors.transparent,
+                                                                                                          enableDrag: false,
+                                                                                                          context: context,
+                                                                                                          builder: (context) {
+                                                                                                            return WebViewAware(
+                                                                                                              child: GestureDetector(
+                                                                                                                onTap: () {
+                                                                                                                  FocusScope.of(context).unfocus();
+                                                                                                                  FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                                },
+                                                                                                                child: Padding(
+                                                                                                                  padding: MediaQuery.viewInsetsOf(context),
+                                                                                                                  child: AmpliacionactividadplanificacionWidget(
+                                                                                                                    formulario: 'Ampliacion de informacion',
+                                                                                                                    planificacion: 'si',
+                                                                                                                    idamplaiacion: ampliaciondeinformacionItem.ampliacionId,
+                                                                                                                    idampliacionhistorial: ampliaciondeinformacionItem.historialId,
+                                                                                                                    idingreso1: widget.idingreso!,
+                                                                                                                    idexp: widget.idexp!,
+                                                                                                                  ),
+                                                                                                                ),
+                                                                                                              ),
+                                                                                                            );
+                                                                                                          },
+                                                                                                        ).then((value) => safeSetState(() => _model.editarplanificacion = value));
+
+                                                                                                        if (_model.editarplanificacion!) {
+                                                                                                          safeSetState(() => _model.requestCompleter = null);
+                                                                                                          await _model.waitForRequestCompleted();
+                                                                                                        }
+
+                                                                                                        safeSetState(() {});
+                                                                                                      },
+                                                                                                text: '',
+                                                                                                icon: Icon(
+                                                                                                  Icons.edit_rounded,
+                                                                                                  size: 15.0,
+                                                                                                ),
+                                                                                                options: FFButtonOptions(
+                                                                                                  height: 40.0,
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                  color: FlutterFlowTheme.of(context).secondary,
+                                                                                                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                        font: GoogleFonts.notoSansJp(
+                                                                                                          fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                          fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                        ),
+                                                                                                        color: Colors.white,
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                                      ),
+                                                                                                  elevation: 0.0,
+                                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                                  disabledColor: FlutterFlowTheme.of(context).alternate,
+                                                                                                ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          FlutterFlowIconButton(
+                                                                                            borderRadius: 8.0,
+                                                                                            buttonSize: 40.0,
+                                                                                            icon: Icon(
+                                                                                              Icons.delete_rounded,
+                                                                                              color: FlutterFlowTheme.of(context).error,
+                                                                                              size: 24.0,
+                                                                                            ),
+                                                                                            onPressed: () async {
+                                                                                              var confirmDialogResponse = await showDialog<bool>(
+                                                                                                    context: context,
+                                                                                                    builder: (alertDialogContext) {
+                                                                                                      return WebViewAware(
+                                                                                                        child: AlertDialog(
+                                                                                                          title: Text('Desea borrar esta amplaiacion?'),
+                                                                                                          actions: [
+                                                                                                            TextButton(
+                                                                                                              onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                                              child: Text('Cancelar'),
+                                                                                                            ),
+                                                                                                            TextButton(
+                                                                                                              onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                                              child: Text('Confirmar'),
+                                                                                                            ),
+                                                                                                          ],
+                                                                                                        ),
+                                                                                                      );
+                                                                                                    },
+                                                                                                  ) ??
+                                                                                                  false;
+                                                                                              if (confirmDialogResponse) {
+                                                                                                _model.listaentrevistados = await AmplaicionSeccion8Table().queryRows(
+                                                                                                  queryFn: (q) => q.eqOrNull(
+                                                                                                    'idamplaicion',
+                                                                                                    ampliaciondeinformacionItem.ampliacionId,
+                                                                                                  ),
+                                                                                                );
+                                                                                                while (_model.contador! < _model.listaentrevistados!.length) {
+                                                                                                  await AmplaicionSeccion8Table().delete(
+                                                                                                    matchingRows: (rows) => rows.eqOrNull(
+                                                                                                      'id',
+                                                                                                      _model.listaentrevistados?.elementAtOrNull(_model.contador!)?.id,
+                                                                                                    ),
+                                                                                                  );
+                                                                                                  await showDialog(
+                                                                                                    context: context,
+                                                                                                    builder: (alertDialogContext) {
+                                                                                                      return WebViewAware(
+                                                                                                        child: AlertDialog(
+                                                                                                          title: Text(_model.contador!.toString()),
+                                                                                                          actions: [
+                                                                                                            TextButton(
+                                                                                                              onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                              child: Text('Ok'),
+                                                                                                            ),
+                                                                                                          ],
+                                                                                                        ),
+                                                                                                      );
+                                                                                                    },
+                                                                                                  );
+                                                                                                  _model.contador = _model.contador! + 1;
+                                                                                                  safeSetState(() {});
+                                                                                                }
+                                                                                                await AmpliaciondeinformacionTable().delete(
+                                                                                                  matchingRows: (rows) => rows.eqOrNull(
+                                                                                                    'idampliacion',
+                                                                                                    ampliaciondeinformacionItem.ampliacionId,
+                                                                                                  ),
+                                                                                                );
+                                                                                                await AmpliaciondeinformacionhistorialTable().delete(
+                                                                                                  matchingRows: (rows) => rows.eqOrNull(
+                                                                                                    'id',
+                                                                                                    ampliaciondeinformacionItem.historialId,
+                                                                                                  ),
+                                                                                                );
+                                                                                                safeSetState(() => _model.requestCompleter = null);
+                                                                                                await _model.waitForRequestCompleted();
+                                                                                              }
+
+                                                                                              safeSetState(() {});
+                                                                                            },
+                                                                                          ),
+                                                                                        ],
+                                                                                      ),
+                                                                                      Visibility(
+                                                                                        visible: () {
+                                                                                          if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == containerVistaExpedientesUltimoEstadoRow?.spd)) {
+                                                                                            return true;
+                                                                                          } else if (widget.usuariorol?.rolId == 1) {
+                                                                                            return true;
+                                                                                          } else if (widget.usuariorol?.rolId == 2) {
+                                                                                            return true;
+                                                                                          } else {
+                                                                                            return false;
+                                                                                          }
+                                                                                        }(),
+                                                                                        child: Align(
+                                                                                          alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                          child: Column(
+                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                            mainAxisAlignment: MainAxisAlignment.center,
+                                                                                            children: [
+                                                                                              if (ampliaciondeinformacionItem.tipoampliacion == 'Informe recibido')
+                                                                                                FlutterFlowIconButton(
+                                                                                                  borderRadius: 8.0,
+                                                                                                  buttonSize: 40.0,
+                                                                                                  fillColor: FlutterFlowTheme.of(context).primary,
+                                                                                                  icon: Icon(
+                                                                                                    Icons.file_upload_outlined,
+                                                                                                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                    size: 24.0,
+                                                                                                  ),
+                                                                                                  onPressed: () async {
+                                                                                                    await showModalBottomSheet(
+                                                                                                      isScrollControlled: true,
+                                                                                                      backgroundColor: Colors.transparent,
+                                                                                                      enableDrag: false,
+                                                                                                      context: context,
+                                                                                                      builder: (context) {
+                                                                                                        return WebViewAware(
+                                                                                                          child: GestureDetector(
+                                                                                                            onTap: () {
+                                                                                                              FocusScope.of(context).unfocus();
+                                                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                            },
+                                                                                                            child: Padding(
+                                                                                                              padding: MediaQuery.viewInsetsOf(context),
+                                                                                                              child: AdjuntosinformeampliacionWidget(
+                                                                                                                idampliacion: ampliaciondeinformacionItem.ampliacionId!,
+                                                                                                                idingreso: widget.idingreso!,
+                                                                                                                idexp: widget.idexp!,
+                                                                                                              ),
+                                                                                                            ),
+                                                                                                          ),
+                                                                                                        );
+                                                                                                      },
+                                                                                                    ).then((value) => safeSetState(() {}));
+                                                                                                  },
+                                                                                                ),
+                                                                                              if (ampliaciondeinformacionItem.tipoampliacion == 'convocatoria NNyA')
+                                                                                                FlutterFlowIconButton(
+                                                                                                  borderRadius: 8.0,
+                                                                                                  buttonSize: 40.0,
+                                                                                                  fillColor: FlutterFlowTheme.of(context).primary,
+                                                                                                  icon: Icon(
+                                                                                                    Icons.child_care,
+                                                                                                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                    size: 24.0,
+                                                                                                  ),
+                                                                                                  onPressed: () async {
+                                                                                                    await showModalBottomSheet(
+                                                                                                      isScrollControlled: true,
+                                                                                                      backgroundColor: Colors.transparent,
+                                                                                                      enableDrag: false,
+                                                                                                      context: context,
+                                                                                                      builder: (context) {
+                                                                                                        return WebViewAware(
+                                                                                                          child: GestureDetector(
+                                                                                                            onTap: () {
+                                                                                                              FocusScope.of(context).unfocus();
+                                                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                            },
+                                                                                                            child: Padding(
+                                                                                                              padding: MediaQuery.viewInsetsOf(context),
+                                                                                                              child: ListaconvocatoriaNNyAWidget(
+                                                                                                                idingreso: widget.idingreso,
+                                                                                                                idampliacionrow: ampliaciondeinformacionItem.ampliacionId,
+                                                                                                                amplaicionrowvista: ampliaciondeinformacionItem,
+                                                                                                                spdrow: widget.spd!,
+                                                                                                                idexp: widget.idexp!,
+                                                                                                                spd: FFAppState().spd,
+                                                                                                              ),
+                                                                                                            ),
+                                                                                                          ),
+                                                                                                        );
+                                                                                                      },
+                                                                                                    ).then((value) => safeSetState(() {}));
+                                                                                                  },
+                                                                                                ),
+                                                                                              if (ampliaciondeinformacionItem.tipoampliacion == 'Convocatoria adultos')
+                                                                                                FlutterFlowIconButton(
+                                                                                                  borderRadius: 8.0,
+                                                                                                  buttonSize: 40.0,
+                                                                                                  fillColor: FlutterFlowTheme.of(context).primary,
+                                                                                                  icon: FaIcon(
+                                                                                                    FontAwesomeIcons.userAlt,
+                                                                                                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                    size: 24.0,
+                                                                                                  ),
+                                                                                                  onPressed: () async {
+                                                                                                    await showModalBottomSheet(
+                                                                                                      isScrollControlled: true,
+                                                                                                      backgroundColor: Colors.transparent,
+                                                                                                      enableDrag: false,
+                                                                                                      context: context,
+                                                                                                      builder: (context) {
+                                                                                                        return WebViewAware(
+                                                                                                          child: GestureDetector(
+                                                                                                            onTap: () {
+                                                                                                              FocusScope.of(context).unfocus();
+                                                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                            },
+                                                                                                            child: Padding(
+                                                                                                              padding: MediaQuery.viewInsetsOf(context),
+                                                                                                              child: ListaconvocatoriasyvisitasWidget(
+                                                                                                                idingreso: widget.idingreso!,
+                                                                                                                idampliacionrow: ampliaciondeinformacionItem.ampliacionId,
+                                                                                                                spd: widget.spd!,
+                                                                                                                idexp: widget.idexp!,
+                                                                                                              ),
+                                                                                                            ),
+                                                                                                          ),
+                                                                                                        );
+                                                                                                      },
+                                                                                                    ).then((value) => safeSetState(() {}));
+                                                                                                  },
+                                                                                                ),
+                                                                                              if (ampliaciondeinformacionItem.tipoampliacion == 'Solicitud informes de Educacion')
+                                                                                                FlutterFlowIconButton(
+                                                                                                  borderRadius: 8.0,
+                                                                                                  buttonSize: 40.0,
+                                                                                                  fillColor: FlutterFlowTheme.of(context).primary,
+                                                                                                  icon: Icon(
+                                                                                                    Icons.school,
+                                                                                                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                    size: 24.0,
+                                                                                                  ),
+                                                                                                  onPressed: () async {
+                                                                                                    await showModalBottomSheet(
+                                                                                                      isScrollControlled: true,
+                                                                                                      backgroundColor: Colors.transparent,
+                                                                                                      enableDrag: false,
+                                                                                                      context: context,
+                                                                                                      builder: (context) {
+                                                                                                        return WebViewAware(
+                                                                                                          child: GestureDetector(
+                                                                                                            onTap: () {
+                                                                                                              FocusScope.of(context).unfocus();
+                                                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                            },
+                                                                                                            child: Padding(
+                                                                                                              padding: MediaQuery.viewInsetsOf(context),
+                                                                                                              child: ListasolicitudaeducacionWidget(
+                                                                                                                idingreso: widget.idingreso,
+                                                                                                                ingresorow: containerIngresosRow,
+                                                                                                                idampliacion: ampliaciondeinformacionItem,
+                                                                                                                spd: widget.spd!,
+                                                                                                                idexp: widget.idexp!,
+                                                                                                              ),
+                                                                                                            ),
+                                                                                                          ),
+                                                                                                        );
+                                                                                                      },
+                                                                                                    ).then((value) => safeSetState(() {}));
+                                                                                                  },
+                                                                                                ),
+                                                                                              if (ampliaciondeinformacionItem.tipoampliacion == 'Solicitud informes de Salud')
+                                                                                                FlutterFlowIconButton(
+                                                                                                  borderRadius: 8.0,
+                                                                                                  buttonSize: 40.0,
+                                                                                                  fillColor: FlutterFlowTheme.of(context).primary,
+                                                                                                  icon: Icon(
+                                                                                                    Icons.health_and_safety_outlined,
+                                                                                                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                    size: 24.0,
+                                                                                                  ),
+                                                                                                  onPressed: () async {
+                                                                                                    await showModalBottomSheet(
+                                                                                                      isScrollControlled: true,
+                                                                                                      backgroundColor: Colors.transparent,
+                                                                                                      enableDrag: false,
+                                                                                                      context: context,
+                                                                                                      builder: (context) {
+                                                                                                        return WebViewAware(
+                                                                                                          child: GestureDetector(
+                                                                                                            onTap: () {
+                                                                                                              FocusScope.of(context).unfocus();
+                                                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                            },
+                                                                                                            child: Padding(
+                                                                                                              padding: MediaQuery.viewInsetsOf(context),
+                                                                                                              child: ListasolicitudasaludWidget(
+                                                                                                                rowampliacion: ampliaciondeinformacionItem,
+                                                                                                                idingreso: widget.idingreso!,
+                                                                                                                idexp: widget.idexp!,
+                                                                                                              ),
+                                                                                                            ),
+                                                                                                          ),
+                                                                                                        );
+                                                                                                      },
+                                                                                                    ).then((value) => safeSetState(() {}));
+                                                                                                  },
+                                                                                                ),
+                                                                                              if (ampliaciondeinformacionItem.tipoampliacion == 'Reunion interinstitucional')
+                                                                                                FlutterFlowIconButton(
+                                                                                                  borderRadius: 8.0,
+                                                                                                  buttonSize: 40.0,
+                                                                                                  fillColor: FlutterFlowTheme.of(context).primary,
+                                                                                                  icon: Icon(
+                                                                                                    Icons.turned_in,
+                                                                                                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                    size: 24.0,
+                                                                                                  ),
+                                                                                                  onPressed: () async {
+                                                                                                    await showModalBottomSheet(
+                                                                                                      isScrollControlled: true,
+                                                                                                      backgroundColor: Colors.transparent,
+                                                                                                      enableDrag: false,
+                                                                                                      context: context,
+                                                                                                      builder: (context) {
+                                                                                                        return WebViewAware(
+                                                                                                          child: GestureDetector(
+                                                                                                            onTap: () {
+                                                                                                              FocusScope.of(context).unfocus();
+                                                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                            },
+                                                                                                            child: Padding(
+                                                                                                              padding: MediaQuery.viewInsetsOf(context),
+                                                                                                              child: ListareunioninterinstitucionalWidget(
+                                                                                                                formulario: 'Ampliacion de informacion',
+                                                                                                                idingreso: containerIngresosRow?.id,
+                                                                                                                spd: widget.spd!,
+                                                                                                                idexp: widget.idexp!,
+                                                                                                              ),
+                                                                                                            ),
+                                                                                                          ),
+                                                                                                        );
+                                                                                                      },
+                                                                                                    ).then((value) => safeSetState(() {}));
+                                                                                                  },
+                                                                                                ),
+                                                                                            ].divide(SizedBox(height: 3.0)),
+                                                                                          ),
+                                                                                        ),
+                                                                                      ),
+                                                                                    ].map((c) => DataCell(c)).toList(),
+                                                                                  ),
+                                                                                  paginated: true,
+                                                                                  selectable: false,
+                                                                                  hidePaginator: false,
+                                                                                  showFirstLastButtons: false,
+                                                                                  headingRowHeight: 56.0,
+                                                                                  dataRowHeight: 80.0,
+                                                                                  columnSpacing: 20.0,
+                                                                                  headingRowColor: FlutterFlowTheme.of(context).primary,
+                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                  addHorizontalDivider: true,
+                                                                                  addTopAndBottomDivider: false,
+                                                                                  hideDefaultHorizontalDivider: true,
+                                                                                  horizontalDividerColor: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                  horizontalDividerThickness: 1.0,
+                                                                                  addVerticalDivider: false,
+                                                                                );
+                                                                              },
+                                                                            ),
+                                                                          ),
                                                                         ),
                                                                       ),
-                                                                    ),
+                                                                    ].divide(SizedBox(
+                                                                        height:
+                                                                            5.0)),
                                                                   ),
-                                                                ].divide(SizedBox(
-                                                                    height:
-                                                                        5.0)),
-                                                              ),
-                                                            );
-                                                          },
+                                                                );
+                                                              },
+                                                            ),
+                                                          ],
                                                         ),
-                                                      ],
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
                                               ),
-                                            ),
+                                            ],
                                           ),
-                                        ],
+                                        ]
+                                            .divide(SizedBox(height: 10.0))
+                                            .around(SizedBox(height: 10.0)),
                                       ),
-                                    ]
-                                        .divide(SizedBox(height: 10.0))
-                                        .around(SizedBox(height: 10.0)),
+                                    ),
                                   ),
-                                ),
-                              ),
+                                );
+                              },
                             ),
                           ),
                         ),

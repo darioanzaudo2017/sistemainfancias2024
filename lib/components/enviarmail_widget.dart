@@ -25,14 +25,12 @@ class EnviarmailWidget extends StatefulWidget {
     this.idingreso,
     this.idexp,
     this.expediente,
-    this.ingresosrow,
     this.idampliacion,
   });
 
   final int? idingreso;
   final int? idexp;
   final VistaExpedientesUltimoEstadoRow? expediente;
-  final IngresosRow? ingresosrow;
   final int? idampliacion;
 
   @override
@@ -1049,7 +1047,6 @@ class _EnviarmailWidgetState extends State<EnviarmailWidget> {
                                         padding:
                                             MediaQuery.viewInsetsOf(context),
                                         child: AdjuntardocumentoWidget(
-                                          ingrow: widget.ingresosrow,
                                           idampliacion: widget.idampliacion,
                                           idexp: widget.idexp!,
                                           idingreso: widget.idingreso!,

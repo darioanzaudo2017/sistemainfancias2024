@@ -15,8 +15,6 @@ export 'anexosbotonera_model.dart';
 class AnexosbotoneraWidget extends StatefulWidget {
   const AnexosbotoneraWidget({
     super.key,
-    this.ingresorow,
-    required this.exorow,
     required this.idingreso,
     required this.usuariosrow,
     this.etapa,
@@ -34,8 +32,6 @@ class AnexosbotoneraWidget extends StatefulWidget {
     required this.idnnya,
   });
 
-  final IngresosRow? ingresorow;
-  final VistaExpedientesUltimoEstadoRow? exorow;
   final int? idingreso;
   final UsuariosRow? usuariosrow;
   final String? etapa;
@@ -240,12 +236,15 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                                   context),
                                                           child:
                                                               Anexo5requerimientoaccionesWidget(
-                                                            rowingreso: widget
-                                                                .ingresorow!,
-                                                            rowexp:
-                                                                widget.exorow!,
                                                             usuario: widget
                                                                 .usuariosrow!,
+                                                            editar: false,
+                                                            idanexosalud: 0,
+                                                            idmedida: 0,
+                                                            idingreso: widget
+                                                                .idingreso!,
+                                                            idexp:
+                                                                widget.idexp!,
                                                           ),
                                                         ),
                                                       );
@@ -436,13 +435,11 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                               ListareunioninterinstitucionalWidget(
                                                             idingreso: widget
                                                                 .idingreso,
-                                                            idingres: widget
-                                                                .ingresorow!,
-                                                            idexprow:
-                                                                widget.exorow!,
                                                             formulario:
                                                                 widget.etapa!,
                                                             spd: widget.spd!,
+                                                            idexp:
+                                                                widget.idexp!,
                                                           ),
                                                         ),
                                                       );
@@ -629,12 +626,8 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                         EntrevistasCopyWidget.routeName,
                                         queryParameters: {
                                           'idingreso': serializeParam(
-                                            widget.ingresorow?.id,
+                                            widget.idingreso,
                                             ParamType.int,
-                                          ),
-                                          'rowexp': serializeParam(
-                                            widget.exorow,
-                                            ParamType.SupabaseRow,
                                           ),
                                           'usuariorow': serializeParam(
                                             widget.usuariosrow,
@@ -675,14 +668,8 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                       queryParameters: {
                                                         'idingreso':
                                                             serializeParam(
-                                                          widget
-                                                              .ingresorow?.id,
+                                                          widget.idingreso,
                                                           ParamType.int,
-                                                        ),
-                                                        'rowexp':
-                                                            serializeParam(
-                                                          widget.exorow,
-                                                          ParamType.SupabaseRow,
                                                         ),
                                                         'usuariorow':
                                                             serializeParam(

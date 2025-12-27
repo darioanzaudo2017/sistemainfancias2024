@@ -15,14 +15,10 @@ class BarradeNavegacionWidget extends StatefulWidget {
     super.key,
     this.idexp,
     required this.usuariorow,
-    this.parameter4,
     this.parameter5,
-    this.ingresorow,
     this.idingreso,
     this.expediente,
     this.fechaExp,
-    this.parameter10,
-    this.urlcarpetadrive,
     required this.adjuntar,
     required this.imprimir,
     required this.carpeta,
@@ -35,14 +31,10 @@ class BarradeNavegacionWidget extends StatefulWidget {
 
   final int? idexp;
   final UsuariosRow? usuariorow;
-  final String? parameter4;
   final String? parameter5;
-  final IngresosRow? ingresorow;
   final int? idingreso;
   final String? expediente;
-  final DateTime? fechaExp;
-  final bool? parameter10;
-  final String? urlcarpetadrive;
+  final String? fechaExp;
   final bool? adjuntar;
   final bool? imprimir;
   final bool? carpeta;
@@ -280,9 +272,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                         child: Padding(
                           padding: MediaQuery.viewInsetsOf(context),
                           child: AdjuntardocumentoWidget(
-                            ingrow: widget.ingresorow,
                             idexp: widget.idexp!,
-                            idampliacion: 0,
                             idingreso: widget.idingreso!,
                           ),
                         ),

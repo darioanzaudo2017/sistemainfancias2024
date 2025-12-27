@@ -17,14 +17,6 @@ class PerfilModel extends FlutterFlowModel<PerfilWidget> {
   late BarradeNavegacionModel barradeNavegacionModel;
   // Model for anexosbotonera component.
   late AnexosbotoneraModel anexosbotoneraModel;
-  // Stores action output result for [Backend Call - API (ExisteDNIexpediente)] action in Button widget.
-  ApiCallResponse? checkdnifuncion1;
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  ExpedienteRow? creaexpgrupoCopy;
-  // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
-  List<ExpedienteRow>? expedienteCopy1;
-  // Stores action output result for [Backend Call - API (carpeta del expediente)] action in Button widget.
-  ApiCallResponse? apiResult42yCopy;
   // Stores action output result for [Backend Call - Query Rows] action in IconButton widget.
   List<VistaExpedientesUltimoEstadoRow>? exp;
   // Model for ultimaactualizacion component.
@@ -33,7 +25,7 @@ class PerfilModel extends FlutterFlowModel<PerfilWidget> {
   late TarjetaencabezadoModel tarjetaencabezadoModel;
   // Stores action output result for [Bottom Sheet - seccion1] action in Button widget.
   bool? seccio1true;
-  Completer<List<IngresosRow>>? requestCompleter1;
+  Completer<ApiCallResponse>? apiRequestCompleter;
   // Stores action output result for [Bottom Sheet - seccion2] action in Button widget.
   bool? seccion2true;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
@@ -60,7 +52,6 @@ class PerfilModel extends FlutterFlowModel<PerfilWidget> {
   List<Seccion9Row>? seccion9edit;
   // Stores action output result for [Bottom Sheet - AsesoramientoAnexoA] action in Button widget.
   bool? creoasesoramiento1;
-  Completer<List<AnexoAForm1Row>>? requestCompleter2;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   Seccion9Row? seccion9Copy;
 
@@ -84,7 +75,7 @@ class PerfilModel extends FlutterFlowModel<PerfilWidget> {
   }
 
   /// Additional helper methods.
-  Future waitForRequestCompleted1({
+  Future waitForApiRequestCompleted({
     double minWait = 0,
     double maxWait = double.infinity,
   }) async {
@@ -92,22 +83,7 @@ class PerfilModel extends FlutterFlowModel<PerfilWidget> {
     while (true) {
       await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = requestCompleter1?.isCompleted ?? false;
-      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
-        break;
-      }
-    }
-  }
-
-  Future waitForRequestCompleted2({
-    double minWait = 0,
-    double maxWait = double.infinity,
-  }) async {
-    final stopwatch = Stopwatch()..start();
-    while (true) {
-      await Future.delayed(Duration(milliseconds: 50));
-      final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = requestCompleter2?.isCompleted ?? false;
+      final requestComplete = apiRequestCompleter?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
         break;
       }

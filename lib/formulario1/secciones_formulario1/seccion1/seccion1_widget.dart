@@ -17,8 +17,6 @@ export 'seccion1_model.dart';
 class Seccion1Widget extends StatefulWidget {
   const Seccion1Widget({
     super.key,
-    this.idingreso,
-    this.rowexp,
     this.editar,
     required this.usuariorow,
     required this.usuariorol,
@@ -26,10 +24,9 @@ class Seccion1Widget extends StatefulWidget {
     required this.idexp,
     required this.iduser,
     required this.idrol,
+    required this.spdexp,
   });
 
-  final IngresosRow? idingreso;
-  final VistaExpedientesUltimoEstadoRow? rowexp;
   final bool? editar;
   final UsuariosRow? usuariorow;
   final VistaUsuariosRolesRow? usuariorol;
@@ -37,6 +34,7 @@ class Seccion1Widget extends StatefulWidget {
   final int? idexp;
   final String? iduser;
   final int? idrol;
+  final String? spdexp;
 
   @override
   State<Seccion1Widget> createState() => _Seccion1WidgetState();
@@ -100,7 +98,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
       future: Seccion1Table().querySingleRow(
         queryFn: (q) => q.eqOrNull(
           'idIngreso',
-          widget.idingreso?.id,
+          widget.idingreso2,
         ),
       ),
       builder: (context, snapshot) {
@@ -1441,7 +1439,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    8.0, 0.0, 8.0, 0.0),
+                                                    8.0, 0.0, 8.0, 1.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -1500,7 +1498,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                                   10.0,
                                                                   0.0,
                                                                   10.0,
-                                                                  0.0),
+                                                                  15.0),
                                                       child:
                                                           FlutterFlowRadioButton(
                                                         options: [
@@ -1513,12 +1511,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                         controller: _model
                                                                 .radioButtonrnpValueController ??=
                                                             FormFieldController<
-                                                                String>(widget
-                                                                        .rowexp
-                                                                        ?.DNI !=
-                                                                    0
-                                                                ? 'Si'
-                                                                : 'Ns / Nc'),
+                                                                String>(null),
                                                         optionHeight: 40.0,
                                                         optionWidth: 70.0,
                                                         textStyle:
@@ -1620,7 +1613,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                               .queryRows(
                                             queryFn: (q) => q.eqOrNull(
                                               'idIngreso',
-                                              widget.idingreso?.id,
+                                              widget.idingreso2,
                                             ),
                                           )))
                                     .future,
@@ -2061,9 +2054,8 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                               .textController7
                                                               .text),
                                                       'idIngreso':
-                                                          widget.idingreso?.id,
-                                                      'Idexp':
-                                                          widget.rowexp?.id,
+                                                          widget.idingreso2,
+                                                      'Idexp': widget.idexp,
                                                     });
                                                     safeSetState(() => _model
                                                             .requestCompleter =
@@ -5026,7 +5018,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                             if (widget.usuariorol?.rolId ==
                                                 3) {
                                               return (widget.usuariorow?.spd ==
-                                                  widget.rowexp?.spd);
+                                                  widget.spdexp);
                                             } else if (widget
                                                     .usuariorol?.rolId ==
                                                 2) {
@@ -5094,9 +5086,9 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                     'trabaja': _model
                                                         .radioButtontrabjaninoValue,
                                                     'idIngreso':
-                                                        widget.idingreso?.id,
+                                                        widget.idingreso2,
                                                     'idExpediente':
-                                                        widget.rowexp?.id,
+                                                        widget.idexp,
                                                     'turno': _model
                                                         .dropDownTurnoValue,
                                                     'trabajoObs': _model
@@ -5130,7 +5122,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                     matchingRows: (rows) =>
                                                         rows.eqOrNull(
                                                       'id',
-                                                      widget.idingreso?.id,
+                                                      widget.idingreso2,
                                                     ),
                                                   );
                                                   ScaffoldMessenger.of(context)
@@ -5158,9 +5150,9 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                     'Etapa':
                                                         'Recepcion de la demanda seccion 1',
                                                     'idingreso':
-                                                        widget.idingreso?.id,
+                                                        widget.idingreso2,
                                                     'idexpediente':
-                                                        widget.rowexp?.id,
+                                                        widget.idexp,
                                                   });
                                                 } else {
                                                   await Seccion1Table().update(
@@ -5211,9 +5203,9 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                       'trabaja': _model
                                                           .radioButtontrabjaninoValue,
                                                       'idIngreso':
-                                                          widget.idingreso?.id,
+                                                          widget.idingreso2,
                                                       'idExpediente':
-                                                          widget.rowexp?.id,
+                                                          widget.idexp,
                                                       'turno': _model
                                                           .dropDownTurnoValue,
                                                       'trabajoObs': _model
@@ -5253,7 +5245,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                     matchingRows: (rows) =>
                                                         rows.eqOrNull(
                                                       'id',
-                                                      widget.idingreso?.id,
+                                                      widget.idingreso2,
                                                     ),
                                                   );
                                                   ScaffoldMessenger.of(context)
@@ -5281,9 +5273,9 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                                     'Etapa':
                                                         'Recepcion de la demanda seccion 1',
                                                     'idingreso':
-                                                        widget.idingreso?.id,
+                                                        widget.idingreso2,
                                                     'idexpediente':
-                                                        widget.rowexp?.id,
+                                                        widget.idexp,
                                                   });
                                                 }
                                               },
@@ -5415,7 +5407,7 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                   if (() {
                                     if ((widget.usuariorol?.rolId == 3) &&
                                         (widget.usuariorol?.spd ==
-                                            widget.rowexp?.spd)) {
+                                            widget.spdexp)) {
                                       return true;
                                     } else if (widget.usuariorol?.rolId == 2) {
                                       return true;

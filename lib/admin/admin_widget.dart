@@ -2151,14 +2151,6 @@ class _AdminWidgetState extends State<AdminWidget>
                                                                       ParamType
                                                                           .int,
                                                                     ),
-                                                                    'rowexp':
-                                                                        serializeParam(
-                                                                      _model
-                                                                          .vistaexpe
-                                                                          ?.firstOrNull,
-                                                                      ParamType
-                                                                          .SupabaseRow,
-                                                                    ),
                                                                     'usuariorow':
                                                                         serializeParam(
                                                                       widget
@@ -2605,14 +2597,6 @@ class _AdminWidgetState extends State<AdminWidget>
                                                                           .idingreso,
                                                                       ParamType
                                                                           .int,
-                                                                    ),
-                                                                    'rowexp':
-                                                                        serializeParam(
-                                                                      _model
-                                                                          .vistaexpe1
-                                                                          ?.firstOrNull,
-                                                                      ParamType
-                                                                          .SupabaseRow,
                                                                     ),
                                                                     'usuariorow':
                                                                         serializeParam(
