@@ -16,12 +16,16 @@ export 'cambiarexpe_model.dart';
 class CambiarexpeWidget extends StatefulWidget {
   const CambiarexpeWidget({
     super.key,
-    required this.usuariorol,
     required this.idexp,
+    required this.idrol,
+    required this.spd,
+    required this.rol,
   });
 
-  final VistaUsuariosRolesRow? usuariorol;
   final int? idexp;
+  final int? idrol;
+  final String? spd;
+  final String? rol;
 
   @override
   State<CambiarexpeWidget> createState() => _CambiarexpeWidgetState();

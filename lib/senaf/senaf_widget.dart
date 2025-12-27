@@ -27,20 +27,20 @@ export 'senaf_model.dart';
 class SenafWidget extends StatefulWidget {
   const SenafWidget({
     super.key,
-    required this.usuariorow,
-    required this.usuariorol,
-    required this.spdrow,
     required this.idexp,
     required this.idingreso,
     required this.idnnya,
+    required this.idrol,
+    required this.rol,
+    required this.spd,
   });
 
-  final UsuariosRow? usuariorow;
-  final VistaUsuariosRolesRow? usuariorol;
-  final SpdRow? spdrow;
   final int? idexp;
   final int? idingreso;
   final int? idnnya;
+  final int? idrol;
+  final String? rol;
+  final String? spd;
 
   static String routeName = 'Senaf';
   static String routePath = '/senaf';
@@ -1039,27 +1039,6 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                           ParamType
                                                                               .bool,
                                                                         ),
-                                                                        'usuariorow':
-                                                                            serializeParam(
-                                                                          widget
-                                                                              .usuariorow,
-                                                                          ParamType
-                                                                              .SupabaseRow,
-                                                                        ),
-                                                                        'usuariorol':
-                                                                            serializeParam(
-                                                                          widget
-                                                                              .usuariorol,
-                                                                          ParamType
-                                                                              .SupabaseRow,
-                                                                        ),
-                                                                        'spd':
-                                                                            serializeParam(
-                                                                          widget
-                                                                              .spdrow,
-                                                                          ParamType
-                                                                              .SupabaseRow,
-                                                                        ),
                                                                         'idnnya':
                                                                             serializeParam(
                                                                           0,
@@ -1072,6 +1051,27 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                               .idexp,
                                                                           ParamType
                                                                               .int,
+                                                                        ),
+                                                                        'idrol':
+                                                                            serializeParam(
+                                                                          widget
+                                                                              .idrol,
+                                                                          ParamType
+                                                                              .int,
+                                                                        ),
+                                                                        'rol':
+                                                                            serializeParam(
+                                                                          widget
+                                                                              .rol,
+                                                                          ParamType
+                                                                              .String,
+                                                                        ),
+                                                                        'spd1':
+                                                                            serializeParam(
+                                                                          widget
+                                                                              .spd,
+                                                                          ParamType
+                                                                              .String,
                                                                         ),
                                                                       }.withoutNulls,
                                                                     );
@@ -1309,7 +1309,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                   mainAxisAlignment: MainAxisAlignment.start,
                                                                                   crossAxisAlignment: CrossAxisAlignment.stretch,
                                                                                   children: [
-                                                                                    if (((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.rolId == 2)) || _model.editarformcese)
+                                                                                    if (((widget.idrol == 3) && (widget.idrol == 2)) || _model.editarformcese)
                                                                                       Align(
                                                                                         alignment: AlignmentDirectional(1.0, 0.0),
                                                                                         child: FlutterFlowIconButton(
@@ -2086,7 +2086,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                                                 ),
                                                                                                                                 child: Checkbox(
                                                                                                                                   value: _model.checkboxsolicitudValue ??= containerform9Formulario9Row?.idForm9 == null ? false : containerform9Formulario9Row!.solicitudMedida!,
-                                                                                                                                  onChanged: (widget.usuariorol?.rolId != 1)
+                                                                                                                                  onChanged: (widget.idrol != 1)
                                                                                                                                       ? null
                                                                                                                                       : (newValue) async {
                                                                                                                                           safeSetState(() => _model.checkboxsolicitudValue = newValue!);
@@ -2098,7 +2098,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                                                         )
                                                                                                                                       : null,
                                                                                                                                   activeColor: FlutterFlowTheme.of(context).primary,
-                                                                                                                                  checkColor: (widget.usuariorol?.rolId != 1) ? null : FlutterFlowTheme.of(context).info,
+                                                                                                                                  checkColor: (widget.idrol != 1) ? null : FlutterFlowTheme.of(context).info,
                                                                                                                                 ),
                                                                                                                               ),
                                                                                                                               Text(
@@ -2123,7 +2123,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                                           endIndent: 10.0,
                                                                                                                           color: FlutterFlowTheme.of(context).alternate,
                                                                                                                         ),
-                                                                                                                        if (widget.usuariorol?.rolId == 1)
+                                                                                                                        if (widget.idrol == 1)
                                                                                                                           Column(
                                                                                                                             mainAxisSize: MainAxisSize.max,
                                                                                                                             children: [
@@ -2179,7 +2179,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                                                     Padding(
                                                                                                                                       padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
                                                                                                                                       child: FFButtonWidget(
-                                                                                                                                        onPressed: (widget.usuariorol?.rolId != 1)
+                                                                                                                                        onPressed: (widget.idrol != 1)
                                                                                                                                             ? null
                                                                                                                                             : () async {
                                                                                                                                                 final _datePicked2Date = await showDatePicker(
@@ -2315,7 +2315,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                                                     Padding(
                                                                                                                                       padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
                                                                                                                                       child: FFButtonWidget(
-                                                                                                                                        onPressed: (widget.usuariorol?.rolId != 1)
+                                                                                                                                        onPressed: (widget.idrol != 1)
                                                                                                                                             ? null
                                                                                                                                             : () async {
                                                                                                                                                 final _datePicked3Date = await showDatePicker(
@@ -2409,7 +2409,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                                             ),
                                                                                                                             focusNode: _model.textFieldmotivosolicitudFocusNode,
                                                                                                                             autofocus: false,
-                                                                                                                            readOnly: widget.usuariorol?.rolId != 1,
+                                                                                                                            readOnly: widget.idrol != 1,
                                                                                                                             obscureText: false,
                                                                                                                             decoration: InputDecoration(
                                                                                                                               labelText: 'Sintesis/motivo pedido ME',
@@ -2536,7 +2536,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                                                 ),
                                                                                                                                 child: Checkbox(
                                                                                                                                   value: _model.checkboxevaluacionValue ??= containerform9Formulario9Row?.idForm9 == null ? false : containerform9Formulario9Row!.evaluacionMedida!,
-                                                                                                                                  onChanged: (widget.usuariorol?.rolId != 1)
+                                                                                                                                  onChanged: (widget.idrol != 1)
                                                                                                                                       ? null
                                                                                                                                       : (newValue) async {
                                                                                                                                           safeSetState(() => _model.checkboxevaluacionValue = newValue!);
@@ -2548,7 +2548,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                                                         )
                                                                                                                                       : null,
                                                                                                                                   activeColor: FlutterFlowTheme.of(context).primary,
-                                                                                                                                  checkColor: (widget.usuariorol?.rolId != 1) ? null : FlutterFlowTheme.of(context).info,
+                                                                                                                                  checkColor: (widget.idrol != 1) ? null : FlutterFlowTheme.of(context).info,
                                                                                                                                 ),
                                                                                                                               ),
                                                                                                                               Text(
@@ -2629,7 +2629,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                                                 ),
                                                                                                                                 child: Checkbox(
                                                                                                                                   value: _model.checkboxadoptadaValue ??= containerform9Formulario9Row?.idForm9 == null ? false : containerform9Formulario9Row!.medidaAdoptada!,
-                                                                                                                                  onChanged: (widget.usuariorol?.rolId != 1)
+                                                                                                                                  onChanged: (widget.idrol != 1)
                                                                                                                                       ? null
                                                                                                                                       : (newValue) async {
                                                                                                                                           safeSetState(() => _model.checkboxadoptadaValue = newValue!);
@@ -2641,7 +2641,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                                                         )
                                                                                                                                       : null,
                                                                                                                                   activeColor: FlutterFlowTheme.of(context).primary,
-                                                                                                                                  checkColor: (widget.usuariorol?.rolId != 1) ? null : FlutterFlowTheme.of(context).info,
+                                                                                                                                  checkColor: (widget.idrol != 1) ? null : FlutterFlowTheme.of(context).info,
                                                                                                                                 ),
                                                                                                                               ),
                                                                                                                               Text(
@@ -2718,7 +2718,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                                               Padding(
                                                                                                                                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
                                                                                                                                 child: FFButtonWidget(
-                                                                                                                                  onPressed: (widget.usuariorol?.rolId != 1)
+                                                                                                                                  onPressed: (widget.idrol != 1)
                                                                                                                                       ? null
                                                                                                                                       : () async {
                                                                                                                                           final _datePicked4Date = await showDatePicker(
@@ -2808,7 +2808,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                                             controller: _model.textFieldobservacionesdemedidaadoptadaTextController,
                                                                                                                             focusNode: _model.textFieldobservacionesdemedidaadoptadaFocusNode,
                                                                                                                             autofocus: false,
-                                                                                                                            readOnly: widget.usuariorol?.rolId != 1,
+                                                                                                                            readOnly: widget.idrol != 1,
                                                                                                                             obscureText: false,
                                                                                                                             decoration: InputDecoration(
                                                                                                                               labelText: 'Observaciones de la adopcion  de la medida de excepcion',
@@ -2933,7 +2933,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                                                 ),
                                                                                                                                 child: Checkbox(
                                                                                                                                   value: _model.checkboxrechazadaValue ??= containerform9Formulario9Row?.idForm9 == null ? false : containerform9Formulario9Row!.medidaRechazada!,
-                                                                                                                                  onChanged: (widget.usuariorol?.rolId != 1)
+                                                                                                                                  onChanged: (widget.idrol != 1)
                                                                                                                                       ? null
                                                                                                                                       : (newValue) async {
                                                                                                                                           safeSetState(() => _model.checkboxrechazadaValue = newValue!);
@@ -2945,7 +2945,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                                                         )
                                                                                                                                       : null,
                                                                                                                                   activeColor: FlutterFlowTheme.of(context).primary,
-                                                                                                                                  checkColor: (widget.usuariorol?.rolId != 1) ? null : FlutterFlowTheme.of(context).info,
+                                                                                                                                  checkColor: (widget.idrol != 1) ? null : FlutterFlowTheme.of(context).info,
                                                                                                                                 ),
                                                                                                                               ),
                                                                                                                               Text(
@@ -3022,7 +3022,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                                               Padding(
                                                                                                                                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
                                                                                                                                 child: FFButtonWidget(
-                                                                                                                                  onPressed: (widget.usuariorol?.rolId != 1)
+                                                                                                                                  onPressed: (widget.idrol != 1)
                                                                                                                                       ? null
                                                                                                                                       : () async {
                                                                                                                                           final _datePicked5Date = await showDatePicker(
@@ -3114,7 +3114,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                                             ),
                                                                                                                             focusNode: _model.textFieldmotivorechazoFocusNode,
                                                                                                                             autofocus: false,
-                                                                                                                            readOnly: widget.usuariorol?.rolId != 1,
+                                                                                                                            readOnly: widget.idrol != 1,
                                                                                                                             obscureText: false,
                                                                                                                             decoration: InputDecoration(
                                                                                                                               labelText: 'Motivo de rechazo de la medida de protección',
@@ -3857,7 +3857,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                                             Column(
                                                                                                                               mainAxisSize: MainAxisSize.max,
                                                                                                                               children: [
-                                                                                                                                if ((historialItem.reponsable == 'Coordinacion general') && (historialItem.enviado == false) && (widget.usuariorol?.rolId == 1))
+                                                                                                                                if ((historialItem.reponsable == 'Coordinacion general') && (historialItem.enviado == false) && (widget.idrol == 1))
                                                                                                                                   Align(
                                                                                                                                     alignment: AlignmentDirectional(1.0, 0.0),
                                                                                                                                     child: Row(
@@ -3987,7 +3987,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                                                       ].divide(SizedBox(width: 5.0)),
                                                                                                                                     ),
                                                                                                                                   ),
-                                                                                                                                if ((historialItem.reponsable == 'Coordinacion zonal') && (historialItem.enviado == false) && (widget.usuariorol?.rolId == 2))
+                                                                                                                                if ((historialItem.reponsable == 'Coordinacion zonal') && (historialItem.enviado == false) && (widget.idrol == 2))
                                                                                                                                   Align(
                                                                                                                                     alignment: AlignmentDirectional(1.0, 0.0),
                                                                                                                                     child: Row(
@@ -4123,7 +4123,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                                                                     children: [
-                                                                                                                                      if ((historialItem.reponsable == 'SPD') && (historialItem.enviado == false) && (widget.usuariorol?.rolId == 3))
+                                                                                                                                      if ((historialItem.reponsable == 'SPD') && (historialItem.enviado == false) && (widget.idrol == 3))
                                                                                                                                         FFButtonWidget(
                                                                                                                                           onPressed: () async {
                                                                                                                                             await showModalBottomSheet(
@@ -4478,7 +4478,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                                               mainAxisSize: MainAxisSize.max,
                                                                                                                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                                                               children: [
-                                                                                                                                if (widget.usuariorol?.rolId == 1)
+                                                                                                                                if (widget.idrol == 1)
                                                                                                                                   Align(
                                                                                                                                     alignment: AlignmentDirectional(1.0, 0.0),
                                                                                                                                     child: FFButtonWidget(
@@ -4546,7 +4546,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                                   ),
                                                                                                                   if (valueOrDefault<bool>(
                                                                                                                     (historialItem.leido == false) &&
-                                                                                                                        (widget.usuariorol?.rolId == 3) &&
+                                                                                                                        (widget.idrol == 3) &&
                                                                                                                         valueOrDefault<bool>(
                                                                                                                           historialItem.reponsable == 'SPD',
                                                                                                                           true,
@@ -4590,7 +4590,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                                     ),
                                                                                                                   if (valueOrDefault<bool>(
                                                                                                                     (historialItem.leido == false) &&
-                                                                                                                        (widget.usuariorol?.rolId == 2) &&
+                                                                                                                        (widget.idrol == 2) &&
                                                                                                                         valueOrDefault<bool>(
                                                                                                                           historialItem.reponsable == 'Coordinacion zonal',
                                                                                                                           true,
@@ -4634,7 +4634,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                                     ),
                                                                                                                   if (valueOrDefault<bool>(
                                                                                                                     (historialItem.leido == false) &&
-                                                                                                                        (widget.usuariorol?.rolId == 1) &&
+                                                                                                                        (widget.idrol == 1) &&
                                                                                                                         valueOrDefault<bool>(
                                                                                                                           historialItem.reponsable == 'Coordinacion general',
                                                                                                                           true,
@@ -4678,7 +4678,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                                     ),
                                                                                                                   if (valueOrDefault<bool>(
                                                                                                                     (historialItem.leido == false) &&
-                                                                                                                        (widget.usuariorol?.rolId == 1) &&
+                                                                                                                        (widget.idrol == 1) &&
                                                                                                                         valueOrDefault<bool>(
                                                                                                                           historialItem.reponsable == 'SENAF',
                                                                                                                           true,
@@ -4760,7 +4760,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                           MainAxisSize
                                                                               .max,
                                                                       children: [
-                                                                        if (widget.usuariorol?.rolId ==
+                                                                        if (widget.idrol ==
                                                                             1)
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
@@ -5149,7 +5149,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                             ),
                                                                                                           ),
                                                                                                         ),
-                                                                                                        if (widget.usuariorol?.rolId == 1)
+                                                                                                        if (widget.idrol == 1)
                                                                                                           FlutterFlowIconButton(
                                                                                                             borderRadius: 8.0,
                                                                                                             buttonSize: 40.0,

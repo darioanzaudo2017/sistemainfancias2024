@@ -19,19 +19,17 @@ class IngresosWidget extends StatefulWidget {
   const IngresosWidget({
     super.key,
     this.idexp,
-    required this.usuariorow,
-    this.spd,
-    this.idcarpeta,
-    this.usuariorol,
     required this.idnnya,
+    required this.idrol,
+    required this.rol,
+    required this.spd1,
   });
 
   final int? idexp;
-  final UsuariosRow? usuariorow;
-  final SpdRow? spd;
-  final String? idcarpeta;
-  final VistaUsuariosRolesRow? usuariorol;
   final int? idnnya;
+  final int? idrol;
+  final String? rol;
+  final String? spd1;
 
   static String routeName = 'Ingresos';
   static String routePath = '/ingresos';
@@ -166,15 +164,16 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                 updateCallback: () => safeSetState(() {}),
                                 child: BarradeNavegacionWidget(
                                   idexp: widget.idexp,
+                                  expediente: widget.idexp!,
                                   adjuntar: false,
                                   imprimir: true,
-                                  carpeta: true,
                                   ingreso: false,
                                   perfil: false,
-                                  usuariorow: widget.usuariorow!,
                                   fechaExp: getCurrentTimestamp.toString(),
-                                  usuariorol: widget.usuariorol,
-                                  spd: widget.spd,
+                                  idnnya: widget.idnnya,
+                                  idrol: widget.idrol!,
+                                  rol: widget.rol!,
+                                  spd: widget.spd1!,
                                 ),
                               ),
                               Expanded(
@@ -242,8 +241,7 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                   widget.idexp,
                                                               idnnya: widget
                                                                   .idnnya,
-                                                              rowspd:
-                                                                  widget.spd,
+                                                              spd: widget.spd1,
                                                             ),
                                                           ),
                                                           Flex(
@@ -290,11 +288,10 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                 MediaQuery.viewInsetsOf(context),
                                                                             child:
                                                                                 FormcaratulaWidget(
-                                                                              usuariorow: widget.usuariorow!,
                                                                               idexp: widget.idexp,
                                                                               editar: true,
                                                                               dniok: false,
-                                                                              usuariorol: widget.usuariorol!,
+                                                                              idrol: 0,
                                                                             ),
                                                                           ),
                                                                         ),
@@ -1246,18 +1243,6 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                             containerVarItem.id,
                                                                                                             ParamType.int,
                                                                                                           ),
-                                                                                                          'usuariorow': serializeParam(
-                                                                                                            widget.usuariorow,
-                                                                                                            ParamType.SupabaseRow,
-                                                                                                          ),
-                                                                                                          'spd': serializeParam(
-                                                                                                            widget.spd,
-                                                                                                            ParamType.SupabaseRow,
-                                                                                                          ),
-                                                                                                          'usuariorol': serializeParam(
-                                                                                                            widget.usuariorol,
-                                                                                                            ParamType.SupabaseRow,
-                                                                                                          ),
                                                                                                           'idexp': serializeParam(
                                                                                                             widget.idexp,
                                                                                                             ParamType.int,
@@ -1265,6 +1250,18 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                           'idnnya': serializeParam(
                                                                                                             widget.idnnya,
                                                                                                             ParamType.int,
+                                                                                                          ),
+                                                                                                          'idrol': serializeParam(
+                                                                                                            widget.idrol,
+                                                                                                            ParamType.int,
+                                                                                                          ),
+                                                                                                          'rol': serializeParam(
+                                                                                                            widget.rol,
+                                                                                                            ParamType.String,
+                                                                                                          ),
+                                                                                                          'spd1': serializeParam(
+                                                                                                            widget.spd1,
+                                                                                                            ParamType.String,
                                                                                                           ),
                                                                                                         }.withoutNulls,
                                                                                                       );
@@ -1278,71 +1275,6 @@ class _IngresosWidgetState extends State<IngresosWidget> {
                                                                                                       padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                                                                                                       iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                                       color: FlutterFlowTheme.of(context).primary,
-                                                                                                      textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                            font: GoogleFonts.notoSansJp(
-                                                                                                              fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                              fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                            ),
-                                                                                                            color: Colors.white,
-                                                                                                            letterSpacing: 0.0,
-                                                                                                            fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                                            fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                                          ),
-                                                                                                      elevation: 3.0,
-                                                                                                      borderSide: BorderSide(
-                                                                                                        color: Colors.transparent,
-                                                                                                        width: 1.0,
-                                                                                                      ),
-                                                                                                      borderRadius: BorderRadius.circular(8.0),
-                                                                                                    ),
-                                                                                                  ),
-                                                                                                ),
-                                                                                                Align(
-                                                                                                  alignment: AlignmentDirectional(0.0, 1.0),
-                                                                                                  child: FFButtonWidget(
-                                                                                                    onPressed: () async {
-                                                                                                      _model.expvista1 = await VistaExpedientesUltimoEstadoTable().queryRows(
-                                                                                                        queryFn: (q) => q.eqOrNull(
-                                                                                                          'id',
-                                                                                                          widget.idexp,
-                                                                                                        ),
-                                                                                                      );
-
-                                                                                                      context.pushNamed(
-                                                                                                        PerfilCopyWidget.routeName,
-                                                                                                        queryParameters: {
-                                                                                                          'idingreso': serializeParam(
-                                                                                                            containerVarItem.id,
-                                                                                                            ParamType.int,
-                                                                                                          ),
-                                                                                                          'usuariorow': serializeParam(
-                                                                                                            widget.usuariorow,
-                                                                                                            ParamType.SupabaseRow,
-                                                                                                          ),
-                                                                                                          'rowexp': serializeParam(
-                                                                                                            _model.expvista1?.firstOrNull,
-                                                                                                            ParamType.SupabaseRow,
-                                                                                                          ),
-                                                                                                          'idexp': serializeParam(
-                                                                                                            widget.idexp,
-                                                                                                            ParamType.int,
-                                                                                                          ),
-                                                                                                          'idnnya': serializeParam(
-                                                                                                            widget.idnnya,
-                                                                                                            ParamType.int,
-                                                                                                          ),
-                                                                                                        }.withoutNulls,
-                                                                                                      );
-
-                                                                                                      safeSetState(() {});
-                                                                                                    },
-                                                                                                    text: 'Iniciar carga',
-                                                                                                    options: FFButtonOptions(
-                                                                                                      width: 150.0,
-                                                                                                      height: 50.0,
-                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                      color: FlutterFlowTheme.of(context).secondary,
                                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                             font: GoogleFonts.notoSansJp(
                                                                                                               fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,

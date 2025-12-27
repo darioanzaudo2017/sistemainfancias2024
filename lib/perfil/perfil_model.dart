@@ -1,6 +1,5 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
-import '/components/anexosbotonera_widget.dart';
 import '/components/barrade_navegacion_widget.dart';
 import '/components/tarjetaencabezado_widget.dart';
 import '/components/ultimaactualizacion_widget.dart';
@@ -15,8 +14,6 @@ class PerfilModel extends FlutterFlowModel<PerfilWidget> {
 
   // Model for barradeNavegacion component.
   late BarradeNavegacionModel barradeNavegacionModel;
-  // Model for anexosbotonera component.
-  late AnexosbotoneraModel anexosbotoneraModel;
   // Stores action output result for [Backend Call - Query Rows] action in IconButton widget.
   List<VistaExpedientesUltimoEstadoRow>? exp;
   // Model for ultimaactualizacion component.
@@ -44,22 +41,17 @@ class PerfilModel extends FlutterFlowModel<PerfilWidget> {
   bool? seccion7true;
   // Stores action output result for [Bottom Sheet - seccion8] action in Button widget.
   bool? seccion8guardada;
-  // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
-  List<Seccion9Row>? seccion9editar;
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  Seccion9Row? seccion9;
-  // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
-  List<Seccion9Row>? seccion9edit;
+  // Stores action output result for [Backend Call - API (Apertura demanda)] action in Button widget.
+  ApiCallResponse? apiResulttym;
+  // Stores action output result for [Backend Call - API (Asesoramiento demanda )] action in Button widget.
+  ApiCallResponse? apiResulttymCopy;
   // Stores action output result for [Bottom Sheet - AsesoramientoAnexoA] action in Button widget.
   bool? creoasesoramiento1;
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  Seccion9Row? seccion9Copy;
 
   @override
   void initState(BuildContext context) {
     barradeNavegacionModel =
         createModel(context, () => BarradeNavegacionModel());
-    anexosbotoneraModel = createModel(context, () => AnexosbotoneraModel());
     ultimaactualizacionModel =
         createModel(context, () => UltimaactualizacionModel());
     tarjetaencabezadoModel =
@@ -69,7 +61,6 @@ class PerfilModel extends FlutterFlowModel<PerfilWidget> {
   @override
   void dispose() {
     barradeNavegacionModel.dispose();
-    anexosbotoneraModel.dispose();
     ultimaactualizacionModel.dispose();
     tarjetaencabezadoModel.dispose();
   }

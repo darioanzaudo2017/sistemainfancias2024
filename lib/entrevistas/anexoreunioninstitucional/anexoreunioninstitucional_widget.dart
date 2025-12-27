@@ -25,7 +25,7 @@ class AnexoreunioninstitucionalWidget extends StatefulWidget {
   final bool? editar;
   final int idanexoreunion;
   final String? formulario;
-  final SpdRow? spd;
+  final String? spd;
   final int? idingreso;
   final int? idexp;
 

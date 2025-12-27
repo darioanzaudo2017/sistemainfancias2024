@@ -28,19 +28,19 @@ class EntrevistasCopyWidget extends StatefulWidget {
   const EntrevistasCopyWidget({
     super.key,
     required this.idingreso,
-    required this.usuariorow,
-    required this.usuariorol,
-    required this.spd,
     required this.idnnya,
     required this.idexp,
+    required this.idrol,
+    required this.rol,
+    required this.spd,
   });
 
   final int? idingreso;
-  final UsuariosRow? usuariorow;
-  final VistaUsuariosRolesRow? usuariorol;
-  final SpdRow? spd;
   final int? idnnya;
   final int? idexp;
+  final int? idrol;
+  final String? rol;
+  final String? spd;
 
   static String routeName = 'EntrevistasCopy';
   static String routePath = '/entrevistasCopy';
@@ -102,18 +102,6 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                     widget.idingreso,
                     ParamType.int,
                   ),
-                  'usuariorow': serializeParam(
-                    widget.usuariorow,
-                    ParamType.SupabaseRow,
-                  ),
-                  'usuariorol': serializeParam(
-                    widget.usuariorol,
-                    ParamType.SupabaseRow,
-                  ),
-                  'spd': serializeParam(
-                    widget.spd,
-                    ParamType.SupabaseRow,
-                  ),
                   'idexp': serializeParam(
                     widget.idexp,
                     ParamType.int,
@@ -121,6 +109,18 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                   'idnnya': serializeParam(
                     widget.idnnya,
                     ParamType.int,
+                  ),
+                  'idrol': serializeParam(
+                    widget.idrol,
+                    ParamType.int,
+                  ),
+                  'rol': serializeParam(
+                    widget.rol,
+                    ParamType.String,
+                  ),
+                  'spd1': serializeParam(
+                    widget.spd,
+                    ParamType.String,
                   ),
                 }.withoutNulls,
               );
@@ -256,7 +256,7 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                 child: TarjetaencabezadoWidget(
                                                   idexpediente: widget.idexp,
                                                   idnnya: widget.idnnya,
-                                                  rowspd: widget.spd,
+                                                  spd: widget.spd,
                                                 ),
                                               ),
                                               Container(
@@ -358,6 +358,9 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                     mainAxisSize:
                                                                         MainAxisSize
                                                                             .max,
+                                                                    crossAxisAlignment:
+                                                                        CrossAxisAlignment
+                                                                            .stretch,
                                                                     children: [
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
@@ -367,8 +370,6 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                             10.0),
                                                                         child:
                                                                             Container(
-                                                                          width:
-                                                                              MediaQuery.sizeOf(context).width * 0.7,
                                                                           decoration:
                                                                               BoxDecoration(
                                                                             color:
@@ -411,81 +412,94 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                                         fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
                                                                                       ),
                                                                                 ),
-                                                                                if (!(containerampliacionVistaAmpliacionInformacionRowList.isNotEmpty))
-                                                                                  FFButtonWidget(
-                                                                                    onPressed: !() {
-                                                                                      if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == containerVistaExpedientesUltimoEstadoRow?.spd)) {
-                                                                                        return true;
-                                                                                      } else if (widget.usuariorol?.rolId == 1) {
-                                                                                        return true;
-                                                                                      } else if (widget.usuariorol?.rolId == 2) {
-                                                                                        return true;
-                                                                                      } else {
-                                                                                        return false;
-                                                                                      }
-                                                                                    }()
-                                                                                        ? null
-                                                                                        : () async {
-                                                                                            await showModalBottomSheet(
-                                                                                              isScrollControlled: true,
-                                                                                              backgroundColor: Colors.transparent,
-                                                                                              enableDrag: false,
-                                                                                              context: context,
-                                                                                              builder: (context) {
-                                                                                                return WebViewAware(
-                                                                                                  child: GestureDetector(
-                                                                                                    onTap: () {
-                                                                                                      FocusScope.of(context).unfocus();
-                                                                                                      FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                    },
-                                                                                                    child: Padding(
-                                                                                                      padding: MediaQuery.viewInsetsOf(context),
-                                                                                                      child: AmpliacionactividadplanificacionWidget(
-                                                                                                        formulario: 'Ampliacion de informacion',
-                                                                                                        planificacion: 'si',
-                                                                                                        idamplaiacion: 0,
-                                                                                                        idampliacionhistorial: 0,
-                                                                                                        idingreso1: widget.idingreso!,
-                                                                                                        idexp: widget.idexp!,
-                                                                                                      ),
+                                                                                FFButtonWidget(
+                                                                                  onPressed: !((widget.idrol == 3) && (containerVistaExpedientesUltimoEstadoRow?.spd == widget.spd))
+                                                                                      ? null
+                                                                                      : () async {
+                                                                                          await showModalBottomSheet(
+                                                                                            isScrollControlled: true,
+                                                                                            backgroundColor: Colors.transparent,
+                                                                                            enableDrag: false,
+                                                                                            context: context,
+                                                                                            builder: (context) {
+                                                                                              return WebViewAware(
+                                                                                                child: GestureDetector(
+                                                                                                  onTap: () {
+                                                                                                    FocusScope.of(context).unfocus();
+                                                                                                    FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                  },
+                                                                                                  child: Padding(
+                                                                                                    padding: MediaQuery.viewInsetsOf(context),
+                                                                                                    child: AmpliacionactividadplanificacionWidget(
+                                                                                                      formulario: 'Ampliacion de informacion',
+                                                                                                      planificacion: 'si',
+                                                                                                      idamplaiacion: 0,
+                                                                                                      idampliacionhistorial: 0,
+                                                                                                      idingreso1: widget.idingreso!,
+                                                                                                      idexp: widget.idexp!,
                                                                                                     ),
                                                                                                   ),
-                                                                                                );
-                                                                                              },
-                                                                                            ).then((value) => safeSetState(() => _model.crearplanificacion = value));
+                                                                                                ),
+                                                                                              );
+                                                                                            },
+                                                                                          ).then((value) => safeSetState(() => _model.crearplanificacion = value));
 
-                                                                                            if (_model.crearplanificacion!) {
-                                                                                              safeSetState(() => _model.requestCompleter = null);
-                                                                                              await _model.waitForRequestCompleted();
-                                                                                            }
+                                                                                          if (_model.crearplanificacion!) {
+                                                                                            safeSetState(() => _model.requestCompleter = null);
+                                                                                            await _model.waitForRequestCompleted();
+                                                                                          }
 
-                                                                                            safeSetState(() {});
-                                                                                          },
-                                                                                    text: '1. Agregar PLanificacion estrategica de ampliacion de informacion',
-                                                                                    options: FFButtonOptions(
-                                                                                      height: 40.0,
-                                                                                      padding: EdgeInsets.all(8.0),
-                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                      color: FlutterFlowTheme.of(context).primary,
-                                                                                      textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            font: GoogleFonts.notoSansJp(
-                                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                            ),
-                                                                                            color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                            letterSpacing: 0.0,
+                                                                                          safeSetState(() {});
+                                                                                        },
+                                                                                  text: '1. Agregar PLanificacion estrategica de ampliacion de informacion',
+                                                                                  options: FFButtonOptions(
+                                                                                    height: 40.0,
+                                                                                    padding: EdgeInsets.all(8.0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    color: FlutterFlowTheme.of(context).primary,
+                                                                                    textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                          font: GoogleFonts.notoSansJp(
                                                                                             fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                                             fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                           ),
-                                                                                      elevation: 0.0,
-                                                                                      borderSide: BorderSide(
-                                                                                        color: Colors.transparent,
-                                                                                        width: 1.0,
-                                                                                      ),
-                                                                                      borderRadius: BorderRadius.circular(20.0),
-                                                                                      disabledColor: FlutterFlowTheme.of(context).alternate,
+                                                                                          color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                          letterSpacing: 0.0,
+                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                        ),
+                                                                                    elevation: 0.0,
+                                                                                    borderSide: BorderSide(
+                                                                                      color: Colors.transparent,
+                                                                                      width: 1.0,
                                                                                     ),
+                                                                                    borderRadius: BorderRadius.circular(20.0),
+                                                                                    disabledColor: FlutterFlowTheme.of(context).alternate,
                                                                                   ),
+                                                                                ),
+                                                                                FFButtonWidget(
+                                                                                  onPressed: () {
+                                                                                    print('Button pressed ...');
+                                                                                  },
+                                                                                  text: '1. Agregar PLanificacion estrategica de ampliacion de informacion',
+                                                                                  options: FFButtonOptions(
+                                                                                    height: 40.0,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    color: FlutterFlowTheme.of(context).secondary,
+                                                                                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                          font: GoogleFonts.notoSansJp(
+                                                                                            fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                            fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                          ),
+                                                                                          color: Colors.white,
+                                                                                          letterSpacing: 0.0,
+                                                                                          fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                          fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                        ),
+                                                                                    elevation: 0.0,
+                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                  ),
+                                                                                ),
                                                                                 Container(
                                                                                   decoration: BoxDecoration(),
                                                                                   child: Builder(
@@ -573,9 +587,9 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                           .isNotEmpty)
                                                                         Container(
                                                                           width:
-                                                                              1013.7,
+                                                                              861.3,
                                                                           height:
-                                                                              153.85,
+                                                                              153.8,
                                                                           decoration:
                                                                               BoxDecoration(
                                                                             color:
@@ -633,6 +647,11 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                                                   width: 1.0,
                                                                                                 ),
                                                                                                 borderRadius: BorderRadius.circular(8.0),
+                                                                                                hoverBorderSide: BorderSide(
+                                                                                                  color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                  width: 1.0,
+                                                                                                ),
+                                                                                                hoverElevation: 5.0,
                                                                                               ),
                                                                                             ),
                                                                                           ),
@@ -675,11 +694,11 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                                     alignment: AlignmentDirectional(1.0, -1.0),
                                                                                     child: FFButtonWidget(
                                                                                       onPressed: !() {
-                                                                                        if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == containerVistaExpedientesUltimoEstadoRow?.spd)) {
+                                                                                        if ((widget.idrol == 3) && (widget.spd == containerVistaExpedientesUltimoEstadoRow?.spd)) {
                                                                                           return true;
-                                                                                        } else if (widget.usuariorol?.rolId == 1) {
+                                                                                        } else if (widget.idrol == 1) {
                                                                                           return true;
-                                                                                        } else if (widget.usuariorol?.rolId == 2) {
+                                                                                        } else if (widget.idrol == 2) {
                                                                                           return true;
                                                                                         } else {
                                                                                           return false;
@@ -1063,11 +1082,11 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                                               alignment: AlignmentDirectional(0.0, 0.0),
                                                                                               child: FFButtonWidget(
                                                                                                 onPressed: !() {
-                                                                                                  if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == containerVistaExpedientesUltimoEstadoRow?.spd)) {
+                                                                                                  if ((widget.idrol == 3) && (widget.spd == containerVistaExpedientesUltimoEstadoRow?.spd)) {
                                                                                                     return true;
-                                                                                                  } else if (widget.usuariorol?.rolId == 1) {
+                                                                                                  } else if (widget.idrol == 1) {
                                                                                                     return true;
-                                                                                                  } else if (widget.usuariorol?.rolId == 2) {
+                                                                                                  } else if (widget.idrol == 2) {
                                                                                                     return true;
                                                                                                   } else {
                                                                                                     return false;
@@ -1090,8 +1109,8 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                                                                 child: Padding(
                                                                                                                   padding: MediaQuery.viewInsetsOf(context),
                                                                                                                   child: AmpliacioninformacionWidget(
-                                                                                                                    usuariorow: widget.usuariorow!,
-                                                                                                                    usuariorol: widget.usuariorol!,
+                                                                                                                    idrol: widget.idrol!,
+                                                                                                                    rol: widget.rol!,
                                                                                                                     idampliacion: ampliaciondeinformacionItem.ampliacionId,
                                                                                                                     editar: true,
                                                                                                                     tipoampliacion: ampliaciondeinformacionItem.tipoampliacion,
@@ -1146,11 +1165,11 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                                               alignment: AlignmentDirectional(0.0, 0.0),
                                                                                               child: FFButtonWidget(
                                                                                                 onPressed: !() {
-                                                                                                  if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == containerVistaExpedientesUltimoEstadoRow?.spd)) {
+                                                                                                  if ((widget.idrol == 3) && (widget.spd == containerVistaExpedientesUltimoEstadoRow?.spd)) {
                                                                                                     return true;
-                                                                                                  } else if (widget.usuariorol?.rolId == 1) {
+                                                                                                  } else if (widget.idrol == 1) {
                                                                                                     return true;
-                                                                                                  } else if (widget.usuariorol?.rolId == 2) {
+                                                                                                  } else if (widget.idrol == 2) {
                                                                                                     return true;
                                                                                                   } else {
                                                                                                     return false;
@@ -1305,11 +1324,11 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                                       ),
                                                                                       Visibility(
                                                                                         visible: () {
-                                                                                          if ((widget.usuariorol?.rolId == 3) && (widget.usuariorol?.spd == containerVistaExpedientesUltimoEstadoRow?.spd)) {
+                                                                                          if ((widget.idrol == 3) && (widget.spd == containerVistaExpedientesUltimoEstadoRow?.spd)) {
                                                                                             return true;
-                                                                                          } else if (widget.usuariorol?.rolId == 1) {
+                                                                                          } else if (widget.idrol == 1) {
                                                                                             return true;
-                                                                                          } else if (widget.usuariorol?.rolId == 2) {
+                                                                                          } else if (widget.idrol == 2) {
                                                                                             return true;
                                                                                           } else {
                                                                                             return false;
@@ -1387,7 +1406,6 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                                                                 idingreso: widget.idingreso,
                                                                                                                 idampliacionrow: ampliaciondeinformacionItem.ampliacionId,
                                                                                                                 amplaicionrowvista: ampliaciondeinformacionItem,
-                                                                                                                spdrow: widget.spd!,
                                                                                                                 idexp: widget.idexp!,
                                                                                                                 spd: FFAppState().spd,
                                                                                                               ),
@@ -1428,6 +1446,7 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                                                                 idampliacionrow: ampliaciondeinformacionItem.ampliacionId,
                                                                                                                 spd: widget.spd!,
                                                                                                                 idexp: widget.idexp!,
+                                                                                                                idrol: widget.idrol!,
                                                                                                               ),
                                                                                                             ),
                                                                                                           ),
@@ -1463,10 +1482,10 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                                                               padding: MediaQuery.viewInsetsOf(context),
                                                                                                               child: ListasolicitudaeducacionWidget(
                                                                                                                 idingreso: widget.idingreso,
-                                                                                                                ingresorow: containerIngresosRow,
                                                                                                                 idampliacion: ampliaciondeinformacionItem,
                                                                                                                 spd: widget.spd!,
                                                                                                                 idexp: widget.idexp!,
+                                                                                                                idrol: widget.idrol!,
                                                                                                               ),
                                                                                                             ),
                                                                                                           ),
@@ -1542,6 +1561,7 @@ class _EntrevistasCopyWidgetState extends State<EntrevistasCopyWidget> {
                                                                                                                 idingreso: containerIngresosRow?.id,
                                                                                                                 spd: widget.spd!,
                                                                                                                 idexp: widget.idexp!,
+                                                                                                                idrol: widget.idrol!,
                                                                                                               ),
                                                                                                             ),
                                                                                                           ),

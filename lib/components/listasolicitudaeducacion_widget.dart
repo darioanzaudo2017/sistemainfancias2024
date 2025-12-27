@@ -16,17 +16,17 @@ class ListasolicitudaeducacionWidget extends StatefulWidget {
   const ListasolicitudaeducacionWidget({
     super.key,
     this.idingreso,
-    this.ingresorow,
     required this.idampliacion,
     required this.spd,
     required this.idexp,
+    required this.idrol,
   });
 
   final int? idingreso;
-  final IngresosRow? ingresorow;
   final VistaAmpliacionInformacionRow? idampliacion;
-  final SpdRow? spd;
+  final String? spd;
   final int? idexp;
+  final int? idrol;
 
   @override
   State<ListasolicitudaeducacionWidget> createState() =>
@@ -108,6 +108,7 @@ class _ListasolicitudaeducacionWidgetState
                           spd: widget.spd!,
                           idingreso: widget.idingreso!,
                           idexp: widget.idexp!,
+                          idrol: 0,
                         ),
                       ),
                     );

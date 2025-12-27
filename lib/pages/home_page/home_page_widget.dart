@@ -1783,6 +1783,28 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                         ?.idrol,
                                                     ParamType.int,
                                                   ),
+                                                  'rol': serializeParam(
+                                                    ContextoinicialStruct
+                                                            .maybeFromMap((_model
+                                                                    .contexto
+                                                                    ?.jsonBody ??
+                                                                ''))
+                                                        ?.usuario
+                                                        .roles
+                                                        .firstOrNull
+                                                        ?.rol,
+                                                    ParamType.String,
+                                                  ),
+                                                  'spd': serializeParam(
+                                                    ContextoinicialStruct
+                                                            .maybeFromMap((_model
+                                                                    .contexto
+                                                                    ?.jsonBody ??
+                                                                ''))
+                                                        ?.usuario
+                                                        .spd,
+                                                    ParamType.String,
+                                                  ),
                                                 }.withoutNulls,
                                               );
 
@@ -2539,42 +2561,43 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                         ParamType
                                                                             .int,
                                                                       ),
-                                                                      'usuariorow':
-                                                                          serializeParam(
-                                                                        _model
-                                                                            .usuario1
-                                                                            ?.firstOrNull,
-                                                                        ParamType
-                                                                            .SupabaseRow,
-                                                                      ),
-                                                                      'spd':
-                                                                          serializeParam(
-                                                                        _model
-                                                                            .spd1
-                                                                            ?.firstOrNull,
-                                                                        ParamType
-                                                                            .SupabaseRow,
-                                                                      ),
-                                                                      'usuariorol':
-                                                                          serializeParam(
-                                                                        _model
-                                                                            .userrol1
-                                                                            ?.firstOrNull,
-                                                                        ParamType
-                                                                            .SupabaseRow,
-                                                                      ),
-                                                                      'idcarpeta':
-                                                                          serializeParam(
-                                                                        '',
-                                                                        ParamType
-                                                                            .String,
-                                                                      ),
                                                                       'idnnya':
                                                                           serializeParam(
                                                                         lista2Item
                                                                             .idNNyA,
                                                                         ParamType
                                                                             .int,
+                                                                      ),
+                                                                      'idrol':
+                                                                          serializeParam(
+                                                                        ContextoinicialStruct.maybeFromMap((_model.contexto?.jsonBody ??
+                                                                                ''))
+                                                                            ?.usuario
+                                                                            .roles
+                                                                            .firstOrNull
+                                                                            ?.idrol,
+                                                                        ParamType
+                                                                            .int,
+                                                                      ),
+                                                                      'rol':
+                                                                          serializeParam(
+                                                                        ContextoinicialStruct.maybeFromMap((_model.contexto?.jsonBody ??
+                                                                                ''))
+                                                                            ?.usuario
+                                                                            .roles
+                                                                            .firstOrNull
+                                                                            ?.rol,
+                                                                        ParamType
+                                                                            .String,
+                                                                      ),
+                                                                      'spd1':
+                                                                          serializeParam(
+                                                                        ContextoinicialStruct.maybeFromMap((_model.contexto?.jsonBody ??
+                                                                                ''))
+                                                                            ?.usuario
+                                                                            .spd,
+                                                                        ParamType
+                                                                            .String,
                                                                       ),
                                                                     }.withoutNulls,
                                                                   );

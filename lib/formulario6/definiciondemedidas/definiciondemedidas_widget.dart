@@ -1,7 +1,6 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
-import '/components/anexosbotonera_widget.dart';
 import '/components/barrade_navegacion_widget.dart';
 import '/components/derechoysubderechomedida_widget.dart';
 import '/components/formcaratula_widget.dart';
@@ -28,20 +27,20 @@ export 'definiciondemedidas_model.dart';
 class DefiniciondemedidasWidget extends StatefulWidget {
   const DefiniciondemedidasWidget({
     super.key,
-    required this.usuariorow,
-    required this.usuariosrol,
-    required this.spd,
     required this.idnnya,
     required this.idingreso,
     required this.idexp,
+    required this.idrol,
+    required this.rol,
+    required this.sp,
   });
 
-  final UsuariosRow? usuariorow;
-  final VistaUsuariosRolesRow? usuariosrol;
-  final SpdRow? spd;
   final int? idnnya;
   final int? idingreso;
   final int? idexp;
+  final int? idrol;
+  final String? rol;
+  final String? sp;
 
   static String routeName = 'Definiciondemedidas';
   static String routePath = '/definiciondemedidas';
@@ -104,18 +103,6 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                     widget.idingreso,
                     ParamType.int,
                   ),
-                  'usuariorow': serializeParam(
-                    widget.usuariorow,
-                    ParamType.SupabaseRow,
-                  ),
-                  'spd': serializeParam(
-                    widget.spd,
-                    ParamType.SupabaseRow,
-                  ),
-                  'usuariorol': serializeParam(
-                    widget.usuariosrol,
-                    ParamType.SupabaseRow,
-                  ),
                   'idexp': serializeParam(
                     widget.idexp,
                     ParamType.int,
@@ -123,6 +110,18 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                   'idnnya': serializeParam(
                     widget.idnnya,
                     ParamType.int,
+                  ),
+                  'idrol': serializeParam(
+                    widget.idrol,
+                    ParamType.int,
+                  ),
+                  'rol': serializeParam(
+                    widget.rol,
+                    ParamType.String,
+                  ),
+                  'spd1': serializeParam(
+                    widget.sp,
+                    ParamType.String,
                   ),
                 }.withoutNulls,
               );
@@ -316,47 +315,20 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                               safeSetState(() {}),
                                           child: BarradeNavegacionWidget(
                                             idexp: widget.idexp,
-                                            usuariorow: widget.usuariorow!,
-                                            parameter5: widget.usuariorow?.spd,
                                             idingreso: widget.idingreso,
-                                            expediente:
-                                                rowVistaExpedientesUltimoEstadoRow
-                                                    ?.expediente,
+                                            expediente: widget.idexp!,
                                             fechaExp:
                                                 rowVistaExpedientesUltimoEstadoRow
                                                     ?.fecha
                                                     ?.toString(),
                                             adjuntar: true,
                                             imprimir: true,
-                                            carpeta: true,
                                             ingreso: true,
                                             perfil: false,
                                             idnnya: widget.idnnya,
-                                            spd: widget.spd,
-                                            usuariorol: widget.usuariosrol,
-                                          ),
-                                        ),
-                                        wrapWithModel(
-                                          model: _model.anexosbotoneraModel,
-                                          updateCallback: () =>
-                                              safeSetState(() {}),
-                                          child: AnexosbotoneraWidget(
-                                            idingreso: widget.idingreso!,
-                                            etapa:
-                                                'Definicion, sustitucion y seguimiento MPI',
-                                            reqacciones: true,
-                                            anexoeducacion: false,
-                                            reunioninter: true,
-                                            anexosalud: false,
-                                            entrevistannya: true,
-                                            entrevistaflia: true,
-                                            ampliacion: true,
-                                            usuariosrow: widget.usuariorow!,
-                                            editar: false,
-                                            usuariorol: widget.usuariosrol,
-                                            spd: widget.spd!,
-                                            idexp: widget.idexp,
-                                            idnnya: widget.idnnya!,
+                                            idrol: widget.idrol!,
+                                            rol: widget.rol!,
+                                            spd: widget.sp!,
                                           ),
                                         ),
                                       ].divide(SizedBox(height: 5.0)),
@@ -424,7 +396,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                         child: TarjetaencabezadoWidget(
                                           idexpediente: widget.idexp,
                                           idnnya: widget.idnnya,
-                                          rowspd: widget.spd,
+                                          spd: widget.sp,
                                         ),
                                       ),
                                       Align(
@@ -469,14 +441,12 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                     context),
                                                             child:
                                                                 FormcaratulaWidget(
-                                                              usuariorow: widget
-                                                                  .usuariorow!,
                                                               idexp:
                                                                   widget.idexp,
                                                               editar: true,
                                                               dniok: false,
-                                                              usuariorol: widget
-                                                                  .usuariosrol!,
+                                                              idrol: widget
+                                                                  .idrol!,
                                                             ),
                                                           ),
                                                         ),
@@ -1040,9 +1010,11 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                               child: Formulario6Widget(
                                                                                 editar: false,
                                                                                 idform6: 0,
-                                                                                rol: widget.usuariosrol!,
+                                                                                rol: widget.rol!,
                                                                                 idingreso1: widget.idingreso!,
                                                                                 idexp: widget.idexp!,
+                                                                                idrol: widget.idrol!,
+                                                                                spd: widget.sp!,
                                                                               ),
                                                                             ),
                                                                           ),
@@ -1598,9 +1570,11 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                                               child: Formulario6Widget(
                                                                                                 editar: true,
                                                                                                 idform6: listdefiniciondemedidasItem.id,
-                                                                                                rol: widget.usuariosrol!,
+                                                                                                rol: widget.rol!,
                                                                                                 idingreso1: widget.idingreso!,
                                                                                                 idexp: widget.idexp!,
+                                                                                                idrol: widget.idrol!,
+                                                                                                spd: widget.sp!,
                                                                                               ),
                                                                                             ),
                                                                                           ),
@@ -1626,9 +1600,11 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                                                 child: Formulario6Widget(
                                                                                                   editar: false,
                                                                                                   idform6: listdefiniciondemedidasItem.id,
-                                                                                                  rol: widget.usuariosrol!,
+                                                                                                  rol: widget.rol!,
                                                                                                   idingreso1: widget.idingreso!,
                                                                                                   idexp: widget.idexp!,
+                                                                                                  idrol: widget.idrol!,
+                                                                                                  spd: widget.sp!,
                                                                                                 ),
                                                                                               ),
                                                                                             ),
@@ -2066,11 +2042,13 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                                                                             padding: MediaQuery.viewInsetsOf(context),
                                                                                                                             child: Formulario7Widget(
                                                                                                                               editar: true,
-                                                                                                                              usuariorow: widget.usuariorow!,
+                                                                                                                              rol: widget.rol!,
                                                                                                                               idform7: listViewListadeactasRow.idform7,
                                                                                                                               idlistaacta: listViewListadeactasRow.id,
                                                                                                                               idingreso1: widget.idingreso!,
                                                                                                                               idexp: widget.idexp!,
+                                                                                                                              idrol: widget.idrol!,
+                                                                                                                              spd: widget.sp!,
                                                                                                                             ),
                                                                                                                           ),
                                                                                                                         ),
@@ -2334,7 +2312,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               crossAxisAlignment: CrossAxisAlignment.center,
                                                                               children: [
-                                                                                if (rowVistaExpedientesUltimoEstadoRow?.spd == widget.usuariorow?.spd)
+                                                                                if (rowVistaExpedientesUltimoEstadoRow?.spd == widget.sp)
                                                                                   Column(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     children: [
@@ -2364,11 +2342,13 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
                                                                                                         padding: MediaQuery.viewInsetsOf(context),
                                                                                                         child: Formulario7Widget(
                                                                                                           editar: false,
-                                                                                                          usuariorow: widget.usuariorow!,
+                                                                                                          rol: widget.rol!,
                                                                                                           idform7: _model.form7?.id,
                                                                                                           idlistaacta: 0,
                                                                                                           idingreso1: widget.idingreso!,
                                                                                                           idexp: widget.idexp!,
+                                                                                                          idrol: widget.idrol!,
+                                                                                                          spd: widget.sp!,
                                                                                                         ),
                                                                                                       ),
                                                                                                     ),

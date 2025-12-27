@@ -19,12 +19,14 @@ class ListareunioninterinstitucionalWidget extends StatefulWidget {
     required this.formulario,
     required this.spd,
     required this.idexp,
+    required this.idrol,
   });
 
   final int? idingreso;
   final String? formulario;
-  final SpdRow? spd;
+  final String? spd;
   final int? idexp;
+  final int? idrol;
 
   @override
   State<ListareunioninterinstitucionalWidget> createState() =>

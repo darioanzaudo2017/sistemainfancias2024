@@ -1,5 +1,4 @@
 import '/backend/supabase/supabase.dart';
-import '/components/anexosbotonera_widget.dart';
 import '/components/tarjetaencabezado_widget.dart';
 import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -131,8 +130,6 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   Formulario5Row? insertform5;
   Completer<List<IngresosRow>>? requestCompleter2;
-  // Model for anexosbotonera component.
-  late AnexosbotoneraModel anexosbotoneraModel;
 
   @override
   void initState(BuildContext context) {
@@ -143,7 +140,6 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
     textFieldresponsablesTextControllerValidator =
         _textFieldresponsablesTextControllerValidator;
     textController4Validator = _textController4Validator;
-    anexosbotoneraModel = createModel(context, () => AnexosbotoneraModel());
   }
 
   @override
@@ -174,8 +170,6 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
 
     textFieldPropuestasparamedidasdeProteccionIntegralFocusNode?.dispose();
     textFieldPropuestasparamedidasdeProteccionIntegralTextController?.dispose();
-
-    anexosbotoneraModel.dispose();
   }
 
   /// Additional helper methods.
