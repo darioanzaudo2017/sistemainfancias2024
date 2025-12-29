@@ -19,14 +19,16 @@ class AnexoeducacionsolicitudWidget extends StatefulWidget {
     required this.spd,
     required this.idingreso,
     required this.idexp,
+    required this.idrol,
   });
 
   final bool? editar;
   final int? idanexosalud;
   final VistaAmpliacionInformacionRow? idampliacion;
-  final SpdRow? spd;
+  final String? spd;
   final int? idingreso;
   final int? idexp;
+  final int? idrol;
 
   @override
   State<AnexoeducacionsolicitudWidget> createState() =>
@@ -49,7 +51,7 @@ class _AnexoeducacionsolicitudWidgetState
     _model = createModel(context, () => AnexoeducacionsolicitudModel());
 
     _model.textFieldcpcTextController ??=
-        TextEditingController(text: widget.spd?.nombrespd);
+        TextEditingController(text: widget.spd);
     _model.textFieldcpcFocusNode ??= FocusNode();
 
     _model.textFieldnombreestablecimientoFocusNode ??= FocusNode();
@@ -839,7 +841,7 @@ class _AnexoeducacionsolicitudWidgetState
                                       _model.creasolicitudeducacion =
                                           await AnexoinstitucioneeducacionTable()
                                               .insert({
-                                        'spd': widget.spd?.nombrespd,
+                                        'spd': widget.spd,
                                         'fecha': _model.datePicked?.toString(),
                                         'idingreso': widget.idingreso,
                                         'expediente':
@@ -874,8 +876,8 @@ class _AnexoeducacionsolicitudWidgetState
                                         numestablecimiento: _model
                                             .textFieldnombreestablecimientoTextController
                                             .text,
-                                        cpc: widget.spd?.direccion,
-                                        spd: widget.spd?.nombrespd,
+                                        cpc: widget.spd,
+                                        spd: widget.spd,
                                         fechadecomienzo: dateTimeFormat(
                                           "d/M/y",
                                           containerVistaExpedientesUltimoEstadoRow
@@ -883,7 +885,7 @@ class _AnexoeducacionsolicitudWidgetState
                                           locale: FFLocalizations.of(context)
                                               .languageCode,
                                         ),
-                                        domicilio: widget.spd?.direccion,
+                                        domicilio: 'completar',
                                       );
 
                                       await AnexoinstitucioneeducacionTable()

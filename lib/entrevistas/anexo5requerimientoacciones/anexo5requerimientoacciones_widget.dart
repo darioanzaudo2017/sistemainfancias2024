@@ -17,17 +17,21 @@ class Anexo5requerimientoaccionesWidget extends StatefulWidget {
     this.editar,
     this.idanexosalud,
     this.idmedida,
-    required this.usuario,
     required this.idingreso,
     required this.idexp,
+    required this.idrol,
+    required this.rol,
+    required this.spd,
   });
 
   final bool? editar;
   final int? idanexosalud;
   final int? idmedida;
-  final UsuariosRow? usuario;
   final int? idingreso;
   final int? idexp;
+  final int? idrol;
+  final String? rol;
+  final String? spd;
 
   @override
   State<Anexo5requerimientoaccionesWidget> createState() =>
@@ -842,7 +846,8 @@ class _Anexo5requerimientoaccionesWidgetState
                                         _model.spd = await SpdTable().queryRows(
                                           queryFn: (q) => q.eqOrNull(
                                             'nombrespd',
-                                            widget.usuario?.spd,
+                                            containerVistaExpedientesUltimoEstadoRow
+                                                ?.spd,
                                           ),
                                         );
                                         _model.apiResults9d =

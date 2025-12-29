@@ -19,7 +19,6 @@ class ListaconvocatoriaNNyAWidget extends StatefulWidget {
     this.idingreso,
     this.idampliacionrow,
     this.amplaicionrowvista,
-    required this.spdrow,
     required this.idexp,
     required this.spd,
   });
@@ -27,7 +26,6 @@ class ListaconvocatoriaNNyAWidget extends StatefulWidget {
   final int? idingreso;
   final int? idampliacionrow;
   final VistaAmpliacionInformacionRow? amplaicionrowvista;
-  final SpdRow? spdrow;
 
   /// idexp
   final int? idexp;
@@ -185,7 +183,7 @@ class _ListaconvocatoriaNNyAWidgetState
                                       child: AvisoVisitaNNyAWidget(
                                         editar: false,
                                         idampliacion: widget.idampliacionrow,
-                                        spdrow: widget.spdrow!,
+                                        spdrow: widget.spd!,
                                         idconvocatoriaNNyA: 0,
                                         idexp: widget.idexp!,
                                         idingreso: widget.idingreso!,

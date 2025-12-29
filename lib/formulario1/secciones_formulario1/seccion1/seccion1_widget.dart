@@ -18,8 +18,6 @@ class Seccion1Widget extends StatefulWidget {
   const Seccion1Widget({
     super.key,
     this.editar,
-    required this.usuariorow,
-    required this.usuariorol,
     required this.idingreso2,
     required this.idexp,
     required this.iduser,
@@ -28,8 +26,6 @@ class Seccion1Widget extends StatefulWidget {
   });
 
   final bool? editar;
-  final UsuariosRow? usuariorow;
-  final VistaUsuariosRolesRow? usuariorol;
   final int? idingreso2;
   final int? idexp;
   final String? iduser;
@@ -5015,17 +5011,12 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                             MainAxisAlignment.center,
                                         children: [
                                           if (() {
-                                            if (widget.usuariorol?.rolId ==
-                                                3) {
-                                              return (widget.usuariorow?.spd ==
+                                            if (widget.idrol == 3) {
+                                              return (widget.spdexp ==
                                                   widget.spdexp);
-                                            } else if (widget
-                                                    .usuariorol?.rolId ==
-                                                2) {
+                                            } else if (widget.idrol == 2) {
                                               return true;
-                                            } else if (widget
-                                                    .usuariorol?.rolId ==
-                                                1) {
+                                            } else if (widget.idrol == 1) {
                                               return true;
                                             } else {
                                               return false;
@@ -5405,13 +5396,12 @@ class _Seccion1WidgetState extends State<Seccion1Widget> {
                                     ),
                                   ),
                                   if (() {
-                                    if ((widget.usuariorol?.rolId == 3) &&
-                                        (widget.usuariorol?.spd ==
-                                            widget.spdexp)) {
+                                    if ((widget.idrol == 3) &&
+                                        (widget.spdexp == widget.spdexp)) {
                                       return true;
-                                    } else if (widget.usuariorol?.rolId == 2) {
+                                    } else if (widget.idrol == 2) {
                                       return true;
-                                    } else if (widget.usuariorol?.rolId == 1) {
+                                    } else if (widget.idrol == 1) {
                                       return false;
                                     } else {
                                       return false;

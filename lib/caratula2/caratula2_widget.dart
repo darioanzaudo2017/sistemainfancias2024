@@ -24,11 +24,15 @@ class Caratula2Widget extends StatefulWidget {
     required this.spdnombre,
     required this.idzona,
     required this.idrol,
+    required this.rol,
+    required this.spd,
   });
 
   final String? spdnombre;
   final int? idzona;
   final int? idrol;
+  final String? rol;
+  final String? spd;
 
   static String routeName = 'caratula2';
   static String routePath = '/caratula2';
@@ -1981,21 +1985,21 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                   ''),
                                               ParamType.int,
                                             ),
-                                            'usuariorow': serializeParam(
-                                              _model.usuario11?.firstOrNull,
-                                              ParamType.SupabaseRow,
-                                            ),
-                                            'spd': serializeParam(
-                                              _model.spd11?.firstOrNull,
-                                              ParamType.SupabaseRow,
-                                            ),
-                                            'usuariorol': serializeParam(
-                                              _model.userrol?.firstOrNull,
-                                              ParamType.SupabaseRow,
-                                            ),
                                             'idnnya': serializeParam(
                                               0,
                                               ParamType.int,
+                                            ),
+                                            'idrol': serializeParam(
+                                              widget.idrol,
+                                              ParamType.int,
+                                            ),
+                                            'rol': serializeParam(
+                                              '',
+                                              ParamType.String,
+                                            ),
+                                            'spd1': serializeParam(
+                                              '',
+                                              ParamType.String,
                                             ),
                                           }.withoutNulls,
                                         );
@@ -2761,26 +2765,6 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                             tabla2Item.id,
                                                             ParamType.int,
                                                           ),
-                                                          'usuariorow':
-                                                              serializeParam(
-                                                            _model.usuario
-                                                                ?.firstOrNull,
-                                                            ParamType
-                                                                .SupabaseRow,
-                                                          ),
-                                                          'spd': serializeParam(
-                                                            _model.spd
-                                                                ?.firstOrNull,
-                                                            ParamType
-                                                                .SupabaseRow,
-                                                          ),
-                                                          'usuariorol':
-                                                              serializeParam(
-                                                            _model.userrol
-                                                                ?.firstOrNull,
-                                                            ParamType
-                                                                .SupabaseRow,
-                                                          ),
                                                           'idnnya':
                                                               serializeParam(
                                                             _model
@@ -2788,6 +2772,20 @@ class _Caratula2WidgetState extends State<Caratula2Widget> {
                                                                 ?.firstOrNull
                                                                 ?.idNNyA,
                                                             ParamType.int,
+                                                          ),
+                                                          'idrol':
+                                                              serializeParam(
+                                                            widget.idrol,
+                                                            ParamType.int,
+                                                          ),
+                                                          'rol': serializeParam(
+                                                            widget.rol,
+                                                            ParamType.String,
+                                                          ),
+                                                          'spd1':
+                                                              serializeParam(
+                                                            widget.spd,
+                                                            ParamType.String,
                                                           ),
                                                         }.withoutNulls,
                                                       );

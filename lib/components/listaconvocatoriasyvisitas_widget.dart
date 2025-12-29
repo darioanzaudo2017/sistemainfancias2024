@@ -19,12 +19,14 @@ class ListaconvocatoriasyvisitasWidget extends StatefulWidget {
     this.idampliacionrow,
     required this.spd,
     required this.idexp,
+    required this.idrol,
   });
 
   final int? idingreso;
   final int? idampliacionrow;
-  final SpdRow? spd;
+  final String? spd;
   final int? idexp;
+  final int? idrol;
 
   @override
   State<ListaconvocatoriasyvisitasWidget> createState() =>
@@ -147,6 +149,7 @@ class _ListaconvocatoriasyvisitasWidgetState
                                       idavisoconcurrencia: 0,
                                       idingreso: widget.idingreso!,
                                       idexp: widget.idexp!,
+                                      idrol: widget.idrol!,
                                     ),
                                   ),
                                 );

@@ -17,19 +17,23 @@ class Formulario7Widget extends StatefulWidget {
   const Formulario7Widget({
     super.key,
     this.editar,
-    required this.usuariorow,
+    required this.rol,
     this.idform7,
     this.idlistaacta,
     required this.idingreso1,
     required this.idexp,
+    required this.idrol,
+    required this.spd,
   });
 
   final bool? editar;
-  final UsuariosRow? usuariorow;
+  final String? rol;
   final int? idform7;
   final int? idlistaacta;
   final int? idingreso1;
   final int? idexp;
+  final int? idrol;
+  final String? spd;
 
   @override
   State<Formulario7Widget> createState() => _Formulario7WidgetState();

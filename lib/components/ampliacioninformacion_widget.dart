@@ -31,9 +31,9 @@ class AmpliacioninformacionWidget extends StatefulWidget {
     super.key,
     this.idampliacion,
     this.editar,
-    required this.usuariorow,
+    required this.idrol,
     this.formulario,
-    required this.usuariorol,
+    required this.rol,
     this.tipoampliacion,
     required this.spd,
     required this.idampliacionhistorial,
@@ -43,11 +43,11 @@ class AmpliacioninformacionWidget extends StatefulWidget {
 
   final int? idampliacion;
   final bool? editar;
-  final UsuariosRow? usuariorow;
+  final int? idrol;
   final String? formulario;
-  final VistaUsuariosRolesRow? usuariorol;
+  final String? rol;
   final String? tipoampliacion;
-  final SpdRow? spd;
+  final String? spd;
   final int? idampliacionhistorial;
   final int? idexp;
   final int? idingreso2;

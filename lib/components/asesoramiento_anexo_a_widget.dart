@@ -15,23 +15,23 @@ class AsesoramientoAnexoAWidget extends StatefulWidget {
   const AsesoramientoAnexoAWidget({
     super.key,
     bool? edit,
-    this.usuariorow,
-    this.spd,
-    this.usuariorol,
     required this.idnnya,
     required this.idingreso,
     required this.idexp,
     required this.idseccion9,
+    required this.idrol,
+    required this.rol,
+    required this.spd,
   }) : this.edit = edit ?? false;
 
   final bool edit;
-  final UsuariosRow? usuariorow;
-  final SpdRow? spd;
-  final VistaUsuariosRolesRow? usuariorol;
   final int? idnnya;
   final int? idingreso;
   final int? idexp;
   final int? idseccion9;
+  final int? idrol;
+  final String? rol;
+  final String? spd;
 
   @override
   State<AsesoramientoAnexoAWidget> createState() =>
@@ -1482,7 +1482,7 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                                                     containerVistaExpedientesUltimoEstadoRow
                                                         ?.DNI
                                                         ?.toString(),
-                                                spd: widget.spd?.nombrespd,
+                                                spd: widget.spd,
                                                 domicilio:
                                                     _model.textController2.text,
                                                 tipoatencion:
@@ -1699,27 +1699,21 @@ class _AsesoramientoAnexoAWidgetState extends State<AsesoramientoAnexoAWidget> {
                                                       widget.idexp,
                                                       ParamType.int,
                                                     ),
-                                                    'usuariorow':
-                                                        serializeParam(
-                                                      widget.usuariorow,
-                                                      ParamType.SupabaseRow,
-                                                    ),
-                                                    'spd': serializeParam(
-                                                      widget.spd,
-                                                      ParamType.SupabaseRow,
-                                                    ),
-                                                    'usuariorol':
-                                                        serializeParam(
-                                                      widget.usuariorol,
-                                                      ParamType.SupabaseRow,
-                                                    ),
-                                                    'idcarpeta': serializeParam(
-                                                      '',
-                                                      ParamType.String,
-                                                    ),
                                                     'idnnya': serializeParam(
                                                       widget.idnnya,
                                                       ParamType.int,
+                                                    ),
+                                                    'idrol': serializeParam(
+                                                      widget.idrol,
+                                                      ParamType.int,
+                                                    ),
+                                                    'rol': serializeParam(
+                                                      widget.rol,
+                                                      ParamType.String,
+                                                    ),
+                                                    'spd1': serializeParam(
+                                                      widget.spd,
+                                                      ParamType.String,
                                                     ),
                                                   }.withoutNulls,
                                                 );

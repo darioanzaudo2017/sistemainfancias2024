@@ -21,13 +21,17 @@ class Formulario6Widget extends StatefulWidget {
     required this.rol,
     required this.idingreso1,
     required this.idexp,
+    required this.idrol,
+    required this.spd,
   });
 
   final bool? editar;
   final int? idform6;
-  final VistaUsuariosRolesRow? rol;
+  final String? rol;
   final int? idingreso1;
   final int? idexp;
+  final int? idrol;
+  final String? spd;
 
   @override
   State<Formulario6Widget> createState() => _Formulario6WidgetState();
@@ -182,8 +186,8 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                       },
                                     ),
                                   ),
-                                  if (((widget.rol?.rolId == 3) &&
-                                          (widget.rol?.rolId == 2)) ||
+                                  if (((widget.idrol == 3) &&
+                                          (widget.idrol == 2)) ||
                                       _model.editarform6)
                                     FlutterFlowIconButton(
                                       borderRadius: 8.0,
@@ -2039,8 +2043,8 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      if (((widget.rol?.rolId == 3) &&
-                                              (widget.rol?.rolId == 2)) ||
+                                      if (((widget.idrol == 3) &&
+                                              (widget.idrol == 2)) ||
                                           !_model.editarform6)
                                         Padding(
                                           padding:
