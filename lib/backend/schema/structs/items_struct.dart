@@ -21,6 +21,8 @@ class ItemsStruct extends BaseStruct {
     int? countIngresos,
     String? edadCalculada,
     int? idNNyA,
+    String? nombre,
+    String? apellido,
   })  : _id = id,
         _dni = dni,
         _spd = spd,
@@ -34,7 +36,9 @@ class ItemsStruct extends BaseStruct {
         _ultimoEstado = ultimoEstado,
         _countIngresos = countIngresos,
         _edadCalculada = edadCalculada,
-        _idNNyA = idNNyA;
+        _idNNyA = idNNyA,
+        _nombre = nombre,
+        _apellido = apellido;
 
   // "id" field.
   int? _id;
@@ -147,6 +151,20 @@ class ItemsStruct extends BaseStruct {
 
   bool hasIdNNyA() => _idNNyA != null;
 
+  // "Nombre" field.
+  String? _nombre;
+  String get nombre => _nombre ?? '';
+  set nombre(String? val) => _nombre = val;
+
+  bool hasNombre() => _nombre != null;
+
+  // "Apellido" field.
+  String? _apellido;
+  String get apellido => _apellido ?? '';
+  set apellido(String? val) => _apellido = val;
+
+  bool hasApellido() => _apellido != null;
+
   static ItemsStruct fromMap(Map<String, dynamic> data) => ItemsStruct(
         id: castToType<int>(data['id']),
         dni: castToType<int>(data['dni']),
@@ -162,6 +180,8 @@ class ItemsStruct extends BaseStruct {
         countIngresos: castToType<int>(data['count_ingresos']),
         edadCalculada: data['edad_calculada'] as String?,
         idNNyA: castToType<int>(data['idNNyA']),
+        nombre: data['Nombre'] as String?,
+        apellido: data['Apellido'] as String?,
       );
 
   static ItemsStruct? maybeFromMap(dynamic data) =>
@@ -182,6 +202,8 @@ class ItemsStruct extends BaseStruct {
         'count_ingresos': _countIngresos,
         'edad_calculada': _edadCalculada,
         'idNNyA': _idNNyA,
+        'Nombre': _nombre,
+        'Apellido': _apellido,
       }.withoutNulls;
 
   @override
@@ -241,6 +263,14 @@ class ItemsStruct extends BaseStruct {
         'idNNyA': serializeParam(
           _idNNyA,
           ParamType.int,
+        ),
+        'Nombre': serializeParam(
+          _nombre,
+          ParamType.String,
+        ),
+        'Apellido': serializeParam(
+          _apellido,
+          ParamType.String,
         ),
       }.withoutNulls;
 
@@ -316,6 +346,16 @@ class ItemsStruct extends BaseStruct {
           ParamType.int,
           false,
         ),
+        nombre: deserializeParam(
+          data['Nombre'],
+          ParamType.String,
+          false,
+        ),
+        apellido: deserializeParam(
+          data['Apellido'],
+          ParamType.String,
+          false,
+        ),
       );
 
   @override
@@ -337,7 +377,9 @@ class ItemsStruct extends BaseStruct {
         ultimoEstado == other.ultimoEstado &&
         countIngresos == other.countIngresos &&
         edadCalculada == other.edadCalculada &&
-        idNNyA == other.idNNyA;
+        idNNyA == other.idNNyA &&
+        nombre == other.nombre &&
+        apellido == other.apellido;
   }
 
   @override
@@ -355,7 +397,9 @@ class ItemsStruct extends BaseStruct {
         ultimoEstado,
         countIngresos,
         edadCalculada,
-        idNNyA
+        idNNyA,
+        nombre,
+        apellido
       ]);
 }
 
@@ -374,6 +418,8 @@ ItemsStruct createItemsStruct({
   int? countIngresos,
   String? edadCalculada,
   int? idNNyA,
+  String? nombre,
+  String? apellido,
 }) =>
     ItemsStruct(
       id: id,
@@ -390,4 +436,6 @@ ItemsStruct createItemsStruct({
       countIngresos: countIngresos,
       edadCalculada: edadCalculada,
       idNNyA: idNNyA,
+      nombre: nombre,
+      apellido: apellido,
     );

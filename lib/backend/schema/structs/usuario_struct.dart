@@ -10,14 +10,16 @@ class UsuarioStruct extends BaseStruct {
     String? nombre,
     String? spd,
     int? zona,
-    bool? esGlobal,
+    bool? esAdmin,
     List<RolesStruct>? roles,
+    bool? esSpd,
   })  : _id = id,
         _nombre = nombre,
         _spd = spd,
         _zona = zona,
-        _esGlobal = esGlobal,
-        _roles = roles;
+        _esAdmin = esAdmin,
+        _roles = roles,
+        _esSpd = esSpd;
 
   // "id" field.
   String? _id;
@@ -49,12 +51,12 @@ class UsuarioStruct extends BaseStruct {
 
   bool hasZona() => _zona != null;
 
-  // "es_global" field.
-  bool? _esGlobal;
-  bool get esGlobal => _esGlobal ?? false;
-  set esGlobal(bool? val) => _esGlobal = val;
+  // "es_admin" field.
+  bool? _esAdmin;
+  bool get esAdmin => _esAdmin ?? false;
+  set esAdmin(bool? val) => _esAdmin = val;
 
-  bool hasEsGlobal() => _esGlobal != null;
+  bool hasEsAdmin() => _esAdmin != null;
 
   // "roles" field.
   List<RolesStruct>? _roles;
@@ -67,16 +69,24 @@ class UsuarioStruct extends BaseStruct {
 
   bool hasRoles() => _roles != null;
 
+  // "es_spd" field.
+  bool? _esSpd;
+  bool get esSpd => _esSpd ?? false;
+  set esSpd(bool? val) => _esSpd = val;
+
+  bool hasEsSpd() => _esSpd != null;
+
   static UsuarioStruct fromMap(Map<String, dynamic> data) => UsuarioStruct(
         id: data['id'] as String?,
         nombre: data['nombre'] as String?,
         spd: data['spd'] as String?,
         zona: castToType<int>(data['zona']),
-        esGlobal: data['es_global'] as bool?,
+        esAdmin: data['es_admin'] as bool?,
         roles: getStructList(
           data['roles'],
           RolesStruct.fromMap,
         ),
+        esSpd: data['es_spd'] as bool?,
       );
 
   static UsuarioStruct? maybeFromMap(dynamic data) =>
@@ -87,8 +97,9 @@ class UsuarioStruct extends BaseStruct {
         'nombre': _nombre,
         'spd': _spd,
         'zona': _zona,
-        'es_global': _esGlobal,
+        'es_admin': _esAdmin,
         'roles': _roles?.map((e) => e.toMap()).toList(),
+        'es_spd': _esSpd,
       }.withoutNulls;
 
   @override
@@ -109,14 +120,18 @@ class UsuarioStruct extends BaseStruct {
           _zona,
           ParamType.int,
         ),
-        'es_global': serializeParam(
-          _esGlobal,
+        'es_admin': serializeParam(
+          _esAdmin,
           ParamType.bool,
         ),
         'roles': serializeParam(
           _roles,
           ParamType.DataStruct,
           isList: true,
+        ),
+        'es_spd': serializeParam(
+          _esSpd,
+          ParamType.bool,
         ),
       }.withoutNulls;
 
@@ -142,8 +157,8 @@ class UsuarioStruct extends BaseStruct {
           ParamType.int,
           false,
         ),
-        esGlobal: deserializeParam(
-          data['es_global'],
+        esAdmin: deserializeParam(
+          data['es_admin'],
           ParamType.bool,
           false,
         ),
@@ -152,6 +167,11 @@ class UsuarioStruct extends BaseStruct {
           ParamType.DataStruct,
           true,
           structBuilder: RolesStruct.fromSerializableMap,
+        ),
+        esSpd: deserializeParam(
+          data['es_spd'],
+          ParamType.bool,
+          false,
         ),
       );
 
@@ -166,13 +186,14 @@ class UsuarioStruct extends BaseStruct {
         nombre == other.nombre &&
         spd == other.spd &&
         zona == other.zona &&
-        esGlobal == other.esGlobal &&
-        listEquality.equals(roles, other.roles);
+        esAdmin == other.esAdmin &&
+        listEquality.equals(roles, other.roles) &&
+        esSpd == other.esSpd;
   }
 
   @override
   int get hashCode =>
-      const ListEquality().hash([id, nombre, spd, zona, esGlobal, roles]);
+      const ListEquality().hash([id, nombre, spd, zona, esAdmin, roles, esSpd]);
 }
 
 UsuarioStruct createUsuarioStruct({
@@ -180,12 +201,14 @@ UsuarioStruct createUsuarioStruct({
   String? nombre,
   String? spd,
   int? zona,
-  bool? esGlobal,
+  bool? esAdmin,
+  bool? esSpd,
 }) =>
     UsuarioStruct(
       id: id,
       nombre: nombre,
       spd: spd,
       zona: zona,
-      esGlobal: esGlobal,
+      esAdmin: esAdmin,
+      esSpd: esSpd,
     );

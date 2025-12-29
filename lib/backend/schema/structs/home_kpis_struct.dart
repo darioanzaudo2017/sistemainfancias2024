@@ -8,21 +8,25 @@ import '/flutter_flow/flutter_flow_util.dart';
 class HomeKpisStruct extends BaseStruct {
   HomeKpisStruct({
     int? expedientesTotales,
-    int? nnyaTotales,
+    int? personasRegistradas,
     int? nnyaMenores18,
     int? nnyaMayores18,
     int? ingresosTotales,
     int? ingresosAbiertos,
     int? ingresosCerrados,
     int? ingresosUltimos30Dias,
+    int? ingresosCerradosAsesoramiento,
+    int? solicitudesSenaf,
   })  : _expedientesTotales = expedientesTotales,
-        _nnyaTotales = nnyaTotales,
+        _personasRegistradas = personasRegistradas,
         _nnyaMenores18 = nnyaMenores18,
         _nnyaMayores18 = nnyaMayores18,
         _ingresosTotales = ingresosTotales,
         _ingresosAbiertos = ingresosAbiertos,
         _ingresosCerrados = ingresosCerrados,
-        _ingresosUltimos30Dias = ingresosUltimos30Dias;
+        _ingresosUltimos30Dias = ingresosUltimos30Dias,
+        _ingresosCerradosAsesoramiento = ingresosCerradosAsesoramiento,
+        _solicitudesSenaf = solicitudesSenaf;
 
   // "expedientes_totales" field.
   int? _expedientesTotales;
@@ -34,14 +38,15 @@ class HomeKpisStruct extends BaseStruct {
 
   bool hasExpedientesTotales() => _expedientesTotales != null;
 
-  // "nnya_totales" field.
-  int? _nnyaTotales;
-  int get nnyaTotales => _nnyaTotales ?? 0;
-  set nnyaTotales(int? val) => _nnyaTotales = val;
+  // "personas_registradas" field.
+  int? _personasRegistradas;
+  int get personasRegistradas => _personasRegistradas ?? 0;
+  set personasRegistradas(int? val) => _personasRegistradas = val;
 
-  void incrementNnyaTotales(int amount) => nnyaTotales = nnyaTotales + amount;
+  void incrementPersonasRegistradas(int amount) =>
+      personasRegistradas = personasRegistradas + amount;
 
-  bool hasNnyaTotales() => _nnyaTotales != null;
+  bool hasPersonasRegistradas() => _personasRegistradas != null;
 
   // "nnya_menores_18" field.
   int? _nnyaMenores18;
@@ -103,9 +108,31 @@ class HomeKpisStruct extends BaseStruct {
 
   bool hasIngresosUltimos30Dias() => _ingresosUltimos30Dias != null;
 
+  // "ingresos_cerrados_asesoramiento" field.
+  int? _ingresosCerradosAsesoramiento;
+  int get ingresosCerradosAsesoramiento => _ingresosCerradosAsesoramiento ?? 0;
+  set ingresosCerradosAsesoramiento(int? val) =>
+      _ingresosCerradosAsesoramiento = val;
+
+  void incrementIngresosCerradosAsesoramiento(int amount) =>
+      ingresosCerradosAsesoramiento = ingresosCerradosAsesoramiento + amount;
+
+  bool hasIngresosCerradosAsesoramiento() =>
+      _ingresosCerradosAsesoramiento != null;
+
+  // "solicitudes_senaf" field.
+  int? _solicitudesSenaf;
+  int get solicitudesSenaf => _solicitudesSenaf ?? 0;
+  set solicitudesSenaf(int? val) => _solicitudesSenaf = val;
+
+  void incrementSolicitudesSenaf(int amount) =>
+      solicitudesSenaf = solicitudesSenaf + amount;
+
+  bool hasSolicitudesSenaf() => _solicitudesSenaf != null;
+
   static HomeKpisStruct fromMap(Map<String, dynamic> data) => HomeKpisStruct(
         expedientesTotales: castToType<int>(data['expedientes_totales']),
-        nnyaTotales: castToType<int>(data['nnya_totales']),
+        personasRegistradas: castToType<int>(data['personas_registradas']),
         nnyaMenores18: castToType<int>(data['nnya_menores_18']),
         nnyaMayores18: castToType<int>(data['nnya_mayores_18']),
         ingresosTotales: castToType<int>(data['ingresos_totales']),
@@ -113,6 +140,9 @@ class HomeKpisStruct extends BaseStruct {
         ingresosCerrados: castToType<int>(data['ingresos_cerrados']),
         ingresosUltimos30Dias:
             castToType<int>(data['ingresos_ultimos_30_dias']),
+        ingresosCerradosAsesoramiento:
+            castToType<int>(data['ingresos_cerrados_asesoramiento']),
+        solicitudesSenaf: castToType<int>(data['solicitudes_senaf']),
       );
 
   static HomeKpisStruct? maybeFromMap(dynamic data) =>
@@ -120,13 +150,15 @@ class HomeKpisStruct extends BaseStruct {
 
   Map<String, dynamic> toMap() => {
         'expedientes_totales': _expedientesTotales,
-        'nnya_totales': _nnyaTotales,
+        'personas_registradas': _personasRegistradas,
         'nnya_menores_18': _nnyaMenores18,
         'nnya_mayores_18': _nnyaMayores18,
         'ingresos_totales': _ingresosTotales,
         'ingresos_abiertos': _ingresosAbiertos,
         'ingresos_cerrados': _ingresosCerrados,
         'ingresos_ultimos_30_dias': _ingresosUltimos30Dias,
+        'ingresos_cerrados_asesoramiento': _ingresosCerradosAsesoramiento,
+        'solicitudes_senaf': _solicitudesSenaf,
       }.withoutNulls;
 
   @override
@@ -135,8 +167,8 @@ class HomeKpisStruct extends BaseStruct {
           _expedientesTotales,
           ParamType.int,
         ),
-        'nnya_totales': serializeParam(
-          _nnyaTotales,
+        'personas_registradas': serializeParam(
+          _personasRegistradas,
           ParamType.int,
         ),
         'nnya_menores_18': serializeParam(
@@ -163,6 +195,14 @@ class HomeKpisStruct extends BaseStruct {
           _ingresosUltimos30Dias,
           ParamType.int,
         ),
+        'ingresos_cerrados_asesoramiento': serializeParam(
+          _ingresosCerradosAsesoramiento,
+          ParamType.int,
+        ),
+        'solicitudes_senaf': serializeParam(
+          _solicitudesSenaf,
+          ParamType.int,
+        ),
       }.withoutNulls;
 
   static HomeKpisStruct fromSerializableMap(Map<String, dynamic> data) =>
@@ -172,8 +212,8 @@ class HomeKpisStruct extends BaseStruct {
           ParamType.int,
           false,
         ),
-        nnyaTotales: deserializeParam(
-          data['nnya_totales'],
+        personasRegistradas: deserializeParam(
+          data['personas_registradas'],
           ParamType.int,
           false,
         ),
@@ -207,6 +247,16 @@ class HomeKpisStruct extends BaseStruct {
           ParamType.int,
           false,
         ),
+        ingresosCerradosAsesoramiento: deserializeParam(
+          data['ingresos_cerrados_asesoramiento'],
+          ParamType.int,
+          false,
+        ),
+        solicitudesSenaf: deserializeParam(
+          data['solicitudes_senaf'],
+          ParamType.int,
+          false,
+        ),
       );
 
   @override
@@ -216,45 +266,53 @@ class HomeKpisStruct extends BaseStruct {
   bool operator ==(Object other) {
     return other is HomeKpisStruct &&
         expedientesTotales == other.expedientesTotales &&
-        nnyaTotales == other.nnyaTotales &&
+        personasRegistradas == other.personasRegistradas &&
         nnyaMenores18 == other.nnyaMenores18 &&
         nnyaMayores18 == other.nnyaMayores18 &&
         ingresosTotales == other.ingresosTotales &&
         ingresosAbiertos == other.ingresosAbiertos &&
         ingresosCerrados == other.ingresosCerrados &&
-        ingresosUltimos30Dias == other.ingresosUltimos30Dias;
+        ingresosUltimos30Dias == other.ingresosUltimos30Dias &&
+        ingresosCerradosAsesoramiento == other.ingresosCerradosAsesoramiento &&
+        solicitudesSenaf == other.solicitudesSenaf;
   }
 
   @override
   int get hashCode => const ListEquality().hash([
         expedientesTotales,
-        nnyaTotales,
+        personasRegistradas,
         nnyaMenores18,
         nnyaMayores18,
         ingresosTotales,
         ingresosAbiertos,
         ingresosCerrados,
-        ingresosUltimos30Dias
+        ingresosUltimos30Dias,
+        ingresosCerradosAsesoramiento,
+        solicitudesSenaf
       ]);
 }
 
 HomeKpisStruct createHomeKpisStruct({
   int? expedientesTotales,
-  int? nnyaTotales,
+  int? personasRegistradas,
   int? nnyaMenores18,
   int? nnyaMayores18,
   int? ingresosTotales,
   int? ingresosAbiertos,
   int? ingresosCerrados,
   int? ingresosUltimos30Dias,
+  int? ingresosCerradosAsesoramiento,
+  int? solicitudesSenaf,
 }) =>
     HomeKpisStruct(
       expedientesTotales: expedientesTotales,
-      nnyaTotales: nnyaTotales,
+      personasRegistradas: personasRegistradas,
       nnyaMenores18: nnyaMenores18,
       nnyaMayores18: nnyaMayores18,
       ingresosTotales: ingresosTotales,
       ingresosAbiertos: ingresosAbiertos,
       ingresosCerrados: ingresosCerrados,
       ingresosUltimos30Dias: ingresosUltimos30Dias,
+      ingresosCerradosAsesoramiento: ingresosCerradosAsesoramiento,
+      solicitudesSenaf: solicitudesSenaf,
     );

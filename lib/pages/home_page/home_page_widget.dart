@@ -1036,7 +1036,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                       Expanded(
                                                                         child:
                                                                             Text(
-                                                                          'Expedientes',
+                                                                          'ingresos_totales',
                                                                           textAlign:
                                                                               TextAlign.center,
                                                                           style: FlutterFlowTheme.of(context)
@@ -1048,129 +1048,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                                 ),
                                                                                 color: FlutterFlowTheme.of(context).primaryText,
                                                                                 fontSize: 10.0,
-                                                                                letterSpacing: 0.0,
-                                                                                fontWeight: FontWeight.w500,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                              ),
-                                                                        ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child: Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      mainAxisAlignment:
-                                                                          MainAxisAlignment
-                                                                              .center,
-                                                                      crossAxisAlignment:
-                                                                          CrossAxisAlignment
-                                                                              .end,
-                                                                      children: [
-                                                                        Text(
-                                                                          valueOrDefault<
-                                                                              String>(
-                                                                            ContextoinicialStruct.maybeFromMap((_model.contexto?.jsonBody ?? ''))?.homeKpis.expedientesTotales.toString(),
-                                                                            '0',
-                                                                          ),
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .displaySmall
-                                                                              .override(
-                                                                                font: GoogleFonts.outfit(
-                                                                                  fontWeight: FontWeight.w600,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                                ),
-                                                                                color: Color(0xFF14181B),
-                                                                                fontSize: 25.0,
-                                                                                letterSpacing: 0.0,
-                                                                                fontWeight: FontWeight.w600,
-                                                                                fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-                                                                              ),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      12.0,
-                                                                      12.0,
-                                                                      0.0,
-                                                                      12.0),
-                                                          child: Container(
-                                                            width: 110.0,
-                                                            height: 80.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color:
-                                                                  Colors.white,
-                                                              boxShadow: [
-                                                                BoxShadow(
-                                                                  blurRadius:
-                                                                      4.0,
-                                                                  color: Color(
-                                                                      0x2B202529),
-                                                                  offset:
-                                                                      Offset(
-                                                                    0.0,
-                                                                    2.0,
-                                                                  ),
-                                                                )
-                                                              ],
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          12.0),
-                                                            ),
-                                                            child: Padding(
-                                                              padding:
-                                                                  EdgeInsets
-                                                                      .all(
-                                                                          12.0),
-                                                              child: Column(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceAround,
-                                                                children: [
-                                                                  Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .center,
-                                                                    children: [
-                                                                      Expanded(
-                                                                        child:
-                                                                            Text(
-                                                                          'Demandas totales',
-                                                                          textAlign:
-                                                                              TextAlign.center,
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyLarge
-                                                                              .override(
-                                                                                font: GoogleFonts.plusJakartaSans(
-                                                                                  fontWeight: FontWeight.w500,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                ),
-                                                                                color: FlutterFlowTheme.of(context).primaryText,
-                                                                                fontSize: 12.0,
                                                                                 letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w500,
                                                                                 fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
@@ -1282,7 +1159,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                       Expanded(
                                                                         child:
                                                                             Text(
-                                                                          'Casos Abiertos',
+                                                                          'Casos abiertos',
                                                                           textAlign:
                                                                               TextAlign.center,
                                                                           style: FlutterFlowTheme.of(context)
@@ -1324,6 +1201,129 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                           valueOrDefault<
                                                                               String>(
                                                                             ContextoinicialStruct.maybeFromMap((_model.contexto?.jsonBody ?? ''))?.homeKpis.ingresosAbiertos.toString(),
+                                                                            '0',
+                                                                          ),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .displaySmall
+                                                                              .override(
+                                                                                font: GoogleFonts.outfit(
+                                                                                  fontWeight: FontWeight.w600,
+                                                                                  fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                                ),
+                                                                                color: Color(0xFF14181B),
+                                                                                fontSize: 25.0,
+                                                                                letterSpacing: 0.0,
+                                                                                fontWeight: FontWeight.w600,
+                                                                                fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                                                                              ),
+                                                                        ),
+                                                                      ],
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      12.0,
+                                                                      12.0,
+                                                                      0.0,
+                                                                      12.0),
+                                                          child: Container(
+                                                            width: 110.0,
+                                                            height: 80.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color:
+                                                                  Colors.white,
+                                                              boxShadow: [
+                                                                BoxShadow(
+                                                                  blurRadius:
+                                                                      4.0,
+                                                                  color: Color(
+                                                                      0x2B202529),
+                                                                  offset:
+                                                                      Offset(
+                                                                    0.0,
+                                                                    2.0,
+                                                                  ),
+                                                                )
+                                                              ],
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          12.0),
+                                                            ),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsets
+                                                                      .all(
+                                                                          12.0),
+                                                              child: Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .spaceAround,
+                                                                children: [
+                                                                  Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .center,
+                                                                    children: [
+                                                                      Expanded(
+                                                                        child:
+                                                                            Text(
+                                                                          'Casos cerrados',
+                                                                          textAlign:
+                                                                              TextAlign.center,
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyLarge
+                                                                              .override(
+                                                                                font: GoogleFonts.plusJakartaSans(
+                                                                                  fontWeight: FontWeight.w500,
+                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                ),
+                                                                                color: FlutterFlowTheme.of(context).primaryText,
+                                                                                fontSize: 12.0,
+                                                                                letterSpacing: 0.0,
+                                                                                fontWeight: FontWeight.w500,
+                                                                                fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                              ),
+                                                                        ),
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                                  Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                    child: Row(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .center,
+                                                                      crossAxisAlignment:
+                                                                          CrossAxisAlignment
+                                                                              .end,
+                                                                      children: [
+                                                                        Text(
+                                                                          valueOrDefault<
+                                                                              String>(
+                                                                            ContextoinicialStruct.maybeFromMap((_model.contexto?.jsonBody ?? ''))?.homeKpis.ingresosCerrados.toString(),
                                                                             '0',
                                                                           ),
                                                                           style: FlutterFlowTheme.of(context)
@@ -1447,7 +1447,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                         Text(
                                                                           valueOrDefault<
                                                                               String>(
-                                                                            ContextoinicialStruct.maybeFromMap((_model.contexto?.jsonBody ?? ''))?.homeKpis.expedientesTotales.toString(),
+                                                                            ContextoinicialStruct.maybeFromMap((_model.contexto?.jsonBody ?? ''))?.homeKpis.ingresosCerradosAsesoramiento.toString(),
                                                                             '0',
                                                                           ),
                                                                           style: FlutterFlowTheme.of(context)
@@ -1569,7 +1569,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                               .end,
                                                                       children: [
                                                                         Text(
-                                                                          '',
+                                                                          valueOrDefault<
+                                                                              String>(
+                                                                            ContextoinicialStruct.maybeFromMap((_model.contexto?.jsonBody ?? ''))?.homeKpis.solicitudesSenaf.toString(),
+                                                                            '0',
+                                                                          ),
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .displaySmall
                                                                               .override(
@@ -1689,7 +1693,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                               .end,
                                                                       children: [
                                                                         Text(
-                                                                          '',
+                                                                          valueOrDefault<
+                                                                              String>(
+                                                                            ContextoinicialStruct.maybeFromMap((_model.contexto?.jsonBody ?? ''))?.homeKpis.ingresosUltimos30Dias.toString(),
+                                                                            '0',
+                                                                          ),
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .displaySmall
                                                                               .override(
@@ -2262,7 +2270,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                               .start,
                                                                       children: [
                                                                         Text(
-                                                                          '${lista2Item.nombres}, ${lista2Item.apellidos}',
+                                                                          '${lista2Item.nombre}, ${lista2Item.apellido}',
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .headlineSmall
                                                                               .override(

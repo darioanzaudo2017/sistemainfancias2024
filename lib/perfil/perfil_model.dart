@@ -14,8 +14,10 @@ class PerfilModel extends FlutterFlowModel<PerfilWidget> {
 
   // Model for barradeNavegacion component.
   late BarradeNavegacionModel barradeNavegacionModel;
-  // Stores action output result for [Backend Call - Query Rows] action in IconButton widget.
-  List<VistaExpedientesUltimoEstadoRow>? exp;
+  // Stores action output result for [Backend Call - API (crearingresoconexpedientesinoexiste)] action in Button widget.
+  ApiCallResponse? apiResulteqd;
+  // Stores action output result for [Backend Call - API (copiaringresocompleto)] action in Button widget.
+  ApiCallResponse? apiResult73t;
   // Model for ultimaactualizacion component.
   late UltimaactualizacionModel ultimaactualizacionModel;
   // Model for tarjetaencabezado component.

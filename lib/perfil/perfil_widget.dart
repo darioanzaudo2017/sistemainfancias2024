@@ -579,7 +579,40 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                 ),
                                                                               ),
                                                                               FFButtonWidget(
-                                                                                onPressed: () async {},
+                                                                                onPressed: () async {
+                                                                                  _model.apiResulteqd = await CrearingresoconexpedientesinoexisteCall.call(
+                                                                                    token: currentJwtToken,
+                                                                                    pIdingreso: widget.idingreso,
+                                                                                    pIdNnya: containerVarItem.idnnya,
+                                                                                  );
+
+                                                                                  if ((_model.apiResulteqd?.succeeded ?? true)) {
+                                                                                    _model.apiResult73t = await CopiaringresocompletoCall.call(
+                                                                                      token: currentJwtToken,
+                                                                                      pIdIngresoDestino: CrearingresoconexpedientesinoexisteCall.idingresonuevo(
+                                                                                        (_model.apiResulteqd?.jsonBody ?? ''),
+                                                                                      ),
+                                                                                      pIdIngresoOrigen: widget.idingreso,
+                                                                                    );
+
+                                                                                    if ((_model.apiResult73t?.succeeded ?? true)) {
+                                                                                      ScaffoldMessenger.of(context).showSnackBar(
+                                                                                        SnackBar(
+                                                                                          content: Text(
+                                                                                            'se copio toda la informacion del ingreso al expediente nuevo',
+                                                                                            style: TextStyle(
+                                                                                              color: FlutterFlowTheme.of(context).primaryText,
+                                                                                            ),
+                                                                                          ),
+                                                                                          duration: Duration(milliseconds: 4000),
+                                                                                          backgroundColor: FlutterFlowTheme.of(context).secondary,
+                                                                                        ),
+                                                                                      );
+                                                                                    }
+                                                                                  }
+
+                                                                                  safeSetState(() {});
+                                                                                },
                                                                                 text: 'crear exp',
                                                                                 options: FFButtonOptions(
                                                                                   height: 20.0,
@@ -611,41 +644,8 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                   color: Color(0xFF57636C),
                                                                                   size: 20.0,
                                                                                 ),
-                                                                                onPressed: () async {
-                                                                                  _model.exp = await VistaExpedientesUltimoEstadoTable().queryRows(
-                                                                                    queryFn: (q) => q.eqOrNull(
-                                                                                      'id',
-                                                                                      PerfilcompletopaginaStruct.maybeFromMap(perfilPerfilCompletoPaginaResponse.jsonBody)?.perfilExpediente.id,
-                                                                                    ),
-                                                                                  );
-
-                                                                                  context.pushNamed(
-                                                                                    IngresosWidget.routeName,
-                                                                                    queryParameters: {
-                                                                                      'idexp': serializeParam(
-                                                                                        _model.exp?.firstOrNull?.id,
-                                                                                        ParamType.int,
-                                                                                      ),
-                                                                                      'idnnya': serializeParam(
-                                                                                        0,
-                                                                                        ParamType.int,
-                                                                                      ),
-                                                                                      'idrol': serializeParam(
-                                                                                        ContextoinicialStruct.maybeFromMap(rowInfoDeContextoResponse.jsonBody)?.usuario.roles.firstOrNull?.idrol,
-                                                                                        ParamType.int,
-                                                                                      ),
-                                                                                      'rol': serializeParam(
-                                                                                        ContextoinicialStruct.maybeFromMap(rowInfoDeContextoResponse.jsonBody)?.usuario.roles.firstOrNull?.rol,
-                                                                                        ParamType.String,
-                                                                                      ),
-                                                                                      'spd1': serializeParam(
-                                                                                        ContextoinicialStruct.maybeFromMap(rowInfoDeContextoResponse.jsonBody)?.usuario.spd,
-                                                                                        ParamType.String,
-                                                                                      ),
-                                                                                    }.withoutNulls,
-                                                                                  );
-
-                                                                                  safeSetState(() {});
+                                                                                onPressed: () {
+                                                                                  print('IconButton pressed ...');
                                                                                 },
                                                                               ),
                                                                             ],
