@@ -16,13 +16,11 @@ export 'adjuntardocumento_model.dart';
 class AdjuntardocumentoWidget extends StatefulWidget {
   const AdjuntardocumentoWidget({
     super.key,
-    this.ingrow,
     this.idampliacion,
     required this.idexp,
     required this.idingreso,
   });
 
-  final IngresosRow? ingrow;
   final int? idampliacion;
   final int? idexp;
   final int? idingreso;

@@ -13,14 +13,10 @@ export 'listadodeadjuntos_model.dart';
 class ListadodeadjuntosWidget extends StatefulWidget {
   const ListadodeadjuntosWidget({
     super.key,
-    required this.expedienterow,
-    required this.ingresorow,
     required this.idexp,
     required this.idingreso,
   });
 
-  final VistaExpedientesUltimoEstadoRow? expedienterow;
-  final IngresosRow? ingresorow;
   final int? idexp;
   final int? idingreso;
 
@@ -63,7 +59,7 @@ class _ListadodeadjuntosWidgetState extends State<ListadodeadjuntosWidget> {
           future: DocumentosadjuntosTable().queryRows(
             queryFn: (q) => q.eqOrNull(
               'idingresodoc',
-              widget.ingresorow?.id,
+              widget.idingreso,
             ),
           ),
           builder: (context, snapshot) {
@@ -135,7 +131,6 @@ class _ListadodeadjuntosWidgetState extends State<ListadodeadjuntosWidget> {
                                   child: Padding(
                                     padding: MediaQuery.viewInsetsOf(context),
                                     child: AdjuntardocumentoWidget(
-                                      ingrow: widget.ingresorow,
                                       idampliacion: 0,
                                       idexp: 0,
                                       idingreso: 0,

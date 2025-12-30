@@ -1,5 +1,4 @@
 import '/backend/api_requests/api_calls.dart';
-import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'agregar_conviviente_widget.dart' show AgregarConvivienteWidget;
@@ -21,8 +20,8 @@ class AgregarConvivienteModel
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();
-  // State field(s) for RadioButtoncud widget.
-  FormFieldController<String>? radioButtoncudValueController;
+  // State field(s) for RadioButtonconviviente widget.
+  FormFieldController<String>? radioButtonconvivienteValueController;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
   TextEditingController? textController1;
@@ -72,12 +71,6 @@ class AgregarConvivienteModel
   TextEditingController? textController6;
   late MaskTextInputFormatter textFieldMask4;
   String? Function(BuildContext, String?)? textController6Validator;
-  // State field(s) for ChoiceChips widget.
-  FormFieldController<List<String>>? choiceChipsValueController;
-  String? get choiceChipsValue =>
-      choiceChipsValueController?.value?.firstOrNull;
-  set choiceChipsValue(String? val) =>
-      choiceChipsValueController?.value = val != null ? [val] : [];
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode5;
   TextEditingController? textController7;
@@ -86,16 +79,6 @@ class AgregarConvivienteModel
   FocusNode? textFieldFocusNode6;
   TextEditingController? textController8;
   String? Function(BuildContext, String?)? textController8Validator;
-  // Stores action output result for [Backend Call - API (ExisteDNInnya)] action in Button widget.
-  ApiCallResponse? chekdnigrupo;
-  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
-  List<NNyARow>? busquedapersonadni;
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  GrupoConvivienteRow? aaa;
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  NNyARow? crearnnyanuevo;
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  GrupoConvivienteRow? creargrupo;
   // Stores action output result for [Backend Call - API (Agregar grupo conviviente)] action in Button widget.
   ApiCallResponse? apiResultyuv;
 
@@ -133,5 +116,6 @@ class AgregarConvivienteModel
   }
 
   /// Additional helper methods.
-  String? get radioButtoncudValue => radioButtoncudValueController?.value;
+  String? get radioButtonconvivienteValue =>
+      radioButtonconvivienteValueController?.value;
 }

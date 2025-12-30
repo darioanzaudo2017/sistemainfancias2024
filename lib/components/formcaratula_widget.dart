@@ -22,15 +22,13 @@ class FormcaratulaWidget extends StatefulWidget {
     this.idexp,
     this.editar,
     this.dniok,
-    required this.usuariorow,
-    required this.usuariorol,
+    required this.idrol,
   });
 
   final int? idexp;
   final bool? editar;
   final bool? dniok;
-  final UsuariosRow? usuariorow;
-  final VistaUsuariosRolesRow? usuariorol;
+  final int? idrol;
 
   @override
   State<FormcaratulaWidget> createState() => _FormcaratulaWidgetState();
@@ -1144,7 +1142,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                             _model.dropDownValueController ??=
                                                 FormFieldController<String>(
                                           _model.dropDownValue ??=
-                                              widget.usuariorow?.spd,
+                                              containerExpedienteRow?.spd,
                                         ),
                                         options: dropDownSpdRowList
                                             .map((e) => e.nombrespd)
@@ -1242,8 +1240,7 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                         margin: EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 0.0),
                                         hidesUnderline: true,
-                                        disabled:
-                                            widget.usuariorol?.rolId == 3,
+                                        disabled: widget.idrol == 3,
                                         isOverButton: false,
                                         isSearchable: true,
                                         isMultiSelect: false,
@@ -1542,6 +1539,8 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                               },
                                             );
                                             Navigator.pop(context, true);
+                                            FFAppState()
+                                                .clearTarjetaexpedientecacheCache();
 
                                             safeSetState(() {});
                                           },

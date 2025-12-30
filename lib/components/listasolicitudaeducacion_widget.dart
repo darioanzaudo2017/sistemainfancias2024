@@ -3,6 +3,7 @@ import '/entrevistas/anexoeducacionsolicitud/anexoeducacionsolicitud_widget.dart
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
@@ -15,17 +16,17 @@ class ListasolicitudaeducacionWidget extends StatefulWidget {
   const ListasolicitudaeducacionWidget({
     super.key,
     this.idingreso,
-    this.ingresorow,
-    this.rowexp,
     required this.idampliacion,
     required this.spd,
+    required this.idexp,
+    required this.idrol,
   });
 
   final int? idingreso;
-  final IngresosRow? ingresorow;
-  final VistaExpedientesUltimoEstadoRow? rowexp;
   final VistaAmpliacionInformacionRow? idampliacion;
-  final SpdRow? spd;
+  final String? spd;
+  final int? idexp;
+  final int? idrol;
 
   @override
   State<ListasolicitudaeducacionWidget> createState() =>
@@ -101,17 +102,26 @@ class _ListasolicitudaeducacionWidgetState
                       child: Padding(
                         padding: MediaQuery.viewInsetsOf(context),
                         child: AnexoeducacionsolicitudWidget(
-                          rowingreso: widget.ingresorow!,
-                          rowexp: widget.rowexp!,
                           editar: false,
                           idanexosalud: 0,
                           idampliacion: widget.idampliacion!,
                           spd: widget.spd!,
+                          idingreso: widget.idingreso!,
+                          idexp: widget.idexp!,
+                          idrol: 0,
                         ),
                       ),
                     );
                   },
-                ).then((value) => safeSetState(() {}));
+                ).then((value) =>
+                    safeSetState(() => _model.solicitudeducacion = value));
+
+                if (_model.solicitudeducacion!) {
+                  safeSetState(() => _model.requestCompleter = null);
+                  await _model.waitForRequestCompleted();
+                }
+
+                safeSetState(() {});
               },
               text: 'Solicitud informacion Educacion',
               options: FFButtonOptions(
@@ -140,14 +150,17 @@ class _ListasolicitudaeducacionWidgetState
             Align(
               alignment: AlignmentDirectional(0.0, 0.0),
               child: FutureBuilder<List<AnexoinstitucioneeducacionRow>>(
-                future: AnexoinstitucioneeducacionTable().queryRows(
-                  queryFn: (q) => q
-                      .eqOrNull(
-                        'idingreso',
-                        widget.idingreso,
-                      )
-                      .order('fecha'),
-                ),
+                future: (_model.requestCompleter ??= Completer<
+                        List<AnexoinstitucioneeducacionRow>>()
+                      ..complete(AnexoinstitucioneeducacionTable().queryRows(
+                        queryFn: (q) => q
+                            .eqOrNull(
+                              'idingreso',
+                              widget.idingreso,
+                            )
+                            .order('fecha'),
+                      )))
+                    .future,
                 builder: (context, snapshot) {
                   // Customize what your widget looks like when it's loading.
                   if (!snapshot.hasData) {

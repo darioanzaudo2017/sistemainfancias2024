@@ -16,18 +16,22 @@ export 'formulario6_model.dart';
 class Formulario6Widget extends StatefulWidget {
   const Formulario6Widget({
     super.key,
-    this.idingreso,
-    this.rowexp,
     this.editar,
     this.idform6,
     required this.rol,
+    required this.idingreso1,
+    required this.idexp,
+    required this.idrol,
+    required this.spd,
   });
 
-  final IngresosRow? idingreso;
-  final VistaExpedientesUltimoEstadoRow? rowexp;
   final bool? editar;
   final int? idform6;
-  final VistaUsuariosRolesRow? rol;
+  final String? rol;
+  final int? idingreso1;
+  final int? idexp;
+  final int? idrol;
+  final String? spd;
 
   @override
   State<Formulario6Widget> createState() => _Formulario6WidgetState();
@@ -120,7 +124,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                   queryFn: (q) => q
                       .eqOrNull(
                         'idingreso',
-                        widget.idingreso?.id,
+                        widget.idingreso1,
                       )
                       .eqOrNull(
                         'validoinforme',
@@ -182,8 +186,8 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                       },
                                     ),
                                   ),
-                                  if (((widget.rol?.rolId == 3) &&
-                                          (widget.rol?.rolId == 2)) ||
+                                  if (((widget.idrol == 3) &&
+                                          (widget.idrol == 2)) ||
                                       _model.editarform6)
                                     FlutterFlowIconButton(
                                       borderRadius: 8.0,
@@ -2039,8 +2043,8 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      if (((widget.rol?.rolId == 3) &&
-                                              (widget.rol?.rolId == 2)) ||
+                                      if (((widget.idrol == 3) &&
+                                              (widget.idrol == 2)) ||
                                           !_model.editarform6)
                                         Padding(
                                           padding:
@@ -2077,9 +2081,8 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                                       supaSerialize<DateTime>(
                                                           _model.datePicked1),
                                                   'idIngresoform6':
-                                                      widget.idingreso?.id,
-                                                  'idExpform6':
-                                                      widget.rowexp?.id,
+                                                      widget.idingreso1,
+                                                  'idExpform6': widget.idexp,
                                                   'estado': 'Activa',
                                                   'idmedidasustiuida':
                                                       widget.idform6,
@@ -2105,7 +2108,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                                   'inform6':
                                                       _model.creaform6?.id,
                                                   'idingreso':
-                                                      widget.idingreso?.id,
+                                                      widget.idingreso1,
                                                   'respuesta': true,
                                                   'reiteracion': false,
                                                   'elevacion': false,
@@ -2123,7 +2126,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                                   matchingRows: (rows) =>
                                                       rows.eqOrNull(
                                                     'id',
-                                                    widget.idingreso?.id,
+                                                    widget.idingreso1,
                                                   ),
                                                 );
                                                 await showDialog(
@@ -2223,7 +2226,7 @@ class _Formulario6WidgetState extends State<Formulario6Widget> {
                                                   matchingRows: (rows) =>
                                                       rows.eqOrNull(
                                                     'id',
-                                                    widget.idingreso?.id,
+                                                    widget.idingreso1,
                                                   ),
                                                 );
                                                 await showDialog(

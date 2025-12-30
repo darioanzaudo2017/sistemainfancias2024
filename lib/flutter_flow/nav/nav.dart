@@ -102,25 +102,25 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'idingreso',
               ParamType.int,
             ),
-            usuariorow: params.getParam<UsuariosRow>(
-              'usuariorow',
-              ParamType.SupabaseRow,
-            ),
-            spd: params.getParam<SpdRow>(
-              'spd',
-              ParamType.SupabaseRow,
-            ),
-            usuariorol: params.getParam<VistaUsuariosRolesRow>(
-              'usuariorol',
-              ParamType.SupabaseRow,
-            ),
-            rowexp: params.getParam<VistaExpedientesUltimoEstadoRow>(
-              'rowexp',
-              ParamType.SupabaseRow,
-            ),
             idexp: params.getParam(
               'idexp',
               ParamType.int,
+            ),
+            idnnya: params.getParam(
+              'idnnya',
+              ParamType.int,
+            ),
+            idrol: params.getParam(
+              'idrol',
+              ParamType.int,
+            ),
+            rol: params.getParam(
+              'rol',
+              ParamType.String,
+            ),
+            spd1: params.getParam(
+              'spd1',
+              ParamType.String,
             ),
           ),
         ),
@@ -133,21 +133,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'idexp',
               ParamType.int,
             ),
-            usuariorow: params.getParam<UsuariosRow>(
-              'usuariorow',
-              ParamType.SupabaseRow,
+            idnnya: params.getParam(
+              'idnnya',
+              ParamType.int,
             ),
-            spd: params.getParam<SpdRow>(
-              'spd',
-              ParamType.SupabaseRow,
+            idrol: params.getParam(
+              'idrol',
+              ParamType.int,
             ),
-            idcarpeta: params.getParam(
-              'idcarpeta',
+            rol: params.getParam(
+              'rol',
               ParamType.String,
             ),
-            usuariorol: params.getParam<VistaUsuariosRolesRow>(
-              'usuariorol',
-              ParamType.SupabaseRow,
+            spd1: params.getParam(
+              'spd1',
+              ParamType.String,
             ),
           ),
         ),
@@ -155,25 +155,29 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: DefiniciondemedidasWidget.routeName,
           path: DefiniciondemedidasWidget.routePath,
           builder: (context, params) => DefiniciondemedidasWidget(
-            ingresorow: params.getParam<IngresosRow>(
-              'ingresorow',
-              ParamType.SupabaseRow,
+            idnnya: params.getParam(
+              'idnnya',
+              ParamType.int,
             ),
-            rowexp: params.getParam<VistaExpedientesUltimoEstadoRow>(
-              'rowexp',
-              ParamType.SupabaseRow,
+            idingreso: params.getParam(
+              'idingreso',
+              ParamType.int,
             ),
-            usuariorow: params.getParam<UsuariosRow>(
-              'usuariorow',
-              ParamType.SupabaseRow,
+            idexp: params.getParam(
+              'idexp',
+              ParamType.int,
             ),
-            usuariosrol: params.getParam<VistaUsuariosRolesRow>(
-              'usuariosrol',
-              ParamType.SupabaseRow,
+            idrol: params.getParam(
+              'idrol',
+              ParamType.int,
             ),
-            spd: params.getParam<SpdRow>(
-              'spd',
-              ParamType.SupabaseRow,
+            rol: params.getParam(
+              'rol',
+              ParamType.String,
+            ),
+            sp: params.getParam(
+              'sp',
+              ParamType.String,
             ),
           ),
         ),
@@ -220,29 +224,29 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'idingreso',
               ParamType.int,
             ),
-            rowexpediente: params.getParam<VistaExpedientesUltimoEstadoRow>(
-              'rowexpediente',
-              ParamType.SupabaseRow,
-            ),
-            rowingreso: params.getParam<IngresosRow>(
-              'rowingreso',
-              ParamType.SupabaseRow,
-            ),
             edit: params.getParam(
               'edit',
               ParamType.bool,
             ),
-            usuariorow: params.getParam<UsuariosRow>(
-              'usuariorow',
-              ParamType.SupabaseRow,
+            idnnya: params.getParam(
+              'idnnya',
+              ParamType.int,
             ),
-            usuariorol: params.getParam<VistaUsuariosRolesRow>(
-              'usuariorol',
-              ParamType.SupabaseRow,
+            idexp: params.getParam(
+              'idexp',
+              ParamType.int,
             ),
-            spd: params.getParam<SpdRow>(
-              'spd',
-              ParamType.SupabaseRow,
+            idrol: params.getParam(
+              'idrol',
+              ParamType.int,
+            ),
+            rol: params.getParam(
+              'rol',
+              ParamType.String,
+            ),
+            spd1: params.getParam(
+              'spd1',
+              ParamType.String,
             ),
           ),
         ),
@@ -250,26 +254,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: SenafWidget.routeName,
           path: SenafWidget.routePath,
           builder: (context, params) => SenafWidget(
-            ingrow: params.getParam<IngresosRow>(
-              'ingrow',
-              ParamType.SupabaseRow,
-            ),
-            expediente: params.getParam<VistaExpedientesUltimoEstadoRow>(
-              'expediente',
-              ParamType.SupabaseRow,
-            ),
-            usuariorow: params.getParam<UsuariosRow>(
-              'usuariorow',
-              ParamType.SupabaseRow,
-            ),
-            usuariorol: params.getParam<VistaUsuariosRolesRow>(
-              'usuariorol',
-              ParamType.SupabaseRow,
-            ),
-            spdrow: params.getParam<SpdRow>(
-              'spdrow',
-              ParamType.SupabaseRow,
-            ),
             idexp: params.getParam(
               'idexp',
               ParamType.int,
@@ -277,6 +261,22 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             idingreso: params.getParam(
               'idingreso',
               ParamType.int,
+            ),
+            idnnya: params.getParam(
+              'idnnya',
+              ParamType.int,
+            ),
+            idrol: params.getParam(
+              'idrol',
+              ParamType.int,
+            ),
+            rol: params.getParam(
+              'rol',
+              ParamType.String,
+            ),
+            spd: params.getParam(
+              'spd',
+              ParamType.String,
             ),
           ),
         ),
@@ -328,23 +328,47 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'usuariorow',
               ParamType.SupabaseRow,
             ),
+            idnnya: params.getParam(
+              'idnnya',
+              ParamType.int,
+            ),
+            idrol: params.getParam(
+              'idrol',
+              ParamType.int,
+            ),
+            rol: params.getParam(
+              'rol',
+              ParamType.String,
+            ),
+            spd: params.getParam(
+              'spd',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
           name: Caratula2Widget.routeName,
           path: Caratula2Widget.routePath,
           builder: (context, params) => Caratula2Widget(
-            usuario: params.getParam<UsuariosRow>(
-              'usuario',
-              ParamType.SupabaseRow,
+            spdnombre: params.getParam(
+              'spdnombre',
+              ParamType.String,
             ),
-            spd: params.getParam<SpdRow>(
+            idzona: params.getParam(
+              'idzona',
+              ParamType.int,
+            ),
+            idrol: params.getParam(
+              'idrol',
+              ParamType.int,
+            ),
+            rol: params.getParam(
+              'rol',
+              ParamType.String,
+            ),
+            spd: params.getParam(
               'spd',
-              ParamType.SupabaseRow,
-            ),
-            usuriorol: params.getParam<VistaUsuariosRolesRow>(
-              'usuriorol',
-              ParamType.SupabaseRow,
+              ParamType.String,
             ),
           ),
         ),
@@ -385,25 +409,29 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: EntrevistasCopyWidget.routeName,
           path: EntrevistasCopyWidget.routePath,
           builder: (context, params) => EntrevistasCopyWidget(
-            ingresorow: params.getParam(
-              'ingresorow',
+            idingreso: params.getParam(
+              'idingreso',
               ParamType.int,
             ),
-            rowexp: params.getParam<VistaExpedientesUltimoEstadoRow>(
-              'rowexp',
-              ParamType.SupabaseRow,
+            idnnya: params.getParam(
+              'idnnya',
+              ParamType.int,
             ),
-            usuariorow: params.getParam<UsuariosRow>(
-              'usuariorow',
-              ParamType.SupabaseRow,
+            idexp: params.getParam(
+              'idexp',
+              ParamType.int,
             ),
-            usuariorol: params.getParam<VistaUsuariosRolesRow>(
-              'usuariorol',
-              ParamType.SupabaseRow,
+            idrol: params.getParam(
+              'idrol',
+              ParamType.int,
             ),
-            spd: params.getParam<SpdRow>(
+            rol: params.getParam(
+              'rol',
+              ParamType.String,
+            ),
+            spd: params.getParam(
               'spd',
-              ParamType.SupabaseRow,
+              ParamType.String,
             ),
           ),
         ),
@@ -418,11 +446,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => Auth2ForgotPasswordCopyWidget(),
         ),
         FFRoute(
-          name: HomestitchWidget.routeName,
-          path: HomestitchWidget.routePath,
-          builder: (context, params) => HomestitchWidget(),
-        ),
-        FFRoute(
           name: AdminzonaWidget.routeName,
           path: AdminzonaWidget.routePath,
           builder: (context, params) => AdminzonaWidget(
@@ -433,6 +456,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             usuariorow: params.getParam<UsuariosRow>(
               'usuariorow',
               ParamType.SupabaseRow,
+            ),
+            idrol: params.getParam(
+              'idrol',
+              ParamType.int,
+            ),
+            rol: params.getParam(
+              'rol',
+              ParamType.String,
             ),
           ),
         ),
@@ -462,14 +493,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             idexpediente: params.getParam(
               'idexpediente',
               ParamType.int,
-            ),
-            rowingreso: params.getParam<IngresosRow>(
-              'rowingreso',
-              ParamType.SupabaseRow,
-            ),
-            rowexp: params.getParam<VistaExpedientesUltimoEstadoRow>(
-              'rowexp',
-              ParamType.SupabaseRow,
             ),
             idseccion1: params.getParam(
               'idseccion1',

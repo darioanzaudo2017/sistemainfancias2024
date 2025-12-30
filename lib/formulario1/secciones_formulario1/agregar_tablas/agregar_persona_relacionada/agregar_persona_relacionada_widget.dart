@@ -15,12 +15,12 @@ export 'agregar_persona_relacionada_model.dart';
 class AgregarPersonaRelacionadaWidget extends StatefulWidget {
   const AgregarPersonaRelacionadaWidget({
     super.key,
-    required this.rowingreso,
-    required this.idexp,
+    required this.idingreso,
+    required this.idexpediente,
   });
 
-  final IngresosRow? rowingreso;
-  final VistaExpedientesUltimoEstadoRow? idexp;
+  final int? idingreso;
+  final int? idexpediente;
 
   @override
   State<AgregarPersonaRelacionadaWidget> createState() =>
@@ -961,8 +961,8 @@ class _AgregarPersonaRelacionadaWidgetState
                                         : _model.textController6.text,
                                     'telefono': _model.textController3.text,
                                     'direccion': _model.textController4.text,
-                                    'idIngreso': widget.rowingreso?.id,
-                                    'idExpediente': widget.idexp?.id,
+                                    'idIngreso': widget.idingreso,
+                                    'idExpediente': widget.idexpediente,
                                     'updated_at': supaSerialize<DateTime>(
                                         getCurrentTimestamp),
                                     'iduser': currentUserUid,
@@ -975,8 +975,8 @@ class _AgregarPersonaRelacionadaWidgetState
                                         _model.textController5.text,
                                   });
                                   await Formulario4Table().insert({
-                                    'idIngreso': widget.rowingreso?.id,
-                                    'idExpediente': widget.idexp?.id,
+                                    'idIngreso': widget.idingreso,
+                                    'idExpediente': widget.idexpediente,
                                     'fecha': supaSerialize<DateTime>(
                                         getCurrentTimestamp),
                                     'nomEnt': _model.textController1.text,
@@ -992,10 +992,11 @@ class _AgregarPersonaRelacionadaWidgetState
                                       'form1seccion8': true,
                                       'updated_at': supaSerialize<DateTime>(
                                           getCurrentTimestamp),
+                                      'iduser': currentUserUid,
                                     },
                                     matchingRows: (rows) => rows.eqOrNull(
                                       'id',
-                                      widget.rowingreso?.id,
+                                      widget.idingreso,
                                     ),
                                   );
                                   Navigator.pop(context, true);

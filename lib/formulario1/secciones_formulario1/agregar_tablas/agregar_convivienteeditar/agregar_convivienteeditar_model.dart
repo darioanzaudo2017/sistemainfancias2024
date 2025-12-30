@@ -1,5 +1,4 @@
 import '/backend/api_requests/api_calls.dart';
-import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'agregar_convivienteeditar_widget.dart'
@@ -18,6 +17,10 @@ class AgregarConvivienteeditarModel
   int? dni;
 
   int? anos;
+
+  int? idingreso;
+
+  int? idexpediente;
 
   ///  State fields for stateful widgets in this component.
 
@@ -87,10 +90,6 @@ class AgregarConvivienteeditarModel
   FocusNode? textFieldFocusNode6;
   TextEditingController? textController8;
   String? Function(BuildContext, String?)? textController8Validator;
-  // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
-  List<GrupoConvivienteRow>? creargrupoedit;
-  // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
-  List<NNyARow>? editNNyA;
   // Stores action output result for [Backend Call - API (Actualizar grupo conviviente )] action in Button widget.
   ApiCallResponse? apiResultyu;
 

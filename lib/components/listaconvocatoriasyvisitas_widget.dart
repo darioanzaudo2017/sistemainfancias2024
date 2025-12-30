@@ -3,6 +3,7 @@ import '/entrevistas/avisoconcurrenciaadulto/avisoconcurrenciaadulto_widget.dart
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
@@ -14,18 +15,18 @@ export 'listaconvocatoriasyvisitas_model.dart';
 class ListaconvocatoriasyvisitasWidget extends StatefulWidget {
   const ListaconvocatoriasyvisitasWidget({
     super.key,
-    this.idingreso,
-    this.ingresorow,
-    this.exprow,
+    required this.idingreso,
     this.idampliacionrow,
     required this.spd,
+    required this.idexp,
+    required this.idrol,
   });
 
   final int? idingreso;
-  final IngresosRow? ingresorow;
-  final VistaExpedientesUltimoEstadoRow? exprow;
   final int? idampliacionrow;
-  final SpdRow? spd;
+  final String? spd;
+  final int? idexp;
+  final int? idrol;
 
   @override
   State<ListaconvocatoriasyvisitasWidget> createState() =>
@@ -62,12 +63,15 @@ class _ListaconvocatoriasyvisitasWidgetState
     return Align(
       alignment: AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<AvisovisitaadultosRow>>(
-        future: AvisovisitaadultosTable().querySingleRow(
-          queryFn: (q) => q.eqOrNull(
-            'idampliacion',
-            widget.idampliacionrow,
-          ),
-        ),
+        future: (_model.requestCompleter ??=
+                Completer<List<AvisovisitaadultosRow>>()
+                  ..complete(AvisovisitaadultosTable().querySingleRow(
+                    queryFn: (q) => q.eqOrNull(
+                      'idampliacion',
+                      widget.idampliacionrow,
+                    ),
+                  )))
+            .future,
         builder: (context, snapshot) {
           // Customize what your widget looks like when it's loading.
           if (!snapshot.hasData) {
@@ -139,16 +143,27 @@ class _ListaconvocatoriasyvisitasWidgetState
                                   child: Padding(
                                     padding: MediaQuery.viewInsetsOf(context),
                                     child: AvisoconcurrenciaadultoWidget(
-                                      rowingreso: widget.ingresorow!,
-                                      rowexp: widget.exprow!,
                                       editar: false,
                                       idampliacion: widget.idampliacionrow,
                                       spd: widget.spd!,
+                                      idavisoconcurrencia: 0,
+                                      idingreso: widget.idingreso!,
+                                      idexp: widget.idexp!,
+                                      idrol: widget.idrol!,
                                     ),
                                   ),
                                 );
                               },
-                            ).then((value) => safeSetState(() {}));
+                            ).then((value) => safeSetState(
+                                () => _model.convocatoria = value));
+
+                            if (_model.convocatoria!) {
+                              safeSetState(
+                                  () => _model.requestCompleter = null);
+                              await _model.waitForRequestCompleted();
+                            }
+
+                            safeSetState(() {});
                           },
                           text: 'Agregar convocatoria',
                           icon: Icon(

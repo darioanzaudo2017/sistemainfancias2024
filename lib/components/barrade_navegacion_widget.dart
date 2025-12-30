@@ -1,4 +1,3 @@
-import '/backend/supabase/supabase.dart';
 import '/components/adjuntardocumento_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -14,41 +13,31 @@ class BarradeNavegacionWidget extends StatefulWidget {
   const BarradeNavegacionWidget({
     super.key,
     this.idexp,
-    required this.usuariorow,
-    this.parameter4,
-    this.parameter5,
-    this.ingresorow,
     this.idingreso,
-    this.expediente,
+    required this.expediente,
     this.fechaExp,
-    this.parameter10,
-    this.urlcarpetadrive,
     required this.adjuntar,
     required this.imprimir,
-    required this.carpeta,
     required this.ingreso,
     required this.perfil,
-    this.spd,
-    this.usuariorol,
+    this.idnnya,
+    required this.idrol,
+    required this.rol,
+    required this.spd,
   });
 
   final int? idexp;
-  final UsuariosRow? usuariorow;
-  final String? parameter4;
-  final String? parameter5;
-  final IngresosRow? ingresorow;
   final int? idingreso;
-  final String? expediente;
-  final DateTime? fechaExp;
-  final bool? parameter10;
-  final String? urlcarpetadrive;
+  final int? expediente;
+  final String? fechaExp;
   final bool? adjuntar;
   final bool? imprimir;
-  final bool? carpeta;
   final bool? ingreso;
   final bool? perfil;
-  final SpdRow? spd;
-  final VistaUsuariosRolesRow? usuariorol;
+  final int? idnnya;
+  final int? idrol;
+  final String? rol;
+  final String? spd;
 
   @override
   State<BarradeNavegacionWidget> createState() =>
@@ -186,17 +175,21 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                         widget.idexp,
                         ParamType.int,
                       ),
-                      'usuariorow': serializeParam(
-                        widget.usuariorow,
-                        ParamType.SupabaseRow,
+                      'idnnya': serializeParam(
+                        widget.idnnya,
+                        ParamType.int,
                       ),
-                      'spd': serializeParam(
+                      'idrol': serializeParam(
+                        0,
+                        ParamType.int,
+                      ),
+                      'rol': serializeParam(
+                        widget.rol,
+                        ParamType.String,
+                      ),
+                      'spd1': serializeParam(
                         widget.spd,
-                        ParamType.SupabaseRow,
-                      ),
-                      'usuariorol': serializeParam(
-                        widget.usuariorol,
-                        ParamType.SupabaseRow,
+                        ParamType.String,
                       ),
                     }.withoutNulls,
                   );
@@ -274,9 +267,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                         child: Padding(
                           padding: MediaQuery.viewInsetsOf(context),
                           child: AdjuntardocumentoWidget(
-                            ingrow: widget.ingresorow,
                             idexp: widget.idexp!,
-                            idampliacion: 0,
                             idingreso: widget.idingreso!,
                           ),
                         ),

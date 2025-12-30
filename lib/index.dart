@@ -32,7 +32,6 @@ export '/entrevistas/entrevistas_copy/entrevistas_copy_widget.dart'
 export '/expedienterls/expedienterls_widget.dart' show ExpedienterlsWidget;
 export '/cuenta_perfil_creacion/auth_2_forgot_password_copy/auth2_forgot_password_copy_widget.dart'
     show Auth2ForgotPasswordCopyWidget;
-export '/pages/homestitch/homestitch_widget.dart' show HomestitchWidget;
 export '/adminzona/adminzona_widget.dart' show AdminzonaWidget;
 export '/cuenta_perfil_creacion/auth_2_create_copy/auth2_create_copy_widget.dart'
     show Auth2CreateCopyWidget;

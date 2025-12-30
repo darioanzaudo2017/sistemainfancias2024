@@ -3,13 +3,12 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
-const RESOURCES = {"assets/AssetManifest.bin": "19881f6f840da92c3e20ec4ebb54b97a",
-"assets/AssetManifest.bin.json": "1abdb5f4a7a8620031632190dbba6a48",
-"assets/AssetManifest.json": "e2d9877fd027aa408a79908245a6735e",
+const RESOURCES = {"assets/AssetManifest.bin": "ae1af8211a1ef68eae6e16e08617c38f",
+"assets/AssetManifest.bin.json": "016dda08079dd9bed2640a455a9c34ff",
+"assets/AssetManifest.json": "1dd5e73d7c7612785171e2f627488321",
 "assets/assets/audios/favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "assets/assets/fonts/favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "assets/assets/fonts/Lexend%2520Deca-Medium.ttf": "142fc585b5cfbcb3b5b41fb0e89a347e",
-"assets/assets/images/cckkgi.png": "c13cf900ca583120c66047e5e9db83af",
 "assets/assets/images/favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "assets/assets/images/LOGO_SECRETARIA_PSOCIALES.png": "6523375b5f16d71bc48072ac8a40fb11",
 "assets/assets/jsons/favicon.png": "5dcef449791fa27946b3d35ad8803796",
@@ -40,7 +39,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "19881f6f840da92c3e20ec4ebb54b97a
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "index.html": "f9aba5c0f8273a960b38af5b853e5ec7",
 "/": "f9aba5c0f8273a960b38af5b853e5ec7",
-"main.dart.js": "4d7eda314d85f7ec9047e1750b8bfaf5",
+"main.dart.js": "003a25831638f3ec7c43b4a7bb3f0447",
 "version.json": "1cfa9c4fc1dbcace7baa7efd0c9844e9"};
 // The application shell files that are downloaded before a service worker can
 // start.

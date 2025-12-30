@@ -11,23 +11,20 @@ import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'seccion2_model.dart';
 export 'seccion2_model.dart';
 
 class Seccion2Widget extends StatefulWidget {
   const Seccion2Widget({
     super.key,
-    required this.rowingreso,
-    required this.rowexp,
     this.editar,
-    required this.usuariorow,
+    required this.idingreso,
+    required this.idexp,
   });
 
-  final IngresosRow? rowingreso;
-  final VistaExpedientesUltimoEstadoRow? rowexp;
   final bool? editar;
-  final VistaUsuariosRolesRow? usuariorow;
+  final int? idingreso;
+  final int? idexp;
 
   @override
   State<Seccion2Widget> createState() => _Seccion2WidgetState();
@@ -91,7 +88,7 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
       future: Seccion2Table().querySingleRow(
         queryFn: (q) => q.eqOrNull(
           'idIngreso',
-          widget.rowingreso?.id,
+          widget.idingreso,
         ),
       ),
       builder: (context, snapshot) {
@@ -2862,28 +2859,87 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  if (() {
-                                    if (widget.usuariorow?.rolId == 3) {
-                                      return (widget.rowexp?.spd ==
-                                          widget.usuariorow?.spd);
-                                    } else if (widget.usuariorow?.rolId == 2) {
-                                      return true;
-                                    } else if (widget.usuariorow?.rolId == 1) {
-                                      return true;
-                                    } else {
-                                      return false;
-                                    }
-                                  }())
-                                    FFButtonWidget(
-                                      onPressed: () async {
-                                        if (_model.formKey.currentState ==
-                                                null ||
-                                            !_model.formKey.currentState!
-                                                .validate()) {
-                                          return;
-                                        }
-                                        if (!widget.editar!) {
-                                          await Seccion2Table().insert({
+                                  FFButtonWidget(
+                                    onPressed: () async {
+                                      if (_model.formKey.currentState == null ||
+                                          !_model.formKey.currentState!
+                                              .validate()) {
+                                        return;
+                                      }
+                                      if (!widget.editar!) {
+                                        await Seccion2Table().insert({
+                                          'edad': int.tryParse(
+                                              _model.textController7.text),
+                                          'dni': int.tryParse(
+                                              _model.textController8.text),
+                                          'direccion':
+                                              _model.textController9.text,
+                                          'referencias':
+                                              _model.textController10.text,
+                                          'telefono':
+                                              _model.textController11.text,
+                                          'vinculo': _model.dropDownValue,
+                                          'reservaId':
+                                              _model.radioButtonresidenValue,
+                                          'institucion':
+                                              _model.textController1.text,
+                                          'direccionInst':
+                                              _model.textController2.text,
+                                          'telefonoInst':
+                                              _model.textController3.text,
+                                          'correoInst':
+                                              _model.textController4.text,
+                                          'idIngreso': widget.idingreso,
+                                          'idExpediente': widget.idexp,
+                                          'idSolicitante': _model
+                                              .textFieldsolicitanteTextController
+                                              .text,
+                                          'iduser': currentUserUid,
+                                          'vinculoObs':
+                                              _model.textController12.text,
+                                          'institucionCanalIngreso': _model
+                                              .dropDowncanaldeingresoValue,
+                                          'referente':
+                                              _model.textController5.text,
+                                          'resevaindentidad':
+                                              _model.radioButtonresidenValue,
+                                          'tipo_solicitante':
+                                              _model.choiceChipsValue,
+                                        });
+                                        await IngresosTable().update(
+                                          data: {
+                                            'form1seccion2': true,
+                                            'updated_at':
+                                                supaSerialize<DateTime>(
+                                                    getCurrentTimestamp),
+                                          },
+                                          matchingRows: (rows) => rows.eqOrNull(
+                                            'id',
+                                            widget.idingreso,
+                                          ),
+                                        );
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                              'Se guardo con exito!!',
+                                              style: TextStyle(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                              ),
+                                            ),
+                                            duration:
+                                                Duration(milliseconds: 4000),
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondary,
+                                          ),
+                                        );
+                                        Navigator.pop(context, true);
+                                      } else {
+                                        await Seccion2Table().update(
+                                          data: {
                                             'edad': int.tryParse(
                                                 _model.textController7.text),
                                             'dni': int.tryParse(
@@ -2905,8 +2961,6 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                                 _model.textController3.text,
                                             'correoInst':
                                                 _model.textController4.text,
-                                            'idIngreso': widget.rowingreso?.id,
-                                            'idExpediente': widget.rowexp?.id,
                                             'idSolicitante': _model
                                                 .textFieldsolicitanteTextController
                                                 .text,
@@ -2916,157 +2970,69 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                             'institucionCanalIngreso': _model
                                                 .dropDowncanaldeingresoValue,
                                             'referente':
-                                                _model.textController5.text,
+                                                stackSeccion2Row?.referente,
                                             'resevaindentidad':
                                                 _model.radioButtonresidenValue,
                                             'tipo_solicitante':
                                                 _model.choiceChipsValue,
-                                          });
-                                          await IngresosTable().update(
-                                            data: {
-                                              'form1seccion2': true,
-                                              'updated_at':
-                                                  supaSerialize<DateTime>(
-                                                      getCurrentTimestamp),
-                                            },
-                                            matchingRows: (rows) =>
-                                                rows.eqOrNull(
-                                              'id',
-                                              widget.rowingreso?.id,
-                                            ),
-                                          );
-                                          await showDialog(
-                                            context: context,
-                                            builder: (alertDialogContext) {
-                                              return WebViewAware(
-                                                child: AlertDialog(
-                                                  title: Text('Carga correcta'),
-                                                  content: Text(
-                                                      'La informacion se guardo correctamente!!'),
-                                                  actions: [
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext),
-                                                      child: Text('Ok'),
-                                                    ),
-                                                  ],
-                                                ),
-                                              );
-                                            },
-                                          );
-                                          Navigator.pop(context, true);
-                                        } else {
-                                          await Seccion2Table().update(
-                                            data: {
-                                              'edad': int.tryParse(
-                                                  _model.textController7.text),
-                                              'dni': int.tryParse(
-                                                  _model.textController8.text),
-                                              'direccion':
-                                                  _model.textController9.text,
-                                              'referencias':
-                                                  _model.textController10.text,
-                                              'telefono':
-                                                  _model.textController11.text,
-                                              'vinculo': _model.dropDownValue,
-                                              'reservaId': _model
-                                                  .radioButtonresidenValue,
-                                              'institucion':
-                                                  _model.textController1.text,
-                                              'direccionInst':
-                                                  _model.textController2.text,
-                                              'telefonoInst':
-                                                  _model.textController3.text,
-                                              'correoInst':
-                                                  _model.textController4.text,
-                                              'idSolicitante': _model
-                                                  .textFieldsolicitanteTextController
-                                                  .text,
-                                              'iduser': currentUserUid,
-                                              'vinculoObs':
-                                                  _model.textController12.text,
-                                              'institucionCanalIngreso': _model
-                                                  .dropDowncanaldeingresoValue,
-                                              'referente':
-                                                  stackSeccion2Row?.referente,
-                                              'resevaindentidad': _model
-                                                  .radioButtonresidenValue,
-                                              'tipo_solicitante':
-                                                  _model.choiceChipsValue,
-                                            },
-                                            matchingRows: (rows) =>
-                                                rows.eqOrNull(
-                                              'idIngreso',
-                                              widget.rowingreso?.id,
-                                            ),
-                                          );
-                                          await IngresosTable().update(
-                                            data: {
-                                              'updated_at':
-                                                  supaSerialize<DateTime>(
-                                                      getCurrentTimestamp),
-                                              'iduser': currentUserUid,
-                                            },
-                                            matchingRows: (rows) =>
-                                                rows.eqOrNull(
-                                              'id',
-                                              widget.rowingreso?.id,
-                                            ),
-                                          );
-                                          await showDialog(
-                                            context: context,
-                                            builder: (alertDialogContext) {
-                                              return WebViewAware(
-                                                child: AlertDialog(
-                                                  title: Text('Carga correcta'),
-                                                  content: Text(
-                                                      'La informacion se guardo correctamente!!'),
-                                                  actions: [
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext),
-                                                      child: Text('Ok'),
-                                                    ),
-                                                  ],
-                                                ),
-                                              );
-                                            },
-                                          );
-                                          Navigator.pop(context, true);
-                                        }
-                                      },
-                                      text: 'Guardar',
-                                      icon: Icon(
-                                        Icons.save,
-                                        size: 15.0,
-                                      ),
-                                      options: FFButtonOptions(
-                                        width: 250.0,
-                                        height: 40.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            24.0, 0.0, 24.0, 0.0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: FlutterFlowTheme.of(context)
-                                            .success,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              font: GoogleFonts.notoSansJp(
-                                                fontWeight:
+                                          },
+                                          matchingRows: (rows) => rows.eqOrNull(
+                                            'idIngreso',
+                                            widget.idingreso,
+                                          ),
+                                        );
+                                        await IngresosTable().update(
+                                          data: {
+                                            'updated_at':
+                                                supaSerialize<DateTime>(
+                                                    getCurrentTimestamp),
+                                            'iduser': currentUserUid,
+                                          },
+                                          matchingRows: (rows) => rows.eqOrNull(
+                                            'id',
+                                            widget.idingreso,
+                                          ),
+                                        );
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                              'Se guardo con exito!!',
+                                              style: TextStyle(
+                                                color:
                                                     FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .fontStyle,
+                                                        .primaryText,
                                               ),
-                                              color: Colors.white,
-                                              letterSpacing: 0.0,
+                                            ),
+                                            duration:
+                                                Duration(milliseconds: 4000),
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondary,
+                                          ),
+                                        );
+                                        Navigator.pop(context, true);
+                                      }
+                                    },
+                                    text: 'Guardar',
+                                    icon: Icon(
+                                      Icons.save,
+                                      size: 15.0,
+                                    ),
+                                    options: FFButtonOptions(
+                                      width: 250.0,
+                                      height: 40.0,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          24.0, 0.0, 24.0, 0.0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color:
+                                          FlutterFlowTheme.of(context).success,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            font: GoogleFonts.notoSansJp(
                                               fontWeight:
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
@@ -3076,16 +3042,26 @@ class _Seccion2WidgetState extends State<Seccion2Widget> {
                                                       .titleSmall
                                                       .fontStyle,
                                             ),
-                                        elevation: 2.0,
-                                        borderSide: BorderSide(
-                                          color: Colors.transparent,
-                                          width: 1.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(20.0),
-                                        hoverElevation: 4.0,
+                                            color: Colors.white,
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontStyle,
+                                          ),
+                                      elevation: 2.0,
+                                      borderSide: BorderSide(
+                                        color: Colors.transparent,
+                                        width: 1.0,
                                       ),
+                                      borderRadius: BorderRadius.circular(20.0),
+                                      hoverElevation: 4.0,
                                     ),
+                                  ),
                                 ],
                               ),
                             ]

@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'dashboard_model.dart';
@@ -1063,42 +1062,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                             ),
                                           ),
                                           FFButtonWidget(
-                                            onPressed: () async {
-                                              _model.vistaexpe =
-                                                  await VistaExpedientesUltimoEstadoTable()
-                                                      .queryRows(
-                                                queryFn: (q) => q.eqOrNull(
-                                                  'id',
-                                                  vistaSenafItem.idExpediente,
-                                                ),
-                                              );
-
-                                              context.pushNamed(
-                                                PerfilWidget.routeName,
-                                                queryParameters: {
-                                                  'idingreso': serializeParam(
-                                                    vistaSenafItem.idIngreso,
-                                                    ParamType.int,
-                                                  ),
-                                                  'rowexp': serializeParam(
-                                                    _model
-                                                        .vistaexpe?.firstOrNull,
-                                                    ParamType.SupabaseRow,
-                                                  ),
-                                                  'usuariorow': serializeParam(
-                                                    widget.usuariorow,
-                                                    ParamType.SupabaseRow,
-                                                  ),
-                                                  'idexp': serializeParam(
-                                                    _model.vistaexpe
-                                                        ?.firstOrNull?.id,
-                                                    ParamType.int,
-                                                  ),
-                                                }.withoutNulls,
-                                              );
-
-                                              safeSetState(() {});
-                                            },
+                                            onPressed: () async {},
                                             text: 'ver',
                                             options: FFButtonOptions(
                                               height: 40.0,

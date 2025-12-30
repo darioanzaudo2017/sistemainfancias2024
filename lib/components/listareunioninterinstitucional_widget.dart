@@ -16,17 +16,17 @@ class ListareunioninterinstitucionalWidget extends StatefulWidget {
   const ListareunioninterinstitucionalWidget({
     super.key,
     this.idingreso,
-    required this.idingres,
-    required this.idexprow,
     required this.formulario,
     required this.spd,
+    required this.idexp,
+    required this.idrol,
   });
 
   final int? idingreso;
-  final IngresosRow? idingres;
-  final VistaExpedientesUltimoEstadoRow? idexprow;
   final String? formulario;
-  final SpdRow? spd;
+  final String? spd;
+  final int? idexp;
+  final int? idrol;
 
   @override
   State<ListareunioninterinstitucionalWidget> createState() =>
@@ -189,12 +189,12 @@ class _ListareunioninterinstitucionalWidgetState
                                 child: Padding(
                                   padding: MediaQuery.viewInsetsOf(context),
                                   child: AnexoreunioninstitucionalWidget(
-                                    rowingreso: widget.idingres!,
-                                    rowexp: widget.idexprow!,
                                     editar: false,
                                     idanexoreunion: null,
                                     formulario: widget.formulario!,
                                     spd: widget.spd!,
+                                    idingreso: widget.idingreso!,
+                                    idexp: widget.idexp!,
                                   ),
                                 ),
                               );
@@ -530,15 +530,15 @@ class _ListareunioninterinstitucionalWidgetState
                                                             context),
                                                     child:
                                                         AnexoreunioninstitucionalWidget(
-                                                      rowingreso:
-                                                          widget.idingres!,
-                                                      rowexp: widget.idexprow!,
                                                       editar: true,
                                                       idanexoreunion:
                                                           optionsVarItem.id,
                                                       formulario:
                                                           widget.formulario!,
                                                       spd: widget.spd!,
+                                                      idingreso:
+                                                          widget.idingreso!,
+                                                      idexp: widget.idexp!,
                                                     ),
                                                   ),
                                                 );

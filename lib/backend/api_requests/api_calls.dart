@@ -13,7 +13,7 @@ class BusquedaExpedienteLISTACall {
   static Future<ApiCallResponse> call({
     String? busquedaExp = 'cielo',
     String? token =
-        'eyJhbGciOiJIUzI1NiIsImtpZCI6Ik1jUzFaOUhyblIvelF4SmkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2xpYXZpcmJ3ZnRvcHZyY2p5cHJyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiI5ODcxNjEyOS01ZDZhLTRkNmItYTJkNi1mNGMyZTZhZjdhMTAiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzUwMjU0MjUwLCJpYXQiOjE3NTAyNTA2NTAsImVtYWlsIjoiZGFyaW9hbnphdWRvQGdtYWlsLmNvbSIsInBob25lIjoiIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwiLCJwcm92aWRlcnMiOlsiZW1haWwiXX0sInVzZXJfbWV0YWRhdGEiOnsiZW1haWwiOiJkYXJpb2FuemF1ZG9AZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInBob25lX3ZlcmlmaWVkIjpmYWxzZSwic3ViIjoiOTg3MTYxMjktNWQ2YS00ZDZiLWEyZDYtZjRjMmU2YWY3YTEwIn0sInJvbGUiOiJhdXRoZW50aWNhdGVkIiwiYWFsIjoiYWFsMSIsImFtciI6W3sibWV0aG9kIjoicGFzc3dvcmQiLCJ0aW1lc3RhbXAiOjE3NTAyNTA2NTB9XSwic2Vzc2lvbl9pZCI6ImY0MjU0NDdlLTM2YjMtNGM2NC05NjVhLWFhYTE4MmFmNWI5OSIsImlzX2Fub255bW91cyI6ZmFsc2V9.B63x923nK-2e4-jUKEcGt_7FDVdCjO5dHiSMFa1jPdI',
+        'eyJhbGciOiJIUzI1NiIsImtpZCI6Ik1jUzFaOUhyblIvelF4SmkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2xpYXZpcmJ3ZnRvcHZyY2p5cHJyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJmOWI4YTFhYi05MGNiLTRjMGMtYTYzNC01NjczYzQ3NGU4MDgiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY1ODEzNTk4LCJpYXQiOjE3NjU4MDk5OTgsImVtYWlsIjoiZGFyaW9AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6ImRhcmlvQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaG9uZV92ZXJpZmllZCI6ZmFsc2UsInN1YiI6ImY5YjhhMWFiLTkwY2ItNGMwYy1hNjM0LTU2NzNjNDc0ZTgwOCJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzY1ODAzNDU4fV0sInNlc3Npb25faWQiOiJmMmI3MDVlYi02MDNlLTQyOTQtODIxZi1iMDk3Y2Q4ODhjNmIiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.knJLP_q-cOENa3wl7P2tRDwHc9o9W6ehZzE0sudtHH0',
   }) async {
     final ffApiRequestBody = '''
 {
@@ -1309,7 +1309,7 @@ class CambiospdCall {
 class IngresosperfilCall {
   static Future<ApiCallResponse> call({
     String? token =
-        'eyJhbGciOiJIUzI1NiIsImtpZCI6Ik1jUzFaOUhyblIvelF4SmkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2xpYXZpcmJ3ZnRvcHZyY2p5cHJyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJmOWI4YTFhYi05MGNiLTRjMGMtYTYzNC01NjczYzQ3NGU4MDgiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY0MzM4NzY5LCJpYXQiOjE3NjQzMzUxNjksImVtYWlsIjoiZGFyaW9AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6ImRhcmlvQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaG9uZV92ZXJpZmllZCI6ZmFsc2UsInN1YiI6ImY5YjhhMWFiLTkwY2ItNGMwYy1hNjM0LTU2NzNjNDc0ZTgwOCJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzY0MzM1MTY5fV0sInNlc3Npb25faWQiOiI0MmI2MTk0ZC03MTA2LTRmZjgtYmVhZC0zYjJlNDliMDE4OTciLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.cmvX1GvGvSAUwN4kK7bdc7LyyhYVErhX1sB7AApRXiY',
+        'eyJhbGciOiJIUzI1NiIsImtpZCI6Ik1jUzFaOUhyblIvelF4SmkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2xpYXZpcmJ3ZnRvcHZyY2p5cHJyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJmOWI4YTFhYi05MGNiLTRjMGMtYTYzNC01NjczYzQ3NGU4MDgiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY1ODk4NzM5LCJpYXQiOjE3NjU4OTUxMzksImVtYWlsIjoiZGFyaW9AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6ImRhcmlvQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaG9uZV92ZXJpZmllZCI6ZmFsc2UsInN1YiI6ImY5YjhhMWFiLTkwY2ItNGMwYy1hNjM0LTU2NzNjNDc0ZTgwOCJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzY1ODk1MTM5fV0sInNlc3Npb25faWQiOiJjZGIyZmJmZS1kOTMxLTQ5YzYtYWM0YS1lNDA3YTdkMzVmOGEiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.BitU8hpnL32JLH9g8IW3ZhOs5ggV-FUz7xBYWpJfzpg',
     int? id = 393,
   }) async {
     return ApiManager.instance.makeApiCall(
@@ -1336,8 +1336,8 @@ class IngresosperfilCall {
 class ExpedientennyaspdCall {
   static Future<ApiCallResponse> call({
     String? token =
-        'eyJhbGciOiJIUzI1NiIsImtpZCI6Ik1jUzFaOUhyblIvelF4SmkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2xpYXZpcmJ3ZnRvcHZyY2p5cHJyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJmOWI4YTFhYi05MGNiLTRjMGMtYTYzNC01NjczYzQ3NGU4MDgiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY0MzM4NzY5LCJpYXQiOjE3NjQzMzUxNjksImVtYWlsIjoiZGFyaW9AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6ImRhcmlvQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaG9uZV92ZXJpZmllZCI6ZmFsc2UsInN1YiI6ImY5YjhhMWFiLTkwY2ItNGMwYy1hNjM0LTU2NzNjNDc0ZTgwOCJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzY0MzM1MTY5fV0sInNlc3Npb25faWQiOiI0MmI2MTk0ZC03MTA2LTRmZjgtYmVhZC0zYjJlNDliMDE4OTciLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.cmvX1GvGvSAUwN4kK7bdc7LyyhYVErhX1sB7AApRXiY',
-    int? id = 531,
+        'eyJhbGciOiJIUzI1NiIsImtpZCI6Ik1jUzFaOUhyblIvelF4SmkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2xpYXZpcmJ3ZnRvcHZyY2p5cHJyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJmOWI4YTFhYi05MGNiLTRjMGMtYTYzNC01NjczYzQ3NGU4MDgiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY1ODkxOTkwLCJpYXQiOjE3NjU4ODgzOTAsImVtYWlsIjoiZGFyaW9AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6ImRhcmlvQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaG9uZV92ZXJpZmllZCI6ZmFsc2UsInN1YiI6ImY5YjhhMWFiLTkwY2ItNGMwYy1hNjM0LTU2NzNjNDc0ZTgwOCJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzY1ODg4MzkwfV0sInNlc3Npb25faWQiOiIwN2MxOTRhOC0wODYzLTQwYWQtOGE4NS1mN2VjNzhjMDBkODQiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.sPq-Jj35AAzTSADD_AlLT0dl5cXcGGOGmxHX3MhHE6Q',
+    int? id = 585,
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'expedientennyaspd',
@@ -1390,10 +1390,10 @@ class SeccionygrupoconvivienteCall {
 class CrearyverificarexpedienteCall {
   static Future<ApiCallResponse> call({
     String? token =
-        'eyJhbGciOiJIUzI1NiIsImtpZCI6Ik1jUzFaOUhyblIvelF4SmkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2xpYXZpcmJ3ZnRvcHZyY2p5cHJyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJmOWI4YTFhYi05MGNiLTRjMGMtYTYzNC01NjczYzQ3NGU4MDgiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY0ODYwNDY3LCJpYXQiOjE3NjQ4NTY4NjcsImVtYWlsIjoiZGFyaW9AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6ImRhcmlvQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaG9uZV92ZXJpZmllZCI6ZmFsc2UsInN1YiI6ImY5YjhhMWFiLTkwY2ItNGMwYy1hNjM0LTU2NzNjNDc0ZTgwOCJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzY0ODU2ODY3fV0sInNlc3Npb25faWQiOiIxOWUyYjA0MC0yNjdmLTQwZGMtYTEwNC0yMGY5YTlkZGRiNTEiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.vh6vHWukhW-ucEXuL0cP12PKLu9Zr7PG2-tPHY-KAWY',
-    String? pNombres = 'dario',
+        'eyJhbGciOiJIUzI1NiIsImtpZCI6Ik1jUzFaOUhyblIvelF4SmkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2xpYXZpcmJ3ZnRvcHZyY2p5cHJyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJmOWI4YTFhYi05MGNiLTRjMGMtYTYzNC01NjczYzQ3NGU4MDgiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY1ODk1NTY0LCJpYXQiOjE3NjU4OTE5NjQsImVtYWlsIjoiZGFyaW9AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6ImRhcmlvQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaG9uZV92ZXJpZmllZCI6ZmFsc2UsInN1YiI6ImY5YjhhMWFiLTkwY2ItNGMwYy1hNjM0LTU2NzNjNDc0ZTgwOCJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzY1ODg4MzkwfV0sInNlc3Npb25faWQiOiIwN2MxOTRhOC0wODYzLTQwYWQtOGE4NS1mN2VjNzhjMDBkODQiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.Ac_cdpH1gJp5EKChiVvth0CKFsHBwEa_y874U2P2dgs',
+    String? pNombres = 'gonzalo',
     String? pApellidos = 'perez',
-    int? pDni = 31450556,
+    int? pDni = 31450111,
     int? pEdad = 12,
     String? pFechaNac = '12/12/2021',
     String? pSpd = 'SPD Colón',
@@ -1543,6 +1543,441 @@ class ActualizarGrupoConvivienteCall {
       callName: 'Actualizar grupo conviviente ',
       apiUrl:
           'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/rpc/actualizar_conviviente_expediente',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
+        'Authorization': 'Bearer ${token}',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class InfoDeContextoCall {
+  static Future<ApiCallResponse> call({
+    String? token =
+        'eyJhbGciOiJIUzI1NiIsImtpZCI6Ik1jUzFaOUhyblIvelF4SmkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2xpYXZpcmJ3ZnRvcHZyY2p5cHJyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJmOWI4YTFhYi05MGNiLTRjMGMtYTYzNC01NjczYzQ3NGU4MDgiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY3MDIzMDYyLCJpYXQiOjE3NjcwMTk0NjIsImVtYWlsIjoiZGFyaW9AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6ImRhcmlvQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaG9uZV92ZXJpZmllZCI6ZmFsc2UsInN1YiI6ImY5YjhhMWFiLTkwY2ItNGMwYy1hNjM0LTU2NzNjNDc0ZTgwOCJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzY2ODYxMzU0fV0sInNlc3Npb25faWQiOiJiNDdlZTk0YS1mNmQ4LTRmNmMtYmExNS1jNzU5MWNmYmEwMDkiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.8yhqVF2LwKR6khLplbAhoFA3OeIs7SbNunUfrSbpgKM',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'info de contexto',
+      apiUrl:
+          'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/rpc/get_home_contexto',
+      callType: ApiCallType.GET,
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
+        'Authorization': 'Bearer ${token}',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class SearchExpedientesPageCall {
+  static Future<ApiCallResponse> call({
+    String? token =
+        'eyJhbGciOiJIUzI1NiIsImtpZCI6Ik1jUzFaOUhyblIvelF4SmkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2xpYXZpcmJ3ZnRvcHZyY2p5cHJyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJmOWI4YTFhYi05MGNiLTRjMGMtYTYzNC01NjczYzQ3NGU4MDgiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY3MDQ3NjAwLCJpYXQiOjE3NjcwNDQwMDAsImVtYWlsIjoiZGFyaW9AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6ImRhcmlvQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaG9uZV92ZXJpZmllZCI6ZmFsc2UsInN1YiI6ImY5YjhhMWFiLTkwY2ItNGMwYy1hNjM0LTU2NzNjNDc0ZTgwOCJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzY3MDQ0MDAwfV0sInNlc3Npb25faWQiOiI5MzI1NjQwMi03YTA3LTRiM2QtYmViZC01OTg1Y2EzODVlNTciLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.renKownqi5A2sLvlSGlGREkgORSLV1le8L_TN36kecU',
+    int? pLimit = 20,
+    int? pOffset = 0,
+    String? pQ = 'dario',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "p_limit": ${pLimit},
+  "p_offset": ${pOffset},
+  "p_q": "${escapeStringForJson(pQ)}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'search expedientes page',
+      apiUrl:
+          'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/rpc/search_expedientes_paged',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
+        'Authorization': 'Bearer ${token}',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class TarjetaexpedienteCall {
+  static Future<ApiCallResponse> call({
+    String? token = '',
+    int? idexpediente = 584,
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "p_idexpediente": ${idexpediente}
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'tarjetaexpediente',
+      apiUrl:
+          'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/rpc/rpc_expediente_header',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
+        'Authorization': 'Bearer ${token}',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class ListaingresosCall {
+  static Future<ApiCallResponse> call({
+    String? token =
+        'eyJhbGciOiJIUzI1NiIsImtpZCI6Ik1jUzFaOUhyblIvelF4SmkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2xpYXZpcmJ3ZnRvcHZyY2p5cHJyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJmOWI4YTFhYi05MGNiLTRjMGMtYTYzNC01NjczYzQ3NGU4MDgiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY1ODkxOTkwLCJpYXQiOjE3NjU4ODgzOTAsImVtYWlsIjoiZGFyaW9AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6ImRhcmlvQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaG9uZV92ZXJpZmllZCI6ZmFsc2UsInN1YiI6ImY5YjhhMWFiLTkwY2ItNGMwYy1hNjM0LTU2NzNjNDc0ZTgwOCJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzY1ODg4MzkwfV0sInNlc3Npb25faWQiOiIwN2MxOTRhOC0wODYzLTQwYWQtOGE4NS1mN2VjNzhjMDBkODQiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.sPq-Jj35AAzTSADD_AlLT0dl5cXcGGOGmxHX3MhHE6Q',
+    int? idexpediente = 584,
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "p_idexpediente": ${idexpediente}
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'listaingresos',
+      apiUrl:
+          'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/rpc/rpc_ingresos_por_expediente',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
+        'Authorization': 'Bearer ${token}',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class PerfilCall {
+  static Future<ApiCallResponse> call({
+    String? token =
+        'eyJhbGciOiJIUzI1NiIsImtpZCI6Ik1jUzFaOUhyblIvelF4SmkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2xpYXZpcmJ3ZnRvcHZyY2p5cHJyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJmOWI4YTFhYi05MGNiLTRjMGMtYTYzNC01NjczYzQ3NGU4MDgiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY1ODk5MTY0LCJpYXQiOjE3NjU4OTU1NjQsImVtYWlsIjoiZGFyaW9AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6ImRhcmlvQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaG9uZV92ZXJpZmllZCI6ZmFsc2UsInN1YiI6ImY5YjhhMWFiLTkwY2ItNGMwYy1hNjM0LTU2NzNjNDc0ZTgwOCJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzY1ODg4MzkwfV0sInNlc3Npb25faWQiOiIwN2MxOTRhOC0wODYzLTQwYWQtOGE4NS1mN2VjNzhjMDBkODQiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.s--9lLaVvOMW7mrT_GeMwWY1_H3d4pK9GarO9F8xGas',
+    int? idingreso = 401,
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "p_idingreso": ${idingreso}
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Perfil',
+      apiUrl:
+          'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/rpc/rpc_ingreso_perfil_data',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
+        'Authorization': 'Bearer ${token}',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class CrearAmpliacionConHistorialCall {
+  static Future<ApiCallResponse> call({
+    String? token =
+        'eyJhbGciOiJIUzI1NiIsImtpZCI6Ik1jUzFaOUhyblIvelF4SmkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2xpYXZpcmJ3ZnRvcHZyY2p5cHJyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJmOWI4YTFhYi05MGNiLTRjMGMtYTYzNC01NjczYzQ3NGU4MDgiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY2NTE0OTU1LCJpYXQiOjE3NjY1MTEzNTUsImVtYWlsIjoiZGFyaW9AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6ImRhcmlvQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaG9uZV92ZXJpZmllZCI6ZmFsc2UsInN1YiI6ImY5YjhhMWFiLTkwY2ItNGMwYy1hNjM0LTU2NzNjNDc0ZTgwOCJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzY1ODAzNDU4fV0sInNlc3Npb25faWQiOiJmMmI3MDVlYi02MDNlLTQyOTQtODIxZi1iMDk3Y2Q4ODhjNmIiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.E_lTfj9nB8S1JscpCACZThr_lA8CYYdBWf-_SAJnSS8',
+    String? pFecha = '12/12/1212',
+    int? pIdexpediente = 585,
+    int? pIdingreso = 401,
+    String? pObservaciones = 'sdf',
+    String? pTipoampliacion = 'Entrevista al NNyA',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "p_fecha": "${escapeStringForJson(pFecha)}",
+  "p_idexpediente": ${pIdexpediente},
+  "p_idingreso": ${pIdingreso},
+  "p_observaciones": "${escapeStringForJson(pObservaciones)}",
+  "p_tipoampliacion": "${escapeStringForJson(pTipoampliacion)}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Crear ampliacion con historial',
+      apiUrl:
+          'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/rpc/crear_ampliacion_con_historial',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
+        'Authorization': 'Bearer ${token}',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class PerfilCompletoPaginaCall {
+  static Future<ApiCallResponse> call({
+    String? token =
+        'eyJhbGciOiJIUzI1NiIsImtpZCI6Ik1jUzFaOUhyblIvelF4SmkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2xpYXZpcmJ3ZnRvcHZyY2p5cHJyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJmOWI4YTFhYi05MGNiLTRjMGMtYTYzNC01NjczYzQ3NGU4MDgiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY2Nzg2MTEwLCJpYXQiOjE3NjY3ODI1MTAsImVtYWlsIjoiZGFyaW9AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6ImRhcmlvQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaG9uZV92ZXJpZmllZCI6ZmFsc2UsInN1YiI6ImY5YjhhMWFiLTkwY2ItNGMwYy1hNjM0LTU2NzNjNDc0ZTgwOCJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzY2NzgyNTEwfV0sInNlc3Npb25faWQiOiIyZGIyMjFjNy1kYTBjLTRlMGItODJjNC04ZWRhODRiZjlmNzAiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.Tt6Cx_Sv7fQna0xXiF0tarYWLuVAWNHJZoq9m9H0fp8',
+    int? pIdingreso = 401,
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "p_idingreso": ${pIdingreso}
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Perfil completo pagina',
+      apiUrl:
+          'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/rpc/perfil_completo',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
+        'Authorization': 'Bearer ${token}',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class InformeSintesisPaginaCall {
+  static Future<ApiCallResponse> call({
+    String? token =
+        'eyJhbGciOiJIUzI1NiIsImtpZCI6Ik1jUzFaOUhyblIvelF4SmkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2xpYXZpcmJ3ZnRvcHZyY2p5cHJyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJmOWI4YTFhYi05MGNiLTRjMGMtYTYzNC01NjczYzQ3NGU4MDgiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY2NzcwNzQyLCJpYXQiOjE3NjY3NjcxNDIsImVtYWlsIjoiZGFyaW9AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6ImRhcmlvQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaG9uZV92ZXJpZmllZCI6ZmFsc2UsInN1YiI6ImY5YjhhMWFiLTkwY2ItNGMwYy1hNjM0LTU2NzNjNDc0ZTgwOCJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzY1ODg4MzkwfV0sInNlc3Npb25faWQiOiIwN2MxOTRhOC0wODYzLTQwYWQtOGE4NS1mN2VjNzhjMDBkODQiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.gF9WrtWLEnAWRNkxF_cN30CAXyWcHnmFKSkkVWR1pQ4',
+    int? pIdingreso = 401,
+    int? pIdexpediente = 585,
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "p_idexpediente": ${pIdexpediente},
+  "p_idingreso": ${pIdingreso}
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'informe sintesis pagina',
+      apiUrl:
+          'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/rpc/cargar_formulario5_pagina',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
+        'Authorization': 'Bearer ${token}',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class AperturaDemandaCall {
+  static Future<ApiCallResponse> call({
+    String? token =
+        'eyJhbGciOiJIUzI1NiIsImtpZCI6Ik1jUzFaOUhyblIvelF4SmkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2xpYXZpcmJ3ZnRvcHZyY2p5cHJyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJmOWI4YTFhYi05MGNiLTRjMGMtYTYzNC01NjczYzQ3NGU4MDgiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY2ODY0OTU0LCJpYXQiOjE3NjY4NjEzNTQsImVtYWlsIjoiZGFyaW9AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6ImRhcmlvQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaG9uZV92ZXJpZmllZCI6ZmFsc2UsInN1YiI6ImY5YjhhMWFiLTkwY2ItNGMwYy1hNjM0LTU2NzNjNDc0ZTgwOCJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzY2ODYxMzU0fV0sInNlc3Npb25faWQiOiJiNDdlZTk0YS1mNmQ4LTRmNmMtYmExNS1jNzU5MWNmYmEwMDkiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.mFx3-hW_jaUDl5V0HLDB7HpYQ9BbfqrJiyNpzAa00rE',
+    int? pIdingreso = 401,
+    int? pIdexpediente = 585,
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "p_idexpediente": ${pIdexpediente},
+  "p_idingreso": ${pIdingreso}
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Apertura demanda',
+      apiUrl:
+          'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/rpc/rpc_apertura_expediente',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
+        'Authorization': 'Bearer ${token}',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class AsesoramientoDemandaCall {
+  static Future<ApiCallResponse> call({
+    String? token =
+        'eyJhbGciOiJIUzI1NiIsImtpZCI6Ik1jUzFaOUhyblIvelF4SmkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2xpYXZpcmJ3ZnRvcHZyY2p5cHJyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJmOWI4YTFhYi05MGNiLTRjMGMtYTYzNC01NjczYzQ3NGU4MDgiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY2ODY0OTU0LCJpYXQiOjE3NjY4NjEzNTQsImVtYWlsIjoiZGFyaW9AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6ImRhcmlvQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaG9uZV92ZXJpZmllZCI6ZmFsc2UsInN1YiI6ImY5YjhhMWFiLTkwY2ItNGMwYy1hNjM0LTU2NzNjNDc0ZTgwOCJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzY2ODYxMzU0fV0sInNlc3Npb25faWQiOiJiNDdlZTk0YS1mNmQ4LTRmNmMtYmExNS1jNzU5MWNmYmEwMDkiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.mFx3-hW_jaUDl5V0HLDB7HpYQ9BbfqrJiyNpzAa00rE',
+    int? pIdingreso = 401,
+    int? pIdexpediente = 585,
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "p_idexpediente": ${pIdexpediente},
+  "p_idingreso": ${pIdingreso}
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Asesoramiento demanda ',
+      apiUrl:
+          'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/rpc/rpc_asesoramiento_expediente',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
+        'Authorization': 'Bearer ${token}',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class CrearingresoconexpedientesinoexisteCall {
+  static Future<ApiCallResponse> call({
+    String? token =
+        'eyJhbGciOiJIUzI1NiIsImtpZCI6Ik1jUzFaOUhyblIvelF4SmkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2xpYXZpcmJ3ZnRvcHZyY2p5cHJyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJmOWI4YTFhYi05MGNiLTRjMGMtYTYzNC01NjczYzQ3NGU4MDgiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY3MDE5NDk5LCJpYXQiOjE3NjcwMTU4OTksImVtYWlsIjoiZGFyaW9AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6ImRhcmlvQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaG9uZV92ZXJpZmllZCI6ZmFsc2UsInN1YiI6ImY5YjhhMWFiLTkwY2ItNGMwYy1hNjM0LTU2NzNjNDc0ZTgwOCJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzY2ODYxMzU0fV0sInNlc3Npb25faWQiOiJiNDdlZTk0YS1mNmQ4LTRmNmMtYmExNS1jNzU5MWNmYmEwMDkiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.LkXFRpeoGkETZ78q8sZPRjdNco7rq_pGTZYK8IW8Ikc',
+    int? pIdingreso = 401,
+    int? pIdNnya = 915,
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "p_id_ingreso_origen": ${pIdingreso},
+  "p_id_nnya": ${pIdNnya}
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'crearingresoconexpedientesinoexiste',
+      apiUrl:
+          'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/rpc/rpc_crear_ingreso_con_expediente_si_no_existe',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
+        'Authorization': 'Bearer ${token}',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static int? idexpediente(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.id_expediente''',
+      ));
+  static int? idingresonuevo(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.id_ingreso_nuevo''',
+      ));
+  static bool? ok(dynamic response) => castToType<bool>(getJsonField(
+        response,
+        r'''$.ok''',
+      ));
+}
+
+class CopiaringresocompletoCall {
+  static Future<ApiCallResponse> call({
+    String? token =
+        'eyJhbGciOiJIUzI1NiIsImtpZCI6Ik1jUzFaOUhyblIvelF4SmkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2xpYXZpcmJ3ZnRvcHZyY2p5cHJyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJmOWI4YTFhYi05MGNiLTRjMGMtYTYzNC01NjczYzQ3NGU4MDgiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY3MDE5NDk5LCJpYXQiOjE3NjcwMTU4OTksImVtYWlsIjoiZGFyaW9AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6ImRhcmlvQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaG9uZV92ZXJpZmllZCI6ZmFsc2UsInN1YiI6ImY5YjhhMWFiLTkwY2ItNGMwYy1hNjM0LTU2NzNjNDc0ZTgwOCJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzY2ODYxMzU0fV0sInNlc3Npb25faWQiOiJiNDdlZTk0YS1mNmQ4LTRmNmMtYmExNS1jNzU5MWNmYmEwMDkiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.LkXFRpeoGkETZ78q8sZPRjdNco7rq_pGTZYK8IW8Ikc',
+    int? pIdIngresoDestino = 406,
+    int? pIdIngresoOrigen = 401,
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "p_id_ingreso_destino": ${pIdIngresoDestino},
+  "p_id_ingreso_origen": ${pIdIngresoOrigen}
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'copiaringresocompleto',
+      apiUrl:
+          'https://liavirbwftopvrcjyprr.supabase.co/rest/v1/rpc/rpc_copiar_ingreso_completo',
       callType: ApiCallType.POST,
       headers: {
         'Content-Type': 'application/json',

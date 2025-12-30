@@ -17,16 +17,12 @@ class GrupoconvivientepaginaWidget extends StatefulWidget {
     super.key,
     this.idingreso,
     this.idexpediente,
-    this.rowingreso,
-    this.rowexp,
     this.idseccion1,
     this.idnnya,
   });
 
   final int? idingreso;
   final int? idexpediente;
-  final IngresosRow? rowingreso;
-  final VistaExpedientesUltimoEstadoRow? rowexp;
   final int? idseccion1;
   final int? idnnya;
 
@@ -72,8 +68,22 @@ class _GrupoconvivientepaginaWidgetState
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
+          leading: FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30.0,
+            borderWidth: 1.0,
+            buttonSize: 60.0,
+            icon: Icon(
+              Icons.arrow_back_rounded,
+              color: Colors.white,
+              size: 30.0,
+            ),
+            onPressed: () async {
+              context.pop();
+            },
+          ),
           title: Text(
-            'Page Title',
+            'Grupo conviviente y no conviviente',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   font: GoogleFonts.notoSansJp(
                     fontWeight:
@@ -91,7 +101,7 @@ class _GrupoconvivientepaginaWidgetState
                 ),
           ),
           actions: [],
-          centerTitle: false,
+          centerTitle: true,
           elevation: 2.0,
         ),
         body: SafeArea(
@@ -255,14 +265,15 @@ class _GrupoconvivientepaginaWidgetState
                                                               context),
                                                       child:
                                                           AgregarConvivienteWidget(
-                                                        rowingreso:
-                                                            widget.rowingreso!,
-                                                        idexp: widget.rowexp!,
                                                         editar: false,
                                                         idseccion1:
                                                             widget.idseccion1!,
                                                         idgrupoconviviente: 0,
                                                         idnnya: widget.idnnya,
+                                                        idingreso:
+                                                            widget.idingreso!,
+                                                        idexpediente: widget
+                                                            .idexpediente!,
                                                       ),
                                                     ),
                                                   ),
@@ -833,17 +844,18 @@ class _GrupoconvivientepaginaWidgetState
                                                                         context),
                                                                 child:
                                                                     AgregarConvivienteeditarWidget(
-                                                                  rowingreso:
-                                                                      widget
-                                                                          .rowingreso!,
-                                                                  idexp: widget
-                                                                      .rowexp!,
                                                                   idseccion1:
                                                                       widget
                                                                           .idseccion1!,
                                                                   idgrupoconviviente:
                                                                       listItem
                                                                           .id,
+                                                                  idingreso: widget
+                                                                      .idingreso!,
+                                                                  idexp: widget
+                                                                      .idexpediente!,
+                                                                  idnnya: listItem
+                                                                      .idnnyaGrupo,
                                                                 ),
                                                               ),
                                                             ),
@@ -1515,21 +1527,19 @@ class _GrupoconvivientepaginaWidgetState
                                                                     .viewInsetsOf(
                                                                         context),
                                                                 child:
-                                                                    AgregarConvivienteWidget(
-                                                                  rowingreso:
-                                                                      widget
-                                                                          .rowingreso!,
-                                                                  idexp: widget
-                                                                      .rowexp!,
-                                                                  editar: true,
-                                                                  idgrupoconviviente:
-                                                                      listItem
-                                                                          .id,
-                                                                  idnnya: listItem
-                                                                      .idnnyaGrupo,
+                                                                    AgregarConvivienteeditarWidget(
                                                                   idseccion1:
                                                                       widget
                                                                           .idseccion1!,
+                                                                  idgrupoconviviente:
+                                                                      listItem
+                                                                          .id,
+                                                                  idingreso: widget
+                                                                      .idingreso!,
+                                                                  idexp: widget
+                                                                      .idexpediente!,
+                                                                  idnnya: listItem
+                                                                      .idnnyaGrupo,
                                                                 ),
                                                               ),
                                                             ),

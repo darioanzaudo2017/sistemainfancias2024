@@ -22,10 +22,14 @@ class AdminzonaWidget extends StatefulWidget {
     super.key,
     required this.usuariosroles,
     required this.usuariorow,
+    required this.idrol,
+    required this.rol,
   });
 
   final VistaUsuariosRolesRow? usuariosroles;
   final UsuariosRow? usuariorow;
+  final int? idrol;
+  final String? rol;
 
   static String routeName = 'Adminzona';
   static String routePath = '/adminzona';
@@ -2107,42 +2111,37 @@ class _AdminzonaWidgetState extends State<AdminzonaWidget>
                                                                       ParamType
                                                                           .int,
                                                                     ),
-                                                                    'rowexp':
-                                                                        serializeParam(
-                                                                      _model
-                                                                          .vistaexpe
-                                                                          ?.firstOrNull,
-                                                                      ParamType
-                                                                          .SupabaseRow,
-                                                                    ),
-                                                                    'usuariorow':
-                                                                        serializeParam(
-                                                                      widget
-                                                                          .usuariorow,
-                                                                      ParamType
-                                                                          .SupabaseRow,
-                                                                    ),
-                                                                    'spd':
-                                                                        serializeParam(
-                                                                      _model
-                                                                          .spdrow
-                                                                          ?.firstOrNull,
-                                                                      ParamType
-                                                                          .SupabaseRow,
-                                                                    ),
-                                                                    'usuariorol':
-                                                                        serializeParam(
-                                                                      widget
-                                                                          .usuariosroles,
-                                                                      ParamType
-                                                                          .SupabaseRow,
-                                                                    ),
                                                                     'idexp':
                                                                         serializeParam(
                                                                       expdientesenafItem
                                                                           .expedienteId,
                                                                       ParamType
                                                                           .int,
+                                                                    ),
+                                                                    'idnnya':
+                                                                        serializeParam(
+                                                                      expdientesenafItem
+                                                                          .idNNyA,
+                                                                      ParamType
+                                                                          .int,
+                                                                    ),
+                                                                    'idrol':
+                                                                        serializeParam(
+                                                                      0,
+                                                                      ParamType
+                                                                          .int,
+                                                                    ),
+                                                                    'rol':
+                                                                        serializeParam(
+                                                                      '',
+                                                                      ParamType
+                                                                          .String,
+                                                                    ),
+                                                                    'spd1':
+                                                                        serializeParam(
+                                                                      '',
+                                                                      ParamType
+                                                                          .String,
                                                                     ),
                                                                   }.withoutNulls,
                                                                 );

@@ -1,4 +1,5 @@
-import '/backend/supabase/supabase.dart';
+import '/auth/supabase_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -13,14 +14,14 @@ export 'ampliacionactividad_model.dart';
 class AmpliacionactividadWidget extends StatefulWidget {
   const AmpliacionactividadWidget({
     super.key,
-    required this.idingreso,
-    required this.exprow,
     this.formulario,
+    required this.idingreso1,
+    required this.idexp,
   });
 
-  final IngresosRow? idingreso;
-  final VistaExpedientesUltimoEstadoRow? exprow;
   final String? formulario;
+  final int? idingreso1;
+  final int? idexp;
 
   @override
   State<AmpliacionactividadWidget> createState() =>
@@ -499,48 +500,29 @@ class _AmpliacionactividadWidgetState extends State<AmpliacionactividadWidget> {
                                 }
                                 return;
                               }
-                              _model.crearampliacion =
-                                  await AmpliaciondeinformacionTable().insert({
-                                'fecha':
-                                    supaSerialize<DateTime>(_model.datePicked),
-                                'formulario': 'Ampliacion de informacion',
-                                'idexpediente': widget.exprow?.id,
-                                'idingreso': widget.idingreso?.id,
-                                'tipoampliacion': _model.dropDownValue,
-                                'noment': () {
-                                  if (_model.dropDownValue ==
-                                      'Entrevista al NNyA') {
-                                    return widget.exprow?.nombres;
-                                  } else if (_model.dropDownValue ==
-                                      'convocatoria NNyA') {
-                                    return widget.exprow?.nombres;
-                                  } else {
-                                    return '';
-                                  }
-                                }(),
-                                'apeent': () {
-                                  if (_model.dropDownValue ==
-                                      'Entrevista al NNyA') {
-                                    return widget.exprow?.apellidos;
-                                  } else if (_model.dropDownValue ==
-                                      'convocatoria NNyA') {
-                                    return widget.exprow?.apellidos;
-                                  } else {
-                                    return '';
-                                  }
-                                }(),
-                              });
-                              await AmpliaciondeinformacionhistorialTable()
-                                  .insert({
-                                'fecha':
-                                    supaSerialize<DateTime>(_model.datePicked),
-                                'modalidaddeampliacion': _model.dropDownValue,
-                                'asistio': 'No',
-                                'idampliacion':
-                                    _model.crearampliacion?.idampliacion,
-                                'idingreso': widget.idingreso?.id,
-                                'Observaciones': _model.textController.text,
-                              });
+                              await CrearAmpliacionConHistorialCall.call(
+                                token: currentJwtToken,
+                                pFecha: _model.datePicked?.toString(),
+                                pIdexpediente: widget.idexp,
+                                pIdingreso: widget.idingreso1,
+                                pObservaciones: _model.textController.text,
+                                pTipoampliacion: _model.dropDownValue,
+                              );
+
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text(
+                                    'Carga correcta!',
+                                    style: TextStyle(
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                    ),
+                                  ),
+                                  duration: Duration(milliseconds: 4000),
+                                  backgroundColor:
+                                      FlutterFlowTheme.of(context).secondary,
+                                ),
+                              );
                               await showDialog(
                                 context: context,
                                 builder: (alertDialogContext) {
@@ -560,8 +542,6 @@ class _AmpliacionactividadWidgetState extends State<AmpliacionactividadWidget> {
                                 },
                               );
                               Navigator.pop(context, true);
-
-                              safeSetState(() {});
                             },
                             text: 'Guardar',
                             options: FFButtonOptions(

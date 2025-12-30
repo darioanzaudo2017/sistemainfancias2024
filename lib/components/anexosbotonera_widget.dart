@@ -15,10 +15,7 @@ export 'anexosbotonera_model.dart';
 class AnexosbotoneraWidget extends StatefulWidget {
   const AnexosbotoneraWidget({
     super.key,
-    this.ingresorow,
-    required this.exorow,
     required this.idingreso,
-    required this.usuariosrow,
     this.etapa,
     required this.reqacciones,
     required this.anexoeducacion,
@@ -28,15 +25,14 @@ class AnexosbotoneraWidget extends StatefulWidget {
     required this.entrevistaflia,
     required this.ampliacion,
     this.editar,
-    this.usuariorol,
-    required this.spd,
     this.idexp,
+    required this.idnnya,
+    required this.idrol,
+    required this.rol,
+    required this.spd,
   });
 
-  final IngresosRow? ingresorow;
-  final VistaExpedientesUltimoEstadoRow? exorow;
   final int? idingreso;
-  final UsuariosRow? usuariosrow;
   final String? etapa;
   final bool? reqacciones;
   final bool? anexoeducacion;
@@ -49,9 +45,11 @@ class AnexosbotoneraWidget extends StatefulWidget {
   /// editar
   final bool? editar;
 
-  final VistaUsuariosRolesRow? usuariorol;
-  final SpdRow? spd;
   final int? idexp;
+  final int? idnnya;
+  final int? idrol;
+  final String? rol;
+  final String? spd;
 
   @override
   State<AnexosbotoneraWidget> createState() => _AnexosbotoneraWidgetState();
@@ -238,12 +236,17 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                                   context),
                                                           child:
                                                               Anexo5requerimientoaccionesWidget(
-                                                            rowingreso: widget
-                                                                .ingresorow!,
-                                                            rowexp:
-                                                                widget.exorow!,
-                                                            usuario: widget
-                                                                .usuariosrow!,
+                                                            editar: false,
+                                                            idanexosalud: 0,
+                                                            idmedida: 0,
+                                                            idingreso: widget
+                                                                .idingreso!,
+                                                            idexp:
+                                                                widget.idexp!,
+                                                            idrol:
+                                                                widget.idrol!,
+                                                            rol: widget.rol!,
+                                                            spd: widget.spd!,
                                                           ),
                                                         ),
                                                       );
@@ -434,13 +437,13 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                               ListareunioninterinstitucionalWidget(
                                                             idingreso: widget
                                                                 .idingreso,
-                                                            idingres: widget
-                                                                .ingresorow!,
-                                                            idexprow:
-                                                                widget.exorow!,
                                                             formulario:
                                                                 widget.etapa!,
                                                             spd: widget.spd!,
+                                                            idexp:
+                                                                widget.idexp!,
+                                                            idrol:
+                                                                widget.idrol!,
                                                           ),
                                                         ),
                                                       );
@@ -626,25 +629,29 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                       context.pushNamed(
                                         EntrevistasCopyWidget.routeName,
                                         queryParameters: {
-                                          'ingresorow': serializeParam(
-                                            widget.ingresorow?.id,
+                                          'idingreso': serializeParam(
+                                            widget.idingreso,
                                             ParamType.int,
                                           ),
-                                          'rowexp': serializeParam(
-                                            widget.exorow,
-                                            ParamType.SupabaseRow,
+                                          'idnnya': serializeParam(
+                                            widget.idnnya,
+                                            ParamType.int,
                                           ),
-                                          'usuariorow': serializeParam(
-                                            widget.usuariosrow,
-                                            ParamType.SupabaseRow,
+                                          'idexp': serializeParam(
+                                            widget.idexp,
+                                            ParamType.int,
                                           ),
-                                          'usuariorol': serializeParam(
-                                            widget.usuariorol,
-                                            ParamType.SupabaseRow,
+                                          'idrol': serializeParam(
+                                            0,
+                                            ParamType.int,
+                                          ),
+                                          'rol': serializeParam(
+                                            '',
+                                            ParamType.String,
                                           ),
                                           'spd': serializeParam(
-                                            widget.spd,
-                                            ParamType.SupabaseRow,
+                                            '',
+                                            ParamType.String,
                                           ),
                                         }.withoutNulls,
                                       );
@@ -663,30 +670,31 @@ class _AnexosbotoneraWidgetState extends State<AnexosbotoneraWidget> {
                                                       EntrevistasCopyWidget
                                                           .routeName,
                                                       queryParameters: {
-                                                        'ingresorow':
+                                                        'idingreso':
                                                             serializeParam(
-                                                          widget
-                                                              .ingresorow?.id,
+                                                          widget.idingreso,
                                                           ParamType.int,
                                                         ),
-                                                        'rowexp':
+                                                        'idnnya':
                                                             serializeParam(
-                                                          widget.exorow,
-                                                          ParamType.SupabaseRow,
+                                                          widget.idnnya,
+                                                          ParamType.int,
                                                         ),
-                                                        'usuariorow':
-                                                            serializeParam(
-                                                          widget.usuariosrow,
-                                                          ParamType.SupabaseRow,
+                                                        'idexp': serializeParam(
+                                                          widget.idexp,
+                                                          ParamType.int,
                                                         ),
-                                                        'usuariorol':
-                                                            serializeParam(
-                                                          widget.usuariorol,
-                                                          ParamType.SupabaseRow,
+                                                        'idrol': serializeParam(
+                                                          widget.idrol,
+                                                          ParamType.int,
+                                                        ),
+                                                        'rol': serializeParam(
+                                                          widget.rol,
+                                                          ParamType.String,
                                                         ),
                                                         'spd': serializeParam(
                                                           widget.spd,
-                                                          ParamType.SupabaseRow,
+                                                          ParamType.String,
                                                         ),
                                                       }.withoutNulls,
                                                     );

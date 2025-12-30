@@ -11,18 +11,16 @@ export 'formulario5_model.dart';
 class Formulario5Widget extends StatefulWidget {
   const Formulario5Widget({
     super.key,
-    this.idingreso,
-    this.rowexp,
     this.edit,
     String? formderecho,
     required this.idform5historial,
+    required this.idingreso,
   }) : this.formderecho = formderecho ?? 'Informe sintesis';
 
-  final IngresosRow? idingreso;
-  final VistaExpedientesUltimoEstadoRow? rowexp;
   final bool? edit;
   final String formderecho;
   final int? idform5historial;
+  final int? idingreso;
 
   @override
   State<Formulario5Widget> createState() => _Formulario5WidgetState();
@@ -61,7 +59,7 @@ class _Formulario5WidgetState extends State<Formulario5Widget> {
           queryFn: (q) => q
               .eqOrNull(
                 'idIngreso',
-                widget.idingreso?.id,
+                widget.idingreso,
               )
               .eqOrNull(
                 'idForm5',
@@ -325,7 +323,7 @@ class _Formulario5WidgetState extends State<Formulario5Widget> {
                                 .queryRows(
                               queryFn: (q) => q.eqOrNull(
                                 'idingreso',
-                                widget.idingreso?.id,
+                                widget.idingreso,
                               ),
                             ),
                             builder: (context, snapshot) {

@@ -19,14 +19,14 @@ export 'seccion7_model.dart';
 class Seccion7Widget extends StatefulWidget {
   const Seccion7Widget({
     super.key,
-    required this.rowingreso,
-    required this.rowexp,
     this.editar,
+    required this.idingreso,
+    required this.idexp,
   });
 
-  final IngresosRow? rowingreso;
-  final VistaExpedientesUltimoEstadoRow? rowexp;
   final bool? editar;
+  final int? idingreso;
+  final int? idexp;
 
   @override
   State<Seccion7Widget> createState() => _Seccion7WidgetState();
@@ -62,7 +62,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
       future: Seccion7Table().querySingleRow(
         queryFn: (q) => q.eqOrNull(
           'idIngreso',
-          widget.rowingreso?.id,
+          widget.idingreso,
         ),
       ),
       builder: (context, snapshot) {
@@ -176,78 +176,6 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    8.0, 0.0, 8.0, 0.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          10.0, 0.0, 0.0, 0.0),
-                                      child: Text(
-                                        'Ley Provincial 9944',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              font: GoogleFonts.notoSansJp(
-                                                fontWeight: FontWeight.w600,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                              fontSize: 16.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w600,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    8.0, 0.0, 8.0, 0.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          10.0, 0.0, 0.0, 0.0),
-                                      child: Text(
-                                        'Marca las casillas que correspondan:',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              font: GoogleFonts.notoSansJp(
-                                                fontWeight: FontWeight.normal,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                              fontSize: 16.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.normal,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
                                     8.0, 8.0, 8.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -303,8 +231,8 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                                 context),
                                             child:
                                                 DesplegablederechosprincipalWidget(
-                                              idexp: widget.rowexp?.id,
-                                              idingreso: widget.rowingreso?.id,
+                                              idexp: widget.idexp,
+                                              idingreso: widget.idingreso,
                                               form: 'Recepcion de la demanda',
                                             ),
                                           ),
@@ -375,11 +303,11 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                         queryFn: (q) => q
                                             .eqOrNull(
                                               'idexp',
-                                              widget.rowexp?.id,
+                                              widget.idexp,
                                             )
                                             .eqOrNull(
                                               'idingreso',
-                                              widget.rowingreso?.id,
+                                              widget.idingreso,
                                             ),
                                       )))
                                     .future,
@@ -1555,10 +1483,8 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                             await Seccion7Table().insert({
                                               'Criterios': _model
                                                   .dropDownpriorizacionValue,
-                                              'idIngreso':
-                                                  widget.rowingreso?.id,
-                                              'idExpediente':
-                                                  widget.rowexp?.id,
+                                              'idIngreso': widget.idingreso,
+                                              'idExpediente': widget.idexp,
                                               'iduser': currentUserUid,
                                               'tiene_criterios':
                                                   _model.choiceChipsValue,
@@ -1574,29 +1500,26 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                               matchingRows: (rows) =>
                                                   rows.eqOrNull(
                                                 'id',
-                                                widget.rowingreso?.id,
+                                                widget.idingreso,
                                               ),
                                             );
-                                            await showDialog(
-                                              context: context,
-                                              builder: (alertDialogContext) {
-                                                return WebViewAware(
-                                                  child: AlertDialog(
-                                                    title:
-                                                        Text('Carga correcta'),
-                                                    content: Text(
-                                                        'La informacion se guardo correctamente!!'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: Text('Ok'),
-                                                      ),
-                                                    ],
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(
+                                              SnackBar(
+                                                content: Text(
+                                                  'Se guardo con exito!',
+                                                  style: TextStyle(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
                                                   ),
-                                                );
-                                              },
+                                                ),
+                                                duration: Duration(
+                                                    milliseconds: 4000),
+                                                backgroundColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondary,
+                                              ),
                                             );
                                             Navigator.pop(context, true);
                                           } else {
@@ -1611,7 +1534,7 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                               matchingRows: (rows) =>
                                                   rows.eqOrNull(
                                                 'idIngreso',
-                                                widget.rowingreso?.id,
+                                                widget.idingreso,
                                               ),
                                             );
                                             await IngresosTable().update(
@@ -1624,29 +1547,26 @@ class _Seccion7WidgetState extends State<Seccion7Widget> {
                                               matchingRows: (rows) =>
                                                   rows.eqOrNull(
                                                 'id',
-                                                widget.rowingreso?.id,
+                                                widget.idingreso,
                                               ),
                                             );
-                                            await showDialog(
-                                              context: context,
-                                              builder: (alertDialogContext) {
-                                                return WebViewAware(
-                                                  child: AlertDialog(
-                                                    title:
-                                                        Text('Carga correcta'),
-                                                    content: Text(
-                                                        'La informacion se guardo correctamente!!'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: Text('Ok'),
-                                                      ),
-                                                    ],
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(
+                                              SnackBar(
+                                                content: Text(
+                                                  'Se guardo con exito!',
+                                                  style: TextStyle(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
                                                   ),
-                                                );
-                                              },
+                                                ),
+                                                duration: Duration(
+                                                    milliseconds: 4000),
+                                                backgroundColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondary,
+                                              ),
                                             );
                                             Navigator.pop(context);
                                           }

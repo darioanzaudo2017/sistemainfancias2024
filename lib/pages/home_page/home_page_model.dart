@@ -14,14 +14,26 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
 
   ///  State fields for stateful widgets in this page.
 
+  // Stores action output result for [Backend Call - API (info de contexto)] action in HomePage widget.
+  ApiCallResponse? contexto;
+  // Stores action output result for [Backend Call - API (search expedientes page)] action in HomePage widget.
+  ApiCallResponse? apiResult88v1;
   // Model for referencias component.
   late ReferenciasModel referenciasModel;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
   TextEditingController? textFieldTextController;
   String? Function(BuildContext, String?)? textFieldTextControllerValidator;
+  // Stores action output result for [Backend Call - API (search expedientes page)] action in Button widget.
+  ApiCallResponse? apiResult88v;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
   List<VistaExpedientesUltimoEstadoRow>? query2;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<UsuariosRow>? usuario1;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<SpdRow>? spd1;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<VistaUsuariosRolesRow>? userrol1;
 
   @override
   void initState(BuildContext context) {

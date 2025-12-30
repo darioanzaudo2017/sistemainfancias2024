@@ -15,14 +15,14 @@ export 'agregar_persona_relacionadaeditar_model.dart';
 class AgregarPersonaRelacionadaeditarWidget extends StatefulWidget {
   const AgregarPersonaRelacionadaeditarWidget({
     super.key,
-    required this.rowingreso,
-    required this.idexp,
     this.idseccion8,
+    required this.idesxpediente,
+    required this.idingreso,
   });
 
-  final IngresosRow? rowingreso;
-  final VistaExpedientesUltimoEstadoRow? idexp;
   final int? idseccion8;
+  final int? idesxpediente;
+  final int? idingreso;
 
   @override
   State<AgregarPersonaRelacionadaeditarWidget> createState() =>
@@ -1051,8 +1051,8 @@ class _AgregarPersonaRelacionadaeditarWidgetState
                                               _model.textController3.text,
                                           'direccion':
                                               _model.textController4.text,
-                                          'idIngreso': widget.rowingreso?.id,
-                                          'idExpediente': widget.idexp?.id,
+                                          'idIngreso': widget.idingreso,
+                                          'idExpediente': widget.idesxpediente,
                                           'updated_at': supaSerialize<DateTime>(
                                               getCurrentTimestamp),
                                           'iduser': currentUserUid,

@@ -65,6 +65,12 @@ class Caratula2Model extends FlutterFlowModel<Caratula2Widget> {
   DateTime? datePicked2;
   // Stores action output result for [Backend Call - API (crearyverificarexpediente)] action in Button widget.
   ApiCallResponse? apiResultbjl;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<UsuariosRow>? usuario11;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<SpdRow>? spd11;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<VistaUsuariosRolesRow>? userrol11;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
   TextEditingController? textController5;
@@ -74,6 +80,14 @@ class Caratula2Model extends FlutterFlowModel<Caratula2Widget> {
       FlutterFlowDataTableController<Apiexpediente6Struct>();
   // Stores action output result for [Backend Call - Query Rows] action in Text widget.
   List<VistaExpedientesUltimoEstadoRow>? query10;
+  // Stores action output result for [Backend Call - Query Rows] action in Text widget.
+  List<UsuariosRow>? usuario;
+  // Stores action output result for [Backend Call - Query Rows] action in Text widget.
+  List<SpdRow>? spd;
+  // Stores action output result for [Backend Call - Query Rows] action in Text widget.
+  List<VistaUsuariosRolesRow>? userrol;
+  // Stores action output result for [Backend Call - Query Rows] action in Text widget.
+  List<VistaExpedientesUltimoEstadoRow>? expediente;
 
   @override
   void initState(BuildContext context) {

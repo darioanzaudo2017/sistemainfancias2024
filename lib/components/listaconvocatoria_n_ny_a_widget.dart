@@ -3,8 +3,10 @@ import '/entrevistas/aviso_visita_n_ny_a/aviso_visita_n_ny_a_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'listaconvocatoria_n_ny_a_model.dart';
 export 'listaconvocatoria_n_ny_a_model.dart';
@@ -15,19 +17,20 @@ class ListaconvocatoriaNNyAWidget extends StatefulWidget {
   const ListaconvocatoriaNNyAWidget({
     super.key,
     this.idingreso,
-    this.ingresorow,
-    this.exprow,
     this.idampliacionrow,
     this.amplaicionrowvista,
-    required this.spdrow,
+    required this.idexp,
+    required this.spd,
   });
 
   final int? idingreso;
-  final IngresosRow? ingresorow;
-  final VistaExpedientesUltimoEstadoRow? exprow;
   final int? idampliacionrow;
   final VistaAmpliacionInformacionRow? amplaicionrowvista;
-  final SpdRow? spdrow;
+
+  /// idexp
+  final int? idexp;
+
+  final String? spd;
 
   @override
   State<ListaconvocatoriaNNyAWidget> createState() =>
@@ -61,15 +64,20 @@ class _ListaconvocatoriaNNyAWidgetState
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Align(
       alignment: AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<VistaAmpliacionInformacionRow>>(
-        future: VistaAmpliacionInformacionTable().querySingleRow(
-          queryFn: (q) => q.eqOrNull(
-            'historial_id',
-            widget.amplaicionrowvista?.historialId,
-          ),
-        ),
+        future: (_model.requestCompleter ??=
+                Completer<List<VistaAmpliacionInformacionRow>>()
+                  ..complete(VistaAmpliacionInformacionTable().querySingleRow(
+                    queryFn: (q) => q.eqOrNull(
+                      'historial_id',
+                      widget.amplaicionrowvista?.historialId,
+                    ),
+                  )))
+            .future,
         builder: (context, snapshot) {
           // Customize what your widget looks like when it's loading.
           if (!snapshot.hasData) {
@@ -173,16 +181,27 @@ class _ListaconvocatoriaNNyAWidgetState
                                     child: Padding(
                                       padding: MediaQuery.viewInsetsOf(context),
                                       child: AvisoVisitaNNyAWidget(
-                                        rowingreso: widget.ingresorow!,
-                                        rowexp: widget.exprow!,
                                         editar: false,
                                         idampliacion: widget.idampliacionrow,
-                                        spdrow: widget.spdrow!,
+                                        spdrow: widget.spd!,
+                                        idconvocatoriaNNyA: 0,
+                                        idexp: widget.idexp!,
+                                        idingreso: widget.idingreso!,
+                                        spd: FFAppState().spd,
                                       ),
                                     ),
                                   );
                                 },
-                              ).then((value) => safeSetState(() {}));
+                              ).then((value) => safeSetState(() => _model
+                                  .creodocumentoconcurrenciannya = value));
+
+                              if (_model.creodocumentoconcurrenciannya!) {
+                                safeSetState(
+                                    () => _model.requestCompleter = null);
+                                await _model.waitForRequestCompleted();
+                              }
+
+                              safeSetState(() {});
                             },
                             text: 'Agregar convocatoria',
                             icon: Icon(
