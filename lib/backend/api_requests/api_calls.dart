@@ -2177,6 +2177,48 @@ class GetHistorialCall {
   }
 }
 
+class CrearusuarioCall {
+  static Future<ApiCallResponse> call({
+    String? mail = 'b@b.com',
+    String? nombre = 'dario 5555',
+    String? spd = 'SPD Jardín',
+    int? zona = 3,
+    String? token =
+        'eyJhbGciOiJIUzI1NiIsImtpZCI6Ik1jUzFaOUhyblIvelF4SmkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2xpYXZpcmJ3ZnRvcHZyY2p5cHJyLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJmOWI4YTFhYi05MGNiLTRjMGMtYTYzNC01NjczYzQ3NGU4MDgiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY3NjQzNzAyLCJpYXQiOjE3Njc2NDAxMDIsImVtYWlsIjoiZGFyaW9AZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6ImRhcmlvQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaG9uZV92ZXJpZmllZCI6ZmFsc2UsInN1YiI6ImY5YjhhMWFiLTkwY2ItNGMwYy1hNjM0LTU2NzNjNDc0ZTgwOCJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzY3MzYwOTQ0fV0sInNlc3Npb25faWQiOiIxMmNlOTEzOS0zMTEyLTQ4YTMtODUwNi1mZjYzOTg5NzA5YWIiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.kIARg2J2EFshVpF6ufiUUC3BqtZCjQSZ2KWsDy8KMh8',
+    String? pass = '123456',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "email": "${escapeStringForJson(mail)}",
+  "password": "${escapeStringForJson(pass)}",
+  "nombre_completo": "${escapeStringForJson(nombre)}",
+  "spd_seleccionado": "${escapeStringForJson(spd)}",
+  "zona_manual": ${zona}
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'crearusuario',
+      apiUrl:
+          'https://liavirbwftopvrcjyprr.supabase.co/functions/v1/bright-task',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYXZpcmJ3ZnRvcHZyY2p5cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA3MDEzNTYsImV4cCI6MjAzNjI3NzM1Nn0.FrE2DI_V7eJWhilA-GP_e7s2LAubOHlgnVnya-uWGi8',
+        'Authorization': 'Bearer ${token}',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
 class ApiPagingParams {
   int nextPageNumber = 0;
   int numItems = 0;

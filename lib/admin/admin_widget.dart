@@ -1232,14 +1232,12 @@ class _AdminWidgetState extends State<AdminWidget>
                                                       FFButtonWidget(
                                                         onPressed: () async {
                                                           context.pushNamed(
-                                                            Auth2CreateWidget
+                                                            Auth2CreateCopyWidget
                                                                 .routeName,
                                                             queryParameters: {
                                                               'idrol':
                                                                   serializeParam(
-                                                                widget
-                                                                    .usuariosroles
-                                                                    ?.rolId,
+                                                                widget.idrol,
                                                                 ParamType.int,
                                                               ),
                                                             }.withoutNulls,
