@@ -11,13 +11,13 @@ import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_radio_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'dart:async';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -1570,25 +1570,6 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                               ),
                                                                             ),
                                                                           ),
-                                                                          Expanded(
-                                                                            child:
-                                                                                Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(17.0, 0.0, 0.0, 0.0),
-                                                                              child: Text(
-                                                                                '',
-                                                                                textAlign: TextAlign.start,
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.notoSansJp(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
-                                                                                      letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                    ),
-                                                                              ),
-                                                                            ),
-                                                                          ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
@@ -1645,7 +1626,10 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                         });
                                                                                       }
                                                                                     },
-                                                                              text: CeseStruct.maybeFromMap(containerrcpRcpCeseResponse.jsonBody)!.form9CeseRow.fecha,
+                                                                              text: valueOrDefault<String>(
+                                                                                CeseStruct.maybeFromMap(containerrcpRcpCeseResponse.jsonBody)?.form9CeseRow.fecha,
+                                                                                'Fecha',
+                                                                              ),
                                                                               options: FFButtonOptions(
                                                                                 height: 40.0,
                                                                                 padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),

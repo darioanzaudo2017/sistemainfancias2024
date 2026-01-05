@@ -9,7 +9,6 @@ import '/components/formcaratula_widget.dart';
 import '/components/tarjetaencabezado_widget.dart';
 import '/components/ultimaactualizacion_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/formulario1/seccion2/seccion2_widget.dart';
@@ -21,6 +20,9 @@ import '/formulario1/secciones_formulario1/seccion7/seccion7_widget.dart';
 import '/formulario1/secciones_formulario1/seccion8/seccion8_widget.dart';
 import '/index.dart';
 import 'dart:async';
+import 'package:community_testing_ryusdv/app_state.dart'
+    as community_testing_ryusdv_app_state;
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -76,6 +78,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
   @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
+    context.watch<community_testing_ryusdv_app_state.FFAppState>();
 
     return FutureBuilder<ApiCallResponse>(
       future: (_model.apiRequestCompleter ??= Completer<ApiCallResponse>()

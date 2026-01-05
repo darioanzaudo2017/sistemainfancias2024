@@ -9,7 +9,6 @@ import '/components/nuevaaccion_widget.dart';
 import '/components/tarjetaencabezado_widget.dart';
 import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
@@ -17,6 +16,9 @@ import '/formulario6/formulario6/formulario6_widget.dart';
 import '/formulario7/formulario7/formulario7_widget.dart';
 import '/index.dart';
 import 'dart:async';
+import 'package:community_testing_ryusdv/app_state.dart'
+    as community_testing_ryusdv_app_state;
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -74,6 +76,7 @@ class _DefiniciondemedidasWidgetState extends State<DefiniciondemedidasWidget> {
   @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
+    context.watch<community_testing_ryusdv_app_state.FFAppState>();
 
     return FutureBuilder<ApiCallResponse>(
       future: (_model.apiRequestCompleter ??= Completer<ApiCallResponse>()
