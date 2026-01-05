@@ -55,6 +55,8 @@ class SenafModel extends FlutterFlowModel<SenafWidget> {
   TextEditingController? textController4;
   String? Function(BuildContext, String?)? textController4Validator;
   Completer<ApiCallResponse>? apiRequestCompleter;
+  // Stores action output result for [Backend Call - API (guardar cese)] action in Button widget.
+  ApiCallResponse? guardarcese;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
   List<VistaRecepciondelademandaRow>? recepciondemanda;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
