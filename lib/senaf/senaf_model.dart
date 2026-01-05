@@ -54,7 +54,7 @@ class SenafModel extends FlutterFlowModel<SenafWidget> {
   FocusNode? textFieldFocusNode3;
   TextEditingController? textController4;
   String? Function(BuildContext, String?)? textController4Validator;
-  Completer<List<Formulario9Row>>? requestCompleter3;
+  Completer<ApiCallResponse>? apiRequestCompleter;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
   List<VistaRecepciondelademandaRow>? recepciondemanda;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
@@ -87,7 +87,7 @@ class SenafModel extends FlutterFlowModel<SenafWidget> {
   FocusNode? textFieldFocusNode4;
   TextEditingController? textController5;
   String? Function(BuildContext, String?)? textController5Validator;
-  Completer<List<SeguimientosolicitudRow>>? requestCompleter4;
+  Completer<List<SeguimientosolicitudRow>>? requestCompleter3;
 
   @override
   void initState(BuildContext context) {}
@@ -117,7 +117,7 @@ class SenafModel extends FlutterFlowModel<SenafWidget> {
       radioButtoninscriptoagotadoValueController?.value;
   String? get radioButtoninscriptopermanenciafamiliaValue =>
       radioButtoninscriptopermanenciafamiliaValueController?.value;
-  Future waitForRequestCompleted3({
+  Future waitForApiRequestCompleted({
     double minWait = 0,
     double maxWait = double.infinity,
   }) async {
@@ -125,7 +125,7 @@ class SenafModel extends FlutterFlowModel<SenafWidget> {
     while (true) {
       await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = requestCompleter3?.isCompleted ?? false;
+      final requestComplete = apiRequestCompleter?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
         break;
       }
@@ -147,7 +147,7 @@ class SenafModel extends FlutterFlowModel<SenafWidget> {
     }
   }
 
-  Future waitForRequestCompleted4({
+  Future waitForRequestCompleted3({
     double minWait = 0,
     double maxWait = double.infinity,
   }) async {
@@ -155,7 +155,7 @@ class SenafModel extends FlutterFlowModel<SenafWidget> {
     while (true) {
       await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = requestCompleter4?.isCompleted ?? false;
+      final requestComplete = requestCompleter3?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
         break;
       }

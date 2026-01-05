@@ -24,13 +24,11 @@ class EnviarmailWidget extends StatefulWidget {
     super.key,
     this.idingreso,
     this.idexp,
-    this.expediente,
     this.idampliacion,
   });
 
   final int? idingreso;
   final int? idexp;
-  final VistaExpedientesUltimoEstadoRow? expediente;
   final int? idampliacion;
 
   @override
