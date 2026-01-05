@@ -39,42 +39,8 @@ class Formulario9Row extends SupabaseDataRow {
   bool? get solicitudMedida => getField<bool>('solicitudMedida');
   set solicitudMedida(bool? value) => setField<bool>('solicitudMedida', value);
 
-  DateTime? get fechasolicitud => getField<DateTime>('fechasolicitud');
-  set fechasolicitud(DateTime? value) =>
-      setField<DateTime>('fechasolicitud', value);
-
-  String? get motivosolicitud => getField<String>('motivosolicitud');
-  set motivosolicitud(String? value) =>
-      setField<String>('motivosolicitud', value);
-
-  bool? get evaluacionMedida => getField<bool>('evaluacionMedida');
-  set evaluacionMedida(bool? value) =>
-      setField<bool>('evaluacionMedida', value);
-
-  bool? get medidaAdoptada => getField<bool>('MedidaAdoptada');
-  set medidaAdoptada(bool? value) => setField<bool>('MedidaAdoptada', value);
-
-  DateTime? get fecMedidaAdoptada => getField<DateTime>('FecMedidaAdoptada');
-  set fecMedidaAdoptada(DateTime? value) =>
-      setField<DateTime>('FecMedidaAdoptada', value);
-
-  bool? get medidaRechazada => getField<bool>('MedidaRechazada');
-  set medidaRechazada(bool? value) => setField<bool>('MedidaRechazada', value);
-
-  DateTime? get fechaMedidaRechazada =>
-      getField<DateTime>('FechaMedidaRechazada');
-  set fechaMedidaRechazada(DateTime? value) =>
-      setField<DateTime>('FechaMedidaRechazada', value);
-
-  String? get motivoRechazo => getField<String>('MotivoRechazo');
-  set motivoRechazo(String? value) => setField<String>('MotivoRechazo', value);
-
   String? get acciones => getField<String>('acciones');
   set acciones(String? value) => setField<String>('acciones', value);
-
-  DateTime? get reiteracionFecha => getField<DateTime>('reiteracionFecha');
-  set reiteracionFecha(DateTime? value) =>
-      setField<DateTime>('reiteracionFecha', value);
 
   DateTime? get updatedAt => getField<DateTime>('updated_at');
   set updatedAt(DateTime? value) => setField<DateTime>('updated_at', value);
@@ -104,9 +70,9 @@ class Formulario9Row extends SupabaseDataRow {
   set fundamentacionsolicitud(String? value) =>
       setField<String>('fundamentacionsolicitud', value);
 
-  String? get resenadelasitu => getField<String>('reseñadelasitu');
+  String? get resenadelasitu => getField<String>('resenadelasitu');
   set resenadelasitu(String? value) =>
-      setField<String>('reseñadelasitu', value);
+      setField<String>('resenadelasitu', value);
 
   String? get linksolicitud => getField<String>('linksolicitud');
   set linksolicitud(String? value) => setField<String>('linksolicitud', value);

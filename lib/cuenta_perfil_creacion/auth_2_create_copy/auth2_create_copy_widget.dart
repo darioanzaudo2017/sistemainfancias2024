@@ -1,12 +1,13 @@
 import '/auth/supabase_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/index.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -49,9 +50,6 @@ class _Auth2CreateCopyWidgetState extends State<Auth2CreateCopyWidget>
 
     _model.passwordTextController ??= TextEditingController();
     _model.passwordFocusNode ??= FocusNode();
-
-    _model.passwordConfirmTextController ??= TextEditingController();
-    _model.passwordConfirmFocusNode ??= FocusNode();
 
     animationsMap.addAll({
       'containerOnPageLoadAnimation': AnimationInfo(
@@ -784,190 +782,45 @@ class _Auth2CreateCopyWidgetState extends State<Auth2CreateCopyWidget>
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 16.0),
-                                  child: Container(
-                                    width: double.infinity,
-                                    child: TextFormField(
-                                      controller:
-                                          _model.passwordConfirmTextController,
-                                      focusNode:
-                                          _model.passwordConfirmFocusNode,
-                                      autofocus: true,
-                                      autofillHints: [AutofillHints.password],
-                                      obscureText:
-                                          !_model.passwordConfirmVisibility,
-                                      decoration: InputDecoration(
-                                        labelText: 'Confirmar Contraseña',
-                                        labelStyle: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .override(
-                                              font: GoogleFonts.notoSansJp(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontStyle,
-                                              ),
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .fontStyle,
-                                            ),
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .alternate,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        errorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        focusedErrorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        filled: true,
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                        suffixIcon: InkWell(
-                                          onTap: () => safeSetState(
-                                            () => _model
-                                                    .passwordConfirmVisibility =
-                                                !_model
-                                                    .passwordConfirmVisibility,
-                                          ),
-                                          focusNode:
-                                              FocusNode(skipTraversal: true),
-                                          child: Icon(
-                                            _model.passwordConfirmVisibility
-                                                ? Icons.visibility_outlined
-                                                : Icons.visibility_off_outlined,
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
-                                            size: 24.0,
-                                          ),
-                                        ),
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyLarge
-                                          .override(
-                                            font: GoogleFonts.notoSansJp(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge
-                                                      .fontStyle,
-                                            ),
-                                            letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyLarge
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyLarge
-                                                    .fontStyle,
-                                          ),
-                                      cursorColor:
-                                          FlutterFlowTheme.of(context).primary,
-                                      validator: _model
-                                          .passwordConfirmTextControllerValidator
-                                          .asValidator(context),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 16.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      GoRouter.of(context).prepareAuthEvent();
-                                      if (_model.passwordTextController.text !=
-                                          _model.passwordConfirmTextController
-                                              .text) {
+                                      _model.apiResultqth =
+                                          await CrearusuarioCall.call(
+                                        mail: _model
+                                            .emailAddressTextController.text,
+                                        nombre: _model
+                                            .nombreCompletoTextController.text,
+                                        spd: _model.dropDownValue1,
+                                        zona: _model.dropDownValue2,
+                                        token: currentJwtToken,
+                                        pass:
+                                            _model.passwordTextController.text,
+                                      );
+
+                                      if ((_model.apiResultqth?.succeeded ??
+                                          true)) {
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(
                                           SnackBar(
                                             content: Text(
-                                              'Passwords don\'t match!',
+                                              'Se creo el usuario correctamente!',
+                                              style: TextStyle(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                              ),
                                             ),
+                                            duration:
+                                                Duration(milliseconds: 4000),
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondary,
                                           ),
                                         );
-                                        return;
+
+                                        context.pushNamed(
+                                            HomePageWidget.routeName);
                                       }
-
-                                      final user = await authManager
-                                          .createAccountWithEmail(
-                                        context,
-                                        _model.emailAddressTextController.text,
-                                        _model.passwordTextController.text,
-                                      );
-                                      if (user == null) {
-                                        return;
-                                      }
-
-                                      _model.spdzona =
-                                          await SpdTable().queryRows(
-                                        queryFn: (q) => q.eqOrNull(
-                                          'nombrespd',
-                                          _model.dropDownValue1,
-                                        ),
-                                      );
-                                      _model.createusuario =
-                                          await UsuariosTable().insert({
-                                        'id': currentUserUid,
-                                        'nombreCompleto': _model
-                                            .nombreCompletoTextController.text,
-                                        'rol': 'Usuario',
-                                        'SPD': _model.dropDownValue1,
-                                        'mail': _model
-                                            .emailAddressTextController.text,
-                                        'zona_usuario': _model.dropDownValue1 ==
-                                                'Zona'
-                                            ? _model.dropDownValue2
-                                            : _model.spdzona?.firstOrNull?.zona,
-                                      });
-                                      await UserRolTable().insert({
-                                        'iduser': _model.createusuario?.id,
-                                        'idrol': 3,
-                                      });
-
-                                      context.pushNamedAuth(
-                                          HomePageWidget.routeName,
-                                          context.mounted);
 
                                       safeSetState(() {});
                                     },
@@ -980,8 +833,8 @@ class _Auth2CreateCopyWidgetState extends State<Auth2CreateCopyWidget>
                                       iconPadding:
                                           EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondary,
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(

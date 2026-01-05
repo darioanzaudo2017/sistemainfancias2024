@@ -1,14 +1,15 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/structs/index.dart';
-import '/backend/supabase/supabase.dart';
 import '/components/notificaciones_widget.dart';
 import '/components/referencias_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
+import 'package:community_testing_ryusdv/app_state.dart'
+    as community_testing_ryusdv_app_state;
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -89,6 +90,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
+    context.watch<community_testing_ryusdv_app_state.FFAppState>();
 
     return GestureDetector(
       onTap: () {
@@ -2513,47 +2515,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                               FFButtonWidget(
                                                                 onPressed:
                                                                     () async {
-                                                                  _model.query2 =
-                                                                      await VistaExpedientesUltimoEstadoTable()
-                                                                          .queryRows(
-                                                                    queryFn: (q) =>
-                                                                        q.eqOrNull(
-                                                                      'id',
-                                                                      lista2Item
-                                                                          .id,
-                                                                    ),
-                                                                  );
-                                                                  _model.usuario1 =
-                                                                      await UsuariosTable()
-                                                                          .queryRows(
-                                                                    queryFn: (q) =>
-                                                                        q.eqOrNull(
-                                                                      'id',
-                                                                      currentUserUid,
-                                                                    ),
-                                                                  );
-                                                                  _model.spd1 =
-                                                                      await SpdTable()
-                                                                          .queryRows(
-                                                                    queryFn: (q) =>
-                                                                        q.eqOrNull(
-                                                                      'nombrespd',
-                                                                      ContextoinicialStruct.maybeFromMap((_model.contexto?.jsonBody ??
-                                                                              ''))
-                                                                          ?.usuario
-                                                                          .spd,
-                                                                    ),
-                                                                  );
-                                                                  _model.userrol1 =
-                                                                      await VistaUsuariosRolesTable()
-                                                                          .queryRows(
-                                                                    queryFn: (q) =>
-                                                                        q.eqOrNull(
-                                                                      'id',
-                                                                      currentUserUid,
-                                                                    ),
-                                                                  );
-
                                                                   context
                                                                       .pushNamed(
                                                                     IngresosWidget
@@ -2562,10 +2523,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                         {
                                                                       'idexp':
                                                                           serializeParam(
-                                                                        _model
-                                                                            .query2
-                                                                            ?.firstOrNull
-                                                                            ?.id,
+                                                                        lista2Item
+                                                                            .id,
                                                                         ParamType
                                                                             .int,
                                                                       ),
@@ -2609,9 +2568,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                       ),
                                                                     }.withoutNulls,
                                                                   );
-
-                                                                  safeSetState(
-                                                                      () {});
                                                                 },
                                                                 text:
                                                                     'Ver Expediente',

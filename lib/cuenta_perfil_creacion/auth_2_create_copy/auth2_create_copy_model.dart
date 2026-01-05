@@ -1,4 +1,4 @@
-import '/backend/supabase/supabase.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/index.dart';
@@ -28,21 +28,12 @@ class Auth2CreateCopyModel extends FlutterFlowModel<Auth2CreateCopyWidget> {
   TextEditingController? passwordTextController;
   late bool passwordVisibility;
   String? Function(BuildContext, String?)? passwordTextControllerValidator;
-  // State field(s) for passwordConfirm widget.
-  FocusNode? passwordConfirmFocusNode;
-  TextEditingController? passwordConfirmTextController;
-  late bool passwordConfirmVisibility;
-  String? Function(BuildContext, String?)?
-      passwordConfirmTextControllerValidator;
-  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
-  List<SpdRow>? spdzona;
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  UsuariosRow? createusuario;
+  // Stores action output result for [Backend Call - API (crearusuario)] action in Button widget.
+  ApiCallResponse? apiResultqth;
 
   @override
   void initState(BuildContext context) {
     passwordVisibility = false;
-    passwordConfirmVisibility = false;
   }
 
   @override
@@ -55,8 +46,5 @@ class Auth2CreateCopyModel extends FlutterFlowModel<Auth2CreateCopyWidget> {
 
     passwordFocusNode?.dispose();
     passwordTextController?.dispose();
-
-    passwordConfirmFocusNode?.dispose();
-    passwordConfirmTextController?.dispose();
   }
 }

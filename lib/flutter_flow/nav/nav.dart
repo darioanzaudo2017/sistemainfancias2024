@@ -9,10 +9,12 @@ import '/backend/supabase/supabase.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
-import '/flutter_flow/flutter_flow_theme.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 import '/index.dart';
+import 'package:community_testing_ryusdv/index.dart'
+    as $community_testing_ryusdv;
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -74,438 +76,451 @@ class AppStateNotifier extends ChangeNotifier {
   }
 }
 
-GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
-      initialLocation: '/',
-      debugLogDiagnostics: true,
-      refreshListenable: appStateNotifier,
-      navigatorKey: appNavigatorKey,
-      errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? HomePageWidget() : Auth2LoginWidget(),
-      routes: [
-        FFRoute(
-          name: '_initialize',
-          path: '/',
-          builder: (context, _) =>
-              appStateNotifier.loggedIn ? HomePageWidget() : Auth2LoginWidget(),
-        ),
-        FFRoute(
-          name: HomePageWidget.routeName,
-          path: HomePageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => HomePageWidget(),
-        ),
-        FFRoute(
-          name: PerfilWidget.routeName,
-          path: PerfilWidget.routePath,
-          builder: (context, params) => PerfilWidget(
-            idingreso: params.getParam(
-              'idingreso',
-              ParamType.int,
-            ),
-            idexp: params.getParam(
-              'idexp',
-              ParamType.int,
-            ),
-            idnnya: params.getParam(
-              'idnnya',
-              ParamType.int,
-            ),
-            idrol: params.getParam(
-              'idrol',
-              ParamType.int,
-            ),
-            rol: params.getParam(
-              'rol',
-              ParamType.String,
-            ),
-            spd1: params.getParam(
-              'spd1',
-              ParamType.String,
-            ),
+GoRouter createRouter(AppStateNotifier appStateNotifier) {
+  $community_testing_ryusdv.initializeRoutes(
+    notificationsWidgetName: 'community_testing_ryusdv.notifications',
+    notificationsWidgetPath: '/notifications',
+  );
+
+  return GoRouter(
+    initialLocation: '/',
+    debugLogDiagnostics: true,
+    refreshListenable: appStateNotifier,
+    navigatorKey: appNavigatorKey,
+    errorBuilder: (context, state) =>
+        appStateNotifier.loggedIn ? HomePageWidget() : Auth2LoginWidget(),
+    routes: [
+      FFRoute(
+        name: '_initialize',
+        path: '/',
+        builder: (context, _) =>
+            appStateNotifier.loggedIn ? HomePageWidget() : Auth2LoginWidget(),
+      ),
+      FFRoute(
+        name: HomePageWidget.routeName,
+        path: HomePageWidget.routePath,
+        requireAuth: true,
+        builder: (context, params) => HomePageWidget(),
+      ),
+      FFRoute(
+        name: PerfilWidget.routeName,
+        path: PerfilWidget.routePath,
+        builder: (context, params) => PerfilWidget(
+          idingreso: params.getParam(
+            'idingreso',
+            ParamType.int,
+          ),
+          idexp: params.getParam(
+            'idexp',
+            ParamType.int,
+          ),
+          idnnya: params.getParam(
+            'idnnya',
+            ParamType.int,
+          ),
+          idrol: params.getParam(
+            'idrol',
+            ParamType.int,
+          ),
+          rol: params.getParam(
+            'rol',
+            ParamType.String,
+          ),
+          spd1: params.getParam(
+            'spd1',
+            ParamType.String,
           ),
         ),
-        FFRoute(
-          name: IngresosWidget.routeName,
-          path: IngresosWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => IngresosWidget(
-            idexp: params.getParam(
-              'idexp',
-              ParamType.int,
-            ),
-            idnnya: params.getParam(
-              'idnnya',
-              ParamType.int,
-            ),
-            idrol: params.getParam(
-              'idrol',
-              ParamType.int,
-            ),
-            rol: params.getParam(
-              'rol',
-              ParamType.String,
-            ),
-            spd1: params.getParam(
-              'spd1',
-              ParamType.String,
-            ),
+      ),
+      FFRoute(
+        name: IngresosWidget.routeName,
+        path: IngresosWidget.routePath,
+        requireAuth: true,
+        builder: (context, params) => IngresosWidget(
+          idexp: params.getParam(
+            'idexp',
+            ParamType.int,
+          ),
+          idnnya: params.getParam(
+            'idnnya',
+            ParamType.int,
+          ),
+          idrol: params.getParam(
+            'idrol',
+            ParamType.int,
+          ),
+          rol: params.getParam(
+            'rol',
+            ParamType.String,
+          ),
+          spd1: params.getParam(
+            'spd1',
+            ParamType.String,
           ),
         ),
-        FFRoute(
-          name: DefiniciondemedidasWidget.routeName,
-          path: DefiniciondemedidasWidget.routePath,
-          builder: (context, params) => DefiniciondemedidasWidget(
-            idnnya: params.getParam(
-              'idnnya',
-              ParamType.int,
-            ),
-            idingreso: params.getParam(
-              'idingreso',
-              ParamType.int,
-            ),
-            idexp: params.getParam(
-              'idexp',
-              ParamType.int,
-            ),
-            idrol: params.getParam(
-              'idrol',
-              ParamType.int,
-            ),
-            rol: params.getParam(
-              'rol',
-              ParamType.String,
-            ),
-            sp: params.getParam(
-              'sp',
-              ParamType.String,
-            ),
+      ),
+      FFRoute(
+        name: DefiniciondemedidasWidget.routeName,
+        path: DefiniciondemedidasWidget.routePath,
+        builder: (context, params) => DefiniciondemedidasWidget(
+          idnnya: params.getParam(
+            'idnnya',
+            ParamType.int,
+          ),
+          idingreso: params.getParam(
+            'idingreso',
+            ParamType.int,
+          ),
+          idexp: params.getParam(
+            'idexp',
+            ParamType.int,
+          ),
+          idrol: params.getParam(
+            'idrol',
+            ParamType.int,
+          ),
+          rol: params.getParam(
+            'rol',
+            ParamType.String,
+          ),
+          sp: params.getParam(
+            'sp',
+            ParamType.String,
           ),
         ),
-        FFRoute(
-          name: ActaacuerdoWidget.routeName,
-          path: ActaacuerdoWidget.routePath,
-          builder: (context, params) => ActaacuerdoWidget(),
-        ),
-        FFRoute(
-          name: Auth2CreateWidget.routeName,
-          path: Auth2CreateWidget.routePath,
-          builder: (context, params) => Auth2CreateWidget(
-            idrol: params.getParam(
-              'idrol',
-              ParamType.int,
-            ),
+      ),
+      FFRoute(
+        name: ActaacuerdoWidget.routeName,
+        path: ActaacuerdoWidget.routePath,
+        builder: (context, params) => ActaacuerdoWidget(),
+      ),
+      FFRoute(
+        name: Auth2CreateWidget.routeName,
+        path: Auth2CreateWidget.routePath,
+        builder: (context, params) => Auth2CreateWidget(
+          idrol: params.getParam(
+            'idrol',
+            ParamType.int,
           ),
         ),
-        FFRoute(
-          name: Auth2LoginWidget.routeName,
-          path: Auth2LoginWidget.routePath,
-          builder: (context, params) => Auth2LoginWidget(),
-        ),
-        FFRoute(
-          name: Auth2ForgotPasswordWidget.routeName,
-          path: Auth2ForgotPasswordWidget.routePath,
-          builder: (context, params) => Auth2ForgotPasswordWidget(),
-        ),
-        FFRoute(
-          name: Auth2ProfileWidget.routeName,
-          path: Auth2ProfileWidget.routePath,
-          builder: (context, params) => Auth2ProfileWidget(),
-        ),
-        FFRoute(
-          name: Auth2EditProfileWidget.routeName,
-          path: Auth2EditProfileWidget.routePath,
-          builder: (context, params) => Auth2EditProfileWidget(),
-        ),
-        FFRoute(
-          name: Formulario5PaginaWidget.routeName,
-          path: Formulario5PaginaWidget.routePath,
-          builder: (context, params) => Formulario5PaginaWidget(
-            idingreso: params.getParam(
-              'idingreso',
-              ParamType.int,
-            ),
-            edit: params.getParam(
-              'edit',
-              ParamType.bool,
-            ),
-            idnnya: params.getParam(
-              'idnnya',
-              ParamType.int,
-            ),
-            idexp: params.getParam(
-              'idexp',
-              ParamType.int,
-            ),
-            idrol: params.getParam(
-              'idrol',
-              ParamType.int,
-            ),
-            rol: params.getParam(
-              'rol',
-              ParamType.String,
-            ),
-            spd1: params.getParam(
-              'spd1',
-              ParamType.String,
-            ),
+      ),
+      FFRoute(
+        name: Auth2LoginWidget.routeName,
+        path: Auth2LoginWidget.routePath,
+        builder: (context, params) => Auth2LoginWidget(),
+      ),
+      FFRoute(
+        name: Auth2ForgotPasswordWidget.routeName,
+        path: Auth2ForgotPasswordWidget.routePath,
+        builder: (context, params) => Auth2ForgotPasswordWidget(),
+      ),
+      FFRoute(
+        name: Auth2ProfileWidget.routeName,
+        path: Auth2ProfileWidget.routePath,
+        builder: (context, params) => Auth2ProfileWidget(),
+      ),
+      FFRoute(
+        name: Auth2EditProfileWidget.routeName,
+        path: Auth2EditProfileWidget.routePath,
+        builder: (context, params) => Auth2EditProfileWidget(),
+      ),
+      FFRoute(
+        name: Formulario5PaginaWidget.routeName,
+        path: Formulario5PaginaWidget.routePath,
+        builder: (context, params) => Formulario5PaginaWidget(
+          idingreso: params.getParam(
+            'idingreso',
+            ParamType.int,
+          ),
+          edit: params.getParam(
+            'edit',
+            ParamType.bool,
+          ),
+          idnnya: params.getParam(
+            'idnnya',
+            ParamType.int,
+          ),
+          idexp: params.getParam(
+            'idexp',
+            ParamType.int,
+          ),
+          idrol: params.getParam(
+            'idrol',
+            ParamType.int,
+          ),
+          rol: params.getParam(
+            'rol',
+            ParamType.String,
+          ),
+          spd1: params.getParam(
+            'spd1',
+            ParamType.String,
           ),
         ),
-        FFRoute(
-          name: SenafWidget.routeName,
-          path: SenafWidget.routePath,
-          builder: (context, params) => SenafWidget(
-            idexp: params.getParam(
-              'idexp',
-              ParamType.int,
-            ),
-            idingreso: params.getParam(
-              'idingreso',
-              ParamType.int,
-            ),
-            idnnya: params.getParam(
-              'idnnya',
-              ParamType.int,
-            ),
-            idrol: params.getParam(
-              'idrol',
-              ParamType.int,
-            ),
-            rol: params.getParam(
-              'rol',
-              ParamType.String,
-            ),
-            spd: params.getParam(
-              'spd',
-              ParamType.String,
-            ),
+      ),
+      FFRoute(
+        name: SenafWidget.routeName,
+        path: SenafWidget.routePath,
+        builder: (context, params) => SenafWidget(
+          idexp: params.getParam(
+            'idexp',
+            ParamType.int,
+          ),
+          idingreso: params.getParam(
+            'idingreso',
+            ParamType.int,
+          ),
+          idnnya: params.getParam(
+            'idnnya',
+            ParamType.int,
+          ),
+          idrol: params.getParam(
+            'idrol',
+            ParamType.int,
+          ),
+          rol: params.getParam(
+            'rol',
+            ParamType.String,
+          ),
+          spd: params.getParam(
+            'spd',
+            ParamType.String,
           ),
         ),
-        FFRoute(
-          name: DashboardWidget.routeName,
-          path: DashboardWidget.routePath,
-          builder: (context, params) => DashboardWidget(
-            usuariorow: params.getParam<UsuariosRow>(
-              'usuariorow',
-              ParamType.SupabaseRow,
-            ),
+      ),
+      FFRoute(
+        name: DashboardWidget.routeName,
+        path: DashboardWidget.routePath,
+        builder: (context, params) => DashboardWidget(
+          usuariorow: params.getParam<UsuariosRow>(
+            'usuariorow',
+            ParamType.SupabaseRow,
           ),
         ),
-        FFRoute(
-          name: ImprimirWidget.routeName,
-          path: ImprimirWidget.routePath,
-          builder: (context, params) => ImprimirWidget(
-            idexpediente: params.getParam(
-              'idexpediente',
-              ParamType.int,
-            ),
-            idigreso: params.getParam(
-              'idigreso',
-              ParamType.int,
-            ),
-            exp: params.getParam(
-              'exp',
-              ParamType.String,
-            ),
-            fechaexp: params.getParam(
-              'fechaexp',
-              ParamType.DateTime,
-            ),
-            exprow: params.getParam<VistaExpedientesUltimoEstadoRow>(
-              'exprow',
-              ParamType.SupabaseRow,
-            ),
+      ),
+      FFRoute(
+        name: ImprimirWidget.routeName,
+        path: ImprimirWidget.routePath,
+        builder: (context, params) => ImprimirWidget(
+          idexpediente: params.getParam(
+            'idexpediente',
+            ParamType.int,
+          ),
+          idigreso: params.getParam(
+            'idigreso',
+            ParamType.int,
+          ),
+          exp: params.getParam(
+            'exp',
+            ParamType.String,
+          ),
+          fechaexp: params.getParam(
+            'fechaexp',
+            ParamType.DateTime,
+          ),
+          exprow: params.getParam<VistaExpedientesUltimoEstadoRow>(
+            'exprow',
+            ParamType.SupabaseRow,
           ),
         ),
-        FFRoute(
-          name: AdminWidget.routeName,
-          path: AdminWidget.routePath,
-          builder: (context, params) => AdminWidget(
-            usuariosroles: params.getParam<VistaUsuariosRolesRow>(
-              'usuariosroles',
-              ParamType.SupabaseRow,
-            ),
-            usuariorow: params.getParam<UsuariosRow>(
-              'usuariorow',
-              ParamType.SupabaseRow,
-            ),
-            idnnya: params.getParam(
-              'idnnya',
-              ParamType.int,
-            ),
-            idrol: params.getParam(
-              'idrol',
-              ParamType.int,
-            ),
-            rol: params.getParam(
-              'rol',
-              ParamType.String,
-            ),
-            spd: params.getParam(
-              'spd',
-              ParamType.String,
-            ),
+      ),
+      FFRoute(
+        name: AdminWidget.routeName,
+        path: AdminWidget.routePath,
+        builder: (context, params) => AdminWidget(
+          usuariosroles: params.getParam<VistaUsuariosRolesRow>(
+            'usuariosroles',
+            ParamType.SupabaseRow,
+          ),
+          usuariorow: params.getParam<UsuariosRow>(
+            'usuariorow',
+            ParamType.SupabaseRow,
+          ),
+          idnnya: params.getParam(
+            'idnnya',
+            ParamType.int,
+          ),
+          idrol: params.getParam(
+            'idrol',
+            ParamType.int,
+          ),
+          rol: params.getParam(
+            'rol',
+            ParamType.String,
+          ),
+          spd: params.getParam(
+            'spd',
+            ParamType.String,
           ),
         ),
-        FFRoute(
-          name: Caratula2Widget.routeName,
-          path: Caratula2Widget.routePath,
-          builder: (context, params) => Caratula2Widget(
-            spdnombre: params.getParam(
-              'spdnombre',
-              ParamType.String,
-            ),
-            idzona: params.getParam(
-              'idzona',
-              ParamType.int,
-            ),
-            idrol: params.getParam(
-              'idrol',
-              ParamType.int,
-            ),
-            rol: params.getParam(
-              'rol',
-              ParamType.String,
-            ),
-            spd: params.getParam(
-              'spd',
-              ParamType.String,
-            ),
+      ),
+      FFRoute(
+        name: Caratula2Widget.routeName,
+        path: Caratula2Widget.routePath,
+        builder: (context, params) => Caratula2Widget(
+          spdnombre: params.getParam(
+            'spdnombre',
+            ParamType.String,
+          ),
+          idzona: params.getParam(
+            'idzona',
+            ParamType.int,
+          ),
+          idrol: params.getParam(
+            'idrol',
+            ParamType.int,
+          ),
+          rol: params.getParam(
+            'rol',
+            ParamType.String,
+          ),
+          spd: params.getParam(
+            'spd',
+            ParamType.String,
           ),
         ),
-        FFRoute(
-          name: Respuestaform6pageWidget.routeName,
-          path: Respuestaform6pageWidget.routePath,
-          builder: (context, params) => Respuestaform6pageWidget(
-            idingreso: params.getParam<IngresosRow>(
-              'idingreso',
-              ParamType.SupabaseRow,
-            ),
-            expedienterow: params.getParam<VistaExpedientesUltimoEstadoRow>(
-              'expedienterow',
-              ParamType.SupabaseRow,
-            ),
-            idform6: params.getParam(
-              'idform6',
-              ParamType.int,
-            ),
+      ),
+      FFRoute(
+        name: Respuestaform6pageWidget.routeName,
+        path: Respuestaform6pageWidget.routePath,
+        builder: (context, params) => Respuestaform6pageWidget(
+          idingreso: params.getParam<IngresosRow>(
+            'idingreso',
+            ParamType.SupabaseRow,
+          ),
+          expedienterow: params.getParam<VistaExpedientesUltimoEstadoRow>(
+            'expedienterow',
+            ParamType.SupabaseRow,
+          ),
+          idform6: params.getParam(
+            'idform6',
+            ParamType.int,
           ),
         ),
-        FFRoute(
-          name: PruebarlsWidget.routeName,
-          path: PruebarlsWidget.routePath,
-          builder: (context, params) => PruebarlsWidget(),
-        ),
-        FFRoute(
-          name: InformesenafWidget.routeName,
-          path: InformesenafWidget.routePath,
-          builder: (context, params) => InformesenafWidget(
-            link: params.getParam(
-              'link',
-              ParamType.String,
-            ),
+      ),
+      FFRoute(
+        name: PruebarlsWidget.routeName,
+        path: PruebarlsWidget.routePath,
+        builder: (context, params) => PruebarlsWidget(),
+      ),
+      FFRoute(
+        name: InformesenafWidget.routeName,
+        path: InformesenafWidget.routePath,
+        builder: (context, params) => InformesenafWidget(
+          link: params.getParam(
+            'link',
+            ParamType.String,
           ),
         ),
-        FFRoute(
-          name: EntrevistasCopyWidget.routeName,
-          path: EntrevistasCopyWidget.routePath,
-          builder: (context, params) => EntrevistasCopyWidget(
-            idingreso: params.getParam(
-              'idingreso',
-              ParamType.int,
-            ),
-            idnnya: params.getParam(
-              'idnnya',
-              ParamType.int,
-            ),
-            idexp: params.getParam(
-              'idexp',
-              ParamType.int,
-            ),
-            idrol: params.getParam(
-              'idrol',
-              ParamType.int,
-            ),
-            rol: params.getParam(
-              'rol',
-              ParamType.String,
-            ),
-            spd: params.getParam(
-              'spd',
-              ParamType.String,
-            ),
+      ),
+      FFRoute(
+        name: EntrevistasCopyWidget.routeName,
+        path: EntrevistasCopyWidget.routePath,
+        builder: (context, params) => EntrevistasCopyWidget(
+          idingreso: params.getParam(
+            'idingreso',
+            ParamType.int,
+          ),
+          idnnya: params.getParam(
+            'idnnya',
+            ParamType.int,
+          ),
+          idexp: params.getParam(
+            'idexp',
+            ParamType.int,
+          ),
+          idrol: params.getParam(
+            'idrol',
+            ParamType.int,
+          ),
+          rol: params.getParam(
+            'rol',
+            ParamType.String,
+          ),
+          spd: params.getParam(
+            'spd',
+            ParamType.String,
           ),
         ),
-        FFRoute(
-          name: ExpedienterlsWidget.routeName,
-          path: ExpedienterlsWidget.routePath,
-          builder: (context, params) => ExpedienterlsWidget(),
-        ),
-        FFRoute(
-          name: Auth2ForgotPasswordCopyWidget.routeName,
-          path: Auth2ForgotPasswordCopyWidget.routePath,
-          builder: (context, params) => Auth2ForgotPasswordCopyWidget(),
-        ),
-        FFRoute(
-          name: AdminzonaWidget.routeName,
-          path: AdminzonaWidget.routePath,
-          builder: (context, params) => AdminzonaWidget(
-            usuariosroles: params.getParam<VistaUsuariosRolesRow>(
-              'usuariosroles',
-              ParamType.SupabaseRow,
-            ),
-            usuariorow: params.getParam<UsuariosRow>(
-              'usuariorow',
-              ParamType.SupabaseRow,
-            ),
-            idrol: params.getParam(
-              'idrol',
-              ParamType.int,
-            ),
-            rol: params.getParam(
-              'rol',
-              ParamType.String,
-            ),
+      ),
+      FFRoute(
+        name: ExpedienterlsWidget.routeName,
+        path: ExpedienterlsWidget.routePath,
+        builder: (context, params) => ExpedienterlsWidget(),
+      ),
+      FFRoute(
+        name: Auth2ForgotPasswordCopyWidget.routeName,
+        path: Auth2ForgotPasswordCopyWidget.routePath,
+        builder: (context, params) => Auth2ForgotPasswordCopyWidget(),
+      ),
+      FFRoute(
+        name: AdminzonaWidget.routeName,
+        path: AdminzonaWidget.routePath,
+        builder: (context, params) => AdminzonaWidget(
+          usuariosroles: params.getParam<VistaUsuariosRolesRow>(
+            'usuariosroles',
+            ParamType.SupabaseRow,
+          ),
+          usuariorow: params.getParam<UsuariosRow>(
+            'usuariorow',
+            ParamType.SupabaseRow,
+          ),
+          idrol: params.getParam(
+            'idrol',
+            ParamType.int,
+          ),
+          rol: params.getParam(
+            'rol',
+            ParamType.String,
           ),
         ),
-        FFRoute(
-          name: Auth2CreateCopyWidget.routeName,
-          path: Auth2CreateCopyWidget.routePath,
-          builder: (context, params) => Auth2CreateCopyWidget(
-            idrol: params.getParam(
-              'idrol',
-              ParamType.int,
-            ),
+      ),
+      FFRoute(
+        name: Auth2CreateCopyWidget.routeName,
+        path: Auth2CreateCopyWidget.routePath,
+        builder: (context, params) => Auth2CreateCopyWidget(
+          idrol: params.getParam(
+            'idrol',
+            ParamType.int,
           ),
         ),
-        FFRoute(
-          name: PaginapruebaqueryWidget.routeName,
-          path: PaginapruebaqueryWidget.routePath,
-          builder: (context, params) => PaginapruebaqueryWidget(),
-        ),
-        FFRoute(
-          name: GrupoconvivientepaginaWidget.routeName,
-          path: GrupoconvivientepaginaWidget.routePath,
-          builder: (context, params) => GrupoconvivientepaginaWidget(
-            idingreso: params.getParam(
-              'idingreso',
-              ParamType.int,
-            ),
-            idexpediente: params.getParam(
-              'idexpediente',
-              ParamType.int,
-            ),
-            idseccion1: params.getParam(
-              'idseccion1',
-              ParamType.int,
-            ),
-            idnnya: params.getParam(
-              'idnnya',
-              ParamType.int,
-            ),
+      ),
+      FFRoute(
+        name: PaginapruebaqueryWidget.routeName,
+        path: PaginapruebaqueryWidget.routePath,
+        builder: (context, params) => PaginapruebaqueryWidget(),
+      ),
+      FFRoute(
+        name: GrupoconvivientepaginaWidget.routeName,
+        path: GrupoconvivientepaginaWidget.routePath,
+        builder: (context, params) => GrupoconvivientepaginaWidget(
+          idingreso: params.getParam(
+            'idingreso',
+            ParamType.int,
           ),
-        )
-      ].map((r) => r.toRoute(appStateNotifier)).toList(),
-    );
+          idexpediente: params.getParam(
+            'idexpediente',
+            ParamType.int,
+          ),
+          idseccion1: params.getParam(
+            'idseccion1',
+            ParamType.int,
+          ),
+          idnnya: params.getParam(
+            'idnnya',
+            ParamType.int,
+          ),
+        ),
+      ),
+      FFRoute(
+        name: $community_testing_ryusdv.NotificationsWidget.routeName,
+        path: $community_testing_ryusdv.NotificationsWidget.routePath,
+        builder: (context, params) =>
+            $community_testing_ryusdv.NotificationsWidget(),
+      )
+    ].map((r) => r.toRoute(appStateNotifier)).toList(),
+  );
+}
 
 extension NavParamExtensions on Map<String, String?> {
   Map<String, String> get withoutNulls => Map.fromEntries(

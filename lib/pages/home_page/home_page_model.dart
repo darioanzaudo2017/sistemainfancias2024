@@ -1,6 +1,5 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
-import '/backend/supabase/supabase.dart';
 import '/components/referencias_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
@@ -26,14 +25,6 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
   String? Function(BuildContext, String?)? textFieldTextControllerValidator;
   // Stores action output result for [Backend Call - API (search expedientes page)] action in Button widget.
   ApiCallResponse? apiResult88v;
-  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
-  List<VistaExpedientesUltimoEstadoRow>? query2;
-  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
-  List<UsuariosRow>? usuario1;
-  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
-  List<SpdRow>? spd1;
-  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
-  List<VistaUsuariosRolesRow>? userrol1;
 
   @override
   void initState(BuildContext context) {

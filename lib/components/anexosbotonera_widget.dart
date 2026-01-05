@@ -1,11 +1,11 @@
 import '/backend/supabase/supabase.dart';
 import '/components/listareunioninterinstitucional_widget.dart';
 import '/entrevistas/anexo5requerimientoacciones/anexo5requerimientoacciones_widget.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:expandable/expandable.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';

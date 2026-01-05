@@ -1,3 +1,5 @@
+import '/backend/api_requests/api_calls.dart';
+import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/tarjetaencabezado_widget.dart';
 import '/flutter_flow/flutter_flow_data_table.dart';
@@ -48,13 +50,13 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
 
   // Stores action output result for [Bottom Sheet - desplegablederechosprincipal] action in Button widget.
   bool? agregarderecho;
-  Completer<List<ListaDerechosVulneradosexpedienteRow>>? requestCompleter1;
+  Completer<ApiCallResponse>? apiRequestCompleter;
   // State field(s) for PaginatedDataTable widget.
   final paginatedDataTableController1 =
-      FlutterFlowDataTableController<ListaDerechosVulneradosexpedienteRow>();
+      FlutterFlowDataTableController<DerechosDtoListStruct>();
   // State field(s) for Checkboxderecho widget.
-  Map<ListaDerechosVulneradosexpedienteRow, bool> checkboxderechoValueMap = {};
-  List<ListaDerechosVulneradosexpedienteRow> get checkboxderechoCheckedItems =>
+  Map<DerechosDtoListStruct, bool> checkboxderechoValueMap = {};
+  List<DerechosDtoListStruct> get checkboxderechoCheckedItems =>
       checkboxderechoValueMap.entries
           .where((e) => e.value)
           .map((e) => e.key)
@@ -129,7 +131,6 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
       textFieldPropuestasparamedidasdeProteccionIntegralTextControllerValidator;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   Formulario5Row? insertform5;
-  Completer<List<IngresosRow>>? requestCompleter2;
 
   @override
   void initState(BuildContext context) {
@@ -173,7 +174,7 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
   }
 
   /// Additional helper methods.
-  Future waitForRequestCompleted1({
+  Future waitForApiRequestCompleted({
     double minWait = 0,
     double maxWait = double.infinity,
   }) async {
@@ -181,22 +182,7 @@ class Formulario5PaginaModel extends FlutterFlowModel<Formulario5PaginaWidget> {
     while (true) {
       await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = requestCompleter1?.isCompleted ?? false;
-      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
-        break;
-      }
-    }
-  }
-
-  Future waitForRequestCompleted2({
-    double minWait = 0,
-    double maxWait = double.infinity,
-  }) async {
-    final stopwatch = Stopwatch()..start();
-    while (true) {
-      await Future.delayed(Duration(milliseconds: 50));
-      final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = requestCompleter2?.isCompleted ?? false;
+      final requestComplete = apiRequestCompleter?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
         break;
       }

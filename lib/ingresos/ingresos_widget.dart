@@ -4,11 +4,11 @@ import '/components/barrade_navegacion_widget.dart';
 import '/components/formcaratula_widget.dart';
 import '/components/tarjetaencabezado_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'dart:async';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
@@ -18,7 +18,7 @@ export 'ingresos_model.dart';
 class IngresosWidget extends StatefulWidget {
   const IngresosWidget({
     super.key,
-    this.idexp,
+    required this.idexp,
     required this.idnnya,
     required this.idrol,
     required this.rol,

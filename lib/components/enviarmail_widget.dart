@@ -2,11 +2,13 @@ import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/adjuntardocumento_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'dart:async';
+import 'package:community_testing_ryusdv/app_state.dart'
+    as community_testing_ryusdv_app_state;
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -24,13 +26,11 @@ class EnviarmailWidget extends StatefulWidget {
     super.key,
     this.idingreso,
     this.idexp,
-    this.expediente,
     this.idampliacion,
   });
 
   final int? idingreso;
   final int? idexp;
-  final VistaExpedientesUltimoEstadoRow? expediente;
   final int? idampliacion;
 
   @override
@@ -73,6 +73,7 @@ class _EnviarmailWidgetState extends State<EnviarmailWidget> {
   @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
+    context.watch<community_testing_ryusdv_app_state.FFAppState>();
 
     return Container(
       decoration: BoxDecoration(
