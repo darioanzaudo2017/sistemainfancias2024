@@ -29,3 +29,19 @@ String? listahtmlsenaf(List<String>? links) {
 
   return htmlList.toString();
 }
+
+DateTime? stringtodate(String? fecha) {
+  // return date time from string
+  if (fecha == null) return null;
+  try {
+    return DateFormat("yyyy-MM-dd HH:mm:ss").parse(fecha);
+  } catch (e) {
+    return null;
+  }
+}
+
+String? datepickertostring(DateTime? fecha) {
+  // return string from fecha format "fecha": "2026-01-02"
+  if (fecha == null) return null;
+  return DateFormat('yyyy-MM-dd').format(fecha);
+}

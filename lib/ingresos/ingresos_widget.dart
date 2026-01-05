@@ -18,7 +18,7 @@ export 'ingresos_model.dart';
 class IngresosWidget extends StatefulWidget {
   const IngresosWidget({
     super.key,
-    this.idexp,
+    required this.idexp,
     required this.idnnya,
     required this.idrol,
     required this.rol,

@@ -272,8 +272,6 @@ dynamic deserializeParam<T>(
             return ArticulacionComunitariaRow(data);
           case ListadeactasRow:
             return ListadeactasRow(data);
-          case VistaExpedientesSenafRow:
-            return VistaExpedientesSenafRow(data);
           case AmplaicionSeccion8Row:
             return AmplaicionSeccion8Row(data);
           case VistaEstadisticasAdminRow:
@@ -302,8 +300,6 @@ dynamic deserializeParam<T>(
             return AnexoB1Form1Row(data);
           case DocumentosadjuntosRow:
             return DocumentosadjuntosRow(data);
-          case VistaExpedientesRow:
-            return VistaExpedientesRow(data);
           case VistaUsuariosRolesRow:
             return VistaUsuariosRolesRow(data);
           case Anexo1Form1Row:

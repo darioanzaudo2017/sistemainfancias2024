@@ -1,7 +1,6 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/structs/index.dart';
-import '/backend/supabase/supabase.dart';
 import '/components/notificaciones_widget.dart';
 import '/components/referencias_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -2513,47 +2512,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                               FFButtonWidget(
                                                                 onPressed:
                                                                     () async {
-                                                                  _model.query2 =
-                                                                      await VistaExpedientesUltimoEstadoTable()
-                                                                          .queryRows(
-                                                                    queryFn: (q) =>
-                                                                        q.eqOrNull(
-                                                                      'id',
-                                                                      lista2Item
-                                                                          .id,
-                                                                    ),
-                                                                  );
-                                                                  _model.usuario1 =
-                                                                      await UsuariosTable()
-                                                                          .queryRows(
-                                                                    queryFn: (q) =>
-                                                                        q.eqOrNull(
-                                                                      'id',
-                                                                      currentUserUid,
-                                                                    ),
-                                                                  );
-                                                                  _model.spd1 =
-                                                                      await SpdTable()
-                                                                          .queryRows(
-                                                                    queryFn: (q) =>
-                                                                        q.eqOrNull(
-                                                                      'nombrespd',
-                                                                      ContextoinicialStruct.maybeFromMap((_model.contexto?.jsonBody ??
-                                                                              ''))
-                                                                          ?.usuario
-                                                                          .spd,
-                                                                    ),
-                                                                  );
-                                                                  _model.userrol1 =
-                                                                      await VistaUsuariosRolesTable()
-                                                                          .queryRows(
-                                                                    queryFn: (q) =>
-                                                                        q.eqOrNull(
-                                                                      'id',
-                                                                      currentUserUid,
-                                                                    ),
-                                                                  );
-
                                                                   context
                                                                       .pushNamed(
                                                                     IngresosWidget
@@ -2562,10 +2520,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                         {
                                                                       'idexp':
                                                                           serializeParam(
-                                                                        _model
-                                                                            .query2
-                                                                            ?.firstOrNull
-                                                                            ?.id,
+                                                                        lista2Item
+                                                                            .id,
                                                                         ParamType
                                                                             .int,
                                                                       ),
@@ -2609,9 +2565,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                       ),
                                                                     }.withoutNulls,
                                                                   );
-
-                                                                  safeSetState(
-                                                                      () {});
                                                                 },
                                                                 text:
                                                                     'Ver Expediente',
