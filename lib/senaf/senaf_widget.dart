@@ -2300,7 +2300,7 @@ class _SenafWidgetState extends State<SenafWidget>
                                                                                                 ScaffoldMessenger.of(context).showSnackBar(
                                                                                                   SnackBar(
                                                                                                     content: Text(
-                                                                                                      'Se ',
+                                                                                                      'Se guardo correctamente!',
                                                                                                       style: TextStyle(
                                                                                                         color: FlutterFlowTheme.of(context).primaryText,
                                                                                                       ),
