@@ -23,8 +23,8 @@ class PerfilGrupoConvivienteStruct extends BaseStruct {
     String? idnnyaGrupo,
     String? updatedAt,
     String? idusers,
-    String? idgrupofamiliar,
-    String? idexppropio,
+    int? idgrupofamiliar,
+    int? idexppropio,
     int? idnnya,
     String? vinculoObs,
   })  : _id = id,
@@ -171,16 +171,21 @@ class PerfilGrupoConvivienteStruct extends BaseStruct {
   bool hasIdusers() => _idusers != null;
 
   // "idgrupofamiliar" field.
-  String? _idgrupofamiliar;
-  String get idgrupofamiliar => _idgrupofamiliar ?? '';
-  set idgrupofamiliar(String? val) => _idgrupofamiliar = val;
+  int? _idgrupofamiliar;
+  int get idgrupofamiliar => _idgrupofamiliar ?? 0;
+  set idgrupofamiliar(int? val) => _idgrupofamiliar = val;
+
+  void incrementIdgrupofamiliar(int amount) =>
+      idgrupofamiliar = idgrupofamiliar + amount;
 
   bool hasIdgrupofamiliar() => _idgrupofamiliar != null;
 
   // "idexppropio" field.
-  String? _idexppropio;
-  String get idexppropio => _idexppropio ?? '';
-  set idexppropio(String? val) => _idexppropio = val;
+  int? _idexppropio;
+  int get idexppropio => _idexppropio ?? 0;
+  set idexppropio(int? val) => _idexppropio = val;
+
+  void incrementIdexppropio(int amount) => idexppropio = idexppropio + amount;
 
   bool hasIdexppropio() => _idexppropio != null;
 
@@ -218,8 +223,8 @@ class PerfilGrupoConvivienteStruct extends BaseStruct {
         idnnyaGrupo: data['idnnyaGrupo'] as String?,
         updatedAt: data['updated_at'] as String?,
         idusers: data['idusers'] as String?,
-        idgrupofamiliar: data['idgrupofamiliar'] as String?,
-        idexppropio: data['idexppropio'] as String?,
+        idgrupofamiliar: castToType<int>(data['idgrupofamiliar']),
+        idexppropio: castToType<int>(data['idexppropio']),
         idnnya: castToType<int>(data['idnnya']),
         vinculoObs: data['vinculo_obs'] as String?,
       );
@@ -319,11 +324,11 @@ class PerfilGrupoConvivienteStruct extends BaseStruct {
         ),
         'idgrupofamiliar': serializeParam(
           _idgrupofamiliar,
-          ParamType.String,
+          ParamType.int,
         ),
         'idexppropio': serializeParam(
           _idexppropio,
-          ParamType.String,
+          ParamType.int,
         ),
         'idnnya': serializeParam(
           _idnnya,
@@ -420,12 +425,12 @@ class PerfilGrupoConvivienteStruct extends BaseStruct {
         ),
         idgrupofamiliar: deserializeParam(
           data['idgrupofamiliar'],
-          ParamType.String,
+          ParamType.int,
           false,
         ),
         idexppropio: deserializeParam(
           data['idexppropio'],
-          ParamType.String,
+          ParamType.int,
           false,
         ),
         idnnya: deserializeParam(
@@ -510,8 +515,8 @@ PerfilGrupoConvivienteStruct createPerfilGrupoConvivienteStruct({
   String? idnnyaGrupo,
   String? updatedAt,
   String? idusers,
-  String? idgrupofamiliar,
-  String? idexppropio,
+  int? idgrupofamiliar,
+  int? idexppropio,
   int? idnnya,
   String? vinculoObs,
 }) =>
