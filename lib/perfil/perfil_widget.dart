@@ -615,6 +615,17 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                       pIdIngresoOrigen: widget.idingreso,
                                                                                     );
 
+                                                                                    await GrupoConvivienteTable().update(
+                                                                                      data: {
+                                                                                        'idexppropio': CrearingresoconexpedientesinoexisteCall.idexpediente(
+                                                                                          (_model.apiResulteqd?.jsonBody ?? ''),
+                                                                                        ),
+                                                                                      },
+                                                                                      matchingRows: (rows) => rows.eqOrNull(
+                                                                                        'id',
+                                                                                        containerVarItem.id,
+                                                                                      ),
+                                                                                    );
                                                                                     if ((_model.apiResult73t?.succeeded ?? true)) {
                                                                                       ScaffoldMessenger.of(context).showSnackBar(
                                                                                         SnackBar(
