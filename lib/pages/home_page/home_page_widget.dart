@@ -817,7 +817,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                     .fromSTEB(
                                                         16.0, 0.0, 0.0, 5.0),
                                                 child: Text(
-                                                  'Actualizacion: 24/02/2025',
+                                                  'Actualizacion: 06/01/2025',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -1114,7 +1114,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                       12.0),
                                                           child: Container(
                                                             width: 110.0,
-                                                            height: 80.0,
+                                                            height: 100.0,
                                                             decoration:
                                                                 BoxDecoration(
                                                               color:
@@ -1237,7 +1237,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                       12.0),
                                                           child: Container(
                                                             width: 110.0,
-                                                            height: 80.0,
+                                                            height: 100.0,
                                                             decoration:
                                                                 BoxDecoration(
                                                               color:
@@ -1360,7 +1360,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                       12.0),
                                                           child: Container(
                                                             width: 110.0,
-                                                            height: 80.0,
+                                                            height: 100.0,
                                                             decoration:
                                                                 BoxDecoration(
                                                               color:
@@ -1484,7 +1484,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                       12.0),
                                                           child: Container(
                                                             width: 110.0,
-                                                            height: 80.0,
+                                                            height: 100.0,
                                                             decoration:
                                                                 BoxDecoration(
                                                               color:
@@ -1608,7 +1608,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                       12.0),
                                                           child: Container(
                                                             width: 110.0,
-                                                            height: 80.0,
+                                                            height: 100.0,
                                                             decoration:
                                                                 BoxDecoration(
                                                               color:
