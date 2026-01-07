@@ -1,4 +1,4 @@
-import '/components/adjuntardocumento_widget.dart';
+import '/components/listadodeadjuntos_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
@@ -266,7 +266,7 @@ class _BarradeNavegacionWidgetState extends State<BarradeNavegacionWidget> {
                       return WebViewAware(
                         child: Padding(
                           padding: MediaQuery.viewInsetsOf(context),
-                          child: AdjuntardocumentoWidget(
+                          child: ListadodeadjuntosWidget(
                             idexp: widget.idexp!,
                             idingreso: widget.idingreso!,
                           ),

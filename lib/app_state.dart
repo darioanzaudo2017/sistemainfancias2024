@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'flutter_flow/request_manager.dart';
 import '/backend/schema/structs/index.dart';
-import 'package:ff_commons/api_requests/api_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'dart:convert';
@@ -372,22 +370,11 @@ class FFAppState extends ChangeNotifier {
     _idingreso = value;
   }
 
-  final _tarjetaexpedientecacheManager =
-      FutureRequestManager<ApiCallResponse>();
-  Future<ApiCallResponse> tarjetaexpedientecache({
-    String? uniqueQueryKey,
-    bool? overrideCache,
-    required Future<ApiCallResponse> Function() requestFn,
-  }) =>
-      _tarjetaexpedientecacheManager.performRequest(
-        uniqueQueryKey: uniqueQueryKey,
-        overrideCache: overrideCache,
-        requestFn: requestFn,
-      );
-  void clearTarjetaexpedientecacheCache() =>
-      _tarjetaexpedientecacheManager.clear();
-  void clearTarjetaexpedientecacheCacheKey(String? uniqueKey) =>
-      _tarjetaexpedientecacheManager.clearRequest(uniqueKey);
+  String _rol = '';
+  String get rol => _rol;
+  set rol(String value) {
+    _rol = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {
