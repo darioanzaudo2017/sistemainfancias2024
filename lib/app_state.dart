@@ -369,6 +369,12 @@ class FFAppState extends ChangeNotifier {
   set idingreso(int value) {
     _idingreso = value;
   }
+
+  String _rol = '';
+  String get rol => _rol;
+  set rol(String value) {
+    _rol = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

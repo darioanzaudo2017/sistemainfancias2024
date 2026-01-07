@@ -328,28 +328,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) {
         name: AdminWidget.routeName,
         path: AdminWidget.routePath,
         builder: (context, params) => AdminWidget(
-          usuariosroles: params.getParam<VistaUsuariosRolesRow>(
-            'usuariosroles',
-            ParamType.SupabaseRow,
-          ),
-          usuariorow: params.getParam<UsuariosRow>(
-            'usuariorow',
-            ParamType.SupabaseRow,
-          ),
-          idnnya: params.getParam(
-            'idnnya',
-            ParamType.int,
-          ),
           idrol: params.getParam(
             'idrol',
             ParamType.int,
           ),
           rol: params.getParam(
             'rol',
-            ParamType.String,
-          ),
-          spd: params.getParam(
-            'spd',
             ParamType.String,
           ),
         ),
