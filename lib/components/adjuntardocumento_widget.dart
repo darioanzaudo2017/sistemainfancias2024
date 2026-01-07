@@ -367,7 +367,6 @@ class _AdjuntardocumentoWidgetState extends State<AdjuntardocumentoWidget> {
                         'documentopdf': _model.uploadedFileUrl_uploadData9zv,
                         'tipodocumento': _model.dropDownValue,
                         'Observaciones': _model.textController.text,
-                        'idampliacion': widget.idampliacion,
                         'updated_at':
                             supaSerialize<DateTime>(getCurrentTimestamp),
                         'iduser': currentUserUid,

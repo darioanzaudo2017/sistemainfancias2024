@@ -132,8 +132,8 @@ class _ListadodeadjuntosWidgetState extends State<ListadodeadjuntosWidget> {
                                     padding: MediaQuery.viewInsetsOf(context),
                                     child: AdjuntardocumentoWidget(
                                       idampliacion: 0,
-                                      idexp: 0,
-                                      idingreso: 0,
+                                      idexp: widget.idexp!,
+                                      idingreso: widget.idingreso!,
                                     ),
                                   ),
                                 );
