@@ -57,11 +57,9 @@ class _TarjetaencabezadoWidgetState extends State<TarjetaencabezadoWidget> {
     return Align(
       alignment: AlignmentDirectional(0.0, -1.0),
       child: FutureBuilder<ApiCallResponse>(
-        future: FFAppState().tarjetaexpedientecache(
-          requestFn: () => TarjetaexpedienteCall.call(
-            token: currentJwtToken,
-            idexpediente: widget.idexpediente,
-          ),
+        future: TarjetaexpedienteCall.call(
+          token: currentJwtToken,
+          idexpediente: widget.idexpediente,
         ),
         builder: (context, snapshot) {
           // Customize what your widget looks like when it's loading.

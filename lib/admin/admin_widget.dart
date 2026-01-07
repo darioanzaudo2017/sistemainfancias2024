@@ -22,20 +22,12 @@ export 'admin_model.dart';
 class AdminWidget extends StatefulWidget {
   const AdminWidget({
     super.key,
-    required this.usuariosroles,
-    required this.usuariorow,
-    this.idnnya,
     required this.idrol,
     required this.rol,
-    required this.spd,
   });
 
-  final VistaUsuariosRolesRow? usuariosroles;
-  final UsuariosRow? usuariorow;
-  final int? idnnya;
   final int? idrol;
   final String? rol;
-  final String? spd;
 
   static String routeName = 'Admin';
   static String routePath = '/admin';
@@ -77,8 +69,11 @@ class _AdminWidgetState extends State<AdminWidget>
     context.watch<community_testing_ryusdv_app_state.FFAppState>();
 
     return FutureBuilder<List<VistaUsuariosRolesRow>>(
-      future: VistaUsuariosRolesTable().queryRows(
-        queryFn: (q) => q,
+      future: VistaUsuariosRolesTable().querySingleRow(
+        queryFn: (q) => q.eqOrNull(
+          'id',
+          currentUserUid,
+        ),
       ),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
@@ -100,6 +95,11 @@ class _AdminWidgetState extends State<AdminWidget>
         }
         List<VistaUsuariosRolesRow> adminVistaUsuariosRolesRowList =
             snapshot.data!;
+
+        final adminVistaUsuariosRolesRow =
+            adminVistaUsuariosRolesRowList.isNotEmpty
+                ? adminVistaUsuariosRolesRowList.first
+                : null;
 
         return GestureDetector(
           onTap: () {
@@ -421,8 +421,8 @@ class _AdminWidgetState extends State<AdminWidget>
                                                                 0.0, 0.0),
                                                     child: Text(
                                                       valueOrDefault<String>(
-                                                        widget
-                                                            .usuariosroles?.spd,
+                                                        adminVistaUsuariosRolesRow
+                                                            ?.nombreCompleto,
                                                         'Sin dato',
                                                       ),
                                                       style:
@@ -526,7 +526,7 @@ class _AdminWidgetState extends State<AdminWidget>
                                               EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 4.0, 0.0, 12.0),
                                           child: Text(
-                                            'Email: ${widget.usuariosroles?.nombreCompleto}',
+                                            'Email: ${currentUserEmail}',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -2169,8 +2169,8 @@ class _AdminWidgetState extends State<AdminWidget>
                                                                     ),
                                                                     'idnnya':
                                                                         serializeParam(
-                                                                      widget
-                                                                          .idnnya,
+                                                                      expdientesenafItem
+                                                                          .idNNyA,
                                                                       ParamType
                                                                           .int,
                                                                     ),
@@ -2188,7 +2188,8 @@ class _AdminWidgetState extends State<AdminWidget>
                                                                     ),
                                                                     'spd1':
                                                                         serializeParam(
-                                                                      '',
+                                                                      expdientesenafItem
+                                                                          .spd,
                                                                       ParamType
                                                                           .String,
                                                                     ),
@@ -2629,7 +2630,7 @@ class _AdminWidgetState extends State<AdminWidget>
                                                                     ),
                                                                     'spd1':
                                                                         serializeParam(
-                                                                      widget
+                                                                      FFAppState()
                                                                           .spd,
                                                                       ParamType
                                                                           .String,

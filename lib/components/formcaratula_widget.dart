@@ -1539,8 +1539,6 @@ class _FormcaratulaWidgetState extends State<FormcaratulaWidget> {
                                               },
                                             );
                                             Navigator.pop(context, true);
-                                            FFAppState()
-                                                .clearTarjetaexpedientecacheCache();
 
                                             safeSetState(() {});
                                           },

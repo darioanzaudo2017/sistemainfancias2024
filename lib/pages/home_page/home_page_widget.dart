@@ -58,6 +58,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               .roles
               .firstOrNull!
               .idrol;
+      FFAppState().rol =
+          ContextoinicialStruct.maybeFromMap((_model.contexto?.jsonBody ?? ''))!
+              .usuario
+              .roles
+              .firstOrNull!
+              .rol;
       safeSetState(() {});
       _model.apiResult88v1 = await SearchExpedientesPageCall.call(
         token: currentJwtToken,
@@ -289,6 +295,66 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               ),
                               title: Text(
                                 'Tablero',
+                                textAlign: TextAlign.start,
+                                style: FlutterFlowTheme.of(context)
+                                    .titleLarge
+                                    .override(
+                                      font: GoogleFonts.notoSansJp(
+                                        fontWeight: FontWeight.normal,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontStyle,
+                                      ),
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      fontSize: 20.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.normal,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontStyle,
+                                    ),
+                              ),
+                              tileColor: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              dense: false,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed(
+                              AdminWidget.routeName,
+                              queryParameters: {
+                                'idrol': serializeParam(
+                                  FFAppState().idrol,
+                                  ParamType.int,
+                                ),
+                                'rol': serializeParam(
+                                  FFAppState().rol,
+                                  ParamType.String,
+                                ),
+                              }.withoutNulls,
+                            );
+                          },
+                          child: Material(
+                            color: Colors.transparent,
+                            child: ListTile(
+                              leading: Icon(
+                                Icons.settings_sharp,
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                size: 25.0,
+                              ),
+                              title: Text(
+                                'Admin',
                                 textAlign: TextAlign.start,
                                 style: FlutterFlowTheme.of(context)
                                     .titleLarge
@@ -817,7 +883,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                     .fromSTEB(
                                                         16.0, 0.0, 0.0, 5.0),
                                                 child: Text(
-                                                  'Actualizacion: 24/02/2025',
+                                                  'Actualizacion: 06/01/2025',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -1114,7 +1180,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                       12.0),
                                                           child: Container(
                                                             width: 110.0,
-                                                            height: 80.0,
+                                                            height: 100.0,
                                                             decoration:
                                                                 BoxDecoration(
                                                               color:
@@ -1237,7 +1303,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                       12.0),
                                                           child: Container(
                                                             width: 110.0,
-                                                            height: 80.0,
+                                                            height: 100.0,
                                                             decoration:
                                                                 BoxDecoration(
                                                               color:
@@ -1360,7 +1426,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                       12.0),
                                                           child: Container(
                                                             width: 110.0,
-                                                            height: 80.0,
+                                                            height: 100.0,
                                                             decoration:
                                                                 BoxDecoration(
                                                               color:
@@ -1484,7 +1550,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                       12.0),
                                                           child: Container(
                                                             width: 110.0,
-                                                            height: 80.0,
+                                                            height: 100.0,
                                                             decoration:
                                                                 BoxDecoration(
                                                               color:
@@ -1608,7 +1674,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                       12.0),
                                                           child: Container(
                                                             width: 110.0,
-                                                            height: 80.0,
+                                                            height: 100.0,
                                                             decoration:
                                                                 BoxDecoration(
                                                               color:
