@@ -35921,11 +35921,9 @@ _.c=null
 _.d=!0
 _.e=!1
 _.f=b},
-rh:function rh(a,b,c,d){var _=this
-_.c=a
-_.d=b
-_.e=c
-_.a=d},
+rh:function rh(a,b,c){this.d=a
+this.e=b
+this.a=c},
 adU:function adU(){this.d=$
 this.c=this.a=null},
 aSV:function aSV(){},
@@ -36817,8 +36815,9 @@ _.c=null
 _.d=!0
 _.e=!1
 _.f=a},
-ws:function ws(a,b){this.d=a
-this.a=b},
+ws:function ws(a,b,c){this.c=a
+this.d=b
+this.a=c},
 aiG:function aiG(){this.d=$
 this.c=this.a=null},
 boC:function boC(){},
@@ -36828,7 +36827,7 @@ boA:function boA(a){this.a=a},
 boz:function boz(a){this.a=a},
 box:function box(a,b){this.a=a
 this.b=b},
-bou:function bou(){},
+bou:function bou(a){this.a=a},
 bov:function bov(a){this.a=a},
 bos:function bos(a,b){this.a=a
 this.b=b},
@@ -131135,12 +131134,12 @@ A.aSO.prototype={
 $0(){},
 $S:0}
 A.aST.prototype={
-$0(){var s=0,r=A.x(t.P),q=this,p,o,n,m,l,k,j
+$0(){var s=0,r=A.x(t.P),q=this,p,o,n,m,l,k
 var $async$$0=A.t(function(a,b){if(a===1)return A.u(b,r)
 while(true)switch(s){case 0:m=q.a
 l=m.a
 k=l.d
-j=l.e
+l=l.e
 m=m.d
 m===$&&A.f()
 p=m.ax
@@ -131149,11 +131148,11 @@ m=m.x
 m=m==null?"":m.a.a
 n=t.z
 s=2
-return A.n(new A.iK().d_(0,A.Q(["idexpdoc",k,"idingresodoc",j,"documentopdf",p,"tipodocumento",o,"Observaciones",m,"idampliacion",l.c,"updated_at",A.cv(new A.aG(Date.now(),0,!1),t.k),"iduser",A.cG()],t.N,n)),$async$$0)
-case 2:l=q.b
+return A.n(new A.iK().d_(0,A.Q(["idexpdoc",k,"idingresodoc",l,"documentopdf",p,"tipodocumento",o,"Observaciones",m,"updated_at",A.cv(new A.aG(Date.now(),0,!1),t.k),"iduser",A.cG()],t.N,n)),$async$$0)
+case 2:m=q.b
 s=3
-return A.n(A.cA(null,null,!0,null,new A.aSK(),l,null,!0,n),$async$$0)
-case 3:A.ax(l,!1).a5(!0)
+return A.n(A.cA(null,null,!0,null,new A.aSK(),m,null,!0,n),$async$$0)
+case 3:A.ax(m,!1).a5(!0)
 return A.v(null,r)}})
 return A.w($async$$0,r)},
 $S:1}
@@ -134147,7 +134146,7 @@ return A.w($async$$0,r)},
 $S:1}
 A.aYz.prototype={
 $1(a){var s=A.a3(a,B.X,t.w).w,r=this.a.a
-return new A.aN(new A.m(s.f,new A.rh(r.c,r.z,r.Q,null),null),null)},
+return new A.aN(new A.m(s.f,new A.rh(r.z,r.Q,null),null),null)},
 $S:3}
 A.aYA.prototype={
 $1(a){var s=this.a
@@ -135337,11 +135336,11 @@ case 2:return A.v(null,r)}})
 return A.w($async$$0,r)},
 $S:14}
 A.b2M.prototype={
-$1(a){var s=A.a3(a,B.X,t.w).w,r=this.a.a
-r.c.toString
+$1(a){var s=A.a3(a,B.X,t.w).w,r=this.a.a,q=r.c
+q.toString
 r=r.d
 r.toString
-return new A.aN(new A.m(s.f,new A.ws(r,null),null),null)},
+return new A.aN(new A.m(s.f,new A.ws(q,r,null),null),null)},
 $S:3}
 A.b2N.prototype={
 $1(a){var s=this.a
@@ -136425,11 +136424,11 @@ return A.v(null,r)}})
 return A.w($async$$0,r)},
 $S:1}
 A.bbh.prototype={
-$1(a){var s=null,r=A.a3(a,B.X,t.w).w,q=this.a.a,p=q.d
-p.toString
-q=q.c
+$1(a){var s=A.a3(a,B.X,t.w).w,r=this.a.a,q=r.d
 q.toString
-return new A.aN(new A.m(r.f,new A.rh(s,p,q,s),s),s)},
+r=r.c
+r.toString
+return new A.aN(new A.m(s.f,new A.rh(q,r,null),null),null)},
 $S:3}
 A.bbi.prototype={
 $1(a){var s=this.a
@@ -138262,13 +138261,14 @@ $0(){var s=0,r=A.x(t.P),q=this,p
 var $async$$0=A.t(function(a,b){if(a===1)return A.u(b,r)
 while(true)switch(s){case 0:p=q.a
 s=2
-return A.n(A.cm(B.m,new A.bou(),q.b,!1,!0,t.z).ap(new A.bov(p),t.H),$async$$0)
+return A.n(A.cm(B.m,new A.bou(p),q.b,!1,!0,t.z).ap(new A.bov(p),t.H),$async$$0)
 case 2:if(p.c!=null)p.t(new A.bow())
 return A.v(null,r)}})
 return A.w($async$$0,r)},
 $S:1}
 A.bou.prototype={
-$1(a){return new A.aN(new A.m(A.a3(a,B.X,t.w).w.f,new A.rh(0,0,0,null),null),null)},
+$1(a){var s=A.a3(a,B.X,t.w).w,r=this.a.a
+return new A.aN(new A.m(s.f,new A.rh(r.c,r.d,null),null),null)},
 $S:3}
 A.bov.prototype={
 $1(a){var s=this.a
@@ -167328,11 +167328,11 @@ case 2:return A.v(null,r)}})
 return A.w($async$$0,r)},
 $S:1}
 A.bDy.prototype={
-$1(a){var s=null,r=A.a3(a,B.X,t.w).w,q=this.a.a
-q.c.toString
+$1(a){var s=null,r=A.a3(a,B.X,t.w).w,q=this.a.a,p=q.c
+p.toString
 q=q.d
 q.toString
-return new A.aN(A.bM(s,new A.m(r.f,new A.ws(q,s),s),B.y,!1,s,s,s,s,s,s,s,s,s,s,s,s,s,new A.bCS(a),s,s,s,s,s,s),s)},
+return new A.aN(A.bM(s,new A.m(r.f,new A.ws(p,q,s),s),B.y,!1,s,s,s,s,s,s,s,s,s,s,s,s,s,new A.bCS(a),s,s,s,s,s,s),s)},
 $S:3}
 A.bCS.prototype={
 $0(){A.c3(this.a).ae()
