@@ -626,6 +626,17 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                                                         containerVarItem.id,
                                                                                       ),
                                                                                     );
+                                                                                    await IngresosTable().update(
+                                                                                      data: {
+                                                                                        'Estado': 'Abierto',
+                                                                                      },
+                                                                                      matchingRows: (rows) => rows.eqOrNull(
+                                                                                        'id',
+                                                                                        CrearingresoconexpedientesinoexisteCall.idingresonuevo(
+                                                                                          (_model.apiResulteqd?.jsonBody ?? ''),
+                                                                                        ),
+                                                                                      ),
+                                                                                    );
                                                                                     if ((_model.apiResult73t?.succeeded ?? true)) {
                                                                                       ScaffoldMessenger.of(context).showSnackBar(
                                                                                         SnackBar(
